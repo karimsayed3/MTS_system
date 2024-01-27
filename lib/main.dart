@@ -43,7 +43,8 @@ void _setupWindow() async {
   // Set the window to full screen
   await DesktopWindow.setFullScreen(true);
 }
-void main() async{
+
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   setupGetIt();
@@ -75,14 +76,12 @@ void main() async{
     runApp(DocApp2(
       appRouter: AppRouter(),
     ));
-
   }
 }
 
-
-
 class DocApp extends StatelessWidget {
   final AppRouter appRouter;
+
   const DocApp({super.key, required this.appRouter});
 
   @override
@@ -98,16 +97,19 @@ class DocApp extends StatelessWidget {
           ),
           debugShowCheckedModeBanner: false,
           home: const Scaffold(
-            body: Center(child: Text("Mobile app 2"),),
+            body: Center(
+              child: Text("Mobile app 2"),
+            ),
           ),
           // initialRoute: Routes.onBoardingScreen,
           // onGenerateRoute: appRouter.generateRoute,
-        )
-    );
+        ));
   }
 }
+
 class DocApp2 extends StatelessWidget {
   final AppRouter appRouter;
+
   const DocApp2({super.key, required this.appRouter});
 
   @override
@@ -124,12 +126,11 @@ class DocApp2 extends StatelessWidget {
       // home: const Scaffold(
       //   body: Center(child: Text("desktop app 2"),),
       // ),
-      initialRoute: Routes.loginScreen,
+      initialRoute: Routes.homeScreen,
       onGenerateRoute: appRouter.generateRoute,
     );
   }
 }
-
 
 class MyDropdownScreen extends StatefulWidget {
   @override
@@ -138,7 +139,7 @@ class MyDropdownScreen extends StatefulWidget {
 
 class _MyDropdownScreenState extends State<MyDropdownScreen> {
   GlobalKey<AutoCompleteTextFieldState<String>> key = GlobalKey();
-  AutoCompleteTextField<String>? textField ;
+  AutoCompleteTextField<String>? textField;
 
   List<String> items = ['Option 1', 'Option 2', 'Option 3', 'Option 4'];
 
