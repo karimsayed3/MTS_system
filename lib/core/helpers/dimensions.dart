@@ -68,7 +68,7 @@ class Dimensions{
   double get reduce10 => (MediaQuery.of(context).size.width * 0.0025  *  MediaQuery.of(context).size.height * 0.0025);
   double get reduce14 => (MediaQuery.of(context).size.width * 0.0029  *  MediaQuery.of(context).size.height * 0.003);
   double get reduce15 => (MediaQuery.of(context).size.width * 0.003  *  MediaQuery.of(context).size.height * 0.003);
-  double get reduce20 => (MediaQuery.of(context).size.width * 0.0035  *  MediaQuery.of(context).size.height * 0.0035);
+  double get reduce20 => (MediaQuery.of(context).size.width * 0.004  *  MediaQuery.of(context).size.height * 0.004);
 
 
 }

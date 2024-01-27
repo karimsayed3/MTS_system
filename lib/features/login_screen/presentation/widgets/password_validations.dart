@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:system/core/helpers/dimensions.dart';
 
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theming/colors.dart';
@@ -23,21 +24,22 @@ class PasswordValidations extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        buildValidationRow('At least 1 lowercase letter', hasLowerCase),
+        buildValidationRow('At least 1 lowercase letter', hasLowerCase,context),
         verticalSpace(2),
-        buildValidationRow('At least 1 uppercase letter', hasUpperCase),
+        buildValidationRow('At least 1 uppercase letter', hasUpperCase,context),
         verticalSpace(2),
         buildValidationRow(
-            'At least 1 special character', hasSpecialCharacters),
+            'At least 1 special character', hasSpecialCharacters,context),
         verticalSpace(2),
-        buildValidationRow('At least 1 number', hasNumber),
+        buildValidationRow('At least 1 number', hasNumber,context),
         verticalSpace(2),
-        buildValidationRow('At least 8 characters long', hasMinLength),
+        buildValidationRow('At least 8 characters long', hasMinLength,context),
       ],
     );
   }
 
-  Widget buildValidationRow(String text, bool hasValidated) {
+  Widget buildValidationRow(String text, bool hasValidated,BuildContext context) {
+    var dimension = Dimensions(context);
     return Row(
       children: [
         const CircleAvatar(
@@ -48,6 +50,7 @@ class PasswordValidations extends StatelessWidget {
         Text(
           text,
           style: TextStyles.font13DarkBlueRegular.copyWith(
+            fontSize: dimension.width10 ,
             decoration: hasValidated ? TextDecoration.lineThrough : null,
             decorationColor: Colors.green,
             decorationThickness: 2,
