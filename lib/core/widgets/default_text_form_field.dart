@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:system/core/theming/colors.dart';
 
 class DefaultTextFormField extends StatelessWidget {
   DefaultTextFormField({
@@ -36,8 +37,12 @@ class DefaultTextFormField extends StatelessWidget {
     return TextFormField(
       obscureText: obscureText,
       controller: controller,
+
       decoration: InputDecoration(
         border: OutlineInputBorder(
+          borderSide: const BorderSide(
+            color: ColorsManager.secondaryColor,
+          ),
           borderRadius: BorderRadius.circular(8),
         ),
         focusedBorder: OutlineInputBorder(
@@ -46,14 +51,10 @@ class DefaultTextFormField extends StatelessWidget {
             color: Color(0xFF52734D),
           ),
         ),
-        // disabledBorder: OutlineInputBorder(
-        //
-        // ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8.0),
           borderSide: const BorderSide(
-            color: Color(0xffEDEEF1),
-            width: 2.0,
+            color: ColorsManager.secondaryColor,
           ),
         ),
         fillColor: color,

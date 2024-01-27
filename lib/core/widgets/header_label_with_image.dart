@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:system/core/helpers/dimensions.dart';
+import 'package:system/core/helpers/spacing.dart';
+import 'package:system/core/theming/colors.dart';
 import 'package:system/core/widgets/default_text.dart';
 
 class HeaderLabelWithImage extends StatelessWidget {
@@ -27,15 +29,16 @@ class HeaderLabelWithImage extends StatelessWidget {
             height: dimension.height10,
             child: Image(
               image: AssetImage(image),
-              color: Colors.black,
+              color: ColorsManager.lightBlack,
               width: dimension.reduce10,
             ),
           ),
+          horizontalSpace(dimension.width5),
           DefaultText(
             text: title,
             fontSize: dimension.reduce15,
-            color: Colors.black,
-            fontWeight: FontWeight.w400,
+            color: ColorsManager.lightBlack,
+            fontWeight: FontWeight.w600,
           ),
         ],
       ),
