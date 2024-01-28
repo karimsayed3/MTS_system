@@ -26,7 +26,6 @@ class _CompaniesScreenState extends State<CompaniesScreen> {
 
   @override
   Widget build(BuildContext context) {
-    var dimension = Dimensions(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
