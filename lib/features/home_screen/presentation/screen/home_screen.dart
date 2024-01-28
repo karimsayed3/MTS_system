@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:system/core/theming/colors.dart';
 import 'package:system/core/widgets/custom_navigation_bar_widget.dart';
 import 'package:system/features/companies_screen/presentation/screen/companies_screen.dart';
+import 'package:system/features/customers_screen/presentation/screen/customers_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -27,9 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
     Container(
       color: ColorsManager.lightGray,
     ),
-    Container(
-      color: ColorsManager.lighterGray,
-    ),
+    CustomersScreen(),
     Container(
       color: ColorsManager.lightBlack,
     ),

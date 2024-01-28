@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:system/features/customers_screen/presentation/screen/customers_screen.dart';
 import 'package:system/features/home_screen/presentation/screen/home_screen.dart';
 import 'package:system/features/login_screen/business_logic/login_cubit.dart';
 import 'package:system/features/login_screen/presentation/screen/login_screen.dart';
@@ -15,6 +16,9 @@ class AppRouter {
     case Routes.homeScreen:
       return MaterialPageRoute(
         builder: (_) => HomeScreen(),
+      );case Routes.customersScreen:
+      return MaterialPageRoute(
+        builder: (_) => CustomersScreen(),
       );
       case Routes.loginScreen:
         return MaterialPageRoute(
