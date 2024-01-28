@@ -53,18 +53,19 @@ class _CompaniesScreenDetailsState extends State<CompaniesScreenDetails> {
                     children: [
                       const CompaniesSearchWidget(),
                       DefaultButton(
-                          color: const Color(0xffebf5f6),
-                          padding: EdgeInsets.symmetric(
-                            horizontal: dimension.width15,
-                            vertical: dimension.height10,
-                          ),
-                          onPressed: () {},
-                          child: DefaultText(
-                            text: "+ اضافة شركة",
-                            color: const Color(0xFF007C92),
-                            fontSize: dimension.reduce20,
-                            fontWeight: FontWeight.w400,
-                          ))
+                        color: const Color(0xffebf5f6),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: dimension.width15,
+                          vertical: dimension.height10,
+                        ),
+                        onPressed: () {},
+                        child: DefaultText(
+                          text: "+ اضافة شركة",
+                          color: const Color(0xFF007C92),
+                          fontSize: dimension.reduce20,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
                     ],
                   ),
                   verticalSpace(dimension.height10),
