@@ -56,10 +56,13 @@ void main() async {
   windowManager.waitUntilReadyToShow().then((_) async {
 // Hide window title bar
 //     await windowManager.setTitleBarStyle(windowButtonVisibility: true,TitleBarStyle.normal);
-//     await windowManager.setFullScreen(true);
+//     await windowManager.setFullScreen(false);
     await windowManager.center();
-    // await windowManager.show();
-    // await windowManager.setSkipTaskbar(false);
+    // await windowManager.setMinimumSize(const Size(50, 50));
+    // await windowManager.setMaximumSize(const Size(250, 250));
+    await windowManager.show();
+    await windowManager.focus();
+    await windowManager.setSkipTaskbar(false);
   });
   // await testWindowFunctions();
   if (isMobile()) {

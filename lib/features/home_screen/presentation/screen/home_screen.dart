@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:system/core/theming/colors.dart';
 import 'package:system/core/widgets/custom_navigation_bar_widget.dart';
+import 'package:system/features/collectors_screen/presentation/screen/collectors_screen.dart';
 import 'package:system/features/companies_screen/presentation/screen/companies_screen.dart';
 import 'package:system/features/customers_screen/presentation/screen/customers_screen.dart';
 
@@ -25,9 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
       color: ColorsManager.secondaryColor,
     ),
     CompaniesScreen(),
-    Container(
-      color: ColorsManager.lightGray,
-    ),
+    CollectorsScreen(),
     CustomersScreen(),
     Container(
       color: ColorsManager.lightBlack,
