@@ -12,7 +12,12 @@ import 'core/theming/colors.dart';
 import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:desktop_window/desktop_window.dart';
-
+final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+List<Map<String, dynamic>> openedPages = [
+  {
+    Routes.loginScreen: null,
+  }
+];
 bool isMobile() {
   if (Platform.isIOS || Platform.isAndroid) {
     return true; // Running on iOS or Android (mobile)
@@ -54,7 +59,7 @@ void main() async {
   await windowManager.ensureInitialized();
 
   windowManager.waitUntilReadyToShow().then((_) async {
-// Hide window title bar
+    // Hide window title bar
 //     await windowManager.setTitleBarStyle(windowButtonVisibility: true,TitleBarStyle.normal);
 //     await windowManager.setFullScreen(false);
     await windowManager.center();
@@ -120,6 +125,7 @@ class DocApp2 extends StatelessWidget {
     // _setupWindow();
 
     return MaterialApp(
+      navigatorKey: navigatorKey,
       title: 'Doc App',
       theme: ThemeData(
         primaryColor: Colors.black,
@@ -129,7 +135,7 @@ class DocApp2 extends StatelessWidget {
       // home: const Scaffold(
       //   body: Center(child: Text("desktop app 2"),),
       // ),
-      initialRoute: Routes.homeScreen,
+      initialRoute: Routes.loginScreen,
       onGenerateRoute: appRouter.generateRoute,
     );
   }

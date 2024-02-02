@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:system/core/helpers/dimensions.dart';
+import 'package:system/core/routing/routers.dart';
 import 'package:system/core/theming/colors.dart';
 import 'package:system/core/widgets/default_text.dart';
 import 'package:system/features/home_screen/presentation/widgets/logo_widget.dart';
+import 'package:system/main.dart';
 
 class CustomNavigationBarWidget extends StatefulWidget {
   CustomNavigationBarWidget({super.key, required this.titles,required this.index, required this.body, required this.changePage});
@@ -67,10 +69,39 @@ class _CustomNavigationBarWidgetState extends State<CustomNavigationBarWidget> {
             }),
           ),
           CircleAvatar(
-            backgroundImage: AssetImage("assets/images/vodafone-logo.png"),
+            backgroundImage: AssetImage("assets/images/profile.png"),
           ),
         ],
       ),
     );
   }
+}
+
+
+
+void navigateToPage(String pageName, {dynamic arguments}) {
+  if (openedPages.last.keys.last != pageName) {
+    openedPages.add({pageName: arguments});
+    navigatorKey.currentState?.popAndPushNamed(pageName, arguments: arguments);
+    print(openedPages);
+  }
+}
+
+void onPop() {
+  if (openedPages.length > 1) {
+    navigatorKey.currentState?.pop();
+    openedPages.removeAt(openedPages.length - 1);
+    navigatorKey.currentState?.pushNamed(openedPages.last.keys.last,
+        arguments: openedPages.last.values.last);
+    print(openedPages);
+  }
+}
+
+void remove() {
+  openedPages = [
+    {
+      Routes.loginScreen: null,
+    }
+  ];
+  print(openedPages);
 }

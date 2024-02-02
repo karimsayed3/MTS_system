@@ -39,12 +39,13 @@ class _SubscribersScreenState extends State<SubscribersScreen> {
                   onPressed: () {},
                   child: DefaultText(
                     text: "العملاء",
-                    color: Color(0xFF007C92),
+                    color: const Color(0xFF007C92),
                     fontSize: dimension.reduce20,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
-                Icon(Icons.arrow_back_ios_new,color: ColorsManager.lightGray,size: dimension.width10),
+                Icon(Icons.arrow_back_ios_new,
+                    color: ColorsManager.lightGray, size: dimension.width10),
                 DefaultText(
                   text: 'المشتركين',
                   fontSize: dimension.reduce20,
@@ -91,12 +92,49 @@ class _SubscribersScreenState extends State<SubscribersScreen> {
                   verticalSpace(dimension.height10),
                   const SubscribersHeaderWidget(),
                   Expanded(
-                      child: ListView.builder(
-                    itemBuilder: (context, index) {
-                      return SubscribersCard();
-                    },
-                    itemCount: 10,
-                  ))
+                    child: ListView.builder(
+                      itemBuilder: (context, index) {
+                        return const SubscribersCard();
+                      },
+                      itemCount: 10,
+                    ),
+                  ),
+                  verticalSpace(dimension.height10),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: dimension.width10,),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+
+                          ],
+                        ),
+                        Container(
+                          padding: EdgeInsets.symmetric(horizontal: dimension.width10,vertical: dimension.height5),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Container(
+                                width: dimension.reduce15,
+                                height: dimension.reduce15,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Color(0xffA92087)
+                                ),
+                              ),
+                              horizontalSpace(dimension.width10),
+                              DefaultText(text: 'خط محول',color: Color(0xFF969AB0),
+                                fontSize: dimension.reduce20,
+                                fontWeight: FontWeight.w300,)
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
                 ],
               ),
             )

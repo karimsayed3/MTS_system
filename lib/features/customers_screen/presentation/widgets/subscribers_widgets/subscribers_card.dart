@@ -16,8 +16,8 @@ class SubscribersCard extends StatelessWidget {
       padding: EdgeInsets.only(
         left: MediaQuery.of(context).size.width * .01,
         right: MediaQuery.of(context).size.width * .01,
-        top: MediaQuery.of(context).size.height * .02,
-        bottom: MediaQuery.of(context).size.height * .02,
+        top: MediaQuery.of(context).size.height * .01,
+        bottom: MediaQuery.of(context).size.height * .01,
       ),
       decoration: const BoxDecoration(
           border: Border(bottom: BorderSide(color: ColorsManager.lightGray))),

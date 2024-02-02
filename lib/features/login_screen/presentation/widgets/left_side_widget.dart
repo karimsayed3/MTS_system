@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:system/core/helpers/dimensions.dart';
 import 'package:system/core/helpers/spacing.dart';
+import 'package:system/core/routing/routers.dart';
 import 'package:system/core/theming/colors.dart';
+import 'package:system/core/widgets/custom_navigation_bar_widget.dart';
 import 'package:system/core/widgets/default_text.dart';
 import 'package:system/core/widgets/default_text_form_field.dart';
 import 'package:system/features/login_screen/business_logic/login_cubit.dart';
@@ -53,6 +55,8 @@ class _LeftSideWidgetState extends State<LeftSideWidget> {
                 onPressed: () {
                   if(LoginCubit.get(context).formKey.currentState!.validate()){
                     print("object");
+                    navigateToPage(Routes.homeScreen);
+                    // Navigator.pushNamed(context, Routes.homeScreen);
                   }
                 },
                 child: DefaultText(
