@@ -135,7 +135,7 @@ class DocApp2 extends StatelessWidget {
       // home: const Scaffold(
       //   body: Center(child: Text("desktop app 2"),),
       // ),
-      initialRoute: Routes.loginScreen,
+      initialRoute: Routes.homeScreen,
       onGenerateRoute: appRouter.generateRoute,
     );
   }

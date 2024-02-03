@@ -8,7 +8,7 @@ import 'package:system/core/widgets/header_label_with_image.dart';
 import 'package:system/core/widgets/header_widget.dart';
 import 'package:system/core/widgets/home_widget.dart';
 import 'package:system/features/companies_screen/presentation/widgets/bunch_card.dart';
-import 'package:system/features/companies_screen/presentation/widgets/companies_card.dart';
+import 'package:system/features/collectors_screen/presentation/widgets/collectors_card.dart';
 import 'package:system/features/companies_screen/presentation/widgets/companies_search_widget.dart';
 
 import 'bunches_header_widget.dart';

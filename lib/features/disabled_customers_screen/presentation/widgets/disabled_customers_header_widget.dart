@@ -3,11 +3,11 @@ import 'package:system/core/helpers/dimensions.dart';
 import 'package:system/core/theming/colors.dart';
 import 'package:system/core/widgets/header_widget.dart';
 
-import '../../../../../core/helpers/spacing.dart';
-import '../../../../../core/widgets/header_label_with_image.dart';
+import '../../../../core/helpers/spacing.dart';
+import '../../../../core/widgets/header_label_with_image.dart';
 
-class SubscribersHeaderWidget extends StatelessWidget {
-  const SubscribersHeaderWidget({super.key});
+class DisabledCustomersHeaderWidget extends StatelessWidget {
+  const DisabledCustomersHeaderWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -55,9 +55,9 @@ class SubscribersHeaderWidget extends StatelessWidget {
           ),
           const Spacer(),
           HeaderLabelWithImage(
-            width: dimension.width80,
+            width: dimension.width100,
             image: "assets/images/header_image.png",
-            title: 'الحالة',
+            title: 'تاريخ التعطيل',
           ),const Spacer(),
           HeaderLabelWithImage(
             width: dimension.width130,
@@ -65,7 +65,7 @@ class SubscribersHeaderWidget extends StatelessWidget {
             title: 'الرصيد',
           ),
           const Spacer(),
-          horizontalSpace(dimension.width60)
+          horizontalSpace(dimension.width40)
         ],
       ),
     );
