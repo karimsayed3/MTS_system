@@ -26,29 +26,20 @@ bool isMobile() {
   }
 }
 
-Future testWindowFunctions() async {
-  // Size size = await DesktopWindow.getWindowSize();
-  // print(size);
-  // await DesktopWindow.setWindowSize(Size(500,500));
+// void testWindowFunctions() async {
+//   if (isMobile()) {
+//     if (kDebugMode) {
+//       print("Running on a mobile device.");
+//     }
+//   } else {
+//     if (kDebugMode) {
+//       print("Running on another platform (web, desktop, etc.).");
+//     }
+//   }
+// }
 
-  // await DesktopWindow.setMinWindowSize(Size(400,400));
-  // await DesktopWindow.setMaxWindowSize(Size(800,800));
-
-  // await DesktopWindow.resetMaxWindowSize();
-  // await DesktopWindow.toggleFullScreen();
-  // bool isFullScreen = await DesktopWindow.getFullScreen();
-  // await DesktopWindow.setFullScreen(true);
-  // await DesktopWindow.setFullScreen(false);
-}
-
-void _setupWindow() async {
-  // Set the initial window size
-  await DesktopWindow.setWindowSize(const Size(800, 600));
-
-  // Set the window to full screen
-  await DesktopWindow.setFullScreen(true);
-}
-
+double screenWidth = 0;
+double screenHeight = 0;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
@@ -63,8 +54,8 @@ void main() async {
 //     await windowManager.setTitleBarStyle(windowButtonVisibility: true,TitleBarStyle.normal);
 //     await windowManager.setFullScreen(false);
     await windowManager.center();
-    // await windowManager.setMinimumSize(const Size(50, 50));
-    // await windowManager.setMaximumSize(const Size(250, 250));
+    await windowManager.setMinimumSize(Size(screenWidth, screenHeight));
+    // await windowManager.setMaximumSize(const Size(1440, 1045));
     await windowManager.show();
     await windowManager.focus();
     await windowManager.setSkipTaskbar(false);
@@ -74,31 +65,31 @@ void main() async {
     if (kDebugMode) {
       print("Running on a mobile device.");
     }
-    runApp(DocApp(
+    runApp(MTSMobileApp(
       appRouter: AppRouter(),
     ));
   } else {
     if (kDebugMode) {
       print("Running on another platform (web, desktop, etc.).");
     }
-    runApp(DocApp2(
+    runApp(MTSDesktopApp(
       appRouter: AppRouter(),
     ));
   }
 }
 
-class DocApp extends StatelessWidget {
+class MTSMobileApp extends StatelessWidget {
   final AppRouter appRouter;
 
-  const DocApp({super.key, required this.appRouter});
+  const MTSMobileApp({super.key, required this.appRouter});
 
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-        designSize: const Size(375, 812),
+        designSize: const Size(412, 892),
         minTextAdapt: true,
         child: MaterialApp(
-          title: 'Doc App',
+          title: 'شركة لواتة',
           theme: ThemeData(
             primaryColor: ColorsManager.primaryColor,
             scaffoldBackgroundColor: Colors.white,
@@ -115,18 +106,19 @@ class DocApp extends StatelessWidget {
   }
 }
 
-class DocApp2 extends StatelessWidget {
+class MTSDesktopApp extends StatelessWidget {
   final AppRouter appRouter;
 
-  const DocApp2({super.key, required this.appRouter});
+  const MTSDesktopApp({super.key, required this.appRouter});
 
   @override
   Widget build(BuildContext context) {
     // _setupWindow();
-
+    screenWidth = MediaQuery.of(context).size.width;
+    screenHeight = MediaQuery.of(context).size.height;
     return MaterialApp(
       navigatorKey: navigatorKey,
-      title: 'Doc App',
+      title: 'شركة لواتة',
       theme: ThemeData(
         primaryColor: Colors.black,
         scaffoldBackgroundColor: Colors.white,
