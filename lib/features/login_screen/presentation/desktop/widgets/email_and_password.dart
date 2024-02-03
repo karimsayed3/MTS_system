@@ -4,11 +4,11 @@ import 'package:system/core/helpers/dimensions.dart';
 import 'package:system/core/helpers/spacing.dart';
 import 'package:system/core/widgets/default_text_form_field.dart';
 import 'package:system/features/login_screen/business_logic/login_cubit.dart';
-import 'package:system/features/login_screen/presentation/widgets/password_validations.dart';
+import 'package:system/features/login_screen/presentation/desktop/widgets/password_validations.dart';
 
-import '../../../../core/helpers/app_regex.dart';
-import '../../../../core/theming/colors.dart';
-import '../../../../core/theming/styles.dart';
+import '../../../../../core/helpers/app_regex.dart';
+import '../../../../../core/theming/colors.dart';
+import '../../../../../core/theming/styles.dart';
 
 class EmailAndPassword extends StatefulWidget {
   const EmailAndPassword({super.key});
@@ -76,7 +76,7 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
               if (value == null ||
                   value.isEmpty ||
                   !AppRegex.isEmailValid(value)) {
-                return 'Please enter a valid email';
+                return 'من فضلك ادخل بريد الكترونى صحيح';
               }
             },
           ),
@@ -107,7 +107,7 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
                 ),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return 'Please enter a valid password';
+                    return 'من فضلك ادخل كلمة المرور';
                   }
                 },
               );

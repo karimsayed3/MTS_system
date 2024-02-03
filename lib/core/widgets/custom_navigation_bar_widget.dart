@@ -100,7 +100,7 @@ void onPop() {
 void remove() {
   openedPages = [
     {
-      Routes.loginScreen: null,
+      Routes.loginScreenDesktop: null,
     }
   ];
   print(openedPages);

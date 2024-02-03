@@ -15,7 +15,7 @@ import 'package:desktop_window/desktop_window.dart';
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 List<Map<String, dynamic>> openedPages = [
   {
-    Routes.loginScreen: null,
+    Routes.loginScreenDesktop: null,
   }
 ];
 bool isMobile() {
@@ -47,19 +47,8 @@ void main() async {
   // To fix texts being hidden bug in flutter_screenutil in release mode.
   await ScreenUtil.ensureScreenSize();
   // await WindowManager.instance.setFullScreen(true);
-  await windowManager.ensureInitialized();
 
-  windowManager.waitUntilReadyToShow().then((_) async {
-    // Hide window title bar
-//     await windowManager.setTitleBarStyle(windowButtonVisibility: true,TitleBarStyle.normal);
-//     await windowManager.setFullScreen(false);
-    await windowManager.center();
-    await windowManager.setMinimumSize(Size(screenWidth, screenHeight));
-    // await windowManager.setMaximumSize(const Size(1440, 1045));
-    await windowManager.show();
-    await windowManager.focus();
-    await windowManager.setSkipTaskbar(false);
-  });
+
   // await testWindowFunctions();
   if (isMobile()) {
     if (kDebugMode) {
@@ -69,6 +58,19 @@ void main() async {
       appRouter: AppRouter(),
     ));
   } else {
+    await windowManager.ensureInitialized();
+
+    windowManager.waitUntilReadyToShow().then((_) async {
+      // Hide window title bar
+//     await windowManager.setTitleBarStyle(windowButtonVisibility: true,TitleBarStyle.normal);
+//     await windowManager.setFullScreen(false);
+      await windowManager.center();
+      await windowManager.setMinimumSize(Size(screenWidth, screenHeight));
+      // await windowManager.setMaximumSize(const Size(1440, 1045));
+      await windowManager.show();
+      await windowManager.focus();
+      await windowManager.setSkipTaskbar(false);
+    });
     if (kDebugMode) {
       print("Running on another platform (web, desktop, etc.).");
     }
@@ -89,6 +91,7 @@ class MTSMobileApp extends StatelessWidget {
         designSize: const Size(412, 892),
         minTextAdapt: true,
         child: MaterialApp(
+          navigatorKey: navigatorKey,
           title: 'شركة لواتة',
           theme: ThemeData(
             primaryColor: ColorsManager.primaryColor,
@@ -100,8 +103,8 @@ class MTSMobileApp extends StatelessWidget {
               child: Text("Mobile app 2"),
             ),
           ),
-          // initialRoute: Routes.onBoardingScreen,
-          // onGenerateRoute: appRouter.generateRoute,
+          initialRoute: Routes.splashScreen,
+          onGenerateRoute: appRouter.generateRoute,
         ));
   }
 }

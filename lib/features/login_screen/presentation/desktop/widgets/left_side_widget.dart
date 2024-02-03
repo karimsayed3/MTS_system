@@ -8,12 +8,12 @@ import 'package:system/core/widgets/custom_navigation_bar_widget.dart';
 import 'package:system/core/widgets/default_text.dart';
 import 'package:system/core/widgets/default_text_form_field.dart';
 import 'package:system/features/login_screen/business_logic/login_cubit.dart';
-import 'package:system/features/login_screen/presentation/widgets/email_and_password.dart';
-import 'package:system/features/login_screen/presentation/widgets/password_validations.dart';
+import 'package:system/features/login_screen/presentation/desktop/widgets/email_and_password.dart';
+import 'package:system/features/login_screen/presentation/desktop/widgets/password_validations.dart';
 
-import '../../../../core/helpers/app_regex.dart';
-import '../../../../core/theming/styles.dart';
-import '../../../../core/widgets/default_button.dart';
+import '../../../../../core/helpers/app_regex.dart';
+import '../../../../../core/theming/styles.dart';
+import '../../../../../core/widgets/default_button.dart';
 
 class LeftSideWidget extends StatefulWidget {
   LeftSideWidget({super.key});
@@ -63,7 +63,7 @@ class _LeftSideWidgetState extends State<LeftSideWidget> {
                   text: "تسجيل الدخول",
                   color: ColorsManager.lighterGray,
                   fontSize: dimension.reduce20,
-                  fontFamily: 'DIN Next LT W23',
+                  fontFamily: 'din',
                   fontWeight: FontWeight.w400,
                 ),
               ),

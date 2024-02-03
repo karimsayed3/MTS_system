@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:system/features/login_screen/presentation/widgets/right_side_widget.dart';
+import 'package:system/features/login_screen/presentation/desktop/widgets/right_side_widget.dart';
 
 import '../widgets/left_side_widget.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class LoginScreenDesktop extends StatelessWidget {
+  const LoginScreenDesktop({super.key});
 
   @override
   Widget build(BuildContext context) {
