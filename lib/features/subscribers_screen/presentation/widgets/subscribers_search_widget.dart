@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:system/core/widgets/filter_widget.dart';
 
 import '../../../../../core/helpers/dimensions.dart';
 import '../../../../../core/helpers/spacing.dart';
-import '../../../../../core/theming/colors.dart';
 import '../../../../../core/widgets/custom_search_widget.dart';
 
 class SubscribersSearchWidget extends StatelessWidget {
@@ -20,13 +20,10 @@ class SubscribersSearchWidget extends StatelessWidget {
           searchController: TextEditingController(),
         ),
         horizontalSpace(dimension.width10),
-        Container(
-          padding: EdgeInsets.symmetric(horizontal: dimension.width10,vertical: dimension.height10),
-          decoration: ShapeDecoration(
-            color: ColorsManager.lighterGray,
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-          ),
-          child: SvgPicture.asset("assets/icons/filter.svg"),
+        FilterWidget(
+          onTap: () {
+
+          },
         ),
       ],
     );

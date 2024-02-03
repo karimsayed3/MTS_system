@@ -6,9 +6,8 @@ import 'package:system/core/theming/colors.dart';
 import 'package:system/core/widgets/default_button.dart';
 import 'package:system/core/widgets/default_text.dart';
 
-class CollectorsCard extends StatelessWidget {
-  const CollectorsCard({super.key});
-
+class CompaniesCard extends StatelessWidget {
+  const CompaniesCard({super.key});
   @override
   Widget build(BuildContext context) {
     var dimension = Dimensions(context);
@@ -27,7 +26,7 @@ class CollectorsCard extends StatelessWidget {
           SizedBox(
             width: dimension.width150,
             child: DefaultText(
-              text: 'كريم سيد ابراهيم عبدالتواب',
+              text: 'شركة فودافون كفرالشيخ',
               color: ColorsManager.darkBlack,
               fontSize: dimension.width10,
               fontWeight: FontWeight.w400,
@@ -37,7 +36,7 @@ class CollectorsCard extends StatelessWidget {
           SizedBox(
             width: dimension.width130,
             child: DefaultText(
-              text: 'abokhadiga6@gmail.com',
+              text: '04/18/2020 09:42:00AM',
               color: ColorsManager.secondaryColor,
               fontSize: dimension.width10,
               fontWeight: FontWeight.w400,
@@ -45,63 +44,44 @@ class CollectorsCard extends StatelessWidget {
           ),
           const Spacer(),
           SizedBox(
-            width: dimension.width60,
+            width: dimension.width100,
             child: Row(
               children: [
-                DefaultText(
-                  text: ' L.E ',
-                  color: ColorsManager.secondaryColor,
-                  fontSize: dimension.width10,
-                  fontWeight: FontWeight.w400,
+                Container(
+                  width: dimension.width50,
+                  padding: EdgeInsets.symmetric(
+                      horizontal: dimension.width10,
+                      vertical: dimension.height5),
+                  decoration: BoxDecoration(
+                      color: Color(0x0F007C92),
+                      borderRadius: BorderRadius.circular(10)),
+                  child: Center(
+                    child: DefaultText(
+                      text: '10',
+                      color: ColorsManager.secondaryColor,
+                      fontSize: dimension.width10,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
                 ),
-                DefaultText(
-                  text: '10',
-                  color: ColorsManager.secondaryColor,
-                  fontSize: dimension.width10,
-                  fontWeight: FontWeight.w400,
+                SizedBox(
+                  width: dimension.width30,
                 ),
               ],
             ),
-          ),const Spacer(),
-          SizedBox(
-            width: dimension.width60,
-            child: DefaultText(
-              text: '20',
-              color: Color(0xffFFA800),
-              fontSize: dimension.width10,
-              fontWeight: FontWeight.w400,
-            ),
-          ),const Spacer(),
-          SizedBox(
-            width: dimension.width60,
-            child: DefaultText(
-              text: '50',
-              color: ColorsManager.secondaryColor,
-              fontSize: dimension.width10,
-              fontWeight: FontWeight.w400,
-            ),
-          ),const Spacer(),
-          SizedBox(
-            width: dimension.width60,
-            child: DefaultText(
-              text: '70',
-              color: ColorsManager.darkBlack,
-              fontSize: dimension.width10,
-              fontWeight: FontWeight.w400,
-            ),
           ),
           const Spacer(),
           SizedBox(
-            width: dimension.width150,
+            width: dimension.width350,
             child: Row(
               children: [
                 Expanded(
                   child: DefaultButton(
-                    color:  Color(0xFFFFF4DE),
+                    color: Color(0xffebf5f6),
                     onPressed: () {},
                     child: DefaultText(
-                      text: 'تصفير',
-                      color: Color(0xFFFFA800),
+                      text: 'اضافة باقة للشركة',
+                      color: Color(0xFF007C92),
                       fontSize: dimension.width10,
                       fontWeight: FontWeight.w500,
                     ),
@@ -110,13 +90,11 @@ class CollectorsCard extends StatelessWidget {
                 horizontalSpace(dimension.width10),
                 Expanded(
                   child: DefaultButton(
-                    color:  Color(0xffebf5f6),
+                    color: Color(0xfffbedee),
                     onPressed: () {},
                     child: DefaultText(
-                      text: 'اضافة رصيد',
-                      color: ColorsManager.secondaryColor,
-
-                      // color: Color(0xFFCC232A),
+                      text: 'حذف قيمة باقة',
+                      color: Color(0xFFCC232A),
                       fontSize: dimension.width10,
                       fontWeight: FontWeight.w500,
                     ),

@@ -6,8 +6,8 @@ import 'package:system/core/theming/colors.dart';
 import 'package:system/core/widgets/default_button.dart';
 import 'package:system/core/widgets/default_text.dart';
 
-class CollectorsCard extends StatelessWidget {
-  const CollectorsCard({super.key});
+class LateCustomersCard extends StatelessWidget {
+  const LateCustomersCard({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,16 +16,16 @@ class CollectorsCard extends StatelessWidget {
       padding: EdgeInsets.only(
         left: MediaQuery.of(context).size.width * .01,
         right: MediaQuery.of(context).size.width * .01,
-        top: MediaQuery.of(context).size.height * .02,
-        bottom: MediaQuery.of(context).size.height * .02,
+        top: MediaQuery.of(context).size.height * .01,
+        bottom: MediaQuery.of(context).size.height * .01,
       ),
       decoration: const BoxDecoration(
           border: Border(bottom: BorderSide(color: ColorsManager.lightGray))),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(
-            width: dimension.width150,
+            width: dimension.width130,
             child: DefaultText(
               text: 'كريم سيد ابراهيم عبدالتواب',
               color: ColorsManager.darkBlack,
@@ -35,9 +35,9 @@ class CollectorsCard extends StatelessWidget {
           ),
           const Spacer(),
           SizedBox(
-            width: dimension.width130,
+            width: dimension.width80,
             child: DefaultText(
-              text: 'abokhadiga6@gmail.com',
+              text: '01156788394',
               color: ColorsManager.secondaryColor,
               fontSize: dimension.width10,
               fontWeight: FontWeight.w400,
@@ -45,46 +45,9 @@ class CollectorsCard extends StatelessWidget {
           ),
           const Spacer(),
           SizedBox(
-            width: dimension.width60,
-            child: Row(
-              children: [
-                DefaultText(
-                  text: ' L.E ',
-                  color: ColorsManager.secondaryColor,
-                  fontSize: dimension.width10,
-                  fontWeight: FontWeight.w400,
-                ),
-                DefaultText(
-                  text: '10',
-                  color: ColorsManager.secondaryColor,
-                  fontSize: dimension.width10,
-                  fontWeight: FontWeight.w400,
-                ),
-              ],
-            ),
-          ),const Spacer(),
-          SizedBox(
-            width: dimension.width60,
+            width: dimension.width100,
             child: DefaultText(
-              text: '20',
-              color: Color(0xffFFA800),
-              fontSize: dimension.width10,
-              fontWeight: FontWeight.w400,
-            ),
-          ),const Spacer(),
-          SizedBox(
-            width: dimension.width60,
-            child: DefaultText(
-              text: '50',
-              color: ColorsManager.secondaryColor,
-              fontSize: dimension.width10,
-              fontWeight: FontWeight.w400,
-            ),
-          ),const Spacer(),
-          SizedBox(
-            width: dimension.width60,
-            child: DefaultText(
-              text: '70',
+              text: 'ايمن يوسف ايمن',
               color: ColorsManager.darkBlack,
               fontSize: dimension.width10,
               fontWeight: FontWeight.w400,
@@ -92,7 +55,75 @@ class CollectorsCard extends StatelessWidget {
           ),
           const Spacer(),
           SizedBox(
-            width: dimension.width150,
+            width: dimension.width130,
+            child: DefaultText(
+              text: 'كريم سيد ابراهيم',
+              color: ColorsManager.darkBlack,
+              fontSize: dimension.width10,
+              fontWeight: FontWeight.w400,
+            ),
+          ),
+          const Spacer(),
+          SizedBox(
+            width: dimension.width80,
+            child: DefaultText(
+              text: '04/18/2020',
+              color: ColorsManager.secondaryColor,
+              fontSize: dimension.width10,
+              fontWeight: FontWeight.w400,
+            ),
+          ),
+          const Spacer(),
+          SizedBox(
+            width: dimension.width100,
+            child: Row(
+              children: [
+                Container(
+                  width: dimension.width80,
+                  padding: EdgeInsets.symmetric(
+                      horizontal: dimension.width10,
+                      vertical: dimension.height5),
+                  decoration: BoxDecoration(
+                      color: Color(0x0F007C92),
+                      borderRadius: BorderRadius.circular(10)),
+                  child: Center(
+                    child: DefaultText(
+                      text: 'Super Flix 30',
+                      color: ColorsManager.secondaryColor,
+                      fontSize: dimension.width10,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  width: dimension.width5,
+                ),
+              ],
+            ),
+          ),
+          const Spacer(),
+          SizedBox(
+            width: dimension.width80,
+            child: Row(
+              children: [
+                DefaultText(
+                  text: ' L.E',
+                  color: Color(0xFFCC232A),
+                  fontSize: dimension.width10,
+                  fontWeight: FontWeight.w500,
+                ),
+                DefaultText(
+                  text: ' 15-',
+                  color: Color(0xFFCC232A),
+                  fontSize: dimension.width10,
+                  fontWeight: FontWeight.w500,
+                ),
+              ],
+            ),
+          ),
+          const Spacer(),
+          SizedBox(
+            width: dimension.width200,
             child: Row(
               children: [
                 Expanded(
@@ -125,7 +156,7 @@ class CollectorsCard extends StatelessWidget {
                 horizontalSpace(dimension.width5),
                 InkWell(
                     onTap: () {},
-                    child: SvgPicture.asset('assets/icons/more.svg'))
+                    child: SvgPicture.asset('assets/icons/more.svg')),
               ],
             ),
           ),
