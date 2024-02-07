@@ -3,8 +3,8 @@ import 'package:system/core/helpers/dimensions.dart';
 import 'package:system/core/theming/colors.dart';
 import 'package:system/core/widgets/header_widget.dart';
 
-import '../../../../core/helpers/spacing.dart';
-import '../../../../core/widgets/header_label_with_image_desktop.dart';
+import '../../../../../core/helpers/spacing.dart';
+import '../../../../../core/widgets/header_label_with_image_desktop.dart';
 
 class DisabledCustomersHeaderWidget extends StatelessWidget {
   const DisabledCustomersHeaderWidget({super.key});

@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:system/core/widgets/default_text.dart';
 import 'package:system/features/companies_screen/presentation/mobile/screen/bunch_screen_mobile.dart';
 import 'package:system/features/companies_screen/presentation/mobile/screen/companies_screen_mobile.dart';
+import 'package:system/features/disabled_customers_screen/presentation/mobile/screen/disabled_customers_screen_mobile.dart';
 import 'package:system/features/late_customers_screen/presentation/mobile/screen/late_customers_screen_mobile.dart';
 import 'package:system/features/subscribers_screen/presentation/mobile/screen/subscribers_screen_mobile.dart';
 
@@ -29,7 +30,7 @@ class _HomeScreenMobileState extends State<HomeScreenMobile> {
             height: double.infinity,
             color: Colors.blueAccent,
           ),
-          body:const LateCustomersScreenMobile(),
+          body:const DisabledCustomersScreenMobile(),
           bottomNavigationBar: Directionality(
             textDirection: TextDirection.ltr,
             child: BottomNavigationBar(

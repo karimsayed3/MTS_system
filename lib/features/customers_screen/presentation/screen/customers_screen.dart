@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:system/features/companies_screen/presentation/desktop/widgets/companies_nav_bar_widget.dart';
-import 'package:system/features/disabled_customers_screen/presentation/screen/disabled_customers_screen.dart';
+import 'package:system/features/disabled_customers_screen/presentation/desktop/screen/disabled_customers_screen.dart';
 import 'package:system/features/late_customers_screen/presentation/desktop/screen/late_customers_screen.dart';
 import 'package:system/features/subscribers_screen/presentation/desktop/screen/subscribers_screen.dart';
 import 'package:system/features/withdrawn_customers_screen/presentation/screen/withdrawn_customers_screen.dart';
@@ -19,7 +19,7 @@ import '../../../companies_screen/presentation/desktop/widgets/companies_search_
 import '../widgets/customers_nav_bar_widget.dart';
 
 class CustomersScreen extends StatefulWidget {
-  CustomersScreen({super.key});
+  const CustomersScreen({super.key});
 
   @override
   State<CustomersScreen> createState() => _CustomersScreenState();
