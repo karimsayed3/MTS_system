@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:system/core/helpers/spacing.dart';
 import 'package:system/core/theming/colors.dart';
 import 'package:system/core/widgets/button_with_text_and_image.dart';
 import 'package:system/core/widgets/custom_search_widget.dart';
 import 'package:system/core/widgets/title_of_screen_with_logo_widget.dart';
-import 'package:system/features/companies_screen/presentation/mobile/widgets/campanies_card_for_mobile.dart';
-import 'package:system/features/companies_screen/presentation/mobile/widgets/companies_header_widget_mobile.dart';
 
-class CompaniesScreenMobile extends StatelessWidget {
-  const CompaniesScreenMobile({super.key});
+import '../widgets/bunch_card_for_mobile.dart';
+import '../widgets/bunch_header_widget_mobile.dart';
+
+class BunchScreenMobile extends StatelessWidget {
+  const BunchScreenMobile({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,15 +29,15 @@ class CompaniesScreenMobile extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     const TitleForScreenWithWidget(
-                      title: "الشركات",
+                      title: "الباقات",
                     ),
                     ButtonWithTextAndImageWidget(
                       onPressed: () {},
                       color: const Color(0xffebf5f6),
-                      text: "+ اضافة شركة",
+                      text: "+ اضافة باقة",
                       fontSize: 16.sp,
                       padding:
-                          EdgeInsets.symmetric(horizontal: 20.w, vertical: 5.h),
+                      EdgeInsets.symmetric(horizontal: 20.w, vertical: 5.h),
                       // image: "assets/images/plus.png",
                     ),
                   ],
@@ -56,11 +55,12 @@ class CompaniesScreenMobile extends StatelessWidget {
               Expanded(
                 child: Column(
                   children: [
-                    const CompaniesHeaderWidgetMobile(),
+                    const BunchHeaderWidgetMobile(),
                     Expanded(
                       child: ListView.builder(
                           itemBuilder: (context, index) {
-                            return const CompaniesCardWidgetMobile();
+                            return const BunchCardWidgetMobile();
+                            // return const SizedBox.shrink();
                           },
                           itemCount: 20),
                     ),
