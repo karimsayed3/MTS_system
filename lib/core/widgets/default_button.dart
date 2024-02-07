@@ -21,7 +21,7 @@ class DefaultButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        padding: padding?? EdgeInsets.symmetric(vertical: 15, horizontal: 10),
+        padding: padding?? const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
         backgroundColor: color?? ColorsManager.secondaryColor,
         shape:shape?? RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),

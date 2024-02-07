@@ -1,5 +1,6 @@
 import 'package:autocomplete_textfield/autocomplete_textfield.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:window_manager/window_manager.dart';
 import 'core/di/dependency_injection.dart';
@@ -57,7 +58,9 @@ void main() async {
     runApp(MTSMobileApp(
       appRouter: AppRouter(),
     ));
-  } else {
+  }
+  else
+  {
     await windowManager.ensureInitialized();
 
     windowManager.waitUntilReadyToShow().then((_) async {
@@ -87,6 +90,13 @@ class MTSMobileApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+      statusBarColor: ColorsManager.backgroundColor,
+      statusBarIconBrightness: Brightness.dark,
+      systemNavigationBarIconBrightness: Brightness.dark,
+      systemNavigationBarDividerColor: ColorsManager.backgroundColor,
+      systemNavigationBarColor: ColorsManager.backgroundColor,
+    ));
     return ScreenUtilInit(
         designSize: const Size(412, 892),
         minTextAdapt: true,
@@ -96,6 +106,7 @@ class MTSMobileApp extends StatelessWidget {
           theme: ThemeData(
             primaryColor: ColorsManager.primaryColor,
             scaffoldBackgroundColor: Colors.white,
+            useMaterial3: true,
           ),
           debugShowCheckedModeBanner: false,
           home: const Scaffold(
@@ -103,7 +114,7 @@ class MTSMobileApp extends StatelessWidget {
               child: Text("Mobile app 2"),
             ),
           ),
-          initialRoute: Routes.splashScreen,
+          initialRoute: Routes.homeMobileScreen,
           onGenerateRoute: appRouter.generateRoute,
         ));
   }
@@ -130,7 +141,7 @@ class MTSDesktopApp extends StatelessWidget {
       // home: const Scaffold(
       //   body: Center(child: Text("desktop app 2"),),
       // ),
-      initialRoute: Routes.homeScreen,
+      initialRoute: Routes.homeDesktopScreen,
       onGenerateRoute: appRouter.generateRoute,
     );
   }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:system/core/helpers/dimensions.dart';
 
 import '../../../../core/helpers/spacing.dart';
-import '../../../companies_screen/presentation/widgets/nav_card_widget.dart';
+import '../../../companies_screen/presentation/desktop/widgets/nav_card_widget.dart';
 
 class CustomersNavBarWidget extends StatefulWidget {
    CustomersNavBarWidget({super.key,required this.index, required this.onTapSubscribers, required this.onTapLatecomers, required this.onTapDisabled, required this.onTapWithdrawn});

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:system/features/customers_screen/presentation/screen/customers_screen.dart';
-import 'package:system/features/home_screen/presentation/screen/home_screen.dart';
+import 'package:system/features/home_screen/presentation/desktop/screen/home_screen_desktop.dart';
+import 'package:system/features/home_screen/presentation/mobile/screen/home_screen_mobile.dart';
 import 'package:system/features/login_screen/business_logic/login_cubit.dart';
 import 'package:system/features/login_screen/presentation/desktop/screen/login_screen.dart';
 import 'package:system/features/login_screen/presentation/mobile/screen/login_screen_mobile.dart';
@@ -15,9 +16,12 @@ class AppRouter {
     final arguments = settings.arguments;
 
     switch (settings.name) {
-      case Routes.homeScreen:
+      case Routes.homeDesktopScreen:
         return MaterialPageRoute(
-          builder: (_) => HomeScreen(),
+          builder: (_) => const HomeDesktopScreen(),
+        );case Routes.homeMobileScreen:
+        return MaterialPageRoute(
+          builder: (_) => const HomeScreenMobile(),
         );
       case Routes.customersScreen:
         return MaterialPageRoute(
@@ -25,7 +29,7 @@ class AppRouter {
         );
       case Routes.splashScreen:
         return MaterialPageRoute(
-          builder: (_) => SplashScreen(),
+          builder: (_) => const SplashScreen(),
         );
       case Routes.loginScreenDesktop:
         return MaterialPageRoute(

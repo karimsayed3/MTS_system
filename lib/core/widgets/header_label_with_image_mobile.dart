@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:system/core/helpers/dimensions.dart';
 import 'package:system/core/helpers/spacing.dart';
 import 'package:system/core/theming/colors.dart';
 import 'package:system/core/widgets/default_text.dart';
 
-class HeaderLabelWithImage extends StatelessWidget {
-  const HeaderLabelWithImage(
+class HeaderLabelWithImageMobile extends StatelessWidget {
+  const HeaderLabelWithImageMobile(
       {super.key,
         required this.width,
         required this.image,
@@ -19,26 +20,25 @@ class HeaderLabelWithImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var dimension = Dimensions(context);
     return SizedBox(
       width: width,
       child: Row(
         children: [
           SizedBox(
-            width: dimension.width10,
-            height: dimension.height10,
+            width: 20.w,
+            height: 15.h,
             child: Image(
               image: AssetImage(image),
-              color: ColorsManager.lightBlack,
-              width: dimension.reduce10,
+              color: ColorsManager.lightGray,
+              width: 15.w,
             ),
           ),
-          horizontalSpace(dimension.width5),
+          horizontalSpace(5.w),
           DefaultText(
             text: title,
-            fontSize: dimension.reduce15,
-            color: ColorsManager.lightBlack,
-            fontWeight: FontWeight.w600,
+            fontSize: 14.sp,
+            color: ColorsManager.lightGray,
+            fontWeight: FontWeight.w400,
           ),
         ],
       ),

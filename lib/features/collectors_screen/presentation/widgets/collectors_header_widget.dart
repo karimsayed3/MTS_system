@@ -4,7 +4,7 @@ import 'package:system/core/theming/colors.dart';
 import 'package:system/core/widgets/header_widget.dart';
 
 import '../../../../core/helpers/spacing.dart';
-import '../../../../core/widgets/header_label_with_image.dart';
+import '../../../../core/widgets/header_label_with_image_desktop.dart';
 
 class CollectorsHeaderWidget extends StatelessWidget {
   const CollectorsHeaderWidget({super.key});
@@ -18,34 +18,34 @@ class CollectorsHeaderWidget extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          HeaderLabelWithImage(
+          HeaderLabelWithImageDesktop(
             width: dimension.width150,
             image: "assets/images/header_image.png",
             title: 'اسم المحصل',
           ),
           const Spacer(),
-          HeaderLabelWithImage(
+          HeaderLabelWithImageDesktop(
             width: dimension.width130,
             image: "assets/images/header_image.png",
             title: 'البريد الالكترونى',
           ),
           const Spacer(),
-          HeaderLabelWithImage(
+          HeaderLabelWithImageDesktop(
             width: dimension.width60,
             image: "assets/images/header_image.png",
             title: 'الحساب',
           ),const Spacer(),
-          HeaderLabelWithImage(
+          HeaderLabelWithImageDesktop(
             width: dimension.width60,
             image: "assets/images/header_image.png",
             title: 'نقدى',
           ),const Spacer(),
-          HeaderLabelWithImage(
+          HeaderLabelWithImageDesktop(
             width: dimension.width60,
             image: "assets/images/header_image.png",
             title: 'كاش',
           ),const Spacer(),
-          HeaderLabelWithImage(
+          HeaderLabelWithImageDesktop(
             width: dimension.width60,
             image: "assets/images/header_image.png",
             title: 'الاحمالى',

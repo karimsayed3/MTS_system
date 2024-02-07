@@ -59,7 +59,7 @@ class _LoginScreenMobileState extends State<LoginScreenMobile> {
                           onPressed: () {
                             if(LoginCubit.get(context).formKey.currentState!.validate()){
                               print("object");
-                              // navigateToPage(Routes.homeScreen);
+                              navigateToPage(Routes.homeMobileScreen);
                               // Navigator.pushNamed(context, Routes.homeScreen);
                             }
                           },
