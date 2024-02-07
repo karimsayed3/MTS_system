@@ -12,7 +12,7 @@ import '../../../../core/widgets/default_button.dart';
 import '../../../../core/widgets/default_text.dart';
 import '../../../../core/widgets/home_widget.dart';
 import '../../../companies_screen/presentation/desktop/widgets/bunch_screen_details.dart';
-import '../../../collectors_screen/presentation/widgets/collectors_card.dart';
+import '../../../collectors_screen/presentation/desktop/widgets/collectors_card.dart';
 import '../../../companies_screen/presentation/desktop/widgets/companies_header_widget.dart';
 import '../../../companies_screen/presentation/desktop/widgets/companies_screen_details.dart';
 import '../../../companies_screen/presentation/desktop/widgets/companies_search_widget.dart';
