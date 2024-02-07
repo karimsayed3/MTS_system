@@ -9,9 +9,9 @@ import 'package:system/core/widgets/screen_title_widget.dart';
 import 'package:system/core/widgets/search_with_filter_widget.dart';
 import 'package:system/features/disabled_customers_screen/presentation/widgets/disabled_customers_card.dart';
 import 'package:system/features/disabled_customers_screen/presentation/widgets/disabled_customers_header_widget.dart';
-import 'package:system/features/late_customers_screen/presentation/widgets/Information_widget.dart';
-import 'package:system/features/late_customers_screen/presentation/widgets/late_customers_header_widget.dart';
-import 'package:system/features/late_customers_screen/presentation/widgets/late_customrers_card.dart';
+import 'package:system/features/late_customers_screen/presentation/desktop/widgets/Information_widget.dart';
+import 'package:system/features/late_customers_screen/presentation/desktop/widgets/late_customers_header_widget.dart';
+import 'package:system/features/late_customers_screen/presentation/desktop/widgets/late_customrers_card.dart';
 
 class DisabledCustomersScreen extends StatelessWidget {
    DisabledCustomersScreen({super.key});

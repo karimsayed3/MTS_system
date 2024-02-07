@@ -7,9 +7,9 @@ import 'package:system/core/widgets/home_widget.dart';
 import 'package:system/core/widgets/info_widget.dart';
 import 'package:system/core/widgets/screen_title_widget.dart';
 import 'package:system/core/widgets/search_with_filter_widget.dart';
-import 'package:system/features/late_customers_screen/presentation/widgets/Information_widget.dart';
-import 'package:system/features/late_customers_screen/presentation/widgets/late_customers_header_widget.dart';
-import 'package:system/features/late_customers_screen/presentation/widgets/late_customrers_card.dart';
+import 'package:system/features/late_customers_screen/presentation/desktop/widgets/Information_widget.dart';
+import 'package:system/features/late_customers_screen/presentation/desktop/widgets/late_customers_header_widget.dart';
+import 'package:system/features/late_customers_screen/presentation/desktop/widgets/late_customrers_card.dart';
 
 class LateCustomersScreen extends StatelessWidget {
   LateCustomersScreen({super.key});
