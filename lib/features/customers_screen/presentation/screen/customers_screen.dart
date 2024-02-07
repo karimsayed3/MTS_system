@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:system/features/companies_screen/presentation/widgets/companies_nav_bar_widget.dart';
+import 'package:system/features/companies_screen/presentation/desktop/widgets/companies_nav_bar_widget.dart';
 import 'package:system/features/disabled_customers_screen/presentation/screen/disabled_customers_screen.dart';
 import 'package:system/features/late_customers_screen/presentation/screen/late_customers_screen.dart';
 import 'package:system/features/subscribers_screen/presentation/screen/subscribers_screen.dart';
@@ -11,11 +11,11 @@ import '../../../../core/theming/colors.dart';
 import '../../../../core/widgets/default_button.dart';
 import '../../../../core/widgets/default_text.dart';
 import '../../../../core/widgets/home_widget.dart';
-import '../../../companies_screen/presentation/widgets/bunch_screen_details.dart';
+import '../../../companies_screen/presentation/desktop/widgets/bunch_screen_details.dart';
 import '../../../collectors_screen/presentation/widgets/collectors_card.dart';
-import '../../../companies_screen/presentation/widgets/companies_header_widget.dart';
-import '../../../companies_screen/presentation/widgets/companies_screen_details.dart';
-import '../../../companies_screen/presentation/widgets/companies_search_widget.dart';
+import '../../../companies_screen/presentation/desktop/widgets/companies_header_widget.dart';
+import '../../../companies_screen/presentation/desktop/widgets/companies_screen_details.dart';
+import '../../../companies_screen/presentation/desktop/widgets/companies_search_widget.dart';
 import '../widgets/customers_nav_bar_widget.dart';
 
 class CustomersScreen extends StatefulWidget {

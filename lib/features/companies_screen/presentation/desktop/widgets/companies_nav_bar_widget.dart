@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:system/core/helpers/dimensions.dart';
 import 'package:system/core/helpers/spacing.dart';
-import 'package:system/features/companies_screen/presentation/widgets/nav_card_widget.dart';
+import 'package:system/features/companies_screen/presentation/desktop/widgets/nav_card_widget.dart';
 
 class CompaniesNavBarWidget extends StatefulWidget {
   CompaniesNavBarWidget({super.key,required this.index, required this.onTapCompanies, required this.onTapBunch});

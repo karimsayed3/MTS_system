@@ -55,7 +55,7 @@ class _LeftSideWidgetState extends State<LeftSideWidget> {
                 onPressed: () {
                   if(LoginCubit.get(context).formKey.currentState!.validate()){
                     print("object");
-                    navigateToPage(Routes.homeScreen);
+                    navigateToPage(Routes.homeDesktopScreen);
                     // Navigator.pushNamed(context, Routes.homeScreen);
                   }
                 },

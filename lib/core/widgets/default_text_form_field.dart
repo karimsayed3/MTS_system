@@ -37,7 +37,6 @@ class DefaultTextFormField extends StatelessWidget {
     return TextFormField(
       obscureText: obscureText,
       controller: controller,
-
       decoration: InputDecoration(
         border: OutlineInputBorder(
           borderSide: const BorderSide(

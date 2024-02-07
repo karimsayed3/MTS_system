@@ -4,22 +4,25 @@ import 'package:system/core/helpers/spacing.dart';
 import 'package:system/core/theming/colors.dart';
 import 'package:system/core/widgets/default_button.dart';
 import 'package:system/core/widgets/default_text.dart';
-import 'package:system/core/widgets/header_label_with_image.dart';
+import 'package:system/core/widgets/header_label_with_image_desktop.dart';
 import 'package:system/core/widgets/header_widget.dart';
 import 'package:system/core/widgets/home_widget.dart';
-import 'package:system/features/companies_screen/presentation/widgets/companies_card.dart';
-import 'package:system/features/companies_screen/presentation/widgets/companies_search_widget.dart';
+import 'package:system/features/companies_screen/presentation/desktop/widgets/bunch_card.dart';
+import 'package:system/features/collectors_screen/presentation/widgets/collectors_card.dart';
+import 'package:system/features/companies_screen/presentation/desktop/widgets/companies_search_widget.dart';
 
+import 'bunches_header_widget.dart';
+import 'bunches_search_widget.dart';
 import 'companies_header_widget.dart';
 
-class CompaniesScreenDetails extends StatefulWidget {
-  const CompaniesScreenDetails({super.key});
+class BunchScreenDetails extends StatefulWidget {
+  const BunchScreenDetails({super.key});
 
   @override
-  State<CompaniesScreenDetails> createState() => _CompaniesScreenDetailsState();
+  State<BunchScreenDetails> createState() => _BunchScreenDetailsState();
 }
 
-class _CompaniesScreenDetailsState extends State<CompaniesScreenDetails> {
+class _BunchScreenDetailsState extends State<BunchScreenDetails> {
   @override
   Widget build(BuildContext context) {
     var dimension = Dimensions(context);
@@ -34,7 +37,7 @@ class _CompaniesScreenDetailsState extends State<CompaniesScreenDetails> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             DefaultText(
-              text: 'الشركات',
+              text: 'الباقات',
               fontSize: dimension.reduce20,
               fontWeight: FontWeight.w400,
             ),
@@ -51,32 +54,32 @@ class _CompaniesScreenDetailsState extends State<CompaniesScreenDetails> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const CompaniesSearchWidget(),
+                      const BunchesSearchWidget(),
                       DefaultButton(
-                        color: const Color(0xffebf5f6),
-                        padding: EdgeInsets.symmetric(
-                          horizontal: dimension.width15,
-                          vertical: dimension.height10,
-                        ),
-                        onPressed: () {},
-                        child: DefaultText(
-                          text: "+ اضافة شركة",
-                          color: const Color(0xFF007C92),
-                          fontSize: dimension.reduce20,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
+                          color: const Color(0xffebf5f6),
+                          padding: EdgeInsets.symmetric(
+                            horizontal: dimension.width15,
+                            vertical: dimension.height10,
+                          ),
+                          onPressed: () {},
+                          child: DefaultText(
+                            text: "+ اضافة باقة",
+                            color: const Color(0xFF007C92),
+                            fontSize: dimension.reduce20,
+                            fontWeight: FontWeight.w400,
+                          ))
                     ],
                   ),
                   verticalSpace(dimension.height10),
-                  const CompaniesHeaderWidget(),
+                  const BunchesHeaderWidget(),
                   Expanded(
-                      child: ListView.builder(
-                    itemBuilder: (context, index) {
-                      return const CompaniesCard();
-                    },
-                    itemCount: 10,
-                  ))
+                    child: ListView.builder(
+                      itemBuilder: (context, index) {
+                        return BunchCard();
+                      },
+                      itemCount: 10,
+                    ),
+                  ),
                 ],
               ),
             )

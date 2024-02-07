@@ -4,7 +4,7 @@ import 'package:system/core/helpers/dimensions.dart';
 import 'package:system/core/routing/routers.dart';
 import 'package:system/core/theming/colors.dart';
 import 'package:system/core/widgets/default_text.dart';
-import 'package:system/features/home_screen/presentation/widgets/logo_widget.dart';
+import 'package:system/features/home_screen/presentation/desktop/widgets/logo_widget.dart';
 import 'package:system/main.dart';
 
 class CustomNavigationBarWidget extends StatefulWidget {

@@ -6,11 +6,21 @@ import 'package:system/core/widgets/default_button.dart';
 import 'package:system/core/widgets/default_text.dart';
 
 class ButtonWithTextAndImageWidget extends StatelessWidget {
-  ButtonWithTextAndImageWidget({super.key, required this.onPressed, required this.color, required this.text, this.image});
+  ButtonWithTextAndImageWidget({
+    super.key,
+    required this.onPressed,
+    required this.color,
+    required this.text,
+    this.image,
+    this.fontSize,
+    this.padding,
+  });
 
   final Function() onPressed;
   final Color color;
   final String text;
+  double? fontSize;
+  EdgeInsetsGeometry? padding;
   String? image;
 
   @override
@@ -18,19 +28,21 @@ class ButtonWithTextAndImageWidget extends StatelessWidget {
     var dimension = Dimensions(context);
     return DefaultButton(
       color: color,
-      padding: EdgeInsets.symmetric(
+      padding:padding?? EdgeInsets.symmetric(
         horizontal: dimension.width15,
         vertical: dimension.height10,
       ),
       onPressed: onPressed,
       child: Row(
         children: [
-          image!=null? SvgPicture.asset(image!):const SizedBox.shrink(),
-          image !=null? horizontalSpace(dimension.width5):const SizedBox.shrink(),
+          image != null ? SvgPicture.asset(image!) : const SizedBox.shrink(),
+          image != null
+              ? horizontalSpace(dimension.width5)
+              : const SizedBox.shrink(),
           DefaultText(
             text: text,
             color: const Color(0xFF007C92),
-            fontSize: dimension.reduce20,
+            fontSize: fontSize ?? dimension.reduce20,
             fontWeight: FontWeight.w400,
           ),
         ],
