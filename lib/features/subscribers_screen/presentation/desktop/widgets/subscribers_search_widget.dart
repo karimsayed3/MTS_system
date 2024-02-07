@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:system/core/widgets/filter_widget.dart';
 
-import '../../../../../core/helpers/dimensions.dart';
-import '../../../../../core/helpers/spacing.dart';
-import '../../../../../core/widgets/custom_search_widget.dart';
+import '../../../../../../core/helpers/dimensions.dart';
+import '../../../../../../core/helpers/spacing.dart';
+import '../../../../../../core/widgets/custom_search_widget.dart';
 
 class SubscribersSearchWidget extends StatelessWidget {
   const SubscribersSearchWidget({super.key});

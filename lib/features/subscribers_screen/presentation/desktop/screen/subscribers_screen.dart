@@ -87,7 +87,7 @@ class SubscribersScreen extends StatelessWidget {
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              const InfoWidget(
+                               InfoWidget(
                                 color:  Color(0xffA92087),
                                 text: 'خط محول',
                                 textColor: Color(0xFF969AB0),
