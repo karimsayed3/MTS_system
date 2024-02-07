@@ -5,14 +5,14 @@ import 'package:system/core/helpers/spacing.dart';
 import 'package:system/core/theming/colors.dart';
 import 'package:system/core/widgets/default_text.dart';
 
-class BunchCardWidgetMobile extends StatefulWidget {
-  const BunchCardWidgetMobile({super.key});
+class LateCustomersCardWidgetMobile extends StatefulWidget {
+  const LateCustomersCardWidgetMobile({super.key});
 
   @override
-  State<BunchCardWidgetMobile> createState() => _BunchCardWidgetMobileState();
+  State<LateCustomersCardWidgetMobile> createState() => _LateCustomersCardWidgetMobileState();
 }
 
-class _BunchCardWidgetMobileState extends State<BunchCardWidgetMobile> {
+class _LateCustomersCardWidgetMobileState extends State<LateCustomersCardWidgetMobile> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -43,7 +43,17 @@ class _BunchCardWidgetMobileState extends State<BunchCardWidgetMobile> {
           ),
           const Spacer(),
           SizedBox(
-            width: 80.w,
+            width: 110.w,
+            child: DefaultText(
+              text: '01156788394',
+              color: ColorsManager.secondaryColor,
+              fontSize: 16.sp,
+              fontWeight: FontWeight.w400,
+            ),
+          ),
+          const Spacer(),
+          SizedBox(
+            width: 70.w,
             child: Row(
               children: [
                 DefaultText(
@@ -54,26 +64,17 @@ class _BunchCardWidgetMobileState extends State<BunchCardWidgetMobile> {
                 ),
                 horizontalSpace(5.w),
                 DefaultText(
-                  text: '35',
+                  text: '35-',
                   color: ColorsManager.secondaryColor,
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w400,
                 ),
               ],
             ),
-          ),const Spacer(),
-          SizedBox(
-            width: 100.w,
-            child: DefaultText(
-              text: '135',
-              color: ColorsManager.primaryColor,
-              fontSize: 16.sp,
-              fontWeight: FontWeight.w400,
-            ),
           ),
           const Spacer(),
           SizedBox(
-            width: 50.w,
+            width: 20.w,
             child: InkWell(
                 onTap: () {},
                 child: SvgPicture.asset('assets/icons/more.svg')),
