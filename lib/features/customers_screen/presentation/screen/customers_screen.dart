@@ -3,7 +3,7 @@ import 'package:system/features/companies_screen/presentation/desktop/widgets/co
 import 'package:system/features/disabled_customers_screen/presentation/desktop/screen/disabled_customers_screen.dart';
 import 'package:system/features/late_customers_screen/presentation/desktop/screen/late_customers_screen.dart';
 import 'package:system/features/subscribers_screen/presentation/desktop/screen/subscribers_screen.dart';
-import 'package:system/features/withdrawn_customers_screen/presentation/screen/withdrawn_customers_screen.dart';
+import 'package:system/features/withdrawn_customers_screen/presentation/desktop/screen/withdrawn_customers_screen.dart';
 
 import '../../../../core/helpers/dimensions.dart';
 import '../../../../core/helpers/spacing.dart';

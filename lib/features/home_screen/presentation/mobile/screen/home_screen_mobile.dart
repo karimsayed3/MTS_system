@@ -6,6 +6,7 @@ import 'package:system/features/companies_screen/presentation/mobile/screen/comp
 import 'package:system/features/disabled_customers_screen/presentation/mobile/screen/disabled_customers_screen_mobile.dart';
 import 'package:system/features/late_customers_screen/presentation/mobile/screen/late_customers_screen_mobile.dart';
 import 'package:system/features/subscribers_screen/presentation/mobile/screen/subscribers_screen_mobile.dart';
+import 'package:system/features/withdrawn_customers_screen/presentation/mobile/screen/withdrawn_customers_screen_mobile.dart';
 
 class HomeScreenMobile extends StatefulWidget {
   const HomeScreenMobile({super.key});
@@ -30,7 +31,7 @@ class _HomeScreenMobileState extends State<HomeScreenMobile> {
             height: double.infinity,
             color: Colors.blueAccent,
           ),
-          body:const DisabledCustomersScreenMobile(),
+          body:const WithdrawnCustomersScreenMobile(),
           bottomNavigationBar: Directionality(
             textDirection: TextDirection.ltr,
             child: BottomNavigationBar(

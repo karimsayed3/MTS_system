@@ -3,11 +3,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:system/core/theming/colors.dart';
 import 'package:system/core/widgets/custom_search_widget.dart';
 import 'package:system/core/widgets/title_of_screen_with_logo_widget.dart';
-import '../widgets/disabled_customers_card_for_mobile.dart';
-import '../widgets/disabled_customers_header_widget_mobile.dart';
 
-class DisabledCustomersScreenMobile extends StatelessWidget {
-  const DisabledCustomersScreenMobile({super.key});
+import '../widgets/withdrawn_customers_card_for_mobile.dart';
+import '../widgets/withdrawn_customers_header_widget_mobile.dart';
+
+class WithdrawnCustomersScreenMobile extends StatelessWidget {
+  const WithdrawnCustomersScreenMobile({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +28,7 @@ class DisabledCustomersScreenMobile extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     TitleForScreenWithWidget(
-                      title: "المعطلين",
+                      title: "المسحوبين",
                     ),
                     // LateCustomersInfoWidget(),
                   ],
@@ -45,11 +46,11 @@ class DisabledCustomersScreenMobile extends StatelessWidget {
               Expanded(
                 child: Column(
                   children: [
-                    const DisabledCustomersHeaderWidgetMobile(),
+                    const WithdrawnCustomersHeaderWidgetMobile(),
                     Expanded(
                       child: ListView.builder(
                         itemBuilder: (context, index) {
-                          return const DisabledCustomersCardWidgetMobile();
+                          return const WithdrawnCustomersCardWidgetMobile();
                           // return const SizedBox.shrink();
                         },
                         itemCount: 20,

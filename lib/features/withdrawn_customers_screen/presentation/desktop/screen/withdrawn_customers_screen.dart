@@ -6,8 +6,8 @@ import 'package:system/core/widgets/button_with_text_and_image.dart';
 import 'package:system/core/widgets/home_widget.dart';
 import 'package:system/core/widgets/screen_title_widget.dart';
 import 'package:system/core/widgets/search_with_filter_widget.dart';
-import 'package:system/features/withdrawn_customers_screen/presentation/widgets/withdrawn_customers_card.dart';
-import 'package:system/features/withdrawn_customers_screen/presentation/widgets/withdrawn_customers_header_widget.dart';
+import 'package:system/features/withdrawn_customers_screen/presentation/desktop/widgets/withdrawn_customers_card.dart';
+import 'package:system/features/withdrawn_customers_screen/presentation/desktop/widgets/withdrawn_customers_header_widget.dart';
 
 class WithdrawnCustomersScreen extends StatelessWidget {
   WithdrawnCustomersScreen({super.key});
