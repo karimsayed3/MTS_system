@@ -4,8 +4,8 @@ import 'package:system/core/helpers/spacing.dart';
 import 'package:system/core/theming/colors.dart';
 import 'package:system/core/widgets/default_text.dart';
 import 'package:system/core/widgets/home_widget.dart';
-import 'package:system/features/collectors_screen/presentation/widgets/collectors_card.dart';
-import 'package:system/features/collectors_screen/presentation/widgets/collectors_search_widget.dart';
+import 'package:system/features/collectors_screen/presentation/desktop/widgets/collectors_card.dart';
+import 'package:system/features/collectors_screen/presentation/desktop/widgets/collectors_search_widget.dart';
 import 'collectors_header_widget.dart';
 
 class CollectorsScreenDetails extends StatefulWidget {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:system/features/collectors_screen/presentation/widgets/collectors_screen_details.dart';
+import 'package:system/features/collectors_screen/presentation/desktop/widgets/collectors_screen_details.dart';
 
 class CollectorsScreen extends StatefulWidget {
   const CollectorsScreen({super.key});
