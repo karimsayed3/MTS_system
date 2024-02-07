@@ -16,19 +16,19 @@ class LateCustomersInformationWidget extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const InfoWidget(
+           InfoWidget(
             color: Color(0xFFCC232A),
             text: 'اكتر من سعر باقتة',
             textColor: Color(0xFF969AB0),
           ),
           horizontalSpace(dimension.width5),
-          const InfoWidget(
+           InfoWidget(
             color: Color(0xFF007C92),
             text: 'علية اكتر من شهر',
             textColor: Color(0xFF969AB0),
           ),
           horizontalSpace(dimension.width5),
-          const InfoWidget(
+           InfoWidget(
             color: Color(0xFFFFA800),
             text: 'علية اكتر من شهرين',
             textColor: Color(0xFF969AB0),

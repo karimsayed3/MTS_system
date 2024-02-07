@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:system/core/widgets/default_text.dart';
 import 'package:system/features/companies_screen/presentation/mobile/screen/bunch_screen_mobile.dart';
 import 'package:system/features/companies_screen/presentation/mobile/screen/companies_screen_mobile.dart';
+import 'package:system/features/subscribers_screen/presentation/mobile/screen/subscribers_screen_mobile.dart';
 
 class HomeScreenMobile extends StatefulWidget {
   const HomeScreenMobile({super.key});
@@ -27,7 +28,7 @@ class _HomeScreenMobileState extends State<HomeScreenMobile> {
             height: double.infinity,
             color: Colors.blueAccent,
           ),
-          body:const BunchScreenMobile(),
+          body:const SubscribersScreenMobile(),
           bottomNavigationBar: Directionality(
             textDirection: TextDirection.ltr,
             child: BottomNavigationBar(

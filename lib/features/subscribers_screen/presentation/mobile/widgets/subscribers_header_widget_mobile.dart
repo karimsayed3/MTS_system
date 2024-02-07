@@ -3,9 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:system/core/widgets/header_label_with_image_mobile.dart';
 import 'package:system/core/widgets/header_widget.dart';
 import '../../../../../core/helpers/spacing.dart';
-
-class BunchHeaderWidgetMobile extends StatelessWidget {
-  const BunchHeaderWidgetMobile({super.key});
+class SubscribersHeaderWidgetMobile extends StatelessWidget {
+  const SubscribersHeaderWidgetMobile({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,24 +13,24 @@ class BunchHeaderWidgetMobile extends StatelessWidget {
       color: Colors.white,
       child: Row(children: [
         HeaderLabelWithImageMobile(
-          width: 130.w,
+          width: 120.w,
           image: "assets/images/header_image.png",
-          title: 'الباقة',
-        ),
-        const Spacer(),
-        HeaderLabelWithImageMobile(
-          width: 80.w,
-          image: "assets/images/header_image.png",
-          title: 'السعر',
+          title: 'المشترك',
         ),
         const Spacer(),
         HeaderLabelWithImageMobile(
           width: 100.w,
           image: "assets/images/header_image.png",
-          title: 'المشتركين',
+          title: 'الرقم',
         ),
         const Spacer(),
-        horizontalSpace(50.w),
+        HeaderLabelWithImageMobile(
+          width: 130.w,
+          image: "assets/images/header_image.png",
+          title: 'الرصيد',
+        ),
+        const Spacer(),
+        horizontalSpace(10.w),
       ]),
     );
   }
