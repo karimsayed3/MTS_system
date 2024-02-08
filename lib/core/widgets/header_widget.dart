@@ -12,7 +12,8 @@ class HeaderWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: height,
+      // height: height,
+
       decoration: BoxDecoration(
         color: color??  ColorsManager.lightGray,
         borderRadius: BorderRadius.circular(5)
