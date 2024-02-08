@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:system/core/theming/colors.dart';
 
 class HeaderWidget extends StatelessWidget {
-  HeaderWidget({super.key, required this.child,this.color, required this.height});
+  HeaderWidget({super.key, required this.child,this.color, this.height});
 
   final Widget child;
-  final double height;
+  double? height;
 
   Color? color;
 
@@ -15,7 +15,7 @@ class HeaderWidget extends StatelessWidget {
       // height: height,
 
       decoration: BoxDecoration(
-        color: color??  ColorsManager.lightGray,
+        color: color??  ColorsManager.lighterGray,
         borderRadius: BorderRadius.circular(5)
         // border: const Border(
         //   bottom: BorderSide(color: Colors.black, width: 1),

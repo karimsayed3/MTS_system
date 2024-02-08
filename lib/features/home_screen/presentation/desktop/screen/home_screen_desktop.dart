@@ -4,6 +4,7 @@ import 'package:system/core/widgets/custom_navigation_bar_widget.dart';
 import 'package:system/features/collectors_screen/presentation/desktop/screen/collectors_screen.dart';
 import 'package:system/features/companies_screen/presentation/desktop/screen/companies_screen_desktop.dart';
 import 'package:system/features/customers_screen/presentation/screen/customers_screen.dart';
+import 'package:system/features/history_operations_screen/presentation/desktop/screen/history_operations_screen_desktop.dart';
 
 class HomeDesktopScreen extends StatefulWidget {
   const HomeDesktopScreen({super.key});
@@ -25,12 +26,10 @@ class _HomeDesktopScreenState extends State<HomeDesktopScreen> {
     Container(
       color: ColorsManager.secondaryColor,
     ),
-    CompaniesScreen(),
-    CollectorsScreen(),
-    CustomersScreen(),
-    Container(
-      color: ColorsManager.lightBlack,
-    ),
+    const CompaniesScreen(),
+    const CollectorsScreen(),
+    const CustomersScreen(),
+    const HistoryOperationsDesktopScreen(),
   ];
   int index = 0;
 

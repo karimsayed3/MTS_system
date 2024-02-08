@@ -29,7 +29,7 @@ class HeaderLabelWithImageDesktop extends StatelessWidget {
             height: dimension.height10,
             child: Image(
               image: AssetImage(image),
-              color: ColorsManager.lightBlack,
+              color: ColorsManager.lightGray,
               width: dimension.reduce10,
             ),
           ),
@@ -37,8 +37,8 @@ class HeaderLabelWithImageDesktop extends StatelessWidget {
           DefaultText(
             text: title,
             fontSize: dimension.reduce15,
-            color: ColorsManager.lightBlack,
-            fontWeight: FontWeight.w600,
+            color: ColorsManager.lightGray,
+            fontWeight: FontWeight.w400,
           ),
         ],
       ),
