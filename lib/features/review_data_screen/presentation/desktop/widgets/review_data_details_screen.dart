@@ -9,7 +9,10 @@ import 'package:system/core/widgets/show_alert_dialog.dart';
 import 'package:system/features/collectors_screen/presentation/desktop/widgets/add_collector_widget.dart';
 import 'package:system/features/collectors_screen/presentation/desktop/widgets/collectors_card.dart';
 import 'package:system/features/collectors_screen/presentation/desktop/widgets/collectors_search_widget.dart';
+import 'package:system/features/review_data_screen/presentation/desktop/widgets/review_data_header_widget.dart';
 import 'package:system/features/review_data_screen/presentation/desktop/widgets/review_data_search_widget.dart';
+
+import 'review_data_card.dart';
 
 class ReviewDataScreenDetails extends StatelessWidget {
   ReviewDataScreenDetails({super.key});
@@ -73,12 +76,12 @@ class ReviewDataScreenDetails extends StatelessWidget {
                     ],
                   ),
                   verticalSpace(dimension.height10),
-                  // const CollectorsHeaderWidget(),
+                  const ReviewDataHeaderWidget(),
                   Expanded(
                       child: ListView.builder(
                         itemBuilder: (context, index) {
-                          // return CollectorsCard();
-                          return SizedBox.shrink();
+                          return ReviewDataCard();
+                          // return SizedBox.shrink();
                         },
                         itemCount: 10,
                       ))
