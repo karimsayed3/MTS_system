@@ -7,6 +7,9 @@ import 'package:system/core/widgets/default_text.dart';
 import 'package:system/core/widgets/header_label_with_image_desktop.dart';
 import 'package:system/core/widgets/header_widget.dart';
 import 'package:system/core/widgets/home_widget.dart';
+import 'package:system/core/widgets/show_alert_dialog.dart';
+import 'package:system/features/companies_screen/presentation/desktop/widgets/add_company_button.dart';
+import 'package:system/features/companies_screen/presentation/desktop/widgets/add_company_widget.dart';
 import 'package:system/features/companies_screen/presentation/desktop/widgets/companies_card.dart';
 import 'package:system/features/companies_screen/presentation/desktop/widgets/companies_search_widget.dart';
 
@@ -20,6 +23,8 @@ class CompaniesScreenDetails extends StatefulWidget {
 }
 
 class _CompaniesScreenDetailsState extends State<CompaniesScreenDetails> {
+  TextEditingController searchController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     var dimension = Dimensions(context);
@@ -40,10 +45,6 @@ class _CompaniesScreenDetailsState extends State<CompaniesScreenDetails> {
             ),
             verticalSpace(dimension.height5),
             HomeWidget(
-              horizontal: dimension.width10,
-              vertical: dimension.height10,
-              height: MediaQuery.of(context).size.height * .72,
-              width: MediaQuery.of(context).size.width,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -51,20 +52,11 @@ class _CompaniesScreenDetailsState extends State<CompaniesScreenDetails> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const CompaniesSearchWidget(),
-                      DefaultButton(
-                        color: const Color(0xffebf5f6),
-                        padding: EdgeInsets.symmetric(
-                          horizontal: dimension.width15,
-                          vertical: dimension.height10,
-                        ),
+                      CompaniesSearchWidget(
+                        searchController: searchController,
+                      ),
+                      AddCompanyButton(
                         onPressed: () {},
-                        child: DefaultText(
-                          text: "+ اضافة شركة",
-                          color: const Color(0xFF007C92),
-                          fontSize: dimension.reduce20,
-                          fontWeight: FontWeight.w400,
-                        ),
                       ),
                     ],
                   ),

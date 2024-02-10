@@ -210,7 +210,7 @@ class WithdrawnCustomersCard extends StatelessWidget {
                       padding: EdgeInsets.symmetric(
                           horizontal: dimension.width15,
                           vertical: dimension.height5),
-                      color: Color(0xfffbedee),
+                      color: ColorsManager.lightBlueColor,
                       onPressed: () {},
                       child: DefaultText(
                         text: 'تصفير',

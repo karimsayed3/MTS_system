@@ -5,9 +5,17 @@ import 'package:system/core/helpers/spacing.dart';
 import 'package:system/core/theming/colors.dart';
 import 'package:system/core/widgets/default_button.dart';
 import 'package:system/core/widgets/default_text.dart';
+import 'package:system/core/widgets/show_alert_dialog.dart';
+import 'package:system/features/companies_screen/presentation/desktop/widgets/add_bunch_for_company.dart';
+import 'package:system/features/companies_screen/presentation/desktop/widgets/delete_bunch_for_company.dart';
+import 'package:system/features/companies_screen/presentation/desktop/widgets/delete_company_widget.dart';
+import 'package:system/features/companies_screen/presentation/desktop/widgets/update_company_widget.dart';
 
 class CompaniesCard extends StatelessWidget {
-  const CompaniesCard({super.key});
+  const CompaniesCard({
+    super.key,
+  });
+
   @override
   Widget build(BuildContext context) {
     var dimension = Dimensions(context);
@@ -53,7 +61,7 @@ class CompaniesCard extends StatelessWidget {
                       horizontal: dimension.width10,
                       vertical: dimension.height5),
                   decoration: BoxDecoration(
-                      color: Color(0x0F007C92),
+                      color: const Color(0x0F007C92),
                       borderRadius: BorderRadius.circular(10)),
                   child: Center(
                     child: DefaultText(
@@ -77,11 +85,17 @@ class CompaniesCard extends StatelessWidget {
               children: [
                 Expanded(
                   child: DefaultButton(
-                    color: Color(0xffebf5f6),
-                    onPressed: () {},
+                    color: const Color(0xffebf5f6),
+                    onPressed: () {
+                      showDataAlert(
+                          context: context,
+                          child: AddBunchForCompany(
+                            onPressed: () {},
+                          ));
+                    },
                     child: DefaultText(
                       text: 'اضافة باقة للشركة',
-                      color: Color(0xFF007C92),
+                      color: const Color(0xFF007C92),
                       fontSize: dimension.width10,
                       fontWeight: FontWeight.w500,
                     ),
@@ -90,20 +104,102 @@ class CompaniesCard extends StatelessWidget {
                 horizontalSpace(dimension.width10),
                 Expanded(
                   child: DefaultButton(
-                    color: Color(0xfffbedee),
-                    onPressed: () {},
+                    color: ColorsManager.lightBlueColor,
+                    onPressed: () {
+                      showDataAlert(
+                          context: context,
+                          child: DeleteBunchForCompany(
+                            onPressed: () {},
+                            companyName: "شركة فودافون كفرالشيخ",
+                          ));
+                    },
                     child: DefaultText(
                       text: 'حذف قيمة باقة',
-                      color: Color(0xFFCC232A),
+                      color: const Color(0xFFCC232A),
                       fontSize: dimension.width10,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
                 ),
                 horizontalSpace(dimension.width5),
-                InkWell(
-                    onTap: () {},
-                    child: SvgPicture.asset('assets/icons/more.svg'))
+                PopupMenuButton(
+                  // icon: SvgPicture.asset('assets/icons/more.svg'),
+                  onSelected: (String choice) {
+                    // Handle menu item selection
+                    if (choice == 'option1') {
+                      // Perform action for option 1
+                      showDataAlert(
+                        context: context,
+                        child: UpdateCompanyWidget(
+                          onPressed: () {},
+                          companyName: "شركة فودافون كفرالشيخ",
+                        ),
+                      );
+                    } else if (choice == 'option2') {
+                      // Perform action for option 2
+                      showDataAlert(
+                          context: context,
+                          child: DeleteCompanyWidget(
+                            onPressed: () {},
+                            companyName: "شركة فودافون كفرالشيخ",
+                          ));
+                    }
+                  },
+                  itemBuilder: (BuildContext context) =>
+                      <PopupMenuEntry<String>>[
+                    PopupMenuItem<String>(
+                      value: 'option1',
+                      child: Directionality(
+                        textDirection: TextDirection.rtl,
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            SizedBox(
+                                width: dimension.width15,
+                                child:
+                                    SvgPicture.asset('assets/icons/edit.svg')),
+                            horizontalSpace(dimension.width10),
+                            DefaultText(
+                              text: 'تعديل بيانات الشركة',
+                              color: ColorsManager.darkBlack,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                    PopupMenuItem<String>(
+                      value: 'option2',
+                      child: Directionality(
+                        textDirection: TextDirection.rtl,
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            SizedBox(
+                              width: dimension.width15,
+                              child: SvgPicture.asset(
+                                'assets/icons/remove.svg',
+                                color: ColorsManager.primaryColor,
+                              ),
+                            ),
+                            horizontalSpace(dimension.width10),
+                            DefaultText(
+                              text: 'حذف الشركة',
+                              color: ColorsManager.primaryColor,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                    // Add more PopupMenuItem widgets for additional options
+                  ],
+                  child: SvgPicture.asset('assets/icons/more.svg'),
+                ),
               ],
             ),
           ),

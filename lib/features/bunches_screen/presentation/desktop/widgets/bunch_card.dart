@@ -5,6 +5,9 @@ import 'package:system/core/helpers/spacing.dart';
 import 'package:system/core/theming/colors.dart';
 import 'package:system/core/widgets/default_button.dart';
 import 'package:system/core/widgets/default_text.dart';
+import 'package:system/core/widgets/show_alert_dialog.dart';
+import 'package:system/features/bunches_screen/presentation/desktop/widgets/delete_bunch_widget.dart';
+import 'package:system/features/bunches_screen/presentation/desktop/widgets/update_bunch_widget.dart';
 
 class BunchCard extends StatelessWidget {
   const BunchCard({super.key});
@@ -71,7 +74,16 @@ class BunchCard extends StatelessWidget {
                 Expanded(
                   child: DefaultButton(
                     color: Color(0xffebf5f6),
-                    onPressed: () {},
+                    onPressed: () {
+                      showDataAlert(
+                          context: context,
+                          child: UpdateBunchWidget(
+                            onPressed: () {},
+                            companyName: "فودافون",
+                            bunchName: "Super Flix 30",
+                            bunchPrice: 30,
+                          ));
+                    },
                     child: DefaultText(
                       text: 'تعديل',
                       color: Color(0xFF007C92),
@@ -83,8 +95,15 @@ class BunchCard extends StatelessWidget {
                 horizontalSpace(dimension.width10),
                 Expanded(
                   child: DefaultButton(
-                    color: Color(0xfffbedee),
-                    onPressed: () {},
+                    color: ColorsManager.lightBlueColor,
+                    onPressed: () {
+                      showDataAlert(
+                          context: context,
+                          child: DeleteBunchWidget(
+                            onPressed: () {},
+                            bunchName: "Super Flix 30",
+                          ));
+                    },
                     child: DefaultText(
                       text: 'حذف',
                       color: Color(0xFFCC232A),

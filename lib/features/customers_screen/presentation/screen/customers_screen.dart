@@ -11,7 +11,7 @@ import '../../../../core/theming/colors.dart';
 import '../../../../core/widgets/default_button.dart';
 import '../../../../core/widgets/default_text.dart';
 import '../../../../core/widgets/home_widget.dart';
-import '../../../companies_screen/presentation/desktop/widgets/bunch_screen_details.dart';
+import '../../../bunches_screen/presentation/desktop/screen/bunch_screen_details.dart';
 import '../../../collectors_screen/presentation/desktop/widgets/collectors_card.dart';
 import '../../../companies_screen/presentation/desktop/widgets/companies_header_widget.dart';
 import '../../../companies_screen/presentation/desktop/widgets/companies_screen_details.dart';

@@ -4,16 +4,12 @@ import 'package:system/core/helpers/spacing.dart';
 import 'package:system/core/theming/colors.dart';
 import 'package:system/core/widgets/default_button.dart';
 import 'package:system/core/widgets/default_text.dart';
-import 'package:system/core/widgets/header_label_with_image_desktop.dart';
-import 'package:system/core/widgets/header_widget.dart';
 import 'package:system/core/widgets/home_widget.dart';
-import 'package:system/features/companies_screen/presentation/desktop/widgets/bunch_card.dart';
-import 'package:system/features/collectors_screen/presentation/desktop/widgets/collectors_card.dart';
-import 'package:system/features/companies_screen/presentation/desktop/widgets/companies_search_widget.dart';
-
-import 'bunches_header_widget.dart';
-import 'bunches_search_widget.dart';
-import 'companies_header_widget.dart';
+import 'package:system/core/widgets/show_alert_dialog.dart';
+import 'package:system/features/bunches_screen/presentation/desktop/widgets/add_bunch_widget.dart';
+import 'package:system/features/bunches_screen/presentation/desktop/widgets/bunch_card.dart';
+import 'package:system/features/bunches_screen/presentation/desktop/widgets/bunches_search_widget.dart';
+import '../widgets/bunches_header_widget.dart';
 
 class BunchScreenDetails extends StatefulWidget {
   const BunchScreenDetails({super.key});
@@ -61,7 +57,13 @@ class _BunchScreenDetailsState extends State<BunchScreenDetails> {
                             horizontal: dimension.width15,
                             vertical: dimension.height10,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            showDataAlert(context: context, child: AddBunchWidget(
+                              onPressed: () {
+
+                              },
+                            ));
+                          },
                           child: DefaultText(
                             text: "+ اضافة باقة",
                             color: const Color(0xFF007C92),
