@@ -152,7 +152,7 @@ class MTSDesktopApp extends StatelessWidget {
       // home: const Scaffold(
       //   body: Center(child: Text("desktop app 2"),),
       // ),
-      initialRoute: Routes.homeDesktopScreen,
+      initialRoute: Routes.animationTestScreen,
       onGenerateRoute: appRouter.generateRoute,
     );
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:system/animation_test_screen.dart';
 import 'package:system/features/customers_screen/presentation/screen/customers_screen.dart';
 import 'package:system/features/home_screen/presentation/desktop/screen/home_screen_desktop.dart';
 import 'package:system/features/home_screen/presentation/mobile/screen/home_screen_mobile.dart';
@@ -56,6 +57,11 @@ class AppRouter {
       //   return MaterialPageRoute(
       //     builder: (_) => const HomeScreen(),
       //   );
+
+      case Routes.animationTestScreen:
+        return MaterialPageRoute(
+          builder: (_) => const AnimationTestScreen(),
+        );
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(

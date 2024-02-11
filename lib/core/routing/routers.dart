@@ -11,4 +11,8 @@ class Routes {
   static const String homeMobileScreen = '/homeMobileScreen';
   static const String loginScreenMobile = '/loginScreenMobile';
 
+
+  /// animation test screen
+  static const String animationTestScreen = '/animationTestScreen';
+
 }
