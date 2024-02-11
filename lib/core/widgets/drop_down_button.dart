@@ -20,7 +20,7 @@ Widget buildDropdown({
       children: [
         DefaultText(
           text: labelText,
-          color: titleColor ?? ColorsManager.darkBlack,
+          color: titleColor ?? ColorsManager.lightBlack,
           fontSize: 16,
           // fontFamily: "Almarai",
         ),
@@ -33,24 +33,24 @@ Widget buildDropdown({
           decoration: BoxDecoration(
               color: color ?? Colors.white,
               borderRadius: BorderRadius.circular(5),
-              border: Border(
+              border: const Border(
                 left: BorderSide(
-                  color:  ColorsManager.darkBlack,
+                  color:  ColorsManager.lightGray,
                 ),
                 right: BorderSide(
-                  color:  ColorsManager.darkBlack,
+                  color:  ColorsManager.lightGray,
                 ),
                 top: BorderSide(
-                  color: ColorsManager.darkBlack,
+                  color: ColorsManager.lightGray,
                 ),
                 bottom: BorderSide(
-                  color:  ColorsManager.darkBlack,
+                  color:  ColorsManager.lightGray,
                 ),
               )),
           child: DropdownButton<String>(
             value: selectedValue,
             onChanged: onChanged,
-            padding: EdgeInsets.symmetric(horizontal: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 10),
             isExpanded: true,
             dropdownColor: Colors.white,
             focusColor: Colors.white,

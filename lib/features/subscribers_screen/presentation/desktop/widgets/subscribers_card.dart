@@ -5,6 +5,8 @@ import 'package:system/core/helpers/spacing.dart';
 import 'package:system/core/theming/colors.dart';
 import 'package:system/core/widgets/default_button.dart';
 import 'package:system/core/widgets/default_text.dart';
+import 'package:system/core/widgets/show_alert_dialog.dart';
+import 'package:system/features/subscribers_screen/presentation/desktop/widgets/make_zero_widget.dart';
 
 class SubscribersCard extends StatelessWidget {
   const SubscribersCard({super.key});
@@ -207,7 +209,15 @@ class SubscribersCard extends StatelessWidget {
                           horizontal: dimension.width15,
                           vertical: dimension.height5),
                       color: ColorsManager.lightBlueColor,
-                      onPressed: () {},
+                      onPressed: () {
+                        showDataAlert(
+                          context: context,
+                          child: MakeZeroWidget(
+                            onPressed: () {},
+                            subscriberName: "كريم سيد ابراهيم عبدالتواب",
+                          ),
+                        );
+                      },
                       child: DefaultText(
                         text: 'تصفير',
                         color: Color(0xFFFFA800),
@@ -238,8 +248,7 @@ class SubscribersCard extends StatelessWidget {
           SizedBox(
             width: dimension.width60,
             child: InkWell(
-                onTap: () {},
-                child: SvgPicture.asset('assets/icons/more.svg')),
+                onTap: () {}, child: SvgPicture.asset('assets/icons/more.svg')),
           ),
         ],
       ),

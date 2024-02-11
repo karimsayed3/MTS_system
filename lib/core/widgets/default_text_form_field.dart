@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:system/core/theming/colors.dart';
 
 class DefaultTextFormField extends StatelessWidget {
@@ -13,6 +14,7 @@ class DefaultTextFormField extends StatelessWidget {
     this.hintText,
     this.obscureText = false,
     this.suffixIcon,
+    this.inputFormatters,
   });
 
   final TextEditingController controller;
@@ -20,6 +22,8 @@ class DefaultTextFormField extends StatelessWidget {
 
   dynamic onSave;
   dynamic onChange;
+
+  List<TextInputFormatter>? inputFormatters;
 
   dynamic validator;
 
@@ -37,10 +41,11 @@ class DefaultTextFormField extends StatelessWidget {
     return TextFormField(
       obscureText: obscureText,
       controller: controller,
+      inputFormatters:inputFormatters ?? [],
       decoration: InputDecoration(
         border: OutlineInputBorder(
           borderSide: const BorderSide(
-            color: ColorsManager.secondaryColor,
+            color: ColorsManager.lightGray,
           ),
           borderRadius: BorderRadius.circular(8),
         ),
@@ -53,7 +58,7 @@ class DefaultTextFormField extends StatelessWidget {
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8.0),
           borderSide: const BorderSide(
-            color: ColorsManager.secondaryColor,
+            color: ColorsManager.lightGray,
           ),
         ),
         fillColor: color,

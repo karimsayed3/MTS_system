@@ -7,11 +7,13 @@ import 'package:system/core/widgets/home_widget.dart';
 import 'package:system/core/widgets/info_widget.dart';
 import 'package:system/core/widgets/screen_title_widget.dart';
 import 'package:system/core/widgets/search_with_filter_widget.dart';
+import 'package:system/core/widgets/show_alert_dialog.dart';
+import 'package:system/features/subscribers_screen/presentation/desktop/widgets/add_subsciber_widget.dart';
 import '../widgets/subscribers_card.dart';
 import '../widgets/subscribers_header_widget.dart';
 
 class SubscribersScreen extends StatelessWidget {
-   SubscribersScreen({super.key});
+  SubscribersScreen({super.key});
 
   TextEditingController searchController = TextEditingController();
 
@@ -46,16 +48,31 @@ class SubscribersScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       SearchWithFilterButtonWidget(
-                        onTap: () {
-
-                        },
+                        onTap: () {},
                         searchController: searchController,
                       ),
-                      ButtonWithTextAndImageWidget(
-                        onPressed: () {},
-                        color: const Color(0xffebf5f6),
-                        image: 'assets/icons/excel.svg',
-                        text: "تنزيل اكسيل",
+                      Row(
+                        children: [
+                          ButtonWithTextAndImageWidget(
+                            onPressed: () {},
+                            color: const Color(0xffebf5f6),
+                            image: 'assets/icons/excel.svg',
+                            text: "تنزيل اكسيل",
+                          ),
+                          horizontalSpace(dimension.width10),
+                          ButtonWithTextAndImageWidget(
+                            onPressed: () {
+                              showDataAlert(
+                                context: context,
+                                child: AddSubscriberWidget(
+                                  onPressed: () {},
+                                ),
+                              );
+                            },
+                            color: const Color(0xffebf5f6),
+                            text: "+ اضافة مشترك",
+                          ),
+                        ],
                       ),
                     ],
                   ),
@@ -71,24 +88,26 @@ class SubscribersScreen extends StatelessWidget {
                   ),
                   verticalSpace(dimension.height10),
                   Container(
-                    padding: EdgeInsets.symmetric(horizontal: dimension.width10,),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: dimension.width10,
+                    ),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         const Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-
-                          ],
+                          children: [],
                         ),
                         Container(
-                          padding: EdgeInsets.symmetric(horizontal: dimension.width10,vertical: dimension.height5),
+                          padding: EdgeInsets.symmetric(
+                              horizontal: dimension.width10,
+                              vertical: dimension.height5),
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                               InfoWidget(
-                                color:  Color(0xffA92087),
+                              InfoWidget(
+                                color: Color(0xffA92087),
                                 text: 'خط محول',
                                 textColor: Color(0xFF969AB0),
                               ),
