@@ -3,7 +3,7 @@ import 'package:system/core/helpers/dimensions.dart';
 import 'package:system/core/helpers/spacing.dart';
 import 'package:system/core/theming/colors.dart';
 import 'package:system/core/widgets/default_text.dart';
-import 'package:system/features/companies_screen/presentation/desktop/widgets/bunch_screen_details.dart';
+import 'package:system/features/bunches_screen/presentation/desktop/screen/bunch_screen_details.dart';
 import 'package:system/features/companies_screen/presentation/desktop/widgets/nav_card_widget.dart';
 
 import '../widgets/companies_nav_bar_widget.dart';

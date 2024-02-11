@@ -5,6 +5,9 @@ import 'package:system/core/helpers/spacing.dart';
 import 'package:system/core/theming/colors.dart';
 import 'package:system/core/widgets/default_button.dart';
 import 'package:system/core/widgets/default_text.dart';
+import 'package:system/core/widgets/show_alert_dialog.dart';
+import 'package:system/features/collectors_screen/presentation/desktop/widgets/delete_collector_widget.dart';
+import 'package:system/features/collectors_screen/presentation/desktop/widgets/update_collector_widget.dart';
 
 class CollectorsCard extends StatelessWidget {
   const CollectorsCard({super.key});
@@ -62,7 +65,8 @@ class CollectorsCard extends StatelessWidget {
                 ),
               ],
             ),
-          ),const Spacer(),
+          ),
+          const Spacer(),
           SizedBox(
             width: dimension.width60,
             child: DefaultText(
@@ -71,7 +75,8 @@ class CollectorsCard extends StatelessWidget {
               fontSize: dimension.width10,
               fontWeight: FontWeight.w400,
             ),
-          ),const Spacer(),
+          ),
+          const Spacer(),
           SizedBox(
             width: dimension.width60,
             child: DefaultText(
@@ -80,7 +85,8 @@ class CollectorsCard extends StatelessWidget {
               fontSize: dimension.width10,
               fontWeight: FontWeight.w400,
             ),
-          ),const Spacer(),
+          ),
+          const Spacer(),
           SizedBox(
             width: dimension.width60,
             child: DefaultText(
@@ -97,7 +103,7 @@ class CollectorsCard extends StatelessWidget {
               children: [
                 Expanded(
                   child: DefaultButton(
-                    color:  Color(0xFFFFF4DE),
+                    color: Color(0xFFFFF4DE),
                     onPressed: () {},
                     child: DefaultText(
                       text: 'تصفير',
@@ -110,7 +116,7 @@ class CollectorsCard extends StatelessWidget {
                 horizontalSpace(dimension.width10),
                 Expanded(
                   child: DefaultButton(
-                    color:  Color(0xffebf5f6),
+                    color: Color(0xffebf5f6),
                     onPressed: () {},
                     child: DefaultText(
                       text: 'اضافة رصيد',
@@ -123,9 +129,86 @@ class CollectorsCard extends StatelessWidget {
                   ),
                 ),
                 horizontalSpace(dimension.width5),
-                InkWell(
-                    onTap: () {},
-                    child: SvgPicture.asset('assets/icons/more.svg'))
+                PopupMenuButton(
+                  // icon: SvgPicture.asset('assets/icons/more.svg'),
+                  onSelected: (String choice) {
+                    // Handle menu item selection
+                    if (choice == 'option1') {
+                      // Perform action for option 1
+                      showDataAlert(
+                        context: context,
+                        child: UpdateCollectorWidget(
+                          onPressed: () {},
+                          name: "كريم سيد ابراهيم عبدالتواب",
+                          email: "abokhadiga6@gmail.com",
+                        ),
+                      );
+                    } else if (choice == 'option2') {
+                      // Perform action for option 2
+                      showDataAlert(
+                        context: context,
+                        child: DeleteCollectorWidget(
+                          onPressed: () {},
+                          collectorName: "كريم سيد ابراهيم عبدالتواب",
+                        ),
+                      );
+                    }
+                  },
+                  itemBuilder: (BuildContext context) =>
+                      <PopupMenuEntry<String>>[
+                    PopupMenuItem<String>(
+                      value: 'option1',
+                      child: Directionality(
+                        textDirection: TextDirection.rtl,
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            SizedBox(
+                                width: dimension.width15,
+                                child:
+                                    SvgPicture.asset('assets/icons/edit.svg')),
+                            horizontalSpace(dimension.width10),
+                            DefaultText(
+                              text: 'تعديل المحصل',
+                              color: ColorsManager.darkBlack,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                    PopupMenuItem<String>(
+                      value: 'option2',
+                      child: Directionality(
+                        textDirection: TextDirection.rtl,
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            SizedBox(
+                              width: dimension.width15,
+                              child: SvgPicture.asset(
+                                'assets/icons/remove.svg',
+                                color: ColorsManager.primaryColor,
+                              ),
+                            ),
+                            horizontalSpace(dimension.width10),
+                            DefaultText(
+                              text: 'حذف المحصل',
+                              color: ColorsManager.primaryColor,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                    // Add more PopupMenuItem widgets for additional options
+                  ],
+                  child: SvgPicture.asset('assets/icons/more.svg'),
+                ),
               ],
             ),
           ),

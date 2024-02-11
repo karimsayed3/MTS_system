@@ -4,18 +4,6 @@ import 'package:system/features/disabled_customers_screen/presentation/desktop/s
 import 'package:system/features/late_customers_screen/presentation/desktop/screen/late_customers_screen.dart';
 import 'package:system/features/subscribers_screen/presentation/desktop/screen/subscribers_screen.dart';
 import 'package:system/features/withdrawn_customers_screen/presentation/desktop/screen/withdrawn_customers_screen.dart';
-
-import '../../../../core/helpers/dimensions.dart';
-import '../../../../core/helpers/spacing.dart';
-import '../../../../core/theming/colors.dart';
-import '../../../../core/widgets/default_button.dart';
-import '../../../../core/widgets/default_text.dart';
-import '../../../../core/widgets/home_widget.dart';
-import '../../../companies_screen/presentation/desktop/widgets/bunch_screen_details.dart';
-import '../../../collectors_screen/presentation/desktop/widgets/collectors_card.dart';
-import '../../../companies_screen/presentation/desktop/widgets/companies_header_widget.dart';
-import '../../../companies_screen/presentation/desktop/widgets/companies_screen_details.dart';
-import '../../../companies_screen/presentation/desktop/widgets/companies_search_widget.dart';
 import '../widgets/customers_nav_bar_widget.dart';
 
 class CustomersScreen extends StatefulWidget {

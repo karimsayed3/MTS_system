@@ -6,15 +6,11 @@ import 'package:system/core/theming/colors.dart';
 import 'package:system/core/widgets/default_button.dart';
 import 'package:system/core/widgets/default_text.dart';
 import 'package:system/core/widgets/show_alert_dialog.dart';
-import 'package:system/features/companies_screen/presentation/desktop/widgets/add_bunch_for_company.dart';
-import 'package:system/features/companies_screen/presentation/desktop/widgets/delete_bunch_for_company.dart';
-import 'package:system/features/companies_screen/presentation/desktop/widgets/delete_company_widget.dart';
-import 'package:system/features/companies_screen/presentation/desktop/widgets/update_company_widget.dart';
+import 'package:system/features/collectors_screen/presentation/desktop/widgets/delete_collector_widget.dart';
+import 'package:system/features/collectors_screen/presentation/desktop/widgets/update_collector_widget.dart';
 
-class CompaniesCard extends StatelessWidget {
-  const CompaniesCard({
-    super.key,
-  });
+class ReviewDataCard extends StatelessWidget {
+  const ReviewDataCard({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,12 +25,12 @@ class CompaniesCard extends StatelessWidget {
       decoration: const BoxDecoration(
           border: Border(bottom: BorderSide(color: ColorsManager.lightGray))),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(
             width: dimension.width150,
             child: DefaultText(
-              text: 'شركة فودافون كفرالشيخ',
+              text: 'كريم سيد ابراهيم عبدالتواب',
               color: ColorsManager.darkBlack,
               fontSize: dimension.width10,
               fontWeight: FontWeight.w400,
@@ -42,9 +38,9 @@ class CompaniesCard extends StatelessWidget {
           ),
           const Spacer(),
           SizedBox(
-            width: dimension.width130,
+            width: dimension.width100,
             child: DefaultText(
-              text: '04/18/2020 09:42:00AM',
+              text: '01156783894',
               color: ColorsManager.secondaryColor,
               fontSize: dimension.width10,
               fontWeight: FontWeight.w400,
@@ -53,10 +49,10 @@ class CompaniesCard extends StatelessWidget {
           const Spacer(),
           SizedBox(
             width: dimension.width100,
-            child: Row(
+            child:Row(
               children: [
                 Container(
-                  width: dimension.width50,
+                  width: dimension.width80,
                   padding: EdgeInsets.symmetric(
                       horizontal: dimension.width10,
                       vertical: dimension.height5),
@@ -65,7 +61,7 @@ class CompaniesCard extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10)),
                   child: Center(
                     child: DefaultText(
-                      text: '10',
+                      text: 'Super Flix 30',
                       color: ColorsManager.secondaryColor,
                       fontSize: dimension.width10,
                       fontWeight: FontWeight.w400,
@@ -73,29 +69,61 @@ class CompaniesCard extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  width: dimension.width30,
+                  width: dimension.width5,
                 ),
               ],
             ),
           ),
           const Spacer(),
           SizedBox(
-            width: dimension.width350,
+            width: dimension.width100,
             child: Row(
+              children: [
+                Container(
+                  width: dimension.width80,
+                  padding: EdgeInsets.symmetric(
+                      horizontal: dimension.width10,
+                      vertical: dimension.height5),
+                  decoration: BoxDecoration(
+                      color: const Color(0x0F007C92),
+                      borderRadius: BorderRadius.circular(10)),
+                  child: Center(
+                    child: DefaultText(
+                      text: 'Super Flix 30',
+                      color: ColorsManager.secondaryColor,
+                      fontSize: dimension.width10,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  width: dimension.width5,
+                ),
+              ],
+            ),
+          ),
+          const Spacer(),
+          SizedBox(
+            width: dimension.width200,
+            child: DefaultText(
+              text: 'لوريم ابسيوم دولر لوريم ابسيوم دولر لوريم ابسيوم دولر لوريم ابسيوم دولر لوريم ابسيوم دولر لوريم ابسيوم دولر',
+              color: ColorsManager.darkBlack,
+              fontSize: dimension.width10,
+              fontWeight: FontWeight.w400,
+            ),
+          ),
+          const Spacer(),
+          SizedBox(
+            width: dimension.width180,
+            child:  Row(
               children: [
                 Expanded(
                   child: DefaultButton(
-                    color: const Color(0xffebf5f6),
-                    onPressed: () {
-                      showDataAlert(
-                          context: context,
-                          child: AddBunchForCompany(
-                            onPressed: () {},
-                          ));
-                    },
+                    color: Color(0xFFFFF4DE),
+                    onPressed: () {},
                     child: DefaultText(
-                      text: 'اضافة باقة للشركة',
-                      color: const Color(0xFF007C92),
+                      text: 'تغاضى',
+                      color: Color(0xFFFFA800),
                       fontSize: dimension.width10,
                       fontWeight: FontWeight.w500,
                     ),
@@ -104,18 +132,13 @@ class CompaniesCard extends StatelessWidget {
                 horizontalSpace(dimension.width10),
                 Expanded(
                   child: DefaultButton(
-                    color: ColorsManager.lightBlueColor,
-                    onPressed: () {
-                      showDataAlert(
-                          context: context,
-                          child: DeleteBunchForCompany(
-                            onPressed: () {},
-                            companyName: "شركة فودافون كفرالشيخ",
-                          ));
-                    },
+                    color: Color(0xffebf5f6),
+                    onPressed: () {},
                     child: DefaultText(
-                      text: 'حذف قيمة باقة',
-                      color: const Color(0xFFCC232A),
+                      text: 'تعديل',
+                      color: ColorsManager.secondaryColor,
+
+                      // color: Color(0xFFCC232A),
                       fontSize: dimension.width10,
                       fontWeight: FontWeight.w500,
                     ),
@@ -130,23 +153,25 @@ class CompaniesCard extends StatelessWidget {
                       // Perform action for option 1
                       showDataAlert(
                         context: context,
-                        child: UpdateCompanyWidget(
+                        child: UpdateCollectorWidget(
                           onPressed: () {},
-                          companyName: "شركة فودافون كفرالشيخ",
+                          name: "كريم سيد ابراهيم عبدالتواب",
+                          email: "abokhadiga6@gmail.com",
                         ),
                       );
                     } else if (choice == 'option2') {
                       // Perform action for option 2
                       showDataAlert(
-                          context: context,
-                          child: DeleteCompanyWidget(
-                            onPressed: () {},
-                            companyName: "شركة فودافون كفرالشيخ",
-                          ));
+                        context: context,
+                        child: DeleteCollectorWidget(
+                          onPressed: () {},
+                          collectorName: "كريم سيد ابراهيم عبدالتواب",
+                        ),
+                      );
                     }
                   },
                   itemBuilder: (BuildContext context) =>
-                      <PopupMenuEntry<String>>[
+                  <PopupMenuEntry<String>>[
                     PopupMenuItem<String>(
                       value: 'option1',
                       child: Directionality(
@@ -158,10 +183,10 @@ class CompaniesCard extends StatelessWidget {
                             SizedBox(
                                 width: dimension.width15,
                                 child:
-                                    SvgPicture.asset('assets/icons/edit.svg')),
+                                SvgPicture.asset('assets/icons/edit.svg')),
                             horizontalSpace(dimension.width10),
                             DefaultText(
-                              text: 'تعديل بيانات الشركة',
+                              text: 'تعديل المحصل',
                               color: ColorsManager.darkBlack,
                               fontSize: 14,
                               fontWeight: FontWeight.w500,
@@ -187,7 +212,7 @@ class CompaniesCard extends StatelessWidget {
                             ),
                             horizontalSpace(dimension.width10),
                             DefaultText(
-                              text: 'حذف الشركة',
+                              text: 'حذف المحصل',
                               color: ColorsManager.primaryColor,
                               fontSize: 14,
                               fontWeight: FontWeight.w500,

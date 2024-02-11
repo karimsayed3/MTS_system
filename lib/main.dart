@@ -1,5 +1,5 @@
 import 'package:autocomplete_textfield/autocomplete_textfield.dart';
-import 'package:device_preview/device_preview.dart';
+// import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -56,16 +56,16 @@ void main() async {
     if (kDebugMode) {
       print("Running on a mobile device.");
     }
-    // runApp(MTSMobileApp(
-    //   appRouter: AppRouter(),
-    // ));
+    runApp(MTSMobileApp(
+      appRouter: AppRouter(),
+    ));
 
-    runApp(DevicePreview(
-      enabled: !kReleaseMode,
-      builder: (context) => MTSMobileApp(
-        appRouter: AppRouter(),
-      ), // Wrap your app
-    ),);
+    // runApp(DevicePreview(
+    //   enabled: !kReleaseMode,
+    //   builder: (context) => MTSMobileApp(
+    //     appRouter: AppRouter(),
+    //   ), // Wrap your app
+    // ),);
   }
   else
   {
@@ -110,8 +110,8 @@ class MTSMobileApp extends StatelessWidget {
         minTextAdapt: true,
         child: MaterialApp(
           useInheritedMediaQuery: true,
-          locale: DevicePreview.locale(context),
-          builder: DevicePreview.appBuilder,
+          // locale: DevicePreview.locale(context),
+          // builder: DevicePreview.appBuilder,
           navigatorKey: navigatorKey,
           title: 'شركة لواتة',
           theme: ThemeData(

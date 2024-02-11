@@ -1,29 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:system/core/helpers/dimensions.dart';
 
 class HomeWidget extends StatelessWidget {
-  const HomeWidget(
+   HomeWidget(
       {super.key,
         required this.child,
-        required this.horizontal,
-        required this.vertical,
-        required this.height,
-        required this.width});
+         this.horizontal,
+         this.vertical,
+         this.height,
+         this.width});
 
   final Widget child;
-  final double horizontal;
-  final double vertical;
-  final double height;
-  final double width;
+   double? horizontal;
+   double? vertical;
+   double? height;
+   double? width;
 
   @override
   Widget build(BuildContext context) {
+    var dimension = Dimensions(context);
     return Container(
       padding: EdgeInsets.symmetric(
-        horizontal: horizontal,
-        vertical: vertical,
+        horizontal: horizontal?? dimension.width10,
+        vertical: vertical ?? dimension.width10,
       ),
-      height: height,
-      width: width,
+      height: height ?? MediaQuery.of(context).size.height * .72,
+      width: width ?? MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(10),

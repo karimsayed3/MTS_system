@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:system/core/helpers/dimensions.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:system/core/helpers/spacing.dart';
 import 'package:system/core/theming/colors.dart';
 import 'package:system/core/widgets/custom_search_widget.dart';
 
-class CompaniesSearchWidget extends StatelessWidget {
-  const CompaniesSearchWidget({super.key, required this.searchController});
+import '../../../../../core/helpers/dimensions.dart';
+
+class ReviewDataSearchWidget extends StatelessWidget {
+  const ReviewDataSearchWidget({super.key, required this.searchController});
   final TextEditingController searchController;
 
   @override

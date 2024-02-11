@@ -5,6 +5,7 @@ import 'package:system/features/collectors_screen/presentation/desktop/screen/co
 import 'package:system/features/companies_screen/presentation/desktop/screen/companies_screen_desktop.dart';
 import 'package:system/features/customers_screen/presentation/screen/customers_screen.dart';
 import 'package:system/features/history_operations_screen/presentation/desktop/screen/history_operations_screen_desktop.dart';
+import 'package:system/features/review_data_screen/presentation/desktop/screen/review_data_screen.dart';
 
 class HomeDesktopScreen extends StatefulWidget {
   const HomeDesktopScreen({super.key});
@@ -20,6 +21,7 @@ class _HomeDesktopScreenState extends State<HomeDesktopScreen> {
     'المحصلون',
     'المستخدمون',
     'سجل العمليات',
+    'مراجعة البيانات',
   ];
 
   List<Widget> body = [
@@ -30,6 +32,7 @@ class _HomeDesktopScreenState extends State<HomeDesktopScreen> {
     const CollectorsScreen(),
     const CustomersScreen(),
     const HistoryOperationsDesktopScreen(),
+    const ReviewDataScreenDesktop(),
   ];
   int index = 0;
 

@@ -9,17 +9,16 @@ import 'package:system/core/widgets/show_alert_dialog.dart';
 import 'package:system/features/collectors_screen/presentation/desktop/widgets/add_collector_widget.dart';
 import 'package:system/features/collectors_screen/presentation/desktop/widgets/collectors_card.dart';
 import 'package:system/features/collectors_screen/presentation/desktop/widgets/collectors_search_widget.dart';
-import 'collectors_header_widget.dart';
+import 'package:system/features/review_data_screen/presentation/desktop/widgets/review_data_header_widget.dart';
+import 'package:system/features/review_data_screen/presentation/desktop/widgets/review_data_search_widget.dart';
 
-class CollectorsScreenDetails extends StatefulWidget {
-  const CollectorsScreenDetails({super.key});
+import 'review_data_card.dart';
 
-  @override
-  State<CollectorsScreenDetails> createState() =>
-      _CollectorsScreenDetailsState();
-}
+class ReviewDataScreenDetails extends StatelessWidget {
+  ReviewDataScreenDetails({super.key});
 
-class _CollectorsScreenDetailsState extends State<CollectorsScreenDetails> {
+  TextEditingController searchController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     var dimension = Dimensions(context);
@@ -34,7 +33,7 @@ class _CollectorsScreenDetailsState extends State<CollectorsScreenDetails> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             DefaultText(
-              text: 'المحصلون',
+              text: 'مراجعة البيانات',
               fontSize: dimension.reduce20,
               fontWeight: FontWeight.w400,
             ),
@@ -51,38 +50,41 @@ class _CollectorsScreenDetailsState extends State<CollectorsScreenDetails> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      CollectorsSearchWidget(),
-                      DefaultButton(
-                        color: const Color(0xffebf5f6),
-                        padding: EdgeInsets.symmetric(
-                          horizontal: dimension.width15,
-                          vertical: dimension.height10,
-                        ),
-                        onPressed: () {
-                          showDataAlert(
-                              context: context,
-                              child: AddCollectorWidget(
-                                onPressed: () {},
-                              ));
-                        },
-                        child: DefaultText(
-                          text: "+ اضافة محصل",
-                          color: const Color(0xFF007C92),
-                          fontSize: dimension.reduce20,
-                          fontWeight: FontWeight.w400,
-                        ),
+                      ReviewDataSearchWidget(
+                        searchController: searchController,
                       ),
+                      // DefaultButton(
+                      //   color: const Color(0xffebf5f6),
+                      //   padding: EdgeInsets.symmetric(
+                      //     horizontal: dimension.width15,
+                      //     vertical: dimension.height10,
+                      //   ),
+                      //   onPressed: () {
+                      //     showDataAlert(
+                      //         context: context,
+                      //         child: AddCollectorWidget(
+                      //           onPressed: () {},
+                      //         ));
+                      //   },
+                      //   child: DefaultText(
+                      //     text: "+ اضافة محصل",
+                      //     color: const Color(0xFF007C92),
+                      //     fontSize: dimension.reduce20,
+                      //     fontWeight: FontWeight.w400,
+                      //   ),
+                      // ),
                     ],
                   ),
                   verticalSpace(dimension.height10),
-                  const CollectorsHeaderWidget(),
+                  const ReviewDataHeaderWidget(),
                   Expanded(
                       child: ListView.builder(
-                    itemBuilder: (context, index) {
-                      return CollectorsCard();
-                    },
-                    itemCount: 10,
-                  ))
+                        itemBuilder: (context, index) {
+                          return ReviewDataCard();
+                          // return SizedBox.shrink();
+                        },
+                        itemCount: 10,
+                      ))
                 ],
               ),
             )
