@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:system/core/helpers/check_platform.dart';
 import 'package:system/core/helpers/dimensions.dart';
 import 'package:system/core/helpers/spacing.dart';
 import 'package:system/core/theming/colors.dart';
@@ -16,7 +18,9 @@ class MakeZeroWidget extends StatelessWidget {
     return SizedBox(
       width: dimension.width300,
       child: Padding(
-        padding: EdgeInsets.symmetric(
+        padding: isMobile()
+            ? EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h)
+            : EdgeInsets.symmetric(
             horizontal: dimension.width20, vertical: dimension.height20),
         child: SingleChildScrollView(
           child: Column(
@@ -26,19 +30,24 @@ class MakeZeroWidget extends StatelessWidget {
               DefaultText(
                 text: 'تصفير',
                 color: ColorsManager.secondaryColor,
-                fontSize: dimension.reduce20,
+                fontSize: isMobile()
+                    ? 20.sp
+                    : dimension.reduce20,
                 fontWeight: FontWeight.w700,
               ),
-              verticalSpace(dimension.height10),
+              isMobile()
+                  ? verticalSpace(10.h):  verticalSpace(dimension.height10),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   DefaultText(
                     text: 'هل أنت متاكد من عملية تصفير الرصيد الى "${subscriberName}" ؟',
-                    fontSize: dimension.reduce20,
+                    fontSize: isMobile()
+                        ? 20.sp : dimension.reduce20,
                     fontWeight: FontWeight.w400,
                   ),
-                  verticalSpace(dimension.height10),
+                  isMobile()
+                      ? verticalSpace(10.h):  verticalSpace(dimension.height10),
                   Row(
                     children: [
                       DefaultButton(

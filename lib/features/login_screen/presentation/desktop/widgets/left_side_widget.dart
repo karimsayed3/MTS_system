@@ -8,8 +8,11 @@ import 'package:system/core/widgets/custom_navigation_bar_widget.dart';
 import 'package:system/core/widgets/default_text.dart';
 import 'package:system/core/widgets/default_text_form_field.dart';
 import 'package:system/features/login_screen/business_logic/login_cubit.dart';
+import 'package:system/features/login_screen/data/models/login_request_body.dart';
 import 'package:system/features/login_screen/presentation/desktop/widgets/email_and_password.dart';
+import 'package:system/features/login_screen/presentation/desktop/widgets/login_bloc_listener_desktop.dart';
 import 'package:system/features/login_screen/presentation/desktop/widgets/password_validations.dart';
+import 'package:system/features/login_screen/presentation/desktop/widgets/validate_then_do.dart';
 
 import '../../../../../core/helpers/app_regex.dart';
 import '../../../../../core/theming/styles.dart';
@@ -23,15 +26,14 @@ class LeftSideWidget extends StatefulWidget {
 }
 
 class _LeftSideWidgetState extends State<LeftSideWidget> {
-
   @override
   Widget build(BuildContext context) {
     var dimension = Dimensions(context);
     return Center(
       child: SingleChildScrollView(
         child: Padding(
-          padding:
-              EdgeInsets.only(right: dimension.width20, left: dimension.width80),
+          padding: EdgeInsets.only(
+              right: dimension.width20, left: dimension.width80),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -53,11 +55,7 @@ class _LeftSideWidgetState extends State<LeftSideWidget> {
               DefaultButton(
                 padding: EdgeInsets.symmetric(vertical: dimension.height15),
                 onPressed: () {
-                  if(LoginCubit.get(context).formKey.currentState!.validate()){
-                    print("object");
-                    navigateToPage(Routes.homeDesktopScreen);
-                    // Navigator.pushNamed(context, Routes.homeScreen);
-                  }
+                  validateThenDoLogin(context);
                 },
                 child: DefaultText(
                   text: "تسجيل الدخول",
@@ -67,6 +65,7 @@ class _LeftSideWidgetState extends State<LeftSideWidget> {
                   fontWeight: FontWeight.w400,
                 ),
               ),
+              const LoginBlocListenerDesktop(),
             ],
           ),
         ),

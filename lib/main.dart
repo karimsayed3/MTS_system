@@ -1,13 +1,21 @@
+import 'dart:convert';
+
 import 'package:autocomplete_textfield/autocomplete_textfield.dart';
 // import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get_it/get_it.dart';
+import 'package:system/core/helpers/cache_helper.dart';
+import 'package:system/core/helpers/check_platform.dart';
+import 'package:system/core/networking/tokenDecode.dart';
 import 'package:window_manager/window_manager.dart';
 import 'core/di/dependency_injection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+import 'package:jwt_decoder/jwt_decoder.dart';
+import 'core/helpers/bloc_observer.dart';
 import 'core/routing/app_router.dart';
 import 'core/routing/routers.dart';
 import 'core/theming/colors.dart';
@@ -20,13 +28,7 @@ List<Map<String, dynamic>> openedPages = [
     Routes.loginScreenDesktop: null,
   }
 ];
-bool isMobile() {
-  if (Platform.isIOS || Platform.isAndroid) {
-    return true; // Running on iOS or Android (mobile)
-  } else {
-    return false; // Running on another platform (web, desktop, etc.)
-  }
-}
+
 
 // void testWindowFunctions() async {
 //   if (isMobile()) {
@@ -39,11 +41,18 @@ bool isMobile() {
 //     }
 //   }
 // }
-
+// String getJsonFromJWT(String yourToken){
+//   String normalizedSource = base64Url.normalize(yourToken);
+//   return utf8.decode(base64Url.decode(normalizedSource));
+// }
 double screenWidth = 0;
 double screenHeight = 0;
+
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await CacheHelper.init();
+  Bloc.observer = MyBlocObserver();
 
   setupGetIt();
   // To fix texts being hidden bug in flutter_screenutil in release mode.
@@ -69,8 +78,8 @@ void main() async {
   }
   else
   {
+    print(CacheHelper.getdata(key: 'accountType'));
     await windowManager.ensureInitialized();
-
     windowManager.waitUntilReadyToShow().then((_) async {
       // Hide window title bar
 //     await windowManager.setTitleBarStyle(windowButtonVisibility: true,TitleBarStyle.normal);
@@ -120,12 +129,7 @@ class MTSMobileApp extends StatelessWidget {
             useMaterial3: true,
           ),
           debugShowCheckedModeBanner: false,
-          home: const Scaffold(
-            body: Center(
-              child: Text("Mobile app 2"),
-            ),
-          ),
-          initialRoute: Routes.homeMobileScreen,
+          initialRoute: Routes.splashScreen,
           onGenerateRoute: appRouter.generateRoute,
         ));
   }
@@ -152,7 +156,7 @@ class MTSDesktopApp extends StatelessWidget {
       // home: const Scaffold(
       //   body: Center(child: Text("desktop app 2"),),
       // ),
-      initialRoute: Routes.animationTestScreen,
+      initialRoute: Routes.loginScreenDesktop,
       onGenerateRoute: appRouter.generateRoute,
     );
   }

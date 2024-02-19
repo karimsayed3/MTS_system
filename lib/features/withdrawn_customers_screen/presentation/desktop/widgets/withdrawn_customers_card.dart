@@ -239,10 +239,48 @@ class WithdrawnCustomersCard extends StatelessWidget {
             ),
           ),
           const Spacer(),
-          SizedBox(
-            width: dimension.width40,
-            child: InkWell(
-                onTap: () {}, child: SvgPicture.asset('assets/icons/more.svg')),
+          PopupMenuButton(
+            // icon: SvgPicture.asset('assets/icons/more.svg'),
+            onSelected: (String choice) {
+              // Handle menu item selection
+              if (choice == 'option1') {
+                // Perform action for option 1
+                // showDataAlert(
+                //   context: context,
+                //   child: UpdateSubscriberWidget(
+                //     onPressed: () {},
+                //     // companyName: "شركة فودافون كفرالشيخ",
+                //   ),
+                // );
+              }
+            },
+            itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
+              PopupMenuItem<String>(
+                value: 'option1',
+                child: Directionality(
+                  textDirection: TextDirection.rtl,
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      SizedBox(
+                        width: dimension.width15,
+                        child: SvgPicture.asset('assets/icons/edit.svg'),
+                      ),
+                      horizontalSpace(dimension.width10),
+                      DefaultText(
+                        text: 'تعديل',
+                        color: ColorsManager.darkBlack,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              // Add more PopupMenuItem widgets for additional options
+            ],
+            child: SvgPicture.asset('assets/icons/more.svg'),
           ),
         ],
       ),

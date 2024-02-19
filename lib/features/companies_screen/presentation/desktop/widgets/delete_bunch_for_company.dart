@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:system/core/helpers/dimensions.dart';
 import 'package:system/core/helpers/spacing.dart';
 import 'package:system/core/theming/colors.dart';
 import 'package:system/core/widgets/default_button.dart';
 import 'package:system/core/widgets/default_text.dart';
+
+import '../../../../../core/helpers/check_platform.dart';
 
 class DeleteBunchForCompany extends StatelessWidget {
   const DeleteBunchForCompany({super.key, required this.onPressed, required this.companyName});
@@ -17,7 +20,10 @@ class DeleteBunchForCompany extends StatelessWidget {
     return SizedBox(
       width: dimension.width300,
       child: Padding(
-        padding: EdgeInsets.symmetric(
+        padding: isMobile()? EdgeInsets.symmetric(
+          horizontal: 24.w,
+          vertical:  12.h,
+        ) : EdgeInsets.symmetric(
             horizontal: dimension.width20, vertical: dimension.height20),
         child: SingleChildScrollView(
           child: Column(
@@ -27,23 +33,26 @@ class DeleteBunchForCompany extends StatelessWidget {
               DefaultText(
                 text: 'حذف قيمة باقة',
                 color: ColorsManager.primaryColor,
-                fontSize: dimension.reduce20,
+                fontSize: isMobile()? 20.sp:dimension.reduce20,
                 fontWeight: FontWeight.w700,
               ),
-              verticalSpace(dimension.height10),
+              isMobile()? verticalSpace(10.h):  verticalSpace(dimension.height10),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   DefaultText(
                     text: 'هل أنت متاكد من عملية حذف قيمة الباقة للشركة "${companyName}" ؟',
-                    fontSize: dimension.reduce20,
+                    fontSize:isMobile()? 20.sp: dimension.reduce20,
                     fontWeight: FontWeight.w400,
                   ),
-                  verticalSpace(dimension.height10),
+                  isMobile()? verticalSpace(10.h):  verticalSpace(dimension.height10),
                   Row(
                     children: [
                       DefaultButton(
-                        padding: EdgeInsets.symmetric(
+                        padding: isMobile()? EdgeInsets.symmetric(
+                          horizontal: 24.w,
+                          vertical:  12.h,
+                        ) :EdgeInsets.symmetric(
                           horizontal: dimension.width20,
                           vertical: dimension.height15,
                         ),

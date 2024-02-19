@@ -1,8 +1,21 @@
 class ApiConstants {
-  static const String apiBaseUrl = "https://vcare.integration25.com/api/";
-
+  /// base url
+  static const String apiBaseUrl = "https://3vn1srv7-3000.euw.devtunnels.ms/api/";
+  /// auth
   static const String login = "auth/login";
-  static const String signup = "auth/register";
+  static const String logout = "auth/logout";
+  /// companies
+  static const String getCompanies = "company/getCompanies";
+  static const String addCompany = "company/addCompany";
+  static const String updateCompany = "company/updateCompany";
+  static const String deleteCompany = "company/deleteCompany";
+  static const String deductPlanFromSubscribers = "company/deductPlanFromSubscribers";
+  static const String undoPlanFromSubscribers = "company/undoPlanFromSubscribers";
+  /// plans
+  static const String getPlans = "plan/getPlans";
+  static const String addPlan = "plan/addPlan";
+  static const String updatePlan = "plan/updatePlan";
+  static const String deletePlan = "plan/deletePlan";
 }
 
 class ApiErrors {

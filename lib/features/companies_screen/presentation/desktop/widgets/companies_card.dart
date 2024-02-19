@@ -1,20 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:system/core/helpers/convert_string_to_date.dart';
 import 'package:system/core/helpers/dimensions.dart';
 import 'package:system/core/helpers/spacing.dart';
 import 'package:system/core/theming/colors.dart';
 import 'package:system/core/widgets/default_button.dart';
 import 'package:system/core/widgets/default_text.dart';
 import 'package:system/core/widgets/show_alert_dialog.dart';
+import 'package:system/features/companies_screen/business_logic/companies_cubit.dart';
+import 'package:system/features/companies_screen/data/models/delete_company_request_body.dart';
+import 'package:system/features/companies_screen/data/models/get_companies_response.dart';
+import 'package:system/features/companies_screen/data/models/undo_plan_from_subscribers_request_body.dart';
 import 'package:system/features/companies_screen/presentation/desktop/widgets/add_bunch_for_company.dart';
 import 'package:system/features/companies_screen/presentation/desktop/widgets/delete_bunch_for_company.dart';
 import 'package:system/features/companies_screen/presentation/desktop/widgets/delete_company_widget.dart';
 import 'package:system/features/companies_screen/presentation/desktop/widgets/update_company_widget.dart';
 
+import '../../../data/models/deduct_plan_from_subscribers_request_body.dart';
+
 class CompaniesCard extends StatelessWidget {
   const CompaniesCard({
     super.key,
+    required this.companyData,
   });
+
+  final CompanyData companyData;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +44,7 @@ class CompaniesCard extends StatelessWidget {
           SizedBox(
             width: dimension.width150,
             child: DefaultText(
-              text: 'شركة فودافون كفرالشيخ',
+              text: companyData.name!,
               color: ColorsManager.darkBlack,
               fontSize: dimension.width10,
               fontWeight: FontWeight.w400,
@@ -44,7 +54,7 @@ class CompaniesCard extends StatelessWidget {
           SizedBox(
             width: dimension.width130,
             child: DefaultText(
-              text: '04/18/2020 09:42:00AM',
+              text: convertDateToString(companyData.registrationDate),
               color: ColorsManager.secondaryColor,
               fontSize: dimension.width10,
               fontWeight: FontWeight.w400,
@@ -65,7 +75,7 @@ class CompaniesCard extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10)),
                   child: Center(
                     child: DefaultText(
-                      text: '10',
+                      text: companyData.subscribersCount.toString(),
                       color: ColorsManager.secondaryColor,
                       fontSize: dimension.width10,
                       fontWeight: FontWeight.w400,
@@ -90,7 +100,14 @@ class CompaniesCard extends StatelessWidget {
                       showDataAlert(
                           context: context,
                           child: AddBunchForCompany(
-                            onPressed: () {},
+                            onPressed: () {
+                              CompaniesCubit.get(context)
+                                  .deductPlanFromSubscribers(
+                                deductPlanFromSubscribersRequestBody:
+                                    DeductPlanFromSubscribersRequestBody(
+                                        companyID: companyData.companyID!),
+                              );
+                            },
                           ));
                     },
                     child: DefaultText(
@@ -107,11 +124,18 @@ class CompaniesCard extends StatelessWidget {
                     color: ColorsManager.lightBlueColor,
                     onPressed: () {
                       showDataAlert(
-                          context: context,
-                          child: DeleteBunchForCompany(
-                            onPressed: () {},
-                            companyName: "شركة فودافون كفرالشيخ",
-                          ));
+                        context: context,
+                        child: DeleteBunchForCompany(
+                          onPressed: () {
+                            CompaniesCubit.get(context).undoPlanFromSubscribers(
+                              undoPlanFromSubscribersRequestBody:
+                                  UndoPlanFromSubscribersRequestBody(
+                                      companyID: companyData.companyID!),
+                            );
+                          },
+                          companyName: "شركة فودافون كفرالشيخ",
+                        ),
+                      );
                     },
                     child: DefaultText(
                       text: 'حذف قيمة باقة',
@@ -132,17 +156,26 @@ class CompaniesCard extends StatelessWidget {
                         context: context,
                         child: UpdateCompanyWidget(
                           onPressed: () {},
-                          companyName: "شركة فودافون كفرالشيخ",
+                          companyName: companyData.name ?? "",
+                          companyId: companyData.companyID!,
                         ),
                       );
                     } else if (choice == 'option2') {
                       // Perform action for option 2
                       showDataAlert(
-                          context: context,
-                          child: DeleteCompanyWidget(
-                            onPressed: () {},
-                            companyName: "شركة فودافون كفرالشيخ",
-                          ));
+                        context: context,
+                        child: DeleteCompanyWidget(
+                          onPressed: () {
+                            CompaniesCubit.get(context).deleteCompany(
+                                deleteCompanyRequestBody:
+                                    DeleteCompanyRequestBody(
+                              companyID: companyData.companyID!,
+                            ));
+                          },
+                          companyName: companyData.name ?? "",
+                          companyId: companyData.companyID!,
+                        ),
+                      );
                     }
                   },
                   itemBuilder: (BuildContext context) =>

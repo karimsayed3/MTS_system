@@ -13,7 +13,7 @@ class SubscribersHeaderWidgetMobile extends StatelessWidget {
       color: Colors.white,
       child: Row(children: [
         HeaderLabelWithImageMobile(
-          width: 120.w,
+          width: 110.w,
           image: "assets/images/header_image.png",
           title: 'المشترك',
         ),
@@ -25,12 +25,12 @@ class SubscribersHeaderWidgetMobile extends StatelessWidget {
         ),
         const Spacer(),
         HeaderLabelWithImageMobile(
-          width: 130.w,
+          width: 125.w,
           image: "assets/images/header_image.png",
           title: 'الرصيد',
         ),
         const Spacer(),
-        horizontalSpace(10.w),
+        horizontalSpace(30.w),
       ]),
     );
   }

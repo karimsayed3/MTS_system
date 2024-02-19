@@ -58,6 +58,7 @@ class Dimensions{
   double get height180 => MediaQuery.of(context).size.height *0.18;
   double get height200 => MediaQuery.of(context).size.height *0.2;
   double get height250 => MediaQuery.of(context).size.height *0.246;
+  double get height280 => MediaQuery.of(context).size.height *0.276;
   double get height300 => MediaQuery.of(context).size.height *0.296;
   double get height320 => MediaQuery.of(context).size.height *0.302;
   double get height350 => MediaQuery.of(context).size.height *0.305;

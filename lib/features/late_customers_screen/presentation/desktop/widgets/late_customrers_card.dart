@@ -154,9 +154,96 @@ class LateCustomersCard extends StatelessWidget {
                   ),
                 ),
                 horizontalSpace(dimension.width5),
-                InkWell(
-                    onTap: () {},
-                    child: SvgPicture.asset('assets/icons/more.svg')),
+                PopupMenuButton(
+                  // icon: SvgPicture.asset('assets/icons/more.svg'),
+                  onSelected: (String choice) {
+                    // Handle menu item selection
+                    if (choice == 'option1') {
+                      // Perform action for option 1
+                      // showDataAlert(
+                      //   context: context,
+                      //   child: UpdateSubscriberWidget(
+                      //     onPressed: () {},
+                      //     // companyName: "شركة فودافون كفرالشيخ",
+                      //   ),
+                      // );
+                    }
+                  },
+                  itemBuilder: (BuildContext context) =>
+                  <PopupMenuEntry<String>>[
+                    PopupMenuItem<String>(
+                      value: 'option1',
+                      child: Directionality(
+                        textDirection: TextDirection.rtl,
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            SizedBox(
+                                width: dimension.width15,
+                                child:
+                                SvgPicture.asset('assets/icons/edit.svg')),
+                            horizontalSpace(dimension.width10),
+                            DefaultText(
+                              text: 'تعديل مشترك',
+                              color: ColorsManager.darkBlack,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                    PopupMenuItem<String>(
+                      value: 'option2',
+                      child: Directionality(
+                        textDirection: TextDirection.rtl,
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            SizedBox(
+                                width: dimension.width15,
+                                child:
+                                SvgPicture.asset('assets/icons/withdraw_icon.svg')),
+                            horizontalSpace(dimension.width10),
+                            DefaultText(
+                              text: 'سحب',
+                              color: ColorsManager.darkBlack,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                    PopupMenuItem<String>(
+                      value: 'option3',
+                      child: Directionality(
+                        textDirection: TextDirection.rtl,
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            SizedBox(
+                                width: dimension.width15,
+                                child:
+                                SvgPicture.asset('assets/icons/disabled_icon.svg')),
+                            horizontalSpace(dimension.width10),
+                            DefaultText(
+                              text: 'تعطيل',
+                              color: ColorsManager.darkBlack,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                    // Add more PopupMenuItem widgets for additional options
+                  ],
+                  child: SvgPicture.asset('assets/icons/more.svg'),
+                ),
               ],
             ),
           ),

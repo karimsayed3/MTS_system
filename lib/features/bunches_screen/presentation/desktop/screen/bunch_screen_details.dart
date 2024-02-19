@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:system/core/di/dependency_injection.dart';
 import 'package:system/core/helpers/dimensions.dart';
 import 'package:system/core/helpers/spacing.dart';
 import 'package:system/core/theming/colors.dart';
@@ -6,9 +8,13 @@ import 'package:system/core/widgets/default_button.dart';
 import 'package:system/core/widgets/default_text.dart';
 import 'package:system/core/widgets/home_widget.dart';
 import 'package:system/core/widgets/show_alert_dialog.dart';
+import 'package:system/features/bunches_screen/business_logic/bunch_cubit.dart';
+import 'package:system/features/bunches_screen/business_logic/bunch_state.dart';
+import 'package:system/features/bunches_screen/data/models/get_plans_request_body.dart';
 import 'package:system/features/bunches_screen/presentation/desktop/widgets/add_bunch_widget.dart';
 import 'package:system/features/bunches_screen/presentation/desktop/widgets/bunch_card.dart';
 import 'package:system/features/bunches_screen/presentation/desktop/widgets/bunches_search_widget.dart';
+import '../widgets/bloc_listener_for_bunch_cubit.dart';
 import '../widgets/bunches_header_widget.dart';
 
 class BunchScreenDetails extends StatefulWidget {
@@ -19,6 +25,18 @@ class BunchScreenDetails extends StatefulWidget {
 }
 
 class _BunchScreenDetailsState extends State<BunchScreenDetails> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    BunchCubit.get(context).getPlans(
+      getPlansRequestBody: GetPlansRequestBody(
+        companyName: "",
+        planName: "",
+      ),
+    );
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     var dimension = Dimensions(context);
@@ -58,11 +76,15 @@ class _BunchScreenDetailsState extends State<BunchScreenDetails> {
                             vertical: dimension.height10,
                           ),
                           onPressed: () {
-                            showDataAlert(context: context, child: AddBunchWidget(
-                              onPressed: () {
-
-                              },
-                            ));
+                            showDataAlert(
+                              context: context,
+                              child: BlocProvider.value(
+                                value: getIt<BunchCubit>(),
+                                child: AddBunchWidget(
+                                  onPressed: () {},
+                                ),
+                              ),
+                            );
                           },
                           child: DefaultText(
                             text: "+ اضافة باقة",
@@ -74,17 +96,25 @@ class _BunchScreenDetailsState extends State<BunchScreenDetails> {
                   ),
                   verticalSpace(dimension.height10),
                   const BunchesHeaderWidget(),
-                  Expanded(
-                    child: ListView.builder(
-                      itemBuilder: (context, index) {
-                        return BunchCard();
-                      },
-                      itemCount: 10,
-                    ),
+                  BlocBuilder<BunchCubit, BunchState>(
+                    builder: (context, state) {
+                      return Expanded(
+                        child: ListView.builder(
+                          itemBuilder: (context, index) {
+                            return BunchCard(
+                              planData:
+                                  BunchCubit.get(context).plansData[index],
+                            );
+                          },
+                          itemCount: BunchCubit.get(context).plansData.length,
+                        ),
+                      );
+                    },
                   ),
                 ],
               ),
-            )
+            ),
+            const BlocListenerForBunchCubit(),
           ],
         ),
       ),

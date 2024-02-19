@@ -1,16 +1,25 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:system/core/di/dependency_injection.dart';
 import 'package:system/core/helpers/dimensions.dart';
 import 'package:system/core/helpers/spacing.dart';
 import 'package:system/core/theming/colors.dart';
 import 'package:system/core/widgets/default_button.dart';
 import 'package:system/core/widgets/default_text.dart';
 import 'package:system/core/widgets/show_alert_dialog.dart';
+import 'package:system/features/bunches_screen/business_logic/bunch_cubit.dart';
+import 'package:system/features/bunches_screen/data/models/delete_plan_request_body.dart';
+import 'package:system/features/bunches_screen/data/models/get_plans_response.dart';
 import 'package:system/features/bunches_screen/presentation/desktop/widgets/delete_bunch_widget.dart';
 import 'package:system/features/bunches_screen/presentation/desktop/widgets/update_bunch_widget.dart';
 
 class BunchCard extends StatelessWidget {
-  const BunchCard({super.key});
+  const BunchCard({super.key, required this.planData});
+
+  final PlanData planData;
 
   @override
   Widget build(BuildContext context) {
@@ -25,12 +34,12 @@ class BunchCard extends StatelessWidget {
       decoration: const BoxDecoration(
           border: Border(bottom: BorderSide(color: ColorsManager.lightGray))),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(
             width: dimension.width150,
             child: DefaultText(
-              text: 'Super Flix 30',
+              text: planData.name ?? '',
               color: ColorsManager.darkBlack,
               fontSize: dimension.width10,
               fontWeight: FontWeight.w400,
@@ -40,7 +49,7 @@ class BunchCard extends StatelessWidget {
           SizedBox(
             width: dimension.width100,
             child: DefaultText(
-              text: '35 L.E',
+              text: planData.price.toString(),
               color: ColorsManager.secondaryColor,
               fontSize: dimension.width10,
               fontWeight: FontWeight.w400,
@@ -50,7 +59,7 @@ class BunchCard extends StatelessWidget {
           SizedBox(
             width: dimension.width150,
             child: DefaultText(
-              text: 'شركة فودافون كفرالشيخ',
+              text: planData.companyName ?? '',
               color: ColorsManager.darkBlack,
               fontSize: dimension.width10,
               fontWeight: FontWeight.w400,
@@ -60,7 +69,7 @@ class BunchCard extends StatelessWidget {
           SizedBox(
             width: dimension.width130,
             child: DefaultText(
-              text: '123',
+              text: planData.subscribersCount.toString(),
               color: ColorsManager.primaryColor,
               fontSize: dimension.width10,
               fontWeight: FontWeight.w400,
@@ -76,13 +85,18 @@ class BunchCard extends StatelessWidget {
                     color: Color(0xffebf5f6),
                     onPressed: () {
                       showDataAlert(
-                          context: context,
+                        context: context,
+                        child: BlocProvider.value(
+                          value: getIt<BunchCubit>(),
                           child: UpdateBunchWidget(
                             onPressed: () {},
-                            companyName: "فودافون",
-                            bunchName: "Super Flix 30",
-                            bunchPrice: 30,
-                          ));
+                            companyName: planData.companyName ?? '',
+                            bunchName: planData.name ?? '',
+                            bunchPrice: planData.price!,
+                            planId: planData.planID!,
+                          ),
+                        ),
+                      );
                     },
                     child: DefaultText(
                       text: 'تعديل',
@@ -99,9 +113,18 @@ class BunchCard extends StatelessWidget {
                     onPressed: () {
                       showDataAlert(
                           context: context,
-                          child: DeleteBunchWidget(
-                            onPressed: () {},
-                            bunchName: "Super Flix 30",
+                          child: BlocProvider.value(
+                            value: getIt<BunchCubit>(),
+                            child: DeleteBunchWidget(
+                              onPressed: () {
+                                BunchCubit.get(context).deletePlan(
+                                  deletePlanRequestBody: DeletePlanRequestBody(
+                                    planID: planData.planID,
+                                  ),
+                                );
+                              },
+                              bunchName: planData.name ?? '',
+                            ),
                           ));
                     },
                     child: DefaultText(

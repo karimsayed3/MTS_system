@@ -12,7 +12,7 @@ import 'routers.dart';
 import '../di/dependency_injection.dart';
 
 class AppRouter {
-  Route generateRoute(RouteSettings settings) {
+  Route? generateRoute(RouteSettings settings) {
     //this arguments to be passed in any screen like this ( arguments as ClassName )
     final arguments = settings.arguments;
 
@@ -20,7 +20,8 @@ class AppRouter {
       case Routes.homeDesktopScreen:
         return MaterialPageRoute(
           builder: (_) => const HomeDesktopScreen(),
-        );case Routes.homeMobileScreen:
+        );
+      case Routes.homeMobileScreen:
         return MaterialPageRoute(
           builder: (_) => const HomeScreenMobile(),
         );
@@ -62,14 +63,8 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => const AnimationTestScreen(),
         );
-      default:
-        return MaterialPageRoute(
-          builder: (_) => Scaffold(
-            body: Center(
-              child: Text('No route defined for ${settings.name}'),
-            ),
-          ),
-        );
+
     }
+    return null;
   }
 }

@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:system/core/theming/colors.dart';
+import 'package:system/core/widgets/button_with_text_and_image.dart';
 import 'package:system/core/widgets/custom_search_widget.dart';
+import 'package:system/core/widgets/show_alert_dialog.dart';
 import 'package:system/core/widgets/title_of_screen_with_logo_widget.dart';
 
+import '../../desktop/widgets/add_collector_widget.dart';
 import '../widgets/collectors_card_for_mobile.dart';
 import '../widgets/collectors_header_widget_mobile.dart';
 
@@ -24,11 +27,26 @@ class CollectorsScreenMobile extends StatelessWidget {
               Container(
                 padding: EdgeInsets.symmetric(vertical: 10.h),
                 color: Colors.transparent,
-                child:  const Row(
+                child:   Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     TitleForScreenWithWidget(
                       title: "المحصلون",
+                    ),
+                    ButtonWithTextAndImageWidget(
+                      onPressed: () {
+                        showDataAlert(
+                            context: context,
+                            child: AddCollectorWidget(
+                              onPressed: () {},
+                            ));
+                      },
+                      color: const Color(0xffebf5f6),
+                      text: "+ اضافة محصل",
+                      fontSize: 16.sp,
+                      padding:
+                      EdgeInsets.symmetric(horizontal: 20.w, vertical: 5.h),
+                      // image: "assets/images/plus.png",
                     ),
                     // LateCustomersInfoWidget(),
                   ],

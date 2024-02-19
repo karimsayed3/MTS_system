@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:system/core/helpers/check_platform.dart';
 import 'package:system/core/helpers/dimensions.dart';
 import 'package:system/core/helpers/spacing.dart';
 import 'package:system/core/theming/colors.dart';
@@ -6,6 +9,8 @@ import 'package:system/core/widgets/default_button.dart';
 import 'package:system/core/widgets/default_text.dart';
 import 'package:system/core/widgets/default_text_form_field.dart';
 import 'package:system/core/widgets/drop_down_button.dart';
+import 'package:system/features/bunches_screen/business_logic/bunch_cubit.dart';
+import 'package:system/features/bunches_screen/data/models/add_plan_request_body.dart';
 
 class AddBunchWidget extends StatefulWidget {
   const AddBunchWidget({super.key, required this.onPressed});
@@ -25,6 +30,10 @@ class _AddBunchWidgetState extends State<AddBunchWidget> {
   ];
   String selectedValue = "فودافون";
 
+  TextEditingController planNameController = TextEditingController();
+  TextEditingController planPriceController = TextEditingController();
+
+
   @override
   Widget build(BuildContext context) {
     var dimension = Dimensions(context);
@@ -37,75 +46,144 @@ class _AddBunchWidgetState extends State<AddBunchWidget> {
             Container(
               width: double.infinity,
               color: ColorsManager.alertDialogHeaderColor,
-              padding: EdgeInsets.only(
-                left: dimension.width10,
-                right: dimension.width10,
-                top: dimension.height10,
-                bottom: dimension.height10,
-              ),
+              padding: isMobile()
+                  ? EdgeInsets.only(
+                      left: 24.w,
+                      right: 24.w,
+                      top: 12.h,
+                      bottom: 12.h,
+                    )
+                  : EdgeInsets.only(
+                      left: dimension.width10,
+                      right: dimension.width10,
+                      top: dimension.height10,
+                      bottom: dimension.height10,
+                    ),
               child: DefaultText(
                 text: 'اضافة باقة',
                 color: ColorsManager.secondaryColor,
-                fontSize: dimension.reduce20,
+                fontSize: isMobile() ? 20.sp : dimension.reduce20,
                 fontWeight: FontWeight.w700,
               ),
             ),
-            const Divider(
-              color: ColorsManager.secondaryColor,
-              thickness: 2,
-              height: 0,
-            ),
+            isMobile()
+                ? const SizedBox.shrink()
+                : const Divider(
+                    color: ColorsManager.secondaryColor,
+                    thickness: 2,
+                    height: 0,
+                  ),
             Padding(
-              padding: EdgeInsets.symmetric(
-                  horizontal: dimension.width10, vertical: dimension.height10),
+              padding: isMobile()
+                  ? EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h)
+                  : EdgeInsets.symmetric(
+                      horizontal: dimension.width10,
+                      vertical: dimension.height10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Expanded(
-                        child: Column(
+                  isMobile()
+                      ? Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            DefaultText(
-                              text: 'اسم الباقة',
-                              fontSize: dimension.reduce20,
-                              fontWeight: FontWeight.w400,
-                              color: ColorsManager.lightBlack,
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                DefaultText(
+                                  text: 'اسم الباقة',
+                                  fontSize:
+                                      isMobile() ? 20.sp : dimension.reduce20,
+                                  fontWeight: FontWeight.w400,
+                                  color: ColorsManager.lightBlack,
+                                ),
+                                verticalSpace(5.h),
+                                DefaultTextFormField(
+                                  controller: planNameController,
+                                  color: Colors.white,
+                                  hintText: 'اسم الباقة',
+                                ),
+                              ],
                             ),
-                            verticalSpace(dimension.height5),
-                            DefaultTextFormField(
-                              controller: TextEditingController(),
-                              color: Colors.white,
-                              hintText: 'اسم الباقة',
+                            verticalSpace(10.w),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                DefaultText(
+                                  text: 'سعر الباقة',
+                                  color: ColorsManager.lightBlack,
+                                  fontSize:
+                                      isMobile() ? 20.sp : dimension.reduce20,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                                verticalSpace(5.h),
+                                DefaultTextFormField(
+                                  inputFormatters: [
+                                    FilteringTextInputFormatter.digitsOnly
+                                  ],
+                                  controller:  planPriceController,
+                                  color: Colors.white,
+                                  hintText: 'سعر الباقة',
+                                ),
+                              ],
+                            ),
+                          ],
+                        )
+                      : Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  DefaultText(
+                                    text: 'اسم الباقة',
+                                    fontSize:
+                                        isMobile() ? 20.sp : dimension.reduce20,
+                                    fontWeight: FontWeight.w400,
+                                    color: ColorsManager.lightBlack,
+                                  ),
+                                  isMobile()
+                                      ? verticalSpace(5.h)
+                                      : verticalSpace(dimension.height5),
+                                  DefaultTextFormField(
+                                    controller: planNameController,
+                                    color: Colors.white,
+                                    hintText: 'اسم الباقة',
+                                  ),
+                                ],
+                              ),
+                            ),
+                            horizontalSpace(dimension.width20),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  DefaultText(
+                                    text: 'سعر الباقة',
+                                    color: ColorsManager.lightBlack,
+                                    fontSize:
+                                        isMobile() ? 20.sp : dimension.reduce20,
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                  isMobile()
+                                      ? verticalSpace(5.h)
+                                      : verticalSpace(dimension.height5),
+                                  DefaultTextFormField(
+                                    inputFormatters: [
+                                      FilteringTextInputFormatter.digitsOnly
+                                    ],
+                                    controller: planPriceController,
+                                    color: Colors.white,
+                                    hintText: 'سعر الباقة',
+                                  ),
+                                ],
+                              ),
                             ),
                           ],
                         ),
-                      ),
-                      horizontalSpace(dimension.width10),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            DefaultText(
-                              text: 'سعر الباقة',
-                              color: ColorsManager.lightBlack,
-                              fontSize: dimension.reduce20,
-                              fontWeight: FontWeight.w400,
-                            ),
-                            verticalSpace(dimension.height5),
-                            DefaultTextFormField(
-                              controller: TextEditingController(),
-                              color: Colors.white,
-                              hintText: 'سعر الباقة',
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                  verticalSpace(dimension.height10),
+                  isMobile()
+                      ? verticalSpace(10.h)
+                      : verticalSpace(dimension.height10),
                   buildDropdown(
                     labelText: 'الشركة',
                     itemList: companies,
@@ -117,16 +195,29 @@ class _AddBunchWidgetState extends State<AddBunchWidget> {
                     },
                     context: context,
                   ),
-                  verticalSpace(dimension.height10),
+                  isMobile()
+                      ? verticalSpace(10.h)
+                      : verticalSpace(dimension.height10),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       DefaultButton(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: dimension.width15,
-                          vertical: dimension.height15,
-                        ),
-                        onPressed: widget.onPressed,
+                        padding: isMobile()
+                            ? EdgeInsets.symmetric(
+                                horizontal: 24.w, vertical: 10.h)
+                            : EdgeInsets.symmetric(
+                                horizontal: dimension.width15,
+                                vertical: dimension.height15,
+                              ),
+                        onPressed: () {
+                          BunchCubit.get(context).addPlan(
+                            addPlanRequestBody: AddPlanRequestBody(
+                              planName: planNameController.text,
+                              companyName: selectedValue,
+                              planPrice: int.parse(planPriceController.text),
+                            ),
+                          );
+                        },
                         child: DefaultText(
                           text: 'اضافة',
                           color: Colors.white,
@@ -134,7 +225,9 @@ class _AddBunchWidgetState extends State<AddBunchWidget> {
                           fontWeight: FontWeight.w500,
                         ),
                       ),
-                      horizontalSpace(dimension.width10),
+                      isMobile()
+                          ? horizontalSpace(10.w)
+                          : horizontalSpace(dimension.width10),
                       TextButton(
                         onPressed: () {
                           Navigator.pop(context);

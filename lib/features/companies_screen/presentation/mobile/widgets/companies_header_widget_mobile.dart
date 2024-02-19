@@ -22,7 +22,7 @@ class CompaniesHeaderWidgetMobile extends StatelessWidget {
         HeaderLabelWithImageMobile(
           width: 120.w,
           image: "assets/images/header_image.png",
-          title: 'وقت الانشاء',
+          title: 'عدد المشتركين',
         ),
         const Spacer(),
         horizontalSpace(50.w),

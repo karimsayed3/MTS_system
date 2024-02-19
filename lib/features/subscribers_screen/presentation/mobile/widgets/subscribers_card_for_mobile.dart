@@ -4,6 +4,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:system/core/helpers/spacing.dart';
 import 'package:system/core/theming/colors.dart';
 import 'package:system/core/widgets/default_text.dart';
+import 'package:system/core/widgets/show_alert_dialog.dart';
+import 'package:system/features/subscribers_screen/presentation/desktop/widgets/make_zero_widget.dart';
+import 'package:system/features/subscribers_screen/presentation/desktop/widgets/update_subsciber_widget.dart';
 
 class SubscribersCardWidgetMobile extends StatefulWidget {
   const SubscribersCardWidgetMobile({super.key});
@@ -33,7 +36,7 @@ class _SubscribersCardWidgetMobileState
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           SizedBox(
-            width: 120.w,
+            width: 110.w,
             child: DefaultText(
               text: 'كريم سيد ابراهيم',
               fontSize: 16.sp,
@@ -53,7 +56,7 @@ class _SubscribersCardWidgetMobileState
           ),
           const Spacer(),
           SizedBox(
-            width: 130.w,
+            width: 125.w,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -105,13 +108,119 @@ class _SubscribersCardWidgetMobileState
           ),
           const Spacer(),
           SizedBox(
-            width: 10.w,
-            child: InkWell(
-              onTap: () {},
-              child: SizedBox(
-                  height: 30.h,
-                  width: 10.w,
-                  child: SvgPicture.asset('assets/icons/more.svg',fit: BoxFit.fill,)),
+            width: 30.w,
+            child: PopupMenuButton(
+              surfaceTintColor: Colors.white,
+              // icon: SvgPicture.asset('assets/icons/more.svg'),
+              onSelected: (String choice) {
+                // Handle menu item selection
+                if (choice == 'option1') {
+                  // Perform action for option 1
+                  showDataAlert(
+                    context: context,
+                    child: UpdateSubscriberWidget(
+                      onPressed: () {},
+                      // companyName: "شركة فودافون كفرالشيخ",
+                    ),
+                  );
+                } else if (choice == 'option2') {
+                  // Perform action for option 2
+                  // showDataAlert(
+                  //   context: context,
+                  //   child: DeleteCompanyWidget(
+                  //     onPressed: () {},
+                  //     companyName: "شركة فودافون كفرالشيخ",
+                  //   ),
+                  // );
+                } else if (choice == 'option3') {
+                  // Perform action for option 3
+                  showDataAlert(
+                    context: context,
+                    child: MakeZeroWidget(
+                      onPressed: () {},
+                      subscriberName: "كريم سيد ابراهيم عبدالتواب",
+                    ),
+                  );
+                }
+              },
+              itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
+                PopupMenuItem<String>(
+                  value: 'option1',
+                  child: Directionality(
+                    textDirection: TextDirection.rtl,
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                            width: 15.w,
+                            child: SvgPicture.asset('assets/icons/edit.svg')),
+                        horizontalSpace(10.w),
+                        DefaultText(
+                          text: 'تعديل مشترك',
+                          color: ColorsManager.darkBlack,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                PopupMenuItem<String>(
+                  value: 'option2',
+                  child: Directionality(
+                    textDirection: TextDirection.rtl,
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          width: 15.w,
+                          child: SvgPicture.asset(
+                            'assets/icons/add_icon.svg',
+                            color: ColorsManager.darkBlack,
+                          ),
+                        ),
+                        horizontalSpace(10.w),
+                        DefaultText(
+                          text: 'اضافة رصيد',
+                          color: ColorsManager.darkBlack,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                PopupMenuItem<String>(
+                  value: 'option3',
+                  child: Directionality(
+                    textDirection: TextDirection.rtl,
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          width: 15.w,
+                          child: SvgPicture.asset(
+                            'assets/icons/zero_icon.svg',
+                            color: ColorsManager.darkBlack,
+                          ),
+                        ),
+                        horizontalSpace(10.w),
+                        DefaultText(
+                          text: 'تصفير',
+                          color: ColorsManager.darkBlack,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                // Add more PopupMenuItem widgets for additional options
+              ],
+              child: SvgPicture.asset('assets/icons/more.svg'),
             ),
           ),
         ],

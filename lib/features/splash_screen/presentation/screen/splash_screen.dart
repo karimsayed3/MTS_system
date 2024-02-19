@@ -9,6 +9,8 @@ import 'package:system/core/routing/routers.dart';
 import 'package:system/core/theming/colors.dart';
 import 'package:system/core/widgets/default_text.dart';
 
+import '../../../../core/helpers/cache_helper.dart';
+
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
@@ -21,12 +23,22 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     // TODO: implement initState
-    Timer(
-      const Duration(seconds: 3),
-      () {
-        Navigator.pushReplacementNamed(context, Routes.loginScreenMobile);
-      }
-    );
+    if(CacheHelper.getdata(key: "token")  != null){
+      Timer(
+          const Duration(seconds: 3),
+              () {
+            Navigator.pushReplacementNamed(context, Routes.homeMobileScreen);
+          }
+      );
+    }else{
+      Timer(
+          const Duration(seconds: 3),
+              () {
+            Navigator.pushReplacementNamed(context, Routes.loginScreenMobile);
+              }
+      );
+    }
+
     super.initState();
   }
   @override

@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:system/core/di/dependency_injection.dart';
 import 'package:system/core/helpers/dimensions.dart';
 import 'package:system/core/helpers/spacing.dart';
 import 'package:system/core/theming/colors.dart';
 import 'package:system/core/widgets/default_text.dart';
+import 'package:system/features/bunches_screen/business_logic/bunch_cubit.dart';
+import 'package:system/features/bunches_screen/data/models/get_plans_request_body.dart';
 import 'package:system/features/bunches_screen/presentation/desktop/screen/bunch_screen_details.dart';
+import 'package:system/features/companies_screen/business_logic/companies_cubit.dart';
 import 'package:system/features/companies_screen/presentation/desktop/widgets/nav_card_widget.dart';
 
+import '../../../data/models/get_companies_request_body.dart';
 import '../widgets/companies_nav_bar_widget.dart';
 import '../widgets/companies_screen_details.dart';
 
@@ -18,8 +24,14 @@ class CompaniesScreen extends StatefulWidget {
 
 class _CompaniesScreenState extends State<CompaniesScreen> {
   List<Widget> body = [
-    const CompaniesScreenDetails(),
-    const BunchScreenDetails(),
+    BlocProvider.value(
+      value: getIt<CompaniesCubit>(),
+      child: const CompaniesScreenDetails(),
+    ),
+    BlocProvider.value(
+      value: getIt<BunchCubit>(),
+      child: const BunchScreenDetails(),
+    ),
   ];
 
   int index = 0;

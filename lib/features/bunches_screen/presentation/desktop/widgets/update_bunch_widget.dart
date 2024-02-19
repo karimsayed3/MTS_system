@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:system/core/helpers/check_platform.dart';
 import 'package:system/core/helpers/dimensions.dart';
 import 'package:system/core/helpers/spacing.dart';
 import 'package:system/core/theming/colors.dart';
@@ -6,14 +8,27 @@ import 'package:system/core/widgets/default_button.dart';
 import 'package:system/core/widgets/default_text.dart';
 import 'package:system/core/widgets/default_text_form_field.dart';
 import 'package:system/core/widgets/drop_down_button.dart';
+import 'package:system/features/bunches_screen/business_logic/bunch_cubit.dart';
+
+import '../../../data/models/update_plan_request_body.dart';
 
 class UpdateBunchWidget extends StatefulWidget {
-  const UpdateBunchWidget({super.key, required this.bunchName, required this.bunchPrice, required this.companyName, required this.onPressed});
-  final String bunchName ;
-  final int bunchPrice ;
-  final String companyName ;
-  final Function() onPressed;
+  const UpdateBunchWidget(
+      {super.key,
+      required this.bunchName,
+      required this.bunchPrice,
+      required this.companyName,
+      required this.planId,
+      required this.onPressed});
 
+  final String bunchName;
+
+  final int bunchPrice;
+  final int planId;
+
+  final String companyName;
+
+  final Function() onPressed;
 
   @override
   State<UpdateBunchWidget> createState() => _UpdateBunchWidgetState();
@@ -52,31 +67,83 @@ class _UpdateBunchWidgetState extends State<UpdateBunchWidget> {
             Container(
               width: double.infinity,
               color: ColorsManager.alertDialogHeaderColor,
-              padding: EdgeInsets.only(
-                left: dimension.width10,
-                right: dimension.width10,
-                top: dimension.height10,
-                bottom: dimension.height10,
-              ),
+              padding: isMobile()
+                  ? EdgeInsets.only(
+                      left: 24.w,
+                      right: 24.w,
+                      top: 20.h,
+                      bottom: 20.h,
+                    )
+                  : EdgeInsets.only(
+                      left: dimension.width10,
+                      right: dimension.width10,
+                      top: dimension.height10,
+                      bottom: dimension.height10,
+                    ),
               child: DefaultText(
                 text: 'تعديل باقة',
                 color: ColorsManager.secondaryColor,
-                fontSize: dimension.reduce20,
+                fontSize: isMobile()
+                    ? 20.sp
+                    : dimension.reduce20,
                 fontWeight: FontWeight.w700,
               ),
             ),
-            const Divider(
+            isMobile()
+                ? const SizedBox.shrink()
+                :   const Divider(
               color: ColorsManager.secondaryColor,
               thickness: 2,
               height: 0,
             ),
             Padding(
-              padding: EdgeInsets.symmetric(
+              padding:isMobile()
+                  ? EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h)
+                  : EdgeInsets.symmetric(
                   horizontal: dimension.width10, vertical: dimension.height10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(
+                 isMobile()? Column(
+                   crossAxisAlignment: CrossAxisAlignment.start,
+                   children: [
+                     Column(
+                       crossAxisAlignment: CrossAxisAlignment.start,
+                       children: [
+                         DefaultText(
+                           text: 'اسم الباقة',
+                           fontSize: 20.sp ,
+                           fontWeight: FontWeight.w400,
+                           color: ColorsManager.lightBlack,
+                         ),
+                         verticalSpace(dimension.height5),
+                         DefaultTextFormField(
+                           controller: bunchNameController,
+                           color: Colors.white,
+                           hintText: 'اسم الباقة',
+                         ),
+                       ],
+                     ),
+                     verticalSpace(10.h),
+                     Column(
+                       crossAxisAlignment: CrossAxisAlignment.start,
+                       children: [
+                         DefaultText(
+                           text: 'سعر الباقة',
+                           color: ColorsManager.lightBlack,
+                           fontSize: 20.sp ,
+                           fontWeight: FontWeight.w400,
+                         ),
+                         verticalSpace(5.h),
+                         DefaultTextFormField(
+                           controller: bunchPriceController,
+                           color: Colors.white,
+                           hintText: 'سعر الباقة',
+                         ),
+                       ],
+                     ),
+                   ],
+                 ): Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Expanded(
@@ -120,7 +187,9 @@ class _UpdateBunchWidgetState extends State<UpdateBunchWidget> {
                       ),
                     ],
                   ),
-                  verticalSpace(dimension.height10),
+                  isMobile()
+                      ? verticalSpace(10.h)
+                      : verticalSpace(dimension.height10),
                   buildDropdown(
                     labelText: 'الشركة',
                     itemList: companies,
@@ -132,16 +201,28 @@ class _UpdateBunchWidgetState extends State<UpdateBunchWidget> {
                     },
                     context: context,
                   ),
-                  verticalSpace(dimension.height10),
+                  isMobile()
+                      ? verticalSpace(10.h)
+                      : verticalSpace(dimension.height10),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       DefaultButton(
-                        padding: EdgeInsets.symmetric(
+                        padding:isMobile()
+                            ? EdgeInsets.symmetric(
+                            horizontal: 24.w, vertical: 10.h)
+                            :  EdgeInsets.symmetric(
                           horizontal: dimension.width15,
                           vertical: dimension.height15,
                         ),
-                        onPressed: widget.onPressed,
+                        onPressed: () {
+                          BunchCubit.get(context).updatePlan(updatePlanRequestBody: UpdatePlanRequestBody(
+                            companyName: selectedValue,
+                            planName: bunchNameController.text,
+                            planPrice:  int.parse(bunchPriceController.text),
+                            planID:  widget.planId,
+                          ));
+                        },
                         child: DefaultText(
                           text: 'تعديل',
                           color: Colors.white,

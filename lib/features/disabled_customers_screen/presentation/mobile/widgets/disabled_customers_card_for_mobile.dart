@@ -98,9 +98,150 @@ class _DisabledCustomersCardWidgetMobileState extends State<DisabledCustomersCar
           const Spacer(),
           SizedBox(
             width: 20.w,
-            child: InkWell(
-                onTap: () {},
-                child: SvgPicture.asset('assets/icons/more.svg')),
+            child: PopupMenuButton(
+              surfaceTintColor: Colors.white,
+              // icon: SvgPicture.asset('assets/icons/more.svg'),
+              onSelected: (String choice) {
+                // Handle menu item selection
+                if (choice == 'option1') {
+                  // Perform action for option 1
+                  // showDataAlert(
+                  //   context: context,
+                  //   child: UpdateSubscriberWidget(
+                  //     onPressed: () {},
+                  //     // companyName: "شركة فودافون كفرالشيخ",
+                  //   ),
+                  // );
+                } else if (choice == 'option2') {
+                  // Perform action for option 2
+                  // showDataAlert(
+                  //   context: context,
+                  //   child: DeleteCompanyWidget(
+                  //     onPressed: () {},
+                  //     companyName: "شركة فودافون كفرالشيخ",
+                  //   ),
+                  // );
+                } else if (choice == 'option3') {
+                  // Perform action for option 3
+                  // showDataAlert(
+                  //   context: context,
+                  //   child: MakeZeroWidget(
+                  //     onPressed: () {},
+                  //     subscriberName: "كريم سيد ابراهيم عبدالتواب",
+                  //   ),
+                  // );
+                }else if (choice == 'option4') {
+                  // Perform action for option 3
+                  // showDataAlert(
+                  //   context: context,
+                  //   child: MakeZeroWidget(
+                  //     onPressed: () {},
+                  //     subscriberName: "كريم سيد ابراهيم عبدالتواب",
+                  //   ),
+                  // );
+                }
+              },
+              itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
+                PopupMenuItem<String>(
+                  value: 'option1',
+                  child: Directionality(
+                    textDirection: TextDirection.rtl,
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                            width: 15.w,
+                            child: SvgPicture.asset('assets/icons/disabled_icon.svg')),
+                        horizontalSpace(10.w),
+                        DefaultText(
+                          text: 'تفعيل',
+                          color: ColorsManager.darkBlack,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                PopupMenuItem<String>(
+                  value: 'option2',
+                  child: Directionality(
+                    textDirection: TextDirection.rtl,
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                            width: 15.w,
+                            child: SvgPicture.asset('assets/icons/edit.svg')),
+                        horizontalSpace(10.w),
+                        DefaultText(
+                          text: 'تعديل',
+                          color: ColorsManager.darkBlack,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                PopupMenuItem<String>(
+                  value: 'option3',
+                  child: Directionality(
+                    textDirection: TextDirection.rtl,
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          width: 15.w,
+                          child: SvgPicture.asset(
+                            'assets/icons/add_icon.svg',
+                            color: ColorsManager.darkBlack,
+                          ),
+                        ),
+                        horizontalSpace(10.w),
+                        DefaultText(
+                          text: 'اضافة رصيد',
+                          color: ColorsManager.darkBlack,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                PopupMenuItem<String>(
+                  value: 'option4',
+                  child: Directionality(
+                    textDirection: TextDirection.rtl,
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          width: 15.w,
+                          child: SvgPicture.asset(
+                            'assets/icons/zero_icon.svg',
+                            color: ColorsManager.darkBlack,
+                          ),
+                        ),
+                        horizontalSpace(10.w),
+                        DefaultText(
+                          text: 'تصفير',
+                          color: ColorsManager.darkBlack,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                // Add more PopupMenuItem widgets for additional options
+              ],
+              child: SvgPicture.asset('assets/icons/more.svg'),
+            ),
           ),
         ],
       ),

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:system/core/helpers/check_platform.dart';
 import 'package:system/core/helpers/dimensions.dart';
 import 'package:system/core/helpers/spacing.dart';
 import 'package:system/core/theming/colors.dart';
@@ -26,7 +28,10 @@ class AddCollectorWidget extends StatelessWidget {
             Container(
               width: double.infinity,
               color: ColorsManager.alertDialogHeaderColor,
-              padding: EdgeInsets.only(
+              padding: isMobile()? EdgeInsets.symmetric(
+                horizontal: 24.w,
+                vertical: 12.h,
+              ) :EdgeInsets.only(
                 left: dimension.width10,
                 right: dimension.width10,
                 top: dimension.height10,
@@ -35,19 +40,113 @@ class AddCollectorWidget extends StatelessWidget {
               child: DefaultText(
                 text: 'اضافة محصل',
                 color: ColorsManager.secondaryColor,
-                fontSize: dimension.reduce20,
+                fontSize: isMobile()? 20.sp :dimension.reduce20,
                 fontWeight: FontWeight.w700,
               ),
             ),
-            const Divider(
+            isMobile()? SizedBox.shrink(): const Divider(
               color: ColorsManager.secondaryColor,
               thickness: 2,
               height: 0,
             ),
             Padding(
-              padding: EdgeInsets.symmetric(
+              padding:isMobile()? EdgeInsets.symmetric(
+                horizontal: 24.w,
+                vertical: 12.h,
+              ) : EdgeInsets.symmetric(
                   horizontal: dimension.width10, vertical: dimension.height10),
-              child: Column(
+              child: isMobile()? Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      DefaultText(
+                        text: 'اسم المحصل',
+                        fontSize: 20.sp,
+                        fontWeight: FontWeight.w400,
+                        color: ColorsManager.lightBlack,
+                      ),
+                      verticalSpace(dimension.height5),
+                      DefaultTextFormField(
+                        controller: nameController,
+                        color: Colors.white,
+                        hintText: 'اسم المحصل',
+                      ),
+                    ],
+                  ),
+                  verticalSpace(10.h),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      DefaultText(
+                        text: 'البريد الالكترونى',
+                        color: ColorsManager.lightBlack,
+                        fontSize: 20.sp,
+                        fontWeight: FontWeight.w400,
+                      ),
+                      verticalSpace(dimension.height5),
+                      DefaultTextFormField(
+                        controller: emailController,
+                        color: Colors.white,
+                        hintText: 'البريد الالكترونى',
+                      ),
+                    ],
+                  ),
+                  verticalSpace(10.h),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      DefaultText(
+                        text: 'كلمة السر',
+                        color: ColorsManager.lightBlack,
+                        fontSize: 20.sp,
+                        fontWeight: FontWeight.w400,
+                      ),
+                      verticalSpace(dimension.height5),
+                      DefaultTextFormField(
+                        controller: passwordController,
+                        color: Colors.white,
+                        hintText: 'كلمة السر',
+                      ),
+                    ],
+                  ),
+                  verticalSpace(10.h),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      DefaultButton(
+                        padding:  isMobile()? EdgeInsets.symmetric(
+                          horizontal: 24.w,
+                          vertical: 12.h,
+                        ) : EdgeInsets.symmetric(
+                          horizontal: dimension.width15,
+                          vertical: dimension.height15,
+                        ),
+                        onPressed: onPressed,
+                        child: DefaultText(
+                          text: 'اضافة',
+                          color: Colors.white,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      horizontalSpace(dimension.width10),
+                      TextButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        child: DefaultText(
+                          text: 'الغاء',
+                          color: ColorsManager.lightGray,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ) : Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
@@ -117,7 +216,10 @@ class AddCollectorWidget extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       DefaultButton(
-                        padding: EdgeInsets.symmetric(
+                        padding: isMobile()? EdgeInsets.symmetric(
+                          horizontal: 24.w,
+                          vertical: 12.h,
+                        ) :EdgeInsets.symmetric(
                           horizontal: dimension.width15,
                           vertical: dimension.height15,
                         ),
@@ -146,6 +248,7 @@ class AddCollectorWidget extends StatelessWidget {
                   verticalSpace(dimension.height10),
                 ],
               ),
+
             ),
           ],
         ),
