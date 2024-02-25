@@ -23,6 +23,6 @@ class BunchState<T> with _$BunchState<T> {
   const factory BunchState.deletePlanSuccessState(DefaultApiResponse data) = DeletePlanSuccessState<T>;
   const factory BunchState.deletePlanErrorState({required String error}) = DeletePlanErrorState;
 
-
+  const factory BunchState.changeListData() = ChangeListData;
 }
 

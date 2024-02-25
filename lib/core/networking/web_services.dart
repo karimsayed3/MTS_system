@@ -7,6 +7,10 @@ import 'package:system/features/bunches_screen/data/models/delete_plan_request_b
 import 'package:system/features/bunches_screen/data/models/get_plans_request_body.dart';
 import 'package:system/features/bunches_screen/data/models/get_plans_response.dart';
 import 'package:system/features/bunches_screen/data/models/update_plan_request_body.dart';
+import 'package:system/features/collectors_screen/data/models/deduct_balance_collector_request_body.dart';
+import 'package:system/features/collectors_screen/data/models/get_users_request_body.dart';
+import 'package:system/features/collectors_screen/data/models/get_users_response.dart';
+import 'package:system/features/collectors_screen/data/models/zero_collector_total_request_body.dart';
 import 'package:system/features/companies_screen/data/models/add_company_request_body.dart';
 import 'package:system/features/companies_screen/data/models/deduct_plan_from_subscribers_request_body.dart';
 import 'package:system/features/companies_screen/data/models/delete_company_request_body.dart';
@@ -17,48 +21,88 @@ import 'package:system/features/companies_screen/data/models/update_company_requ
 import 'package:system/features/login_screen/data/models/login_request_body.dart';
 import 'package:system/features/login_screen/data/models/login_response.dart';
 
+import '../../features/collectors_screen/data/models/add_user_request_body.dart';
+import '../../features/collectors_screen/data/models/delete_user_request_body.dart';
+import '../../features/collectors_screen/data/models/update_user_request_body.dart';
+
 part 'web_services.g.dart';
+
 @RestApi(baseUrl: ApiConstants.apiBaseUrl)
-abstract class WebServices{
+abstract class WebServices {
   factory WebServices(Dio dio, {String baseUrl}) = _WebServices;
+
   /// auth
   @POST(ApiConstants.login)
   Future<LoginResponse> login(@Body() LoginRequestBody loginRequestBody);
 
   /// companies
   @POST(ApiConstants.getCompanies)
-  Future<GetCompaniesResponse> getCompanies(@Body() GetCompaniesRequestBody getCompaniesRequestBody);
+  Future<GetCompaniesResponse> getCompanies(
+      @Body() GetCompaniesRequestBody getCompaniesRequestBody);
 
   @POST(ApiConstants.addCompany)
-  Future<DefaultApiResponse> addCompany(@Body() AddCompanyRequestBody addCompanyRequestBody);
+  Future<DefaultApiResponse> addCompany(
+      @Body() AddCompanyRequestBody addCompanyRequestBody);
 
   @POST(ApiConstants.updateCompany)
-  Future<DefaultApiResponse> updateCompany(@Body() UpdateCompanyRequestBody updateCompanyRequestBody);
+  Future<DefaultApiResponse> updateCompany(
+      @Body() UpdateCompanyRequestBody updateCompanyRequestBody);
 
   @POST(ApiConstants.deleteCompany)
-  Future<DefaultApiResponse> deleteCompany(@Body() DeleteCompanyRequestBody deleteCompanyRequestBody);
+  Future<DefaultApiResponse> deleteCompany(
+      @Body() DeleteCompanyRequestBody deleteCompanyRequestBody);
 
   @POST(ApiConstants.deductPlanFromSubscribers)
-  Future<DefaultApiResponse> deductPlanFromSubscribers(@Body() DeductPlanFromSubscribersRequestBody deductPlanFromSubscribersRequestBody);
+  Future<DefaultApiResponse> deductPlanFromSubscribers(
+      @Body()
+      DeductPlanFromSubscribersRequestBody
+          deductPlanFromSubscribersRequestBody);
 
   @POST(ApiConstants.undoPlanFromSubscribers)
-  Future<DefaultApiResponse> undoPlanFromSubscribers(@Body() UndoPlanFromSubscribersRequestBody undoPlanFromSubscribersRequestBody);
-
+  Future<DefaultApiResponse> undoPlanFromSubscribers(
+      @Body()
+      UndoPlanFromSubscribersRequestBody undoPlanFromSubscribersRequestBody);
 
   /// plans
   @POST(ApiConstants.getPlans)
-  Future<GetPlansResponse> getPlans(@Body() GetPlansRequestBody getPlansRequestBody);
-
+  Future<GetPlansResponse> getPlans(
+      @Body() GetPlansRequestBody getPlansRequestBody);
 
   @POST(ApiConstants.addPlan)
-  Future<DefaultApiResponse> addPlan(@Body() AddPlanRequestBody addPlanRequestBody);
+  Future<DefaultApiResponse> addPlan(
+      @Body() AddPlanRequestBody addPlanRequestBody);
 
   @POST(ApiConstants.updatePlan)
-  Future<DefaultApiResponse> updatePlan(@Body() UpdatePlanRequestBody updatePlanRequestBody);
+  Future<DefaultApiResponse> updatePlan(
+      @Body() UpdatePlanRequestBody updatePlanRequestBody);
 
   @POST(ApiConstants.deletePlan)
-  Future<DefaultApiResponse> deletePlan(@Body() DeletePlanRequestBody deletePlanRequestBody);
+  Future<DefaultApiResponse> deletePlan(
+      @Body() DeletePlanRequestBody deletePlanRequestBody);
 
+  /// users
+  @POST(ApiConstants.addUser)
+  Future<DefaultApiResponse> addUser(
+      @Body() AddUserRequestBody addUserRequestBody);
 
+  @POST(ApiConstants.updateUser)
+  Future<DefaultApiResponse> updateUser(
+      @Body() UpdateUserRequestBody updateUserRequestBody);
 
+  @POST(ApiConstants.deleteUser)
+  Future<DefaultApiResponse> deleteUser(
+      @Body() DeleteUserRequestBody deleteUserRequestBody);
+
+  @POST(ApiConstants.zeroCollectorTotal)
+  Future<DefaultApiResponse> zeroCollectorTotal(
+      @Body() ZeroCollectorTotalRequestBody zeroCollectorTotalRequestBody);
+
+  @POST(ApiConstants.deductBalanceCollector)
+  Future<DefaultApiResponse> deductBalanceCollector(
+      @Body()
+      DeductBalanceCollectorRequestBody deductBalanceCollectorRequestBody);
+
+  @POST(ApiConstants.getUsers)
+  Future<GetUsersResponse> getUsers(
+      @Body() GetUsersRequestBody getUsersRequestBody);
 }

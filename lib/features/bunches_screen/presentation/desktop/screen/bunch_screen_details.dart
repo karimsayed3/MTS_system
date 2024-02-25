@@ -7,6 +7,7 @@ import 'package:system/core/theming/colors.dart';
 import 'package:system/core/widgets/default_button.dart';
 import 'package:system/core/widgets/default_text.dart';
 import 'package:system/core/widgets/home_widget.dart';
+import 'package:system/core/widgets/no_data_widget.dart';
 import 'package:system/core/widgets/show_alert_dialog.dart';
 import 'package:system/features/bunches_screen/business_logic/bunch_cubit.dart';
 import 'package:system/features/bunches_screen/business_logic/bunch_state.dart';
@@ -24,7 +25,11 @@ class BunchScreenDetails extends StatefulWidget {
   State<BunchScreenDetails> createState() => _BunchScreenDetailsState();
 }
 
-class _BunchScreenDetailsState extends State<BunchScreenDetails> {
+class _BunchScreenDetailsState extends State<BunchScreenDetails>
+    with AutomaticKeepAliveClientMixin {
+  @override
+  bool get wantKeepAlive => true;
+
   @override
   void initState() {
     // TODO: implement initState
@@ -37,8 +42,27 @@ class _BunchScreenDetailsState extends State<BunchScreenDetails> {
     super.initState();
   }
 
+  BunchCubit? _bunchCubit;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _bunchCubit ??= BlocProvider.of<BunchCubit>(context);
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+
+    // Clear the companiesData list
+    _bunchCubit!.changeListData(plansData: []);
+
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     var dimension = Dimensions(context);
     return Container(
       width: double.infinity,
@@ -68,47 +92,97 @@ class _BunchScreenDetailsState extends State<BunchScreenDetails> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const BunchesSearchWidget(),
+                      BunchesSearchWidget(
+                        searchController: BunchCubit.get(context).searchController,
+                        onChange: (value) {
+                          BunchCubit.get(context).getPlans(
+                            getPlansRequestBody: GetPlansRequestBody(
+                              planName: value,
+                              companyName: "",
+                            )
+                          );
+                        }
+                      ),
                       DefaultButton(
-                          color: const Color(0xffebf5f6),
-                          padding: EdgeInsets.symmetric(
-                            horizontal: dimension.width15,
-                            vertical: dimension.height10,
-                          ),
-                          onPressed: () {
-                            showDataAlert(
-                              context: context,
-                              child: BlocProvider.value(
-                                value: getIt<BunchCubit>(),
-                                child: AddBunchWidget(
-                                  onPressed: () {},
-                                ),
+                        color: const Color(0xffebf5f6),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: dimension.width15,
+                          vertical: dimension.height10,
+                        ),
+                        onPressed: () {
+                          showDataAlert(
+                            context: context,
+                            child: BlocProvider.value(
+                              value: getIt<BunchCubit>(),
+                              child: AddBunchWidget(
+                                onPressed: () {},
                               ),
-                            );
-                          },
-                          child: DefaultText(
-                            text: "+ اضافة باقة",
-                            color: const Color(0xFF007C92),
-                            fontSize: dimension.reduce20,
-                            fontWeight: FontWeight.w400,
-                          ))
+                            ),
+                          );
+                        },
+                        child: DefaultText(
+                          text: "+ اضافة باقة",
+                          color: const Color(0xFF007C92),
+                          fontSize: dimension.reduce20,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
                     ],
                   ),
-                  verticalSpace(dimension.height10),
-                  const BunchesHeaderWidget(),
                   BlocBuilder<BunchCubit, BunchState>(
                     builder: (context, state) {
-                      return Expanded(
-                        child: ListView.builder(
-                          itemBuilder: (context, index) {
-                            return BunchCard(
-                              planData:
-                                  BunchCubit.get(context).plansData[index],
-                            );
-                          },
-                          itemCount: BunchCubit.get(context).plansData.length,
-                        ),
-                      );
+                      if (BunchCubit.get(context).plansData.isEmpty) {
+                        return Expanded(
+                          child: NoDataWidget(
+                            child: DefaultButton(
+                              color: const Color(0xffebf5f6),
+                              padding: EdgeInsets.symmetric(
+                                horizontal: dimension.width15,
+                                vertical: dimension.height10,
+                              ),
+                              onPressed: () {
+                                showDataAlert(
+                                  context: context,
+                                  child: BlocProvider.value(
+                                    value: getIt<BunchCubit>(),
+                                    child: AddBunchWidget(
+                                      onPressed: () {},
+                                    ),
+                                  ),
+                                );
+                              },
+                              child: DefaultText(
+                                text: "+ اضافة باقة",
+                                color: const Color(0xFF007C92),
+                                fontSize: dimension.reduce20,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ),
+                        );
+                      } else {
+                        return Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              verticalSpace(dimension.height10),
+                              const BunchesHeaderWidget(),
+                              Expanded(
+                                child: ListView.builder(
+                                  itemBuilder: (context, index) {
+                                    return BunchCard(
+                                      planData: BunchCubit.get(context)
+                                          .plansData[index],
+                                    );
+                                  },
+                                  itemCount:
+                                      BunchCubit.get(context).plansData.length,
+                                ),
+                              ),
+                            ],
+                          ),
+                        );
+                      }
                     },
                   ),
                 ],

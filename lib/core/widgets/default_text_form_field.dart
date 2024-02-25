@@ -21,7 +21,7 @@ class DefaultTextFormField extends StatelessWidget {
   final Color color;
 
   dynamic onSave;
-  dynamic onChange;
+  Function(String)? onChange;
 
   List<TextInputFormatter>? inputFormatters;
 

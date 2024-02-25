@@ -4,8 +4,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:system/core/helpers/spacing.dart';
 import 'package:system/core/theming/colors.dart';
 import 'package:system/core/widgets/default_text.dart';
+import 'package:system/core/widgets/make_zero_widget.dart';
 import 'package:system/core/widgets/show_alert_dialog.dart';
-import 'package:system/features/subscribers_screen/presentation/desktop/widgets/make_zero_widget.dart';
 import 'package:system/features/subscribers_screen/presentation/desktop/widgets/update_subsciber_widget.dart';
 
 class SubscribersCardWidgetMobile extends StatefulWidget {

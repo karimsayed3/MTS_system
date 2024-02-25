@@ -42,6 +42,7 @@ mixin _$CompaniesState<T> {
     required TResult Function(DefaultApiResponse data)
         undoPlanFromSubscribersSuccessState,
     required TResult Function(String error) undoPlanFromSubscribersErrorState,
+    required TResult Function() changeListData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -67,6 +68,7 @@ mixin _$CompaniesState<T> {
     TResult? Function(DefaultApiResponse data)?
         undoPlanFromSubscribersSuccessState,
     TResult? Function(String error)? undoPlanFromSubscribersErrorState,
+    TResult? Function()? changeListData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -92,6 +94,7 @@ mixin _$CompaniesState<T> {
     TResult Function(DefaultApiResponse data)?
         undoPlanFromSubscribersSuccessState,
     TResult Function(String error)? undoPlanFromSubscribersErrorState,
+    TResult Function()? changeListData,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -134,6 +137,7 @@ mixin _$CompaniesState<T> {
         undoPlanFromSubscribersSuccessState,
     required TResult Function(UndoPlanFromSubscribersErrorState<T> value)
         undoPlanFromSubscribersErrorState,
+    required TResult Function(ChangeListData<T> value) changeListData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -171,6 +175,7 @@ mixin _$CompaniesState<T> {
         undoPlanFromSubscribersSuccessState,
     TResult? Function(UndoPlanFromSubscribersErrorState<T> value)?
         undoPlanFromSubscribersErrorState,
+    TResult? Function(ChangeListData<T> value)? changeListData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -206,6 +211,7 @@ mixin _$CompaniesState<T> {
         undoPlanFromSubscribersSuccessState,
     TResult Function(UndoPlanFromSubscribersErrorState<T> value)?
         undoPlanFromSubscribersErrorState,
+    TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -291,6 +297,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function(DefaultApiResponse data)
         undoPlanFromSubscribersSuccessState,
     required TResult Function(String error) undoPlanFromSubscribersErrorState,
+    required TResult Function() changeListData,
   }) {
     return initial();
   }
@@ -319,6 +326,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function(DefaultApiResponse data)?
         undoPlanFromSubscribersSuccessState,
     TResult? Function(String error)? undoPlanFromSubscribersErrorState,
+    TResult? Function()? changeListData,
   }) {
     return initial?.call();
   }
@@ -347,6 +355,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function(DefaultApiResponse data)?
         undoPlanFromSubscribersSuccessState,
     TResult Function(String error)? undoPlanFromSubscribersErrorState,
+    TResult Function()? changeListData,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -395,6 +404,7 @@ class _$InitialImpl<T> implements _Initial<T> {
         undoPlanFromSubscribersSuccessState,
     required TResult Function(UndoPlanFromSubscribersErrorState<T> value)
         undoPlanFromSubscribersErrorState,
+    required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return initial(this);
   }
@@ -435,6 +445,7 @@ class _$InitialImpl<T> implements _Initial<T> {
         undoPlanFromSubscribersSuccessState,
     TResult? Function(UndoPlanFromSubscribersErrorState<T> value)?
         undoPlanFromSubscribersErrorState,
+    TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return initial?.call(this);
   }
@@ -473,6 +484,7 @@ class _$InitialImpl<T> implements _Initial<T> {
         undoPlanFromSubscribersSuccessState,
     TResult Function(UndoPlanFromSubscribersErrorState<T> value)?
         undoPlanFromSubscribersErrorState,
+    TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -552,6 +564,7 @@ class _$GetCompaniesLoadingStateImpl<T> implements GetCompaniesLoadingState<T> {
     required TResult Function(DefaultApiResponse data)
         undoPlanFromSubscribersSuccessState,
     required TResult Function(String error) undoPlanFromSubscribersErrorState,
+    required TResult Function() changeListData,
   }) {
     return getCompaniesLoadingState();
   }
@@ -580,6 +593,7 @@ class _$GetCompaniesLoadingStateImpl<T> implements GetCompaniesLoadingState<T> {
     TResult? Function(DefaultApiResponse data)?
         undoPlanFromSubscribersSuccessState,
     TResult? Function(String error)? undoPlanFromSubscribersErrorState,
+    TResult? Function()? changeListData,
   }) {
     return getCompaniesLoadingState?.call();
   }
@@ -608,6 +622,7 @@ class _$GetCompaniesLoadingStateImpl<T> implements GetCompaniesLoadingState<T> {
     TResult Function(DefaultApiResponse data)?
         undoPlanFromSubscribersSuccessState,
     TResult Function(String error)? undoPlanFromSubscribersErrorState,
+    TResult Function()? changeListData,
     required TResult orElse(),
   }) {
     if (getCompaniesLoadingState != null) {
@@ -656,6 +671,7 @@ class _$GetCompaniesLoadingStateImpl<T> implements GetCompaniesLoadingState<T> {
         undoPlanFromSubscribersSuccessState,
     required TResult Function(UndoPlanFromSubscribersErrorState<T> value)
         undoPlanFromSubscribersErrorState,
+    required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return getCompaniesLoadingState(this);
   }
@@ -696,6 +712,7 @@ class _$GetCompaniesLoadingStateImpl<T> implements GetCompaniesLoadingState<T> {
         undoPlanFromSubscribersSuccessState,
     TResult? Function(UndoPlanFromSubscribersErrorState<T> value)?
         undoPlanFromSubscribersErrorState,
+    TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return getCompaniesLoadingState?.call(this);
   }
@@ -734,6 +751,7 @@ class _$GetCompaniesLoadingStateImpl<T> implements GetCompaniesLoadingState<T> {
         undoPlanFromSubscribersSuccessState,
     TResult Function(UndoPlanFromSubscribersErrorState<T> value)?
         undoPlanFromSubscribersErrorState,
+    TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
     if (getCompaniesLoadingState != null) {
@@ -839,6 +857,7 @@ class _$GetCompaniesSuccessStateImpl<T> implements GetCompaniesSuccessState<T> {
     required TResult Function(DefaultApiResponse data)
         undoPlanFromSubscribersSuccessState,
     required TResult Function(String error) undoPlanFromSubscribersErrorState,
+    required TResult Function() changeListData,
   }) {
     return getCompaniesSuccessState(data);
   }
@@ -867,6 +886,7 @@ class _$GetCompaniesSuccessStateImpl<T> implements GetCompaniesSuccessState<T> {
     TResult? Function(DefaultApiResponse data)?
         undoPlanFromSubscribersSuccessState,
     TResult? Function(String error)? undoPlanFromSubscribersErrorState,
+    TResult? Function()? changeListData,
   }) {
     return getCompaniesSuccessState?.call(data);
   }
@@ -895,6 +915,7 @@ class _$GetCompaniesSuccessStateImpl<T> implements GetCompaniesSuccessState<T> {
     TResult Function(DefaultApiResponse data)?
         undoPlanFromSubscribersSuccessState,
     TResult Function(String error)? undoPlanFromSubscribersErrorState,
+    TResult Function()? changeListData,
     required TResult orElse(),
   }) {
     if (getCompaniesSuccessState != null) {
@@ -943,6 +964,7 @@ class _$GetCompaniesSuccessStateImpl<T> implements GetCompaniesSuccessState<T> {
         undoPlanFromSubscribersSuccessState,
     required TResult Function(UndoPlanFromSubscribersErrorState<T> value)
         undoPlanFromSubscribersErrorState,
+    required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return getCompaniesSuccessState(this);
   }
@@ -983,6 +1005,7 @@ class _$GetCompaniesSuccessStateImpl<T> implements GetCompaniesSuccessState<T> {
         undoPlanFromSubscribersSuccessState,
     TResult? Function(UndoPlanFromSubscribersErrorState<T> value)?
         undoPlanFromSubscribersErrorState,
+    TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return getCompaniesSuccessState?.call(this);
   }
@@ -1021,6 +1044,7 @@ class _$GetCompaniesSuccessStateImpl<T> implements GetCompaniesSuccessState<T> {
         undoPlanFromSubscribersSuccessState,
     TResult Function(UndoPlanFromSubscribersErrorState<T> value)?
         undoPlanFromSubscribersErrorState,
+    TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
     if (getCompaniesSuccessState != null) {
@@ -1132,6 +1156,7 @@ class _$GetCompaniesErrorStateImpl<T> implements GetCompaniesErrorState<T> {
     required TResult Function(DefaultApiResponse data)
         undoPlanFromSubscribersSuccessState,
     required TResult Function(String error) undoPlanFromSubscribersErrorState,
+    required TResult Function() changeListData,
   }) {
     return getCompaniesErrorState(error);
   }
@@ -1160,6 +1185,7 @@ class _$GetCompaniesErrorStateImpl<T> implements GetCompaniesErrorState<T> {
     TResult? Function(DefaultApiResponse data)?
         undoPlanFromSubscribersSuccessState,
     TResult? Function(String error)? undoPlanFromSubscribersErrorState,
+    TResult? Function()? changeListData,
   }) {
     return getCompaniesErrorState?.call(error);
   }
@@ -1188,6 +1214,7 @@ class _$GetCompaniesErrorStateImpl<T> implements GetCompaniesErrorState<T> {
     TResult Function(DefaultApiResponse data)?
         undoPlanFromSubscribersSuccessState,
     TResult Function(String error)? undoPlanFromSubscribersErrorState,
+    TResult Function()? changeListData,
     required TResult orElse(),
   }) {
     if (getCompaniesErrorState != null) {
@@ -1236,6 +1263,7 @@ class _$GetCompaniesErrorStateImpl<T> implements GetCompaniesErrorState<T> {
         undoPlanFromSubscribersSuccessState,
     required TResult Function(UndoPlanFromSubscribersErrorState<T> value)
         undoPlanFromSubscribersErrorState,
+    required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return getCompaniesErrorState(this);
   }
@@ -1276,6 +1304,7 @@ class _$GetCompaniesErrorStateImpl<T> implements GetCompaniesErrorState<T> {
         undoPlanFromSubscribersSuccessState,
     TResult? Function(UndoPlanFromSubscribersErrorState<T> value)?
         undoPlanFromSubscribersErrorState,
+    TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return getCompaniesErrorState?.call(this);
   }
@@ -1314,6 +1343,7 @@ class _$GetCompaniesErrorStateImpl<T> implements GetCompaniesErrorState<T> {
         undoPlanFromSubscribersSuccessState,
     TResult Function(UndoPlanFromSubscribersErrorState<T> value)?
         undoPlanFromSubscribersErrorState,
+    TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
     if (getCompaniesErrorState != null) {
@@ -1400,6 +1430,7 @@ class _$UpdateCompanyLoadingStateImpl<T>
     required TResult Function(DefaultApiResponse data)
         undoPlanFromSubscribersSuccessState,
     required TResult Function(String error) undoPlanFromSubscribersErrorState,
+    required TResult Function() changeListData,
   }) {
     return updateCompanyLoadingState();
   }
@@ -1428,6 +1459,7 @@ class _$UpdateCompanyLoadingStateImpl<T>
     TResult? Function(DefaultApiResponse data)?
         undoPlanFromSubscribersSuccessState,
     TResult? Function(String error)? undoPlanFromSubscribersErrorState,
+    TResult? Function()? changeListData,
   }) {
     return updateCompanyLoadingState?.call();
   }
@@ -1456,6 +1488,7 @@ class _$UpdateCompanyLoadingStateImpl<T>
     TResult Function(DefaultApiResponse data)?
         undoPlanFromSubscribersSuccessState,
     TResult Function(String error)? undoPlanFromSubscribersErrorState,
+    TResult Function()? changeListData,
     required TResult orElse(),
   }) {
     if (updateCompanyLoadingState != null) {
@@ -1504,6 +1537,7 @@ class _$UpdateCompanyLoadingStateImpl<T>
         undoPlanFromSubscribersSuccessState,
     required TResult Function(UndoPlanFromSubscribersErrorState<T> value)
         undoPlanFromSubscribersErrorState,
+    required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return updateCompanyLoadingState(this);
   }
@@ -1544,6 +1578,7 @@ class _$UpdateCompanyLoadingStateImpl<T>
         undoPlanFromSubscribersSuccessState,
     TResult? Function(UndoPlanFromSubscribersErrorState<T> value)?
         undoPlanFromSubscribersErrorState,
+    TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return updateCompanyLoadingState?.call(this);
   }
@@ -1582,6 +1617,7 @@ class _$UpdateCompanyLoadingStateImpl<T>
         undoPlanFromSubscribersSuccessState,
     TResult Function(UndoPlanFromSubscribersErrorState<T> value)?
         undoPlanFromSubscribersErrorState,
+    TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
     if (updateCompanyLoadingState != null) {
@@ -1690,6 +1726,7 @@ class _$UpdateCompanySuccessStateImpl<T>
     required TResult Function(DefaultApiResponse data)
         undoPlanFromSubscribersSuccessState,
     required TResult Function(String error) undoPlanFromSubscribersErrorState,
+    required TResult Function() changeListData,
   }) {
     return updateCompanySuccessState(data);
   }
@@ -1718,6 +1755,7 @@ class _$UpdateCompanySuccessStateImpl<T>
     TResult? Function(DefaultApiResponse data)?
         undoPlanFromSubscribersSuccessState,
     TResult? Function(String error)? undoPlanFromSubscribersErrorState,
+    TResult? Function()? changeListData,
   }) {
     return updateCompanySuccessState?.call(data);
   }
@@ -1746,6 +1784,7 @@ class _$UpdateCompanySuccessStateImpl<T>
     TResult Function(DefaultApiResponse data)?
         undoPlanFromSubscribersSuccessState,
     TResult Function(String error)? undoPlanFromSubscribersErrorState,
+    TResult Function()? changeListData,
     required TResult orElse(),
   }) {
     if (updateCompanySuccessState != null) {
@@ -1794,6 +1833,7 @@ class _$UpdateCompanySuccessStateImpl<T>
         undoPlanFromSubscribersSuccessState,
     required TResult Function(UndoPlanFromSubscribersErrorState<T> value)
         undoPlanFromSubscribersErrorState,
+    required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return updateCompanySuccessState(this);
   }
@@ -1834,6 +1874,7 @@ class _$UpdateCompanySuccessStateImpl<T>
         undoPlanFromSubscribersSuccessState,
     TResult? Function(UndoPlanFromSubscribersErrorState<T> value)?
         undoPlanFromSubscribersErrorState,
+    TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return updateCompanySuccessState?.call(this);
   }
@@ -1872,6 +1913,7 @@ class _$UpdateCompanySuccessStateImpl<T>
         undoPlanFromSubscribersSuccessState,
     TResult Function(UndoPlanFromSubscribersErrorState<T> value)?
         undoPlanFromSubscribersErrorState,
+    TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
     if (updateCompanySuccessState != null) {
@@ -1984,6 +2026,7 @@ class _$UpdateCompanyErrorStateImpl<T> implements UpdateCompanyErrorState<T> {
     required TResult Function(DefaultApiResponse data)
         undoPlanFromSubscribersSuccessState,
     required TResult Function(String error) undoPlanFromSubscribersErrorState,
+    required TResult Function() changeListData,
   }) {
     return updateCompanyErrorState(error);
   }
@@ -2012,6 +2055,7 @@ class _$UpdateCompanyErrorStateImpl<T> implements UpdateCompanyErrorState<T> {
     TResult? Function(DefaultApiResponse data)?
         undoPlanFromSubscribersSuccessState,
     TResult? Function(String error)? undoPlanFromSubscribersErrorState,
+    TResult? Function()? changeListData,
   }) {
     return updateCompanyErrorState?.call(error);
   }
@@ -2040,6 +2084,7 @@ class _$UpdateCompanyErrorStateImpl<T> implements UpdateCompanyErrorState<T> {
     TResult Function(DefaultApiResponse data)?
         undoPlanFromSubscribersSuccessState,
     TResult Function(String error)? undoPlanFromSubscribersErrorState,
+    TResult Function()? changeListData,
     required TResult orElse(),
   }) {
     if (updateCompanyErrorState != null) {
@@ -2088,6 +2133,7 @@ class _$UpdateCompanyErrorStateImpl<T> implements UpdateCompanyErrorState<T> {
         undoPlanFromSubscribersSuccessState,
     required TResult Function(UndoPlanFromSubscribersErrorState<T> value)
         undoPlanFromSubscribersErrorState,
+    required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return updateCompanyErrorState(this);
   }
@@ -2128,6 +2174,7 @@ class _$UpdateCompanyErrorStateImpl<T> implements UpdateCompanyErrorState<T> {
         undoPlanFromSubscribersSuccessState,
     TResult? Function(UndoPlanFromSubscribersErrorState<T> value)?
         undoPlanFromSubscribersErrorState,
+    TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return updateCompanyErrorState?.call(this);
   }
@@ -2166,6 +2213,7 @@ class _$UpdateCompanyErrorStateImpl<T> implements UpdateCompanyErrorState<T> {
         undoPlanFromSubscribersSuccessState,
     TResult Function(UndoPlanFromSubscribersErrorState<T> value)?
         undoPlanFromSubscribersErrorState,
+    TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
     if (updateCompanyErrorState != null) {
@@ -2251,6 +2299,7 @@ class _$AddCompanyLoadingStateImpl<T> implements AddCompanyLoadingState<T> {
     required TResult Function(DefaultApiResponse data)
         undoPlanFromSubscribersSuccessState,
     required TResult Function(String error) undoPlanFromSubscribersErrorState,
+    required TResult Function() changeListData,
   }) {
     return addCompanyLoadingState();
   }
@@ -2279,6 +2328,7 @@ class _$AddCompanyLoadingStateImpl<T> implements AddCompanyLoadingState<T> {
     TResult? Function(DefaultApiResponse data)?
         undoPlanFromSubscribersSuccessState,
     TResult? Function(String error)? undoPlanFromSubscribersErrorState,
+    TResult? Function()? changeListData,
   }) {
     return addCompanyLoadingState?.call();
   }
@@ -2307,6 +2357,7 @@ class _$AddCompanyLoadingStateImpl<T> implements AddCompanyLoadingState<T> {
     TResult Function(DefaultApiResponse data)?
         undoPlanFromSubscribersSuccessState,
     TResult Function(String error)? undoPlanFromSubscribersErrorState,
+    TResult Function()? changeListData,
     required TResult orElse(),
   }) {
     if (addCompanyLoadingState != null) {
@@ -2355,6 +2406,7 @@ class _$AddCompanyLoadingStateImpl<T> implements AddCompanyLoadingState<T> {
         undoPlanFromSubscribersSuccessState,
     required TResult Function(UndoPlanFromSubscribersErrorState<T> value)
         undoPlanFromSubscribersErrorState,
+    required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return addCompanyLoadingState(this);
   }
@@ -2395,6 +2447,7 @@ class _$AddCompanyLoadingStateImpl<T> implements AddCompanyLoadingState<T> {
         undoPlanFromSubscribersSuccessState,
     TResult? Function(UndoPlanFromSubscribersErrorState<T> value)?
         undoPlanFromSubscribersErrorState,
+    TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return addCompanyLoadingState?.call(this);
   }
@@ -2433,6 +2486,7 @@ class _$AddCompanyLoadingStateImpl<T> implements AddCompanyLoadingState<T> {
         undoPlanFromSubscribersSuccessState,
     TResult Function(UndoPlanFromSubscribersErrorState<T> value)?
         undoPlanFromSubscribersErrorState,
+    TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
     if (addCompanyLoadingState != null) {
@@ -2538,6 +2592,7 @@ class _$AddCompanySuccessStateImpl<T> implements AddCompanySuccessState<T> {
     required TResult Function(DefaultApiResponse data)
         undoPlanFromSubscribersSuccessState,
     required TResult Function(String error) undoPlanFromSubscribersErrorState,
+    required TResult Function() changeListData,
   }) {
     return addCompanySuccessState(data);
   }
@@ -2566,6 +2621,7 @@ class _$AddCompanySuccessStateImpl<T> implements AddCompanySuccessState<T> {
     TResult? Function(DefaultApiResponse data)?
         undoPlanFromSubscribersSuccessState,
     TResult? Function(String error)? undoPlanFromSubscribersErrorState,
+    TResult? Function()? changeListData,
   }) {
     return addCompanySuccessState?.call(data);
   }
@@ -2594,6 +2650,7 @@ class _$AddCompanySuccessStateImpl<T> implements AddCompanySuccessState<T> {
     TResult Function(DefaultApiResponse data)?
         undoPlanFromSubscribersSuccessState,
     TResult Function(String error)? undoPlanFromSubscribersErrorState,
+    TResult Function()? changeListData,
     required TResult orElse(),
   }) {
     if (addCompanySuccessState != null) {
@@ -2642,6 +2699,7 @@ class _$AddCompanySuccessStateImpl<T> implements AddCompanySuccessState<T> {
         undoPlanFromSubscribersSuccessState,
     required TResult Function(UndoPlanFromSubscribersErrorState<T> value)
         undoPlanFromSubscribersErrorState,
+    required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return addCompanySuccessState(this);
   }
@@ -2682,6 +2740,7 @@ class _$AddCompanySuccessStateImpl<T> implements AddCompanySuccessState<T> {
         undoPlanFromSubscribersSuccessState,
     TResult? Function(UndoPlanFromSubscribersErrorState<T> value)?
         undoPlanFromSubscribersErrorState,
+    TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return addCompanySuccessState?.call(this);
   }
@@ -2720,6 +2779,7 @@ class _$AddCompanySuccessStateImpl<T> implements AddCompanySuccessState<T> {
         undoPlanFromSubscribersSuccessState,
     TResult Function(UndoPlanFromSubscribersErrorState<T> value)?
         undoPlanFromSubscribersErrorState,
+    TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
     if (addCompanySuccessState != null) {
@@ -2829,6 +2889,7 @@ class _$AddCompanyErrorStateImpl<T> implements AddCompanyErrorState<T> {
     required TResult Function(DefaultApiResponse data)
         undoPlanFromSubscribersSuccessState,
     required TResult Function(String error) undoPlanFromSubscribersErrorState,
+    required TResult Function() changeListData,
   }) {
     return addCompanyErrorState(error);
   }
@@ -2857,6 +2918,7 @@ class _$AddCompanyErrorStateImpl<T> implements AddCompanyErrorState<T> {
     TResult? Function(DefaultApiResponse data)?
         undoPlanFromSubscribersSuccessState,
     TResult? Function(String error)? undoPlanFromSubscribersErrorState,
+    TResult? Function()? changeListData,
   }) {
     return addCompanyErrorState?.call(error);
   }
@@ -2885,6 +2947,7 @@ class _$AddCompanyErrorStateImpl<T> implements AddCompanyErrorState<T> {
     TResult Function(DefaultApiResponse data)?
         undoPlanFromSubscribersSuccessState,
     TResult Function(String error)? undoPlanFromSubscribersErrorState,
+    TResult Function()? changeListData,
     required TResult orElse(),
   }) {
     if (addCompanyErrorState != null) {
@@ -2933,6 +2996,7 @@ class _$AddCompanyErrorStateImpl<T> implements AddCompanyErrorState<T> {
         undoPlanFromSubscribersSuccessState,
     required TResult Function(UndoPlanFromSubscribersErrorState<T> value)
         undoPlanFromSubscribersErrorState,
+    required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return addCompanyErrorState(this);
   }
@@ -2973,6 +3037,7 @@ class _$AddCompanyErrorStateImpl<T> implements AddCompanyErrorState<T> {
         undoPlanFromSubscribersSuccessState,
     TResult? Function(UndoPlanFromSubscribersErrorState<T> value)?
         undoPlanFromSubscribersErrorState,
+    TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return addCompanyErrorState?.call(this);
   }
@@ -3011,6 +3076,7 @@ class _$AddCompanyErrorStateImpl<T> implements AddCompanyErrorState<T> {
         undoPlanFromSubscribersSuccessState,
     TResult Function(UndoPlanFromSubscribersErrorState<T> value)?
         undoPlanFromSubscribersErrorState,
+    TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
     if (addCompanyErrorState != null) {
@@ -3097,6 +3163,7 @@ class _$DeleteCompanyLoadingStateImpl<T>
     required TResult Function(DefaultApiResponse data)
         undoPlanFromSubscribersSuccessState,
     required TResult Function(String error) undoPlanFromSubscribersErrorState,
+    required TResult Function() changeListData,
   }) {
     return deleteCompanyLoadingState();
   }
@@ -3125,6 +3192,7 @@ class _$DeleteCompanyLoadingStateImpl<T>
     TResult? Function(DefaultApiResponse data)?
         undoPlanFromSubscribersSuccessState,
     TResult? Function(String error)? undoPlanFromSubscribersErrorState,
+    TResult? Function()? changeListData,
   }) {
     return deleteCompanyLoadingState?.call();
   }
@@ -3153,6 +3221,7 @@ class _$DeleteCompanyLoadingStateImpl<T>
     TResult Function(DefaultApiResponse data)?
         undoPlanFromSubscribersSuccessState,
     TResult Function(String error)? undoPlanFromSubscribersErrorState,
+    TResult Function()? changeListData,
     required TResult orElse(),
   }) {
     if (deleteCompanyLoadingState != null) {
@@ -3201,6 +3270,7 @@ class _$DeleteCompanyLoadingStateImpl<T>
         undoPlanFromSubscribersSuccessState,
     required TResult Function(UndoPlanFromSubscribersErrorState<T> value)
         undoPlanFromSubscribersErrorState,
+    required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return deleteCompanyLoadingState(this);
   }
@@ -3241,6 +3311,7 @@ class _$DeleteCompanyLoadingStateImpl<T>
         undoPlanFromSubscribersSuccessState,
     TResult? Function(UndoPlanFromSubscribersErrorState<T> value)?
         undoPlanFromSubscribersErrorState,
+    TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return deleteCompanyLoadingState?.call(this);
   }
@@ -3279,6 +3350,7 @@ class _$DeleteCompanyLoadingStateImpl<T>
         undoPlanFromSubscribersSuccessState,
     TResult Function(UndoPlanFromSubscribersErrorState<T> value)?
         undoPlanFromSubscribersErrorState,
+    TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
     if (deleteCompanyLoadingState != null) {
@@ -3387,6 +3459,7 @@ class _$DeleteCompanySuccessStateImpl<T>
     required TResult Function(DefaultApiResponse data)
         undoPlanFromSubscribersSuccessState,
     required TResult Function(String error) undoPlanFromSubscribersErrorState,
+    required TResult Function() changeListData,
   }) {
     return deleteCompanySuccessState(data);
   }
@@ -3415,6 +3488,7 @@ class _$DeleteCompanySuccessStateImpl<T>
     TResult? Function(DefaultApiResponse data)?
         undoPlanFromSubscribersSuccessState,
     TResult? Function(String error)? undoPlanFromSubscribersErrorState,
+    TResult? Function()? changeListData,
   }) {
     return deleteCompanySuccessState?.call(data);
   }
@@ -3443,6 +3517,7 @@ class _$DeleteCompanySuccessStateImpl<T>
     TResult Function(DefaultApiResponse data)?
         undoPlanFromSubscribersSuccessState,
     TResult Function(String error)? undoPlanFromSubscribersErrorState,
+    TResult Function()? changeListData,
     required TResult orElse(),
   }) {
     if (deleteCompanySuccessState != null) {
@@ -3491,6 +3566,7 @@ class _$DeleteCompanySuccessStateImpl<T>
         undoPlanFromSubscribersSuccessState,
     required TResult Function(UndoPlanFromSubscribersErrorState<T> value)
         undoPlanFromSubscribersErrorState,
+    required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return deleteCompanySuccessState(this);
   }
@@ -3531,6 +3607,7 @@ class _$DeleteCompanySuccessStateImpl<T>
         undoPlanFromSubscribersSuccessState,
     TResult? Function(UndoPlanFromSubscribersErrorState<T> value)?
         undoPlanFromSubscribersErrorState,
+    TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return deleteCompanySuccessState?.call(this);
   }
@@ -3569,6 +3646,7 @@ class _$DeleteCompanySuccessStateImpl<T>
         undoPlanFromSubscribersSuccessState,
     TResult Function(UndoPlanFromSubscribersErrorState<T> value)?
         undoPlanFromSubscribersErrorState,
+    TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
     if (deleteCompanySuccessState != null) {
@@ -3681,6 +3759,7 @@ class _$DeleteCompanyErrorStateImpl<T> implements DeleteCompanyErrorState<T> {
     required TResult Function(DefaultApiResponse data)
         undoPlanFromSubscribersSuccessState,
     required TResult Function(String error) undoPlanFromSubscribersErrorState,
+    required TResult Function() changeListData,
   }) {
     return deleteCompanyErrorState(error);
   }
@@ -3709,6 +3788,7 @@ class _$DeleteCompanyErrorStateImpl<T> implements DeleteCompanyErrorState<T> {
     TResult? Function(DefaultApiResponse data)?
         undoPlanFromSubscribersSuccessState,
     TResult? Function(String error)? undoPlanFromSubscribersErrorState,
+    TResult? Function()? changeListData,
   }) {
     return deleteCompanyErrorState?.call(error);
   }
@@ -3737,6 +3817,7 @@ class _$DeleteCompanyErrorStateImpl<T> implements DeleteCompanyErrorState<T> {
     TResult Function(DefaultApiResponse data)?
         undoPlanFromSubscribersSuccessState,
     TResult Function(String error)? undoPlanFromSubscribersErrorState,
+    TResult Function()? changeListData,
     required TResult orElse(),
   }) {
     if (deleteCompanyErrorState != null) {
@@ -3785,6 +3866,7 @@ class _$DeleteCompanyErrorStateImpl<T> implements DeleteCompanyErrorState<T> {
         undoPlanFromSubscribersSuccessState,
     required TResult Function(UndoPlanFromSubscribersErrorState<T> value)
         undoPlanFromSubscribersErrorState,
+    required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return deleteCompanyErrorState(this);
   }
@@ -3825,6 +3907,7 @@ class _$DeleteCompanyErrorStateImpl<T> implements DeleteCompanyErrorState<T> {
         undoPlanFromSubscribersSuccessState,
     TResult? Function(UndoPlanFromSubscribersErrorState<T> value)?
         undoPlanFromSubscribersErrorState,
+    TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return deleteCompanyErrorState?.call(this);
   }
@@ -3863,6 +3946,7 @@ class _$DeleteCompanyErrorStateImpl<T> implements DeleteCompanyErrorState<T> {
         undoPlanFromSubscribersSuccessState,
     TResult Function(UndoPlanFromSubscribersErrorState<T> value)?
         undoPlanFromSubscribersErrorState,
+    TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
     if (deleteCompanyErrorState != null) {
@@ -3949,6 +4033,7 @@ class _$DeductPlanFromSubscribersLoadingStateImpl<T>
     required TResult Function(DefaultApiResponse data)
         undoPlanFromSubscribersSuccessState,
     required TResult Function(String error) undoPlanFromSubscribersErrorState,
+    required TResult Function() changeListData,
   }) {
     return deductPlanFromSubscribersLoadingState();
   }
@@ -3977,6 +4062,7 @@ class _$DeductPlanFromSubscribersLoadingStateImpl<T>
     TResult? Function(DefaultApiResponse data)?
         undoPlanFromSubscribersSuccessState,
     TResult? Function(String error)? undoPlanFromSubscribersErrorState,
+    TResult? Function()? changeListData,
   }) {
     return deductPlanFromSubscribersLoadingState?.call();
   }
@@ -4005,6 +4091,7 @@ class _$DeductPlanFromSubscribersLoadingStateImpl<T>
     TResult Function(DefaultApiResponse data)?
         undoPlanFromSubscribersSuccessState,
     TResult Function(String error)? undoPlanFromSubscribersErrorState,
+    TResult Function()? changeListData,
     required TResult orElse(),
   }) {
     if (deductPlanFromSubscribersLoadingState != null) {
@@ -4053,6 +4140,7 @@ class _$DeductPlanFromSubscribersLoadingStateImpl<T>
         undoPlanFromSubscribersSuccessState,
     required TResult Function(UndoPlanFromSubscribersErrorState<T> value)
         undoPlanFromSubscribersErrorState,
+    required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return deductPlanFromSubscribersLoadingState(this);
   }
@@ -4093,6 +4181,7 @@ class _$DeductPlanFromSubscribersLoadingStateImpl<T>
         undoPlanFromSubscribersSuccessState,
     TResult? Function(UndoPlanFromSubscribersErrorState<T> value)?
         undoPlanFromSubscribersErrorState,
+    TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return deductPlanFromSubscribersLoadingState?.call(this);
   }
@@ -4131,6 +4220,7 @@ class _$DeductPlanFromSubscribersLoadingStateImpl<T>
         undoPlanFromSubscribersSuccessState,
     TResult Function(UndoPlanFromSubscribersErrorState<T> value)?
         undoPlanFromSubscribersErrorState,
+    TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
     if (deductPlanFromSubscribersLoadingState != null) {
@@ -4240,6 +4330,7 @@ class _$DeductPlanFromSubscribersSuccessStateImpl<T>
     required TResult Function(DefaultApiResponse data)
         undoPlanFromSubscribersSuccessState,
     required TResult Function(String error) undoPlanFromSubscribersErrorState,
+    required TResult Function() changeListData,
   }) {
     return deductPlanFromSubscribersSuccessState(data);
   }
@@ -4268,6 +4359,7 @@ class _$DeductPlanFromSubscribersSuccessStateImpl<T>
     TResult? Function(DefaultApiResponse data)?
         undoPlanFromSubscribersSuccessState,
     TResult? Function(String error)? undoPlanFromSubscribersErrorState,
+    TResult? Function()? changeListData,
   }) {
     return deductPlanFromSubscribersSuccessState?.call(data);
   }
@@ -4296,6 +4388,7 @@ class _$DeductPlanFromSubscribersSuccessStateImpl<T>
     TResult Function(DefaultApiResponse data)?
         undoPlanFromSubscribersSuccessState,
     TResult Function(String error)? undoPlanFromSubscribersErrorState,
+    TResult Function()? changeListData,
     required TResult orElse(),
   }) {
     if (deductPlanFromSubscribersSuccessState != null) {
@@ -4344,6 +4437,7 @@ class _$DeductPlanFromSubscribersSuccessStateImpl<T>
         undoPlanFromSubscribersSuccessState,
     required TResult Function(UndoPlanFromSubscribersErrorState<T> value)
         undoPlanFromSubscribersErrorState,
+    required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return deductPlanFromSubscribersSuccessState(this);
   }
@@ -4384,6 +4478,7 @@ class _$DeductPlanFromSubscribersSuccessStateImpl<T>
         undoPlanFromSubscribersSuccessState,
     TResult? Function(UndoPlanFromSubscribersErrorState<T> value)?
         undoPlanFromSubscribersErrorState,
+    TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return deductPlanFromSubscribersSuccessState?.call(this);
   }
@@ -4422,6 +4517,7 @@ class _$DeductPlanFromSubscribersSuccessStateImpl<T>
         undoPlanFromSubscribersSuccessState,
     TResult Function(UndoPlanFromSubscribersErrorState<T> value)?
         undoPlanFromSubscribersErrorState,
+    TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
     if (deductPlanFromSubscribersSuccessState != null) {
@@ -4538,6 +4634,7 @@ class _$DeductPlanFromSubscribersErrorStateImpl<T>
     required TResult Function(DefaultApiResponse data)
         undoPlanFromSubscribersSuccessState,
     required TResult Function(String error) undoPlanFromSubscribersErrorState,
+    required TResult Function() changeListData,
   }) {
     return deductPlanFromSubscribersErrorState(error);
   }
@@ -4566,6 +4663,7 @@ class _$DeductPlanFromSubscribersErrorStateImpl<T>
     TResult? Function(DefaultApiResponse data)?
         undoPlanFromSubscribersSuccessState,
     TResult? Function(String error)? undoPlanFromSubscribersErrorState,
+    TResult? Function()? changeListData,
   }) {
     return deductPlanFromSubscribersErrorState?.call(error);
   }
@@ -4594,6 +4692,7 @@ class _$DeductPlanFromSubscribersErrorStateImpl<T>
     TResult Function(DefaultApiResponse data)?
         undoPlanFromSubscribersSuccessState,
     TResult Function(String error)? undoPlanFromSubscribersErrorState,
+    TResult Function()? changeListData,
     required TResult orElse(),
   }) {
     if (deductPlanFromSubscribersErrorState != null) {
@@ -4642,6 +4741,7 @@ class _$DeductPlanFromSubscribersErrorStateImpl<T>
         undoPlanFromSubscribersSuccessState,
     required TResult Function(UndoPlanFromSubscribersErrorState<T> value)
         undoPlanFromSubscribersErrorState,
+    required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return deductPlanFromSubscribersErrorState(this);
   }
@@ -4682,6 +4782,7 @@ class _$DeductPlanFromSubscribersErrorStateImpl<T>
         undoPlanFromSubscribersSuccessState,
     TResult? Function(UndoPlanFromSubscribersErrorState<T> value)?
         undoPlanFromSubscribersErrorState,
+    TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return deductPlanFromSubscribersErrorState?.call(this);
   }
@@ -4720,6 +4821,7 @@ class _$DeductPlanFromSubscribersErrorStateImpl<T>
         undoPlanFromSubscribersSuccessState,
     TResult Function(UndoPlanFromSubscribersErrorState<T> value)?
         undoPlanFromSubscribersErrorState,
+    TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
     if (deductPlanFromSubscribersErrorState != null) {
@@ -4809,6 +4911,7 @@ class _$UndoPlanFromSubscribersLoadingStateImpl<T>
     required TResult Function(DefaultApiResponse data)
         undoPlanFromSubscribersSuccessState,
     required TResult Function(String error) undoPlanFromSubscribersErrorState,
+    required TResult Function() changeListData,
   }) {
     return undoPlanFromSubscribersLoadingState();
   }
@@ -4837,6 +4940,7 @@ class _$UndoPlanFromSubscribersLoadingStateImpl<T>
     TResult? Function(DefaultApiResponse data)?
         undoPlanFromSubscribersSuccessState,
     TResult? Function(String error)? undoPlanFromSubscribersErrorState,
+    TResult? Function()? changeListData,
   }) {
     return undoPlanFromSubscribersLoadingState?.call();
   }
@@ -4865,6 +4969,7 @@ class _$UndoPlanFromSubscribersLoadingStateImpl<T>
     TResult Function(DefaultApiResponse data)?
         undoPlanFromSubscribersSuccessState,
     TResult Function(String error)? undoPlanFromSubscribersErrorState,
+    TResult Function()? changeListData,
     required TResult orElse(),
   }) {
     if (undoPlanFromSubscribersLoadingState != null) {
@@ -4913,6 +5018,7 @@ class _$UndoPlanFromSubscribersLoadingStateImpl<T>
         undoPlanFromSubscribersSuccessState,
     required TResult Function(UndoPlanFromSubscribersErrorState<T> value)
         undoPlanFromSubscribersErrorState,
+    required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return undoPlanFromSubscribersLoadingState(this);
   }
@@ -4953,6 +5059,7 @@ class _$UndoPlanFromSubscribersLoadingStateImpl<T>
         undoPlanFromSubscribersSuccessState,
     TResult? Function(UndoPlanFromSubscribersErrorState<T> value)?
         undoPlanFromSubscribersErrorState,
+    TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return undoPlanFromSubscribersLoadingState?.call(this);
   }
@@ -4991,6 +5098,7 @@ class _$UndoPlanFromSubscribersLoadingStateImpl<T>
         undoPlanFromSubscribersSuccessState,
     TResult Function(UndoPlanFromSubscribersErrorState<T> value)?
         undoPlanFromSubscribersErrorState,
+    TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
     if (undoPlanFromSubscribersLoadingState != null) {
@@ -5100,6 +5208,7 @@ class _$UndoPlanFromSubscribersSuccessStateImpl<T>
     required TResult Function(DefaultApiResponse data)
         undoPlanFromSubscribersSuccessState,
     required TResult Function(String error) undoPlanFromSubscribersErrorState,
+    required TResult Function() changeListData,
   }) {
     return undoPlanFromSubscribersSuccessState(data);
   }
@@ -5128,6 +5237,7 @@ class _$UndoPlanFromSubscribersSuccessStateImpl<T>
     TResult? Function(DefaultApiResponse data)?
         undoPlanFromSubscribersSuccessState,
     TResult? Function(String error)? undoPlanFromSubscribersErrorState,
+    TResult? Function()? changeListData,
   }) {
     return undoPlanFromSubscribersSuccessState?.call(data);
   }
@@ -5156,6 +5266,7 @@ class _$UndoPlanFromSubscribersSuccessStateImpl<T>
     TResult Function(DefaultApiResponse data)?
         undoPlanFromSubscribersSuccessState,
     TResult Function(String error)? undoPlanFromSubscribersErrorState,
+    TResult Function()? changeListData,
     required TResult orElse(),
   }) {
     if (undoPlanFromSubscribersSuccessState != null) {
@@ -5204,6 +5315,7 @@ class _$UndoPlanFromSubscribersSuccessStateImpl<T>
         undoPlanFromSubscribersSuccessState,
     required TResult Function(UndoPlanFromSubscribersErrorState<T> value)
         undoPlanFromSubscribersErrorState,
+    required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return undoPlanFromSubscribersSuccessState(this);
   }
@@ -5244,6 +5356,7 @@ class _$UndoPlanFromSubscribersSuccessStateImpl<T>
         undoPlanFromSubscribersSuccessState,
     TResult? Function(UndoPlanFromSubscribersErrorState<T> value)?
         undoPlanFromSubscribersErrorState,
+    TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return undoPlanFromSubscribersSuccessState?.call(this);
   }
@@ -5282,6 +5395,7 @@ class _$UndoPlanFromSubscribersSuccessStateImpl<T>
         undoPlanFromSubscribersSuccessState,
     TResult Function(UndoPlanFromSubscribersErrorState<T> value)?
         undoPlanFromSubscribersErrorState,
+    TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
     if (undoPlanFromSubscribersSuccessState != null) {
@@ -5398,6 +5512,7 @@ class _$UndoPlanFromSubscribersErrorStateImpl<T>
     required TResult Function(DefaultApiResponse data)
         undoPlanFromSubscribersSuccessState,
     required TResult Function(String error) undoPlanFromSubscribersErrorState,
+    required TResult Function() changeListData,
   }) {
     return undoPlanFromSubscribersErrorState(error);
   }
@@ -5426,6 +5541,7 @@ class _$UndoPlanFromSubscribersErrorStateImpl<T>
     TResult? Function(DefaultApiResponse data)?
         undoPlanFromSubscribersSuccessState,
     TResult? Function(String error)? undoPlanFromSubscribersErrorState,
+    TResult? Function()? changeListData,
   }) {
     return undoPlanFromSubscribersErrorState?.call(error);
   }
@@ -5454,6 +5570,7 @@ class _$UndoPlanFromSubscribersErrorStateImpl<T>
     TResult Function(DefaultApiResponse data)?
         undoPlanFromSubscribersSuccessState,
     TResult Function(String error)? undoPlanFromSubscribersErrorState,
+    TResult Function()? changeListData,
     required TResult orElse(),
   }) {
     if (undoPlanFromSubscribersErrorState != null) {
@@ -5502,6 +5619,7 @@ class _$UndoPlanFromSubscribersErrorStateImpl<T>
         undoPlanFromSubscribersSuccessState,
     required TResult Function(UndoPlanFromSubscribersErrorState<T> value)
         undoPlanFromSubscribersErrorState,
+    required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return undoPlanFromSubscribersErrorState(this);
   }
@@ -5542,6 +5660,7 @@ class _$UndoPlanFromSubscribersErrorStateImpl<T>
         undoPlanFromSubscribersSuccessState,
     TResult? Function(UndoPlanFromSubscribersErrorState<T> value)?
         undoPlanFromSubscribersErrorState,
+    TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return undoPlanFromSubscribersErrorState?.call(this);
   }
@@ -5580,6 +5699,7 @@ class _$UndoPlanFromSubscribersErrorStateImpl<T>
         undoPlanFromSubscribersSuccessState,
     TResult Function(UndoPlanFromSubscribersErrorState<T> value)?
         undoPlanFromSubscribersErrorState,
+    TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
     if (undoPlanFromSubscribersErrorState != null) {
@@ -5600,4 +5720,267 @@ abstract class UndoPlanFromSubscribersErrorState<T>
   _$$UndoPlanFromSubscribersErrorStateImplCopyWith<T,
           _$UndoPlanFromSubscribersErrorStateImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ChangeListDataImplCopyWith<T, $Res> {
+  factory _$$ChangeListDataImplCopyWith(_$ChangeListDataImpl<T> value,
+          $Res Function(_$ChangeListDataImpl<T>) then) =
+      __$$ChangeListDataImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$ChangeListDataImplCopyWithImpl<T, $Res>
+    extends _$CompaniesStateCopyWithImpl<T, $Res, _$ChangeListDataImpl<T>>
+    implements _$$ChangeListDataImplCopyWith<T, $Res> {
+  __$$ChangeListDataImplCopyWithImpl(_$ChangeListDataImpl<T> _value,
+      $Res Function(_$ChangeListDataImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ChangeListDataImpl<T> implements ChangeListData<T> {
+  const _$ChangeListDataImpl();
+
+  @override
+  String toString() {
+    return 'CompaniesState<$T>.changeListData()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ChangeListDataImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getCompaniesLoadingState,
+    required TResult Function(GetCompaniesResponse data)
+        getCompaniesSuccessState,
+    required TResult Function(String error) getCompaniesErrorState,
+    required TResult Function() updateCompanyLoadingState,
+    required TResult Function(DefaultApiResponse data)
+        updateCompanySuccessState,
+    required TResult Function(String error) updateCompanyErrorState,
+    required TResult Function() addCompanyLoadingState,
+    required TResult Function(DefaultApiResponse data) addCompanySuccessState,
+    required TResult Function(String error) addCompanyErrorState,
+    required TResult Function() deleteCompanyLoadingState,
+    required TResult Function(DefaultApiResponse data)
+        deleteCompanySuccessState,
+    required TResult Function(String error) deleteCompanyErrorState,
+    required TResult Function() deductPlanFromSubscribersLoadingState,
+    required TResult Function(DefaultApiResponse data)
+        deductPlanFromSubscribersSuccessState,
+    required TResult Function(String error) deductPlanFromSubscribersErrorState,
+    required TResult Function() undoPlanFromSubscribersLoadingState,
+    required TResult Function(DefaultApiResponse data)
+        undoPlanFromSubscribersSuccessState,
+    required TResult Function(String error) undoPlanFromSubscribersErrorState,
+    required TResult Function() changeListData,
+  }) {
+    return changeListData();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getCompaniesLoadingState,
+    TResult? Function(GetCompaniesResponse data)? getCompaniesSuccessState,
+    TResult? Function(String error)? getCompaniesErrorState,
+    TResult? Function()? updateCompanyLoadingState,
+    TResult? Function(DefaultApiResponse data)? updateCompanySuccessState,
+    TResult? Function(String error)? updateCompanyErrorState,
+    TResult? Function()? addCompanyLoadingState,
+    TResult? Function(DefaultApiResponse data)? addCompanySuccessState,
+    TResult? Function(String error)? addCompanyErrorState,
+    TResult? Function()? deleteCompanyLoadingState,
+    TResult? Function(DefaultApiResponse data)? deleteCompanySuccessState,
+    TResult? Function(String error)? deleteCompanyErrorState,
+    TResult? Function()? deductPlanFromSubscribersLoadingState,
+    TResult? Function(DefaultApiResponse data)?
+        deductPlanFromSubscribersSuccessState,
+    TResult? Function(String error)? deductPlanFromSubscribersErrorState,
+    TResult? Function()? undoPlanFromSubscribersLoadingState,
+    TResult? Function(DefaultApiResponse data)?
+        undoPlanFromSubscribersSuccessState,
+    TResult? Function(String error)? undoPlanFromSubscribersErrorState,
+    TResult? Function()? changeListData,
+  }) {
+    return changeListData?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getCompaniesLoadingState,
+    TResult Function(GetCompaniesResponse data)? getCompaniesSuccessState,
+    TResult Function(String error)? getCompaniesErrorState,
+    TResult Function()? updateCompanyLoadingState,
+    TResult Function(DefaultApiResponse data)? updateCompanySuccessState,
+    TResult Function(String error)? updateCompanyErrorState,
+    TResult Function()? addCompanyLoadingState,
+    TResult Function(DefaultApiResponse data)? addCompanySuccessState,
+    TResult Function(String error)? addCompanyErrorState,
+    TResult Function()? deleteCompanyLoadingState,
+    TResult Function(DefaultApiResponse data)? deleteCompanySuccessState,
+    TResult Function(String error)? deleteCompanyErrorState,
+    TResult Function()? deductPlanFromSubscribersLoadingState,
+    TResult Function(DefaultApiResponse data)?
+        deductPlanFromSubscribersSuccessState,
+    TResult Function(String error)? deductPlanFromSubscribersErrorState,
+    TResult Function()? undoPlanFromSubscribersLoadingState,
+    TResult Function(DefaultApiResponse data)?
+        undoPlanFromSubscribersSuccessState,
+    TResult Function(String error)? undoPlanFromSubscribersErrorState,
+    TResult Function()? changeListData,
+    required TResult orElse(),
+  }) {
+    if (changeListData != null) {
+      return changeListData();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(GetCompaniesLoadingState<T> value)
+        getCompaniesLoadingState,
+    required TResult Function(GetCompaniesSuccessState<T> value)
+        getCompaniesSuccessState,
+    required TResult Function(GetCompaniesErrorState<T> value)
+        getCompaniesErrorState,
+    required TResult Function(UpdateCompanyLoadingState<T> value)
+        updateCompanyLoadingState,
+    required TResult Function(UpdateCompanySuccessState<T> value)
+        updateCompanySuccessState,
+    required TResult Function(UpdateCompanyErrorState<T> value)
+        updateCompanyErrorState,
+    required TResult Function(AddCompanyLoadingState<T> value)
+        addCompanyLoadingState,
+    required TResult Function(AddCompanySuccessState<T> value)
+        addCompanySuccessState,
+    required TResult Function(AddCompanyErrorState<T> value)
+        addCompanyErrorState,
+    required TResult Function(DeleteCompanyLoadingState<T> value)
+        deleteCompanyLoadingState,
+    required TResult Function(DeleteCompanySuccessState<T> value)
+        deleteCompanySuccessState,
+    required TResult Function(DeleteCompanyErrorState<T> value)
+        deleteCompanyErrorState,
+    required TResult Function(DeductPlanFromSubscribersLoadingState<T> value)
+        deductPlanFromSubscribersLoadingState,
+    required TResult Function(DeductPlanFromSubscribersSuccessState<T> value)
+        deductPlanFromSubscribersSuccessState,
+    required TResult Function(DeductPlanFromSubscribersErrorState<T> value)
+        deductPlanFromSubscribersErrorState,
+    required TResult Function(UndoPlanFromSubscribersLoadingState<T> value)
+        undoPlanFromSubscribersLoadingState,
+    required TResult Function(UndoPlanFromSubscribersSuccessState<T> value)
+        undoPlanFromSubscribersSuccessState,
+    required TResult Function(UndoPlanFromSubscribersErrorState<T> value)
+        undoPlanFromSubscribersErrorState,
+    required TResult Function(ChangeListData<T> value) changeListData,
+  }) {
+    return changeListData(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(GetCompaniesLoadingState<T> value)?
+        getCompaniesLoadingState,
+    TResult? Function(GetCompaniesSuccessState<T> value)?
+        getCompaniesSuccessState,
+    TResult? Function(GetCompaniesErrorState<T> value)? getCompaniesErrorState,
+    TResult? Function(UpdateCompanyLoadingState<T> value)?
+        updateCompanyLoadingState,
+    TResult? Function(UpdateCompanySuccessState<T> value)?
+        updateCompanySuccessState,
+    TResult? Function(UpdateCompanyErrorState<T> value)?
+        updateCompanyErrorState,
+    TResult? Function(AddCompanyLoadingState<T> value)? addCompanyLoadingState,
+    TResult? Function(AddCompanySuccessState<T> value)? addCompanySuccessState,
+    TResult? Function(AddCompanyErrorState<T> value)? addCompanyErrorState,
+    TResult? Function(DeleteCompanyLoadingState<T> value)?
+        deleteCompanyLoadingState,
+    TResult? Function(DeleteCompanySuccessState<T> value)?
+        deleteCompanySuccessState,
+    TResult? Function(DeleteCompanyErrorState<T> value)?
+        deleteCompanyErrorState,
+    TResult? Function(DeductPlanFromSubscribersLoadingState<T> value)?
+        deductPlanFromSubscribersLoadingState,
+    TResult? Function(DeductPlanFromSubscribersSuccessState<T> value)?
+        deductPlanFromSubscribersSuccessState,
+    TResult? Function(DeductPlanFromSubscribersErrorState<T> value)?
+        deductPlanFromSubscribersErrorState,
+    TResult? Function(UndoPlanFromSubscribersLoadingState<T> value)?
+        undoPlanFromSubscribersLoadingState,
+    TResult? Function(UndoPlanFromSubscribersSuccessState<T> value)?
+        undoPlanFromSubscribersSuccessState,
+    TResult? Function(UndoPlanFromSubscribersErrorState<T> value)?
+        undoPlanFromSubscribersErrorState,
+    TResult? Function(ChangeListData<T> value)? changeListData,
+  }) {
+    return changeListData?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(GetCompaniesLoadingState<T> value)?
+        getCompaniesLoadingState,
+    TResult Function(GetCompaniesSuccessState<T> value)?
+        getCompaniesSuccessState,
+    TResult Function(GetCompaniesErrorState<T> value)? getCompaniesErrorState,
+    TResult Function(UpdateCompanyLoadingState<T> value)?
+        updateCompanyLoadingState,
+    TResult Function(UpdateCompanySuccessState<T> value)?
+        updateCompanySuccessState,
+    TResult Function(UpdateCompanyErrorState<T> value)? updateCompanyErrorState,
+    TResult Function(AddCompanyLoadingState<T> value)? addCompanyLoadingState,
+    TResult Function(AddCompanySuccessState<T> value)? addCompanySuccessState,
+    TResult Function(AddCompanyErrorState<T> value)? addCompanyErrorState,
+    TResult Function(DeleteCompanyLoadingState<T> value)?
+        deleteCompanyLoadingState,
+    TResult Function(DeleteCompanySuccessState<T> value)?
+        deleteCompanySuccessState,
+    TResult Function(DeleteCompanyErrorState<T> value)? deleteCompanyErrorState,
+    TResult Function(DeductPlanFromSubscribersLoadingState<T> value)?
+        deductPlanFromSubscribersLoadingState,
+    TResult Function(DeductPlanFromSubscribersSuccessState<T> value)?
+        deductPlanFromSubscribersSuccessState,
+    TResult Function(DeductPlanFromSubscribersErrorState<T> value)?
+        deductPlanFromSubscribersErrorState,
+    TResult Function(UndoPlanFromSubscribersLoadingState<T> value)?
+        undoPlanFromSubscribersLoadingState,
+    TResult Function(UndoPlanFromSubscribersSuccessState<T> value)?
+        undoPlanFromSubscribersSuccessState,
+    TResult Function(UndoPlanFromSubscribersErrorState<T> value)?
+        undoPlanFromSubscribersErrorState,
+    TResult Function(ChangeListData<T> value)? changeListData,
+    required TResult orElse(),
+  }) {
+    if (changeListData != null) {
+      return changeListData(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ChangeListData<T> implements CompaniesState<T> {
+  const factory ChangeListData() = _$ChangeListDataImpl<T>;
 }

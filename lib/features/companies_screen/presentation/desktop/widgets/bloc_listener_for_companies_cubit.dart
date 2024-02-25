@@ -35,6 +35,7 @@ class _BlocListenerForCompaniesCubitState extends State<BlocListenerForCompanies
           },
           addCompanySuccessState: (addCompanyResponse) {
             Navigator.pop(context);
+            Navigator.pop(context);
             showDialog(
               context: context,
               builder: (context) => Directionality(
@@ -141,7 +142,8 @@ class _BlocListenerForCompaniesCubitState extends State<BlocListenerForCompanies
           },
           getCompaniesSuccessState: (companies) {
             // Navigator.pop(context);
-            context.read<CompaniesCubit>().companiesData = companies.companies!;
+            // context.read<CompaniesCubit>().companiesData = companies.companies!;
+            context.read<CompaniesCubit>().changeListData(companiesData: companies.companies!);
           },
 
           /// Delete Company

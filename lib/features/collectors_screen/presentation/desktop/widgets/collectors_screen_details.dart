@@ -1,14 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:system/core/di/dependency_injection.dart';
 import 'package:system/core/helpers/dimensions.dart';
 import 'package:system/core/helpers/spacing.dart';
 import 'package:system/core/theming/colors.dart';
 import 'package:system/core/widgets/default_button.dart';
 import 'package:system/core/widgets/default_text.dart';
 import 'package:system/core/widgets/home_widget.dart';
+import 'package:system/core/widgets/no_data_widget.dart';
 import 'package:system/core/widgets/show_alert_dialog.dart';
+import 'package:system/features/collectors_screen/business_logic/collectors_cubit.dart';
+import 'package:system/features/collectors_screen/business_logic/collectors_state.dart';
+import 'package:system/features/collectors_screen/data/models/get_users_request_body.dart';
 import 'package:system/features/collectors_screen/presentation/desktop/widgets/add_collector_widget.dart';
 import 'package:system/features/collectors_screen/presentation/desktop/widgets/collectors_card.dart';
 import 'package:system/features/collectors_screen/presentation/desktop/widgets/collectors_search_widget.dart';
+import 'bloc_listener_collectos_cubit.dart';
 import 'collectors_header_widget.dart';
 
 class CollectorsScreenDetails extends StatefulWidget {
@@ -40,10 +47,6 @@ class _CollectorsScreenDetailsState extends State<CollectorsScreenDetails> {
             ),
             verticalSpace(dimension.height5),
             HomeWidget(
-              horizontal: dimension.width10,
-              vertical: dimension.height10,
-              height: MediaQuery.of(context).size.height * .8,
-              width: MediaQuery.of(context).size.width,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -51,7 +54,17 @@ class _CollectorsScreenDetailsState extends State<CollectorsScreenDetails> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      CollectorsSearchWidget(),
+                      CollectorsSearchWidget(
+                        searchController:
+                            CollectorsCubit.get(context).searchController,
+                        onChange: (value) {
+                          CollectorsCubit.get(context).getUsers(
+                            getUsersRequestBody: GetUsersRequestBody(
+                              username: value,
+                            ),
+                          );
+                        },
+                      ),
                       DefaultButton(
                         color: const Color(0xffebf5f6),
                         padding: EdgeInsets.symmetric(
@@ -61,8 +74,9 @@ class _CollectorsScreenDetailsState extends State<CollectorsScreenDetails> {
                         onPressed: () {
                           showDataAlert(
                               context: context,
-                              child: AddCollectorWidget(
-                                onPressed: () {},
+                              child: BlocProvider.value(
+                                value: getIt<CollectorsCubit>(),
+                                child: const AddCollectorWidget(),
                               ));
                         },
                         child: DefaultText(
@@ -74,15 +88,58 @@ class _CollectorsScreenDetailsState extends State<CollectorsScreenDetails> {
                       ),
                     ],
                   ),
-                  verticalSpace(dimension.height10),
-                  const CollectorsHeaderWidget(),
-                  Expanded(
-                      child: ListView.builder(
-                    itemBuilder: (context, index) {
-                      return CollectorsCard();
+                  BlocBuilder<CollectorsCubit, CollectorsState>(
+                    builder: (context, state) {
+                      if (CollectorsCubit.get(context).users.isEmpty) {
+                        return Expanded(
+                            child: NoDataWidget(
+                          child: DefaultButton(
+                            color: const Color(0xffebf5f6),
+                            padding: EdgeInsets.symmetric(
+                              horizontal: dimension.width15,
+                              vertical: dimension.height10,
+                            ),
+                            onPressed: () {
+                              showDataAlert(
+                                  context: context,
+                                  child: BlocProvider.value(
+                                    value: getIt<CollectorsCubit>(),
+                                    child: const AddCollectorWidget(),
+                                  ));
+                            },
+                            child: DefaultText(
+                              text: "+ اضافة محصل",
+                              color: const Color(0xFF007C92),
+                              fontSize: dimension.reduce20,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ));
+                      } else {
+                        return Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              verticalSpace(dimension.height10),
+                              const CollectorsHeaderWidget(),
+                              Expanded(
+                                child: ListView.builder(
+                                  itemBuilder: (context, index) {
+                                    return CollectorsCard(
+                                        user: CollectorsCubit.get(context)
+                                            .users[index]);
+                                  },
+                                  itemCount:
+                                      CollectorsCubit.get(context).users.length,
+                                ),
+                              ),
+                            ],
+                          ),
+                        );
+                      }
                     },
-                    itemCount: 10,
-                  ))
+                  ),
+                  const BlocListenerCollectorsCubit()
                 ],
               ),
             )

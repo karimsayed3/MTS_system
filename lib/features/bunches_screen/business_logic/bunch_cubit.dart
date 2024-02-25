@@ -73,5 +73,10 @@ class BunchCubit extends Cubit<BunchState> {
     );
   }
 
-
+  changeListData({
+    required List<PlanData> plansData
+}) {
+    emit(const BunchState.changeListData());
+    this.plansData = plansData;
+  }
 }

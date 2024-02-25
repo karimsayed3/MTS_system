@@ -41,35 +41,41 @@ class _AddBunchForCompanyState extends State<AddBunchForCompany> {
               width: double.infinity,
               color: ColorsManager.alertDialogHeaderColor,
               // color: Colors.red,
-              padding:isMobile()? EdgeInsets.symmetric(
-                horizontal: 24.w,
-                vertical:  12.h,
-              ) :  EdgeInsets.only(
-                left: dimension.width10,
-                right: dimension.width10,
-                top: dimension.height15,
-                bottom: dimension.height10,
-              ),
+              padding: isMobile()
+                  ? EdgeInsets.symmetric(
+                      horizontal: 24.w,
+                      vertical: 12.h,
+                    )
+                  : EdgeInsets.only(
+                      left: dimension.width10,
+                      right: dimension.width10,
+                      top: dimension.height15,
+                      bottom: dimension.height10,
+                    ),
               child: DefaultText(
                 text: 'اضافة شركة',
                 color: ColorsManager.secondaryColor,
-                fontSize:isMobile()? 20.sp: dimension.reduce20,
+                fontSize: isMobile() ? 20.sp : dimension.reduce20,
                 fontWeight: FontWeight.w700,
               ),
             ),
-            isMobile()? SizedBox.shrink():   const Divider(
-              color: ColorsManager.secondaryColor,
-              thickness: 2,
-              height: 0,
-            ),
+            isMobile()
+                ? SizedBox.shrink()
+                : const Divider(
+                    color: ColorsManager.secondaryColor,
+                    thickness: 2,
+                    height: 0,
+                  ),
             Padding(
-              padding: isMobile()? EdgeInsets.symmetric(
-                horizontal: 24.w,
-                vertical:  12.h,
-              ) :EdgeInsets.symmetric(
-                horizontal: dimension.width10,
-                vertical: dimension.height15,
-              ),
+              padding: isMobile()
+                  ? EdgeInsets.symmetric(
+                      horizontal: 24.w,
+                      vertical: 12.h,
+                    )
+                  : EdgeInsets.symmetric(
+                      horizontal: dimension.width10,
+                      vertical: dimension.height15,
+                    ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -88,13 +94,15 @@ class _AddBunchForCompanyState extends State<AddBunchForCompany> {
                   Row(
                     children: [
                       DefaultButton(
-                        padding:isMobile()? EdgeInsets.symmetric(
-                          horizontal: 24.w,
-                          vertical:  10.h,
-                        ) : EdgeInsets.symmetric(
-                          horizontal: dimension.width15,
-                          vertical: dimension.height15,
-                        ),
+                        padding: isMobile()
+                            ? EdgeInsets.symmetric(
+                                horizontal: 24.w,
+                                vertical: 10.h,
+                              )
+                            : EdgeInsets.symmetric(
+                                horizontal: dimension.width15,
+                                vertical: dimension.height15,
+                              ),
                         onPressed: widget.onPressed,
                         child: DefaultText(
                           text: 'اضافة',
@@ -103,7 +111,9 @@ class _AddBunchForCompanyState extends State<AddBunchForCompany> {
                           fontWeight: FontWeight.w500,
                         ),
                       ),
-                      isMobile()? horizontalSpace(10.w) : horizontalSpace(dimension.width10),
+                      isMobile()
+                          ? horizontalSpace(10.w)
+                          : horizontalSpace(dimension.width10),
                       TextButton(
                         onPressed: () {
                           Navigator.pop(context);

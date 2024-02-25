@@ -12,6 +12,7 @@ import 'package:system/core/widgets/drop_down_button.dart';
 
 class UpdateSubscriberWidget extends StatefulWidget {
   const UpdateSubscriberWidget({super.key, required this.onPressed});
+
   final Function() onPressed;
 
   @override
@@ -23,6 +24,8 @@ class _UpdateSubscriberWidgetState extends State<UpdateSubscriberWidget> {
   TextEditingController phoneNumberController = TextEditingController();
   TextEditingController NIDController = TextEditingController();
   TextEditingController addressController = TextEditingController();
+  TextEditingController amountController = TextEditingController();
+
   List<String> companies = [
     "فودافون",
     "موبينيل",
@@ -50,11 +53,11 @@ class _UpdateSubscriberWidgetState extends State<UpdateSubscriberWidget> {
                   padding: isMobile()
                       ? EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h)
                       : EdgeInsets.only(
-                    left: dimension.width10,
-                    right: dimension.width10,
-                    top: dimension.height15,
-                    bottom: dimension.height10,
-                  ),
+                          left: dimension.width10,
+                          right: dimension.width10,
+                          top: dimension.height15,
+                          bottom: dimension.height10,
+                        ),
                   child: DefaultText(
                     text: 'تعديل مشترك',
                     color: ColorsManager.secondaryColor,
@@ -65,178 +68,36 @@ class _UpdateSubscriberWidgetState extends State<UpdateSubscriberWidget> {
                 isMobile()
                     ? const SizedBox.shrink()
                     : const Divider(
-                  color: ColorsManager.secondaryColor,
-                  thickness: 2,
-                  height: 0,
-                ),
+                        color: ColorsManager.secondaryColor,
+                        thickness: 2,
+                        height: 0,
+                      ),
               ],
             ),
             SizedBox(
               width: double.infinity,
-              height: isMobile()? 600.h : dimension.height350 + dimension.height320,
+              height: isMobile()
+                  ? 600.h
+                  : dimension.height350 + dimension.height320,
               // color: Colors.red,
               child: SingleChildScrollView(
                 child: Padding(
                   padding: isMobile()
                       ? EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h)
                       : EdgeInsets.symmetric(
-                    horizontal: dimension.width10,
-                    vertical: dimension.height15,
-                  ),
+                          horizontal: dimension.width10,
+                          vertical: dimension.height15,
+                        ),
                   child: isMobile()
                       ? Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          DefaultText(
-                            text: 'اسم المشترك',
-                            fontSize: 20.sp,
-                            fontWeight: FontWeight.w400,
-                            color: ColorsManager.lightBlack,
-                          ),
-                          verticalSpace(dimension.height5),
-                          DefaultTextFormField(
-                            controller: subscriberNameController,
-                            color: Colors.white,
-                            hintText: "اسم المشترك",
-                          ),
-                        ],
-                      ),
-                      verticalSpace(5.h),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          DefaultText(
-                            text: 'رقم الهاتف',
-                            fontSize: 20.sp,
-                            fontWeight: FontWeight.w400,
-                            color: ColorsManager.lightBlack,
-                          ),
-                          verticalSpace(dimension.height5),
-                          DefaultTextFormField(
-                            inputFormatters: [NumberInputFormatter()],
-                            controller: phoneNumberController,
-                            color: Colors.white,
-                            hintText: 'رقم الهاتف',
-                          ),
-                        ],
-                      ),
-                      verticalSpace(10.h),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          DefaultText(
-                            text: 'الرقم القومى',
-                            fontSize: 20.sp,
-                            fontWeight: FontWeight.w400,
-                            color: ColorsManager.lightBlack,
-                          ),
-                          verticalSpace(dimension.height5),
-                          DefaultTextFormField(
-                            inputFormatters: [NumberInputFormatter()],
-                            controller: NIDController,
-                            color: Colors.white,
-                            hintText: 'الرقم القومى',
-                          ),
-                        ],
-                      ),
-                      verticalSpace(5.h),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          DefaultText(
-                            text: 'العنوان',
-                            fontSize: 20.sp,
-                            fontWeight: FontWeight.w400,
-                            color: ColorsManager.lightBlack,
-                          ),
-                          verticalSpace(dimension.height5),
-                          DefaultTextFormField(
-                            controller: addressController,
-                            color: Colors.white,
-                            hintText: "العنوان",
-                          ),
-                        ],
-                      ),
-                      verticalSpace(10.h),
-                      buildDropdown(
-                        labelText: 'التبعية',
-                        itemList: companies,
-                        selectedValue: selectedValue,
-                        onChanged: (value) {
-                          setState(() {
-                            selectedValue = value!;
-                          });
-                        },
-                        context: context,
-                      ),
-                      verticalSpace(5.h),
-                      buildDropdown(
-                        labelText: 'المحصل',
-                        itemList: companies,
-                        selectedValue: selectedValue,
-                        onChanged: (value) {
-                          setState(() {
-                            selectedValue = value!;
-                          });
-                        },
-                        context: context,
-                      ),
-                      verticalSpace(5.h),
-                      verticalSpace(10.h),
-                      buildDropdown(
-                        labelText: 'الشركة',
-                        itemList: companies,
-                        selectedValue: selectedValue,
-                        onChanged: (value) {
-                          setState(() {
-                            selectedValue = value!;
-                          });
-                        },
-                        context: context,
-                      ),
-                      verticalSpace(5.h),
-                      buildDropdown(
-                        labelText: 'الباقة',
-                        itemList: companies,
-                        selectedValue: selectedValue,
-                        onChanged: (value) {
-                          setState(() {
-                            selectedValue = value!;
-                          });
-                        },
-                        context: context,
-                      ),
-                      verticalSpace(10.h),
-                      buildDropdown(
-                        labelText: 'نوع الخط',
-                        itemList: companies,
-                        selectedValue: selectedValue,
-                        onChanged: (value) {
-                          setState(() {
-                            selectedValue = value!;
-                          });
-                        },
-                        context: context,
-                      ),
-                      // verticalSpace(10.h),
-                    ],
-                  )
-                      : Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Expanded(
-                            child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 DefaultText(
                                   text: 'اسم المشترك',
-                                  fontSize: dimension.reduce20,
+                                  fontSize: 20.sp,
                                   fontWeight: FontWeight.w400,
                                   color: ColorsManager.lightBlack,
                                 ),
@@ -248,15 +109,13 @@ class _UpdateSubscriberWidgetState extends State<UpdateSubscriberWidget> {
                                 ),
                               ],
                             ),
-                          ),
-                          horizontalSpace(dimension.width10),
-                          Expanded(
-                            child: Column(
+                            verticalSpace(5.h),
+                            Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 DefaultText(
                                   text: 'رقم الهاتف',
-                                  fontSize: dimension.reduce20,
+                                  fontSize: 20.sp,
                                   fontWeight: FontWeight.w400,
                                   color: ColorsManager.lightBlack,
                                 ),
@@ -269,20 +128,13 @@ class _UpdateSubscriberWidgetState extends State<UpdateSubscriberWidget> {
                                 ),
                               ],
                             ),
-                          ),
-                        ],
-                      ),
-                      verticalSpace(dimension.height10),
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Expanded(
-                            child: Column(
+                            verticalSpace(10.h),
+                            Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 DefaultText(
                                   text: 'الرقم القومى',
-                                  fontSize: dimension.reduce20,
+                                  fontSize: 20.sp,
                                   fontWeight: FontWeight.w400,
                                   color: ColorsManager.lightBlack,
                                 ),
@@ -295,15 +147,13 @@ class _UpdateSubscriberWidgetState extends State<UpdateSubscriberWidget> {
                                 ),
                               ],
                             ),
-                          ),
-                          horizontalSpace(dimension.width10),
-                          Expanded(
-                            child: Column(
+                            verticalSpace(5.h),
+                            Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 DefaultText(
                                   text: 'العنوان',
-                                  fontSize: dimension.reduce20,
+                                  fontSize: 20.sp,
                                   fontWeight: FontWeight.w400,
                                   color: ColorsManager.lightBlack,
                                 ),
@@ -315,15 +165,8 @@ class _UpdateSubscriberWidgetState extends State<UpdateSubscriberWidget> {
                                 ),
                               ],
                             ),
-                          ),
-                        ],
-                      ),
-                      verticalSpace(dimension.height10),
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Expanded(
-                            child: buildDropdown(
+                            verticalSpace(10.h),
+                            buildDropdown(
                               labelText: 'التبعية',
                               itemList: companies,
                               selectedValue: selectedValue,
@@ -334,10 +177,8 @@ class _UpdateSubscriberWidgetState extends State<UpdateSubscriberWidget> {
                               },
                               context: context,
                             ),
-                          ),
-                          horizontalSpace(dimension.width10),
-                          Expanded(
-                            child: buildDropdown(
+                            verticalSpace(5.h),
+                            buildDropdown(
                               labelText: 'المحصل',
                               itemList: companies,
                               selectedValue: selectedValue,
@@ -348,15 +189,9 @@ class _UpdateSubscriberWidgetState extends State<UpdateSubscriberWidget> {
                               },
                               context: context,
                             ),
-                          ),
-                        ],
-                      ),
-                      verticalSpace(dimension.height10),
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Expanded(
-                            child: buildDropdown(
+                            verticalSpace(5.h),
+                            verticalSpace(10.h),
+                            buildDropdown(
                               labelText: 'الشركة',
                               itemList: companies,
                               selectedValue: selectedValue,
@@ -367,10 +202,8 @@ class _UpdateSubscriberWidgetState extends State<UpdateSubscriberWidget> {
                               },
                               context: context,
                             ),
-                          ),
-                          horizontalSpace(dimension.width10),
-                          Expanded(
-                            child: buildDropdown(
+                            verticalSpace(5.h),
+                            buildDropdown(
                               labelText: 'الباقة',
                               itemList: companies,
                               selectedValue: selectedValue,
@@ -381,15 +214,8 @@ class _UpdateSubscriberWidgetState extends State<UpdateSubscriberWidget> {
                               },
                               context: context,
                             ),
-                          ),
-                        ],
-                      ),
-                      verticalSpace(dimension.height10),
-                      Row(
-                        children: [
-                          Expanded(
-                            flex: 1,
-                            child: buildDropdown(
+                            verticalSpace(10.h),
+                            buildDropdown(
                               labelText: 'نوع الخط',
                               itemList: companies,
                               selectedValue: selectedValue,
@@ -400,17 +226,220 @@ class _UpdateSubscriberWidgetState extends State<UpdateSubscriberWidget> {
                               },
                               context: context,
                             ),
-                          ),
-                          horizontalSpace(dimension.width10),
-                          const Expanded(
-                            flex: 1,
-                            child: SizedBox.shrink(),
-                          ),
-                        ],
-                      ),
-                      // verticalSpace(dimension.height15),
-                    ],
-                  ),
+                            // verticalSpace(10.h),
+                          ],
+                        )
+                      : Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Expanded(
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      DefaultText(
+                                        text: 'اسم المشترك',
+                                        fontSize: dimension.reduce20,
+                                        fontWeight: FontWeight.w400,
+                                        color: ColorsManager.lightBlack,
+                                      ),
+                                      verticalSpace(dimension.height5),
+                                      DefaultTextFormField(
+                                        controller: subscriberNameController,
+                                        color: Colors.white,
+                                        hintText: "اسم المشترك",
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                horizontalSpace(dimension.width10),
+                                Expanded(
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      DefaultText(
+                                        text: 'رقم الهاتف',
+                                        fontSize: dimension.reduce20,
+                                        fontWeight: FontWeight.w400,
+                                        color: ColorsManager.lightBlack,
+                                      ),
+                                      verticalSpace(dimension.height5),
+                                      DefaultTextFormField(
+                                        inputFormatters: [
+                                          NumberInputFormatter()
+                                        ],
+                                        controller: phoneNumberController,
+                                        color: Colors.white,
+                                        hintText: 'رقم الهاتف',
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                            verticalSpace(dimension.height10),
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Expanded(
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      DefaultText(
+                                        text: 'الرقم القومى',
+                                        fontSize: dimension.reduce20,
+                                        fontWeight: FontWeight.w400,
+                                        color: ColorsManager.lightBlack,
+                                      ),
+                                      verticalSpace(dimension.height5),
+                                      DefaultTextFormField(
+                                        inputFormatters: [
+                                          NumberInputFormatter()
+                                        ],
+                                        controller: NIDController,
+                                        color: Colors.white,
+                                        hintText: 'الرقم القومى',
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                horizontalSpace(dimension.width10),
+                                Expanded(
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      DefaultText(
+                                        text: 'العنوان',
+                                        fontSize: dimension.reduce20,
+                                        fontWeight: FontWeight.w400,
+                                        color: ColorsManager.lightBlack,
+                                      ),
+                                      verticalSpace(dimension.height5),
+                                      DefaultTextFormField(
+                                        controller: addressController,
+                                        color: Colors.white,
+                                        hintText: "العنوان",
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                            verticalSpace(dimension.height10),
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Expanded(
+                                  child: buildDropdown(
+                                    labelText: 'التبعية',
+                                    itemList: companies,
+                                    selectedValue: selectedValue,
+                                    onChanged: (value) {
+                                      setState(() {
+                                        selectedValue = value!;
+                                      });
+                                    },
+                                    context: context,
+                                  ),
+                                ),
+                                horizontalSpace(dimension.width10),
+                                Expanded(
+                                  child: buildDropdown(
+                                    labelText: 'المحصل',
+                                    itemList: companies,
+                                    selectedValue: selectedValue,
+                                    onChanged: (value) {
+                                      setState(() {
+                                        selectedValue = value!;
+                                      });
+                                    },
+                                    context: context,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            verticalSpace(dimension.height10),
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Expanded(
+                                  child: buildDropdown(
+                                    labelText: 'الشركة',
+                                    itemList: companies,
+                                    selectedValue: selectedValue,
+                                    onChanged: (value) {
+                                      setState(() {
+                                        selectedValue = value!;
+                                      });
+                                    },
+                                    context: context,
+                                  ),
+                                ),
+                                horizontalSpace(dimension.width10),
+                                Expanded(
+                                  child: buildDropdown(
+                                    labelText: 'الباقة',
+                                    itemList: companies,
+                                    selectedValue: selectedValue,
+                                    onChanged: (value) {
+                                      setState(() {
+                                        selectedValue = value!;
+                                      });
+                                    },
+                                    context: context,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            verticalSpace(dimension.height10),
+                            Row(
+                              children: [
+                                Expanded(
+                                  flex: 1,
+                                  child: buildDropdown(
+                                    labelText: 'نوع الخط',
+                                    itemList: companies,
+                                    selectedValue: selectedValue,
+                                    onChanged: (value) {
+                                      setState(() {
+                                        selectedValue = value!;
+                                      });
+                                    },
+                                    context: context,
+                                  ),
+                                ),
+                                horizontalSpace(dimension.width10),
+                                 Expanded(
+                                  flex: 1,
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      DefaultText(
+                                        text: 'الحساب',
+                                        fontSize: dimension.reduce20,
+                                        fontWeight: FontWeight.w400,
+                                        color: ColorsManager.lightBlack,
+                                      ),
+                                      verticalSpace(dimension.height5),
+                                      DefaultTextFormField(
+                                        controller: amountController,
+                                        color: Colors.white,
+                                        hintText: "الحساب",
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                            // verticalSpace(dimension.height15),
+                          ],
+                        ),
                 ),
               ),
             ),
@@ -418,18 +447,18 @@ class _UpdateSubscriberWidgetState extends State<UpdateSubscriberWidget> {
               padding: isMobile()
                   ? EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h)
                   : EdgeInsets.symmetric(
-                horizontal: dimension.width10,
-                vertical: dimension.height15,
-              ),
+                      horizontal: dimension.width10,
+                      vertical: dimension.height15,
+                    ),
               child: Row(
                 children: [
                   DefaultButton(
                     padding: isMobile()
                         ? EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h)
                         : EdgeInsets.symmetric(
-                      horizontal: dimension.width15,
-                      vertical: dimension.height15,
-                    ),
+                            horizontal: dimension.width15,
+                            vertical: dimension.height15,
+                          ),
                     onPressed: widget.onPressed,
                     child: DefaultText(
                       text: 'تعديل',

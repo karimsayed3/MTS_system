@@ -27,14 +27,14 @@ class _HomeDesktopScreenState extends State<HomeDesktopScreen> {
           'الرئيسية',
           'الشركات',
           'المحصلون',
-          'المستخدمون',
+          'العملاء',
           'سجل العمليات',
           'مراجعة البيانات',
         ]
       : [
           'الرئيسية',
           'الشركات',
-          'المستخدمون',
+          'العملاء',
           'سجل العمليات',
           'مراجعة البيانات',
         ];
@@ -46,7 +46,7 @@ class _HomeDesktopScreenState extends State<HomeDesktopScreen> {
             color: ColorsManager.secondaryColor,
           ),
           const CompaniesScreen(),
-          const CollectorsScreen(),
+          CollectorsScreen(),
           const CustomersScreen(),
           const HistoryOperationsDesktopScreen(),
           const ReviewDataScreenDesktop(),

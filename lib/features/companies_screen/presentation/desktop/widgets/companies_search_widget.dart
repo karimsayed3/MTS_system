@@ -6,8 +6,9 @@ import 'package:system/core/theming/colors.dart';
 import 'package:system/core/widgets/custom_search_widget.dart';
 
 class CompaniesSearchWidget extends StatelessWidget {
-  const CompaniesSearchWidget({super.key, required this.searchController});
+  const CompaniesSearchWidget({super.key, required this.searchController, this.onChange});
   final TextEditingController searchController;
+  final Function(String)? onChange;
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +19,7 @@ class CompaniesSearchWidget extends StatelessWidget {
         CustomSearchWidget(
           width: dimension.width200,
           searchController: searchController,
+          onChange: onChange,
         ),
         horizontalSpace(dimension.width10),
         Container(

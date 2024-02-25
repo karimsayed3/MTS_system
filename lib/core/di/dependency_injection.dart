@@ -8,6 +8,8 @@ import 'package:system/features/login_screen/business_logic/login_cubit.dart';
 import 'package:system/features/login_screen/data/repository/login_repo.dart';
 
 import '../../features/bunches_screen/data/repository/bunch_repo.dart';
+import '../../features/collectors_screen/business_logic/collectors_cubit.dart';
+import '../../features/collectors_screen/data/collectors_repo/collectors_repo.dart';
 import '../networking/dio_factory.dart';
 
 final getIt = GetIt.instance;
@@ -28,6 +30,10 @@ Future<void> setupGetIt() async {
 
   getIt.registerLazySingleton<BunchCubit>(() => BunchCubit(getIt()));
   getIt.registerFactory<BunchRepo>(() => BunchRepo(getIt()));
+
+
+  getIt.registerLazySingleton<CollectorsCubit>(() => CollectorsCubit(getIt()));
+  getIt.registerFactory<CollectorsRepo>(() => CollectorsRepo(getIt()));
 
   //  // signup
   // getIt.registerLazySingleton<SignupRepo>(() => SignupRepo(getIt()));

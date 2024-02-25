@@ -146,7 +146,7 @@ class _CollectorsCardWidgetMobileState extends State<CollectorsCardWidgetMobile>
                   showDataAlert(
                     context: context,
                     child: UpdateCollectorWidget(
-                      onPressed: () {},
+                      userId: 0,
                       name: "كريم سيد ابراهيم عبدالتواب",
                       email: "abokhadiga6@gmail.com",
                     ),

@@ -15,7 +15,7 @@ import '../../../../collectors_screen/presentation/mobile/screen/collectors_scre
 import '../../../../disabled_customers_screen/presentation/mobile/screen/disabled_customers_screen_mobile.dart';
 import '../../../../history_operations_screen/presentation/mobile/screen/history_operations_mobile_screen.dart';
 import '../../../../late_customers_screen/presentation/mobile/screen/late_customers_screen_mobile.dart';
-import '../../../../resellers_requests_screen/presentation/screen/resellers_requests_screen.dart';
+import '../../../../resellers_requests_screen/presentation/mobile/screen/resellers_requests_screen.dart';
 import '../../../../review_data_screen/presentation/mobile/screen/review_data_screen_mobile.dart';
 import '../../../../withdrawn_customers_screen/presentation/mobile/screen/withdrawn_customers_screen_mobile.dart';
 

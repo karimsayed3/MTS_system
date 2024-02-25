@@ -38,7 +38,7 @@ class CollectorsScreenMobile extends StatelessWidget {
                         showDataAlert(
                             context: context,
                             child: AddCollectorWidget(
-                              onPressed: () {},
+                              // onPressed: () {},
                             ));
                       },
                       color: const Color(0xffebf5f6),

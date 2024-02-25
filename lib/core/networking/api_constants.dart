@@ -16,6 +16,14 @@ class ApiConstants {
   static const String addPlan = "plan/addPlan";
   static const String updatePlan = "plan/updatePlan";
   static const String deletePlan = "plan/deletePlan";
+  /// users
+  static const String addUser = "user/addUser";
+  static const String updateUser = "user/updateUser";
+  static const String deleteUser = "user/deleteUser";
+  static const String getUsers = "user/getUsers";
+  static const String zeroCollectorTotal = "user/zeroCollectorTotal";
+  static const String deductBalanceCollector = "user/deductBalanceCollector";
+
 }
 
 class ApiErrors {

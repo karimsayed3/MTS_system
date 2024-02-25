@@ -31,6 +31,8 @@ class CompaniesState<T> with _$CompaniesState<T> {
   const factory CompaniesState.undoPlanFromSubscribersSuccessState(DefaultApiResponse data) = UndoPlanFromSubscribersSuccessState<T>;
   const factory CompaniesState.undoPlanFromSubscribersErrorState({required String error}) = UndoPlanFromSubscribersErrorState;
 
+  const factory CompaniesState.changeListData() = ChangeListData;
+
 }
 
 

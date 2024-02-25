@@ -6,7 +6,9 @@ import 'package:system/core/theming/colors.dart';
 import 'package:system/core/widgets/custom_search_widget.dart';
 
 class BunchesSearchWidget extends StatelessWidget {
-  const BunchesSearchWidget({super.key});
+  const BunchesSearchWidget({super.key, required this.searchController, this.onChange});
+  final Function(String)? onChange;
+  final TextEditingController searchController ;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +18,8 @@ class BunchesSearchWidget extends StatelessWidget {
       children: [
         CustomSearchWidget(
           width: dimension.width200,
-          searchController: TextEditingController(),
+          searchController: searchController,
+          onChange: onChange,
         ),
         horizontalSpace(dimension.width10),
         Container(

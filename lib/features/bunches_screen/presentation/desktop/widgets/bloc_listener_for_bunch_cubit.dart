@@ -143,7 +143,8 @@ class _BlocListenerForBunchCubitState extends State<BlocListenerForBunchCubit> {
           },
           getPlansSuccessState: (plans) {
             // Navigator.pop(context);
-            context.read<BunchCubit>().plansData = plans.plans!;
+            // context.read<BunchCubit>().plansData = plans.plans!;
+            context.read<BunchCubit>().changeListData(plansData: plans.plans!);
           },
 
           /// Delete Plan

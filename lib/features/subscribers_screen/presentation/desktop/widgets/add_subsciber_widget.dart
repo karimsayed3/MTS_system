@@ -24,6 +24,7 @@ class _AddSubscriberWidgetState extends State<AddSubscriberWidget> {
   TextEditingController phoneNumberController = TextEditingController();
   TextEditingController NIDController = TextEditingController();
   TextEditingController addressController = TextEditingController();
+  TextEditingController amountController = TextEditingController();
   List<String> companies = [
     "فودافون",
     "موبينيل",
@@ -223,6 +224,24 @@ class _AddSubscriberWidgetState extends State<AddSubscriberWidget> {
                               context: context,
                             ),
                             verticalSpace(10.h),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                DefaultText(
+                                  text: 'الحساب',
+                                  fontSize: 20.sp,
+                                  fontWeight: FontWeight.w400,
+                                  color: ColorsManager.lightBlack,
+                                ),
+                                verticalSpace(dimension.height5),
+                                DefaultTextFormField(
+                                  controller: amountController,
+                                  color: Colors.white,
+                                  hintText: "الحساب",
+                                ),
+                              ],
+                            ),
+                            verticalSpace(10.h),
                           ],
                         )
                       : Column(
@@ -403,9 +422,25 @@ class _AddSubscriberWidgetState extends State<AddSubscriberWidget> {
                                   ),
                                 ),
                                 horizontalSpace(dimension.width10),
-                                const Expanded(
+                                Expanded(
                                   flex: 1,
-                                  child: SizedBox.shrink(),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      DefaultText(
+                                        text: 'الحساب',
+                                        fontSize:dimension.reduce20,
+                                        fontWeight: FontWeight.w400,
+                                        color: ColorsManager.lightBlack,
+                                      ),
+                                      verticalSpace(dimension.height5),
+                                      DefaultTextFormField(
+                                        controller: amountController,
+                                        color: Colors.white,
+                                        hintText: "الحساب",
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ],
                             ),

@@ -154,7 +154,8 @@ class ReviewDataCard extends StatelessWidget {
                       showDataAlert(
                         context: context,
                         child: UpdateCollectorWidget(
-                          onPressed: () {},
+                          // onPressed: () {},
+                          userId: 0,
                           name: "كريم سيد ابراهيم عبدالتواب",
                           email: "abokhadiga6@gmail.com",
                         ),

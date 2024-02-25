@@ -39,7 +39,7 @@ class CompaniesCard extends StatelessWidget {
       decoration: const BoxDecoration(
           border: Border(bottom: BorderSide(color: ColorsManager.lightGray))),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(
             width: dimension.width150,

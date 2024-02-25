@@ -93,6 +93,14 @@ class CompaniesCubit extends Cubit<CompaniesState> {
     );
   }
 
+
+ changeListData({
+    required List<CompanyData> companiesData
+}){
+    emit(CompaniesState.changeListData());
+    this.companiesData = companiesData;
+  }
+
   Future<void> undoPlanFromSubscribers({required UndoPlanFromSubscribersRequestBody undoPlanFromSubscribersRequestBody}) async {
     emit(const CompaniesState.undoPlanFromSubscribersLoadingState());
     final response = await repository.undoPlanFromSubscribers(undoPlanFromSubscribersRequestBody);

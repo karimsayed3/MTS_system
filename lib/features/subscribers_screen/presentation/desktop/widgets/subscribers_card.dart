@@ -5,8 +5,8 @@ import 'package:system/core/helpers/spacing.dart';
 import 'package:system/core/theming/colors.dart';
 import 'package:system/core/widgets/default_button.dart';
 import 'package:system/core/widgets/default_text.dart';
+import 'package:system/core/widgets/make_zero_widget.dart';
 import 'package:system/core/widgets/show_alert_dialog.dart';
-import 'package:system/features/subscribers_screen/presentation/desktop/widgets/make_zero_widget.dart';
 import 'package:system/features/subscribers_screen/presentation/desktop/widgets/update_subsciber_widget.dart';
 
 class SubscribersCard extends StatelessWidget {
@@ -246,49 +246,52 @@ class SubscribersCard extends StatelessWidget {
             ),
           ),
           const Spacer(),
-          PopupMenuButton(
-            // icon: SvgPicture.asset('assets/icons/more.svg'),
-            onSelected: (String choice) {
-              // Handle menu item selection
-              if (choice == 'option1') {
-                // Perform action for option 1
-                showDataAlert(
-                  context: context,
-                  child: UpdateSubscriberWidget(
-                    onPressed: () {},
-                    // companyName: "شركة فودافون كفرالشيخ",
-                  ),
-                );
-              }
-            },
-            itemBuilder: (BuildContext context) =>
-            <PopupMenuEntry<String>>[
-              PopupMenuItem<String>(
-                value: 'option1',
-                child: Directionality(
-                  textDirection: TextDirection.rtl,
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      SizedBox(
-                          width: dimension.width15,
-                          child:
-                          SvgPicture.asset('assets/icons/edit.svg')),
-                      horizontalSpace(dimension.width10),
-                      DefaultText(
-                        text: 'تعديل مشترك',
-                        color: ColorsManager.darkBlack,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500,
-                      )
-                    ],
+          SizedBox(
+            width: dimension.width60,
+            child: PopupMenuButton(
+              // icon: SvgPicture.asset('assets/icons/more.svg'),
+              onSelected: (String choice) {
+                // Handle menu item selection
+                if (choice == 'option1') {
+                  // Perform action for option 1
+                  showDataAlert(
+                    context: context,
+                    child: UpdateSubscriberWidget(
+                      onPressed: () {},
+                      // companyName: "شركة فودافون كفرالشيخ",
+                    ),
+                  );
+                }
+              },
+              itemBuilder: (BuildContext context) =>
+              <PopupMenuEntry<String>>[
+                PopupMenuItem<String>(
+                  value: 'option1',
+                  child: Directionality(
+                    textDirection: TextDirection.rtl,
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                            width: dimension.width15,
+                            child:
+                            SvgPicture.asset('assets/icons/edit.svg')),
+                        horizontalSpace(dimension.width10),
+                        DefaultText(
+                          text: 'تعديل مشترك',
+                          color: ColorsManager.darkBlack,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                        )
+                      ],
+                    ),
                   ),
                 ),
-              ),
-              // Add more PopupMenuItem widgets for additional options
-            ],
-            child: SvgPicture.asset('assets/icons/more.svg'),
+                // Add more PopupMenuItem widgets for additional options
+              ],
+              child: SvgPicture.asset('assets/icons/more.svg'),
+            ),
           ),
           // SizedBox(
           //   width: dimension.width60,

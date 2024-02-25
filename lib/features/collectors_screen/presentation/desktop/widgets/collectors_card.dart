@@ -1,16 +1,29 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:system/core/di/dependency_injection.dart';
 import 'package:system/core/helpers/dimensions.dart';
 import 'package:system/core/helpers/spacing.dart';
 import 'package:system/core/theming/colors.dart';
+import 'package:system/core/widgets/add_balance_widget.dart';
 import 'package:system/core/widgets/default_button.dart';
 import 'package:system/core/widgets/default_text.dart';
+import 'package:system/core/widgets/make_zero_widget.dart';
 import 'package:system/core/widgets/show_alert_dialog.dart';
+import 'package:system/features/collectors_screen/business_logic/collectors_cubit.dart';
+import 'package:system/features/collectors_screen/data/models/get_users_response.dart';
+import 'package:system/features/collectors_screen/data/models/zero_collector_total_request_body.dart';
 import 'package:system/features/collectors_screen/presentation/desktop/widgets/delete_collector_widget.dart';
 import 'package:system/features/collectors_screen/presentation/desktop/widgets/update_collector_widget.dart';
 
+import '../../../data/models/delete_user_request_body.dart';
+
 class CollectorsCard extends StatelessWidget {
-  const CollectorsCard({super.key});
+  const CollectorsCard({super.key, required this.user});
+
+  final UserData user;
 
   @override
   Widget build(BuildContext context) {
@@ -25,12 +38,12 @@ class CollectorsCard extends StatelessWidget {
       decoration: const BoxDecoration(
           border: Border(bottom: BorderSide(color: ColorsManager.lightGray))),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(
             width: dimension.width150,
             child: DefaultText(
-              text: 'كريم سيد ابراهيم عبدالتواب',
+              text: user.name ?? '',
               color: ColorsManager.darkBlack,
               fontSize: dimension.width10,
               fontWeight: FontWeight.w400,
@@ -40,7 +53,7 @@ class CollectorsCard extends StatelessWidget {
           SizedBox(
             width: dimension.width130,
             child: DefaultText(
-              text: 'abokhadiga6@gmail.com',
+              text: user.email ?? '',
               color: ColorsManager.secondaryColor,
               fontSize: dimension.width10,
               fontWeight: FontWeight.w400,
@@ -58,7 +71,7 @@ class CollectorsCard extends StatelessWidget {
                   fontWeight: FontWeight.w400,
                 ),
                 DefaultText(
-                  text: '10',
+                  text: user.collectorBalance.toString(),
                   color: ColorsManager.secondaryColor,
                   fontSize: dimension.width10,
                   fontWeight: FontWeight.w400,
@@ -70,8 +83,8 @@ class CollectorsCard extends StatelessWidget {
           SizedBox(
             width: dimension.width60,
             child: DefaultText(
-              text: '20',
-              color: Color(0xffFFA800),
+              text: user.cashCollected.toString(),
+              color: const Color(0xffFFA800),
               fontSize: dimension.width10,
               fontWeight: FontWeight.w400,
             ),
@@ -80,7 +93,7 @@ class CollectorsCard extends StatelessWidget {
           SizedBox(
             width: dimension.width60,
             child: DefaultText(
-              text: '50',
+              text: user.walletCollected.toString(),
               color: ColorsManager.secondaryColor,
               fontSize: dimension.width10,
               fontWeight: FontWeight.w400,
@@ -90,7 +103,7 @@ class CollectorsCard extends StatelessWidget {
           SizedBox(
             width: dimension.width60,
             child: DefaultText(
-              text: '70',
+              text: user.totalCollected.toString(),
               color: ColorsManager.darkBlack,
               fontSize: dimension.width10,
               fontWeight: FontWeight.w400,
@@ -103,11 +116,25 @@ class CollectorsCard extends StatelessWidget {
               children: [
                 Expanded(
                   child: DefaultButton(
-                    color: Color(0xFFFFF4DE),
-                    onPressed: () {},
+                    color: const Color(0xFFFFF4DE),
+                    onPressed: () {
+                      showDataAlert(
+                        context: context,
+                        child: MakeZeroWidget(
+                          onPressed: () {
+                            CollectorsCubit.get(context).zeroCollectorTotal(
+                                zeroCollectorTotalRequestBody:
+                                    ZeroCollectorTotalRequestBody(
+                              userID: user.userID!,
+                            ));
+                          },
+                          subscriberName: user.name ?? '',
+                        ),
+                      );
+                    },
                     child: DefaultText(
                       text: 'تصفير',
-                      color: Color(0xFFFFA800),
+                      color: const Color(0xFFFFA800),
                       fontSize: dimension.width10,
                       fontWeight: FontWeight.w500,
                     ),
@@ -116,8 +143,18 @@ class CollectorsCard extends StatelessWidget {
                 horizontalSpace(dimension.width10),
                 Expanded(
                   child: DefaultButton(
-                    color: Color(0xffebf5f6),
-                    onPressed: () {},
+                    color: const Color(0xffebf5f6),
+                    onPressed: () {
+                      showDataAlert(
+                        context: context,
+                        child: BlocProvider.value(
+                          value: getIt<CollectorsCubit>(),
+                          child: AddBalanceWidget(
+                            UserID: user.userID!,
+                          ),
+                        ),
+                      );
+                    },
                     child: DefaultText(
                       text: 'اضافة رصيد',
                       color: ColorsManager.secondaryColor,
@@ -137,10 +174,13 @@ class CollectorsCard extends StatelessWidget {
                       // Perform action for option 1
                       showDataAlert(
                         context: context,
-                        child: UpdateCollectorWidget(
-                          onPressed: () {},
-                          name: "كريم سيد ابراهيم عبدالتواب",
-                          email: "abokhadiga6@gmail.com",
+                        child: BlocProvider.value(
+                          value: getIt<CollectorsCubit>(),
+                          child: UpdateCollectorWidget(
+                            name: user.name ?? "",
+                            email: user.email ?? "",
+                            userId: user.userID!,
+                          ),
                         ),
                       );
                     } else if (choice == 'option2') {
@@ -148,8 +188,13 @@ class CollectorsCard extends StatelessWidget {
                       showDataAlert(
                         context: context,
                         child: DeleteCollectorWidget(
-                          onPressed: () {},
-                          collectorName: "كريم سيد ابراهيم عبدالتواب",
+                          onPressed: () {
+                            CollectorsCubit.get(context).deleteUser(
+                                deleteUserRequestBody: DeleteUserRequestBody(
+                              userID: user.userID!,
+                            ));
+                          },
+                          collectorName: user.name ?? "",
                         ),
                       );
                     }
