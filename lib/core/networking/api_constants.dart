@@ -24,6 +24,10 @@ class ApiConstants {
   static const String zeroCollectorTotal = "user/zeroCollectorTotal";
   static const String deductBalanceCollector = "user/deductBalanceCollector";
 
+  /// subscribers
+  static const String addSubscriber = "subscriber/addNewSubscriber";
+
+
 }
 
 class ApiErrors {

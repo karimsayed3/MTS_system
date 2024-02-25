@@ -15,6 +15,7 @@ class DefaultTextFormField extends StatelessWidget {
     this.obscureText = false,
     this.suffixIcon,
     this.inputFormatters,
+    this.enabled,
   });
 
   final TextEditingController controller;
@@ -35,6 +36,7 @@ class DefaultTextFormField extends StatelessWidget {
   dynamic textInputType;
 
   bool obscureText;
+  bool? enabled;
 
   @override
   Widget build(BuildContext context) {
@@ -65,6 +67,7 @@ class DefaultTextFormField extends StatelessWidget {
         filled: true,
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
+        enabled: enabled??true,
         hintText: hintText,
       ),
       onSaved: onSave,

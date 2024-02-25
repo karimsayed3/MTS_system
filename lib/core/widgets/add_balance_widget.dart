@@ -92,6 +92,99 @@ class _AddBalanceWidgetState extends State<AddBalanceWidget> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               DefaultText(
+                                text: 'الاسم',
+                                fontSize: 20.sp,
+                                fontWeight: FontWeight.w400,
+                                color: ColorsManager.lightBlack,
+                              ),
+                              verticalSpace(dimension.height5),
+                              DefaultTextFormField(
+                                enabled: false,
+                                controller: balanceController,
+                                color: Colors.white,
+                                hintText: 'الاسم',
+                              ),
+                            ],
+                          ),
+                          verticalSpace(10.h),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              DefaultText(
+                                text: 'اخر رصيد موجب',
+                                fontSize: 20.sp,
+                                fontWeight: FontWeight.w400,
+                                color: ColorsManager.lightBlack,
+                              ),
+                              verticalSpace(dimension.height5),
+                              DefaultTextFormField(
+                                enabled: false,
+                                controller: balanceController,
+                                color: Colors.white,
+                                hintText: 'اخر رصيد موجب',
+                              ),
+                            ],
+                          ),verticalSpace(10.h),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              DefaultText(
+                                text: 'تاريخ اضافة الرصيد الاخير',
+                                fontSize: 20.sp,
+                                fontWeight: FontWeight.w400,
+                                color: ColorsManager.lightBlack,
+                              ),
+                              verticalSpace(dimension.height5),
+                              DefaultTextFormField(
+                                enabled: false,
+                                controller: balanceController,
+                                color: Colors.white,
+                                hintText: 'تاريخ اضافة الرصيد الاخير',
+                              ),
+                            ],
+                          ),verticalSpace(10.h),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              DefaultText(
+                                text: 'الرصيد الحالى',
+                                fontSize: 20.sp,
+                                fontWeight: FontWeight.w400,
+                                color: ColorsManager.lightBlack,
+                              ),
+                              verticalSpace(dimension.height5),
+                              DefaultTextFormField(
+                                enabled: false,
+                                controller: balanceController,
+                                color: Colors.white,
+                                hintText: 'الرصيد الحالى',
+                              ),
+                            ],
+                          ),
+                          verticalSpace(10.h),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              DefaultText(
+                                text: 'الرصيد المضاف',
+                                fontSize: 20.sp,
+                                fontWeight: FontWeight.w400,
+                                color: ColorsManager.lightBlack,
+                              ),
+                              verticalSpace(dimension.height5),
+                              DefaultTextFormField(
+                                inputFormatters: [NumberInputFormatter()],
+                                controller: balanceController,
+                                color: Colors.white,
+                                hintText: 'الرصيد المضاف',
+                              ),
+                            ],
+                          ),
+                          verticalSpace(10.h),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              DefaultText(
                                 text: 'الرصيد المضاف',
                                 fontSize: 20.sp,
                                 fontWeight: FontWeight.w400,
@@ -192,6 +285,100 @@ class _AddBalanceWidgetState extends State<AddBalanceWidget> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    DefaultText(
+                                      text: 'الاسم',
+                                      fontSize: dimension.reduce20,
+                                      fontWeight: FontWeight.w400,
+                                      color: ColorsManager.lightBlack,
+                                    ),
+                                    verticalSpace(dimension.height5),
+                                    DefaultTextFormField(
+                                      enabled: false,
+                                      controller: balanceController,
+                                      color: Colors.white,
+                                      hintText: 'الاسم',
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              horizontalSpace(dimension.width10),
+                              Expanded(
+                                child:Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    DefaultText(
+                                      text: 'اخر رصيد موجب',
+                                      fontSize: dimension.reduce20,
+                                      fontWeight: FontWeight.w400,
+                                      color: ColorsManager.lightBlack,
+                                    ),
+                                    verticalSpace(dimension.height5),
+                                    DefaultTextFormField(
+                                      enabled: false,
+                                      controller: balanceController,
+                                      color: Colors.white,
+                                      hintText: 'اخر رصيد موجب',
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                          verticalSpace(dimension.height10),
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    DefaultText(
+                                      text: 'تاريخ اضافة الرصيد الاخير',
+                                      fontSize: dimension.reduce20,
+                                      fontWeight: FontWeight.w400,
+                                      color: ColorsManager.lightBlack,
+                                    ),
+                                    verticalSpace(dimension.height5),
+                                    DefaultTextFormField(
+                                      enabled: false,
+                                      controller: balanceController,
+                                      color: Colors.white,
+                                      hintText:'تاريخ اضافة الرصيد الاخير',
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              horizontalSpace(dimension.width10),
+                              Expanded(
+                                child:Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    DefaultText(
+                                      text: 'الرصيد الحالى',
+                                      fontSize: dimension.reduce20,
+                                      fontWeight: FontWeight.w400,
+                                      color: ColorsManager.lightBlack,
+                                    ),
+                                    verticalSpace(dimension.height5),
+                                    DefaultTextFormField(
+                                      enabled: false,
+                                      controller: balanceController,
+                                      color: Colors.white,
+                                      hintText: 'الرصيد الحالى',
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                          verticalSpace(dimension.height10),
                           Row(
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
