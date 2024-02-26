@@ -22,7 +22,7 @@ class _WebServices implements WebServices {
 
   @override
   Future<LoginResponse> login(LoginRequestBody loginRequestBody) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -51,7 +51,7 @@ class _WebServices implements WebServices {
   @override
   Future<GetCompaniesResponse> getCompanies(
       GetCompaniesRequestBody getCompaniesRequestBody) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -80,7 +80,7 @@ class _WebServices implements WebServices {
   @override
   Future<DefaultApiResponse> addCompany(
       AddCompanyRequestBody addCompanyRequestBody) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -109,7 +109,7 @@ class _WebServices implements WebServices {
   @override
   Future<DefaultApiResponse> updateCompany(
       UpdateCompanyRequestBody updateCompanyRequestBody) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -138,7 +138,7 @@ class _WebServices implements WebServices {
   @override
   Future<DefaultApiResponse> deleteCompany(
       DeleteCompanyRequestBody deleteCompanyRequestBody) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -168,7 +168,7 @@ class _WebServices implements WebServices {
   Future<DefaultApiResponse> deductPlanFromSubscribers(
       DeductPlanFromSubscribersRequestBody
           deductPlanFromSubscribersRequestBody) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -198,7 +198,7 @@ class _WebServices implements WebServices {
   Future<DefaultApiResponse> undoPlanFromSubscribers(
       UndoPlanFromSubscribersRequestBody
           undoPlanFromSubscribersRequestBody) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -227,7 +227,7 @@ class _WebServices implements WebServices {
   @override
   Future<GetPlansResponse> getPlans(
       GetPlansRequestBody getPlansRequestBody) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -256,7 +256,7 @@ class _WebServices implements WebServices {
   @override
   Future<DefaultApiResponse> addPlan(
       AddPlanRequestBody addPlanRequestBody) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -285,7 +285,7 @@ class _WebServices implements WebServices {
   @override
   Future<DefaultApiResponse> updatePlan(
       UpdatePlanRequestBody updatePlanRequestBody) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -314,7 +314,7 @@ class _WebServices implements WebServices {
   @override
   Future<DefaultApiResponse> deletePlan(
       DeletePlanRequestBody deletePlanRequestBody) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -343,7 +343,7 @@ class _WebServices implements WebServices {
   @override
   Future<DefaultApiResponse> addUser(
       AddUserRequestBody addUserRequestBody) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -372,7 +372,7 @@ class _WebServices implements WebServices {
   @override
   Future<DefaultApiResponse> updateUser(
       UpdateUserRequestBody updateUserRequestBody) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -401,7 +401,7 @@ class _WebServices implements WebServices {
   @override
   Future<DefaultApiResponse> deleteUser(
       DeleteUserRequestBody deleteUserRequestBody) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -430,7 +430,7 @@ class _WebServices implements WebServices {
   @override
   Future<DefaultApiResponse> zeroCollectorTotal(
       ZeroCollectorTotalRequestBody zeroCollectorTotalRequestBody) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -460,7 +460,7 @@ class _WebServices implements WebServices {
   Future<DefaultApiResponse> deductBalanceCollector(
       DeductBalanceCollectorRequestBody
           deductBalanceCollectorRequestBody) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -489,7 +489,7 @@ class _WebServices implements WebServices {
   @override
   Future<GetUsersResponse> getUsers(
       GetUsersRequestBody getUsersRequestBody) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -512,6 +512,180 @@ class _WebServices implements WebServices {
               baseUrl,
             ))));
     final value = GetUsersResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<DefaultApiResponse> addSubscriber(
+      AddNewSubscriberRequestBody addNewSubscriberRequestBody) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(addNewSubscriberRequestBody.toJson());
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<DefaultApiResponse>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'subscriber/addNewSubscriber',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = DefaultApiResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<DefaultApiResponse> updateSubscriber(
+      UpdateSubscriberRequestBody updateSubscriberRequestBody) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(updateSubscriberRequestBody.toJson());
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<DefaultApiResponse>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'subscriber/updateSubscriber',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = DefaultApiResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<DefaultApiResponse> deleteSubscriber(
+      DeleteSubscriberRequestBody deleteSubscriberRequestBody) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(deleteSubscriberRequestBody.toJson());
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<DefaultApiResponse>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'subscriber/deleteSubscriber',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = DefaultApiResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<DefaultApiResponse> disableSubscriber(
+      DisableSubscriberRequestBody disableSubscriberRequestBody) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(disableSubscriberRequestBody.toJson());
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<DefaultApiResponse>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'subscriber/disableSubscriber',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = DefaultApiResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<DefaultApiResponse> withdrawSubscriber(
+      WithdrawSubscriberRequestBody withdrawSubscriberRequestBody) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(withdrawSubscriberRequestBody.toJson());
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<DefaultApiResponse>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'subscriber/withdrawSubscriber',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = DefaultApiResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<DefaultApiResponse> activateSubscriber(
+      ActivateSubscriberRequestBody activateSubscriberRequestBody) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(activateSubscriberRequestBody.toJson());
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<DefaultApiResponse>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'subscriber/activateSubscriber',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = DefaultApiResponse.fromJson(_result.data!);
     return value;
   }
 

@@ -26,6 +26,11 @@ class ApiConstants {
 
   /// subscribers
   static const String addSubscriber = "subscriber/addNewSubscriber";
+  static const String updateSubscriber = "subscriber/updateSubscriber";
+  static const String deleteSubscriber = "subscriber/deleteSubscriber";
+  static const String disableSubscriber = "subscriber/disableSubscriber";
+  static const String withdrawSubscriber = "subscriber/withdrawSubscriber";
+  static const String activateSubscriber = "subscriber/activateSubscriber";
 
 
 }

@@ -20,6 +20,12 @@ import 'package:system/features/companies_screen/data/models/undo_plan_from_subs
 import 'package:system/features/companies_screen/data/models/update_company_request_body.dart';
 import 'package:system/features/login_screen/data/models/login_request_body.dart';
 import 'package:system/features/login_screen/data/models/login_response.dart';
+import 'package:system/features/subscribers_screen/data/models/activate_subscriber_request_body.dart';
+import 'package:system/features/subscribers_screen/data/models/add_new_subscriber_request_body.dart';
+import 'package:system/features/subscribers_screen/data/models/delete_subscriber_request_body.dart';
+import 'package:system/features/subscribers_screen/data/models/disable_subscriber_request_body.dart';
+import 'package:system/features/subscribers_screen/data/models/update_subscriber_request_body.dart';
+import 'package:system/features/subscribers_screen/data/models/withdraw_subscriber_request_body.dart';
 
 import '../../features/collectors_screen/data/models/add_user_request_body.dart';
 import '../../features/collectors_screen/data/models/delete_user_request_body.dart';
@@ -105,4 +111,33 @@ abstract class WebServices {
   @POST(ApiConstants.getUsers)
   Future<GetUsersResponse> getUsers(
       @Body() GetUsersRequestBody getUsersRequestBody);
+
+  /// subscribers
+  @POST(ApiConstants.addSubscriber)
+  Future<DefaultApiResponse> addSubscriber(
+      @Body() AddNewSubscriberRequestBody addNewSubscriberRequestBody);
+
+  @POST(ApiConstants.updateSubscriber)
+  Future<DefaultApiResponse> updateSubscriber(
+      @Body() UpdateSubscriberRequestBody updateSubscriberRequestBody);
+
+  @POST(ApiConstants.deleteSubscriber)
+  Future<DefaultApiResponse> deleteSubscriber(
+      @Body() DeleteSubscriberRequestBody deleteSubscriberRequestBody);
+
+  @POST(ApiConstants.disableSubscriber)
+  Future<DefaultApiResponse> disableSubscriber(
+      @Body() DisableSubscriberRequestBody disableSubscriberRequestBody);
+
+  @POST(ApiConstants.withdrawSubscriber)
+  Future<DefaultApiResponse> withdrawSubscriber(
+      @Body() WithdrawSubscriberRequestBody withdrawSubscriberRequestBody);
+
+
+  @POST(ApiConstants.activateSubscriber)
+  Future<DefaultApiResponse> activateSubscriber(
+      @Body() ActivateSubscriberRequestBody activateSubscriberRequestBody);
+
+
+
 }
