@@ -135,7 +135,7 @@ class ReviewDataCard extends StatelessWidget {
                     color: Color(0xffebf5f6),
                     onPressed: () {},
                     child: DefaultText(
-                      text: 'تعديل',
+                      text: 'تنفيذ التعديل',
                       color: ColorsManager.secondaryColor,
 
                       // color: Color(0xFFCC232A),
@@ -144,88 +144,88 @@ class ReviewDataCard extends StatelessWidget {
                     ),
                   ),
                 ),
-                horizontalSpace(dimension.width5),
-                PopupMenuButton(
-                  // icon: SvgPicture.asset('assets/icons/more.svg'),
-                  onSelected: (String choice) {
-                    // Handle menu item selection
-                    if (choice == 'option1') {
-                      // Perform action for option 1
-                      showDataAlert(
-                        context: context,
-                        child: UpdateCollectorWidget(
-                          // onPressed: () {},
-                          userId: 0,
-                          name: "كريم سيد ابراهيم عبدالتواب",
-                          email: "abokhadiga6@gmail.com",
-                        ),
-                      );
-                    } else if (choice == 'option2') {
-                      // Perform action for option 2
-                      showDataAlert(
-                        context: context,
-                        child: DeleteCollectorWidget(
-                          onPressed: () {},
-                          collectorName: "كريم سيد ابراهيم عبدالتواب",
-                        ),
-                      );
-                    }
-                  },
-                  itemBuilder: (BuildContext context) =>
-                  <PopupMenuEntry<String>>[
-                    PopupMenuItem<String>(
-                      value: 'option1',
-                      child: Directionality(
-                        textDirection: TextDirection.rtl,
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            SizedBox(
-                                width: dimension.width15,
-                                child:
-                                SvgPicture.asset('assets/icons/edit.svg')),
-                            horizontalSpace(dimension.width10),
-                            DefaultText(
-                              text: 'تعديل المحصل',
-                              color: ColorsManager.darkBlack,
-                              fontSize: 14,
-                              fontWeight: FontWeight.w500,
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                    PopupMenuItem<String>(
-                      value: 'option2',
-                      child: Directionality(
-                        textDirection: TextDirection.rtl,
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            SizedBox(
-                              width: dimension.width15,
-                              child: SvgPicture.asset(
-                                'assets/icons/remove.svg',
-                                color: ColorsManager.primaryColor,
-                              ),
-                            ),
-                            horizontalSpace(dimension.width10),
-                            DefaultText(
-                              text: 'حذف المحصل',
-                              color: ColorsManager.primaryColor,
-                              fontSize: 14,
-                              fontWeight: FontWeight.w500,
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                    // Add more PopupMenuItem widgets for additional options
-                  ],
-                  child: SvgPicture.asset('assets/icons/more.svg'),
-                ),
+                // horizontalSpace(dimension.width5),
+                // PopupMenuButton(
+                //   // icon: SvgPicture.asset('assets/icons/more.svg'),
+                //   onSelected: (String choice) {
+                //     // Handle menu item selection
+                //     if (choice == 'option1') {
+                //       // Perform action for option 1
+                //       showDataAlert(
+                //         context: context,
+                //         child: UpdateCollectorWidget(
+                //           // onPressed: () {},
+                //           userId: 0,
+                //           name: "كريم سيد ابراهيم عبدالتواب",
+                //           email: "abokhadiga6@gmail.com",
+                //         ),
+                //       );
+                //     } else if (choice == 'option2') {
+                //       // Perform action for option 2
+                //       showDataAlert(
+                //         context: context,
+                //         child: DeleteCollectorWidget(
+                //           onPressed: () {},
+                //           collectorName: "كريم سيد ابراهيم عبدالتواب",
+                //         ),
+                //       );
+                //     }
+                //   },
+                //   itemBuilder: (BuildContext context) =>
+                //   <PopupMenuEntry<String>>[
+                //     PopupMenuItem<String>(
+                //       value: 'option1',
+                //       child: Directionality(
+                //         textDirection: TextDirection.rtl,
+                //         child: Row(
+                //           crossAxisAlignment: CrossAxisAlignment.start,
+                //           mainAxisAlignment: MainAxisAlignment.start,
+                //           children: [
+                //             SizedBox(
+                //                 width: dimension.width15,
+                //                 child:
+                //                 SvgPicture.asset('assets/icons/edit.svg')),
+                //             horizontalSpace(dimension.width10),
+                //             DefaultText(
+                //               text: 'تعديل المحصل',
+                //               color: ColorsManager.darkBlack,
+                //               fontSize: 14,
+                //               fontWeight: FontWeight.w500,
+                //             )
+                //           ],
+                //         ),
+                //       ),
+                //     ),
+                //     PopupMenuItem<String>(
+                //       value: 'option2',
+                //       child: Directionality(
+                //         textDirection: TextDirection.rtl,
+                //         child: Row(
+                //           crossAxisAlignment: CrossAxisAlignment.start,
+                //           mainAxisAlignment: MainAxisAlignment.start,
+                //           children: [
+                //             SizedBox(
+                //               width: dimension.width15,
+                //               child: SvgPicture.asset(
+                //                 'assets/icons/remove.svg',
+                //                 color: ColorsManager.primaryColor,
+                //               ),
+                //             ),
+                //             horizontalSpace(dimension.width10),
+                //             DefaultText(
+                //               text: 'حذف المحصل',
+                //               color: ColorsManager.primaryColor,
+                //               fontSize: 14,
+                //               fontWeight: FontWeight.w500,
+                //             )
+                //           ],
+                //         ),
+                //       ),
+                //     ),
+                //     // Add more PopupMenuItem widgets for additional options
+                //   ],
+                //   child: SvgPicture.asset('assets/icons/more.svg'),
+                // ),
               ],
             ),
           ),

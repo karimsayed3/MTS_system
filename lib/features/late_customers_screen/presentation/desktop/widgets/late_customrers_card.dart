@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:system/core/helpers/convert_string_to_date.dart';
 import 'package:system/core/helpers/dimensions.dart';
 import 'package:system/core/helpers/spacing.dart';
 import 'package:system/core/theming/colors.dart';
 import 'package:system/core/widgets/default_button.dart';
 import 'package:system/core/widgets/default_text.dart';
+import 'package:system/features/subscribers_screen/data/models/get_subscribers_data_response.dart';
 
 class LateCustomersCard extends StatelessWidget {
-  const LateCustomersCard({super.key});
+  const LateCustomersCard({super.key, required this.subscriber});
+
+  final SubscriberData subscriber;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +31,7 @@ class LateCustomersCard extends StatelessWidget {
           SizedBox(
             width: dimension.width130,
             child: DefaultText(
-              text: 'كريم سيد ابراهيم عبدالتواب',
+              text: subscriber.name??"",
               color: ColorsManager.darkBlack,
               fontSize: dimension.width10,
               fontWeight: FontWeight.w400,
@@ -37,7 +41,7 @@ class LateCustomersCard extends StatelessWidget {
           SizedBox(
             width: dimension.width80,
             child: DefaultText(
-              text: '01156788394',
+              text:subscriber.phoneNo??"",
               color: ColorsManager.secondaryColor,
               fontSize: dimension.width10,
               fontWeight: FontWeight.w400,
@@ -47,7 +51,7 @@ class LateCustomersCard extends StatelessWidget {
           SizedBox(
             width: dimension.width100,
             child: DefaultText(
-              text: 'ايمن يوسف ايمن',
+              text: subscriber.relatedTo??"",
               color: ColorsManager.darkBlack,
               fontSize: dimension.width10,
               fontWeight: FontWeight.w400,
@@ -57,7 +61,7 @@ class LateCustomersCard extends StatelessWidget {
           SizedBox(
             width: dimension.width130,
             child: DefaultText(
-              text: 'كريم سيد ابراهيم',
+              text: subscriber.collectorName??"",
               color: ColorsManager.darkBlack,
               fontSize: dimension.width10,
               fontWeight: FontWeight.w400,
@@ -67,7 +71,7 @@ class LateCustomersCard extends StatelessWidget {
           SizedBox(
             width: dimension.width80,
             child: DefaultText(
-              text: '04/18/2020',
+              text: subscriber.registrationDate != null? convertDateToString(subscriber.registrationDate):"",
               color: ColorsManager.secondaryColor,
               fontSize: dimension.width10,
               fontWeight: FontWeight.w400,
@@ -88,7 +92,7 @@ class LateCustomersCard extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10)),
                   child: Center(
                     child: DefaultText(
-                      text: 'Super Flix 30',
+                      text: subscriber.planName??"",
                       color: ColorsManager.secondaryColor,
                       fontSize: dimension.width10,
                       fontWeight: FontWeight.w400,
@@ -107,13 +111,13 @@ class LateCustomersCard extends StatelessWidget {
             child: Row(
               children: [
                 DefaultText(
-                  text: ' L.E',
+                  text: ' L.E ',
                   color: Color(0xFFCC232A),
                   fontSize: dimension.width10,
                   fontWeight: FontWeight.w500,
                 ),
                 DefaultText(
-                  text: ' 15-',
+                  text:subscriber.balance.toString(),
                   color: Color(0xFFCC232A),
                   fontSize: dimension.width10,
                   fontWeight: FontWeight.w500,

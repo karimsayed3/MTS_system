@@ -4,6 +4,7 @@ part 'add_new_subscriber_request_body.g.dart';
 class AddNewSubscriberRequestBody {
   String? phone;
   String? name;
+  @JsonKey(name: 'NID')
   String? nID;
   String? email;
   String? address;

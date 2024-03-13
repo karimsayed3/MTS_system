@@ -1,17 +1,38 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:system/features/subscribers_screen/business_logic/subscribers_state.dart';
 import 'package:system/features/subscribers_screen/data/models/activate_subscriber_request_body.dart';
 import 'package:system/features/subscribers_screen/data/models/add_new_subscriber_request_body.dart';
 import 'package:system/features/subscribers_screen/data/models/delete_subscriber_request_body.dart';
 import 'package:system/features/subscribers_screen/data/models/disable_subscriber_request_body.dart';
+import 'package:system/features/subscribers_screen/data/models/get_active_subscribers_request_body.dart';
+import 'package:system/features/subscribers_screen/data/models/get_subscribers_data_response.dart';
 import 'package:system/features/subscribers_screen/data/models/update_subscriber_request_body.dart';
 import 'package:system/features/subscribers_screen/data/models/withdraw_subscriber_request_body.dart';
 import 'package:system/features/subscribers_screen/data/repository/subscribers_repository.dart';
+
+import '../data/models/collect_subscriber_balance_request_body.dart';
+import '../data/models/get_disabled_subscribers_request_body.dart';
+import '../data/models/get_late_subscribers_request_body.dart';
+import '../data/models/get_withdrawn_subscribers_request_body.dart';
+import '../data/models/zero_subscriber_balance_request_body.dart';
 
 class SubscribersCubit extends Cubit<SubscribersState> {
   SubscribersRepository repository;
 
   SubscribersCubit(this.repository) : super(const SubscribersState.initial());
+
+  static SubscribersCubit get(context) => BlocProvider.of(context);
+
+
+  List<SubscriberData> subscribers = [];
+
+  changeListData({
+    required List<SubscriberData> subscribers
+  }){
+    emit(const SubscribersState.changeListData());
+    this.subscribers = subscribers;
+  }
 
   Future<void> addNewSubscriber(
       {required AddNewSubscriberRequestBody
@@ -81,7 +102,6 @@ class SubscribersCubit extends Cubit<SubscribersState> {
     );
   }
 
-
   Future<void> withdrawSubscriber(
       {required WithdrawSubscriberRequestBody
           withdrawSubscriberRequestBody}) async {
@@ -98,8 +118,6 @@ class SubscribersCubit extends Cubit<SubscribersState> {
       },
     );
   }
-
-
 
   Future<void> activateSubscriber(
       {required ActivateSubscriberRequestBody
@@ -118,5 +136,141 @@ class SubscribersCubit extends Cubit<SubscribersState> {
     );
   }
 
+  Future<void> zeroSubscriberBalance(
+      {required ZeroSubscriberBalanceRequestBody
+          zeroSubscriberBalanceRequestBody}) async {
+    emit(const SubscribersState.zeroSubscriberBalanceLoadingState());
+    var response = await repository
+        .zeroSubscriberBalance(zeroSubscriberBalanceRequestBody);
+    response.when(
+      success: (data) {
+        emit(SubscribersState.zeroSubscriberBalanceSuccessState(data));
+      },
+      failure: (errorHandler) {
+        emit(SubscribersState.zeroSubscriberBalanceErrorState(
+            error: errorHandler.apiErrorModel.message ?? ""));
+      },
+    );
+  }
+
+  Future<void> collectSubscriberBalance(
+      {required CollectSubscriberBalanceRequestBody
+          collectSubscriberBalanceRequestBody}) async {
+    emit(const SubscribersState.collectSubscriberBalanceLoadingState());
+    var response = await repository
+        .collectSubscriberBalance(collectSubscriberBalanceRequestBody);
+    response.when(
+      success: (data) {
+        emit(SubscribersState.collectSubscriberBalanceSuccessState(data));
+      },
+      failure: (errorHandler) {
+        emit(SubscribersState.collectSubscriberBalanceErrorState(
+            error: errorHandler.apiErrorModel.message ?? ""));
+      },
+    );
+  }
+
+  Future<void> getActiveSubscribers(
+      {required GetActiveSubscribersRequestBody
+          getActiveSubscribersRequestBody}) async {
+    emit(const SubscribersState.getActiveSubscribersLoadingState());
+    var response =
+        await repository.getActiveSubscribers(getActiveSubscribersRequestBody);
+    response.when(
+      success: (data) {
+        emit(SubscribersState.getActiveSubscribersSuccessState(data));
+      },
+      failure: (errorHandler) {
+        emit(SubscribersState.getActiveSubscribersErrorState(
+            error: errorHandler.apiErrorModel.message ?? ""));
+      },
+    );
+  }
+
+  Future<void> getLateSubscribers(
+      {required GetLateSubscribersRequestBody
+          getLateSubscribersRequestBody}) async {
+    emit(const SubscribersState.getLateSubscribersLoadingState());
+    var response =
+        await repository.getLateSubscribers(getLateSubscribersRequestBody);
+    response.when(
+      success: (data) {
+        emit(SubscribersState.getLateSubscribersSuccessState(data));
+      },
+      failure: (errorHandler) {
+        emit(SubscribersState.getLateSubscribersErrorState(
+            error: errorHandler.apiErrorModel.message ?? ""));
+      },
+    );
+  }
+
+  Future<void> getDisabledSubscribers(
+      {required GetDisabledSubscribersRequestBody
+          getDisabledSubscribersRequestBody}) async {
+    emit(const SubscribersState.getDisabledSubscribersLoadingState());
+    var response = await repository
+        .getDisabledSubscribers(getDisabledSubscribersRequestBody);
+    response.when(
+      success: (data) {
+        emit(SubscribersState.getDisabledSubscribersSuccessState(data));
+      },
+      failure: (errorHandler) {
+        emit(SubscribersState.getDisabledSubscribersErrorState(
+            error: errorHandler.apiErrorModel.message ?? ""));
+      },
+    );
+  }
+
+  Future<void> getWithdrawnSubscribers(
+      {required GetWithdrawnSubscribersRequestBody
+          getWithdrawnSubscribersRequestBody}) async {
+    emit(const SubscribersState.getWithdrawnSubscribersLoadingState());
+    var response = await repository
+        .getWithdrawnSubscribers(getWithdrawnSubscribersRequestBody);
+    response.when(
+      success: (data) {
+        emit(SubscribersState.getWithdrawnSubscribersSuccessState(data));
+      },
+      failure: (errorHandler) {
+        emit(SubscribersState.getWithdrawnSubscribersErrorState(
+            error: errorHandler.apiErrorModel.message ?? ""));
+      },
+    );
+  }
+
+  Future<void> getPlansList({
+    required Map<String, dynamic> companyName,
+  }) async {
+    emit(const SubscribersState.getPlansListLoadingState());
+    var response = await repository.getPlansList(companyName);
+    response.when(success: (data) {
+      emit(SubscribersState.getPlansListSuccessState(data));
+    }, failure: (errorHandler) {
+      emit(SubscribersState.getPlansListErrorState(
+          error: errorHandler.apiErrorModel.message ?? ""));
+    });
+  }
+
+  Future<void> getCompaniesList() async {
+    emit(const SubscribersState.getCompaniesListLoadingState());
+    var response = await repository.getCompaniesList();
+    response.when(success: (data) {
+      emit(SubscribersState.getCompaniesListSuccessState(data));
+    }, failure: (errorHandler) {
+      emit(SubscribersState.getCompaniesListErrorState(
+          error: errorHandler.apiErrorModel.message ?? ""));
+    });
+  }
+
+  Future<void> getCollectorsEmails() async {
+    emit(const SubscribersState.getCollectorsEmailsLoadingState());
+    var response = await repository.getCollectorsEmails();
+    response.when(success: (data) {
+      emit(SubscribersState.getCollectorsEmailsSuccessState(data));
+    }, failure: (errorHandler) {
+      emit(SubscribersState.getCollectorsEmailsErrorState(
+          error: errorHandler.apiErrorModel.message ?? ""));
+    });
+  }
 
 }

@@ -1,6 +1,9 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:system/core/networking/default_api_response.dart';
+import 'package:system/core/networking/models/get_lists_response.dart';
 import 'package:system/features/login_screen/data/models/login_response.dart';
+
+import '../data/models/get_subscribers_data_response.dart';
 
 part 'subscribers_state.freezed.dart';
 
@@ -36,6 +39,51 @@ class SubscribersState<T> with _$SubscribersState<T> {
   const factory SubscribersState.activateSubscriberSuccessState(DefaultApiResponse defaultApiResponse) = ActivateSubscriberSuccessState<T>;
   const factory SubscribersState.activateSubscriberErrorState({required String error}) = ActivateSubscriberErrorState;
 
+
+  const factory SubscribersState.zeroSubscriberBalanceLoadingState() = ZeroSubscriberBalanceloadingState;
+  const factory SubscribersState.zeroSubscriberBalanceSuccessState(DefaultApiResponse defaultApiResponse) = ZeroSubscriberBalanceSuccessState<T>;
+  const factory SubscribersState.zeroSubscriberBalanceErrorState({required String error}) = ZeroSubscriberBalanceErrorState;
+
+
+  const factory SubscribersState.collectSubscriberBalanceLoadingState() = CollectSubscriberBalanceloadingState;
+  const factory SubscribersState.collectSubscriberBalanceSuccessState(DefaultApiResponse defaultApiResponse) = CollectSubscriberBalanceSuccessState<T>;
+  const factory SubscribersState.collectSubscriberBalanceErrorState({required String error}) = CollectSubscriberBalanceErrorState;
+
+
+  const factory SubscribersState.getActiveSubscribersLoadingState() = GetActiveSubscribersloadingState;
+  const factory SubscribersState.getActiveSubscribersSuccessState(GetSubscribersDataResponse getSubscribersDataResponse) = GetActiveSubscribersSuccessState<T>;
+  const factory SubscribersState.getActiveSubscribersErrorState({required String error}) = GetActiveSubscribersErrorState;
+
+
+  const factory SubscribersState.getLateSubscribersLoadingState() = GetLateSubscribersloadingState;
+  const factory SubscribersState.getLateSubscribersSuccessState(GetSubscribersDataResponse getSubscribersDataResponse) = GetLateSubscribersSuccessState<T>;
+  const factory SubscribersState.getLateSubscribersErrorState({required String error}) =  GetLateSubscribersErrorState;
+
+
+  const factory SubscribersState.getDisabledSubscribersLoadingState() = GetDisabledSubscribersloadingState;
+  const factory SubscribersState.getDisabledSubscribersSuccessState(GetSubscribersDataResponse getSubscribersDataResponse) = GetDisabledSubscribersSuccessState<T>;
+  const factory SubscribersState.getDisabledSubscribersErrorState({required String error}) =  GetDisabledSubscribersErrorState;
+
+
+  const factory SubscribersState.getWithdrawnSubscribersLoadingState() = GetWithdrawnSubscribersloadingState;
+  const factory SubscribersState.getWithdrawnSubscribersSuccessState(GetSubscribersDataResponse getSubscribersDataResponse) = GetWithdrawnSubscribersSuccessState<T>;
+  const factory SubscribersState.getWithdrawnSubscribersErrorState({required String error}) =  GetWithdrawnSubscribersErrorState;
+
+  const factory SubscribersState.getCompaniesListLoadingState() = GetCompaniesListloadingState;
+  const factory SubscribersState.getCompaniesListSuccessState(GetListsResponse getListsResponse) = GetCompaniesListSuccessState<T>;
+  const factory SubscribersState.getCompaniesListErrorState({required String error}) =  GetCompaniesListErrorState;
+
+
+  const factory SubscribersState.getCollectorsEmailsLoadingState() = GetCollectorsEmailsloadingState;
+  const factory SubscribersState.getCollectorsEmailsSuccessState(GetListsResponse getListsResponse) = GetCollectorsEmailsSuccessState<T>;
+  const factory SubscribersState.getCollectorsEmailsErrorState({required String error}) =  GetCollectorsEmailsErrorState;
+
+
+  const factory SubscribersState.getPlansListLoadingState() = GetPlansListloadingState;
+  const factory SubscribersState.getPlansListSuccessState(GetListsResponse getListsResponse) = GetPlansListSuccessState<T>;
+  const factory SubscribersState.getPlansListErrorState({required String error}) =  GetPlansListErrorState;
+
+  const factory SubscribersState.changeListData() = ChangeListData;
 
 
 }

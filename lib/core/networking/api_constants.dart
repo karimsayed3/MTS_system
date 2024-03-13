@@ -31,6 +31,23 @@ class ApiConstants {
   static const String disableSubscriber = "subscriber/disableSubscriber";
   static const String withdrawSubscriber = "subscriber/withdrawSubscriber";
   static const String activateSubscriber = "subscriber/activateSubscriber";
+  static const String zeroSubscriberBalance = "subscriber/zeroSubscriberBalance";
+  static const String collectSubscriberBalance = "subscriber/collectSubscriberBalance";
+  static const String getActiveSubscribers = "subscriber/getActiveSubscribers";
+  static const String getLateSubscribers = "subscriber/getLateSubscribers";
+  static const String getDisabledSubscribers = "subscriber/getDisabledSubscribers";
+  static const String getWithdrawnSubscribers = "subscriber/getWithdrawnSubscribers";
+
+
+  /// lists
+  static const String getCompaniesList = "lists/getCompanies";
+  static const String getPlansList = "lists/getPlans";
+  static const String getCollectorsEmails = "lists/getCollectorsEmails";
+
+  /// collectorRequests
+  static const String approveRequest = "collectoRequests/approveRequest";
+  static const String declineRequest = "collectoRequests/declineRequest";
+  static const String getCollectorRequests = "collectoRequests/getCollectorRequests";
 
 
 }

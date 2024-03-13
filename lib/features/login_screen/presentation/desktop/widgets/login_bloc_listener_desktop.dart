@@ -19,23 +19,35 @@ class LoginBlocListenerDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocListener<LoginCubit, LoginState>(
-      listenWhen: (previous, current) => current is Loading || current is Success || current is Error,
+      listenWhen: (previous, current) =>
+          current is Loading || current is Success || current is Error,
       listener: (context, state) {
         state.whenOrNull(
           loading: () {
-            showDialog(context: context, builder: (context) => const Center(
-              child: CircularProgressIndicator(
-                color: ColorsManager.secondaryColor,
-              ),
-            ));
+            showDialog(
+                context: context,
+                builder: (context) => const Center(
+                      child: CircularProgressIndicator(
+                        color: ColorsManager.secondaryColor,
+                      ),
+                    ));
           },
-          success: (loginResponse) {
+          success: (loginResponse) async {
             Navigator.pop(context);
-            TokenDecode decodedToken = TokenDecode.fromJson(JwtDecoder.decode(loginResponse.accessToken!));
-            CacheHelper.saveData(key: 'token', value: loginResponse.accessToken).then((value) {
-              CacheHelper.saveData(key: 'userName', value: decodedToken.username).then((value) {
-                CacheHelper.saveData(key: "userID", value: decodedToken.userID).then((value) {
-                  CacheHelper.saveData(key: "accountType", value: decodedToken.accountType).then((value) {
+            debugPrint(loginResponse.accessToken);
+            TokenDecode decodedToken = TokenDecode.fromJson(
+                JwtDecoder.decode(loginResponse.accessToken!));
+            await CacheHelper.saveData(
+                    key: 'token', value: loginResponse.accessToken)
+                .then((value) {
+              CacheHelper.saveData(
+                      key: 'userName', value: decodedToken.username)
+                  .then((value) {
+                CacheHelper.saveData(key: "userID", value: decodedToken.userID)
+                    .then((value) {
+                  CacheHelper.saveData(
+                          key: "accountType", value: decodedToken.accountType)
+                      .then((value) {
                     navigateToPage(Routes.homeDesktopScreen);
                   });
                 });
