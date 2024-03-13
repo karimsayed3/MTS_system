@@ -11,7 +11,7 @@ AddNewSubscriberRequestBody _$AddNewSubscriberRequestBodyFromJson(
     AddNewSubscriberRequestBody(
       phone: json['phone'] as String?,
       name: json['name'] as String?,
-      nID: json['nID'] as String?,
+      nID: json['NID'] as String?,
       email: json['email'] as String?,
       address: json['address'] as String?,
       relatedTo: json['relatedTo'] as String?,
@@ -28,7 +28,7 @@ Map<String, dynamic> _$AddNewSubscriberRequestBodyToJson(
     <String, dynamic>{
       'phone': instance.phone,
       'name': instance.name,
-      'nID': instance.nID,
+      'NID': instance.nID,
       'email': instance.email,
       'address': instance.address,
       'relatedTo': instance.relatedTo,

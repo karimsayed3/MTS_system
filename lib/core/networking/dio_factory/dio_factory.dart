@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import 'package:system/core/helpers/cache_helper.dart';
-import 'package:system/core/networking/app_intersectors.dart';
+import 'package:system/core/networking/api_intersectors/app_intersectors.dart';
 
 class DioFactory {
   /// private constructor as I don't want to allow creating an instance of this class
@@ -24,8 +24,8 @@ class DioFactory {
     }
   }
 
-  static void addDioInterceptor() {
-    dio?.interceptors.add(AppInterceptor(dio: dio??Dio(),token: CacheHelper.getdata(key: 'token')??""));
+  static void addDioInterceptor() async {
+    dio?.interceptors.add(AppInterceptor(dio: dio??Dio(),token: await CacheHelper.getdata(key: 'token')));
     dio?.interceptors.add(
       PrettyDioLogger(
         requestBody: true,

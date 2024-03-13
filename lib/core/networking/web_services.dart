@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:retrofit/http.dart';
 import 'package:system/core/networking/api_constants.dart';
 import 'package:system/core/networking/default_api_response.dart';
+import 'package:system/core/networking/models/get_lists_response.dart';
 import 'package:system/features/bunches_screen/data/models/add_plan_request_body.dart';
 import 'package:system/features/bunches_screen/data/models/delete_plan_request_body.dart';
 import 'package:system/features/bunches_screen/data/models/get_plans_request_body.dart';
@@ -22,10 +23,17 @@ import 'package:system/features/login_screen/data/models/login_request_body.dart
 import 'package:system/features/login_screen/data/models/login_response.dart';
 import 'package:system/features/subscribers_screen/data/models/activate_subscriber_request_body.dart';
 import 'package:system/features/subscribers_screen/data/models/add_new_subscriber_request_body.dart';
+import 'package:system/features/subscribers_screen/data/models/collect_subscriber_balance_request_body.dart';
 import 'package:system/features/subscribers_screen/data/models/delete_subscriber_request_body.dart';
 import 'package:system/features/subscribers_screen/data/models/disable_subscriber_request_body.dart';
+import 'package:system/features/subscribers_screen/data/models/get_active_subscribers_request_body.dart';
+import 'package:system/features/subscribers_screen/data/models/get_disabled_subscribers_request_body.dart';
+import 'package:system/features/subscribers_screen/data/models/get_late_subscribers_request_body.dart';
+import 'package:system/features/subscribers_screen/data/models/get_subscribers_data_response.dart';
+import 'package:system/features/subscribers_screen/data/models/get_withdrawn_subscribers_request_body.dart';
 import 'package:system/features/subscribers_screen/data/models/update_subscriber_request_body.dart';
 import 'package:system/features/subscribers_screen/data/models/withdraw_subscriber_request_body.dart';
+import 'package:system/features/subscribers_screen/data/models/zero_subscriber_balance_request_body.dart';
 
 import '../../features/collectors_screen/data/models/add_user_request_body.dart';
 import '../../features/collectors_screen/data/models/delete_user_request_body.dart';
@@ -137,6 +145,42 @@ abstract class WebServices {
   @POST(ApiConstants.activateSubscriber)
   Future<DefaultApiResponse> activateSubscriber(
       @Body() ActivateSubscriberRequestBody activateSubscriberRequestBody);
+
+  @POST(ApiConstants.zeroSubscriberBalance)
+  Future<DefaultApiResponse> zeroSubscriberBalance(
+      @Body() ZeroSubscriberBalanceRequestBody zeroSubscriberBalanceRequestBody);
+
+  @POST(ApiConstants.collectSubscriberBalance)
+  Future<DefaultApiResponse> collectSubscriberBalance(
+      @Body() CollectSubscriberBalanceRequestBody collectSubscriberBalanceRequestBody);
+
+
+  @POST(ApiConstants.getActiveSubscribers)
+  Future<GetSubscribersDataResponse> getActiveSubscribers(
+      @Body() GetActiveSubscribersRequestBody getActiveSubscribersRequestBody);
+
+  @POST(ApiConstants.getLateSubscribers)
+  Future<GetSubscribersDataResponse> getLateSubscribers(
+      @Body() GetLateSubscribersRequestBody getLateSubscribersRequestBody);
+
+  @POST(ApiConstants.getDisabledSubscribers)
+  Future<GetSubscribersDataResponse> getDisabledSubscribers(
+      @Body() GetDisabledSubscribersRequestBody getDisabledSubscribersRequestBody);
+
+
+  @POST(ApiConstants.getWithdrawnSubscribers)
+  Future<GetSubscribersDataResponse> getWithdrawnSubscribers(
+      @Body() GetWithdrawnSubscribersRequestBody getWithdrawnSubscribersRequestBody);
+
+  /// lists
+  @POST(ApiConstants.getPlansList)
+  Future<GetListsResponse> getPlansList( @Body() Map<String,dynamic> companyName);
+
+  @GET(ApiConstants.getCompaniesList)
+  Future<GetListsResponse> getCompaniesList();
+
+  @GET(ApiConstants.getCollectorsEmails)
+  Future<GetListsResponse> getCollectorsEmails();
 
 
 

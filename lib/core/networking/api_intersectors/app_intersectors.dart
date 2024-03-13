@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:system/core/helpers/cache_helper.dart';
+import 'package:system/core/helpers/check_platform.dart';
 import 'package:system/core/routing/routers.dart';
 import 'package:system/core/widgets/custom_navigation_bar_widget.dart';
 
@@ -20,20 +21,37 @@ class AppInterceptor extends Interceptor {
   }
 
   @override
-  void onError(DioException err, ErrorInterceptorHandler handler) {
+  void onError(DioException err, ErrorInterceptorHandler handler) async {
     // TODO: implement onError
     debugPrint(
         'ERROR[${err.response?.statusCode}] => PATH: ${err.requestOptions.path}');
     if (err.response?.statusCode == 401) {
-      // CacheHelper.removeData(key: 'login').then((value) {
-      //   CacheHelper.removeData(key: 'accessToken').then((value) {
-      //     CacheHelper.removeData(key: 'unit').then((value) {
-      //       remove();
-      //       navigateToPage(Routes.loginScreenDesktop);
-      //     });
-      //   });
-      // });
+      if(!isMobile()){
+   await    CacheHelper.removeData(key: 'login').then((value) {
+          CacheHelper.removeData(key: 'accessToken').then((value) {
+            CacheHelper.removeData(key: 'unit').then((value) {
+              CacheHelper.removeData(key: 'token').then((value) {
+                navigateToPage(Routes.loginScreenDesktop);
+              });
+            });
+          });
+        });
+      }
+      if(isMobile()){
+        await   CacheHelper.removeData(key: 'login').then((value) {
+          CacheHelper.removeData(key: 'accessToken').then((value) {
+            CacheHelper.removeData(key: 'unit').then((value) {
+              CacheHelper.removeData(key: 'token').then((value) {
+                navigateToPage(Routes.loginScreenMobile);
+                remove();
+              });
+            });
+          });
+        });
+      }
+      debugPrint("sssssssssssssssss");
 
+      //
       // CacheHelper.removeData(key: 'login')
       //     .then((value) => CacheHelper.removeData(key: 'accessToken'))
       //     .then((value) {

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:system/core/helpers/dimensions.dart';
 import 'package:system/core/helpers/spacing.dart';
 import 'package:system/core/theming/colors.dart';
@@ -10,14 +11,57 @@ import 'package:system/core/widgets/search_with_filter_widget.dart';
 import 'package:system/features/late_customers_screen/presentation/desktop/widgets/Information_widget.dart';
 import 'package:system/features/late_customers_screen/presentation/desktop/widgets/late_customers_header_widget.dart';
 import 'package:system/features/late_customers_screen/presentation/desktop/widgets/late_customrers_card.dart';
+import 'package:system/features/subscribers_screen/business_logic/subscribers_cubit.dart';
+import 'package:system/features/subscribers_screen/data/models/get_late_subscribers_request_body.dart';
+import 'package:system/features/subscribers_screen/presentation/desktop/widgets/bloc_listener.dart';
 
-class LateCustomersScreen extends StatelessWidget {
+class LateCustomersScreen extends StatefulWidget {
   LateCustomersScreen({super.key});
 
+  @override
+  State<LateCustomersScreen> createState() => _LateCustomersScreenState();
+}
+
+class _LateCustomersScreenState extends State<LateCustomersScreen> with AutomaticKeepAliveClientMixin {
+  @override
+  bool get wantKeepAlive => true;
   TextEditingController searchController = TextEditingController();
 
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    SubscribersCubit.get(context).subscribers = [];
+    SubscribersCubit.get(context).changeListData(subscribers: []);
+    SubscribersCubit.get(context).getLateSubscribers(
+      getLateSubscribersRequestBody: GetLateSubscribersRequestBody(),
+    );
+  }
+
+  SubscribersCubit? _subscribersCubit;
+
+  @override
+  void didChangeDependencies() {
+    // TODO: implement didChangeDependencies
+    _subscribersCubit ??= BlocProvider.of<SubscribersCubit>(context);
+    super.didChangeDependencies();
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+
+    // Clear the companiesData list
+    _subscribersCubit!.changeListData(subscribers: []);
+    _subscribersCubit!.subscribers = [];
+
+    super.dispose();
+  }
+
+
+  @override
   Widget build(BuildContext context) {
+    super.build(context);
     var dimension = Dimensions(context);
     return Container(
       width: double.infinity,
@@ -62,11 +106,15 @@ class LateCustomersScreen extends StatelessWidget {
                   Expanded(
                     child: ListView.builder(
                       itemBuilder: (context, index) {
-                        return const LateCustomersCard();
+                        return LateCustomersCard(
+                            subscriber: SubscribersCubit.get(context)
+                                .subscribers[index]);
                       },
-                      itemCount: 10,
+                      itemCount:
+                          SubscribersCubit.get(context).subscribers.length,
                     ),
                   ),
+                  const BlocListenerForSubscribersCubit(),
                   verticalSpace(dimension.height10),
                   Container(
                     padding: EdgeInsets.symmetric(

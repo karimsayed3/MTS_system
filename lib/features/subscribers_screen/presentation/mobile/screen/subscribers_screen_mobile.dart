@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:system/core/helpers/spacing.dart';
 import 'package:system/core/theming/colors.dart';
@@ -7,9 +8,11 @@ import 'package:system/core/widgets/custom_search_widget.dart';
 import 'package:system/core/widgets/info_widget.dart';
 import 'package:system/core/widgets/show_alert_dialog.dart';
 import 'package:system/core/widgets/title_of_screen_with_logo_widget.dart';
+import 'package:system/features/subscribers_screen/business_logic/subscribers_cubit.dart';
 import 'package:system/features/subscribers_screen/presentation/desktop/widgets/add_subsciber_widget.dart';
 import 'package:system/features/subscribers_screen/presentation/mobile/widgets/subscribers_header_widget_mobile.dart';
 
+import '../../../../../core/di/dependency_injection.dart';
 import '../widgets/subscribers_card_for_mobile.dart';
 
 class SubscribersScreenMobile extends StatelessWidget {
@@ -51,8 +54,10 @@ class SubscribersScreenMobile extends StatelessWidget {
                           onPressed: () {
                             showDataAlert(
                               context: context,
-                              child: AddSubscriberWidget(
-                                onPressed: () {},
+                              child:   BlocProvider.value(
+                                value: getIt<SubscribersCubit>(),
+                                child: const AddSubscriberWidget(
+                                ),
                               ),
                             );
                           },
