@@ -73,6 +73,30 @@ class BunchCubit extends Cubit<BunchState> {
     );
   }
 
+  Future<void> getPlansList({
+    required Map<String, dynamic> companyName,
+  }) async {
+    emit(const BunchState.getPlansListLoadingState());
+    var response = await repository.getPlansList(companyName);
+    response.when(success: (data) {
+      emit(BunchState.getPlansListSuccessState(data));
+    }, failure: (errorHandler) {
+      emit(BunchState.getPlansListErrorState(
+          error: errorHandler.apiErrorModel.message ?? ""));
+    });
+  }
+
+  Future<void> getCompaniesList() async {
+    emit(const BunchState.getCompaniesListLoadingState());
+    var response = await repository.getCompaniesList();
+    response.when(success: (data) {
+      emit(BunchState.getCompaniesListSuccessState(data));
+    }, failure: (errorHandler) {
+      emit(BunchState.getCompaniesListErrorState(
+          error: errorHandler.apiErrorModel.message ?? ""));
+    });
+  }
+
   changeListData({
     required List<PlanData> plansData
 }) {

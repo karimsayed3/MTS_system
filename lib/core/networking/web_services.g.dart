@@ -778,7 +778,7 @@ class _WebServices implements WebServices {
   }
 
   @override
-  Future<GetSubscribersDataResponse> getLateSubscribers(
+  Future<GetLateSubscribersResponse> getLateSubscribers(
       GetLateSubscribersRequestBody getLateSubscribersRequestBody) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
@@ -786,7 +786,7 @@ class _WebServices implements WebServices {
     final _data = <String, dynamic>{};
     _data.addAll(getLateSubscribersRequestBody.toJson());
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<GetSubscribersDataResponse>(Options(
+        _setStreamType<GetLateSubscribersResponse>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -802,12 +802,12 @@ class _WebServices implements WebServices {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = GetSubscribersDataResponse.fromJson(_result.data!);
+    final value = GetLateSubscribersResponse.fromJson(_result.data!);
     return value;
   }
 
   @override
-  Future<GetSubscribersDataResponse> getDisabledSubscribers(
+  Future<GetDisabledSubscribersResponse> getDisabledSubscribers(
       GetDisabledSubscribersRequestBody
           getDisabledSubscribersRequestBody) async {
     const _extra = <String, dynamic>{};
@@ -816,7 +816,7 @@ class _WebServices implements WebServices {
     final _data = <String, dynamic>{};
     _data.addAll(getDisabledSubscribersRequestBody.toJson());
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<GetSubscribersDataResponse>(Options(
+        _setStreamType<GetDisabledSubscribersResponse>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -832,12 +832,12 @@ class _WebServices implements WebServices {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = GetSubscribersDataResponse.fromJson(_result.data!);
+    final value = GetDisabledSubscribersResponse.fromJson(_result.data!);
     return value;
   }
 
   @override
-  Future<GetSubscribersDataResponse> getWithdrawnSubscribers(
+  Future<GetWithdrawnSubscribersResponse> getWithdrawnSubscribers(
       GetWithdrawnSubscribersRequestBody
           getWithdrawnSubscribersRequestBody) async {
     const _extra = <String, dynamic>{};
@@ -846,7 +846,7 @@ class _WebServices implements WebServices {
     final _data = <String, dynamic>{};
     _data.addAll(getWithdrawnSubscribersRequestBody.toJson());
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<GetSubscribersDataResponse>(Options(
+        _setStreamType<GetWithdrawnSubscribersResponse>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -862,7 +862,7 @@ class _WebServices implements WebServices {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = GetSubscribersDataResponse.fromJson(_result.data!);
+    final value = GetWithdrawnSubscribersResponse.fromJson(_result.data!);
     return value;
   }
 
@@ -946,6 +946,93 @@ class _WebServices implements WebServices {
               baseUrl,
             ))));
     final value = GetListsResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<GetCollectorRequestsResponse> getCollectorRequests(
+      GetCollectorRequestsRequestBody getCollectorRequestsRequestBody) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(getCollectorRequestsRequestBody.toJson());
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<GetCollectorRequestsResponse>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'collectoRequests/getCollectorRequests',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = GetCollectorRequestsResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<DefaultApiResponse> declineRequest(
+      ApproveOrDeclineRequestBody approveOrDeclineRequestBody) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(approveOrDeclineRequestBody.toJson());
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<DefaultApiResponse>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'collectoRequests/declineRequest',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = DefaultApiResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<DefaultApiResponse> approveRequest(
+      ApproveOrDeclineRequestBody approveOrDeclineRequestBody) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(approveOrDeclineRequestBody.toJson());
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<DefaultApiResponse>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'collectoRequests/approveRequest',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = DefaultApiResponse.fromJson(_result.data!);
     return value;
   }
 

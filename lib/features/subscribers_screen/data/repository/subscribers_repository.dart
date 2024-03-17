@@ -3,6 +3,8 @@ import 'package:system/core/networking/api_result.dart';
 import 'package:system/core/networking/default_api_response.dart';
 import 'package:system/core/networking/models/get_lists_response.dart';
 import 'package:system/core/networking/web_services.dart';
+import 'package:system/features/disabled_customers_screen/data/models/get_disabled_subscribers_response.dart';
+import 'package:system/features/late_customers_screen/data/models/get_late_subscribers_response.dart';
 import 'package:system/features/subscribers_screen/data/models/activate_subscriber_request_body.dart';
 import 'package:system/features/subscribers_screen/data/models/add_new_subscriber_request_body.dart';
 import 'package:system/features/subscribers_screen/data/models/collect_subscriber_balance_request_body.dart';
@@ -15,6 +17,7 @@ import 'package:system/features/subscribers_screen/data/models/get_withdrawn_sub
 import 'package:system/features/subscribers_screen/data/models/update_subscriber_request_body.dart';
 import 'package:system/features/subscribers_screen/data/models/withdraw_subscriber_request_body.dart';
 import 'package:system/features/subscribers_screen/data/models/zero_subscriber_balance_request_body.dart';
+import 'package:system/features/withdrawn_customers_screen/data/models/get_withdraw_subscribers_response.dart';
 
 import '../models/get_subscribers_data_response.dart';
 
@@ -123,7 +126,7 @@ class SubscribersRepository {
     }
   }
 
-  Future<ApiResult<GetSubscribersDataResponse>> getLateSubscribers(
+  Future<ApiResult<GetLateSubscribersResponse>> getLateSubscribers(
       GetLateSubscribersRequestBody getLateSubscribersRequestBody) async {
     try {
       final response =
@@ -134,7 +137,7 @@ class SubscribersRepository {
     }
   }
 
-  Future<ApiResult<GetSubscribersDataResponse>> getDisabledSubscribers(
+  Future<ApiResult<GetDisabledSubscribersResponse>> getDisabledSubscribers(
       GetDisabledSubscribersRequestBody
           getDisabledSubscribersRequestBody) async {
     try {
@@ -146,7 +149,7 @@ class SubscribersRepository {
     }
   }
 
-  Future<ApiResult<GetSubscribersDataResponse>> getWithdrawnSubscribers(
+  Future<ApiResult<GetWithdrawnSubscribersResponse>> getWithdrawnSubscribers(
       GetWithdrawnSubscribersRequestBody
           getWithdrawnSubscribersRequestBody) async {
     try {

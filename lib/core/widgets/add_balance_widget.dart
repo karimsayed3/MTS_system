@@ -3,6 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:system/core/helpers/dimensions.dart';
 import 'package:system/features/collectors_screen/business_logic/collectors_cubit.dart';
 import 'package:system/features/collectors_screen/data/models/deduct_balance_collector_request_body.dart';
+import 'package:system/features/subscribers_screen/business_logic/subscribers_cubit.dart';
+import 'package:system/features/subscribers_screen/data/models/collect_subscriber_balance_request_body.dart';
 
 import '../helpers/app_regex.dart';
 import '../helpers/check_platform.dart';
@@ -14,8 +16,13 @@ import 'default_text_form_field.dart';
 import 'drop_down_button.dart';
 
 class AddBalanceWidget extends StatefulWidget {
-  const AddBalanceWidget({super.key, required this.UserID});
-  final int UserID;
+  const AddBalanceWidget({super.key, required this.phone,required this.onPressed, required this.name, required this.lastPositiveBalance, required this.currentBalance, required this.dateOfLastAddedBalance});
+  final String phone;
+  final Function() onPressed;
+  final String name;
+  final int lastPositiveBalance;
+  final int currentBalance;
+  final String dateOfLastAddedBalance;
 
   @override
   State<AddBalanceWidget> createState() => _AddBalanceWidgetState();
@@ -23,6 +30,11 @@ class AddBalanceWidget extends StatefulWidget {
 
 class _AddBalanceWidgetState extends State<AddBalanceWidget> {
   TextEditingController balanceController = TextEditingController();
+  TextEditingController nameController = TextEditingController();
+  TextEditingController lastPositiveBalanceController = TextEditingController();
+  TextEditingController currentBalanceController = TextEditingController();
+  TextEditingController dateOfLastAddedBalanceController = TextEditingController();
+
 
   TextEditingController notesController = TextEditingController();
 
@@ -35,6 +47,18 @@ class _AddBalanceWidgetState extends State<AddBalanceWidget> {
   String balanceType = "نقدى";
 
   final formKey = GlobalKey<FormState>();
+
+  @override
+  void initState() {
+    // TODO: implement initState
+
+    nameController.text = widget.name;
+    lastPositiveBalanceController.text = widget.lastPositiveBalance.toString();
+    currentBalanceController.text = widget.currentBalance.toString();
+    dateOfLastAddedBalanceController.text = widget.dateOfLastAddedBalance;
+
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -100,7 +124,7 @@ class _AddBalanceWidgetState extends State<AddBalanceWidget> {
                               verticalSpace(dimension.height5),
                               DefaultTextFormField(
                                 enabled: false,
-                                controller: balanceController,
+                                controller: nameController,
                                 color: Colors.white,
                                 hintText: 'الاسم',
                               ),
@@ -119,7 +143,7 @@ class _AddBalanceWidgetState extends State<AddBalanceWidget> {
                               verticalSpace(dimension.height5),
                               DefaultTextFormField(
                                 enabled: false,
-                                controller: balanceController,
+                                controller: lastPositiveBalanceController,
                                 color: Colors.white,
                                 hintText: 'اخر رصيد موجب',
                               ),
@@ -137,7 +161,7 @@ class _AddBalanceWidgetState extends State<AddBalanceWidget> {
                               verticalSpace(dimension.height5),
                               DefaultTextFormField(
                                 enabled: false,
-                                controller: balanceController,
+                                controller: dateOfLastAddedBalanceController,
                                 color: Colors.white,
                                 hintText: 'تاريخ اضافة الرصيد الاخير',
                               ),
@@ -155,28 +179,9 @@ class _AddBalanceWidgetState extends State<AddBalanceWidget> {
                               verticalSpace(dimension.height5),
                               DefaultTextFormField(
                                 enabled: false,
-                                controller: balanceController,
+                                controller: currentBalanceController,
                                 color: Colors.white,
                                 hintText: 'الرصيد الحالى',
-                              ),
-                            ],
-                          ),
-                          verticalSpace(10.h),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              DefaultText(
-                                text: 'الرصيد المضاف',
-                                fontSize: 20.sp,
-                                fontWeight: FontWeight.w400,
-                                color: ColorsManager.lightBlack,
-                              ),
-                              verticalSpace(dimension.height5),
-                              DefaultTextFormField(
-                                inputFormatters: [NumberInputFormatter()],
-                                controller: balanceController,
-                                color: Colors.white,
-                                hintText: 'الرصيد المضاف',
                               ),
                             ],
                           ),
@@ -236,15 +241,23 @@ class _AddBalanceWidgetState extends State<AddBalanceWidget> {
                               DefaultButton(
                                 onPressed: () {
                                   if (formKey.currentState!.validate()) {
-                                    CollectorsCubit.get(context)
-                                        .deductBalanceCollector(
-                                      deductBalanceCollectorRequestBody:
-                                          DeductBalanceCollectorRequestBody(
-                                            userID: widget.UserID,
-                                            collectedAmount: int.parse(balanceController.text),
-                                            collectingType: balanceType,
-                                          ),
-                                    );
+                                    // CollectorsCubit.get(context)
+                                    //     .deductBalanceCollector(
+                                    //   deductBalanceCollectorRequestBody:
+                                    //       DeductBalanceCollectorRequestBody(
+                                    //         userID: widget.UserID,
+                                    //         collectedAmount: int.parse(balanceController.text),
+                                    //         collectingType: balanceType,
+                                    //       ),
+                                    // );
+                                    // widget.onPressed();
+
+                                    SubscribersCubit.get(context).collectSubscriberBalance(collectSubscriberBalanceRequestBody: CollectSubscriberBalanceRequestBody(
+                                      phone: widget.phone,
+                                      collectingType: balanceType,
+                                      amount: int.parse(balanceController.text),
+                                    ));
+                                    // Navigator.pop(context);
                                   }
                                 },
                                 padding: isMobile()
@@ -301,7 +314,7 @@ class _AddBalanceWidgetState extends State<AddBalanceWidget> {
                                     verticalSpace(dimension.height5),
                                     DefaultTextFormField(
                                       enabled: false,
-                                      controller: balanceController,
+                                      controller: nameController,
                                       color: Colors.white,
                                       hintText: 'الاسم',
                                     ),
@@ -322,7 +335,7 @@ class _AddBalanceWidgetState extends State<AddBalanceWidget> {
                                     verticalSpace(dimension.height5),
                                     DefaultTextFormField(
                                       enabled: false,
-                                      controller: balanceController,
+                                      controller: lastPositiveBalanceController,
                                       color: Colors.white,
                                       hintText: 'اخر رصيد موجب',
                                     ),
@@ -348,7 +361,7 @@ class _AddBalanceWidgetState extends State<AddBalanceWidget> {
                                     verticalSpace(dimension.height5),
                                     DefaultTextFormField(
                                       enabled: false,
-                                      controller: balanceController,
+                                      controller: dateOfLastAddedBalanceController,
                                       color: Colors.white,
                                       hintText:'تاريخ اضافة الرصيد الاخير',
                                     ),
@@ -369,7 +382,7 @@ class _AddBalanceWidgetState extends State<AddBalanceWidget> {
                                     verticalSpace(dimension.height5),
                                     DefaultTextFormField(
                                       enabled: false,
-                                      controller: balanceController,
+                                      controller: currentBalanceController,
                                       color: Colors.white,
                                       hintText: 'الرصيد الحالى',
                                     ),
@@ -459,15 +472,20 @@ class _AddBalanceWidgetState extends State<AddBalanceWidget> {
                                       ),
                                 onPressed: () {
                                   if (formKey.currentState!.validate()) {
-                                    CollectorsCubit.get(context)
-                                        .deductBalanceCollector(
-                                      deductBalanceCollectorRequestBody:
-                                      DeductBalanceCollectorRequestBody(
-                                        userID: widget.UserID,
-                                        collectedAmount: int.parse(balanceController.text),
-                                        collectingType: balanceType,
-                                      ),
-                                    );
+                                    // CollectorsCubit.get(context)
+                                    //     .deductBalanceCollector(
+                                    //   deductBalanceCollectorRequestBody:
+                                    //   DeductBalanceCollectorRequestBody(
+                                    //     userID: widget.UserID,
+                                    //     collectedAmount: int.parse(balanceController.text),
+                                    //     collectingType: balanceType,
+                                    //   ),
+                                    // );
+                                    SubscribersCubit.get(context).collectSubscriberBalance(collectSubscriberBalanceRequestBody: CollectSubscriberBalanceRequestBody(
+                                      phone: widget.phone,
+                                      collectingType: balanceType,
+                                      amount: int.parse(balanceController.text),
+                                    ));
                                   }
                                 },
                                 child: DefaultText(

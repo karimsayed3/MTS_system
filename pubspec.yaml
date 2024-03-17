@@ -32,6 +32,9 @@ dependencies:
   build_runner: ^2.4.8
   cupertino_icons: ^1.0.2
   desktop_window: ^0.4.0
+  open_file: ^3.3.2
+  excel: ^4.0.2
+  path_provider:
   dio: ^5.4.0
   flutter:
     sdk: flutter

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:system/core/helpers/app_regex.dart';
+import 'package:system/core/helpers/cache_helper.dart';
 import 'package:system/core/helpers/check_platform.dart';
 import 'package:system/core/helpers/dimensions.dart';
 import 'package:system/core/helpers/spacing.dart';
@@ -9,11 +11,31 @@ import 'package:system/core/widgets/default_button.dart';
 import 'package:system/core/widgets/default_text.dart';
 import 'package:system/core/widgets/default_text_form_field.dart';
 import 'package:system/core/widgets/drop_down_button.dart';
+import 'package:system/features/subscribers_screen/business_logic/subscribers_cubit.dart';
+import 'package:system/features/subscribers_screen/business_logic/subscribers_state.dart';
+import 'package:system/features/subscribers_screen/data/models/update_subscriber_request_body.dart';
 
 class UpdateSubscriberWidget extends StatefulWidget {
-  const UpdateSubscriberWidget({super.key, required this.onPressed});
+  const UpdateSubscriberWidget(
+      {super.key,
+      required this.onPressed,
+      required this.name,
+      required this.phoneNumber,
+      required this.relatedTo,
+      required this.companyName,
+      required this.planName,
+      required this.lineType, required this.NID, required this.address});
 
   final Function() onPressed;
+
+  final String name;
+  final String phoneNumber;
+  final String relatedTo;
+  final String companyName;
+  final String planName;
+  final String lineType;
+  final String NID;
+  final String address;
 
   @override
   State<UpdateSubscriberWidget> createState() => _UpdateSubscriberWidgetState();
@@ -25,14 +47,36 @@ class _UpdateSubscriberWidgetState extends State<UpdateSubscriberWidget> {
   TextEditingController NIDController = TextEditingController();
   TextEditingController addressController = TextEditingController();
   TextEditingController amountController = TextEditingController();
+  TextEditingController relatedToController = TextEditingController();
+  List<String> companies = [];
+  String selectedValue = "";
 
-  List<String> companies = [
-    "فودافون",
-    "موبينيل",
-    "اتصالات",
-    "وي",
-  ];
-  String selectedValue = "فودافون";
+  List<String> simType = ["جديد", "محول"];
+  String selectedSimType = "جديد";
+
+  List<String> plans = [""];
+  String selectedPlan = "";
+
+  List<String> collectors = [];
+  String selectedCollector = "";
+
+  String selectedCompany = "";
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    subscriberNameController.text = widget.name;
+    phoneNumberController.text = widget.phoneNumber;
+    relatedToController.text = widget.relatedTo;
+    selectedSimType = widget.lineType;
+    selectedCompany = widget.companyName;
+    NIDController.text = widget.NID;
+    addressController.text = widget.address;
+    // selectedPlan = widget.planName;
+    SubscribersCubit.get(context).getCollectorsEmails();
+    SubscribersCubit.get(context).getCompaniesList();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -76,9 +120,9 @@ class _UpdateSubscriberWidgetState extends State<UpdateSubscriberWidget> {
             ),
             SizedBox(
               width: double.infinity,
-              height: isMobile()
-                  ? 600.h
-                  : dimension.height350 + dimension.height320,
+              // height: isMobile()
+              //     ? 600.h
+              //     : dimension.height350 + dimension.height320,
               // color: Colors.red,
               child: SingleChildScrollView(
                 child: Padding(
@@ -129,99 +173,165 @@ class _UpdateSubscriberWidgetState extends State<UpdateSubscriberWidget> {
                               ],
                             ),
                             verticalSpace(10.h),
+                            CacheHelper.getdata(key: "accountType") == "ادمن"
+                                ? Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      DefaultText(
+                                        text: 'الرقم القومى',
+                                        fontSize: 20.sp,
+                                        fontWeight: FontWeight.w400,
+                                        color: ColorsManager.lightBlack,
+                                      ),
+                                      verticalSpace(dimension.height5),
+                                      DefaultTextFormField(
+                                        inputFormatters: [
+                                          NumberInputFormatter()
+                                        ],
+                                        controller: NIDController,
+                                        color: Colors.white,
+                                        hintText: 'الرقم القومى',
+                                      ),
+                                    ],
+                                  )
+                                : const SizedBox.shrink(),
+                            CacheHelper.getdata(key: "accountType") == "ادمن"
+                                ? verticalSpace(5.h)
+                                : const SizedBox.shrink(),
+                            CacheHelper.getdata(key: "accountType") == "ادمن"
+                                ? Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      DefaultText(
+                                        text: 'العنوان',
+                                        fontSize: 20.sp,
+                                        fontWeight: FontWeight.w400,
+                                        color: ColorsManager.lightBlack,
+                                      ),
+                                      verticalSpace(dimension.height5),
+                                      DefaultTextFormField(
+                                        controller: addressController,
+                                        color: Colors.white,
+                                        hintText: "العنوان",
+                                      ),
+                                    ],
+                                  )
+                                : const SizedBox.shrink(),
+                            CacheHelper.getdata(key: "accountType") == "ادمن"
+                                ? verticalSpace(10.h)
+                                : const SizedBox.shrink(),
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 DefaultText(
-                                  text: 'الرقم القومى',
+                                  text: 'التبعية',
                                   fontSize: 20.sp,
                                   fontWeight: FontWeight.w400,
                                   color: ColorsManager.lightBlack,
                                 ),
                                 verticalSpace(dimension.height5),
                                 DefaultTextFormField(
-                                  inputFormatters: [NumberInputFormatter()],
-                                  controller: NIDController,
+                                  controller: relatedToController,
                                   color: Colors.white,
-                                  hintText: 'الرقم القومى',
+                                  hintText: "التبعية",
                                 ),
                               ],
                             ),
                             verticalSpace(5.h),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                DefaultText(
-                                  text: 'العنوان',
-                                  fontSize: 20.sp,
-                                  fontWeight: FontWeight.w400,
-                                  color: ColorsManager.lightBlack,
-                                ),
-                                verticalSpace(dimension.height5),
-                                DefaultTextFormField(
-                                  controller: addressController,
-                                  color: Colors.white,
-                                  hintText: "العنوان",
-                                ),
-                              ],
+                            CacheHelper.getdata(key: "accountType") == "ادمن"
+                                ? BlocConsumer<SubscribersCubit,
+                                    SubscribersState>(
+                                    listener: (context, state) {
+                                      // TODO: implement listener
+                                      if (state
+                                          is GetCollectorsEmailsSuccessState) {
+                                        collectors =
+                                            state.getListsResponse.result!;
+                                        selectedCollector = collectors[0];
+                                      }
+                                    },
+                                    builder: (context, state) {
+                                      return buildDropdown(
+                                        labelText: 'المحصل',
+                                        itemList: collectors,
+                                        selectedValue: selectedCollector,
+                                        onChanged: (value) {
+                                          setState(() {
+                                            selectedCollector = value!;
+                                          });
+                                        },
+                                        context: context,
+                                      );
+                                    },
+                                  )
+                                : const SizedBox.shrink(),
+                            CacheHelper.getdata(key: "accountType") == "ادمن"
+                                ? verticalSpace(10.h)
+                                : const SizedBox.shrink(),
+                            BlocConsumer<SubscribersCubit, SubscribersState>(
+                              listener: (context, state) {
+                                // TODO: implement listener
+                                if (state is GetCompaniesListSuccessState) {
+                                  companies = state.getListsResponse.result!;
+                                  selectedCompany = companies.contains(widget.companyName)? widget.companyName : companies[0];
+                                  SubscribersCubit.get(context).getPlansList(
+                                      companyName: {
+                                        'companyName': selectedCompany
+                                      });
+                                }
+                              },
+                              builder: (context, state) {
+                                return buildDropdown(
+                                  labelText: 'الشركة',
+                                  itemList: companies,
+                                  selectedValue: selectedCompany,
+                                  onChanged: (value) {
+                                    setState(() {
+                                      selectedCompany = value!;
+                                      SubscribersCubit.get(context).getPlansList(
+                                          companyName: {
+                                            'companyName': selectedCompany
+                                          });
+                                    });
+                                  },
+                                  context: context,
+                                );
+                              },
                             ),
                             verticalSpace(10.h),
-                            buildDropdown(
-                              labelText: 'التبعية',
-                              itemList: companies,
-                              selectedValue: selectedValue,
-                              onChanged: (value) {
-                                setState(() {
-                                  selectedValue = value!;
-                                });
+                            BlocConsumer<SubscribersCubit, SubscribersState>(
+                              listener: (context, state) {
+                                // TODO: implement listener
+                                if (state is GetPlansListSuccessState) {
+                                  plans = state.getListsResponse.result!;
+                                  selectedPlan = plans.isNotEmpty ? plans.contains(widget.planName)? widget.planName : plans[0] : "";
+
+                                }
                               },
-                              context: context,
-                            ),
-                            verticalSpace(5.h),
-                            buildDropdown(
-                              labelText: 'المحصل',
-                              itemList: companies,
-                              selectedValue: selectedValue,
-                              onChanged: (value) {
-                                setState(() {
-                                  selectedValue = value!;
-                                });
+                              builder: (context, state) {
+                                return buildDropdown(
+                                  labelText: 'الباقة',
+                                  itemList: plans,
+                                  selectedValue: selectedPlan,
+                                  onChanged: (value) {
+                                    setState(() {
+                                      selectedPlan = value!;
+                                    });
+                                  },
+                                  context: context,
+                                );
                               },
-                              context: context,
-                            ),
-                            verticalSpace(5.h),
-                            verticalSpace(10.h),
-                            buildDropdown(
-                              labelText: 'الشركة',
-                              itemList: companies,
-                              selectedValue: selectedValue,
-                              onChanged: (value) {
-                                setState(() {
-                                  selectedValue = value!;
-                                });
-                              },
-                              context: context,
-                            ),
-                            verticalSpace(5.h),
-                            buildDropdown(
-                              labelText: 'الباقة',
-                              itemList: companies,
-                              selectedValue: selectedValue,
-                              onChanged: (value) {
-                                setState(() {
-                                  selectedValue = value!;
-                                });
-                              },
-                              context: context,
                             ),
                             verticalSpace(10.h),
                             buildDropdown(
                               labelText: 'نوع الخط',
-                              itemList: companies,
-                              selectedValue: selectedValue,
+                              itemList: simType,
+                              selectedValue: selectedSimType,
                               onChanged: (value) {
                                 setState(() {
-                                  selectedValue = value!;
+                                  selectedSimType = value!;
                                 });
                               },
                               context: context,
@@ -282,6 +392,61 @@ class _UpdateSubscriberWidgetState extends State<UpdateSubscriberWidget> {
                               ],
                             ),
                             verticalSpace(dimension.height10),
+                            CacheHelper.getdata(key: "accountType") == "ادمن"
+                                ? Row(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Expanded(
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            DefaultText(
+                                              text: 'الرقم القومى',
+                                              fontSize: dimension.reduce20,
+                                              fontWeight: FontWeight.w400,
+                                              color: ColorsManager.lightBlack,
+                                            ),
+                                            verticalSpace(dimension.height5),
+                                            DefaultTextFormField(
+                                              inputFormatters: [
+                                                NumberInputFormatter()
+                                              ],
+                                              controller: NIDController,
+                                              color: Colors.white,
+                                              hintText: 'الرقم القومى',
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      horizontalSpace(dimension.width10),
+                                      Expanded(
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            DefaultText(
+                                              text: 'العنوان',
+                                              fontSize: dimension.reduce20,
+                                              fontWeight: FontWeight.w400,
+                                              color: ColorsManager.lightBlack,
+                                            ),
+                                            verticalSpace(dimension.height5),
+                                            DefaultTextFormField(
+                                              controller: addressController,
+                                              color: Colors.white,
+                                              hintText: "العنوان",
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  )
+                                : const SizedBox.shrink(),
+                            CacheHelper.getdata(key: "accountType") == "ادمن"
+                                ? verticalSpace(dimension.height10)
+                                : const SizedBox.shrink(),
                             Row(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
@@ -291,44 +456,50 @@ class _UpdateSubscriberWidgetState extends State<UpdateSubscriberWidget> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       DefaultText(
-                                        text: 'الرقم القومى',
+                                        text: 'التبعية',
                                         fontSize: dimension.reduce20,
                                         fontWeight: FontWeight.w400,
                                         color: ColorsManager.lightBlack,
                                       ),
                                       verticalSpace(dimension.height5),
                                       DefaultTextFormField(
-                                        inputFormatters: [
-                                          NumberInputFormatter()
-                                        ],
-                                        controller: NIDController,
+                                        controller: relatedToController,
                                         color: Colors.white,
-                                        hintText: 'الرقم القومى',
+                                        hintText: "التبعية",
                                       ),
                                     ],
                                   ),
                                 ),
                                 horizontalSpace(dimension.width10),
-                                Expanded(
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      DefaultText(
-                                        text: 'العنوان',
-                                        fontSize: dimension.reduce20,
-                                        fontWeight: FontWeight.w400,
-                                        color: ColorsManager.lightBlack,
-                                      ),
-                                      verticalSpace(dimension.height5),
-                                      DefaultTextFormField(
-                                        controller: addressController,
-                                        color: Colors.white,
-                                        hintText: "العنوان",
-                                      ),
-                                    ],
-                                  ),
-                                ),
+                                CacheHelper.getdata(key: "accountType") == "ادمن"
+                                    ? Expanded(
+                                        child: BlocConsumer<SubscribersCubit,
+                                            SubscribersState>(
+                                          listener: (context, state) {
+                                            // TODO: implement listener
+                                            if (state
+                                                is GetCollectorsEmailsSuccessState) {
+                                              collectors = state
+                                                  .getListsResponse.result!;
+                                              selectedCollector = collectors[0];
+                                            }
+                                          },
+                                          builder: (context, state) {
+                                            return buildDropdown(
+                                              labelText: 'المحصل',
+                                              itemList: collectors,
+                                              selectedValue: selectedCollector,
+                                              onChanged: (value) {
+                                                setState(() {
+                                                  selectedCollector = value!;
+                                                });
+                                              },
+                                              context: context,
+                                            );
+                                          },
+                                        ),
+                                      )
+                                    : const SizedBox.shrink(),
                               ],
                             ),
                             verticalSpace(dimension.height10),
@@ -336,63 +507,64 @@ class _UpdateSubscriberWidgetState extends State<UpdateSubscriberWidget> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Expanded(
-                                  child: buildDropdown(
-                                    labelText: 'التبعية',
-                                    itemList: companies,
-                                    selectedValue: selectedValue,
-                                    onChanged: (value) {
-                                      setState(() {
-                                        selectedValue = value!;
-                                      });
+                                  child: BlocConsumer<SubscribersCubit,
+                                      SubscribersState>(
+                                    listener: (context, state) {
+                                      // TODO: implement listener
+                                      if (state
+                                          is GetCompaniesListSuccessState) {
+                                        companies = state.getListsResponse.result!;
+                                        selectedCompany = companies.contains(widget.companyName)? widget.companyName : companies[0];
+
+                                        SubscribersCubit.get(context)
+                                            .getPlansList(companyName: {
+                                          'companyName': selectedCompany
+                                        });
+                                      }
                                     },
-                                    context: context,
+                                    builder: (context, state) {
+                                      return buildDropdown(
+                                        labelText: 'الشركة',
+                                        itemList: companies,
+                                        selectedValue: selectedCompany,
+                                        onChanged: (value) {
+                                          setState(() {
+                                            selectedCompany = value!;
+                                            SubscribersCubit.get(context)
+                                                .getPlansList(companyName: {
+                                              'companyName': selectedCompany
+                                            });
+                                          });
+                                        },
+                                        context: context,
+                                      );
+                                    },
                                   ),
                                 ),
                                 horizontalSpace(dimension.width10),
                                 Expanded(
-                                  child: buildDropdown(
-                                    labelText: 'المحصل',
-                                    itemList: companies,
-                                    selectedValue: selectedValue,
-                                    onChanged: (value) {
-                                      setState(() {
-                                        selectedValue = value!;
-                                      });
+                                  child: BlocConsumer<SubscribersCubit,
+                                      SubscribersState>(
+                                    listener: (context, state) {
+                                      // TODO: implement listener
+                                      if (state is GetPlansListSuccessState) {
+                                        plans = state.getListsResponse.result!;
+                                          selectedPlan = plans.isNotEmpty ? plans.contains(widget.planName)? widget.planName : plans[0] : "";
+                                      }
                                     },
-                                    context: context,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            verticalSpace(dimension.height10),
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Expanded(
-                                  child: buildDropdown(
-                                    labelText: 'الشركة',
-                                    itemList: companies,
-                                    selectedValue: selectedValue,
-                                    onChanged: (value) {
-                                      setState(() {
-                                        selectedValue = value!;
-                                      });
+                                    builder: (context, state) {
+                                      return buildDropdown(
+                                        labelText: 'الباقة',
+                                        itemList: plans,
+                                        selectedValue: selectedPlan,
+                                        onChanged: (value) {
+                                          setState(() {
+                                            selectedPlan = value!;
+                                          });
+                                        },
+                                        context: context,
+                                      );
                                     },
-                                    context: context,
-                                  ),
-                                ),
-                                horizontalSpace(dimension.width10),
-                                Expanded(
-                                  child: buildDropdown(
-                                    labelText: 'الباقة',
-                                    itemList: companies,
-                                    selectedValue: selectedValue,
-                                    onChanged: (value) {
-                                      setState(() {
-                                        selectedValue = value!;
-                                      });
-                                    },
-                                    context: context,
                                   ),
                                 ),
                               ],
@@ -404,37 +576,37 @@ class _UpdateSubscriberWidgetState extends State<UpdateSubscriberWidget> {
                                   flex: 1,
                                   child: buildDropdown(
                                     labelText: 'نوع الخط',
-                                    itemList: companies,
-                                    selectedValue: selectedValue,
+                                    itemList: simType,
+                                    selectedValue: selectedSimType,
                                     onChanged: (value) {
                                       setState(() {
-                                        selectedValue = value!;
+                                        selectedSimType = value!;
                                       });
                                     },
                                     context: context,
                                   ),
                                 ),
                                 horizontalSpace(dimension.width10),
-                                 Expanded(
-                                  flex: 1,
-                                  child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      DefaultText(
-                                        text: 'الحساب',
-                                        fontSize: dimension.reduce20,
-                                        fontWeight: FontWeight.w400,
-                                        color: ColorsManager.lightBlack,
-                                      ),
-                                      verticalSpace(dimension.height5),
-                                      DefaultTextFormField(
-                                        controller: amountController,
-                                        color: Colors.white,
-                                        hintText: "الحساب",
-                                      ),
-                                    ],
-                                  ),
-                                ),
+                                //  Expanded(
+                                //   flex: 1,
+                                //   child: Column(
+                                //     crossAxisAlignment: CrossAxisAlignment.start,
+                                //     children: [
+                                //       DefaultText(
+                                //         text: 'الحساب',
+                                //         fontSize: dimension.reduce20,
+                                //         fontWeight: FontWeight.w400,
+                                //         color: ColorsManager.lightBlack,
+                                //       ),
+                                //       verticalSpace(dimension.height5),
+                                //       DefaultTextFormField(
+                                //         controller: amountController,
+                                //         color: Colors.white,
+                                //         hintText: "الحساب",
+                                //       ),
+                                //     ],
+                                //   ),
+                                // ),
                               ],
                             ),
                             // verticalSpace(dimension.height15),
@@ -459,7 +631,22 @@ class _UpdateSubscriberWidgetState extends State<UpdateSubscriberWidget> {
                             horizontal: dimension.width15,
                             vertical: dimension.height15,
                           ),
-                    onPressed: widget.onPressed,
+                    onPressed: () {
+                      SubscribersCubit.get(context).updateSubscriber(
+                        updateSubscriberRequestBody:
+                            UpdateSubscriberRequestBody(
+                          phone: phoneNumberController.text,
+                          name: subscriberNameController.text,
+                          relatedTo: relatedToController.text,
+                          address: addressController.text,
+                          nID: NIDController.text,
+                          lineType: selectedSimType,
+                          companyName: selectedCompany,
+                          planName: selectedPlan,
+                          collectorEmail: selectedCollector,
+                        ),
+                      );
+                    },
                     child: DefaultText(
                       text: 'تعديل',
                       color: Colors.white,

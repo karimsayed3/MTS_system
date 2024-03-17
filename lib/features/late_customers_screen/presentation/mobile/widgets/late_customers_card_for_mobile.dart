@@ -5,8 +5,11 @@ import 'package:system/core/helpers/spacing.dart';
 import 'package:system/core/theming/colors.dart';
 import 'package:system/core/widgets/default_text.dart';
 
+import '../../../data/models/get_late_subscribers_response.dart';
+
 class LateCustomersCardWidgetMobile extends StatefulWidget {
-  const LateCustomersCardWidgetMobile({super.key});
+  const LateCustomersCardWidgetMobile({super.key, required this.subscriber});
+  final LateSubscriberData subscriber;
 
   @override
   State<LateCustomersCardWidgetMobile> createState() => _LateCustomersCardWidgetMobileState();
@@ -35,7 +38,7 @@ class _LateCustomersCardWidgetMobileState extends State<LateCustomersCardWidgetM
           SizedBox(
             width: 130.w,
             child: DefaultText(
-              text: 'Super Flix 30',
+              text: widget.subscriber.name ?? "",
               fontSize: 16.sp,
               fontFamily: 'din',
               fontWeight: FontWeight.w400,
@@ -45,7 +48,7 @@ class _LateCustomersCardWidgetMobileState extends State<LateCustomersCardWidgetM
           SizedBox(
             width: 110.w,
             child: DefaultText(
-              text: '01156788394',
+              text: widget.subscriber.phoneNo ?? "",
               color: ColorsManager.secondaryColor,
               fontSize: 16.sp,
               fontWeight: FontWeight.w400,
@@ -64,7 +67,7 @@ class _LateCustomersCardWidgetMobileState extends State<LateCustomersCardWidgetM
                 ),
                 horizontalSpace(5.w),
                 DefaultText(
-                  text: '35-',
+                  text: widget.subscriber.balance.toString(),
                   color: ColorsManager.secondaryColor,
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w400,

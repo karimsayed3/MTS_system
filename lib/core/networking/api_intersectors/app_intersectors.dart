@@ -15,7 +15,7 @@ class AppInterceptor extends Interceptor {
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
     // TODO: implement onRequest
     // options.headers[]
-    options.headers['Authorization'] = 'Bearer $token';
+    options.headers['Authorization'] = 'Bearer ${CacheHelper.getdata(key: 'token')}';
     print("onRequest method");
     super.onRequest(options, handler);
   }
@@ -26,28 +26,18 @@ class AppInterceptor extends Interceptor {
     debugPrint(
         'ERROR[${err.response?.statusCode}] => PATH: ${err.requestOptions.path}');
     if (err.response?.statusCode == 401) {
+    await  CacheHelper.removeData(key: 'login');
+    await   CacheHelper.removeData(key: 'accessToken');
+    await   CacheHelper.removeData(key: 'unit');
+    await   CacheHelper.removeData(key: 'token');
+
       if(!isMobile()){
-   await    CacheHelper.removeData(key: 'login').then((value) {
-          CacheHelper.removeData(key: 'accessToken').then((value) {
-            CacheHelper.removeData(key: 'unit').then((value) {
-              CacheHelper.removeData(key: 'token').then((value) {
-                navigateToPage(Routes.loginScreenDesktop);
-              });
-            });
-          });
-        });
+        navigateToPage(Routes.loginScreenDesktop);
+        remove();
       }
       if(isMobile()){
-        await   CacheHelper.removeData(key: 'login').then((value) {
-          CacheHelper.removeData(key: 'accessToken').then((value) {
-            CacheHelper.removeData(key: 'unit').then((value) {
-              CacheHelper.removeData(key: 'token').then((value) {
-                navigateToPage(Routes.loginScreenMobile);
-                remove();
-              });
-            });
-          });
-        });
+        navigateToPage(Routes.loginScreenMobile);
+        remove();
       }
       debugPrint("sssssssssssssssss");
 

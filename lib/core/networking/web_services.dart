@@ -19,8 +19,13 @@ import 'package:system/features/companies_screen/data/models/get_companies_reque
 import 'package:system/features/companies_screen/data/models/get_companies_response.dart';
 import 'package:system/features/companies_screen/data/models/undo_plan_from_subscribers_request_body.dart';
 import 'package:system/features/companies_screen/data/models/update_company_request_body.dart';
+import 'package:system/features/disabled_customers_screen/data/models/get_disabled_subscribers_response.dart';
+import 'package:system/features/late_customers_screen/data/models/get_late_subscribers_response.dart';
 import 'package:system/features/login_screen/data/models/login_request_body.dart';
 import 'package:system/features/login_screen/data/models/login_response.dart';
+import 'package:system/features/resellers_requests_screen/data/models/approve_or_decline_request_body.dart';
+import 'package:system/features/resellers_requests_screen/data/models/get_collector_requests_request_body.dart';
+import 'package:system/features/resellers_requests_screen/data/models/get_collector_requests_response.dart';
 import 'package:system/features/subscribers_screen/data/models/activate_subscriber_request_body.dart';
 import 'package:system/features/subscribers_screen/data/models/add_new_subscriber_request_body.dart';
 import 'package:system/features/subscribers_screen/data/models/collect_subscriber_balance_request_body.dart';
@@ -34,6 +39,7 @@ import 'package:system/features/subscribers_screen/data/models/get_withdrawn_sub
 import 'package:system/features/subscribers_screen/data/models/update_subscriber_request_body.dart';
 import 'package:system/features/subscribers_screen/data/models/withdraw_subscriber_request_body.dart';
 import 'package:system/features/subscribers_screen/data/models/zero_subscriber_balance_request_body.dart';
+import 'package:system/features/withdrawn_customers_screen/data/models/get_withdraw_subscribers_response.dart';
 
 import '../../features/collectors_screen/data/models/add_user_request_body.dart';
 import '../../features/collectors_screen/data/models/delete_user_request_body.dart';
@@ -160,16 +166,16 @@ abstract class WebServices {
       @Body() GetActiveSubscribersRequestBody getActiveSubscribersRequestBody);
 
   @POST(ApiConstants.getLateSubscribers)
-  Future<GetSubscribersDataResponse> getLateSubscribers(
+  Future<GetLateSubscribersResponse> getLateSubscribers(
       @Body() GetLateSubscribersRequestBody getLateSubscribersRequestBody);
 
   @POST(ApiConstants.getDisabledSubscribers)
-  Future<GetSubscribersDataResponse> getDisabledSubscribers(
+  Future<GetDisabledSubscribersResponse> getDisabledSubscribers(
       @Body() GetDisabledSubscribersRequestBody getDisabledSubscribersRequestBody);
 
 
   @POST(ApiConstants.getWithdrawnSubscribers)
-  Future<GetSubscribersDataResponse> getWithdrawnSubscribers(
+  Future<GetWithdrawnSubscribersResponse> getWithdrawnSubscribers(
       @Body() GetWithdrawnSubscribersRequestBody getWithdrawnSubscribersRequestBody);
 
   /// lists
@@ -181,6 +187,22 @@ abstract class WebServices {
 
   @GET(ApiConstants.getCollectorsEmails)
   Future<GetListsResponse> getCollectorsEmails();
+
+
+
+  /// collectorRequests
+
+  @POST(ApiConstants.getCollectorRequests)
+  Future<GetCollectorRequestsResponse> getCollectorRequests( @Body() GetCollectorRequestsRequestBody getCollectorRequestsRequestBody);
+
+  @POST(ApiConstants.declineRequest)
+  Future<DefaultApiResponse> declineRequest( @Body() ApproveOrDeclineRequestBody approveOrDeclineRequestBody);
+
+  @POST(ApiConstants.approveRequest)
+  Future<DefaultApiResponse> approveRequest( @Body() ApproveOrDeclineRequestBody approveOrDeclineRequestBody);
+
+
+
 
 
 

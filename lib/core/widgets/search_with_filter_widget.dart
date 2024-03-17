@@ -5,11 +5,12 @@ import 'package:system/core/widgets/custom_search_widget.dart';
 import 'package:system/core/widgets/filter_widget.dart';
 
 class SearchWithFilterButtonWidget extends StatelessWidget {
-  const SearchWithFilterButtonWidget(
-      {super.key, required this.onTap, required this.searchController});
+   SearchWithFilterButtonWidget(
+      {super.key, required this.onTap, required this.searchController ,this.onChange});
 
   final TextEditingController searchController;
   final Function() onTap;
+   Function(String)? onChange;
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +21,7 @@ class SearchWithFilterButtonWidget extends StatelessWidget {
         CustomSearchWidget(
           width: dimension.width200,
           searchController: searchController,
+          onChange: onChange,
         ),
         horizontalSpace(dimension.width10),
         FilterWidget(

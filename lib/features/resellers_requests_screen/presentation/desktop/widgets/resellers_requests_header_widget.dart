@@ -34,7 +34,7 @@ class ResellersRequestsHeaderWidget extends StatelessWidget {
           HeaderLabelWithImageDesktop(
             width: dimension.width80,
             image: "assets/images/header_image.png",
-            title: 'تاريخ التسجيل',
+            title: 'تاريخ الطلب',
           ),const Spacer(),
           HeaderLabelWithImageDesktop(
             width: dimension.width60,
@@ -60,7 +60,7 @@ class ResellersRequestsHeaderWidget extends StatelessWidget {
           HeaderLabelWithImageDesktop(
             width: dimension.width80,
             image: "assets/images/header_image.png",
-            title: 'تاريخ الطلب',
+            title: 'تاريخ التنفيذ',
           ),
           const Spacer(),
           horizontalSpace(dimension.width130)

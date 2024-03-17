@@ -5,27 +5,23 @@ import 'package:system/core/helpers/spacing.dart';
 import 'package:system/core/theming/colors.dart';
 import 'package:system/core/widgets/default_button.dart';
 import 'package:system/core/widgets/default_text.dart';
+import 'package:system/core/widgets/default_text_form_field.dart';
 import 'package:system/core/widgets/drop_down_button.dart';
 
 import '../../../../../core/helpers/check_platform.dart';
 
 class AddBunchForCompany extends StatefulWidget {
-  const AddBunchForCompany({super.key, required this.onPressed});
+  const AddBunchForCompany({super.key, required this.onPressed, required this.companyName});
 
   final Function() onPressed;
+  final String companyName;
 
   @override
   State<AddBunchForCompany> createState() => _AddBunchForCompanyState();
 }
 
 class _AddBunchForCompanyState extends State<AddBunchForCompany> {
-  List<String> companies = [
-    "فودافون",
-    "موبينيل",
-    "اتصالات",
-    "وي",
-  ];
-  String selectedValue = "فودافون";
+  TextEditingController planName = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +49,7 @@ class _AddBunchForCompanyState extends State<AddBunchForCompany> {
                       bottom: dimension.height10,
                     ),
               child: DefaultText(
-                text: 'اضافة شركة',
+                text: 'اضافة قيمة باقة للشركة',
                 color: ColorsManager.secondaryColor,
                 fontSize: isMobile() ? 20.sp : dimension.reduce20,
                 fontWeight: FontWeight.w700,
@@ -79,16 +75,10 @@ class _AddBunchForCompanyState extends State<AddBunchForCompany> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  buildDropdown(
-                    labelText: 'الباقة',
-                    itemList: companies,
-                    selectedValue: selectedValue,
-                    onChanged: (value) {
-                      setState(() {
-                        selectedValue = value!;
-                      });
-                    },
-                    context: context,
+                  DefaultText(
+                    text: 'هل أنت متاكد من عملية اضافة قيمة الباقة للشركة "${widget.companyName}" ؟',
+                    fontSize:isMobile()? 20.sp: dimension.reduce20,
+                    fontWeight: FontWeight.w400,
                   ),
                   verticalSpace(dimension.height15),
                   Row(

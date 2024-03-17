@@ -1,12 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:system/core/di/dependency_injection.dart';
+import 'package:system/core/helpers/convert_string_to_date.dart';
 import 'package:system/core/helpers/spacing.dart';
 import 'package:system/core/theming/colors.dart';
+import 'package:system/core/widgets/add_balance_widget.dart';
 import 'package:system/core/widgets/default_text.dart';
+import 'package:system/core/widgets/show_alert_dialog.dart';
+import 'package:system/features/disabled_customers_screen/data/models/get_disabled_subscribers_response.dart';
+import 'package:system/features/subscribers_screen/business_logic/subscribers_cubit.dart';
+import 'package:system/features/subscribers_screen/data/models/activate_subscriber_request_body.dart';
+import 'package:system/features/subscribers_screen/data/models/zero_subscriber_balance_request_body.dart';
+import 'package:system/features/subscribers_screen/presentation/desktop/widgets/update_subsciber_widget.dart';
+
+import '../../../../../core/widgets/make_zero_widget.dart';
 
 class DisabledCustomersCardWidgetMobile extends StatefulWidget {
-  const DisabledCustomersCardWidgetMobile({super.key});
+  const DisabledCustomersCardWidgetMobile({super.key, required this.subscriber});
+  final DisabledSubscriberData subscriber;
 
   @override
   State<DisabledCustomersCardWidgetMobile> createState() => _DisabledCustomersCardWidgetMobileState();
@@ -35,7 +48,7 @@ class _DisabledCustomersCardWidgetMobileState extends State<DisabledCustomersCar
           SizedBox(
             width: 120.w,
             child: DefaultText(
-              text: 'Super Flix 30',
+              text: widget.subscriber.name ?? "",
               fontSize: 16.sp,
               fontFamily: 'din',
               fontWeight: FontWeight.w400,
@@ -48,7 +61,7 @@ class _DisabledCustomersCardWidgetMobileState extends State<DisabledCustomersCar
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 DefaultText(
-                  text: '01156788394',
+                  text: widget.subscriber.phoneNo ?? "",
                   color: ColorsManager.secondaryColor,
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w400,
@@ -64,7 +77,7 @@ class _DisabledCustomersCardWidgetMobileState extends State<DisabledCustomersCar
                       fontWeight: FontWeight.w400,
                     ),
                     DefaultText(
-                      text: '04/06/2021',
+                      text: widget.subscriber.registrationDate!=null ? convertDateToString(widget.subscriber.registrationDate!) : "",
                       color: ColorsManager.primaryColor,
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w500,
@@ -87,7 +100,7 @@ class _DisabledCustomersCardWidgetMobileState extends State<DisabledCustomersCar
                 ),
                 horizontalSpace(5.w),
                 DefaultText(
-                  text: '35-',
+                  text: widget.subscriber.balance.toString(),
                   color: ColorsManager.secondaryColor,
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w400,
@@ -112,7 +125,14 @@ class _DisabledCustomersCardWidgetMobileState extends State<DisabledCustomersCar
                   //     // companyName: "شركة فودافون كفرالشيخ",
                   //   ),
                   // );
-                } else if (choice == 'option2') {
+                  SubscribersCubit.get(context).activateSubscriber(
+                    activateSubscriberRequestBody:
+                    ActivateSubscriberRequestBody(
+                      phone: widget.subscriber.phoneNo,
+                    ),
+                  );
+                }
+                else if (choice == 'option2') {
                   // Perform action for option 2
                   // showDataAlert(
                   //   context: context,
@@ -121,7 +141,26 @@ class _DisabledCustomersCardWidgetMobileState extends State<DisabledCustomersCar
                   //     companyName: "شركة فودافون كفرالشيخ",
                   //   ),
                   // );
-                } else if (choice == 'option3') {
+                  showDataAlert(
+                    context: context,
+                    child: BlocProvider.value(
+                      value: getIt<SubscribersCubit>(),
+                      child: UpdateSubscriberWidget(
+                        name: widget.subscriber.name ?? "",
+                        phoneNumber: widget.subscriber.phoneNo ?? "",
+                        lineType: widget.subscriber.lineType ?? "",
+                        companyName: widget.subscriber.companyName ?? "",
+                        planName: widget.subscriber.planName ?? "",
+                        relatedTo: widget.subscriber.relatedTo ?? "",
+                        address: "",
+                        NID: "",
+                        onPressed: () {},
+                        // companyName: "شركة فودافون كفرالشيخ",
+                      ),
+                    ),
+                  );
+                }
+                else if (choice == 'option3') {
                   // Perform action for option 3
                   // showDataAlert(
                   //   context: context,
@@ -130,7 +169,23 @@ class _DisabledCustomersCardWidgetMobileState extends State<DisabledCustomersCar
                   //     subscriberName: "كريم سيد ابراهيم عبدالتواب",
                   //   ),
                   // );
-                }else if (choice == 'option4') {
+                  showDataAlert(
+                    context: context,
+                    child: BlocProvider.value(
+                      value: getIt<SubscribersCubit>(),
+                      child: AddBalanceWidget(
+                        phone: widget.subscriber.phoneNo ?? "",
+                        onPressed: () {},
+                        currentBalance: widget.subscriber.balance!,
+                        dateOfLastAddedBalance: "",
+                        lastPositiveBalance:
+                        widget.subscriber.lastPositiveDepoit!,
+                        name: widget.subscriber.name ?? "",
+                      ),
+                    ),
+                  );
+                }
+                else if (choice == 'option4') {
                   // Perform action for option 3
                   // showDataAlert(
                   //   context: context,
@@ -139,6 +194,22 @@ class _DisabledCustomersCardWidgetMobileState extends State<DisabledCustomersCar
                   //     subscriberName: "كريم سيد ابراهيم عبدالتواب",
                   //   ),
                   // );
+                  showDataAlert(
+                    context: context,
+                    child: MakeZeroWidget(
+                      onPressed: () {
+                        SubscribersCubit.get(context)
+                            .zeroSubscriberBalance(
+                          zeroSubscriberBalanceRequestBody:
+                          ZeroSubscriberBalanceRequestBody(
+                            phone: widget.subscriber.phoneNo,
+                            collectingType: 'نقدى',
+                          ),
+                        );
+                      },
+                      subscriberName: widget.subscriber.name ?? "",
+                    ),
+                  );
                 }
               },
               itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[

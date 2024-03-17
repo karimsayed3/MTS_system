@@ -1,5 +1,9 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:system/core/di/dependency_injection.dart';
 import 'package:system/core/helpers/convert_string_to_date.dart';
 import 'package:system/core/helpers/dimensions.dart';
 import 'package:system/core/helpers/spacing.dart';
@@ -8,6 +12,9 @@ import 'package:system/core/widgets/default_button.dart';
 import 'package:system/core/widgets/default_text.dart';
 import 'package:system/core/widgets/make_zero_widget.dart';
 import 'package:system/core/widgets/show_alert_dialog.dart';
+import 'package:system/features/subscribers_screen/business_logic/subscribers_cubit.dart';
+import 'package:system/features/subscribers_screen/data/models/collect_subscriber_balance_request_body.dart';
+import 'package:system/features/subscribers_screen/data/models/zero_subscriber_balance_request_body.dart';
 import 'package:system/features/subscribers_screen/presentation/desktop/widgets/update_subsciber_widget.dart';
 
 import '../../../../../core/widgets/add_balance_widget.dart';
@@ -36,7 +43,7 @@ class SubscribersCard extends StatelessWidget {
           SizedBox(
             width: dimension.width130,
             child: DefaultText(
-              text: subscriber.name??"",
+              text: subscriber.name ?? "",
               color: ColorsManager.darkBlack,
               fontSize: dimension.width10,
               fontWeight: FontWeight.w400,
@@ -46,7 +53,7 @@ class SubscribersCard extends StatelessWidget {
           SizedBox(
             width: dimension.width80,
             child: DefaultText(
-              text: subscriber.phoneNo??"",
+              text: subscriber.phoneNo ?? "",
               color: ColorsManager.secondaryColor,
               fontSize: dimension.width10,
               fontWeight: FontWeight.w400,
@@ -56,7 +63,7 @@ class SubscribersCard extends StatelessWidget {
           SizedBox(
             width: dimension.width100,
             child: DefaultText(
-              text:  subscriber.relatedTo??"",
+              text: subscriber.relatedTo ?? "",
               color: ColorsManager.darkBlack,
               fontSize: dimension.width10,
               fontWeight: FontWeight.w400,
@@ -69,7 +76,7 @@ class SubscribersCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 DefaultText(
-                  text:  subscriber.companyName??"",
+                  text: subscriber.companyName ?? "",
                   color: ColorsManager.secondaryColor,
                   fontSize: dimension.width10,
                   fontWeight: FontWeight.w400,
@@ -83,7 +90,7 @@ class SubscribersCard extends StatelessWidget {
                       fontWeight: FontWeight.w400,
                     ),
                     DefaultText(
-                      text:  subscriber.collectorName??"",
+                      text: subscriber.collectorName ?? "",
                       color: ColorsManager.darkBlack,
                       fontSize: dimension.width10,
                       fontWeight: FontWeight.w400,
@@ -97,7 +104,9 @@ class SubscribersCard extends StatelessWidget {
           SizedBox(
             width: dimension.width80,
             child: DefaultText(
-              text:  subscriber.registrationDate!=null? convertDateToString(subscriber.registrationDate):"",
+              text: subscriber.registrationDate != null
+                  ? convertDateToString(subscriber.registrationDate)
+                  : "",
               color: ColorsManager.secondaryColor,
               fontSize: dimension.width10,
               fontWeight: FontWeight.w400,
@@ -118,7 +127,7 @@ class SubscribersCard extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10)),
                   child: Center(
                     child: DefaultText(
-                      text:  subscriber.planName??"",
+                      text: subscriber.planName ?? "",
                       color: ColorsManager.secondaryColor,
                       fontSize: dimension.width10,
                       fontWeight: FontWeight.w400,
@@ -146,7 +155,7 @@ class SubscribersCard extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10)),
                   child: Center(
                     child: DefaultText(
-                      text:  subscriber.lineType??"",
+                      text: subscriber.lineType ?? "",
                       color: ColorsManager.secondaryColor,
                       fontSize: dimension.width10,
                       fontWeight: FontWeight.w400,
@@ -220,8 +229,17 @@ class SubscribersCard extends StatelessWidget {
                         showDataAlert(
                           context: context,
                           child: MakeZeroWidget(
-                            onPressed: () {},
-                            subscriberName: subscriber.name??"",
+                            onPressed: () {
+                              SubscribersCubit.get(context)
+                                  .zeroSubscriberBalance(
+                                zeroSubscriberBalanceRequestBody:
+                                    ZeroSubscriberBalanceRequestBody(
+                                  phone: subscriber.phoneNo,
+                                  collectingType: 'نقدى',
+                                ),
+                              );
+                            },
+                            subscriberName: subscriber.name ?? "",
                           ),
                         );
                       },
@@ -241,9 +259,18 @@ class SubscribersCard extends StatelessWidget {
                       onPressed: () {
                         showDataAlert(
                           context: context,
-                          child: AddBalanceWidget(
-                            UserID: 1,
-                          )
+                          child: BlocProvider.value(
+                            value: getIt<SubscribersCubit>(),
+                            child: AddBalanceWidget(
+                              phone: subscriber.phoneNo ?? "",
+                              onPressed: () {},
+                              currentBalance: subscriber.balance!,
+                              dateOfLastAddedBalance: "",
+                              lastPositiveBalance:
+                                  subscriber.lastPositiveDepoit!,
+                              name: subscriber.name ?? "",
+                            ),
+                          ),
                         );
                       },
                       child: DefaultText(
@@ -269,15 +296,25 @@ class SubscribersCard extends StatelessWidget {
                   // Perform action for option 1
                   showDataAlert(
                     context: context,
-                    child: UpdateSubscriberWidget(
-                      onPressed: () {},
-                      // companyName: "شركة فودافون كفرالشيخ",
+                    child: BlocProvider.value(
+                      value: getIt<SubscribersCubit>(),
+                      child: UpdateSubscriberWidget(
+                        name: subscriber.name ?? "",
+                        phoneNumber: subscriber.phoneNo ?? "",
+                        lineType: subscriber.lineType ?? "",
+                        companyName: subscriber.companyName ?? "",
+                        planName: subscriber.planName ?? "",
+                        relatedTo: subscriber.relatedTo ?? "",
+                        address: "",
+                        NID: "",
+                        onPressed: () {},
+                        // companyName: "شركة فودافون كفرالشيخ",
+                      ),
                     ),
                   );
                 }
               },
-              itemBuilder: (BuildContext context) =>
-              <PopupMenuEntry<String>>[
+              itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
                 PopupMenuItem<String>(
                   value: 'option1',
                   child: Directionality(
@@ -288,8 +325,7 @@ class SubscribersCard extends StatelessWidget {
                       children: [
                         SizedBox(
                             width: dimension.width15,
-                            child:
-                            SvgPicture.asset('assets/icons/edit.svg')),
+                            child: SvgPicture.asset('assets/icons/edit.svg')),
                         horizontalSpace(dimension.width10),
                         DefaultText(
                           text: 'تعديل مشترك',

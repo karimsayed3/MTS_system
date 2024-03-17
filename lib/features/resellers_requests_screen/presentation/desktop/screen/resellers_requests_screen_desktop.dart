@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:system/core/helpers/dimensions.dart';
 import 'package:system/features/collectors_screen/data/models/get_users_response.dart';
 import 'package:system/features/collectors_screen/presentation/desktop/widgets/collectors_card.dart';
+import 'package:system/features/resellers_requests_screen/business_logic/collectors_requests_cubit.dart';
+import 'package:system/features/resellers_requests_screen/business_logic/collectors_requests_state.dart';
+import 'package:system/features/resellers_requests_screen/data/models/get_collector_requests_request_body.dart';
+import 'package:system/features/resellers_requests_screen/presentation/desktop/widgets/bloc_listener_for_collectors_requests_cubit.dart';
+import 'package:system/features/resellers_requests_screen/presentation/desktop/widgets/create_excel.dart';
 
 import '../../../../../core/helpers/spacing.dart';
 import '../../../../../core/theming/colors.dart';
@@ -19,10 +25,20 @@ class ResellersRequestsScreenDesktop extends StatefulWidget {
   const ResellersRequestsScreenDesktop({super.key});
 
   @override
-  State<ResellersRequestsScreenDesktop> createState() => _ResellersRequestsScreenDesktopState();
+  State<ResellersRequestsScreenDesktop> createState() =>
+      _ResellersRequestsScreenDesktopState();
 }
 
-class _ResellersRequestsScreenDesktopState extends State<ResellersRequestsScreenDesktop> {
+class _ResellersRequestsScreenDesktopState
+    extends State<ResellersRequestsScreenDesktop> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    CollectorsRequestsCubit.get(context).getCollectorRequests(
+        getCollectorRequestsRequestBody: GetCollectorRequestsRequestBody());
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     var dimension = Dimensions(context);
@@ -51,11 +67,23 @@ class _ResellersRequestsScreenDesktopState extends State<ResellersRequestsScreen
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       CollectorsSearchWidget(
-                        searchController: TextEditingController()
+                        searchController: CollectorsRequestsCubit.get(context)
+                            .searchController,
+                        // onChange: (value) {
+                        //   CollectorsRequestsCubit.get(context)
+                        //       .getCollectorRequests(
+                        //     getCollectorRequestsRequestBody:
+                        //         GetCollectorRequestsRequestBody(
+                        //
+                        //         ),
+                        //   );
+                        // },
                       ),
                       ButtonWithTextAndImageWidget(
                         onPressed: () {
-
+                          createExcelForCollectorsRequests(
+                              data: CollectorsRequestsCubit.get(context)
+                                  .requestsData);
                         },
                         text: 'تنزيل اكسيل',
                         image: 'assets/icons/excel.svg',
@@ -69,15 +97,25 @@ class _ResellersRequestsScreenDesktopState extends State<ResellersRequestsScreen
                       children: [
                         verticalSpace(dimension.height10),
                         const ResellersRequestsHeaderWidget(),
-                        Expanded(
-                          child: ListView.builder(
-                            itemBuilder: (context, index) {
-                              return const ResellersRequestsCardWidget();
-                            },
-                            itemCount:
-                            10,
-                          ),
+                        BlocBuilder<CollectorsRequestsCubit,
+                            CollectorsRequestsState>(
+                          builder: (context, state) {
+                            return Expanded(
+                              child: ListView.builder(
+                                itemBuilder: (context, index) {
+                                  return ResellersRequestsCardWidget(
+                                      requestData:
+                                          CollectorsRequestsCubit.get(context)
+                                              .requestsData[index]);
+                                },
+                                itemCount: CollectorsRequestsCubit.get(context)
+                                    .requestsData
+                                    .length,
+                              ),
+                            );
+                          },
                         ),
+                        const BlocListenerForCollectorsRequestsCubit()
                       ],
                     ),
                   )

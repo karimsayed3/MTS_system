@@ -25,7 +25,7 @@ class DioFactory {
   }
 
   static void addDioInterceptor() async {
-    dio?.interceptors.add(AppInterceptor(dio: dio??Dio(),token: await CacheHelper.getdata(key: 'token')));
+    dio?.interceptors.add(AppInterceptor(dio: dio??Dio(),token: await CacheHelper.getdata(key: 'token')??""));
     dio?.interceptors.add(
       PrettyDioLogger(
         requestBody: true,

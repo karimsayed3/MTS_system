@@ -4,6 +4,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:system/core/helpers/spacing.dart';
 import 'package:system/core/theming/colors.dart';
 import 'package:system/core/widgets/default_text.dart';
+import 'package:system/features/collectors_screen/business_logic/collectors_cubit.dart';
+import 'package:system/features/collectors_screen/data/models/delete_user_request_body.dart';
+import 'package:system/features/collectors_screen/data/models/get_users_response.dart';
 import 'package:system/features/collectors_screen/presentation/desktop/widgets/update_collector_widget.dart';
 import 'package:system/features/subscribers_screen/presentation/desktop/widgets/update_subsciber_widget.dart';
 
@@ -11,7 +14,8 @@ import '../../../../../core/widgets/show_alert_dialog.dart';
 import '../../desktop/widgets/delete_collector_widget.dart';
 
 class CollectorsCardWidgetMobile extends StatefulWidget {
-  const CollectorsCardWidgetMobile({super.key});
+  const CollectorsCardWidgetMobile({super.key, required this.user});
+  final UserData user;
 
   @override
   State<CollectorsCardWidgetMobile> createState() => _CollectorsCardWidgetMobileState();
@@ -40,7 +44,7 @@ class _CollectorsCardWidgetMobileState extends State<CollectorsCardWidgetMobile>
           SizedBox(
             width: 130.w,
             child: DefaultText(
-              text: 'ابو خديجة',
+              text: widget.user.name ?? '',
               fontSize: 16.sp,
               fontFamily: 'din',
               fontWeight: FontWeight.w400,
@@ -60,7 +64,7 @@ class _CollectorsCardWidgetMobileState extends State<CollectorsCardWidgetMobile>
                 horizontalSpace(5.w),
                 Expanded(
                   child: DefaultText(
-                    text: '100000',
+                    text: widget.user.collectorBalance.toString(),
                     color: ColorsManager.secondaryColor,
                     fontSize: 16.sp,
                     fontWeight: FontWeight.w400,
@@ -93,7 +97,7 @@ class _CollectorsCardWidgetMobileState extends State<CollectorsCardWidgetMobile>
                         ),
                         horizontalSpace(5.w),
                         DefaultText(
-                          text: '35',
+                          text: widget.user.cashCollected.toString(),
                           color: ColorsManager.orangeColor,
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w400,
@@ -121,7 +125,7 @@ class _CollectorsCardWidgetMobileState extends State<CollectorsCardWidgetMobile>
                         ),
                         horizontalSpace(5.w),
                         DefaultText(
-                          text: '150',
+                          text: widget.user.totalCollected.toString(),
                           color: ColorsManager.secondaryColor,
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w400,
@@ -146,9 +150,9 @@ class _CollectorsCardWidgetMobileState extends State<CollectorsCardWidgetMobile>
                   showDataAlert(
                     context: context,
                     child: UpdateCollectorWidget(
-                      userId: 0,
-                      name: "كريم سيد ابراهيم عبدالتواب",
-                      email: "abokhadiga6@gmail.com",
+                      userId: widget.user.userID!,
+                      name:  widget.user.name ?? "",
+                      email:  widget.user.email ?? "",
                     ),
                   );
                 } else if (choice == 'option2') {
@@ -156,8 +160,13 @@ class _CollectorsCardWidgetMobileState extends State<CollectorsCardWidgetMobile>
                   showDataAlert(
                     context: context,
                     child: DeleteCollectorWidget(
-                      onPressed: () {},
-                      collectorName: "كريم سيد ابراهيم عبدالتواب",
+                      onPressed: () {
+                        CollectorsCubit.get(context).deleteUser(
+                            deleteUserRequestBody: DeleteUserRequestBody(
+                              userID: widget.user.userID!,
+                            ));
+                      },
+                      collectorName: widget.user.name ?? "",
                     ),
                   );
                 }

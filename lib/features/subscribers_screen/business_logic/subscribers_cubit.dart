@@ -1,5 +1,8 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:system/features/disabled_customers_screen/data/models/get_disabled_subscribers_response.dart';
+import 'package:system/features/late_customers_screen/data/models/get_late_subscribers_response.dart';
 import 'package:system/features/subscribers_screen/business_logic/subscribers_state.dart';
 import 'package:system/features/subscribers_screen/data/models/activate_subscriber_request_body.dart';
 import 'package:system/features/subscribers_screen/data/models/add_new_subscriber_request_body.dart';
@@ -10,6 +13,7 @@ import 'package:system/features/subscribers_screen/data/models/get_subscribers_d
 import 'package:system/features/subscribers_screen/data/models/update_subscriber_request_body.dart';
 import 'package:system/features/subscribers_screen/data/models/withdraw_subscriber_request_body.dart';
 import 'package:system/features/subscribers_screen/data/repository/subscribers_repository.dart';
+import 'package:system/features/withdrawn_customers_screen/data/models/get_withdraw_subscribers_response.dart';
 
 import '../data/models/collect_subscriber_balance_request_body.dart';
 import '../data/models/get_disabled_subscribers_request_body.dart';
@@ -24,15 +28,70 @@ class SubscribersCubit extends Cubit<SubscribersState> {
 
   static SubscribersCubit get(context) => BlocProvider.of(context);
 
+  /// filter for activated subscribers
+  TextEditingController activatedSubscriberPhone = TextEditingController();
+  TextEditingController activatedSubscriberName = TextEditingController();
+  TextEditingController activatedSubscriberRelatedTo = TextEditingController();
+  TextEditingController activatedSubscriberPlanName = TextEditingController();
+  TextEditingController activatedSubscriberLineType = TextEditingController();
+
+  /// filter for late subscribers
+  TextEditingController lateSubscriberPhone = TextEditingController();
+  TextEditingController lateSubscriberName = TextEditingController();
+  TextEditingController lateSubscriberRelatedTo =TextEditingController();
+  TextEditingController lateSubscriberPlanName = TextEditingController();
+  TextEditingController lateSubscriberCollectorName = TextEditingController();
+  TextEditingController lateSubscriberMonthsLate = TextEditingController();
+
+  /// filter for disabled subscribers
+  TextEditingController disabledSubscriberPhone = TextEditingController();
+  TextEditingController disabledSubscriberName = TextEditingController();
+  TextEditingController disabledSubscriberRelatedTo = TextEditingController();
+  TextEditingController disabledSubscriberPlanName = TextEditingController();
+  TextEditingController disabledSubscriberLineType = TextEditingController();
+  TextEditingController disabledSubscriberCollectorName = TextEditingController();
+  TextEditingController disabledSubscriberCompanyName = TextEditingController();
+
+  /// filter for withdrawn subscribers
+  TextEditingController withdrawnSubscriberPhone =TextEditingController();
+  TextEditingController withdrawnSubscriberName = TextEditingController();
+  TextEditingController withdrawnSubscriberRelatedTo = TextEditingController();
+  TextEditingController withdrawnSubscriberPlanName = TextEditingController();
+  TextEditingController withdrawnSubscriberLineType = TextEditingController();
+  TextEditingController withdrawnSubscriberCollectorName = TextEditingController();
+  TextEditingController withdrawnSubscriberCompanyName = TextEditingController();
 
   List<SubscriberData> subscribers = [];
+  List<LateSubscriberData> lateSubscribers = [];
+  List<DisabledSubscriberData> disableSubscribers = [];
+  List<WithdrawnSubscriberData> withdrawSubscribers = [];
 
   changeListData({
-    required List<SubscriberData> subscribers
+    required  List<SubscriberData>  subscribers
   }){
     emit(const SubscribersState.changeListData());
     this.subscribers = subscribers;
   }
+
+  changeLateSubscriberData({
+    required List<LateSubscriberData> lateSubscribers
+  }){
+    emit(const SubscribersState.changeListData());
+    this.lateSubscribers = lateSubscribers;
+  }
+  changeDisabledSubscribersData({
+    required List<DisabledSubscriberData> disableSubscribers
+  }){
+    emit(const SubscribersState.changeListData());
+    this.disableSubscribers = disableSubscribers;
+  }
+  changeWithdrawSubscribersData({
+    required List<WithdrawnSubscriberData> withdrawSubscribers
+  }){
+    emit(const SubscribersState.changeListData());
+    this.withdrawSubscribers = withdrawSubscribers;
+  }
+
 
   Future<void> addNewSubscriber(
       {required AddNewSubscriberRequestBody

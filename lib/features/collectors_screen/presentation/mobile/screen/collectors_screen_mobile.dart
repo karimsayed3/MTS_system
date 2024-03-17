@@ -1,17 +1,39 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:system/core/theming/colors.dart';
 import 'package:system/core/widgets/button_with_text_and_image.dart';
 import 'package:system/core/widgets/custom_search_widget.dart';
 import 'package:system/core/widgets/show_alert_dialog.dart';
 import 'package:system/core/widgets/title_of_screen_with_logo_widget.dart';
+import 'package:system/features/collectors_screen/business_logic/collectors_cubit.dart';
+import 'package:system/features/collectors_screen/business_logic/collectors_state.dart';
+import 'package:system/features/collectors_screen/data/models/get_users_request_body.dart';
+import 'package:system/features/collectors_screen/presentation/desktop/widgets/bloc_listener_collectos_cubit.dart';
 
 import '../../desktop/widgets/add_collector_widget.dart';
 import '../widgets/collectors_card_for_mobile.dart';
 import '../widgets/collectors_header_widget_mobile.dart';
 
-class CollectorsScreenMobile extends StatelessWidget {
+class CollectorsScreenMobile extends StatefulWidget {
   const CollectorsScreenMobile({super.key});
+
+  @override
+  State<CollectorsScreenMobile> createState() => _CollectorsScreenMobileState();
+}
+
+class _CollectorsScreenMobileState extends State<CollectorsScreenMobile> {
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    CollectorsCubit.get(context).getUsers(
+      getUsersRequestBody: GetUsersRequestBody(
+        username: '',
+      ),
+    );
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -27,17 +49,17 @@ class CollectorsScreenMobile extends StatelessWidget {
               Container(
                 padding: EdgeInsets.symmetric(vertical: 10.h),
                 color: Colors.transparent,
-                child:   Row(
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    TitleForScreenWithWidget(
+                    const TitleForScreenWithWidget(
                       title: "المحصلون",
                     ),
                     ButtonWithTextAndImageWidget(
                       onPressed: () {
                         showDataAlert(
                             context: context,
-                            child: AddCollectorWidget(
+                            child: const AddCollectorWidget(
                               // onPressed: () {},
                             ));
                       },
@@ -58,25 +80,39 @@ class CollectorsScreenMobile extends StatelessWidget {
                 // color: Colors.blueAccent,
                 child: CustomSearchWidget(
                   width: double.infinity,
-                  searchController: TextEditingController(),
+                  searchController: CollectorsCubit.get(context).searchController,
+                  onChange: (value) {
+                    CollectorsCubit.get(context).getUsers(
+                      getUsersRequestBody: GetUsersRequestBody(
+                        username: value,
+                      ),
+                    );
+                  },
                 ),
               ),
               Expanded(
                 child: Column(
                   children: [
                     const CollectorsHeaderWidgetMobile(),
-                    Expanded(
-                      child: ListView.builder(
-                        itemBuilder: (context, index) {
-                          return const CollectorsCardWidgetMobile();
-                          // return const SizedBox.shrink();
-                        },
-                        itemCount: 20,
-                      ),
+                    BlocBuilder<CollectorsCubit, CollectorsState>(
+                      builder: (context, state) {
+                        return Expanded(
+                          child: ListView.builder(
+                            itemBuilder: (context, index) {
+                              return CollectorsCardWidgetMobile(
+                                user: CollectorsCubit.get(context).users[index],
+                              );
+                              // return const SizedBox.shrink();
+                            },
+                            itemCount: CollectorsCubit.get(context).users.length,
+                          ),
+                        );
+                      },
                     ),
                   ],
                 ),
               ),
+              const BlocListenerCollectorsCubit(),
             ],
           ),
         ),

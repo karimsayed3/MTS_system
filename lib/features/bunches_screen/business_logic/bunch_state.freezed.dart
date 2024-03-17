@@ -31,6 +31,14 @@ mixin _$BunchState<T> {
     required TResult Function() deletePlanLoadingState,
     required TResult Function(DefaultApiResponse data) deletePlanSuccessState,
     required TResult Function(String error) deletePlanErrorState,
+    required TResult Function() getPlansListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getPlansListSuccessState,
+    required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() getCompaniesListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getCompaniesListSuccessState,
+    required TResult Function(String error) getCompaniesListErrorState,
     required TResult Function() changeListData,
   }) =>
       throw _privateConstructorUsedError;
@@ -49,6 +57,14 @@ mixin _$BunchState<T> {
     TResult? Function()? deletePlanLoadingState,
     TResult? Function(DefaultApiResponse data)? deletePlanSuccessState,
     TResult? Function(String error)? deletePlanErrorState,
+    TResult? Function()? getPlansListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? getCompaniesListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult? Function(String error)? getCompaniesListErrorState,
     TResult? Function()? changeListData,
   }) =>
       throw _privateConstructorUsedError;
@@ -67,6 +83,14 @@ mixin _$BunchState<T> {
     TResult Function()? deletePlanLoadingState,
     TResult Function(DefaultApiResponse data)? deletePlanSuccessState,
     TResult Function(String error)? deletePlanErrorState,
+    TResult Function()? getPlansListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? getCompaniesListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult Function(String error)? getCompaniesListErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) =>
@@ -94,6 +118,18 @@ mixin _$BunchState<T> {
         deletePlanSuccessState,
     required TResult Function(DeletePlanErrorState<T> value)
         deletePlanErrorState,
+    required TResult Function(GetPlansListloadingState<T> value)
+        getPlansListLoadingState,
+    required TResult Function(GetPlansListSuccessState<T> value)
+        getPlansListSuccessState,
+    required TResult Function(GetPlansListErrorState<T> value)
+        getPlansListErrorState,
+    required TResult Function(GetCompaniesListloadingState<T> value)
+        getCompaniesListLoadingState,
+    required TResult Function(GetCompaniesListSuccessState<T> value)
+        getCompaniesListSuccessState,
+    required TResult Function(GetCompaniesListErrorState<T> value)
+        getCompaniesListErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) =>
       throw _privateConstructorUsedError;
@@ -112,6 +148,17 @@ mixin _$BunchState<T> {
     TResult? Function(DeletePlanLoadingState<T> value)? deletePlanLoadingState,
     TResult? Function(DeletePlanSuccessState<T> value)? deletePlanSuccessState,
     TResult? Function(DeletePlanErrorState<T> value)? deletePlanErrorState,
+    TResult? Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult? Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult? Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult? Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) =>
       throw _privateConstructorUsedError;
@@ -130,6 +177,17 @@ mixin _$BunchState<T> {
     TResult Function(DeletePlanLoadingState<T> value)? deletePlanLoadingState,
     TResult Function(DeletePlanSuccessState<T> value)? deletePlanSuccessState,
     TResult Function(DeletePlanErrorState<T> value)? deletePlanErrorState,
+    TResult Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) =>
@@ -205,6 +263,14 @@ class _$InitialImpl<T> implements Initial<T> {
     required TResult Function() deletePlanLoadingState,
     required TResult Function(DefaultApiResponse data) deletePlanSuccessState,
     required TResult Function(String error) deletePlanErrorState,
+    required TResult Function() getPlansListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getPlansListSuccessState,
+    required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() getCompaniesListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getCompaniesListSuccessState,
+    required TResult Function(String error) getCompaniesListErrorState,
     required TResult Function() changeListData,
   }) {
     return initial();
@@ -226,6 +292,14 @@ class _$InitialImpl<T> implements Initial<T> {
     TResult? Function()? deletePlanLoadingState,
     TResult? Function(DefaultApiResponse data)? deletePlanSuccessState,
     TResult? Function(String error)? deletePlanErrorState,
+    TResult? Function()? getPlansListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? getCompaniesListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult? Function(String error)? getCompaniesListErrorState,
     TResult? Function()? changeListData,
   }) {
     return initial?.call();
@@ -247,6 +321,14 @@ class _$InitialImpl<T> implements Initial<T> {
     TResult Function()? deletePlanLoadingState,
     TResult Function(DefaultApiResponse data)? deletePlanSuccessState,
     TResult Function(String error)? deletePlanErrorState,
+    TResult Function()? getPlansListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? getCompaniesListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult Function(String error)? getCompaniesListErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -280,6 +362,18 @@ class _$InitialImpl<T> implements Initial<T> {
         deletePlanSuccessState,
     required TResult Function(DeletePlanErrorState<T> value)
         deletePlanErrorState,
+    required TResult Function(GetPlansListloadingState<T> value)
+        getPlansListLoadingState,
+    required TResult Function(GetPlansListSuccessState<T> value)
+        getPlansListSuccessState,
+    required TResult Function(GetPlansListErrorState<T> value)
+        getPlansListErrorState,
+    required TResult Function(GetCompaniesListloadingState<T> value)
+        getCompaniesListLoadingState,
+    required TResult Function(GetCompaniesListSuccessState<T> value)
+        getCompaniesListSuccessState,
+    required TResult Function(GetCompaniesListErrorState<T> value)
+        getCompaniesListErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return initial(this);
@@ -301,6 +395,17 @@ class _$InitialImpl<T> implements Initial<T> {
     TResult? Function(DeletePlanLoadingState<T> value)? deletePlanLoadingState,
     TResult? Function(DeletePlanSuccessState<T> value)? deletePlanSuccessState,
     TResult? Function(DeletePlanErrorState<T> value)? deletePlanErrorState,
+    TResult? Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult? Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult? Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult? Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return initial?.call(this);
@@ -322,6 +427,17 @@ class _$InitialImpl<T> implements Initial<T> {
     TResult Function(DeletePlanLoadingState<T> value)? deletePlanLoadingState,
     TResult Function(DeletePlanSuccessState<T> value)? deletePlanSuccessState,
     TResult Function(DeletePlanErrorState<T> value)? deletePlanErrorState,
+    TResult Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -389,6 +505,14 @@ class _$GetPlansLoadingStateImpl<T> implements GetPlansLoadingState<T> {
     required TResult Function() deletePlanLoadingState,
     required TResult Function(DefaultApiResponse data) deletePlanSuccessState,
     required TResult Function(String error) deletePlanErrorState,
+    required TResult Function() getPlansListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getPlansListSuccessState,
+    required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() getCompaniesListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getCompaniesListSuccessState,
+    required TResult Function(String error) getCompaniesListErrorState,
     required TResult Function() changeListData,
   }) {
     return getPlansLoadingState();
@@ -410,6 +534,14 @@ class _$GetPlansLoadingStateImpl<T> implements GetPlansLoadingState<T> {
     TResult? Function()? deletePlanLoadingState,
     TResult? Function(DefaultApiResponse data)? deletePlanSuccessState,
     TResult? Function(String error)? deletePlanErrorState,
+    TResult? Function()? getPlansListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? getCompaniesListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult? Function(String error)? getCompaniesListErrorState,
     TResult? Function()? changeListData,
   }) {
     return getPlansLoadingState?.call();
@@ -431,6 +563,14 @@ class _$GetPlansLoadingStateImpl<T> implements GetPlansLoadingState<T> {
     TResult Function()? deletePlanLoadingState,
     TResult Function(DefaultApiResponse data)? deletePlanSuccessState,
     TResult Function(String error)? deletePlanErrorState,
+    TResult Function()? getPlansListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? getCompaniesListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult Function(String error)? getCompaniesListErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -464,6 +604,18 @@ class _$GetPlansLoadingStateImpl<T> implements GetPlansLoadingState<T> {
         deletePlanSuccessState,
     required TResult Function(DeletePlanErrorState<T> value)
         deletePlanErrorState,
+    required TResult Function(GetPlansListloadingState<T> value)
+        getPlansListLoadingState,
+    required TResult Function(GetPlansListSuccessState<T> value)
+        getPlansListSuccessState,
+    required TResult Function(GetPlansListErrorState<T> value)
+        getPlansListErrorState,
+    required TResult Function(GetCompaniesListloadingState<T> value)
+        getCompaniesListLoadingState,
+    required TResult Function(GetCompaniesListSuccessState<T> value)
+        getCompaniesListSuccessState,
+    required TResult Function(GetCompaniesListErrorState<T> value)
+        getCompaniesListErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return getPlansLoadingState(this);
@@ -485,6 +637,17 @@ class _$GetPlansLoadingStateImpl<T> implements GetPlansLoadingState<T> {
     TResult? Function(DeletePlanLoadingState<T> value)? deletePlanLoadingState,
     TResult? Function(DeletePlanSuccessState<T> value)? deletePlanSuccessState,
     TResult? Function(DeletePlanErrorState<T> value)? deletePlanErrorState,
+    TResult? Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult? Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult? Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult? Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return getPlansLoadingState?.call(this);
@@ -506,6 +669,17 @@ class _$GetPlansLoadingStateImpl<T> implements GetPlansLoadingState<T> {
     TResult Function(DeletePlanLoadingState<T> value)? deletePlanLoadingState,
     TResult Function(DeletePlanSuccessState<T> value)? deletePlanSuccessState,
     TResult Function(DeletePlanErrorState<T> value)? deletePlanErrorState,
+    TResult Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -599,6 +773,14 @@ class _$GetPlansSuccessStateImpl<T> implements GetPlansSuccessState<T> {
     required TResult Function() deletePlanLoadingState,
     required TResult Function(DefaultApiResponse data) deletePlanSuccessState,
     required TResult Function(String error) deletePlanErrorState,
+    required TResult Function() getPlansListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getPlansListSuccessState,
+    required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() getCompaniesListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getCompaniesListSuccessState,
+    required TResult Function(String error) getCompaniesListErrorState,
     required TResult Function() changeListData,
   }) {
     return getPlansSuccessState(data);
@@ -620,6 +802,14 @@ class _$GetPlansSuccessStateImpl<T> implements GetPlansSuccessState<T> {
     TResult? Function()? deletePlanLoadingState,
     TResult? Function(DefaultApiResponse data)? deletePlanSuccessState,
     TResult? Function(String error)? deletePlanErrorState,
+    TResult? Function()? getPlansListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? getCompaniesListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult? Function(String error)? getCompaniesListErrorState,
     TResult? Function()? changeListData,
   }) {
     return getPlansSuccessState?.call(data);
@@ -641,6 +831,14 @@ class _$GetPlansSuccessStateImpl<T> implements GetPlansSuccessState<T> {
     TResult Function()? deletePlanLoadingState,
     TResult Function(DefaultApiResponse data)? deletePlanSuccessState,
     TResult Function(String error)? deletePlanErrorState,
+    TResult Function()? getPlansListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? getCompaniesListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult Function(String error)? getCompaniesListErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -674,6 +872,18 @@ class _$GetPlansSuccessStateImpl<T> implements GetPlansSuccessState<T> {
         deletePlanSuccessState,
     required TResult Function(DeletePlanErrorState<T> value)
         deletePlanErrorState,
+    required TResult Function(GetPlansListloadingState<T> value)
+        getPlansListLoadingState,
+    required TResult Function(GetPlansListSuccessState<T> value)
+        getPlansListSuccessState,
+    required TResult Function(GetPlansListErrorState<T> value)
+        getPlansListErrorState,
+    required TResult Function(GetCompaniesListloadingState<T> value)
+        getCompaniesListLoadingState,
+    required TResult Function(GetCompaniesListSuccessState<T> value)
+        getCompaniesListSuccessState,
+    required TResult Function(GetCompaniesListErrorState<T> value)
+        getCompaniesListErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return getPlansSuccessState(this);
@@ -695,6 +905,17 @@ class _$GetPlansSuccessStateImpl<T> implements GetPlansSuccessState<T> {
     TResult? Function(DeletePlanLoadingState<T> value)? deletePlanLoadingState,
     TResult? Function(DeletePlanSuccessState<T> value)? deletePlanSuccessState,
     TResult? Function(DeletePlanErrorState<T> value)? deletePlanErrorState,
+    TResult? Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult? Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult? Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult? Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return getPlansSuccessState?.call(this);
@@ -716,6 +937,17 @@ class _$GetPlansSuccessStateImpl<T> implements GetPlansSuccessState<T> {
     TResult Function(DeletePlanLoadingState<T> value)? deletePlanLoadingState,
     TResult Function(DeletePlanSuccessState<T> value)? deletePlanSuccessState,
     TResult Function(DeletePlanErrorState<T> value)? deletePlanErrorState,
+    TResult Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -814,6 +1046,14 @@ class _$GetPlansErrorStateImpl<T> implements GetPlansErrorState<T> {
     required TResult Function() deletePlanLoadingState,
     required TResult Function(DefaultApiResponse data) deletePlanSuccessState,
     required TResult Function(String error) deletePlanErrorState,
+    required TResult Function() getPlansListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getPlansListSuccessState,
+    required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() getCompaniesListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getCompaniesListSuccessState,
+    required TResult Function(String error) getCompaniesListErrorState,
     required TResult Function() changeListData,
   }) {
     return getPlansErrorState(error);
@@ -835,6 +1075,14 @@ class _$GetPlansErrorStateImpl<T> implements GetPlansErrorState<T> {
     TResult? Function()? deletePlanLoadingState,
     TResult? Function(DefaultApiResponse data)? deletePlanSuccessState,
     TResult? Function(String error)? deletePlanErrorState,
+    TResult? Function()? getPlansListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? getCompaniesListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult? Function(String error)? getCompaniesListErrorState,
     TResult? Function()? changeListData,
   }) {
     return getPlansErrorState?.call(error);
@@ -856,6 +1104,14 @@ class _$GetPlansErrorStateImpl<T> implements GetPlansErrorState<T> {
     TResult Function()? deletePlanLoadingState,
     TResult Function(DefaultApiResponse data)? deletePlanSuccessState,
     TResult Function(String error)? deletePlanErrorState,
+    TResult Function()? getPlansListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? getCompaniesListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult Function(String error)? getCompaniesListErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -889,6 +1145,18 @@ class _$GetPlansErrorStateImpl<T> implements GetPlansErrorState<T> {
         deletePlanSuccessState,
     required TResult Function(DeletePlanErrorState<T> value)
         deletePlanErrorState,
+    required TResult Function(GetPlansListloadingState<T> value)
+        getPlansListLoadingState,
+    required TResult Function(GetPlansListSuccessState<T> value)
+        getPlansListSuccessState,
+    required TResult Function(GetPlansListErrorState<T> value)
+        getPlansListErrorState,
+    required TResult Function(GetCompaniesListloadingState<T> value)
+        getCompaniesListLoadingState,
+    required TResult Function(GetCompaniesListSuccessState<T> value)
+        getCompaniesListSuccessState,
+    required TResult Function(GetCompaniesListErrorState<T> value)
+        getCompaniesListErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return getPlansErrorState(this);
@@ -910,6 +1178,17 @@ class _$GetPlansErrorStateImpl<T> implements GetPlansErrorState<T> {
     TResult? Function(DeletePlanLoadingState<T> value)? deletePlanLoadingState,
     TResult? Function(DeletePlanSuccessState<T> value)? deletePlanSuccessState,
     TResult? Function(DeletePlanErrorState<T> value)? deletePlanErrorState,
+    TResult? Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult? Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult? Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult? Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return getPlansErrorState?.call(this);
@@ -931,6 +1210,17 @@ class _$GetPlansErrorStateImpl<T> implements GetPlansErrorState<T> {
     TResult Function(DeletePlanLoadingState<T> value)? deletePlanLoadingState,
     TResult Function(DeletePlanSuccessState<T> value)? deletePlanSuccessState,
     TResult Function(DeletePlanErrorState<T> value)? deletePlanErrorState,
+    TResult Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -1005,6 +1295,14 @@ class _$UpdatePlanLoadingStateImpl<T> implements UpdatePlanLoadingState<T> {
     required TResult Function() deletePlanLoadingState,
     required TResult Function(DefaultApiResponse data) deletePlanSuccessState,
     required TResult Function(String error) deletePlanErrorState,
+    required TResult Function() getPlansListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getPlansListSuccessState,
+    required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() getCompaniesListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getCompaniesListSuccessState,
+    required TResult Function(String error) getCompaniesListErrorState,
     required TResult Function() changeListData,
   }) {
     return updatePlanLoadingState();
@@ -1026,6 +1324,14 @@ class _$UpdatePlanLoadingStateImpl<T> implements UpdatePlanLoadingState<T> {
     TResult? Function()? deletePlanLoadingState,
     TResult? Function(DefaultApiResponse data)? deletePlanSuccessState,
     TResult? Function(String error)? deletePlanErrorState,
+    TResult? Function()? getPlansListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? getCompaniesListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult? Function(String error)? getCompaniesListErrorState,
     TResult? Function()? changeListData,
   }) {
     return updatePlanLoadingState?.call();
@@ -1047,6 +1353,14 @@ class _$UpdatePlanLoadingStateImpl<T> implements UpdatePlanLoadingState<T> {
     TResult Function()? deletePlanLoadingState,
     TResult Function(DefaultApiResponse data)? deletePlanSuccessState,
     TResult Function(String error)? deletePlanErrorState,
+    TResult Function()? getPlansListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? getCompaniesListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult Function(String error)? getCompaniesListErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -1080,6 +1394,18 @@ class _$UpdatePlanLoadingStateImpl<T> implements UpdatePlanLoadingState<T> {
         deletePlanSuccessState,
     required TResult Function(DeletePlanErrorState<T> value)
         deletePlanErrorState,
+    required TResult Function(GetPlansListloadingState<T> value)
+        getPlansListLoadingState,
+    required TResult Function(GetPlansListSuccessState<T> value)
+        getPlansListSuccessState,
+    required TResult Function(GetPlansListErrorState<T> value)
+        getPlansListErrorState,
+    required TResult Function(GetCompaniesListloadingState<T> value)
+        getCompaniesListLoadingState,
+    required TResult Function(GetCompaniesListSuccessState<T> value)
+        getCompaniesListSuccessState,
+    required TResult Function(GetCompaniesListErrorState<T> value)
+        getCompaniesListErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return updatePlanLoadingState(this);
@@ -1101,6 +1427,17 @@ class _$UpdatePlanLoadingStateImpl<T> implements UpdatePlanLoadingState<T> {
     TResult? Function(DeletePlanLoadingState<T> value)? deletePlanLoadingState,
     TResult? Function(DeletePlanSuccessState<T> value)? deletePlanSuccessState,
     TResult? Function(DeletePlanErrorState<T> value)? deletePlanErrorState,
+    TResult? Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult? Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult? Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult? Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return updatePlanLoadingState?.call(this);
@@ -1122,6 +1459,17 @@ class _$UpdatePlanLoadingStateImpl<T> implements UpdatePlanLoadingState<T> {
     TResult Function(DeletePlanLoadingState<T> value)? deletePlanLoadingState,
     TResult Function(DeletePlanSuccessState<T> value)? deletePlanSuccessState,
     TResult Function(DeletePlanErrorState<T> value)? deletePlanErrorState,
+    TResult Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -1216,6 +1564,14 @@ class _$UpdatePlanSuccessStateImpl<T> implements UpdatePlanSuccessState<T> {
     required TResult Function() deletePlanLoadingState,
     required TResult Function(DefaultApiResponse data) deletePlanSuccessState,
     required TResult Function(String error) deletePlanErrorState,
+    required TResult Function() getPlansListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getPlansListSuccessState,
+    required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() getCompaniesListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getCompaniesListSuccessState,
+    required TResult Function(String error) getCompaniesListErrorState,
     required TResult Function() changeListData,
   }) {
     return updatePlanSuccessState(data);
@@ -1237,6 +1593,14 @@ class _$UpdatePlanSuccessStateImpl<T> implements UpdatePlanSuccessState<T> {
     TResult? Function()? deletePlanLoadingState,
     TResult? Function(DefaultApiResponse data)? deletePlanSuccessState,
     TResult? Function(String error)? deletePlanErrorState,
+    TResult? Function()? getPlansListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? getCompaniesListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult? Function(String error)? getCompaniesListErrorState,
     TResult? Function()? changeListData,
   }) {
     return updatePlanSuccessState?.call(data);
@@ -1258,6 +1622,14 @@ class _$UpdatePlanSuccessStateImpl<T> implements UpdatePlanSuccessState<T> {
     TResult Function()? deletePlanLoadingState,
     TResult Function(DefaultApiResponse data)? deletePlanSuccessState,
     TResult Function(String error)? deletePlanErrorState,
+    TResult Function()? getPlansListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? getCompaniesListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult Function(String error)? getCompaniesListErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -1291,6 +1663,18 @@ class _$UpdatePlanSuccessStateImpl<T> implements UpdatePlanSuccessState<T> {
         deletePlanSuccessState,
     required TResult Function(DeletePlanErrorState<T> value)
         deletePlanErrorState,
+    required TResult Function(GetPlansListloadingState<T> value)
+        getPlansListLoadingState,
+    required TResult Function(GetPlansListSuccessState<T> value)
+        getPlansListSuccessState,
+    required TResult Function(GetPlansListErrorState<T> value)
+        getPlansListErrorState,
+    required TResult Function(GetCompaniesListloadingState<T> value)
+        getCompaniesListLoadingState,
+    required TResult Function(GetCompaniesListSuccessState<T> value)
+        getCompaniesListSuccessState,
+    required TResult Function(GetCompaniesListErrorState<T> value)
+        getCompaniesListErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return updatePlanSuccessState(this);
@@ -1312,6 +1696,17 @@ class _$UpdatePlanSuccessStateImpl<T> implements UpdatePlanSuccessState<T> {
     TResult? Function(DeletePlanLoadingState<T> value)? deletePlanLoadingState,
     TResult? Function(DeletePlanSuccessState<T> value)? deletePlanSuccessState,
     TResult? Function(DeletePlanErrorState<T> value)? deletePlanErrorState,
+    TResult? Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult? Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult? Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult? Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return updatePlanSuccessState?.call(this);
@@ -1333,6 +1728,17 @@ class _$UpdatePlanSuccessStateImpl<T> implements UpdatePlanSuccessState<T> {
     TResult Function(DeletePlanLoadingState<T> value)? deletePlanLoadingState,
     TResult Function(DeletePlanSuccessState<T> value)? deletePlanSuccessState,
     TResult Function(DeletePlanErrorState<T> value)? deletePlanErrorState,
+    TResult Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -1432,6 +1838,14 @@ class _$UpdatePlanErrorStateImpl<T> implements UpdatePlanErrorState<T> {
     required TResult Function() deletePlanLoadingState,
     required TResult Function(DefaultApiResponse data) deletePlanSuccessState,
     required TResult Function(String error) deletePlanErrorState,
+    required TResult Function() getPlansListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getPlansListSuccessState,
+    required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() getCompaniesListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getCompaniesListSuccessState,
+    required TResult Function(String error) getCompaniesListErrorState,
     required TResult Function() changeListData,
   }) {
     return updatePlanErrorState(error);
@@ -1453,6 +1867,14 @@ class _$UpdatePlanErrorStateImpl<T> implements UpdatePlanErrorState<T> {
     TResult? Function()? deletePlanLoadingState,
     TResult? Function(DefaultApiResponse data)? deletePlanSuccessState,
     TResult? Function(String error)? deletePlanErrorState,
+    TResult? Function()? getPlansListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? getCompaniesListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult? Function(String error)? getCompaniesListErrorState,
     TResult? Function()? changeListData,
   }) {
     return updatePlanErrorState?.call(error);
@@ -1474,6 +1896,14 @@ class _$UpdatePlanErrorStateImpl<T> implements UpdatePlanErrorState<T> {
     TResult Function()? deletePlanLoadingState,
     TResult Function(DefaultApiResponse data)? deletePlanSuccessState,
     TResult Function(String error)? deletePlanErrorState,
+    TResult Function()? getPlansListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? getCompaniesListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult Function(String error)? getCompaniesListErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -1507,6 +1937,18 @@ class _$UpdatePlanErrorStateImpl<T> implements UpdatePlanErrorState<T> {
         deletePlanSuccessState,
     required TResult Function(DeletePlanErrorState<T> value)
         deletePlanErrorState,
+    required TResult Function(GetPlansListloadingState<T> value)
+        getPlansListLoadingState,
+    required TResult Function(GetPlansListSuccessState<T> value)
+        getPlansListSuccessState,
+    required TResult Function(GetPlansListErrorState<T> value)
+        getPlansListErrorState,
+    required TResult Function(GetCompaniesListloadingState<T> value)
+        getCompaniesListLoadingState,
+    required TResult Function(GetCompaniesListSuccessState<T> value)
+        getCompaniesListSuccessState,
+    required TResult Function(GetCompaniesListErrorState<T> value)
+        getCompaniesListErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return updatePlanErrorState(this);
@@ -1528,6 +1970,17 @@ class _$UpdatePlanErrorStateImpl<T> implements UpdatePlanErrorState<T> {
     TResult? Function(DeletePlanLoadingState<T> value)? deletePlanLoadingState,
     TResult? Function(DeletePlanSuccessState<T> value)? deletePlanSuccessState,
     TResult? Function(DeletePlanErrorState<T> value)? deletePlanErrorState,
+    TResult? Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult? Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult? Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult? Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return updatePlanErrorState?.call(this);
@@ -1549,6 +2002,17 @@ class _$UpdatePlanErrorStateImpl<T> implements UpdatePlanErrorState<T> {
     TResult Function(DeletePlanLoadingState<T> value)? deletePlanLoadingState,
     TResult Function(DeletePlanSuccessState<T> value)? deletePlanSuccessState,
     TResult Function(DeletePlanErrorState<T> value)? deletePlanErrorState,
+    TResult Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -1621,6 +2085,14 @@ class _$AddPlanLoadingStateImpl<T> implements AddPlanLoadingState<T> {
     required TResult Function() deletePlanLoadingState,
     required TResult Function(DefaultApiResponse data) deletePlanSuccessState,
     required TResult Function(String error) deletePlanErrorState,
+    required TResult Function() getPlansListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getPlansListSuccessState,
+    required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() getCompaniesListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getCompaniesListSuccessState,
+    required TResult Function(String error) getCompaniesListErrorState,
     required TResult Function() changeListData,
   }) {
     return addPlanLoadingState();
@@ -1642,6 +2114,14 @@ class _$AddPlanLoadingStateImpl<T> implements AddPlanLoadingState<T> {
     TResult? Function()? deletePlanLoadingState,
     TResult? Function(DefaultApiResponse data)? deletePlanSuccessState,
     TResult? Function(String error)? deletePlanErrorState,
+    TResult? Function()? getPlansListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? getCompaniesListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult? Function(String error)? getCompaniesListErrorState,
     TResult? Function()? changeListData,
   }) {
     return addPlanLoadingState?.call();
@@ -1663,6 +2143,14 @@ class _$AddPlanLoadingStateImpl<T> implements AddPlanLoadingState<T> {
     TResult Function()? deletePlanLoadingState,
     TResult Function(DefaultApiResponse data)? deletePlanSuccessState,
     TResult Function(String error)? deletePlanErrorState,
+    TResult Function()? getPlansListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? getCompaniesListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult Function(String error)? getCompaniesListErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -1696,6 +2184,18 @@ class _$AddPlanLoadingStateImpl<T> implements AddPlanLoadingState<T> {
         deletePlanSuccessState,
     required TResult Function(DeletePlanErrorState<T> value)
         deletePlanErrorState,
+    required TResult Function(GetPlansListloadingState<T> value)
+        getPlansListLoadingState,
+    required TResult Function(GetPlansListSuccessState<T> value)
+        getPlansListSuccessState,
+    required TResult Function(GetPlansListErrorState<T> value)
+        getPlansListErrorState,
+    required TResult Function(GetCompaniesListloadingState<T> value)
+        getCompaniesListLoadingState,
+    required TResult Function(GetCompaniesListSuccessState<T> value)
+        getCompaniesListSuccessState,
+    required TResult Function(GetCompaniesListErrorState<T> value)
+        getCompaniesListErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return addPlanLoadingState(this);
@@ -1717,6 +2217,17 @@ class _$AddPlanLoadingStateImpl<T> implements AddPlanLoadingState<T> {
     TResult? Function(DeletePlanLoadingState<T> value)? deletePlanLoadingState,
     TResult? Function(DeletePlanSuccessState<T> value)? deletePlanSuccessState,
     TResult? Function(DeletePlanErrorState<T> value)? deletePlanErrorState,
+    TResult? Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult? Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult? Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult? Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return addPlanLoadingState?.call(this);
@@ -1738,6 +2249,17 @@ class _$AddPlanLoadingStateImpl<T> implements AddPlanLoadingState<T> {
     TResult Function(DeletePlanLoadingState<T> value)? deletePlanLoadingState,
     TResult Function(DeletePlanSuccessState<T> value)? deletePlanSuccessState,
     TResult Function(DeletePlanErrorState<T> value)? deletePlanErrorState,
+    TResult Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -1830,6 +2352,14 @@ class _$AddPlanSuccessStateImpl<T> implements AddPlanSuccessState<T> {
     required TResult Function() deletePlanLoadingState,
     required TResult Function(DefaultApiResponse data) deletePlanSuccessState,
     required TResult Function(String error) deletePlanErrorState,
+    required TResult Function() getPlansListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getPlansListSuccessState,
+    required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() getCompaniesListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getCompaniesListSuccessState,
+    required TResult Function(String error) getCompaniesListErrorState,
     required TResult Function() changeListData,
   }) {
     return addPlanSuccessState(data);
@@ -1851,6 +2381,14 @@ class _$AddPlanSuccessStateImpl<T> implements AddPlanSuccessState<T> {
     TResult? Function()? deletePlanLoadingState,
     TResult? Function(DefaultApiResponse data)? deletePlanSuccessState,
     TResult? Function(String error)? deletePlanErrorState,
+    TResult? Function()? getPlansListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? getCompaniesListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult? Function(String error)? getCompaniesListErrorState,
     TResult? Function()? changeListData,
   }) {
     return addPlanSuccessState?.call(data);
@@ -1872,6 +2410,14 @@ class _$AddPlanSuccessStateImpl<T> implements AddPlanSuccessState<T> {
     TResult Function()? deletePlanLoadingState,
     TResult Function(DefaultApiResponse data)? deletePlanSuccessState,
     TResult Function(String error)? deletePlanErrorState,
+    TResult Function()? getPlansListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? getCompaniesListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult Function(String error)? getCompaniesListErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -1905,6 +2451,18 @@ class _$AddPlanSuccessStateImpl<T> implements AddPlanSuccessState<T> {
         deletePlanSuccessState,
     required TResult Function(DeletePlanErrorState<T> value)
         deletePlanErrorState,
+    required TResult Function(GetPlansListloadingState<T> value)
+        getPlansListLoadingState,
+    required TResult Function(GetPlansListSuccessState<T> value)
+        getPlansListSuccessState,
+    required TResult Function(GetPlansListErrorState<T> value)
+        getPlansListErrorState,
+    required TResult Function(GetCompaniesListloadingState<T> value)
+        getCompaniesListLoadingState,
+    required TResult Function(GetCompaniesListSuccessState<T> value)
+        getCompaniesListSuccessState,
+    required TResult Function(GetCompaniesListErrorState<T> value)
+        getCompaniesListErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return addPlanSuccessState(this);
@@ -1926,6 +2484,17 @@ class _$AddPlanSuccessStateImpl<T> implements AddPlanSuccessState<T> {
     TResult? Function(DeletePlanLoadingState<T> value)? deletePlanLoadingState,
     TResult? Function(DeletePlanSuccessState<T> value)? deletePlanSuccessState,
     TResult? Function(DeletePlanErrorState<T> value)? deletePlanErrorState,
+    TResult? Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult? Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult? Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult? Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return addPlanSuccessState?.call(this);
@@ -1947,6 +2516,17 @@ class _$AddPlanSuccessStateImpl<T> implements AddPlanSuccessState<T> {
     TResult Function(DeletePlanLoadingState<T> value)? deletePlanLoadingState,
     TResult Function(DeletePlanSuccessState<T> value)? deletePlanSuccessState,
     TResult Function(DeletePlanErrorState<T> value)? deletePlanErrorState,
+    TResult Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -2046,6 +2626,14 @@ class _$AddPlanErrorStateImpl<T> implements AddPlanErrorState<T> {
     required TResult Function() deletePlanLoadingState,
     required TResult Function(DefaultApiResponse data) deletePlanSuccessState,
     required TResult Function(String error) deletePlanErrorState,
+    required TResult Function() getPlansListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getPlansListSuccessState,
+    required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() getCompaniesListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getCompaniesListSuccessState,
+    required TResult Function(String error) getCompaniesListErrorState,
     required TResult Function() changeListData,
   }) {
     return addPlanErrorState(error);
@@ -2067,6 +2655,14 @@ class _$AddPlanErrorStateImpl<T> implements AddPlanErrorState<T> {
     TResult? Function()? deletePlanLoadingState,
     TResult? Function(DefaultApiResponse data)? deletePlanSuccessState,
     TResult? Function(String error)? deletePlanErrorState,
+    TResult? Function()? getPlansListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? getCompaniesListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult? Function(String error)? getCompaniesListErrorState,
     TResult? Function()? changeListData,
   }) {
     return addPlanErrorState?.call(error);
@@ -2088,6 +2684,14 @@ class _$AddPlanErrorStateImpl<T> implements AddPlanErrorState<T> {
     TResult Function()? deletePlanLoadingState,
     TResult Function(DefaultApiResponse data)? deletePlanSuccessState,
     TResult Function(String error)? deletePlanErrorState,
+    TResult Function()? getPlansListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? getCompaniesListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult Function(String error)? getCompaniesListErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -2121,6 +2725,18 @@ class _$AddPlanErrorStateImpl<T> implements AddPlanErrorState<T> {
         deletePlanSuccessState,
     required TResult Function(DeletePlanErrorState<T> value)
         deletePlanErrorState,
+    required TResult Function(GetPlansListloadingState<T> value)
+        getPlansListLoadingState,
+    required TResult Function(GetPlansListSuccessState<T> value)
+        getPlansListSuccessState,
+    required TResult Function(GetPlansListErrorState<T> value)
+        getPlansListErrorState,
+    required TResult Function(GetCompaniesListloadingState<T> value)
+        getCompaniesListLoadingState,
+    required TResult Function(GetCompaniesListSuccessState<T> value)
+        getCompaniesListSuccessState,
+    required TResult Function(GetCompaniesListErrorState<T> value)
+        getCompaniesListErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return addPlanErrorState(this);
@@ -2142,6 +2758,17 @@ class _$AddPlanErrorStateImpl<T> implements AddPlanErrorState<T> {
     TResult? Function(DeletePlanLoadingState<T> value)? deletePlanLoadingState,
     TResult? Function(DeletePlanSuccessState<T> value)? deletePlanSuccessState,
     TResult? Function(DeletePlanErrorState<T> value)? deletePlanErrorState,
+    TResult? Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult? Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult? Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult? Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return addPlanErrorState?.call(this);
@@ -2163,6 +2790,17 @@ class _$AddPlanErrorStateImpl<T> implements AddPlanErrorState<T> {
     TResult Function(DeletePlanLoadingState<T> value)? deletePlanLoadingState,
     TResult Function(DeletePlanSuccessState<T> value)? deletePlanSuccessState,
     TResult Function(DeletePlanErrorState<T> value)? deletePlanErrorState,
+    TResult Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -2237,6 +2875,14 @@ class _$DeletePlanLoadingStateImpl<T> implements DeletePlanLoadingState<T> {
     required TResult Function() deletePlanLoadingState,
     required TResult Function(DefaultApiResponse data) deletePlanSuccessState,
     required TResult Function(String error) deletePlanErrorState,
+    required TResult Function() getPlansListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getPlansListSuccessState,
+    required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() getCompaniesListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getCompaniesListSuccessState,
+    required TResult Function(String error) getCompaniesListErrorState,
     required TResult Function() changeListData,
   }) {
     return deletePlanLoadingState();
@@ -2258,6 +2904,14 @@ class _$DeletePlanLoadingStateImpl<T> implements DeletePlanLoadingState<T> {
     TResult? Function()? deletePlanLoadingState,
     TResult? Function(DefaultApiResponse data)? deletePlanSuccessState,
     TResult? Function(String error)? deletePlanErrorState,
+    TResult? Function()? getPlansListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? getCompaniesListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult? Function(String error)? getCompaniesListErrorState,
     TResult? Function()? changeListData,
   }) {
     return deletePlanLoadingState?.call();
@@ -2279,6 +2933,14 @@ class _$DeletePlanLoadingStateImpl<T> implements DeletePlanLoadingState<T> {
     TResult Function()? deletePlanLoadingState,
     TResult Function(DefaultApiResponse data)? deletePlanSuccessState,
     TResult Function(String error)? deletePlanErrorState,
+    TResult Function()? getPlansListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? getCompaniesListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult Function(String error)? getCompaniesListErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -2312,6 +2974,18 @@ class _$DeletePlanLoadingStateImpl<T> implements DeletePlanLoadingState<T> {
         deletePlanSuccessState,
     required TResult Function(DeletePlanErrorState<T> value)
         deletePlanErrorState,
+    required TResult Function(GetPlansListloadingState<T> value)
+        getPlansListLoadingState,
+    required TResult Function(GetPlansListSuccessState<T> value)
+        getPlansListSuccessState,
+    required TResult Function(GetPlansListErrorState<T> value)
+        getPlansListErrorState,
+    required TResult Function(GetCompaniesListloadingState<T> value)
+        getCompaniesListLoadingState,
+    required TResult Function(GetCompaniesListSuccessState<T> value)
+        getCompaniesListSuccessState,
+    required TResult Function(GetCompaniesListErrorState<T> value)
+        getCompaniesListErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return deletePlanLoadingState(this);
@@ -2333,6 +3007,17 @@ class _$DeletePlanLoadingStateImpl<T> implements DeletePlanLoadingState<T> {
     TResult? Function(DeletePlanLoadingState<T> value)? deletePlanLoadingState,
     TResult? Function(DeletePlanSuccessState<T> value)? deletePlanSuccessState,
     TResult? Function(DeletePlanErrorState<T> value)? deletePlanErrorState,
+    TResult? Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult? Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult? Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult? Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return deletePlanLoadingState?.call(this);
@@ -2354,6 +3039,17 @@ class _$DeletePlanLoadingStateImpl<T> implements DeletePlanLoadingState<T> {
     TResult Function(DeletePlanLoadingState<T> value)? deletePlanLoadingState,
     TResult Function(DeletePlanSuccessState<T> value)? deletePlanSuccessState,
     TResult Function(DeletePlanErrorState<T> value)? deletePlanErrorState,
+    TResult Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -2448,6 +3144,14 @@ class _$DeletePlanSuccessStateImpl<T> implements DeletePlanSuccessState<T> {
     required TResult Function() deletePlanLoadingState,
     required TResult Function(DefaultApiResponse data) deletePlanSuccessState,
     required TResult Function(String error) deletePlanErrorState,
+    required TResult Function() getPlansListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getPlansListSuccessState,
+    required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() getCompaniesListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getCompaniesListSuccessState,
+    required TResult Function(String error) getCompaniesListErrorState,
     required TResult Function() changeListData,
   }) {
     return deletePlanSuccessState(data);
@@ -2469,6 +3173,14 @@ class _$DeletePlanSuccessStateImpl<T> implements DeletePlanSuccessState<T> {
     TResult? Function()? deletePlanLoadingState,
     TResult? Function(DefaultApiResponse data)? deletePlanSuccessState,
     TResult? Function(String error)? deletePlanErrorState,
+    TResult? Function()? getPlansListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? getCompaniesListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult? Function(String error)? getCompaniesListErrorState,
     TResult? Function()? changeListData,
   }) {
     return deletePlanSuccessState?.call(data);
@@ -2490,6 +3202,14 @@ class _$DeletePlanSuccessStateImpl<T> implements DeletePlanSuccessState<T> {
     TResult Function()? deletePlanLoadingState,
     TResult Function(DefaultApiResponse data)? deletePlanSuccessState,
     TResult Function(String error)? deletePlanErrorState,
+    TResult Function()? getPlansListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? getCompaniesListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult Function(String error)? getCompaniesListErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -2523,6 +3243,18 @@ class _$DeletePlanSuccessStateImpl<T> implements DeletePlanSuccessState<T> {
         deletePlanSuccessState,
     required TResult Function(DeletePlanErrorState<T> value)
         deletePlanErrorState,
+    required TResult Function(GetPlansListloadingState<T> value)
+        getPlansListLoadingState,
+    required TResult Function(GetPlansListSuccessState<T> value)
+        getPlansListSuccessState,
+    required TResult Function(GetPlansListErrorState<T> value)
+        getPlansListErrorState,
+    required TResult Function(GetCompaniesListloadingState<T> value)
+        getCompaniesListLoadingState,
+    required TResult Function(GetCompaniesListSuccessState<T> value)
+        getCompaniesListSuccessState,
+    required TResult Function(GetCompaniesListErrorState<T> value)
+        getCompaniesListErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return deletePlanSuccessState(this);
@@ -2544,6 +3276,17 @@ class _$DeletePlanSuccessStateImpl<T> implements DeletePlanSuccessState<T> {
     TResult? Function(DeletePlanLoadingState<T> value)? deletePlanLoadingState,
     TResult? Function(DeletePlanSuccessState<T> value)? deletePlanSuccessState,
     TResult? Function(DeletePlanErrorState<T> value)? deletePlanErrorState,
+    TResult? Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult? Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult? Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult? Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return deletePlanSuccessState?.call(this);
@@ -2565,6 +3308,17 @@ class _$DeletePlanSuccessStateImpl<T> implements DeletePlanSuccessState<T> {
     TResult Function(DeletePlanLoadingState<T> value)? deletePlanLoadingState,
     TResult Function(DeletePlanSuccessState<T> value)? deletePlanSuccessState,
     TResult Function(DeletePlanErrorState<T> value)? deletePlanErrorState,
+    TResult Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -2664,6 +3418,14 @@ class _$DeletePlanErrorStateImpl<T> implements DeletePlanErrorState<T> {
     required TResult Function() deletePlanLoadingState,
     required TResult Function(DefaultApiResponse data) deletePlanSuccessState,
     required TResult Function(String error) deletePlanErrorState,
+    required TResult Function() getPlansListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getPlansListSuccessState,
+    required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() getCompaniesListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getCompaniesListSuccessState,
+    required TResult Function(String error) getCompaniesListErrorState,
     required TResult Function() changeListData,
   }) {
     return deletePlanErrorState(error);
@@ -2685,6 +3447,14 @@ class _$DeletePlanErrorStateImpl<T> implements DeletePlanErrorState<T> {
     TResult? Function()? deletePlanLoadingState,
     TResult? Function(DefaultApiResponse data)? deletePlanSuccessState,
     TResult? Function(String error)? deletePlanErrorState,
+    TResult? Function()? getPlansListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? getCompaniesListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult? Function(String error)? getCompaniesListErrorState,
     TResult? Function()? changeListData,
   }) {
     return deletePlanErrorState?.call(error);
@@ -2706,6 +3476,14 @@ class _$DeletePlanErrorStateImpl<T> implements DeletePlanErrorState<T> {
     TResult Function()? deletePlanLoadingState,
     TResult Function(DefaultApiResponse data)? deletePlanSuccessState,
     TResult Function(String error)? deletePlanErrorState,
+    TResult Function()? getPlansListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? getCompaniesListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult Function(String error)? getCompaniesListErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -2739,6 +3517,18 @@ class _$DeletePlanErrorStateImpl<T> implements DeletePlanErrorState<T> {
         deletePlanSuccessState,
     required TResult Function(DeletePlanErrorState<T> value)
         deletePlanErrorState,
+    required TResult Function(GetPlansListloadingState<T> value)
+        getPlansListLoadingState,
+    required TResult Function(GetPlansListSuccessState<T> value)
+        getPlansListSuccessState,
+    required TResult Function(GetPlansListErrorState<T> value)
+        getPlansListErrorState,
+    required TResult Function(GetCompaniesListloadingState<T> value)
+        getCompaniesListLoadingState,
+    required TResult Function(GetCompaniesListSuccessState<T> value)
+        getCompaniesListSuccessState,
+    required TResult Function(GetCompaniesListErrorState<T> value)
+        getCompaniesListErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return deletePlanErrorState(this);
@@ -2760,6 +3550,17 @@ class _$DeletePlanErrorStateImpl<T> implements DeletePlanErrorState<T> {
     TResult? Function(DeletePlanLoadingState<T> value)? deletePlanLoadingState,
     TResult? Function(DeletePlanSuccessState<T> value)? deletePlanSuccessState,
     TResult? Function(DeletePlanErrorState<T> value)? deletePlanErrorState,
+    TResult? Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult? Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult? Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult? Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return deletePlanErrorState?.call(this);
@@ -2781,6 +3582,17 @@ class _$DeletePlanErrorStateImpl<T> implements DeletePlanErrorState<T> {
     TResult Function(DeletePlanLoadingState<T> value)? deletePlanLoadingState,
     TResult Function(DeletePlanSuccessState<T> value)? deletePlanSuccessState,
     TResult Function(DeletePlanErrorState<T> value)? deletePlanErrorState,
+    TResult Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -2798,6 +3610,1607 @@ abstract class DeletePlanErrorState<T> implements BunchState<T> {
   String get error;
   @JsonKey(ignore: true)
   _$$DeletePlanErrorStateImplCopyWith<T, _$DeletePlanErrorStateImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetPlansListloadingStateImplCopyWith<T, $Res> {
+  factory _$$GetPlansListloadingStateImplCopyWith(
+          _$GetPlansListloadingStateImpl<T> value,
+          $Res Function(_$GetPlansListloadingStateImpl<T>) then) =
+      __$$GetPlansListloadingStateImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$GetPlansListloadingStateImplCopyWithImpl<T, $Res>
+    extends _$BunchStateCopyWithImpl<T, $Res, _$GetPlansListloadingStateImpl<T>>
+    implements _$$GetPlansListloadingStateImplCopyWith<T, $Res> {
+  __$$GetPlansListloadingStateImplCopyWithImpl(
+      _$GetPlansListloadingStateImpl<T> _value,
+      $Res Function(_$GetPlansListloadingStateImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetPlansListloadingStateImpl<T> implements GetPlansListloadingState<T> {
+  const _$GetPlansListloadingStateImpl();
+
+  @override
+  String toString() {
+    return 'BunchState<$T>.getPlansListLoadingState()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetPlansListloadingStateImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getPlansLoadingState,
+    required TResult Function(GetPlansResponse data) getPlansSuccessState,
+    required TResult Function(String error) getPlansErrorState,
+    required TResult Function() updatePlanLoadingState,
+    required TResult Function(DefaultApiResponse data) updatePlanSuccessState,
+    required TResult Function(String error) updatePlanErrorState,
+    required TResult Function() addPlanLoadingState,
+    required TResult Function(DefaultApiResponse data) addPlanSuccessState,
+    required TResult Function(String error) addPlanErrorState,
+    required TResult Function() deletePlanLoadingState,
+    required TResult Function(DefaultApiResponse data) deletePlanSuccessState,
+    required TResult Function(String error) deletePlanErrorState,
+    required TResult Function() getPlansListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getPlansListSuccessState,
+    required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() getCompaniesListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getCompaniesListSuccessState,
+    required TResult Function(String error) getCompaniesListErrorState,
+    required TResult Function() changeListData,
+  }) {
+    return getPlansListLoadingState();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getPlansLoadingState,
+    TResult? Function(GetPlansResponse data)? getPlansSuccessState,
+    TResult? Function(String error)? getPlansErrorState,
+    TResult? Function()? updatePlanLoadingState,
+    TResult? Function(DefaultApiResponse data)? updatePlanSuccessState,
+    TResult? Function(String error)? updatePlanErrorState,
+    TResult? Function()? addPlanLoadingState,
+    TResult? Function(DefaultApiResponse data)? addPlanSuccessState,
+    TResult? Function(String error)? addPlanErrorState,
+    TResult? Function()? deletePlanLoadingState,
+    TResult? Function(DefaultApiResponse data)? deletePlanSuccessState,
+    TResult? Function(String error)? deletePlanErrorState,
+    TResult? Function()? getPlansListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? getCompaniesListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult? Function(String error)? getCompaniesListErrorState,
+    TResult? Function()? changeListData,
+  }) {
+    return getPlansListLoadingState?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getPlansLoadingState,
+    TResult Function(GetPlansResponse data)? getPlansSuccessState,
+    TResult Function(String error)? getPlansErrorState,
+    TResult Function()? updatePlanLoadingState,
+    TResult Function(DefaultApiResponse data)? updatePlanSuccessState,
+    TResult Function(String error)? updatePlanErrorState,
+    TResult Function()? addPlanLoadingState,
+    TResult Function(DefaultApiResponse data)? addPlanSuccessState,
+    TResult Function(String error)? addPlanErrorState,
+    TResult Function()? deletePlanLoadingState,
+    TResult Function(DefaultApiResponse data)? deletePlanSuccessState,
+    TResult Function(String error)? deletePlanErrorState,
+    TResult Function()? getPlansListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? getCompaniesListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult Function(String error)? getCompaniesListErrorState,
+    TResult Function()? changeListData,
+    required TResult orElse(),
+  }) {
+    if (getPlansListLoadingState != null) {
+      return getPlansListLoadingState();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initial<T> value) initial,
+    required TResult Function(GetPlansLoadingState<T> value)
+        getPlansLoadingState,
+    required TResult Function(GetPlansSuccessState<T> value)
+        getPlansSuccessState,
+    required TResult Function(GetPlansErrorState<T> value) getPlansErrorState,
+    required TResult Function(UpdatePlanLoadingState<T> value)
+        updatePlanLoadingState,
+    required TResult Function(UpdatePlanSuccessState<T> value)
+        updatePlanSuccessState,
+    required TResult Function(UpdatePlanErrorState<T> value)
+        updatePlanErrorState,
+    required TResult Function(AddPlanLoadingState<T> value) addPlanLoadingState,
+    required TResult Function(AddPlanSuccessState<T> value) addPlanSuccessState,
+    required TResult Function(AddPlanErrorState<T> value) addPlanErrorState,
+    required TResult Function(DeletePlanLoadingState<T> value)
+        deletePlanLoadingState,
+    required TResult Function(DeletePlanSuccessState<T> value)
+        deletePlanSuccessState,
+    required TResult Function(DeletePlanErrorState<T> value)
+        deletePlanErrorState,
+    required TResult Function(GetPlansListloadingState<T> value)
+        getPlansListLoadingState,
+    required TResult Function(GetPlansListSuccessState<T> value)
+        getPlansListSuccessState,
+    required TResult Function(GetPlansListErrorState<T> value)
+        getPlansListErrorState,
+    required TResult Function(GetCompaniesListloadingState<T> value)
+        getCompaniesListLoadingState,
+    required TResult Function(GetCompaniesListSuccessState<T> value)
+        getCompaniesListSuccessState,
+    required TResult Function(GetCompaniesListErrorState<T> value)
+        getCompaniesListErrorState,
+    required TResult Function(ChangeListData<T> value) changeListData,
+  }) {
+    return getPlansListLoadingState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Initial<T> value)? initial,
+    TResult? Function(GetPlansLoadingState<T> value)? getPlansLoadingState,
+    TResult? Function(GetPlansSuccessState<T> value)? getPlansSuccessState,
+    TResult? Function(GetPlansErrorState<T> value)? getPlansErrorState,
+    TResult? Function(UpdatePlanLoadingState<T> value)? updatePlanLoadingState,
+    TResult? Function(UpdatePlanSuccessState<T> value)? updatePlanSuccessState,
+    TResult? Function(UpdatePlanErrorState<T> value)? updatePlanErrorState,
+    TResult? Function(AddPlanLoadingState<T> value)? addPlanLoadingState,
+    TResult? Function(AddPlanSuccessState<T> value)? addPlanSuccessState,
+    TResult? Function(AddPlanErrorState<T> value)? addPlanErrorState,
+    TResult? Function(DeletePlanLoadingState<T> value)? deletePlanLoadingState,
+    TResult? Function(DeletePlanSuccessState<T> value)? deletePlanSuccessState,
+    TResult? Function(DeletePlanErrorState<T> value)? deletePlanErrorState,
+    TResult? Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult? Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult? Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult? Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
+    TResult? Function(ChangeListData<T> value)? changeListData,
+  }) {
+    return getPlansListLoadingState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial<T> value)? initial,
+    TResult Function(GetPlansLoadingState<T> value)? getPlansLoadingState,
+    TResult Function(GetPlansSuccessState<T> value)? getPlansSuccessState,
+    TResult Function(GetPlansErrorState<T> value)? getPlansErrorState,
+    TResult Function(UpdatePlanLoadingState<T> value)? updatePlanLoadingState,
+    TResult Function(UpdatePlanSuccessState<T> value)? updatePlanSuccessState,
+    TResult Function(UpdatePlanErrorState<T> value)? updatePlanErrorState,
+    TResult Function(AddPlanLoadingState<T> value)? addPlanLoadingState,
+    TResult Function(AddPlanSuccessState<T> value)? addPlanSuccessState,
+    TResult Function(AddPlanErrorState<T> value)? addPlanErrorState,
+    TResult Function(DeletePlanLoadingState<T> value)? deletePlanLoadingState,
+    TResult Function(DeletePlanSuccessState<T> value)? deletePlanSuccessState,
+    TResult Function(DeletePlanErrorState<T> value)? deletePlanErrorState,
+    TResult Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
+    TResult Function(ChangeListData<T> value)? changeListData,
+    required TResult orElse(),
+  }) {
+    if (getPlansListLoadingState != null) {
+      return getPlansListLoadingState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetPlansListloadingState<T> implements BunchState<T> {
+  const factory GetPlansListloadingState() = _$GetPlansListloadingStateImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$GetPlansListSuccessStateImplCopyWith<T, $Res> {
+  factory _$$GetPlansListSuccessStateImplCopyWith(
+          _$GetPlansListSuccessStateImpl<T> value,
+          $Res Function(_$GetPlansListSuccessStateImpl<T>) then) =
+      __$$GetPlansListSuccessStateImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({GetListsResponse getListsResponse});
+}
+
+/// @nodoc
+class __$$GetPlansListSuccessStateImplCopyWithImpl<T, $Res>
+    extends _$BunchStateCopyWithImpl<T, $Res, _$GetPlansListSuccessStateImpl<T>>
+    implements _$$GetPlansListSuccessStateImplCopyWith<T, $Res> {
+  __$$GetPlansListSuccessStateImplCopyWithImpl(
+      _$GetPlansListSuccessStateImpl<T> _value,
+      $Res Function(_$GetPlansListSuccessStateImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? getListsResponse = null,
+  }) {
+    return _then(_$GetPlansListSuccessStateImpl<T>(
+      null == getListsResponse
+          ? _value.getListsResponse
+          : getListsResponse // ignore: cast_nullable_to_non_nullable
+              as GetListsResponse,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetPlansListSuccessStateImpl<T> implements GetPlansListSuccessState<T> {
+  const _$GetPlansListSuccessStateImpl(this.getListsResponse);
+
+  @override
+  final GetListsResponse getListsResponse;
+
+  @override
+  String toString() {
+    return 'BunchState<$T>.getPlansListSuccessState(getListsResponse: $getListsResponse)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetPlansListSuccessStateImpl<T> &&
+            (identical(other.getListsResponse, getListsResponse) ||
+                other.getListsResponse == getListsResponse));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, getListsResponse);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetPlansListSuccessStateImplCopyWith<T, _$GetPlansListSuccessStateImpl<T>>
+      get copyWith => __$$GetPlansListSuccessStateImplCopyWithImpl<T,
+          _$GetPlansListSuccessStateImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getPlansLoadingState,
+    required TResult Function(GetPlansResponse data) getPlansSuccessState,
+    required TResult Function(String error) getPlansErrorState,
+    required TResult Function() updatePlanLoadingState,
+    required TResult Function(DefaultApiResponse data) updatePlanSuccessState,
+    required TResult Function(String error) updatePlanErrorState,
+    required TResult Function() addPlanLoadingState,
+    required TResult Function(DefaultApiResponse data) addPlanSuccessState,
+    required TResult Function(String error) addPlanErrorState,
+    required TResult Function() deletePlanLoadingState,
+    required TResult Function(DefaultApiResponse data) deletePlanSuccessState,
+    required TResult Function(String error) deletePlanErrorState,
+    required TResult Function() getPlansListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getPlansListSuccessState,
+    required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() getCompaniesListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getCompaniesListSuccessState,
+    required TResult Function(String error) getCompaniesListErrorState,
+    required TResult Function() changeListData,
+  }) {
+    return getPlansListSuccessState(getListsResponse);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getPlansLoadingState,
+    TResult? Function(GetPlansResponse data)? getPlansSuccessState,
+    TResult? Function(String error)? getPlansErrorState,
+    TResult? Function()? updatePlanLoadingState,
+    TResult? Function(DefaultApiResponse data)? updatePlanSuccessState,
+    TResult? Function(String error)? updatePlanErrorState,
+    TResult? Function()? addPlanLoadingState,
+    TResult? Function(DefaultApiResponse data)? addPlanSuccessState,
+    TResult? Function(String error)? addPlanErrorState,
+    TResult? Function()? deletePlanLoadingState,
+    TResult? Function(DefaultApiResponse data)? deletePlanSuccessState,
+    TResult? Function(String error)? deletePlanErrorState,
+    TResult? Function()? getPlansListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? getCompaniesListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult? Function(String error)? getCompaniesListErrorState,
+    TResult? Function()? changeListData,
+  }) {
+    return getPlansListSuccessState?.call(getListsResponse);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getPlansLoadingState,
+    TResult Function(GetPlansResponse data)? getPlansSuccessState,
+    TResult Function(String error)? getPlansErrorState,
+    TResult Function()? updatePlanLoadingState,
+    TResult Function(DefaultApiResponse data)? updatePlanSuccessState,
+    TResult Function(String error)? updatePlanErrorState,
+    TResult Function()? addPlanLoadingState,
+    TResult Function(DefaultApiResponse data)? addPlanSuccessState,
+    TResult Function(String error)? addPlanErrorState,
+    TResult Function()? deletePlanLoadingState,
+    TResult Function(DefaultApiResponse data)? deletePlanSuccessState,
+    TResult Function(String error)? deletePlanErrorState,
+    TResult Function()? getPlansListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? getCompaniesListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult Function(String error)? getCompaniesListErrorState,
+    TResult Function()? changeListData,
+    required TResult orElse(),
+  }) {
+    if (getPlansListSuccessState != null) {
+      return getPlansListSuccessState(getListsResponse);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initial<T> value) initial,
+    required TResult Function(GetPlansLoadingState<T> value)
+        getPlansLoadingState,
+    required TResult Function(GetPlansSuccessState<T> value)
+        getPlansSuccessState,
+    required TResult Function(GetPlansErrorState<T> value) getPlansErrorState,
+    required TResult Function(UpdatePlanLoadingState<T> value)
+        updatePlanLoadingState,
+    required TResult Function(UpdatePlanSuccessState<T> value)
+        updatePlanSuccessState,
+    required TResult Function(UpdatePlanErrorState<T> value)
+        updatePlanErrorState,
+    required TResult Function(AddPlanLoadingState<T> value) addPlanLoadingState,
+    required TResult Function(AddPlanSuccessState<T> value) addPlanSuccessState,
+    required TResult Function(AddPlanErrorState<T> value) addPlanErrorState,
+    required TResult Function(DeletePlanLoadingState<T> value)
+        deletePlanLoadingState,
+    required TResult Function(DeletePlanSuccessState<T> value)
+        deletePlanSuccessState,
+    required TResult Function(DeletePlanErrorState<T> value)
+        deletePlanErrorState,
+    required TResult Function(GetPlansListloadingState<T> value)
+        getPlansListLoadingState,
+    required TResult Function(GetPlansListSuccessState<T> value)
+        getPlansListSuccessState,
+    required TResult Function(GetPlansListErrorState<T> value)
+        getPlansListErrorState,
+    required TResult Function(GetCompaniesListloadingState<T> value)
+        getCompaniesListLoadingState,
+    required TResult Function(GetCompaniesListSuccessState<T> value)
+        getCompaniesListSuccessState,
+    required TResult Function(GetCompaniesListErrorState<T> value)
+        getCompaniesListErrorState,
+    required TResult Function(ChangeListData<T> value) changeListData,
+  }) {
+    return getPlansListSuccessState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Initial<T> value)? initial,
+    TResult? Function(GetPlansLoadingState<T> value)? getPlansLoadingState,
+    TResult? Function(GetPlansSuccessState<T> value)? getPlansSuccessState,
+    TResult? Function(GetPlansErrorState<T> value)? getPlansErrorState,
+    TResult? Function(UpdatePlanLoadingState<T> value)? updatePlanLoadingState,
+    TResult? Function(UpdatePlanSuccessState<T> value)? updatePlanSuccessState,
+    TResult? Function(UpdatePlanErrorState<T> value)? updatePlanErrorState,
+    TResult? Function(AddPlanLoadingState<T> value)? addPlanLoadingState,
+    TResult? Function(AddPlanSuccessState<T> value)? addPlanSuccessState,
+    TResult? Function(AddPlanErrorState<T> value)? addPlanErrorState,
+    TResult? Function(DeletePlanLoadingState<T> value)? deletePlanLoadingState,
+    TResult? Function(DeletePlanSuccessState<T> value)? deletePlanSuccessState,
+    TResult? Function(DeletePlanErrorState<T> value)? deletePlanErrorState,
+    TResult? Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult? Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult? Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult? Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
+    TResult? Function(ChangeListData<T> value)? changeListData,
+  }) {
+    return getPlansListSuccessState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial<T> value)? initial,
+    TResult Function(GetPlansLoadingState<T> value)? getPlansLoadingState,
+    TResult Function(GetPlansSuccessState<T> value)? getPlansSuccessState,
+    TResult Function(GetPlansErrorState<T> value)? getPlansErrorState,
+    TResult Function(UpdatePlanLoadingState<T> value)? updatePlanLoadingState,
+    TResult Function(UpdatePlanSuccessState<T> value)? updatePlanSuccessState,
+    TResult Function(UpdatePlanErrorState<T> value)? updatePlanErrorState,
+    TResult Function(AddPlanLoadingState<T> value)? addPlanLoadingState,
+    TResult Function(AddPlanSuccessState<T> value)? addPlanSuccessState,
+    TResult Function(AddPlanErrorState<T> value)? addPlanErrorState,
+    TResult Function(DeletePlanLoadingState<T> value)? deletePlanLoadingState,
+    TResult Function(DeletePlanSuccessState<T> value)? deletePlanSuccessState,
+    TResult Function(DeletePlanErrorState<T> value)? deletePlanErrorState,
+    TResult Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
+    TResult Function(ChangeListData<T> value)? changeListData,
+    required TResult orElse(),
+  }) {
+    if (getPlansListSuccessState != null) {
+      return getPlansListSuccessState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetPlansListSuccessState<T> implements BunchState<T> {
+  const factory GetPlansListSuccessState(
+          final GetListsResponse getListsResponse) =
+      _$GetPlansListSuccessStateImpl<T>;
+
+  GetListsResponse get getListsResponse;
+  @JsonKey(ignore: true)
+  _$$GetPlansListSuccessStateImplCopyWith<T, _$GetPlansListSuccessStateImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetPlansListErrorStateImplCopyWith<T, $Res> {
+  factory _$$GetPlansListErrorStateImplCopyWith(
+          _$GetPlansListErrorStateImpl<T> value,
+          $Res Function(_$GetPlansListErrorStateImpl<T>) then) =
+      __$$GetPlansListErrorStateImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$GetPlansListErrorStateImplCopyWithImpl<T, $Res>
+    extends _$BunchStateCopyWithImpl<T, $Res, _$GetPlansListErrorStateImpl<T>>
+    implements _$$GetPlansListErrorStateImplCopyWith<T, $Res> {
+  __$$GetPlansListErrorStateImplCopyWithImpl(
+      _$GetPlansListErrorStateImpl<T> _value,
+      $Res Function(_$GetPlansListErrorStateImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$GetPlansListErrorStateImpl<T>(
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetPlansListErrorStateImpl<T> implements GetPlansListErrorState<T> {
+  const _$GetPlansListErrorStateImpl({required this.error});
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'BunchState<$T>.getPlansListErrorState(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetPlansListErrorStateImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetPlansListErrorStateImplCopyWith<T, _$GetPlansListErrorStateImpl<T>>
+      get copyWith => __$$GetPlansListErrorStateImplCopyWithImpl<T,
+          _$GetPlansListErrorStateImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getPlansLoadingState,
+    required TResult Function(GetPlansResponse data) getPlansSuccessState,
+    required TResult Function(String error) getPlansErrorState,
+    required TResult Function() updatePlanLoadingState,
+    required TResult Function(DefaultApiResponse data) updatePlanSuccessState,
+    required TResult Function(String error) updatePlanErrorState,
+    required TResult Function() addPlanLoadingState,
+    required TResult Function(DefaultApiResponse data) addPlanSuccessState,
+    required TResult Function(String error) addPlanErrorState,
+    required TResult Function() deletePlanLoadingState,
+    required TResult Function(DefaultApiResponse data) deletePlanSuccessState,
+    required TResult Function(String error) deletePlanErrorState,
+    required TResult Function() getPlansListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getPlansListSuccessState,
+    required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() getCompaniesListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getCompaniesListSuccessState,
+    required TResult Function(String error) getCompaniesListErrorState,
+    required TResult Function() changeListData,
+  }) {
+    return getPlansListErrorState(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getPlansLoadingState,
+    TResult? Function(GetPlansResponse data)? getPlansSuccessState,
+    TResult? Function(String error)? getPlansErrorState,
+    TResult? Function()? updatePlanLoadingState,
+    TResult? Function(DefaultApiResponse data)? updatePlanSuccessState,
+    TResult? Function(String error)? updatePlanErrorState,
+    TResult? Function()? addPlanLoadingState,
+    TResult? Function(DefaultApiResponse data)? addPlanSuccessState,
+    TResult? Function(String error)? addPlanErrorState,
+    TResult? Function()? deletePlanLoadingState,
+    TResult? Function(DefaultApiResponse data)? deletePlanSuccessState,
+    TResult? Function(String error)? deletePlanErrorState,
+    TResult? Function()? getPlansListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? getCompaniesListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult? Function(String error)? getCompaniesListErrorState,
+    TResult? Function()? changeListData,
+  }) {
+    return getPlansListErrorState?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getPlansLoadingState,
+    TResult Function(GetPlansResponse data)? getPlansSuccessState,
+    TResult Function(String error)? getPlansErrorState,
+    TResult Function()? updatePlanLoadingState,
+    TResult Function(DefaultApiResponse data)? updatePlanSuccessState,
+    TResult Function(String error)? updatePlanErrorState,
+    TResult Function()? addPlanLoadingState,
+    TResult Function(DefaultApiResponse data)? addPlanSuccessState,
+    TResult Function(String error)? addPlanErrorState,
+    TResult Function()? deletePlanLoadingState,
+    TResult Function(DefaultApiResponse data)? deletePlanSuccessState,
+    TResult Function(String error)? deletePlanErrorState,
+    TResult Function()? getPlansListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? getCompaniesListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult Function(String error)? getCompaniesListErrorState,
+    TResult Function()? changeListData,
+    required TResult orElse(),
+  }) {
+    if (getPlansListErrorState != null) {
+      return getPlansListErrorState(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initial<T> value) initial,
+    required TResult Function(GetPlansLoadingState<T> value)
+        getPlansLoadingState,
+    required TResult Function(GetPlansSuccessState<T> value)
+        getPlansSuccessState,
+    required TResult Function(GetPlansErrorState<T> value) getPlansErrorState,
+    required TResult Function(UpdatePlanLoadingState<T> value)
+        updatePlanLoadingState,
+    required TResult Function(UpdatePlanSuccessState<T> value)
+        updatePlanSuccessState,
+    required TResult Function(UpdatePlanErrorState<T> value)
+        updatePlanErrorState,
+    required TResult Function(AddPlanLoadingState<T> value) addPlanLoadingState,
+    required TResult Function(AddPlanSuccessState<T> value) addPlanSuccessState,
+    required TResult Function(AddPlanErrorState<T> value) addPlanErrorState,
+    required TResult Function(DeletePlanLoadingState<T> value)
+        deletePlanLoadingState,
+    required TResult Function(DeletePlanSuccessState<T> value)
+        deletePlanSuccessState,
+    required TResult Function(DeletePlanErrorState<T> value)
+        deletePlanErrorState,
+    required TResult Function(GetPlansListloadingState<T> value)
+        getPlansListLoadingState,
+    required TResult Function(GetPlansListSuccessState<T> value)
+        getPlansListSuccessState,
+    required TResult Function(GetPlansListErrorState<T> value)
+        getPlansListErrorState,
+    required TResult Function(GetCompaniesListloadingState<T> value)
+        getCompaniesListLoadingState,
+    required TResult Function(GetCompaniesListSuccessState<T> value)
+        getCompaniesListSuccessState,
+    required TResult Function(GetCompaniesListErrorState<T> value)
+        getCompaniesListErrorState,
+    required TResult Function(ChangeListData<T> value) changeListData,
+  }) {
+    return getPlansListErrorState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Initial<T> value)? initial,
+    TResult? Function(GetPlansLoadingState<T> value)? getPlansLoadingState,
+    TResult? Function(GetPlansSuccessState<T> value)? getPlansSuccessState,
+    TResult? Function(GetPlansErrorState<T> value)? getPlansErrorState,
+    TResult? Function(UpdatePlanLoadingState<T> value)? updatePlanLoadingState,
+    TResult? Function(UpdatePlanSuccessState<T> value)? updatePlanSuccessState,
+    TResult? Function(UpdatePlanErrorState<T> value)? updatePlanErrorState,
+    TResult? Function(AddPlanLoadingState<T> value)? addPlanLoadingState,
+    TResult? Function(AddPlanSuccessState<T> value)? addPlanSuccessState,
+    TResult? Function(AddPlanErrorState<T> value)? addPlanErrorState,
+    TResult? Function(DeletePlanLoadingState<T> value)? deletePlanLoadingState,
+    TResult? Function(DeletePlanSuccessState<T> value)? deletePlanSuccessState,
+    TResult? Function(DeletePlanErrorState<T> value)? deletePlanErrorState,
+    TResult? Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult? Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult? Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult? Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
+    TResult? Function(ChangeListData<T> value)? changeListData,
+  }) {
+    return getPlansListErrorState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial<T> value)? initial,
+    TResult Function(GetPlansLoadingState<T> value)? getPlansLoadingState,
+    TResult Function(GetPlansSuccessState<T> value)? getPlansSuccessState,
+    TResult Function(GetPlansErrorState<T> value)? getPlansErrorState,
+    TResult Function(UpdatePlanLoadingState<T> value)? updatePlanLoadingState,
+    TResult Function(UpdatePlanSuccessState<T> value)? updatePlanSuccessState,
+    TResult Function(UpdatePlanErrorState<T> value)? updatePlanErrorState,
+    TResult Function(AddPlanLoadingState<T> value)? addPlanLoadingState,
+    TResult Function(AddPlanSuccessState<T> value)? addPlanSuccessState,
+    TResult Function(AddPlanErrorState<T> value)? addPlanErrorState,
+    TResult Function(DeletePlanLoadingState<T> value)? deletePlanLoadingState,
+    TResult Function(DeletePlanSuccessState<T> value)? deletePlanSuccessState,
+    TResult Function(DeletePlanErrorState<T> value)? deletePlanErrorState,
+    TResult Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
+    TResult Function(ChangeListData<T> value)? changeListData,
+    required TResult orElse(),
+  }) {
+    if (getPlansListErrorState != null) {
+      return getPlansListErrorState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetPlansListErrorState<T> implements BunchState<T> {
+  const factory GetPlansListErrorState({required final String error}) =
+      _$GetPlansListErrorStateImpl<T>;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$$GetPlansListErrorStateImplCopyWith<T, _$GetPlansListErrorStateImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetCompaniesListloadingStateImplCopyWith<T, $Res> {
+  factory _$$GetCompaniesListloadingStateImplCopyWith(
+          _$GetCompaniesListloadingStateImpl<T> value,
+          $Res Function(_$GetCompaniesListloadingStateImpl<T>) then) =
+      __$$GetCompaniesListloadingStateImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$GetCompaniesListloadingStateImplCopyWithImpl<T, $Res>
+    extends _$BunchStateCopyWithImpl<T, $Res,
+        _$GetCompaniesListloadingStateImpl<T>>
+    implements _$$GetCompaniesListloadingStateImplCopyWith<T, $Res> {
+  __$$GetCompaniesListloadingStateImplCopyWithImpl(
+      _$GetCompaniesListloadingStateImpl<T> _value,
+      $Res Function(_$GetCompaniesListloadingStateImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetCompaniesListloadingStateImpl<T>
+    implements GetCompaniesListloadingState<T> {
+  const _$GetCompaniesListloadingStateImpl();
+
+  @override
+  String toString() {
+    return 'BunchState<$T>.getCompaniesListLoadingState()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetCompaniesListloadingStateImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getPlansLoadingState,
+    required TResult Function(GetPlansResponse data) getPlansSuccessState,
+    required TResult Function(String error) getPlansErrorState,
+    required TResult Function() updatePlanLoadingState,
+    required TResult Function(DefaultApiResponse data) updatePlanSuccessState,
+    required TResult Function(String error) updatePlanErrorState,
+    required TResult Function() addPlanLoadingState,
+    required TResult Function(DefaultApiResponse data) addPlanSuccessState,
+    required TResult Function(String error) addPlanErrorState,
+    required TResult Function() deletePlanLoadingState,
+    required TResult Function(DefaultApiResponse data) deletePlanSuccessState,
+    required TResult Function(String error) deletePlanErrorState,
+    required TResult Function() getPlansListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getPlansListSuccessState,
+    required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() getCompaniesListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getCompaniesListSuccessState,
+    required TResult Function(String error) getCompaniesListErrorState,
+    required TResult Function() changeListData,
+  }) {
+    return getCompaniesListLoadingState();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getPlansLoadingState,
+    TResult? Function(GetPlansResponse data)? getPlansSuccessState,
+    TResult? Function(String error)? getPlansErrorState,
+    TResult? Function()? updatePlanLoadingState,
+    TResult? Function(DefaultApiResponse data)? updatePlanSuccessState,
+    TResult? Function(String error)? updatePlanErrorState,
+    TResult? Function()? addPlanLoadingState,
+    TResult? Function(DefaultApiResponse data)? addPlanSuccessState,
+    TResult? Function(String error)? addPlanErrorState,
+    TResult? Function()? deletePlanLoadingState,
+    TResult? Function(DefaultApiResponse data)? deletePlanSuccessState,
+    TResult? Function(String error)? deletePlanErrorState,
+    TResult? Function()? getPlansListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? getCompaniesListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult? Function(String error)? getCompaniesListErrorState,
+    TResult? Function()? changeListData,
+  }) {
+    return getCompaniesListLoadingState?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getPlansLoadingState,
+    TResult Function(GetPlansResponse data)? getPlansSuccessState,
+    TResult Function(String error)? getPlansErrorState,
+    TResult Function()? updatePlanLoadingState,
+    TResult Function(DefaultApiResponse data)? updatePlanSuccessState,
+    TResult Function(String error)? updatePlanErrorState,
+    TResult Function()? addPlanLoadingState,
+    TResult Function(DefaultApiResponse data)? addPlanSuccessState,
+    TResult Function(String error)? addPlanErrorState,
+    TResult Function()? deletePlanLoadingState,
+    TResult Function(DefaultApiResponse data)? deletePlanSuccessState,
+    TResult Function(String error)? deletePlanErrorState,
+    TResult Function()? getPlansListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? getCompaniesListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult Function(String error)? getCompaniesListErrorState,
+    TResult Function()? changeListData,
+    required TResult orElse(),
+  }) {
+    if (getCompaniesListLoadingState != null) {
+      return getCompaniesListLoadingState();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initial<T> value) initial,
+    required TResult Function(GetPlansLoadingState<T> value)
+        getPlansLoadingState,
+    required TResult Function(GetPlansSuccessState<T> value)
+        getPlansSuccessState,
+    required TResult Function(GetPlansErrorState<T> value) getPlansErrorState,
+    required TResult Function(UpdatePlanLoadingState<T> value)
+        updatePlanLoadingState,
+    required TResult Function(UpdatePlanSuccessState<T> value)
+        updatePlanSuccessState,
+    required TResult Function(UpdatePlanErrorState<T> value)
+        updatePlanErrorState,
+    required TResult Function(AddPlanLoadingState<T> value) addPlanLoadingState,
+    required TResult Function(AddPlanSuccessState<T> value) addPlanSuccessState,
+    required TResult Function(AddPlanErrorState<T> value) addPlanErrorState,
+    required TResult Function(DeletePlanLoadingState<T> value)
+        deletePlanLoadingState,
+    required TResult Function(DeletePlanSuccessState<T> value)
+        deletePlanSuccessState,
+    required TResult Function(DeletePlanErrorState<T> value)
+        deletePlanErrorState,
+    required TResult Function(GetPlansListloadingState<T> value)
+        getPlansListLoadingState,
+    required TResult Function(GetPlansListSuccessState<T> value)
+        getPlansListSuccessState,
+    required TResult Function(GetPlansListErrorState<T> value)
+        getPlansListErrorState,
+    required TResult Function(GetCompaniesListloadingState<T> value)
+        getCompaniesListLoadingState,
+    required TResult Function(GetCompaniesListSuccessState<T> value)
+        getCompaniesListSuccessState,
+    required TResult Function(GetCompaniesListErrorState<T> value)
+        getCompaniesListErrorState,
+    required TResult Function(ChangeListData<T> value) changeListData,
+  }) {
+    return getCompaniesListLoadingState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Initial<T> value)? initial,
+    TResult? Function(GetPlansLoadingState<T> value)? getPlansLoadingState,
+    TResult? Function(GetPlansSuccessState<T> value)? getPlansSuccessState,
+    TResult? Function(GetPlansErrorState<T> value)? getPlansErrorState,
+    TResult? Function(UpdatePlanLoadingState<T> value)? updatePlanLoadingState,
+    TResult? Function(UpdatePlanSuccessState<T> value)? updatePlanSuccessState,
+    TResult? Function(UpdatePlanErrorState<T> value)? updatePlanErrorState,
+    TResult? Function(AddPlanLoadingState<T> value)? addPlanLoadingState,
+    TResult? Function(AddPlanSuccessState<T> value)? addPlanSuccessState,
+    TResult? Function(AddPlanErrorState<T> value)? addPlanErrorState,
+    TResult? Function(DeletePlanLoadingState<T> value)? deletePlanLoadingState,
+    TResult? Function(DeletePlanSuccessState<T> value)? deletePlanSuccessState,
+    TResult? Function(DeletePlanErrorState<T> value)? deletePlanErrorState,
+    TResult? Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult? Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult? Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult? Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
+    TResult? Function(ChangeListData<T> value)? changeListData,
+  }) {
+    return getCompaniesListLoadingState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial<T> value)? initial,
+    TResult Function(GetPlansLoadingState<T> value)? getPlansLoadingState,
+    TResult Function(GetPlansSuccessState<T> value)? getPlansSuccessState,
+    TResult Function(GetPlansErrorState<T> value)? getPlansErrorState,
+    TResult Function(UpdatePlanLoadingState<T> value)? updatePlanLoadingState,
+    TResult Function(UpdatePlanSuccessState<T> value)? updatePlanSuccessState,
+    TResult Function(UpdatePlanErrorState<T> value)? updatePlanErrorState,
+    TResult Function(AddPlanLoadingState<T> value)? addPlanLoadingState,
+    TResult Function(AddPlanSuccessState<T> value)? addPlanSuccessState,
+    TResult Function(AddPlanErrorState<T> value)? addPlanErrorState,
+    TResult Function(DeletePlanLoadingState<T> value)? deletePlanLoadingState,
+    TResult Function(DeletePlanSuccessState<T> value)? deletePlanSuccessState,
+    TResult Function(DeletePlanErrorState<T> value)? deletePlanErrorState,
+    TResult Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
+    TResult Function(ChangeListData<T> value)? changeListData,
+    required TResult orElse(),
+  }) {
+    if (getCompaniesListLoadingState != null) {
+      return getCompaniesListLoadingState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetCompaniesListloadingState<T> implements BunchState<T> {
+  const factory GetCompaniesListloadingState() =
+      _$GetCompaniesListloadingStateImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$GetCompaniesListSuccessStateImplCopyWith<T, $Res> {
+  factory _$$GetCompaniesListSuccessStateImplCopyWith(
+          _$GetCompaniesListSuccessStateImpl<T> value,
+          $Res Function(_$GetCompaniesListSuccessStateImpl<T>) then) =
+      __$$GetCompaniesListSuccessStateImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({GetListsResponse getListsResponse});
+}
+
+/// @nodoc
+class __$$GetCompaniesListSuccessStateImplCopyWithImpl<T, $Res>
+    extends _$BunchStateCopyWithImpl<T, $Res,
+        _$GetCompaniesListSuccessStateImpl<T>>
+    implements _$$GetCompaniesListSuccessStateImplCopyWith<T, $Res> {
+  __$$GetCompaniesListSuccessStateImplCopyWithImpl(
+      _$GetCompaniesListSuccessStateImpl<T> _value,
+      $Res Function(_$GetCompaniesListSuccessStateImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? getListsResponse = null,
+  }) {
+    return _then(_$GetCompaniesListSuccessStateImpl<T>(
+      null == getListsResponse
+          ? _value.getListsResponse
+          : getListsResponse // ignore: cast_nullable_to_non_nullable
+              as GetListsResponse,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetCompaniesListSuccessStateImpl<T>
+    implements GetCompaniesListSuccessState<T> {
+  const _$GetCompaniesListSuccessStateImpl(this.getListsResponse);
+
+  @override
+  final GetListsResponse getListsResponse;
+
+  @override
+  String toString() {
+    return 'BunchState<$T>.getCompaniesListSuccessState(getListsResponse: $getListsResponse)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetCompaniesListSuccessStateImpl<T> &&
+            (identical(other.getListsResponse, getListsResponse) ||
+                other.getListsResponse == getListsResponse));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, getListsResponse);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetCompaniesListSuccessStateImplCopyWith<T,
+          _$GetCompaniesListSuccessStateImpl<T>>
+      get copyWith => __$$GetCompaniesListSuccessStateImplCopyWithImpl<T,
+          _$GetCompaniesListSuccessStateImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getPlansLoadingState,
+    required TResult Function(GetPlansResponse data) getPlansSuccessState,
+    required TResult Function(String error) getPlansErrorState,
+    required TResult Function() updatePlanLoadingState,
+    required TResult Function(DefaultApiResponse data) updatePlanSuccessState,
+    required TResult Function(String error) updatePlanErrorState,
+    required TResult Function() addPlanLoadingState,
+    required TResult Function(DefaultApiResponse data) addPlanSuccessState,
+    required TResult Function(String error) addPlanErrorState,
+    required TResult Function() deletePlanLoadingState,
+    required TResult Function(DefaultApiResponse data) deletePlanSuccessState,
+    required TResult Function(String error) deletePlanErrorState,
+    required TResult Function() getPlansListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getPlansListSuccessState,
+    required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() getCompaniesListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getCompaniesListSuccessState,
+    required TResult Function(String error) getCompaniesListErrorState,
+    required TResult Function() changeListData,
+  }) {
+    return getCompaniesListSuccessState(getListsResponse);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getPlansLoadingState,
+    TResult? Function(GetPlansResponse data)? getPlansSuccessState,
+    TResult? Function(String error)? getPlansErrorState,
+    TResult? Function()? updatePlanLoadingState,
+    TResult? Function(DefaultApiResponse data)? updatePlanSuccessState,
+    TResult? Function(String error)? updatePlanErrorState,
+    TResult? Function()? addPlanLoadingState,
+    TResult? Function(DefaultApiResponse data)? addPlanSuccessState,
+    TResult? Function(String error)? addPlanErrorState,
+    TResult? Function()? deletePlanLoadingState,
+    TResult? Function(DefaultApiResponse data)? deletePlanSuccessState,
+    TResult? Function(String error)? deletePlanErrorState,
+    TResult? Function()? getPlansListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? getCompaniesListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult? Function(String error)? getCompaniesListErrorState,
+    TResult? Function()? changeListData,
+  }) {
+    return getCompaniesListSuccessState?.call(getListsResponse);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getPlansLoadingState,
+    TResult Function(GetPlansResponse data)? getPlansSuccessState,
+    TResult Function(String error)? getPlansErrorState,
+    TResult Function()? updatePlanLoadingState,
+    TResult Function(DefaultApiResponse data)? updatePlanSuccessState,
+    TResult Function(String error)? updatePlanErrorState,
+    TResult Function()? addPlanLoadingState,
+    TResult Function(DefaultApiResponse data)? addPlanSuccessState,
+    TResult Function(String error)? addPlanErrorState,
+    TResult Function()? deletePlanLoadingState,
+    TResult Function(DefaultApiResponse data)? deletePlanSuccessState,
+    TResult Function(String error)? deletePlanErrorState,
+    TResult Function()? getPlansListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? getCompaniesListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult Function(String error)? getCompaniesListErrorState,
+    TResult Function()? changeListData,
+    required TResult orElse(),
+  }) {
+    if (getCompaniesListSuccessState != null) {
+      return getCompaniesListSuccessState(getListsResponse);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initial<T> value) initial,
+    required TResult Function(GetPlansLoadingState<T> value)
+        getPlansLoadingState,
+    required TResult Function(GetPlansSuccessState<T> value)
+        getPlansSuccessState,
+    required TResult Function(GetPlansErrorState<T> value) getPlansErrorState,
+    required TResult Function(UpdatePlanLoadingState<T> value)
+        updatePlanLoadingState,
+    required TResult Function(UpdatePlanSuccessState<T> value)
+        updatePlanSuccessState,
+    required TResult Function(UpdatePlanErrorState<T> value)
+        updatePlanErrorState,
+    required TResult Function(AddPlanLoadingState<T> value) addPlanLoadingState,
+    required TResult Function(AddPlanSuccessState<T> value) addPlanSuccessState,
+    required TResult Function(AddPlanErrorState<T> value) addPlanErrorState,
+    required TResult Function(DeletePlanLoadingState<T> value)
+        deletePlanLoadingState,
+    required TResult Function(DeletePlanSuccessState<T> value)
+        deletePlanSuccessState,
+    required TResult Function(DeletePlanErrorState<T> value)
+        deletePlanErrorState,
+    required TResult Function(GetPlansListloadingState<T> value)
+        getPlansListLoadingState,
+    required TResult Function(GetPlansListSuccessState<T> value)
+        getPlansListSuccessState,
+    required TResult Function(GetPlansListErrorState<T> value)
+        getPlansListErrorState,
+    required TResult Function(GetCompaniesListloadingState<T> value)
+        getCompaniesListLoadingState,
+    required TResult Function(GetCompaniesListSuccessState<T> value)
+        getCompaniesListSuccessState,
+    required TResult Function(GetCompaniesListErrorState<T> value)
+        getCompaniesListErrorState,
+    required TResult Function(ChangeListData<T> value) changeListData,
+  }) {
+    return getCompaniesListSuccessState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Initial<T> value)? initial,
+    TResult? Function(GetPlansLoadingState<T> value)? getPlansLoadingState,
+    TResult? Function(GetPlansSuccessState<T> value)? getPlansSuccessState,
+    TResult? Function(GetPlansErrorState<T> value)? getPlansErrorState,
+    TResult? Function(UpdatePlanLoadingState<T> value)? updatePlanLoadingState,
+    TResult? Function(UpdatePlanSuccessState<T> value)? updatePlanSuccessState,
+    TResult? Function(UpdatePlanErrorState<T> value)? updatePlanErrorState,
+    TResult? Function(AddPlanLoadingState<T> value)? addPlanLoadingState,
+    TResult? Function(AddPlanSuccessState<T> value)? addPlanSuccessState,
+    TResult? Function(AddPlanErrorState<T> value)? addPlanErrorState,
+    TResult? Function(DeletePlanLoadingState<T> value)? deletePlanLoadingState,
+    TResult? Function(DeletePlanSuccessState<T> value)? deletePlanSuccessState,
+    TResult? Function(DeletePlanErrorState<T> value)? deletePlanErrorState,
+    TResult? Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult? Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult? Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult? Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
+    TResult? Function(ChangeListData<T> value)? changeListData,
+  }) {
+    return getCompaniesListSuccessState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial<T> value)? initial,
+    TResult Function(GetPlansLoadingState<T> value)? getPlansLoadingState,
+    TResult Function(GetPlansSuccessState<T> value)? getPlansSuccessState,
+    TResult Function(GetPlansErrorState<T> value)? getPlansErrorState,
+    TResult Function(UpdatePlanLoadingState<T> value)? updatePlanLoadingState,
+    TResult Function(UpdatePlanSuccessState<T> value)? updatePlanSuccessState,
+    TResult Function(UpdatePlanErrorState<T> value)? updatePlanErrorState,
+    TResult Function(AddPlanLoadingState<T> value)? addPlanLoadingState,
+    TResult Function(AddPlanSuccessState<T> value)? addPlanSuccessState,
+    TResult Function(AddPlanErrorState<T> value)? addPlanErrorState,
+    TResult Function(DeletePlanLoadingState<T> value)? deletePlanLoadingState,
+    TResult Function(DeletePlanSuccessState<T> value)? deletePlanSuccessState,
+    TResult Function(DeletePlanErrorState<T> value)? deletePlanErrorState,
+    TResult Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
+    TResult Function(ChangeListData<T> value)? changeListData,
+    required TResult orElse(),
+  }) {
+    if (getCompaniesListSuccessState != null) {
+      return getCompaniesListSuccessState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetCompaniesListSuccessState<T> implements BunchState<T> {
+  const factory GetCompaniesListSuccessState(
+          final GetListsResponse getListsResponse) =
+      _$GetCompaniesListSuccessStateImpl<T>;
+
+  GetListsResponse get getListsResponse;
+  @JsonKey(ignore: true)
+  _$$GetCompaniesListSuccessStateImplCopyWith<T,
+          _$GetCompaniesListSuccessStateImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetCompaniesListErrorStateImplCopyWith<T, $Res> {
+  factory _$$GetCompaniesListErrorStateImplCopyWith(
+          _$GetCompaniesListErrorStateImpl<T> value,
+          $Res Function(_$GetCompaniesListErrorStateImpl<T>) then) =
+      __$$GetCompaniesListErrorStateImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$GetCompaniesListErrorStateImplCopyWithImpl<T, $Res>
+    extends _$BunchStateCopyWithImpl<T, $Res,
+        _$GetCompaniesListErrorStateImpl<T>>
+    implements _$$GetCompaniesListErrorStateImplCopyWith<T, $Res> {
+  __$$GetCompaniesListErrorStateImplCopyWithImpl(
+      _$GetCompaniesListErrorStateImpl<T> _value,
+      $Res Function(_$GetCompaniesListErrorStateImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$GetCompaniesListErrorStateImpl<T>(
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetCompaniesListErrorStateImpl<T>
+    implements GetCompaniesListErrorState<T> {
+  const _$GetCompaniesListErrorStateImpl({required this.error});
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'BunchState<$T>.getCompaniesListErrorState(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetCompaniesListErrorStateImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetCompaniesListErrorStateImplCopyWith<T,
+          _$GetCompaniesListErrorStateImpl<T>>
+      get copyWith => __$$GetCompaniesListErrorStateImplCopyWithImpl<T,
+          _$GetCompaniesListErrorStateImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getPlansLoadingState,
+    required TResult Function(GetPlansResponse data) getPlansSuccessState,
+    required TResult Function(String error) getPlansErrorState,
+    required TResult Function() updatePlanLoadingState,
+    required TResult Function(DefaultApiResponse data) updatePlanSuccessState,
+    required TResult Function(String error) updatePlanErrorState,
+    required TResult Function() addPlanLoadingState,
+    required TResult Function(DefaultApiResponse data) addPlanSuccessState,
+    required TResult Function(String error) addPlanErrorState,
+    required TResult Function() deletePlanLoadingState,
+    required TResult Function(DefaultApiResponse data) deletePlanSuccessState,
+    required TResult Function(String error) deletePlanErrorState,
+    required TResult Function() getPlansListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getPlansListSuccessState,
+    required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() getCompaniesListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getCompaniesListSuccessState,
+    required TResult Function(String error) getCompaniesListErrorState,
+    required TResult Function() changeListData,
+  }) {
+    return getCompaniesListErrorState(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getPlansLoadingState,
+    TResult? Function(GetPlansResponse data)? getPlansSuccessState,
+    TResult? Function(String error)? getPlansErrorState,
+    TResult? Function()? updatePlanLoadingState,
+    TResult? Function(DefaultApiResponse data)? updatePlanSuccessState,
+    TResult? Function(String error)? updatePlanErrorState,
+    TResult? Function()? addPlanLoadingState,
+    TResult? Function(DefaultApiResponse data)? addPlanSuccessState,
+    TResult? Function(String error)? addPlanErrorState,
+    TResult? Function()? deletePlanLoadingState,
+    TResult? Function(DefaultApiResponse data)? deletePlanSuccessState,
+    TResult? Function(String error)? deletePlanErrorState,
+    TResult? Function()? getPlansListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? getCompaniesListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult? Function(String error)? getCompaniesListErrorState,
+    TResult? Function()? changeListData,
+  }) {
+    return getCompaniesListErrorState?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getPlansLoadingState,
+    TResult Function(GetPlansResponse data)? getPlansSuccessState,
+    TResult Function(String error)? getPlansErrorState,
+    TResult Function()? updatePlanLoadingState,
+    TResult Function(DefaultApiResponse data)? updatePlanSuccessState,
+    TResult Function(String error)? updatePlanErrorState,
+    TResult Function()? addPlanLoadingState,
+    TResult Function(DefaultApiResponse data)? addPlanSuccessState,
+    TResult Function(String error)? addPlanErrorState,
+    TResult Function()? deletePlanLoadingState,
+    TResult Function(DefaultApiResponse data)? deletePlanSuccessState,
+    TResult Function(String error)? deletePlanErrorState,
+    TResult Function()? getPlansListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? getCompaniesListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult Function(String error)? getCompaniesListErrorState,
+    TResult Function()? changeListData,
+    required TResult orElse(),
+  }) {
+    if (getCompaniesListErrorState != null) {
+      return getCompaniesListErrorState(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initial<T> value) initial,
+    required TResult Function(GetPlansLoadingState<T> value)
+        getPlansLoadingState,
+    required TResult Function(GetPlansSuccessState<T> value)
+        getPlansSuccessState,
+    required TResult Function(GetPlansErrorState<T> value) getPlansErrorState,
+    required TResult Function(UpdatePlanLoadingState<T> value)
+        updatePlanLoadingState,
+    required TResult Function(UpdatePlanSuccessState<T> value)
+        updatePlanSuccessState,
+    required TResult Function(UpdatePlanErrorState<T> value)
+        updatePlanErrorState,
+    required TResult Function(AddPlanLoadingState<T> value) addPlanLoadingState,
+    required TResult Function(AddPlanSuccessState<T> value) addPlanSuccessState,
+    required TResult Function(AddPlanErrorState<T> value) addPlanErrorState,
+    required TResult Function(DeletePlanLoadingState<T> value)
+        deletePlanLoadingState,
+    required TResult Function(DeletePlanSuccessState<T> value)
+        deletePlanSuccessState,
+    required TResult Function(DeletePlanErrorState<T> value)
+        deletePlanErrorState,
+    required TResult Function(GetPlansListloadingState<T> value)
+        getPlansListLoadingState,
+    required TResult Function(GetPlansListSuccessState<T> value)
+        getPlansListSuccessState,
+    required TResult Function(GetPlansListErrorState<T> value)
+        getPlansListErrorState,
+    required TResult Function(GetCompaniesListloadingState<T> value)
+        getCompaniesListLoadingState,
+    required TResult Function(GetCompaniesListSuccessState<T> value)
+        getCompaniesListSuccessState,
+    required TResult Function(GetCompaniesListErrorState<T> value)
+        getCompaniesListErrorState,
+    required TResult Function(ChangeListData<T> value) changeListData,
+  }) {
+    return getCompaniesListErrorState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Initial<T> value)? initial,
+    TResult? Function(GetPlansLoadingState<T> value)? getPlansLoadingState,
+    TResult? Function(GetPlansSuccessState<T> value)? getPlansSuccessState,
+    TResult? Function(GetPlansErrorState<T> value)? getPlansErrorState,
+    TResult? Function(UpdatePlanLoadingState<T> value)? updatePlanLoadingState,
+    TResult? Function(UpdatePlanSuccessState<T> value)? updatePlanSuccessState,
+    TResult? Function(UpdatePlanErrorState<T> value)? updatePlanErrorState,
+    TResult? Function(AddPlanLoadingState<T> value)? addPlanLoadingState,
+    TResult? Function(AddPlanSuccessState<T> value)? addPlanSuccessState,
+    TResult? Function(AddPlanErrorState<T> value)? addPlanErrorState,
+    TResult? Function(DeletePlanLoadingState<T> value)? deletePlanLoadingState,
+    TResult? Function(DeletePlanSuccessState<T> value)? deletePlanSuccessState,
+    TResult? Function(DeletePlanErrorState<T> value)? deletePlanErrorState,
+    TResult? Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult? Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult? Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult? Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
+    TResult? Function(ChangeListData<T> value)? changeListData,
+  }) {
+    return getCompaniesListErrorState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial<T> value)? initial,
+    TResult Function(GetPlansLoadingState<T> value)? getPlansLoadingState,
+    TResult Function(GetPlansSuccessState<T> value)? getPlansSuccessState,
+    TResult Function(GetPlansErrorState<T> value)? getPlansErrorState,
+    TResult Function(UpdatePlanLoadingState<T> value)? updatePlanLoadingState,
+    TResult Function(UpdatePlanSuccessState<T> value)? updatePlanSuccessState,
+    TResult Function(UpdatePlanErrorState<T> value)? updatePlanErrorState,
+    TResult Function(AddPlanLoadingState<T> value)? addPlanLoadingState,
+    TResult Function(AddPlanSuccessState<T> value)? addPlanSuccessState,
+    TResult Function(AddPlanErrorState<T> value)? addPlanErrorState,
+    TResult Function(DeletePlanLoadingState<T> value)? deletePlanLoadingState,
+    TResult Function(DeletePlanSuccessState<T> value)? deletePlanSuccessState,
+    TResult Function(DeletePlanErrorState<T> value)? deletePlanErrorState,
+    TResult Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
+    TResult Function(ChangeListData<T> value)? changeListData,
+    required TResult orElse(),
+  }) {
+    if (getCompaniesListErrorState != null) {
+      return getCompaniesListErrorState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetCompaniesListErrorState<T> implements BunchState<T> {
+  const factory GetCompaniesListErrorState({required final String error}) =
+      _$GetCompaniesListErrorStateImpl<T>;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$$GetCompaniesListErrorStateImplCopyWith<T,
+          _$GetCompaniesListErrorStateImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -2852,6 +5265,14 @@ class _$ChangeListDataImpl<T> implements ChangeListData<T> {
     required TResult Function() deletePlanLoadingState,
     required TResult Function(DefaultApiResponse data) deletePlanSuccessState,
     required TResult Function(String error) deletePlanErrorState,
+    required TResult Function() getPlansListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getPlansListSuccessState,
+    required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() getCompaniesListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getCompaniesListSuccessState,
+    required TResult Function(String error) getCompaniesListErrorState,
     required TResult Function() changeListData,
   }) {
     return changeListData();
@@ -2873,6 +5294,14 @@ class _$ChangeListDataImpl<T> implements ChangeListData<T> {
     TResult? Function()? deletePlanLoadingState,
     TResult? Function(DefaultApiResponse data)? deletePlanSuccessState,
     TResult? Function(String error)? deletePlanErrorState,
+    TResult? Function()? getPlansListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? getCompaniesListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult? Function(String error)? getCompaniesListErrorState,
     TResult? Function()? changeListData,
   }) {
     return changeListData?.call();
@@ -2894,6 +5323,14 @@ class _$ChangeListDataImpl<T> implements ChangeListData<T> {
     TResult Function()? deletePlanLoadingState,
     TResult Function(DefaultApiResponse data)? deletePlanSuccessState,
     TResult Function(String error)? deletePlanErrorState,
+    TResult Function()? getPlansListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? getCompaniesListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult Function(String error)? getCompaniesListErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -2927,6 +5364,18 @@ class _$ChangeListDataImpl<T> implements ChangeListData<T> {
         deletePlanSuccessState,
     required TResult Function(DeletePlanErrorState<T> value)
         deletePlanErrorState,
+    required TResult Function(GetPlansListloadingState<T> value)
+        getPlansListLoadingState,
+    required TResult Function(GetPlansListSuccessState<T> value)
+        getPlansListSuccessState,
+    required TResult Function(GetPlansListErrorState<T> value)
+        getPlansListErrorState,
+    required TResult Function(GetCompaniesListloadingState<T> value)
+        getCompaniesListLoadingState,
+    required TResult Function(GetCompaniesListSuccessState<T> value)
+        getCompaniesListSuccessState,
+    required TResult Function(GetCompaniesListErrorState<T> value)
+        getCompaniesListErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return changeListData(this);
@@ -2948,6 +5397,17 @@ class _$ChangeListDataImpl<T> implements ChangeListData<T> {
     TResult? Function(DeletePlanLoadingState<T> value)? deletePlanLoadingState,
     TResult? Function(DeletePlanSuccessState<T> value)? deletePlanSuccessState,
     TResult? Function(DeletePlanErrorState<T> value)? deletePlanErrorState,
+    TResult? Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult? Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult? Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult? Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return changeListData?.call(this);
@@ -2969,6 +5429,17 @@ class _$ChangeListDataImpl<T> implements ChangeListData<T> {
     TResult Function(DeletePlanLoadingState<T> value)? deletePlanLoadingState,
     TResult Function(DeletePlanSuccessState<T> value)? deletePlanSuccessState,
     TResult Function(DeletePlanErrorState<T> value)? deletePlanErrorState,
+    TResult Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {

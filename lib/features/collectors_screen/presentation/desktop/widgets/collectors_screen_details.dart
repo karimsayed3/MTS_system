@@ -28,6 +28,17 @@ class CollectorsScreenDetails extends StatefulWidget {
 
 class _CollectorsScreenDetailsState extends State<CollectorsScreenDetails> {
   @override
+  void initState() {
+    // TODO: implement initState
+    CollectorsCubit.get(context).getUsers(
+      getUsersRequestBody: GetUsersRequestBody(
+        username: '',
+      ),
+    );
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     var dimension = Dimensions(context);
     return Container(
