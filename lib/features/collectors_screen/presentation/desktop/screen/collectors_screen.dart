@@ -6,6 +6,8 @@ import 'package:system/core/di/dependency_injection.dart';
 import 'package:system/features/collectors_screen/data/models/get_users_request_body.dart';
 import 'package:system/features/collectors_screen/presentation/desktop/widgets/collectors_nav_bar_widget.dart';
 import 'package:system/features/collectors_screen/presentation/desktop/widgets/collectors_screen_details.dart';
+import 'package:system/features/resellers_requests_screen/business_logic/collectors_requests_cubit.dart';
+import 'package:system/features/resellers_requests_screen/data/models/get_collector_requests_request_body.dart';
 
 import '../../../../resellers_requests_screen/presentation/desktop/screen/resellers_requests_screen_desktop.dart';
 import '../../../business_logic/collectors_cubit.dart';
@@ -22,15 +24,13 @@ class _CollectorsScreenState extends State<CollectorsScreen> {
 
   List<Widget> body = [
     BlocProvider.value(
-      value: getIt<CollectorsCubit>()
-        ..getUsers(
-          getUsersRequestBody: GetUsersRequestBody(
-            username: '',
-          ),
-        ),
+      value: getIt<CollectorsCubit>(),
       child: const CollectorsScreenDetails(),
     ),
-    const ResellersRequestsScreenDesktop(),
+    BlocProvider.value(
+      value: getIt<CollectorsRequestsCubit>(),
+      child: const ResellersRequestsScreenDesktop(),
+    ),
   ];
 
   @override

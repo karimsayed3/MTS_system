@@ -89,6 +89,7 @@ class _CompaniesCardWidgetMobileState extends State<CompaniesCardWidgetMobile> {
                   showDataAlert(
                       context: context,
                       child: AddBunchForCompany(
+                        companyName: widget.companyData.name ?? "",
                         onPressed: () {
                           CompaniesCubit.get(context)
                               .deductPlanFromSubscribers(

@@ -15,6 +15,7 @@ import 'package:system/features/subscribers_screen/business_logic/subscribers_cu
 import 'package:system/features/subscribers_screen/business_logic/subscribers_state.dart';
 import 'package:system/features/subscribers_screen/data/models/get_active_subscribers_request_body.dart';
 import 'package:system/features/subscribers_screen/presentation/desktop/widgets/add_subsciber_widget.dart';
+import 'package:system/features/subscribers_screen/presentation/desktop/widgets/create_excel.dart';
 import '../widgets/bloc_listener.dart';
 import '../widgets/subscribers_card.dart';
 import '../widgets/subscribers_header_widget.dart';
@@ -91,14 +92,27 @@ class _SubscribersScreenState extends State<SubscribersScreen> with AutomaticKee
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       SearchWithFilterButtonWidget(
-                        onTap: () {},
+                        onTap: () {
+
+                        },
                         searchController: searchController,
+                        onChange: (value) {
+                          SubscribersCubit.get(context).getActiveSubscribers(
+                            getActiveSubscribersRequestBody: GetActiveSubscribersRequestBody(
+                              name: value
+                            ),
+                          );
+                        },
                       ),
                       Row(
                         children: [
                           CacheHelper.getdata(key: "accountType") == "ادمن"
                               ? ButtonWithTextAndImageWidget(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    createExcelForActiveSubscribers(
+                                      data: SubscribersCubit.get(context).subscribers
+                                    );
+                                  },
                                   color: const Color(0xffebf5f6),
                                   image: 'assets/icons/excel.svg',
                                   text: "تنزيل اكسيل",

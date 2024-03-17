@@ -150,7 +150,14 @@ class CollectorsCard extends StatelessWidget {
                         child: BlocProvider.value(
                           value: getIt<CollectorsCubit>(),
                           child: AddBalanceWidget(
-                            UserID: user.userID!,
+                            phone: user.name ?? "",
+                            onPressed: () {
+
+                            },
+                            currentBalance: 1,
+                            dateOfLastAddedBalance: "",
+                            lastPositiveBalance: 1,
+                            name: "",
                           ),
                         ),
                       );

@@ -34,36 +34,15 @@ class _BlocListenerForCompaniesCubitState extends State<BlocListenerForCompanies
                     ));
           },
           addCompanySuccessState: (addCompanyResponse) {
-            Navigator.pop(context);
-            Navigator.pop(context);
-            showDialog(
-              context: context,
-              builder: (context) => Directionality(
-                textDirection: TextDirection.rtl,
-                child: AlertDialog(
-                  icon: const Icon(
-                    Icons.wb_twighlight,
-                    color: Colors.green,
-                    size: 32,
-                  ),
-                  content: Text(
-                    addCompanyResponse.statusMessage!,
-                    style: TextStyles.font15DarkBlueMedium,
-                  ),
-                  actions: [
-                    TextButton(
-                      onPressed: () {
-                        context.pop();
-                      },
-                      child: Text(
-                        'حسناً',
-                        style: TextStyles.font14BlueSemiBold,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            );
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                content: Text(addCompanyResponse.statusMessage!),
+                backgroundColor: Colors.green,
+                behavior: SnackBarBehavior.floating,
+                duration: const Duration(seconds: 2),
+                dismissDirection: DismissDirection.horizontal,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                )));
             CompaniesCubit.get(context).getCompanies(
               getCompaniesRequestBody: GetCompaniesRequestBody(
                 companyName: CompaniesCubit.get(context).searchController.text,
@@ -105,32 +84,15 @@ class _BlocListenerForCompaniesCubitState extends State<BlocListenerForCompanies
           /// Get Companies
           getCompaniesErrorState: (error) {
             // Navigator.pop(context);
-            showDialog(
-              context: context,
-              builder: (context) => Directionality(
-                textDirection: TextDirection.rtl,
-                child: AlertDialog(
-                  icon: const Icon(
-                    Icons.error,
-                    color: Colors.red,
-                  ),
-                  content: Text(
-                    error,
-                    style: TextStyles.font15DarkBlueMedium,
-                  ),
-                  actions: [
-                    TextButton(
-                      onPressed: () {
-                        context.pop();
-                      },
-                      child: Text(
-                        'حسناً',
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            );
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                content: Text(error),
+                backgroundColor: Colors.red,
+                behavior: SnackBarBehavior.floating,
+                duration: const Duration(seconds: 2),
+                dismissDirection: DismissDirection.horizontal,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                )));
           },
           getCompaniesLoadingState: () {
             // print("loading loading loading loading loading loading");
@@ -149,44 +111,25 @@ class _BlocListenerForCompaniesCubitState extends State<BlocListenerForCompanies
           /// Delete Company
           deleteCompanyLoadingState: () {
             // Navigator.pop(context);
-            showDialog(
-                context: context,
-                builder: (context) => const Center(
-                  child: CircularProgressIndicator(
-                    color: ColorsManager.secondaryColor,
-                  ),
-                ));
+            // showDialog(
+            //     context: context,
+            //     builder: (context) => const Center(
+            //       child: CircularProgressIndicator(
+            //         color: ColorsManager.secondaryColor,
+            //       ),
+            //     ));
           },
           deleteCompanySuccessState: (addCompanyResponse) {
-            Navigator.pop(context);
-            showDialog(
-              context: context,
-              builder: (context) => Directionality(
-                textDirection: TextDirection.rtl,
-                child: AlertDialog(
-                  icon: const Icon(
-                    Icons.wb_twighlight,
-                    color: Colors.green,
-                    size: 32,
-                  ),
-                  content: Text(
-                    addCompanyResponse.statusMessage!,
-                    style: TextStyles.font15DarkBlueMedium,
-                  ),
-                  actions: [
-                    TextButton(
-                      onPressed: () {
-                        context.pop();
-                      },
-                      child: Text(
-                        'حسناً',
-                        style: TextStyles.font14BlueSemiBold,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            );
+            // Navigator.pop(context);
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                content: Text(addCompanyResponse.statusMessage!),
+                backgroundColor: Colors.green,
+                behavior: SnackBarBehavior.floating,
+                duration: const Duration(seconds: 2),
+                dismissDirection: DismissDirection.horizontal,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                )));
             CompaniesCubit.get(context).getCompanies(
               getCompaniesRequestBody: GetCompaniesRequestBody(
                 companyName: CompaniesCubit.get(context).searchController.text,
@@ -194,115 +137,117 @@ class _BlocListenerForCompaniesCubitState extends State<BlocListenerForCompanies
             );
           },
           deleteCompanyErrorState: (error) {
-            Navigator.pop(context);
-            showDialog(
-              context: context,
-              builder: (context) => Directionality(
-                textDirection: TextDirection.rtl,
-                child: AlertDialog(
-                  icon: const Icon(
-                    Icons.error,
-                    color: Colors.red,
-                    size: 32,
-                  ),
-                  content: Text(
-                    error,
-                    style: TextStyles.font15DarkBlueMedium,
-                  ),
-                  actions: [
-                    TextButton(
-                      onPressed: () {
-                        context.pop();
-                      },
-                      child: Text(
-                        'حسناً',
-                        style: TextStyles.font14BlueSemiBold,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            );
+            // Navigator.pop(context);
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                content: Text(error),
+                backgroundColor: Colors.red,
+                behavior: SnackBarBehavior.floating,
+                duration: const Duration(seconds: 2),
+                dismissDirection: DismissDirection.horizontal,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                )));
           },
 
           /// Update Company
           updateCompanyErrorState: (error) {
-            Navigator.pop(context);
-            showDialog(
-              context: context,
-              builder: (context) => Directionality(
-                textDirection: TextDirection.rtl,
-                child: AlertDialog(
-                  icon: const Icon(
-                    Icons.error,
-                    color: Colors.red,
-                    size: 32,
-                  ),
-                  content: Text(
-                    error,
-                    style: TextStyles.font15DarkBlueMedium,
-                  ),
-                  actions: [
-                    TextButton(
-                      onPressed: () {
-                        context.pop();
-                      },
-                      child: Text(
-                        'حسناً',
-                        style: TextStyles.font14BlueSemiBold,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            );
+            // Navigator.pop(context);
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                content: Text(error),
+                backgroundColor: Colors.red,
+                behavior: SnackBarBehavior.floating,
+                duration: const Duration(seconds: 2),
+                dismissDirection: DismissDirection.horizontal,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                )));
           },
           updateCompanyLoadingState: () {
-            showDialog(
-                context: context,
-                builder: (context) => const Center(
-                  child: CircularProgressIndicator(
-                    color: ColorsManager.secondaryColor,
-                  ),
-                ));
+            // showDialog(
+            //     context: context,
+            //     builder: (context) => const Center(
+            //       child: CircularProgressIndicator(
+            //         color: ColorsManager.secondaryColor,
+            //       ),
+            //     ));
           },
           updateCompanySuccessState: (addCompanyResponse) {
-            Navigator.pop(context);
-            showDialog(
-              context: context,
-              builder: (context) => Directionality(
-                textDirection: TextDirection.rtl,
-                child: AlertDialog(
-                  icon: const Icon(
-                    Icons.wb_twighlight,
-                    color: Colors.green,
-                    size: 32,
-                  ),
-                  content: Text(
-                    addCompanyResponse.statusMessage!,
-                    style: TextStyles.font15DarkBlueMedium,
-                  ),
-                  actions: [
-                    TextButton(
-                      onPressed: () {
-                        context.pop();
-                      },
-                      child: Text(
-                        'حسناً',
-                        style: TextStyles.font14BlueSemiBold,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            );
+            // Navigator.pop(context);
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                content: Text(addCompanyResponse.statusMessage!),
+                backgroundColor: Colors.green,
+                behavior: SnackBarBehavior.floating,
+                duration: const Duration(seconds: 2),
+                dismissDirection: DismissDirection.horizontal,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                )));
             CompaniesCubit.get(context).getCompanies(
               getCompaniesRequestBody: GetCompaniesRequestBody(
                 companyName: CompaniesCubit.get(context).searchController.text,
               ),
             );
           },
+          deductPlanFromSubscribersLoadingState: () {
 
+          },
+          deductPlanFromSubscribersSuccessState: (deductPlanFromSubscribersResponse) {
+            Navigator.pop(context);
+
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                content: Text(deductPlanFromSubscribersResponse.statusMessage!),
+                backgroundColor: Colors.green,
+                behavior: SnackBarBehavior.floating,
+                duration: const Duration(seconds: 2),
+                dismissDirection: DismissDirection.horizontal,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+            ));
+          },
+          deductPlanFromSubscribersErrorState: (error) {
+            Navigator.pop(context);
+
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                content: Text(error),
+                backgroundColor: Colors.red,
+                behavior: SnackBarBehavior.floating,
+                duration: const Duration(seconds: 2),
+                dismissDirection: DismissDirection.horizontal,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                )));
+          },
+          undoPlanFromSubscribersLoadingState: () {
+
+          },
+          undoPlanFromSubscribersSuccessState: (undoPlanFromSubscribersResponse) {
+            Navigator.pop(context);
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                content: Text(undoPlanFromSubscribersResponse.statusMessage!),
+                backgroundColor: Colors.green,
+                behavior: SnackBarBehavior.floating,
+                duration: const Duration(seconds: 2),
+                dismissDirection: DismissDirection.horizontal,
+                shape: RoundedRectangleBorder(
+
+                  borderRadius: BorderRadius.circular(10),
+                )
+            ));
+          },
+          undoPlanFromSubscribersErrorState: (error) {
+            Navigator.pop(context);
+
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                content: Text(error),
+                backgroundColor: Colors.red,
+                behavior: SnackBarBehavior.floating,
+                duration: const Duration(seconds: 2),
+                dismissDirection: DismissDirection.horizontal,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                )));
+          }
         );
       },
       child: const SizedBox.shrink(),

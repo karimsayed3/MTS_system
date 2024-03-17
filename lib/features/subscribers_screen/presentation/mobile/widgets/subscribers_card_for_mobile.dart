@@ -1,15 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:system/core/di/dependency_injection.dart';
 import 'package:system/core/helpers/spacing.dart';
 import 'package:system/core/theming/colors.dart';
+import 'package:system/core/widgets/add_balance_widget.dart';
 import 'package:system/core/widgets/default_text.dart';
 import 'package:system/core/widgets/make_zero_widget.dart';
 import 'package:system/core/widgets/show_alert_dialog.dart';
+import 'package:system/features/subscribers_screen/business_logic/subscribers_cubit.dart';
+import 'package:system/features/subscribers_screen/data/models/zero_subscriber_balance_request_body.dart';
 import 'package:system/features/subscribers_screen/presentation/desktop/widgets/update_subsciber_widget.dart';
 
+import '../../../data/models/get_subscribers_data_response.dart';
+
 class SubscribersCardWidgetMobile extends StatefulWidget {
-  const SubscribersCardWidgetMobile({super.key});
+  const SubscribersCardWidgetMobile({super.key, required this.subscriber});
+
+  final SubscriberData subscriber;
 
   @override
   State<SubscribersCardWidgetMobile> createState() =>
@@ -38,7 +47,7 @@ class _SubscribersCardWidgetMobileState
           SizedBox(
             width: 110.w,
             child: DefaultText(
-              text: 'كريم سيد ابراهيم',
+              text: widget.subscriber.name ?? "",
               fontSize: 16.sp,
               fontFamily: 'din',
               fontWeight: FontWeight.w400,
@@ -48,7 +57,7 @@ class _SubscribersCardWidgetMobileState
           SizedBox(
             width: 100.w,
             child: DefaultText(
-              text: '01156788394',
+              text: widget.subscriber.phoneNo ?? "",
               color: ColorsManager.secondaryColor,
               fontSize: 16.sp,
               fontWeight: FontWeight.w400,
@@ -69,7 +78,7 @@ class _SubscribersCardWidgetMobileState
                       fontWeight: FontWeight.w500,
                     ),
                     DefaultText(
-                      text: ' 15-',
+                      text: widget.subscriber.balance.toString(),
                       color: Color(0xFFCC232A),
                       fontSize: 16.sp,
                       fontWeight: FontWeight.w500,
@@ -94,7 +103,7 @@ class _SubscribersCardWidgetMobileState
                           fontWeight: FontWeight.w600,
                         ),
                         DefaultText(
-                          text: ' 33',
+                          text: widget.subscriber.lastPositiveDepoit.toString(),
                           color: ColorsManager.lightGray,
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w600,
@@ -116,11 +125,35 @@ class _SubscribersCardWidgetMobileState
                 // Handle menu item selection
                 if (choice == 'option1') {
                   // Perform action for option 1
+                  // showDataAlert(
+                  //   context: context,
+                  //   child: UpdateSubscriberWidget(
+                  //     name: subscriber.name ?? "",
+                  //     phoneNumber: subscriber.phoneNo ?? "",
+                  //     lineType: subscriber.lineType ?? "",
+                  //     companyName: subscriber.companyName ?? "",
+                  //     planName: subscriber.planName ?? "",
+                  //     relatedTo: subscriber.relatedTo ?? "",
+                  //     onPressed: () {},
+                  //     // companyName: "شركة فودافون كفرالشيخ",
+                  //   ),
+                  // );
                   showDataAlert(
                     context: context,
-                    child: UpdateSubscriberWidget(
-                      onPressed: () {},
-                      // companyName: "شركة فودافون كفرالشيخ",
+                    child: BlocProvider.value(
+                      value: getIt<SubscribersCubit>(),
+                      child: UpdateSubscriberWidget(
+                        name: widget.subscriber.name ?? "",
+                        phoneNumber: widget.subscriber.phoneNo ?? "",
+                        lineType: widget.subscriber.lineType ?? "",
+                        companyName: widget.subscriber.companyName ?? "",
+                        planName: widget.subscriber.planName ?? "",
+                        relatedTo: widget.subscriber.relatedTo ?? "",
+                        address: "",
+                        NID: "",
+                        onPressed: () {},
+                        // companyName: "شركة فودافون كفرالشيخ",
+                      ),
                     ),
                   );
                 } else if (choice == 'option2') {
@@ -132,13 +165,44 @@ class _SubscribersCardWidgetMobileState
                   //     companyName: "شركة فودافون كفرالشيخ",
                   //   ),
                   // );
+                  showDataAlert(
+                    context: context,
+                    child: BlocProvider.value(
+                      value: getIt<SubscribersCubit>(),
+                      child: AddBalanceWidget(
+                        phone: widget.subscriber.phoneNo ?? "",
+                        onPressed: () {},
+                        currentBalance: widget.subscriber.balance!,
+                        dateOfLastAddedBalance: "",
+                        lastPositiveBalance:
+                        widget.subscriber.lastPositiveDepoit!,
+                        name: widget.subscriber.name ?? "",
+                      ),
+                    ),
+                  );
                 } else if (choice == 'option3') {
                   // Perform action for option 3
+                  // showDataAlert(
+                  //   context: context,
+                  //   child: MakeZeroWidget(
+                  //     onPressed: () {},
+                  //     subscriberName: "كريم سيد ابراهيم عبدالتواب",
+                  //   ),
+                  // );
                   showDataAlert(
                     context: context,
                     child: MakeZeroWidget(
-                      onPressed: () {},
-                      subscriberName: "كريم سيد ابراهيم عبدالتواب",
+                      onPressed: () {
+                        SubscribersCubit.get(context)
+                            .zeroSubscriberBalance(
+                          zeroSubscriberBalanceRequestBody:
+                          ZeroSubscriberBalanceRequestBody(
+                            phone: widget.subscriber.phoneNo,
+                            collectingType: 'نقدى',
+                          ),
+                        );
+                      },
+                      subscriberName: widget.subscriber.name ?? "",
                     ),
                   );
                 }

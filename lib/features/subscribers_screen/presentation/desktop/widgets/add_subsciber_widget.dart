@@ -533,7 +533,7 @@ class _AddSubscriberWidgetState extends State<AddSubscriberWidget> {
                                 Expanded(
                                   child: Column(
                                     crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                    CrossAxisAlignment.start,
                                     children: [
                                       DefaultText(
                                         text: 'التبعية',

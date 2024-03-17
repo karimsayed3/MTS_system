@@ -9,20 +9,23 @@ import 'package:system/core/widgets/info_widget.dart';
 import 'package:system/core/widgets/screen_title_widget.dart';
 import 'package:system/core/widgets/search_with_filter_widget.dart';
 import 'package:system/features/late_customers_screen/presentation/desktop/widgets/Information_widget.dart';
+import 'package:system/features/late_customers_screen/presentation/desktop/widgets/create_excel.dart';
 import 'package:system/features/late_customers_screen/presentation/desktop/widgets/late_customers_header_widget.dart';
 import 'package:system/features/late_customers_screen/presentation/desktop/widgets/late_customrers_card.dart';
 import 'package:system/features/subscribers_screen/business_logic/subscribers_cubit.dart';
+import 'package:system/features/subscribers_screen/business_logic/subscribers_state.dart';
 import 'package:system/features/subscribers_screen/data/models/get_late_subscribers_request_body.dart';
 import 'package:system/features/subscribers_screen/presentation/desktop/widgets/bloc_listener.dart';
 
 class LateCustomersScreen extends StatefulWidget {
-  LateCustomersScreen({super.key});
+  const LateCustomersScreen({super.key});
 
   @override
   State<LateCustomersScreen> createState() => _LateCustomersScreenState();
 }
 
-class _LateCustomersScreenState extends State<LateCustomersScreen> with AutomaticKeepAliveClientMixin {
+class _LateCustomersScreenState extends State<LateCustomersScreen>
+    with AutomaticKeepAliveClientMixin {
   @override
   bool get wantKeepAlive => true;
   TextEditingController searchController = TextEditingController();
@@ -31,8 +34,9 @@ class _LateCustomersScreenState extends State<LateCustomersScreen> with Automati
   void initState() {
     // TODO: implement initState
     super.initState();
-    SubscribersCubit.get(context).subscribers = [];
-    SubscribersCubit.get(context).changeListData(subscribers: []);
+    // SubscribersCubit.get(context).subscribers = [];
+    // SubscribersCubit.get(context).changeListData(subscribers: []);
+    SubscribersCubit.get(context).lateSubscribers = [];
     SubscribersCubit.get(context).getLateSubscribers(
       getLateSubscribersRequestBody: GetLateSubscribersRequestBody(),
     );
@@ -52,12 +56,11 @@ class _LateCustomersScreenState extends State<LateCustomersScreen> with Automati
     // TODO: implement dispose
 
     // Clear the companiesData list
-    _subscribersCubit!.changeListData(subscribers: []);
-    _subscribersCubit!.subscribers = [];
+    // _subscribersCubit!.changeListData(subscribers: []);
+    // _subscribersCubit!.subscribers = [];
 
     super.dispose();
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -92,9 +95,23 @@ class _LateCustomersScreenState extends State<LateCustomersScreen> with Automati
                     children: [
                       // const SubscribersSearchWidget(),
                       SearchWithFilterButtonWidget(
-                          onTap: () {}, searchController: searchController),
+                        onTap: () {},
+                        searchController: searchController,
+                        onChange: (value) {
+                          SubscribersCubit.get(context).getLateSubscribers(
+                            getLateSubscribersRequestBody:
+                                GetLateSubscribersRequestBody(
+                              name: value,
+                            ),
+                          );
+                        },
+                      ),
                       ButtonWithTextAndImageWidget(
-                        onPressed: () {},
+                        onPressed: () {
+                          createExcelForLateSubscribers(
+                            data: SubscribersCubit.get(context).lateSubscribers,
+                          );
+                        },
                         color: const Color(0xffebf5f6),
                         image: 'assets/icons/excel.svg',
                         text: "تنزيل اكسيل",
@@ -103,16 +120,21 @@ class _LateCustomersScreenState extends State<LateCustomersScreen> with Automati
                   ),
                   verticalSpace(dimension.height10),
                   const LateCustomersHeaderWidget(),
-                  Expanded(
-                    child: ListView.builder(
-                      itemBuilder: (context, index) {
-                        return LateCustomersCard(
-                            subscriber: SubscribersCubit.get(context)
-                                .subscribers[index]);
-                      },
-                      itemCount:
-                          SubscribersCubit.get(context).subscribers.length,
-                    ),
+                  BlocBuilder<SubscribersCubit, SubscribersState>(
+                    builder: (context, state) {
+                      return Expanded(
+                        child: ListView.builder(
+                          itemBuilder: (context, index) {
+                            return LateCustomersCard(
+                                subscriber: SubscribersCubit.get(context)
+                                    .lateSubscribers[index]);
+                          },
+                          itemCount: SubscribersCubit.get(context)
+                              .lateSubscribers
+                              .length,
+                        ),
+                      );
+                    },
                   ),
                   const BlocListenerForSubscribersCubit(),
                   verticalSpace(dimension.height10),

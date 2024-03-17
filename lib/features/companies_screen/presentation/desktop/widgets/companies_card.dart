@@ -100,12 +100,14 @@ class CompaniesCard extends StatelessWidget {
                       showDataAlert(
                           context: context,
                           child: AddBunchForCompany(
+                            companyName: companyData.name ?? "",
                             onPressed: () {
                               CompaniesCubit.get(context)
                                   .deductPlanFromSubscribers(
                                 deductPlanFromSubscribersRequestBody:
                                     DeductPlanFromSubscribersRequestBody(
-                                        companyID: companyData.companyID!),
+                                  companyID: companyData.companyID!,
+                                ),
                               );
                             },
                           ));

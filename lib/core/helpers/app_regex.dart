@@ -43,7 +43,7 @@ class NumberInputFormatter extends TextInputFormatter {
   TextEditingValue formatEditUpdate(
       TextEditingValue oldValue, TextEditingValue newValue) {
     // Allow only digits
-    String newText = newValue.text.replaceAll(RegExp(r'[^0-9]'), '');
+    String newText = newValue.text.replaceAll(RegExp(r'[^-0-9]'), '');
 
     return newValue.copyWith(
         text: newText,

@@ -1,13 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:system/core/di/dependency_injection.dart';
+import 'package:system/core/helpers/convert_string_to_date.dart';
 import 'package:system/core/helpers/dimensions.dart';
 import 'package:system/core/helpers/spacing.dart';
 import 'package:system/core/theming/colors.dart';
+import 'package:system/core/widgets/add_balance_widget.dart';
 import 'package:system/core/widgets/default_button.dart';
 import 'package:system/core/widgets/default_text.dart';
+import 'package:system/core/widgets/make_zero_widget.dart';
+import 'package:system/core/widgets/show_alert_dialog.dart';
+import 'package:system/features/disabled_customers_screen/data/models/get_disabled_subscribers_response.dart';
+import 'package:system/features/subscribers_screen/business_logic/subscribers_cubit.dart';
+import 'package:system/features/subscribers_screen/data/models/activate_subscriber_request_body.dart';
+import 'package:system/features/subscribers_screen/data/models/zero_subscriber_balance_request_body.dart';
+import 'package:system/features/subscribers_screen/presentation/desktop/widgets/update_subsciber_widget.dart';
 
 class DisabledCustomersCard extends StatelessWidget {
-  const DisabledCustomersCard({super.key});
+  const DisabledCustomersCard({super.key, required this.disabledSubscriber});
+
+  final DisabledSubscriberData disabledSubscriber;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +40,7 @@ class DisabledCustomersCard extends StatelessWidget {
           SizedBox(
             width: dimension.width130,
             child: DefaultText(
-              text: 'كريم سيد ابراهيم عبدالتواب',
+              text: disabledSubscriber.name??"",
               color: ColorsManager.darkBlack,
               fontSize: dimension.width10,
               fontWeight: FontWeight.w400,
@@ -37,7 +50,7 @@ class DisabledCustomersCard extends StatelessWidget {
           SizedBox(
             width: dimension.width80,
             child: DefaultText(
-              text: '01156788394',
+              text: disabledSubscriber.phoneNo??"",
               color: ColorsManager.secondaryColor,
               fontSize: dimension.width10,
               fontWeight: FontWeight.w400,
@@ -47,7 +60,7 @@ class DisabledCustomersCard extends StatelessWidget {
           SizedBox(
             width: dimension.width100,
             child: DefaultText(
-              text: 'ايمن يوسف ايمن',
+              text: disabledSubscriber.relatedTo??"",
               color: ColorsManager.darkBlack,
               fontSize: dimension.width10,
               fontWeight: FontWeight.w400,
@@ -60,7 +73,7 @@ class DisabledCustomersCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 DefaultText(
-                  text: 'شركة لواته',
+                  text: disabledSubscriber.companyName??"",
                   color: ColorsManager.secondaryColor,
                   fontSize: dimension.width10,
                   fontWeight: FontWeight.w400,
@@ -74,7 +87,7 @@ class DisabledCustomersCard extends StatelessWidget {
                       fontWeight: FontWeight.w400,
                     ),
                     DefaultText(
-                      text: 'كريم سيد ابراهيم',
+                      text: disabledSubscriber.collectorName??"",
                       color: ColorsManager.darkBlack,
                       fontSize: dimension.width10,
                       fontWeight: FontWeight.w400,
@@ -88,7 +101,7 @@ class DisabledCustomersCard extends StatelessWidget {
           SizedBox(
             width: dimension.width80,
             child: DefaultText(
-              text: '04/18/2020',
+              text: disabledSubscriber.registrationDate!=null?convertDateToString(disabledSubscriber.registrationDate):"لا يوجد",
               color: ColorsManager.secondaryColor,
               fontSize: dimension.width10,
               fontWeight: FontWeight.w400,
@@ -109,7 +122,7 @@ class DisabledCustomersCard extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10)),
                   child: Center(
                     child: DefaultText(
-                      text: 'Super Flix 30',
+                      text: disabledSubscriber.planName??"",
                       color: ColorsManager.secondaryColor,
                       fontSize: dimension.width10,
                       fontWeight: FontWeight.w400,
@@ -129,7 +142,7 @@ class DisabledCustomersCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 DefaultText(
-                  text: '04/18/2020',
+                  text: disabledSubscriber.actionDate!=null?convertDateToString(disabledSubscriber.actionDate):"لا يوجد",
                   color: Color(0xFFCC232A),
                   fontSize: dimension.width10,
                   fontWeight: FontWeight.w600,
@@ -142,7 +155,14 @@ class DisabledCustomersCard extends StatelessWidget {
                     padding: EdgeInsets.symmetric(
                         // horizontal: dimension.width15,
                         vertical: dimension.height5),
-                    onPressed: () {},
+                    onPressed: () {
+                      SubscribersCubit.get(context).activateSubscriber(
+                        activateSubscriberRequestBody:
+                        ActivateSubscriberRequestBody(
+                            phone: disabledSubscriber.phoneNo,
+                        ),
+                      );
+                    },
                     child: DefaultText(
                       text: 'تفعيل',
                       color: ColorsManager.secondaryColor,
@@ -169,7 +189,7 @@ class DisabledCustomersCard extends StatelessWidget {
                       fontWeight: FontWeight.w500,
                     ),
                     DefaultText(
-                      text: ' 15-',
+                      text: disabledSubscriber.balance.toString(),
                       color: Color(0xFFCC232A),
                       fontSize: dimension.width10,
                       fontWeight: FontWeight.w500,
@@ -194,7 +214,7 @@ class DisabledCustomersCard extends StatelessWidget {
                           fontWeight: FontWeight.w600,
                         ),
                         DefaultText(
-                          text: ' 33',
+                          text: disabledSubscriber.lastPositiveDepoit.toString(),
                           color: ColorsManager.lightGray,
                           fontSize: dimension.width10,
                           fontWeight: FontWeight.w600,
@@ -211,7 +231,24 @@ class DisabledCustomersCard extends StatelessWidget {
                           horizontal: dimension.width15,
                           vertical: dimension.height5),
                       color: ColorsManager.lightBlueColor,
-                      onPressed: () {},
+                      onPressed: () {
+                        showDataAlert(
+                          context: context,
+                          child: MakeZeroWidget(
+                            onPressed: () {
+                              SubscribersCubit.get(context)
+                                  .zeroSubscriberBalance(
+                                zeroSubscriberBalanceRequestBody:
+                                ZeroSubscriberBalanceRequestBody(
+                                  phone: disabledSubscriber.phoneNo,
+                                  collectingType: 'نقدى',
+                                ),
+                              );
+                            },
+                            subscriberName: disabledSubscriber.name ?? "",
+                          ),
+                        );
+                      },
                       child: DefaultText(
                         text: 'تصفير',
                         color: Color(0xFFFFA800),
@@ -225,7 +262,23 @@ class DisabledCustomersCard extends StatelessWidget {
                       padding: EdgeInsets.symmetric(
                           horizontal: dimension.width15,
                           vertical: dimension.height5),
-                      onPressed: () {},
+                      onPressed: () {
+                        showDataAlert(
+                          context: context,
+                          child: BlocProvider.value(
+                            value: getIt<SubscribersCubit>(),
+                            child: AddBalanceWidget(
+                              phone: disabledSubscriber.phoneNo ?? "",
+                              onPressed: () {},
+                              currentBalance: disabledSubscriber.balance!,
+                              dateOfLastAddedBalance: "",
+                              lastPositiveBalance:
+                              disabledSubscriber.lastPositiveDepoit!,
+                              name: disabledSubscriber.name ?? "",
+                            ),
+                          ),
+                        );
+                      },
                       child: DefaultText(
                         text: 'اضافة',
                         color: ColorsManager.secondaryColor,
@@ -254,6 +307,24 @@ class DisabledCustomersCard extends StatelessWidget {
                   //     // companyName: "شركة فودافون كفرالشيخ",
                   //   ),
                   // );
+                  showDataAlert(
+                    context: context,
+                    child: BlocProvider.value(
+                      value: getIt<SubscribersCubit>(),
+                      child: UpdateSubscriberWidget(
+                        name: disabledSubscriber.name ?? "",
+                        phoneNumber: disabledSubscriber.phoneNo ?? "",
+                        lineType: disabledSubscriber.lineType ?? "",
+                        companyName: disabledSubscriber.companyName ?? "",
+                        planName: disabledSubscriber.planName ?? "",
+                        relatedTo: disabledSubscriber.relatedTo ?? "",
+                        address: "",
+                        NID: "",
+                        onPressed: () {},
+                        // companyName: "شركة فودافون كفرالشيخ",
+                      ),
+                    ),
+                  );
                 }
               },
               itemBuilder: (BuildContext context) =>

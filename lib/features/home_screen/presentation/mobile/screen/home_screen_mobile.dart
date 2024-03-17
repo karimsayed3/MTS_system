@@ -7,8 +7,12 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:system/core/di/dependency_injection.dart';
 import 'package:system/features/bunches_screen/business_logic/bunch_cubit.dart';
 import 'package:system/features/bunches_screen/presentation/mobile/screen/bunch_screen_mobile.dart';
+import 'package:system/features/collectors_screen/business_logic/collectors_cubit.dart';
 import 'package:system/features/companies_screen/business_logic/companies_cubit.dart';
 import 'package:system/features/companies_screen/presentation/mobile/screen/companies_screen_mobile.dart';
+import 'package:system/features/home_screen/presentation/mobile/widgets/drawer.dart';
+import 'package:system/features/resellers_requests_screen/business_logic/collectors_requests_cubit.dart';
+import 'package:system/features/subscribers_screen/business_logic/subscribers_cubit.dart';
 import 'package:system/features/subscribers_screen/presentation/mobile/screen/subscribers_screen_mobile.dart';
 
 import '../../../../collectors_screen/presentation/mobile/screen/collectors_screen_mobile.dart';
@@ -29,17 +33,17 @@ class HomeScreenMobile extends StatefulWidget {
 class _HomeScreenMobileState extends State<HomeScreenMobile> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   int _currentIndex = 0;
-  late PageController _pageController;
+  late PageController pageController;
 
   @override
   void initState() {
-    _pageController = PageController();
+    pageController = PageController();
     super.initState();
   }
 
   @override
   void dispose() {
-    _pageController.dispose();
+    pageController.dispose();
     super.dispose();
   }
 
@@ -48,7 +52,7 @@ class _HomeScreenMobileState extends State<HomeScreenMobile> {
   }
 
   void _onItemTapped(int index) {
-    // _pageController.animateToPage(index, duration: Duration(milliseconds: 300), curve: Curves.easeInOut);
+    // pageController.animateToPage(index, duration: Duration(milliseconds: 300), curve: Curves.easeInOut);
     // setState(() {
     //
     // });
@@ -61,119 +65,11 @@ class _HomeScreenMobileState extends State<HomeScreenMobile> {
         textDirection: TextDirection.ltr,
         child: Scaffold(
           key: _scaffoldKey,
-          drawer: Drawer(
-            child: ListView(
-              padding: EdgeInsets.zero,
-              children: <Widget>[
-                const DrawerHeader(
-                  decoration: BoxDecoration(
-                    color: Colors.blue,
-                  ),
-                  child: Text('Drawer Header'),
-                ),
-                ListTile(
-                  title: const Text('الشركات'),
-                  onTap: () {
-                    // Change to page 1
-                    _pageController.animateToPage(0,
-                        duration: const Duration(milliseconds: 300),
-                        curve: Curves.easeInOut);
-                    Navigator.pop(context); // Close drawer
-                  },
-                ),
-                ListTile(
-                  title: const Text('الباقات'),
-                  onTap: () {
-                    // Change to page 2
-                    _pageController.animateToPage(1,
-                        duration: const Duration(milliseconds: 300),
-                        curve: Curves.easeInOut);
-                    Navigator.pop(context); // Close drawer
-                  },
-                ),
-                ListTile(
-                  title: const Text('المشتركين'),
-                  onTap: () {
-                    // Change to page 2
-                    _pageController.animateToPage(2,
-                        duration: const Duration(milliseconds: 300),
-                        curve: Curves.easeInOut);
-                    Navigator.pop(context); // Close drawer
-                  },
-                ),
-                ListTile(
-                  title: const Text('المتأخرين'),
-                  onTap: () {
-                    // Change to page 2
-                    _pageController.animateToPage(3,
-                        duration: const Duration(milliseconds: 300),
-                        curve: Curves.easeInOut);
-                    Navigator.pop(context); // Close drawer
-                  },
-                ),
-                ListTile(
-                  title: const Text('المعطلين'),
-                  onTap: () {
-                    // Change to page 2
-                    _pageController.animateToPage(4,
-                        duration: const Duration(milliseconds: 300),
-                        curve: Curves.easeInOut);
-                    Navigator.pop(context); // Close drawer
-                  },
-                ),
-                ListTile(
-                  title: const Text('المسحوبين'),
-                  onTap: () {
-                    // Change to page 2
-                    _pageController.animateToPage(5,
-                        duration: const Duration(milliseconds: 300),
-                        curve: Curves.easeInOut);
-                    Navigator.pop(context); // Close drawer
-                  },
-                ),
-                ListTile(
-                  title: const Text('المحصلين'),
-                  onTap: () {
-                    // Change to page 2
-                    _pageController.animateToPage(6,
-                        duration: const Duration(milliseconds: 300),
-                        curve: Curves.easeInOut);
-                    Navigator.pop(context); // Close drawer
-                  },
-                ),
-                ListTile(
-                  title: const Text('سجل العمليات'),
-                  onTap: () {
-                    // Change to page 2
-                    _pageController.animateToPage(7,
-                        duration: const Duration(milliseconds: 300),
-                        curve: Curves.easeInOut);
-                    Navigator.pop(context); // Close drawer
-                  },
-                ),ListTile(
-                  title: const Text('مراجعة البيانات'),
-                  onTap: () {
-                    // Change to page 2
-                    _pageController.animateToPage(8,
-                        duration: const Duration(milliseconds: 300),
-                        curve: Curves.easeInOut);
-                    Navigator.pop(context); // Close drawer
-                  },
-                ),ListTile(
-                  title: const Text('طلبات المحصلون'),
-                  onTap: () {
-                    // Change to page 2
-                    _pageController.animateToPage(9,
-                        duration: const Duration(milliseconds: 300),
-                        curve: Curves.easeInOut);
-                    Navigator.pop(context); // Close drawer
-                  },
-                ),
-              ],
-            ),
+          drawer: DrawerWidget(
+            pageController: pageController,
           ),
           body: PageView(
-            controller: _pageController,
+            controller: pageController,
             onPageChanged: _onItemTapped,
             physics: const NeverScrollableScrollPhysics(),
             children: [
@@ -185,14 +81,32 @@ class _HomeScreenMobileState extends State<HomeScreenMobile> {
                 value: getIt<BunchCubit>(),
                 child: const BunchScreenMobile(),
               ),
-              const SubscribersScreenMobile(),
-              const LateCustomersScreenMobile(),
-              const DisabledCustomersScreenMobile(),
-              const WithdrawnCustomersScreenMobile(),
-              const CollectorsScreenMobile(),
+              BlocProvider.value(
+                value: getIt<SubscribersCubit>(),
+                child: const SubscribersScreenMobile(),
+              ),
+              BlocProvider.value(
+                value: getIt<SubscribersCubit>(),
+                child: const LateCustomersScreenMobile(),
+              ),
+              BlocProvider.value(
+                value: getIt<SubscribersCubit>(),
+                child: const DisabledCustomersScreenMobile(),
+              ),
+              BlocProvider.value(
+                value: getIt<SubscribersCubit>(),
+                child: const WithdrawnCustomersScreenMobile(),
+              ),
+              BlocProvider.value(
+                value: getIt<CollectorsCubit>(),
+                child: const CollectorsScreenMobile(),
+              ),
               const HistoryOperationsMobileScreen(),
               const ReviewDataScreenMobile(),
-              const ResellersRequestsScreen(),
+              BlocProvider.value(
+                value: getIt<CollectorsRequestsCubit>(),
+                child: const ResellersRequestsScreen(),
+              ),
               const Center(child: Text('HomeScreen')),
             ],
           ),
@@ -201,7 +115,8 @@ class _HomeScreenMobileState extends State<HomeScreenMobile> {
             child: BottomNavigationBar(
               items: [
                 BottomNavigationBarItem(
-                  icon: SvgPicture.asset('assets/icons/category.svg',color: Colors.grey,),
+                  icon: SvgPicture.asset(
+                    'assets/icons/category.svg', color: Colors.grey,),
                   label: "القائمة",
                 ),
                 BottomNavigationBarItem(
@@ -215,7 +130,7 @@ class _HomeScreenMobileState extends State<HomeScreenMobile> {
                   _openDrawer();
                 }
                 if (value == 1) {
-                  _pageController.animateToPage(10,
+                  pageController.animateToPage(10,
                       duration: const Duration(milliseconds: 300),
                       curve: Curves.easeInOut);
                 }

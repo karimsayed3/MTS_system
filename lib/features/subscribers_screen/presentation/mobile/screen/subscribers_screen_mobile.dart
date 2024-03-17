@@ -9,14 +9,34 @@ import 'package:system/core/widgets/info_widget.dart';
 import 'package:system/core/widgets/show_alert_dialog.dart';
 import 'package:system/core/widgets/title_of_screen_with_logo_widget.dart';
 import 'package:system/features/subscribers_screen/business_logic/subscribers_cubit.dart';
+import 'package:system/features/subscribers_screen/business_logic/subscribers_state.dart';
+import 'package:system/features/subscribers_screen/data/models/get_active_subscribers_request_body.dart';
 import 'package:system/features/subscribers_screen/presentation/desktop/widgets/add_subsciber_widget.dart';
 import 'package:system/features/subscribers_screen/presentation/mobile/widgets/subscribers_header_widget_mobile.dart';
 
 import '../../../../../core/di/dependency_injection.dart';
+import '../../desktop/widgets/bloc_listener.dart';
 import '../widgets/subscribers_card_for_mobile.dart';
 
-class SubscribersScreenMobile extends StatelessWidget {
+class SubscribersScreenMobile extends StatefulWidget {
   const SubscribersScreenMobile({super.key});
+
+  @override
+  State<SubscribersScreenMobile> createState() =>
+      _SubscribersScreenMobileState();
+}
+
+class _SubscribersScreenMobileState extends State<SubscribersScreenMobile> {
+  TextEditingController searchController = TextEditingController();
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    SubscribersCubit.get(context).getActiveSubscribers(
+      getActiveSubscribersRequestBody: GetActiveSubscribersRequestBody(),
+    );
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -54,10 +74,9 @@ class SubscribersScreenMobile extends StatelessWidget {
                           onPressed: () {
                             showDataAlert(
                               context: context,
-                              child:   BlocProvider.value(
+                              child: BlocProvider.value(
                                 value: getIt<SubscribersCubit>(),
-                                child: const AddSubscriberWidget(
-                                ),
+                                child: const AddSubscriberWidget(),
                               ),
                             );
                           },
@@ -79,21 +98,35 @@ class SubscribersScreenMobile extends StatelessWidget {
                 // color: Colors.blueAccent,
                 child: CustomSearchWidget(
                   width: double.infinity,
-                  searchController: TextEditingController(),
+                  searchController: searchController,
+                  onChange: (value) {
+                    SubscribersCubit.get(context).getActiveSubscribers(
+                      getActiveSubscribersRequestBody: GetActiveSubscribersRequestBody(
+                        phone: value,
+                      ),
+                    );
+                  },
                 ),
               ),
               Expanded(
                 child: Column(
                   children: [
                     const SubscribersHeaderWidgetMobile(),
-                    Expanded(
-                      child: ListView.builder(
-                          itemBuilder: (context, index) {
-                            return const SubscribersCardWidgetMobile();
-                            // return const SizedBox.shrink();
-                          },
-                          itemCount: 20),
+                    BlocBuilder<SubscribersCubit, SubscribersState>(
+                      builder: (context, state) {
+                        return Expanded(
+                          child: ListView.builder(
+                              itemBuilder: (context, index) {
+                                return  SubscribersCardWidgetMobile(
+                                  subscriber: SubscribersCubit.get(context).subscribers[index],
+                                );
+                                // return const SizedBox.shrink();
+                              },
+                              itemCount: SubscribersCubit.get(context).subscribers.length),
+                        );
+                      },
                     ),
+                    const BlocListenerForSubscribersCubit(),
                   ],
                 ),
               ),

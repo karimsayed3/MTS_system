@@ -1,6 +1,7 @@
 import 'package:system/core/networking/api_error_handler.dart';
 import 'package:system/core/networking/api_result.dart';
 import 'package:system/core/networking/default_api_response.dart';
+import 'package:system/core/networking/models/get_lists_response.dart';
 import 'package:system/core/networking/web_services.dart';
 import 'package:system/features/bunches_screen/data/models/add_plan_request_body.dart';
 import 'package:system/features/bunches_screen/data/models/delete_plan_request_body.dart';
@@ -54,5 +55,26 @@ class BunchRepo {
       return ApiResult.failure(ErrorHandler.handle(error));
     }
   }
+
+  Future<ApiResult<GetListsResponse>> getPlansList(
+      Map<String,dynamic> companyName
+      ) async {
+    try {
+      final response = await webServices.getPlansList(companyName);
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(ErrorHandler.handle(error));
+    }
+  }
+  Future<ApiResult<GetListsResponse>> getCompaniesList() async {
+    try {
+      final response = await webServices.getCompaniesList();
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(ErrorHandler.handle(error));
+    }
+  }
+
+
 
 }

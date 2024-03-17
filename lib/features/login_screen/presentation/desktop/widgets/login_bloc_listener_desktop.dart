@@ -37,9 +37,11 @@ class LoginBlocListenerDesktop extends StatelessWidget {
             debugPrint(loginResponse.accessToken);
             TokenDecode decodedToken = TokenDecode.fromJson(
                 JwtDecoder.decode(loginResponse.accessToken!));
+            print(CacheHelper.getdata(key: 'token'));
             await CacheHelper.saveData(
                     key: 'token', value: loginResponse.accessToken)
                 .then((value) {
+              print(CacheHelper.getdata(key: 'token'));
               CacheHelper.saveData(
                       key: 'userName', value: decodedToken.username)
                   .then((value) {

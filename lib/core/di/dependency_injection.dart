@@ -6,6 +6,8 @@ import 'package:system/features/companies_screen/business_logic/companies_cubit.
 import 'package:system/features/companies_screen/data/repository/companies_repo.dart';
 import 'package:system/features/login_screen/business_logic/login_cubit.dart';
 import 'package:system/features/login_screen/data/repository/login_repo.dart';
+import 'package:system/features/resellers_requests_screen/business_logic/collectors_requests_cubit.dart';
+import 'package:system/features/resellers_requests_screen/data/repository/collectors_requests_repository.dart';
 import 'package:system/features/subscribers_screen/business_logic/subscribers_cubit.dart';
 import 'package:system/features/subscribers_screen/data/repository/subscribers_repository.dart';
 
@@ -39,6 +41,9 @@ Future<void> setupGetIt() async {
 
   getIt.registerLazySingleton<SubscribersCubit>(() => SubscribersCubit(getIt()));
   getIt.registerFactory<SubscribersRepository>(() => SubscribersRepository(getIt()));
+
+  getIt.registerLazySingleton<CollectorsRequestsCubit>(() => CollectorsRequestsCubit(getIt()));
+  getIt.registerFactory<CollectorRequestsRepository>(() => CollectorRequestsRepository(getIt()));
 
   //  // signup
   // getIt.registerLazySingleton<SignupRepo>(() => SignupRepo(getIt()));

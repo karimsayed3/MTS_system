@@ -1,14 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:system/core/theming/colors.dart';
 import 'package:system/core/widgets/custom_search_widget.dart';
 import 'package:system/core/widgets/title_of_screen_with_logo_widget.dart';
 import 'package:system/features/late_customers_screen/presentation/mobile/widgets/late_customers_header_widget_mobile.dart';
 import 'package:system/features/late_customers_screen/presentation/mobile/widgets/late_customers_info_widget.dart';
+import 'package:system/features/subscribers_screen/business_logic/subscribers_cubit.dart';
+import 'package:system/features/subscribers_screen/business_logic/subscribers_state.dart';
+import 'package:system/features/subscribers_screen/data/models/get_late_subscribers_request_body.dart';
+import '../../../../subscribers_screen/presentation/desktop/widgets/bloc_listener.dart';
 import '../widgets/late_customers_card_for_mobile.dart';
 
-class LateCustomersScreenMobile extends StatelessWidget {
+class LateCustomersScreenMobile extends StatefulWidget {
   const LateCustomersScreenMobile({super.key});
+
+  @override
+  State<LateCustomersScreenMobile> createState() =>
+      _LateCustomersScreenMobileState();
+}
+
+class _LateCustomersScreenMobileState extends State<LateCustomersScreenMobile> {
+  TextEditingController searchController = TextEditingController();
+  @override
+  void initState() {
+    // TODO: implement initState
+    SubscribersCubit.get(context).getLateSubscribers(
+        getLateSubscribersRequestBody: GetLateSubscribersRequestBody());
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -40,22 +60,37 @@ class LateCustomersScreenMobile extends StatelessWidget {
                 // color: Colors.blueAccent,
                 child: CustomSearchWidget(
                   width: double.infinity,
-                  searchController: TextEditingController(),
+                  searchController:searchController,
+                  onChange: (value) {
+
+                    SubscribersCubit.get(context).getLateSubscribers(
+                        getLateSubscribersRequestBody: GetLateSubscribersRequestBody(
+                          phone: value
+                        ));
+                  },
                 ),
               ),
               Expanded(
                 child: Column(
                   children: [
                     const LateCustomersHeaderWidgetMobile(),
-                    Expanded(
-                      child: ListView.builder(
-                        itemBuilder: (context, index) {
-                          return const LateCustomersCardWidgetMobile();
-                          // return const SizedBox.shrink();
-                        },
-                        itemCount: 20,
-                      ),
+                    BlocBuilder<SubscribersCubit, SubscribersState>(
+                      builder: (context, state) {
+                        return Expanded(
+                          child: ListView.builder(
+                            itemBuilder: (context, index) {
+                              return LateCustomersCardWidgetMobile(
+                                subscriber: SubscribersCubit.get(context).lateSubscribers[index],
+                              );
+                              // return const SizedBox.shrink();
+                            },
+                            itemCount: SubscribersCubit.get(context).lateSubscribers.length,
+                          ),
+                        );
+                      },
                     ),
+                    const BlocListenerForSubscribersCubit(),
+
                   ],
                 ),
               ),

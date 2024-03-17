@@ -58,17 +58,17 @@ mixin _$SubscribersState<T> {
     required TResult Function(String error) getActiveSubscribersErrorState,
     required TResult Function() getLateSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetLateSubscribersResponse getLateSubscribersResponse)
         getLateSubscribersSuccessState,
     required TResult Function(String error) getLateSubscribersErrorState,
     required TResult Function() getDisabledSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
         getDisabledSubscribersSuccessState,
     required TResult Function(String error) getDisabledSubscribersErrorState,
     required TResult Function() getWithdrawnSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
         getWithdrawnSubscribersSuccessState,
     required TResult Function(String error) getWithdrawnSubscribersErrorState,
     required TResult Function() getCompaniesListLoadingState,
@@ -126,15 +126,17 @@ mixin _$SubscribersState<T> {
         getActiveSubscribersSuccessState,
     TResult? Function(String error)? getActiveSubscribersErrorState,
     TResult? Function()? getLateSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult? Function(String error)? getLateSubscribersErrorState,
     TResult? Function()? getDisabledSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult? Function(String error)? getDisabledSubscribersErrorState,
     TResult? Function()? getWithdrawnSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult? Function(String error)? getWithdrawnSubscribersErrorState,
     TResult? Function()? getCompaniesListLoadingState,
@@ -192,15 +194,17 @@ mixin _$SubscribersState<T> {
         getActiveSubscribersSuccessState,
     TResult Function(String error)? getActiveSubscribersErrorState,
     TResult Function()? getLateSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult Function(String error)? getLateSubscribersErrorState,
     TResult Function()? getDisabledSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult Function(String error)? getDisabledSubscribersErrorState,
     TResult Function()? getWithdrawnSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult Function(String error)? getWithdrawnSubscribersErrorState,
     TResult Function()? getCompaniesListLoadingState,
@@ -604,17 +608,17 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function(String error) getActiveSubscribersErrorState,
     required TResult Function() getLateSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetLateSubscribersResponse getLateSubscribersResponse)
         getLateSubscribersSuccessState,
     required TResult Function(String error) getLateSubscribersErrorState,
     required TResult Function() getDisabledSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
         getDisabledSubscribersSuccessState,
     required TResult Function(String error) getDisabledSubscribersErrorState,
     required TResult Function() getWithdrawnSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
         getWithdrawnSubscribersSuccessState,
     required TResult Function(String error) getWithdrawnSubscribersErrorState,
     required TResult Function() getCompaniesListLoadingState,
@@ -675,15 +679,17 @@ class _$InitialImpl<T> implements _Initial<T> {
         getActiveSubscribersSuccessState,
     TResult? Function(String error)? getActiveSubscribersErrorState,
     TResult? Function()? getLateSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult? Function(String error)? getLateSubscribersErrorState,
     TResult? Function()? getDisabledSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult? Function(String error)? getDisabledSubscribersErrorState,
     TResult? Function()? getWithdrawnSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult? Function(String error)? getWithdrawnSubscribersErrorState,
     TResult? Function()? getCompaniesListLoadingState,
@@ -744,15 +750,17 @@ class _$InitialImpl<T> implements _Initial<T> {
         getActiveSubscribersSuccessState,
     TResult Function(String error)? getActiveSubscribersErrorState,
     TResult Function()? getLateSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult Function(String error)? getLateSubscribersErrorState,
     TResult Function()? getDisabledSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult Function(String error)? getDisabledSubscribersErrorState,
     TResult Function()? getWithdrawnSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult Function(String error)? getWithdrawnSubscribersErrorState,
     TResult Function()? getCompaniesListLoadingState,
@@ -1163,17 +1171,17 @@ class _$AddNewSubscriberloadingStateImpl<T>
     required TResult Function(String error) getActiveSubscribersErrorState,
     required TResult Function() getLateSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetLateSubscribersResponse getLateSubscribersResponse)
         getLateSubscribersSuccessState,
     required TResult Function(String error) getLateSubscribersErrorState,
     required TResult Function() getDisabledSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
         getDisabledSubscribersSuccessState,
     required TResult Function(String error) getDisabledSubscribersErrorState,
     required TResult Function() getWithdrawnSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
         getWithdrawnSubscribersSuccessState,
     required TResult Function(String error) getWithdrawnSubscribersErrorState,
     required TResult Function() getCompaniesListLoadingState,
@@ -1234,15 +1242,17 @@ class _$AddNewSubscriberloadingStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult? Function(String error)? getActiveSubscribersErrorState,
     TResult? Function()? getLateSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult? Function(String error)? getLateSubscribersErrorState,
     TResult? Function()? getDisabledSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult? Function(String error)? getDisabledSubscribersErrorState,
     TResult? Function()? getWithdrawnSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult? Function(String error)? getWithdrawnSubscribersErrorState,
     TResult? Function()? getCompaniesListLoadingState,
@@ -1303,15 +1313,17 @@ class _$AddNewSubscriberloadingStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult Function(String error)? getActiveSubscribersErrorState,
     TResult Function()? getLateSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult Function(String error)? getLateSubscribersErrorState,
     TResult Function()? getDisabledSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult Function(String error)? getDisabledSubscribersErrorState,
     TResult Function()? getWithdrawnSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult Function(String error)? getWithdrawnSubscribersErrorState,
     TResult Function()? getCompaniesListLoadingState,
@@ -1751,17 +1763,17 @@ class _$AddNewSubscriberSuccessStateImpl<T>
     required TResult Function(String error) getActiveSubscribersErrorState,
     required TResult Function() getLateSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetLateSubscribersResponse getLateSubscribersResponse)
         getLateSubscribersSuccessState,
     required TResult Function(String error) getLateSubscribersErrorState,
     required TResult Function() getDisabledSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
         getDisabledSubscribersSuccessState,
     required TResult Function(String error) getDisabledSubscribersErrorState,
     required TResult Function() getWithdrawnSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
         getWithdrawnSubscribersSuccessState,
     required TResult Function(String error) getWithdrawnSubscribersErrorState,
     required TResult Function() getCompaniesListLoadingState,
@@ -1822,15 +1834,17 @@ class _$AddNewSubscriberSuccessStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult? Function(String error)? getActiveSubscribersErrorState,
     TResult? Function()? getLateSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult? Function(String error)? getLateSubscribersErrorState,
     TResult? Function()? getDisabledSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult? Function(String error)? getDisabledSubscribersErrorState,
     TResult? Function()? getWithdrawnSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult? Function(String error)? getWithdrawnSubscribersErrorState,
     TResult? Function()? getCompaniesListLoadingState,
@@ -1891,15 +1905,17 @@ class _$AddNewSubscriberSuccessStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult Function(String error)? getActiveSubscribersErrorState,
     TResult Function()? getLateSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult Function(String error)? getLateSubscribersErrorState,
     TResult Function()? getDisabledSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult Function(String error)? getDisabledSubscribersErrorState,
     TResult Function()? getWithdrawnSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult Function(String error)? getWithdrawnSubscribersErrorState,
     TResult Function()? getCompaniesListLoadingState,
@@ -2345,17 +2361,17 @@ class _$AddNewSubscriberErrorStateImpl<T>
     required TResult Function(String error) getActiveSubscribersErrorState,
     required TResult Function() getLateSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetLateSubscribersResponse getLateSubscribersResponse)
         getLateSubscribersSuccessState,
     required TResult Function(String error) getLateSubscribersErrorState,
     required TResult Function() getDisabledSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
         getDisabledSubscribersSuccessState,
     required TResult Function(String error) getDisabledSubscribersErrorState,
     required TResult Function() getWithdrawnSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
         getWithdrawnSubscribersSuccessState,
     required TResult Function(String error) getWithdrawnSubscribersErrorState,
     required TResult Function() getCompaniesListLoadingState,
@@ -2416,15 +2432,17 @@ class _$AddNewSubscriberErrorStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult? Function(String error)? getActiveSubscribersErrorState,
     TResult? Function()? getLateSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult? Function(String error)? getLateSubscribersErrorState,
     TResult? Function()? getDisabledSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult? Function(String error)? getDisabledSubscribersErrorState,
     TResult? Function()? getWithdrawnSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult? Function(String error)? getWithdrawnSubscribersErrorState,
     TResult? Function()? getCompaniesListLoadingState,
@@ -2485,15 +2503,17 @@ class _$AddNewSubscriberErrorStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult Function(String error)? getActiveSubscribersErrorState,
     TResult Function()? getLateSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult Function(String error)? getLateSubscribersErrorState,
     TResult Function()? getDisabledSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult Function(String error)? getDisabledSubscribersErrorState,
     TResult Function()? getWithdrawnSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult Function(String error)? getWithdrawnSubscribersErrorState,
     TResult Function()? getCompaniesListLoadingState,
@@ -2911,17 +2931,17 @@ class _$UpdateSubscriberloadingStateImpl<T>
     required TResult Function(String error) getActiveSubscribersErrorState,
     required TResult Function() getLateSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetLateSubscribersResponse getLateSubscribersResponse)
         getLateSubscribersSuccessState,
     required TResult Function(String error) getLateSubscribersErrorState,
     required TResult Function() getDisabledSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
         getDisabledSubscribersSuccessState,
     required TResult Function(String error) getDisabledSubscribersErrorState,
     required TResult Function() getWithdrawnSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
         getWithdrawnSubscribersSuccessState,
     required TResult Function(String error) getWithdrawnSubscribersErrorState,
     required TResult Function() getCompaniesListLoadingState,
@@ -2982,15 +3002,17 @@ class _$UpdateSubscriberloadingStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult? Function(String error)? getActiveSubscribersErrorState,
     TResult? Function()? getLateSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult? Function(String error)? getLateSubscribersErrorState,
     TResult? Function()? getDisabledSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult? Function(String error)? getDisabledSubscribersErrorState,
     TResult? Function()? getWithdrawnSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult? Function(String error)? getWithdrawnSubscribersErrorState,
     TResult? Function()? getCompaniesListLoadingState,
@@ -3051,15 +3073,17 @@ class _$UpdateSubscriberloadingStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult Function(String error)? getActiveSubscribersErrorState,
     TResult Function()? getLateSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult Function(String error)? getLateSubscribersErrorState,
     TResult Function()? getDisabledSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult Function(String error)? getDisabledSubscribersErrorState,
     TResult Function()? getWithdrawnSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult Function(String error)? getWithdrawnSubscribersErrorState,
     TResult Function()? getCompaniesListLoadingState,
@@ -3499,17 +3523,17 @@ class _$UpdateSubscriberSuccessStateImpl<T>
     required TResult Function(String error) getActiveSubscribersErrorState,
     required TResult Function() getLateSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetLateSubscribersResponse getLateSubscribersResponse)
         getLateSubscribersSuccessState,
     required TResult Function(String error) getLateSubscribersErrorState,
     required TResult Function() getDisabledSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
         getDisabledSubscribersSuccessState,
     required TResult Function(String error) getDisabledSubscribersErrorState,
     required TResult Function() getWithdrawnSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
         getWithdrawnSubscribersSuccessState,
     required TResult Function(String error) getWithdrawnSubscribersErrorState,
     required TResult Function() getCompaniesListLoadingState,
@@ -3570,15 +3594,17 @@ class _$UpdateSubscriberSuccessStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult? Function(String error)? getActiveSubscribersErrorState,
     TResult? Function()? getLateSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult? Function(String error)? getLateSubscribersErrorState,
     TResult? Function()? getDisabledSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult? Function(String error)? getDisabledSubscribersErrorState,
     TResult? Function()? getWithdrawnSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult? Function(String error)? getWithdrawnSubscribersErrorState,
     TResult? Function()? getCompaniesListLoadingState,
@@ -3639,15 +3665,17 @@ class _$UpdateSubscriberSuccessStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult Function(String error)? getActiveSubscribersErrorState,
     TResult Function()? getLateSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult Function(String error)? getLateSubscribersErrorState,
     TResult Function()? getDisabledSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult Function(String error)? getDisabledSubscribersErrorState,
     TResult Function()? getWithdrawnSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult Function(String error)? getWithdrawnSubscribersErrorState,
     TResult Function()? getCompaniesListLoadingState,
@@ -4093,17 +4121,17 @@ class _$UpdateSubscriberErrorStateImpl<T>
     required TResult Function(String error) getActiveSubscribersErrorState,
     required TResult Function() getLateSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetLateSubscribersResponse getLateSubscribersResponse)
         getLateSubscribersSuccessState,
     required TResult Function(String error) getLateSubscribersErrorState,
     required TResult Function() getDisabledSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
         getDisabledSubscribersSuccessState,
     required TResult Function(String error) getDisabledSubscribersErrorState,
     required TResult Function() getWithdrawnSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
         getWithdrawnSubscribersSuccessState,
     required TResult Function(String error) getWithdrawnSubscribersErrorState,
     required TResult Function() getCompaniesListLoadingState,
@@ -4164,15 +4192,17 @@ class _$UpdateSubscriberErrorStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult? Function(String error)? getActiveSubscribersErrorState,
     TResult? Function()? getLateSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult? Function(String error)? getLateSubscribersErrorState,
     TResult? Function()? getDisabledSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult? Function(String error)? getDisabledSubscribersErrorState,
     TResult? Function()? getWithdrawnSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult? Function(String error)? getWithdrawnSubscribersErrorState,
     TResult? Function()? getCompaniesListLoadingState,
@@ -4233,15 +4263,17 @@ class _$UpdateSubscriberErrorStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult Function(String error)? getActiveSubscribersErrorState,
     TResult Function()? getLateSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult Function(String error)? getLateSubscribersErrorState,
     TResult Function()? getDisabledSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult Function(String error)? getDisabledSubscribersErrorState,
     TResult Function()? getWithdrawnSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult Function(String error)? getWithdrawnSubscribersErrorState,
     TResult Function()? getCompaniesListLoadingState,
@@ -4659,17 +4691,17 @@ class _$DeleteSubscriberloadingStateImpl<T>
     required TResult Function(String error) getActiveSubscribersErrorState,
     required TResult Function() getLateSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetLateSubscribersResponse getLateSubscribersResponse)
         getLateSubscribersSuccessState,
     required TResult Function(String error) getLateSubscribersErrorState,
     required TResult Function() getDisabledSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
         getDisabledSubscribersSuccessState,
     required TResult Function(String error) getDisabledSubscribersErrorState,
     required TResult Function() getWithdrawnSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
         getWithdrawnSubscribersSuccessState,
     required TResult Function(String error) getWithdrawnSubscribersErrorState,
     required TResult Function() getCompaniesListLoadingState,
@@ -4730,15 +4762,17 @@ class _$DeleteSubscriberloadingStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult? Function(String error)? getActiveSubscribersErrorState,
     TResult? Function()? getLateSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult? Function(String error)? getLateSubscribersErrorState,
     TResult? Function()? getDisabledSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult? Function(String error)? getDisabledSubscribersErrorState,
     TResult? Function()? getWithdrawnSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult? Function(String error)? getWithdrawnSubscribersErrorState,
     TResult? Function()? getCompaniesListLoadingState,
@@ -4799,15 +4833,17 @@ class _$DeleteSubscriberloadingStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult Function(String error)? getActiveSubscribersErrorState,
     TResult Function()? getLateSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult Function(String error)? getLateSubscribersErrorState,
     TResult Function()? getDisabledSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult Function(String error)? getDisabledSubscribersErrorState,
     TResult Function()? getWithdrawnSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult Function(String error)? getWithdrawnSubscribersErrorState,
     TResult Function()? getCompaniesListLoadingState,
@@ -5247,17 +5283,17 @@ class _$DeleteSubscriberSuccessStateImpl<T>
     required TResult Function(String error) getActiveSubscribersErrorState,
     required TResult Function() getLateSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetLateSubscribersResponse getLateSubscribersResponse)
         getLateSubscribersSuccessState,
     required TResult Function(String error) getLateSubscribersErrorState,
     required TResult Function() getDisabledSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
         getDisabledSubscribersSuccessState,
     required TResult Function(String error) getDisabledSubscribersErrorState,
     required TResult Function() getWithdrawnSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
         getWithdrawnSubscribersSuccessState,
     required TResult Function(String error) getWithdrawnSubscribersErrorState,
     required TResult Function() getCompaniesListLoadingState,
@@ -5318,15 +5354,17 @@ class _$DeleteSubscriberSuccessStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult? Function(String error)? getActiveSubscribersErrorState,
     TResult? Function()? getLateSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult? Function(String error)? getLateSubscribersErrorState,
     TResult? Function()? getDisabledSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult? Function(String error)? getDisabledSubscribersErrorState,
     TResult? Function()? getWithdrawnSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult? Function(String error)? getWithdrawnSubscribersErrorState,
     TResult? Function()? getCompaniesListLoadingState,
@@ -5387,15 +5425,17 @@ class _$DeleteSubscriberSuccessStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult Function(String error)? getActiveSubscribersErrorState,
     TResult Function()? getLateSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult Function(String error)? getLateSubscribersErrorState,
     TResult Function()? getDisabledSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult Function(String error)? getDisabledSubscribersErrorState,
     TResult Function()? getWithdrawnSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult Function(String error)? getWithdrawnSubscribersErrorState,
     TResult Function()? getCompaniesListLoadingState,
@@ -5841,17 +5881,17 @@ class _$DeleteSubscriberErrorStateImpl<T>
     required TResult Function(String error) getActiveSubscribersErrorState,
     required TResult Function() getLateSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetLateSubscribersResponse getLateSubscribersResponse)
         getLateSubscribersSuccessState,
     required TResult Function(String error) getLateSubscribersErrorState,
     required TResult Function() getDisabledSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
         getDisabledSubscribersSuccessState,
     required TResult Function(String error) getDisabledSubscribersErrorState,
     required TResult Function() getWithdrawnSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
         getWithdrawnSubscribersSuccessState,
     required TResult Function(String error) getWithdrawnSubscribersErrorState,
     required TResult Function() getCompaniesListLoadingState,
@@ -5912,15 +5952,17 @@ class _$DeleteSubscriberErrorStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult? Function(String error)? getActiveSubscribersErrorState,
     TResult? Function()? getLateSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult? Function(String error)? getLateSubscribersErrorState,
     TResult? Function()? getDisabledSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult? Function(String error)? getDisabledSubscribersErrorState,
     TResult? Function()? getWithdrawnSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult? Function(String error)? getWithdrawnSubscribersErrorState,
     TResult? Function()? getCompaniesListLoadingState,
@@ -5981,15 +6023,17 @@ class _$DeleteSubscriberErrorStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult Function(String error)? getActiveSubscribersErrorState,
     TResult Function()? getLateSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult Function(String error)? getLateSubscribersErrorState,
     TResult Function()? getDisabledSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult Function(String error)? getDisabledSubscribersErrorState,
     TResult Function()? getWithdrawnSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult Function(String error)? getWithdrawnSubscribersErrorState,
     TResult Function()? getCompaniesListLoadingState,
@@ -6407,17 +6451,17 @@ class _$DisableSubscriberloadingStateImpl<T>
     required TResult Function(String error) getActiveSubscribersErrorState,
     required TResult Function() getLateSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetLateSubscribersResponse getLateSubscribersResponse)
         getLateSubscribersSuccessState,
     required TResult Function(String error) getLateSubscribersErrorState,
     required TResult Function() getDisabledSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
         getDisabledSubscribersSuccessState,
     required TResult Function(String error) getDisabledSubscribersErrorState,
     required TResult Function() getWithdrawnSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
         getWithdrawnSubscribersSuccessState,
     required TResult Function(String error) getWithdrawnSubscribersErrorState,
     required TResult Function() getCompaniesListLoadingState,
@@ -6478,15 +6522,17 @@ class _$DisableSubscriberloadingStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult? Function(String error)? getActiveSubscribersErrorState,
     TResult? Function()? getLateSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult? Function(String error)? getLateSubscribersErrorState,
     TResult? Function()? getDisabledSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult? Function(String error)? getDisabledSubscribersErrorState,
     TResult? Function()? getWithdrawnSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult? Function(String error)? getWithdrawnSubscribersErrorState,
     TResult? Function()? getCompaniesListLoadingState,
@@ -6547,15 +6593,17 @@ class _$DisableSubscriberloadingStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult Function(String error)? getActiveSubscribersErrorState,
     TResult Function()? getLateSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult Function(String error)? getLateSubscribersErrorState,
     TResult Function()? getDisabledSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult Function(String error)? getDisabledSubscribersErrorState,
     TResult Function()? getWithdrawnSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult Function(String error)? getWithdrawnSubscribersErrorState,
     TResult Function()? getCompaniesListLoadingState,
@@ -6995,17 +7043,17 @@ class _$DisableSubscriberSuccessStateImpl<T>
     required TResult Function(String error) getActiveSubscribersErrorState,
     required TResult Function() getLateSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetLateSubscribersResponse getLateSubscribersResponse)
         getLateSubscribersSuccessState,
     required TResult Function(String error) getLateSubscribersErrorState,
     required TResult Function() getDisabledSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
         getDisabledSubscribersSuccessState,
     required TResult Function(String error) getDisabledSubscribersErrorState,
     required TResult Function() getWithdrawnSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
         getWithdrawnSubscribersSuccessState,
     required TResult Function(String error) getWithdrawnSubscribersErrorState,
     required TResult Function() getCompaniesListLoadingState,
@@ -7066,15 +7114,17 @@ class _$DisableSubscriberSuccessStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult? Function(String error)? getActiveSubscribersErrorState,
     TResult? Function()? getLateSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult? Function(String error)? getLateSubscribersErrorState,
     TResult? Function()? getDisabledSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult? Function(String error)? getDisabledSubscribersErrorState,
     TResult? Function()? getWithdrawnSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult? Function(String error)? getWithdrawnSubscribersErrorState,
     TResult? Function()? getCompaniesListLoadingState,
@@ -7135,15 +7185,17 @@ class _$DisableSubscriberSuccessStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult Function(String error)? getActiveSubscribersErrorState,
     TResult Function()? getLateSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult Function(String error)? getLateSubscribersErrorState,
     TResult Function()? getDisabledSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult Function(String error)? getDisabledSubscribersErrorState,
     TResult Function()? getWithdrawnSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult Function(String error)? getWithdrawnSubscribersErrorState,
     TResult Function()? getCompaniesListLoadingState,
@@ -7589,17 +7641,17 @@ class _$DisableSubscriberErrorStateImpl<T>
     required TResult Function(String error) getActiveSubscribersErrorState,
     required TResult Function() getLateSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetLateSubscribersResponse getLateSubscribersResponse)
         getLateSubscribersSuccessState,
     required TResult Function(String error) getLateSubscribersErrorState,
     required TResult Function() getDisabledSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
         getDisabledSubscribersSuccessState,
     required TResult Function(String error) getDisabledSubscribersErrorState,
     required TResult Function() getWithdrawnSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
         getWithdrawnSubscribersSuccessState,
     required TResult Function(String error) getWithdrawnSubscribersErrorState,
     required TResult Function() getCompaniesListLoadingState,
@@ -7660,15 +7712,17 @@ class _$DisableSubscriberErrorStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult? Function(String error)? getActiveSubscribersErrorState,
     TResult? Function()? getLateSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult? Function(String error)? getLateSubscribersErrorState,
     TResult? Function()? getDisabledSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult? Function(String error)? getDisabledSubscribersErrorState,
     TResult? Function()? getWithdrawnSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult? Function(String error)? getWithdrawnSubscribersErrorState,
     TResult? Function()? getCompaniesListLoadingState,
@@ -7729,15 +7783,17 @@ class _$DisableSubscriberErrorStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult Function(String error)? getActiveSubscribersErrorState,
     TResult Function()? getLateSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult Function(String error)? getLateSubscribersErrorState,
     TResult Function()? getDisabledSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult Function(String error)? getDisabledSubscribersErrorState,
     TResult Function()? getWithdrawnSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult Function(String error)? getWithdrawnSubscribersErrorState,
     TResult Function()? getCompaniesListLoadingState,
@@ -8155,17 +8211,17 @@ class _$WithdrawSubscriberloadingStateImpl<T>
     required TResult Function(String error) getActiveSubscribersErrorState,
     required TResult Function() getLateSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetLateSubscribersResponse getLateSubscribersResponse)
         getLateSubscribersSuccessState,
     required TResult Function(String error) getLateSubscribersErrorState,
     required TResult Function() getDisabledSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
         getDisabledSubscribersSuccessState,
     required TResult Function(String error) getDisabledSubscribersErrorState,
     required TResult Function() getWithdrawnSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
         getWithdrawnSubscribersSuccessState,
     required TResult Function(String error) getWithdrawnSubscribersErrorState,
     required TResult Function() getCompaniesListLoadingState,
@@ -8226,15 +8282,17 @@ class _$WithdrawSubscriberloadingStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult? Function(String error)? getActiveSubscribersErrorState,
     TResult? Function()? getLateSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult? Function(String error)? getLateSubscribersErrorState,
     TResult? Function()? getDisabledSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult? Function(String error)? getDisabledSubscribersErrorState,
     TResult? Function()? getWithdrawnSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult? Function(String error)? getWithdrawnSubscribersErrorState,
     TResult? Function()? getCompaniesListLoadingState,
@@ -8295,15 +8353,17 @@ class _$WithdrawSubscriberloadingStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult Function(String error)? getActiveSubscribersErrorState,
     TResult Function()? getLateSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult Function(String error)? getLateSubscribersErrorState,
     TResult Function()? getDisabledSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult Function(String error)? getDisabledSubscribersErrorState,
     TResult Function()? getWithdrawnSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult Function(String error)? getWithdrawnSubscribersErrorState,
     TResult Function()? getCompaniesListLoadingState,
@@ -8744,17 +8804,17 @@ class _$WithdrawSubscriberSuccessStateImpl<T>
     required TResult Function(String error) getActiveSubscribersErrorState,
     required TResult Function() getLateSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetLateSubscribersResponse getLateSubscribersResponse)
         getLateSubscribersSuccessState,
     required TResult Function(String error) getLateSubscribersErrorState,
     required TResult Function() getDisabledSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
         getDisabledSubscribersSuccessState,
     required TResult Function(String error) getDisabledSubscribersErrorState,
     required TResult Function() getWithdrawnSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
         getWithdrawnSubscribersSuccessState,
     required TResult Function(String error) getWithdrawnSubscribersErrorState,
     required TResult Function() getCompaniesListLoadingState,
@@ -8815,15 +8875,17 @@ class _$WithdrawSubscriberSuccessStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult? Function(String error)? getActiveSubscribersErrorState,
     TResult? Function()? getLateSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult? Function(String error)? getLateSubscribersErrorState,
     TResult? Function()? getDisabledSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult? Function(String error)? getDisabledSubscribersErrorState,
     TResult? Function()? getWithdrawnSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult? Function(String error)? getWithdrawnSubscribersErrorState,
     TResult? Function()? getCompaniesListLoadingState,
@@ -8884,15 +8946,17 @@ class _$WithdrawSubscriberSuccessStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult Function(String error)? getActiveSubscribersErrorState,
     TResult Function()? getLateSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult Function(String error)? getLateSubscribersErrorState,
     TResult Function()? getDisabledSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult Function(String error)? getDisabledSubscribersErrorState,
     TResult Function()? getWithdrawnSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult Function(String error)? getWithdrawnSubscribersErrorState,
     TResult Function()? getCompaniesListLoadingState,
@@ -9339,17 +9403,17 @@ class _$WithdrawSubscriberErrorStateImpl<T>
     required TResult Function(String error) getActiveSubscribersErrorState,
     required TResult Function() getLateSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetLateSubscribersResponse getLateSubscribersResponse)
         getLateSubscribersSuccessState,
     required TResult Function(String error) getLateSubscribersErrorState,
     required TResult Function() getDisabledSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
         getDisabledSubscribersSuccessState,
     required TResult Function(String error) getDisabledSubscribersErrorState,
     required TResult Function() getWithdrawnSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
         getWithdrawnSubscribersSuccessState,
     required TResult Function(String error) getWithdrawnSubscribersErrorState,
     required TResult Function() getCompaniesListLoadingState,
@@ -9410,15 +9474,17 @@ class _$WithdrawSubscriberErrorStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult? Function(String error)? getActiveSubscribersErrorState,
     TResult? Function()? getLateSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult? Function(String error)? getLateSubscribersErrorState,
     TResult? Function()? getDisabledSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult? Function(String error)? getDisabledSubscribersErrorState,
     TResult? Function()? getWithdrawnSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult? Function(String error)? getWithdrawnSubscribersErrorState,
     TResult? Function()? getCompaniesListLoadingState,
@@ -9479,15 +9545,17 @@ class _$WithdrawSubscriberErrorStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult Function(String error)? getActiveSubscribersErrorState,
     TResult Function()? getLateSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult Function(String error)? getLateSubscribersErrorState,
     TResult Function()? getDisabledSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult Function(String error)? getDisabledSubscribersErrorState,
     TResult Function()? getWithdrawnSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult Function(String error)? getWithdrawnSubscribersErrorState,
     TResult Function()? getCompaniesListLoadingState,
@@ -9905,17 +9973,17 @@ class _$ActivateSubscriberloadingStateImpl<T>
     required TResult Function(String error) getActiveSubscribersErrorState,
     required TResult Function() getLateSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetLateSubscribersResponse getLateSubscribersResponse)
         getLateSubscribersSuccessState,
     required TResult Function(String error) getLateSubscribersErrorState,
     required TResult Function() getDisabledSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
         getDisabledSubscribersSuccessState,
     required TResult Function(String error) getDisabledSubscribersErrorState,
     required TResult Function() getWithdrawnSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
         getWithdrawnSubscribersSuccessState,
     required TResult Function(String error) getWithdrawnSubscribersErrorState,
     required TResult Function() getCompaniesListLoadingState,
@@ -9976,15 +10044,17 @@ class _$ActivateSubscriberloadingStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult? Function(String error)? getActiveSubscribersErrorState,
     TResult? Function()? getLateSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult? Function(String error)? getLateSubscribersErrorState,
     TResult? Function()? getDisabledSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult? Function(String error)? getDisabledSubscribersErrorState,
     TResult? Function()? getWithdrawnSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult? Function(String error)? getWithdrawnSubscribersErrorState,
     TResult? Function()? getCompaniesListLoadingState,
@@ -10045,15 +10115,17 @@ class _$ActivateSubscriberloadingStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult Function(String error)? getActiveSubscribersErrorState,
     TResult Function()? getLateSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult Function(String error)? getLateSubscribersErrorState,
     TResult Function()? getDisabledSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult Function(String error)? getDisabledSubscribersErrorState,
     TResult Function()? getWithdrawnSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult Function(String error)? getWithdrawnSubscribersErrorState,
     TResult Function()? getCompaniesListLoadingState,
@@ -10494,17 +10566,17 @@ class _$ActivateSubscriberSuccessStateImpl<T>
     required TResult Function(String error) getActiveSubscribersErrorState,
     required TResult Function() getLateSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetLateSubscribersResponse getLateSubscribersResponse)
         getLateSubscribersSuccessState,
     required TResult Function(String error) getLateSubscribersErrorState,
     required TResult Function() getDisabledSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
         getDisabledSubscribersSuccessState,
     required TResult Function(String error) getDisabledSubscribersErrorState,
     required TResult Function() getWithdrawnSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
         getWithdrawnSubscribersSuccessState,
     required TResult Function(String error) getWithdrawnSubscribersErrorState,
     required TResult Function() getCompaniesListLoadingState,
@@ -10565,15 +10637,17 @@ class _$ActivateSubscriberSuccessStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult? Function(String error)? getActiveSubscribersErrorState,
     TResult? Function()? getLateSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult? Function(String error)? getLateSubscribersErrorState,
     TResult? Function()? getDisabledSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult? Function(String error)? getDisabledSubscribersErrorState,
     TResult? Function()? getWithdrawnSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult? Function(String error)? getWithdrawnSubscribersErrorState,
     TResult? Function()? getCompaniesListLoadingState,
@@ -10634,15 +10708,17 @@ class _$ActivateSubscriberSuccessStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult Function(String error)? getActiveSubscribersErrorState,
     TResult Function()? getLateSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult Function(String error)? getLateSubscribersErrorState,
     TResult Function()? getDisabledSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult Function(String error)? getDisabledSubscribersErrorState,
     TResult Function()? getWithdrawnSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult Function(String error)? getWithdrawnSubscribersErrorState,
     TResult Function()? getCompaniesListLoadingState,
@@ -11089,17 +11165,17 @@ class _$ActivateSubscriberErrorStateImpl<T>
     required TResult Function(String error) getActiveSubscribersErrorState,
     required TResult Function() getLateSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetLateSubscribersResponse getLateSubscribersResponse)
         getLateSubscribersSuccessState,
     required TResult Function(String error) getLateSubscribersErrorState,
     required TResult Function() getDisabledSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
         getDisabledSubscribersSuccessState,
     required TResult Function(String error) getDisabledSubscribersErrorState,
     required TResult Function() getWithdrawnSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
         getWithdrawnSubscribersSuccessState,
     required TResult Function(String error) getWithdrawnSubscribersErrorState,
     required TResult Function() getCompaniesListLoadingState,
@@ -11160,15 +11236,17 @@ class _$ActivateSubscriberErrorStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult? Function(String error)? getActiveSubscribersErrorState,
     TResult? Function()? getLateSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult? Function(String error)? getLateSubscribersErrorState,
     TResult? Function()? getDisabledSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult? Function(String error)? getDisabledSubscribersErrorState,
     TResult? Function()? getWithdrawnSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult? Function(String error)? getWithdrawnSubscribersErrorState,
     TResult? Function()? getCompaniesListLoadingState,
@@ -11229,15 +11307,17 @@ class _$ActivateSubscriberErrorStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult Function(String error)? getActiveSubscribersErrorState,
     TResult Function()? getLateSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult Function(String error)? getLateSubscribersErrorState,
     TResult Function()? getDisabledSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult Function(String error)? getDisabledSubscribersErrorState,
     TResult Function()? getWithdrawnSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult Function(String error)? getWithdrawnSubscribersErrorState,
     TResult Function()? getCompaniesListLoadingState,
@@ -11655,17 +11735,17 @@ class _$ZeroSubscriberBalanceloadingStateImpl<T>
     required TResult Function(String error) getActiveSubscribersErrorState,
     required TResult Function() getLateSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetLateSubscribersResponse getLateSubscribersResponse)
         getLateSubscribersSuccessState,
     required TResult Function(String error) getLateSubscribersErrorState,
     required TResult Function() getDisabledSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
         getDisabledSubscribersSuccessState,
     required TResult Function(String error) getDisabledSubscribersErrorState,
     required TResult Function() getWithdrawnSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
         getWithdrawnSubscribersSuccessState,
     required TResult Function(String error) getWithdrawnSubscribersErrorState,
     required TResult Function() getCompaniesListLoadingState,
@@ -11726,15 +11806,17 @@ class _$ZeroSubscriberBalanceloadingStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult? Function(String error)? getActiveSubscribersErrorState,
     TResult? Function()? getLateSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult? Function(String error)? getLateSubscribersErrorState,
     TResult? Function()? getDisabledSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult? Function(String error)? getDisabledSubscribersErrorState,
     TResult? Function()? getWithdrawnSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult? Function(String error)? getWithdrawnSubscribersErrorState,
     TResult? Function()? getCompaniesListLoadingState,
@@ -11795,15 +11877,17 @@ class _$ZeroSubscriberBalanceloadingStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult Function(String error)? getActiveSubscribersErrorState,
     TResult Function()? getLateSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult Function(String error)? getLateSubscribersErrorState,
     TResult Function()? getDisabledSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult Function(String error)? getDisabledSubscribersErrorState,
     TResult Function()? getWithdrawnSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult Function(String error)? getWithdrawnSubscribersErrorState,
     TResult Function()? getCompaniesListLoadingState,
@@ -12244,17 +12328,17 @@ class _$ZeroSubscriberBalanceSuccessStateImpl<T>
     required TResult Function(String error) getActiveSubscribersErrorState,
     required TResult Function() getLateSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetLateSubscribersResponse getLateSubscribersResponse)
         getLateSubscribersSuccessState,
     required TResult Function(String error) getLateSubscribersErrorState,
     required TResult Function() getDisabledSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
         getDisabledSubscribersSuccessState,
     required TResult Function(String error) getDisabledSubscribersErrorState,
     required TResult Function() getWithdrawnSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
         getWithdrawnSubscribersSuccessState,
     required TResult Function(String error) getWithdrawnSubscribersErrorState,
     required TResult Function() getCompaniesListLoadingState,
@@ -12315,15 +12399,17 @@ class _$ZeroSubscriberBalanceSuccessStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult? Function(String error)? getActiveSubscribersErrorState,
     TResult? Function()? getLateSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult? Function(String error)? getLateSubscribersErrorState,
     TResult? Function()? getDisabledSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult? Function(String error)? getDisabledSubscribersErrorState,
     TResult? Function()? getWithdrawnSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult? Function(String error)? getWithdrawnSubscribersErrorState,
     TResult? Function()? getCompaniesListLoadingState,
@@ -12384,15 +12470,17 @@ class _$ZeroSubscriberBalanceSuccessStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult Function(String error)? getActiveSubscribersErrorState,
     TResult Function()? getLateSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult Function(String error)? getLateSubscribersErrorState,
     TResult Function()? getDisabledSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult Function(String error)? getDisabledSubscribersErrorState,
     TResult Function()? getWithdrawnSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult Function(String error)? getWithdrawnSubscribersErrorState,
     TResult Function()? getCompaniesListLoadingState,
@@ -12839,17 +12927,17 @@ class _$ZeroSubscriberBalanceErrorStateImpl<T>
     required TResult Function(String error) getActiveSubscribersErrorState,
     required TResult Function() getLateSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetLateSubscribersResponse getLateSubscribersResponse)
         getLateSubscribersSuccessState,
     required TResult Function(String error) getLateSubscribersErrorState,
     required TResult Function() getDisabledSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
         getDisabledSubscribersSuccessState,
     required TResult Function(String error) getDisabledSubscribersErrorState,
     required TResult Function() getWithdrawnSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
         getWithdrawnSubscribersSuccessState,
     required TResult Function(String error) getWithdrawnSubscribersErrorState,
     required TResult Function() getCompaniesListLoadingState,
@@ -12910,15 +12998,17 @@ class _$ZeroSubscriberBalanceErrorStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult? Function(String error)? getActiveSubscribersErrorState,
     TResult? Function()? getLateSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult? Function(String error)? getLateSubscribersErrorState,
     TResult? Function()? getDisabledSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult? Function(String error)? getDisabledSubscribersErrorState,
     TResult? Function()? getWithdrawnSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult? Function(String error)? getWithdrawnSubscribersErrorState,
     TResult? Function()? getCompaniesListLoadingState,
@@ -12979,15 +13069,17 @@ class _$ZeroSubscriberBalanceErrorStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult Function(String error)? getActiveSubscribersErrorState,
     TResult Function()? getLateSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult Function(String error)? getLateSubscribersErrorState,
     TResult Function()? getDisabledSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult Function(String error)? getDisabledSubscribersErrorState,
     TResult Function()? getWithdrawnSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult Function(String error)? getWithdrawnSubscribersErrorState,
     TResult Function()? getCompaniesListLoadingState,
@@ -13406,17 +13498,17 @@ class _$CollectSubscriberBalanceloadingStateImpl<T>
     required TResult Function(String error) getActiveSubscribersErrorState,
     required TResult Function() getLateSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetLateSubscribersResponse getLateSubscribersResponse)
         getLateSubscribersSuccessState,
     required TResult Function(String error) getLateSubscribersErrorState,
     required TResult Function() getDisabledSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
         getDisabledSubscribersSuccessState,
     required TResult Function(String error) getDisabledSubscribersErrorState,
     required TResult Function() getWithdrawnSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
         getWithdrawnSubscribersSuccessState,
     required TResult Function(String error) getWithdrawnSubscribersErrorState,
     required TResult Function() getCompaniesListLoadingState,
@@ -13477,15 +13569,17 @@ class _$CollectSubscriberBalanceloadingStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult? Function(String error)? getActiveSubscribersErrorState,
     TResult? Function()? getLateSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult? Function(String error)? getLateSubscribersErrorState,
     TResult? Function()? getDisabledSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult? Function(String error)? getDisabledSubscribersErrorState,
     TResult? Function()? getWithdrawnSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult? Function(String error)? getWithdrawnSubscribersErrorState,
     TResult? Function()? getCompaniesListLoadingState,
@@ -13546,15 +13640,17 @@ class _$CollectSubscriberBalanceloadingStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult Function(String error)? getActiveSubscribersErrorState,
     TResult Function()? getLateSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult Function(String error)? getLateSubscribersErrorState,
     TResult Function()? getDisabledSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult Function(String error)? getDisabledSubscribersErrorState,
     TResult Function()? getWithdrawnSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult Function(String error)? getWithdrawnSubscribersErrorState,
     TResult Function()? getCompaniesListLoadingState,
@@ -13995,17 +14091,17 @@ class _$CollectSubscriberBalanceSuccessStateImpl<T>
     required TResult Function(String error) getActiveSubscribersErrorState,
     required TResult Function() getLateSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetLateSubscribersResponse getLateSubscribersResponse)
         getLateSubscribersSuccessState,
     required TResult Function(String error) getLateSubscribersErrorState,
     required TResult Function() getDisabledSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
         getDisabledSubscribersSuccessState,
     required TResult Function(String error) getDisabledSubscribersErrorState,
     required TResult Function() getWithdrawnSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
         getWithdrawnSubscribersSuccessState,
     required TResult Function(String error) getWithdrawnSubscribersErrorState,
     required TResult Function() getCompaniesListLoadingState,
@@ -14066,15 +14162,17 @@ class _$CollectSubscriberBalanceSuccessStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult? Function(String error)? getActiveSubscribersErrorState,
     TResult? Function()? getLateSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult? Function(String error)? getLateSubscribersErrorState,
     TResult? Function()? getDisabledSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult? Function(String error)? getDisabledSubscribersErrorState,
     TResult? Function()? getWithdrawnSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult? Function(String error)? getWithdrawnSubscribersErrorState,
     TResult? Function()? getCompaniesListLoadingState,
@@ -14135,15 +14233,17 @@ class _$CollectSubscriberBalanceSuccessStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult Function(String error)? getActiveSubscribersErrorState,
     TResult Function()? getLateSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult Function(String error)? getLateSubscribersErrorState,
     TResult Function()? getDisabledSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult Function(String error)? getDisabledSubscribersErrorState,
     TResult Function()? getWithdrawnSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult Function(String error)? getWithdrawnSubscribersErrorState,
     TResult Function()? getCompaniesListLoadingState,
@@ -14590,17 +14690,17 @@ class _$CollectSubscriberBalanceErrorStateImpl<T>
     required TResult Function(String error) getActiveSubscribersErrorState,
     required TResult Function() getLateSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetLateSubscribersResponse getLateSubscribersResponse)
         getLateSubscribersSuccessState,
     required TResult Function(String error) getLateSubscribersErrorState,
     required TResult Function() getDisabledSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
         getDisabledSubscribersSuccessState,
     required TResult Function(String error) getDisabledSubscribersErrorState,
     required TResult Function() getWithdrawnSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
         getWithdrawnSubscribersSuccessState,
     required TResult Function(String error) getWithdrawnSubscribersErrorState,
     required TResult Function() getCompaniesListLoadingState,
@@ -14661,15 +14761,17 @@ class _$CollectSubscriberBalanceErrorStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult? Function(String error)? getActiveSubscribersErrorState,
     TResult? Function()? getLateSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult? Function(String error)? getLateSubscribersErrorState,
     TResult? Function()? getDisabledSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult? Function(String error)? getDisabledSubscribersErrorState,
     TResult? Function()? getWithdrawnSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult? Function(String error)? getWithdrawnSubscribersErrorState,
     TResult? Function()? getCompaniesListLoadingState,
@@ -14730,15 +14832,17 @@ class _$CollectSubscriberBalanceErrorStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult Function(String error)? getActiveSubscribersErrorState,
     TResult Function()? getLateSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult Function(String error)? getLateSubscribersErrorState,
     TResult Function()? getDisabledSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult Function(String error)? getDisabledSubscribersErrorState,
     TResult Function()? getWithdrawnSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult Function(String error)? getWithdrawnSubscribersErrorState,
     TResult Function()? getCompaniesListLoadingState,
@@ -15158,17 +15262,17 @@ class _$GetActiveSubscribersloadingStateImpl<T>
     required TResult Function(String error) getActiveSubscribersErrorState,
     required TResult Function() getLateSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetLateSubscribersResponse getLateSubscribersResponse)
         getLateSubscribersSuccessState,
     required TResult Function(String error) getLateSubscribersErrorState,
     required TResult Function() getDisabledSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
         getDisabledSubscribersSuccessState,
     required TResult Function(String error) getDisabledSubscribersErrorState,
     required TResult Function() getWithdrawnSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
         getWithdrawnSubscribersSuccessState,
     required TResult Function(String error) getWithdrawnSubscribersErrorState,
     required TResult Function() getCompaniesListLoadingState,
@@ -15229,15 +15333,17 @@ class _$GetActiveSubscribersloadingStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult? Function(String error)? getActiveSubscribersErrorState,
     TResult? Function()? getLateSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult? Function(String error)? getLateSubscribersErrorState,
     TResult? Function()? getDisabledSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult? Function(String error)? getDisabledSubscribersErrorState,
     TResult? Function()? getWithdrawnSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult? Function(String error)? getWithdrawnSubscribersErrorState,
     TResult? Function()? getCompaniesListLoadingState,
@@ -15298,15 +15404,17 @@ class _$GetActiveSubscribersloadingStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult Function(String error)? getActiveSubscribersErrorState,
     TResult Function()? getLateSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult Function(String error)? getLateSubscribersErrorState,
     TResult Function()? getDisabledSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult Function(String error)? getDisabledSubscribersErrorState,
     TResult Function()? getWithdrawnSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult Function(String error)? getWithdrawnSubscribersErrorState,
     TResult Function()? getCompaniesListLoadingState,
@@ -15749,17 +15857,17 @@ class _$GetActiveSubscribersSuccessStateImpl<T>
     required TResult Function(String error) getActiveSubscribersErrorState,
     required TResult Function() getLateSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetLateSubscribersResponse getLateSubscribersResponse)
         getLateSubscribersSuccessState,
     required TResult Function(String error) getLateSubscribersErrorState,
     required TResult Function() getDisabledSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
         getDisabledSubscribersSuccessState,
     required TResult Function(String error) getDisabledSubscribersErrorState,
     required TResult Function() getWithdrawnSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
         getWithdrawnSubscribersSuccessState,
     required TResult Function(String error) getWithdrawnSubscribersErrorState,
     required TResult Function() getCompaniesListLoadingState,
@@ -15820,15 +15928,17 @@ class _$GetActiveSubscribersSuccessStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult? Function(String error)? getActiveSubscribersErrorState,
     TResult? Function()? getLateSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult? Function(String error)? getLateSubscribersErrorState,
     TResult? Function()? getDisabledSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult? Function(String error)? getDisabledSubscribersErrorState,
     TResult? Function()? getWithdrawnSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult? Function(String error)? getWithdrawnSubscribersErrorState,
     TResult? Function()? getCompaniesListLoadingState,
@@ -15889,15 +15999,17 @@ class _$GetActiveSubscribersSuccessStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult Function(String error)? getActiveSubscribersErrorState,
     TResult Function()? getLateSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult Function(String error)? getLateSubscribersErrorState,
     TResult Function()? getDisabledSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult Function(String error)? getDisabledSubscribersErrorState,
     TResult Function()? getWithdrawnSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult Function(String error)? getWithdrawnSubscribersErrorState,
     TResult Function()? getCompaniesListLoadingState,
@@ -16344,17 +16456,17 @@ class _$GetActiveSubscribersErrorStateImpl<T>
     required TResult Function(String error) getActiveSubscribersErrorState,
     required TResult Function() getLateSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetLateSubscribersResponse getLateSubscribersResponse)
         getLateSubscribersSuccessState,
     required TResult Function(String error) getLateSubscribersErrorState,
     required TResult Function() getDisabledSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
         getDisabledSubscribersSuccessState,
     required TResult Function(String error) getDisabledSubscribersErrorState,
     required TResult Function() getWithdrawnSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
         getWithdrawnSubscribersSuccessState,
     required TResult Function(String error) getWithdrawnSubscribersErrorState,
     required TResult Function() getCompaniesListLoadingState,
@@ -16415,15 +16527,17 @@ class _$GetActiveSubscribersErrorStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult? Function(String error)? getActiveSubscribersErrorState,
     TResult? Function()? getLateSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult? Function(String error)? getLateSubscribersErrorState,
     TResult? Function()? getDisabledSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult? Function(String error)? getDisabledSubscribersErrorState,
     TResult? Function()? getWithdrawnSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult? Function(String error)? getWithdrawnSubscribersErrorState,
     TResult? Function()? getCompaniesListLoadingState,
@@ -16484,15 +16598,17 @@ class _$GetActiveSubscribersErrorStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult Function(String error)? getActiveSubscribersErrorState,
     TResult Function()? getLateSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult Function(String error)? getLateSubscribersErrorState,
     TResult Function()? getDisabledSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult Function(String error)? getDisabledSubscribersErrorState,
     TResult Function()? getWithdrawnSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult Function(String error)? getWithdrawnSubscribersErrorState,
     TResult Function()? getCompaniesListLoadingState,
@@ -16911,17 +17027,17 @@ class _$GetLateSubscribersloadingStateImpl<T>
     required TResult Function(String error) getActiveSubscribersErrorState,
     required TResult Function() getLateSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetLateSubscribersResponse getLateSubscribersResponse)
         getLateSubscribersSuccessState,
     required TResult Function(String error) getLateSubscribersErrorState,
     required TResult Function() getDisabledSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
         getDisabledSubscribersSuccessState,
     required TResult Function(String error) getDisabledSubscribersErrorState,
     required TResult Function() getWithdrawnSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
         getWithdrawnSubscribersSuccessState,
     required TResult Function(String error) getWithdrawnSubscribersErrorState,
     required TResult Function() getCompaniesListLoadingState,
@@ -16982,15 +17098,17 @@ class _$GetLateSubscribersloadingStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult? Function(String error)? getActiveSubscribersErrorState,
     TResult? Function()? getLateSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult? Function(String error)? getLateSubscribersErrorState,
     TResult? Function()? getDisabledSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult? Function(String error)? getDisabledSubscribersErrorState,
     TResult? Function()? getWithdrawnSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult? Function(String error)? getWithdrawnSubscribersErrorState,
     TResult? Function()? getCompaniesListLoadingState,
@@ -17051,15 +17169,17 @@ class _$GetLateSubscribersloadingStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult Function(String error)? getActiveSubscribersErrorState,
     TResult Function()? getLateSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult Function(String error)? getLateSubscribersErrorState,
     TResult Function()? getDisabledSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult Function(String error)? getDisabledSubscribersErrorState,
     TResult Function()? getWithdrawnSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult Function(String error)? getWithdrawnSubscribersErrorState,
     TResult Function()? getCompaniesListLoadingState,
@@ -17396,7 +17516,7 @@ abstract class _$$GetLateSubscribersSuccessStateImplCopyWith<T, $Res> {
           $Res Function(_$GetLateSubscribersSuccessStateImpl<T>) then) =
       __$$GetLateSubscribersSuccessStateImplCopyWithImpl<T, $Res>;
   @useResult
-  $Res call({GetSubscribersDataResponse getSubscribersDataResponse});
+  $Res call({GetLateSubscribersResponse getLateSubscribersResponse});
 }
 
 /// @nodoc
@@ -17412,13 +17532,13 @@ class __$$GetLateSubscribersSuccessStateImplCopyWithImpl<T, $Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? getSubscribersDataResponse = null,
+    Object? getLateSubscribersResponse = null,
   }) {
     return _then(_$GetLateSubscribersSuccessStateImpl<T>(
-      null == getSubscribersDataResponse
-          ? _value.getSubscribersDataResponse
-          : getSubscribersDataResponse // ignore: cast_nullable_to_non_nullable
-              as GetSubscribersDataResponse,
+      null == getLateSubscribersResponse
+          ? _value.getLateSubscribersResponse
+          : getLateSubscribersResponse // ignore: cast_nullable_to_non_nullable
+              as GetLateSubscribersResponse,
     ));
   }
 }
@@ -17427,14 +17547,14 @@ class __$$GetLateSubscribersSuccessStateImplCopyWithImpl<T, $Res>
 
 class _$GetLateSubscribersSuccessStateImpl<T>
     implements GetLateSubscribersSuccessState<T> {
-  const _$GetLateSubscribersSuccessStateImpl(this.getSubscribersDataResponse);
+  const _$GetLateSubscribersSuccessStateImpl(this.getLateSubscribersResponse);
 
   @override
-  final GetSubscribersDataResponse getSubscribersDataResponse;
+  final GetLateSubscribersResponse getLateSubscribersResponse;
 
   @override
   String toString() {
-    return 'SubscribersState<$T>.getLateSubscribersSuccessState(getSubscribersDataResponse: $getSubscribersDataResponse)';
+    return 'SubscribersState<$T>.getLateSubscribersSuccessState(getLateSubscribersResponse: $getLateSubscribersResponse)';
   }
 
   @override
@@ -17442,14 +17562,14 @@ class _$GetLateSubscribersSuccessStateImpl<T>
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetLateSubscribersSuccessStateImpl<T> &&
-            (identical(other.getSubscribersDataResponse,
-                    getSubscribersDataResponse) ||
-                other.getSubscribersDataResponse ==
-                    getSubscribersDataResponse));
+            (identical(other.getLateSubscribersResponse,
+                    getLateSubscribersResponse) ||
+                other.getLateSubscribersResponse ==
+                    getLateSubscribersResponse));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, getSubscribersDataResponse);
+  int get hashCode => Object.hash(runtimeType, getLateSubscribersResponse);
 
   @JsonKey(ignore: true)
   @override
@@ -17502,17 +17622,17 @@ class _$GetLateSubscribersSuccessStateImpl<T>
     required TResult Function(String error) getActiveSubscribersErrorState,
     required TResult Function() getLateSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetLateSubscribersResponse getLateSubscribersResponse)
         getLateSubscribersSuccessState,
     required TResult Function(String error) getLateSubscribersErrorState,
     required TResult Function() getDisabledSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
         getDisabledSubscribersSuccessState,
     required TResult Function(String error) getDisabledSubscribersErrorState,
     required TResult Function() getWithdrawnSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
         getWithdrawnSubscribersSuccessState,
     required TResult Function(String error) getWithdrawnSubscribersErrorState,
     required TResult Function() getCompaniesListLoadingState,
@@ -17529,7 +17649,7 @@ class _$GetLateSubscribersSuccessStateImpl<T>
     required TResult Function(String error) getPlansListErrorState,
     required TResult Function() changeListData,
   }) {
-    return getLateSubscribersSuccessState(getSubscribersDataResponse);
+    return getLateSubscribersSuccessState(getLateSubscribersResponse);
   }
 
   @override
@@ -17573,15 +17693,17 @@ class _$GetLateSubscribersSuccessStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult? Function(String error)? getActiveSubscribersErrorState,
     TResult? Function()? getLateSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult? Function(String error)? getLateSubscribersErrorState,
     TResult? Function()? getDisabledSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult? Function(String error)? getDisabledSubscribersErrorState,
     TResult? Function()? getWithdrawnSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult? Function(String error)? getWithdrawnSubscribersErrorState,
     TResult? Function()? getCompaniesListLoadingState,
@@ -17598,7 +17720,7 @@ class _$GetLateSubscribersSuccessStateImpl<T>
     TResult? Function(String error)? getPlansListErrorState,
     TResult? Function()? changeListData,
   }) {
-    return getLateSubscribersSuccessState?.call(getSubscribersDataResponse);
+    return getLateSubscribersSuccessState?.call(getLateSubscribersResponse);
   }
 
   @override
@@ -17642,15 +17764,17 @@ class _$GetLateSubscribersSuccessStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult Function(String error)? getActiveSubscribersErrorState,
     TResult Function()? getLateSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult Function(String error)? getLateSubscribersErrorState,
     TResult Function()? getDisabledSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult Function(String error)? getDisabledSubscribersErrorState,
     TResult Function()? getWithdrawnSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult Function(String error)? getWithdrawnSubscribersErrorState,
     TResult Function()? getCompaniesListLoadingState,
@@ -17669,7 +17793,7 @@ class _$GetLateSubscribersSuccessStateImpl<T>
     required TResult orElse(),
   }) {
     if (getLateSubscribersSuccessState != null) {
-      return getLateSubscribersSuccessState(getSubscribersDataResponse);
+      return getLateSubscribersSuccessState(getLateSubscribersResponse);
     }
     return orElse();
   }
@@ -17977,10 +18101,10 @@ class _$GetLateSubscribersSuccessStateImpl<T>
 abstract class GetLateSubscribersSuccessState<T>
     implements SubscribersState<T> {
   const factory GetLateSubscribersSuccessState(
-          final GetSubscribersDataResponse getSubscribersDataResponse) =
+          final GetLateSubscribersResponse getLateSubscribersResponse) =
       _$GetLateSubscribersSuccessStateImpl<T>;
 
-  GetSubscribersDataResponse get getSubscribersDataResponse;
+  GetLateSubscribersResponse get getLateSubscribersResponse;
   @JsonKey(ignore: true)
   _$$GetLateSubscribersSuccessStateImplCopyWith<T,
           _$GetLateSubscribersSuccessStateImpl<T>>
@@ -18097,17 +18221,17 @@ class _$GetLateSubscribersErrorStateImpl<T>
     required TResult Function(String error) getActiveSubscribersErrorState,
     required TResult Function() getLateSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetLateSubscribersResponse getLateSubscribersResponse)
         getLateSubscribersSuccessState,
     required TResult Function(String error) getLateSubscribersErrorState,
     required TResult Function() getDisabledSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
         getDisabledSubscribersSuccessState,
     required TResult Function(String error) getDisabledSubscribersErrorState,
     required TResult Function() getWithdrawnSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
         getWithdrawnSubscribersSuccessState,
     required TResult Function(String error) getWithdrawnSubscribersErrorState,
     required TResult Function() getCompaniesListLoadingState,
@@ -18168,15 +18292,17 @@ class _$GetLateSubscribersErrorStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult? Function(String error)? getActiveSubscribersErrorState,
     TResult? Function()? getLateSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult? Function(String error)? getLateSubscribersErrorState,
     TResult? Function()? getDisabledSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult? Function(String error)? getDisabledSubscribersErrorState,
     TResult? Function()? getWithdrawnSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult? Function(String error)? getWithdrawnSubscribersErrorState,
     TResult? Function()? getCompaniesListLoadingState,
@@ -18237,15 +18363,17 @@ class _$GetLateSubscribersErrorStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult Function(String error)? getActiveSubscribersErrorState,
     TResult Function()? getLateSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult Function(String error)? getLateSubscribersErrorState,
     TResult Function()? getDisabledSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult Function(String error)? getDisabledSubscribersErrorState,
     TResult Function()? getWithdrawnSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult Function(String error)? getWithdrawnSubscribersErrorState,
     TResult Function()? getCompaniesListLoadingState,
@@ -18663,17 +18791,17 @@ class _$GetDisabledSubscribersloadingStateImpl<T>
     required TResult Function(String error) getActiveSubscribersErrorState,
     required TResult Function() getLateSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetLateSubscribersResponse getLateSubscribersResponse)
         getLateSubscribersSuccessState,
     required TResult Function(String error) getLateSubscribersErrorState,
     required TResult Function() getDisabledSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
         getDisabledSubscribersSuccessState,
     required TResult Function(String error) getDisabledSubscribersErrorState,
     required TResult Function() getWithdrawnSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
         getWithdrawnSubscribersSuccessState,
     required TResult Function(String error) getWithdrawnSubscribersErrorState,
     required TResult Function() getCompaniesListLoadingState,
@@ -18734,15 +18862,17 @@ class _$GetDisabledSubscribersloadingStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult? Function(String error)? getActiveSubscribersErrorState,
     TResult? Function()? getLateSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult? Function(String error)? getLateSubscribersErrorState,
     TResult? Function()? getDisabledSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult? Function(String error)? getDisabledSubscribersErrorState,
     TResult? Function()? getWithdrawnSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult? Function(String error)? getWithdrawnSubscribersErrorState,
     TResult? Function()? getCompaniesListLoadingState,
@@ -18803,15 +18933,17 @@ class _$GetDisabledSubscribersloadingStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult Function(String error)? getActiveSubscribersErrorState,
     TResult Function()? getLateSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult Function(String error)? getLateSubscribersErrorState,
     TResult Function()? getDisabledSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult Function(String error)? getDisabledSubscribersErrorState,
     TResult Function()? getWithdrawnSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult Function(String error)? getWithdrawnSubscribersErrorState,
     TResult Function()? getCompaniesListLoadingState,
@@ -19148,7 +19280,7 @@ abstract class _$$GetDisabledSubscribersSuccessStateImplCopyWith<T, $Res> {
           $Res Function(_$GetDisabledSubscribersSuccessStateImpl<T>) then) =
       __$$GetDisabledSubscribersSuccessStateImplCopyWithImpl<T, $Res>;
   @useResult
-  $Res call({GetSubscribersDataResponse getSubscribersDataResponse});
+  $Res call({GetDisabledSubscribersResponse getDisabledSubscribersResponse});
 }
 
 /// @nodoc
@@ -19164,13 +19296,13 @@ class __$$GetDisabledSubscribersSuccessStateImplCopyWithImpl<T, $Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? getSubscribersDataResponse = null,
+    Object? getDisabledSubscribersResponse = null,
   }) {
     return _then(_$GetDisabledSubscribersSuccessStateImpl<T>(
-      null == getSubscribersDataResponse
-          ? _value.getSubscribersDataResponse
-          : getSubscribersDataResponse // ignore: cast_nullable_to_non_nullable
-              as GetSubscribersDataResponse,
+      null == getDisabledSubscribersResponse
+          ? _value.getDisabledSubscribersResponse
+          : getDisabledSubscribersResponse // ignore: cast_nullable_to_non_nullable
+              as GetDisabledSubscribersResponse,
     ));
   }
 }
@@ -19180,14 +19312,14 @@ class __$$GetDisabledSubscribersSuccessStateImplCopyWithImpl<T, $Res>
 class _$GetDisabledSubscribersSuccessStateImpl<T>
     implements GetDisabledSubscribersSuccessState<T> {
   const _$GetDisabledSubscribersSuccessStateImpl(
-      this.getSubscribersDataResponse);
+      this.getDisabledSubscribersResponse);
 
   @override
-  final GetSubscribersDataResponse getSubscribersDataResponse;
+  final GetDisabledSubscribersResponse getDisabledSubscribersResponse;
 
   @override
   String toString() {
-    return 'SubscribersState<$T>.getDisabledSubscribersSuccessState(getSubscribersDataResponse: $getSubscribersDataResponse)';
+    return 'SubscribersState<$T>.getDisabledSubscribersSuccessState(getDisabledSubscribersResponse: $getDisabledSubscribersResponse)';
   }
 
   @override
@@ -19195,14 +19327,14 @@ class _$GetDisabledSubscribersSuccessStateImpl<T>
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetDisabledSubscribersSuccessStateImpl<T> &&
-            (identical(other.getSubscribersDataResponse,
-                    getSubscribersDataResponse) ||
-                other.getSubscribersDataResponse ==
-                    getSubscribersDataResponse));
+            (identical(other.getDisabledSubscribersResponse,
+                    getDisabledSubscribersResponse) ||
+                other.getDisabledSubscribersResponse ==
+                    getDisabledSubscribersResponse));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, getSubscribersDataResponse);
+  int get hashCode => Object.hash(runtimeType, getDisabledSubscribersResponse);
 
   @JsonKey(ignore: true)
   @override
@@ -19255,17 +19387,17 @@ class _$GetDisabledSubscribersSuccessStateImpl<T>
     required TResult Function(String error) getActiveSubscribersErrorState,
     required TResult Function() getLateSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetLateSubscribersResponse getLateSubscribersResponse)
         getLateSubscribersSuccessState,
     required TResult Function(String error) getLateSubscribersErrorState,
     required TResult Function() getDisabledSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
         getDisabledSubscribersSuccessState,
     required TResult Function(String error) getDisabledSubscribersErrorState,
     required TResult Function() getWithdrawnSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
         getWithdrawnSubscribersSuccessState,
     required TResult Function(String error) getWithdrawnSubscribersErrorState,
     required TResult Function() getCompaniesListLoadingState,
@@ -19282,7 +19414,7 @@ class _$GetDisabledSubscribersSuccessStateImpl<T>
     required TResult Function(String error) getPlansListErrorState,
     required TResult Function() changeListData,
   }) {
-    return getDisabledSubscribersSuccessState(getSubscribersDataResponse);
+    return getDisabledSubscribersSuccessState(getDisabledSubscribersResponse);
   }
 
   @override
@@ -19326,15 +19458,17 @@ class _$GetDisabledSubscribersSuccessStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult? Function(String error)? getActiveSubscribersErrorState,
     TResult? Function()? getLateSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult? Function(String error)? getLateSubscribersErrorState,
     TResult? Function()? getDisabledSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult? Function(String error)? getDisabledSubscribersErrorState,
     TResult? Function()? getWithdrawnSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult? Function(String error)? getWithdrawnSubscribersErrorState,
     TResult? Function()? getCompaniesListLoadingState,
@@ -19351,7 +19485,8 @@ class _$GetDisabledSubscribersSuccessStateImpl<T>
     TResult? Function(String error)? getPlansListErrorState,
     TResult? Function()? changeListData,
   }) {
-    return getDisabledSubscribersSuccessState?.call(getSubscribersDataResponse);
+    return getDisabledSubscribersSuccessState
+        ?.call(getDisabledSubscribersResponse);
   }
 
   @override
@@ -19395,15 +19530,17 @@ class _$GetDisabledSubscribersSuccessStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult Function(String error)? getActiveSubscribersErrorState,
     TResult Function()? getLateSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult Function(String error)? getLateSubscribersErrorState,
     TResult Function()? getDisabledSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult Function(String error)? getDisabledSubscribersErrorState,
     TResult Function()? getWithdrawnSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult Function(String error)? getWithdrawnSubscribersErrorState,
     TResult Function()? getCompaniesListLoadingState,
@@ -19422,7 +19559,7 @@ class _$GetDisabledSubscribersSuccessStateImpl<T>
     required TResult orElse(),
   }) {
     if (getDisabledSubscribersSuccessState != null) {
-      return getDisabledSubscribersSuccessState(getSubscribersDataResponse);
+      return getDisabledSubscribersSuccessState(getDisabledSubscribersResponse);
     }
     return orElse();
   }
@@ -19730,10 +19867,10 @@ class _$GetDisabledSubscribersSuccessStateImpl<T>
 abstract class GetDisabledSubscribersSuccessState<T>
     implements SubscribersState<T> {
   const factory GetDisabledSubscribersSuccessState(
-          final GetSubscribersDataResponse getSubscribersDataResponse) =
+          final GetDisabledSubscribersResponse getDisabledSubscribersResponse) =
       _$GetDisabledSubscribersSuccessStateImpl<T>;
 
-  GetSubscribersDataResponse get getSubscribersDataResponse;
+  GetDisabledSubscribersResponse get getDisabledSubscribersResponse;
   @JsonKey(ignore: true)
   _$$GetDisabledSubscribersSuccessStateImplCopyWith<T,
           _$GetDisabledSubscribersSuccessStateImpl<T>>
@@ -19850,17 +19987,17 @@ class _$GetDisabledSubscribersErrorStateImpl<T>
     required TResult Function(String error) getActiveSubscribersErrorState,
     required TResult Function() getLateSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetLateSubscribersResponse getLateSubscribersResponse)
         getLateSubscribersSuccessState,
     required TResult Function(String error) getLateSubscribersErrorState,
     required TResult Function() getDisabledSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
         getDisabledSubscribersSuccessState,
     required TResult Function(String error) getDisabledSubscribersErrorState,
     required TResult Function() getWithdrawnSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
         getWithdrawnSubscribersSuccessState,
     required TResult Function(String error) getWithdrawnSubscribersErrorState,
     required TResult Function() getCompaniesListLoadingState,
@@ -19921,15 +20058,17 @@ class _$GetDisabledSubscribersErrorStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult? Function(String error)? getActiveSubscribersErrorState,
     TResult? Function()? getLateSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult? Function(String error)? getLateSubscribersErrorState,
     TResult? Function()? getDisabledSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult? Function(String error)? getDisabledSubscribersErrorState,
     TResult? Function()? getWithdrawnSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult? Function(String error)? getWithdrawnSubscribersErrorState,
     TResult? Function()? getCompaniesListLoadingState,
@@ -19990,15 +20129,17 @@ class _$GetDisabledSubscribersErrorStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult Function(String error)? getActiveSubscribersErrorState,
     TResult Function()? getLateSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult Function(String error)? getLateSubscribersErrorState,
     TResult Function()? getDisabledSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult Function(String error)? getDisabledSubscribersErrorState,
     TResult Function()? getWithdrawnSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult Function(String error)? getWithdrawnSubscribersErrorState,
     TResult Function()? getCompaniesListLoadingState,
@@ -20418,17 +20559,17 @@ class _$GetWithdrawnSubscribersloadingStateImpl<T>
     required TResult Function(String error) getActiveSubscribersErrorState,
     required TResult Function() getLateSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetLateSubscribersResponse getLateSubscribersResponse)
         getLateSubscribersSuccessState,
     required TResult Function(String error) getLateSubscribersErrorState,
     required TResult Function() getDisabledSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
         getDisabledSubscribersSuccessState,
     required TResult Function(String error) getDisabledSubscribersErrorState,
     required TResult Function() getWithdrawnSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
         getWithdrawnSubscribersSuccessState,
     required TResult Function(String error) getWithdrawnSubscribersErrorState,
     required TResult Function() getCompaniesListLoadingState,
@@ -20489,15 +20630,17 @@ class _$GetWithdrawnSubscribersloadingStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult? Function(String error)? getActiveSubscribersErrorState,
     TResult? Function()? getLateSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult? Function(String error)? getLateSubscribersErrorState,
     TResult? Function()? getDisabledSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult? Function(String error)? getDisabledSubscribersErrorState,
     TResult? Function()? getWithdrawnSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult? Function(String error)? getWithdrawnSubscribersErrorState,
     TResult? Function()? getCompaniesListLoadingState,
@@ -20558,15 +20701,17 @@ class _$GetWithdrawnSubscribersloadingStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult Function(String error)? getActiveSubscribersErrorState,
     TResult Function()? getLateSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult Function(String error)? getLateSubscribersErrorState,
     TResult Function()? getDisabledSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult Function(String error)? getDisabledSubscribersErrorState,
     TResult Function()? getWithdrawnSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult Function(String error)? getWithdrawnSubscribersErrorState,
     TResult Function()? getCompaniesListLoadingState,
@@ -20903,7 +21048,7 @@ abstract class _$$GetWithdrawnSubscribersSuccessStateImplCopyWith<T, $Res> {
           $Res Function(_$GetWithdrawnSubscribersSuccessStateImpl<T>) then) =
       __$$GetWithdrawnSubscribersSuccessStateImplCopyWithImpl<T, $Res>;
   @useResult
-  $Res call({GetSubscribersDataResponse getSubscribersDataResponse});
+  $Res call({GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse});
 }
 
 /// @nodoc
@@ -20919,13 +21064,13 @@ class __$$GetWithdrawnSubscribersSuccessStateImplCopyWithImpl<T, $Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? getSubscribersDataResponse = null,
+    Object? getWithdrawnSubscribersResponse = null,
   }) {
     return _then(_$GetWithdrawnSubscribersSuccessStateImpl<T>(
-      null == getSubscribersDataResponse
-          ? _value.getSubscribersDataResponse
-          : getSubscribersDataResponse // ignore: cast_nullable_to_non_nullable
-              as GetSubscribersDataResponse,
+      null == getWithdrawnSubscribersResponse
+          ? _value.getWithdrawnSubscribersResponse
+          : getWithdrawnSubscribersResponse // ignore: cast_nullable_to_non_nullable
+              as GetWithdrawnSubscribersResponse,
     ));
   }
 }
@@ -20935,14 +21080,14 @@ class __$$GetWithdrawnSubscribersSuccessStateImplCopyWithImpl<T, $Res>
 class _$GetWithdrawnSubscribersSuccessStateImpl<T>
     implements GetWithdrawnSubscribersSuccessState<T> {
   const _$GetWithdrawnSubscribersSuccessStateImpl(
-      this.getSubscribersDataResponse);
+      this.getWithdrawnSubscribersResponse);
 
   @override
-  final GetSubscribersDataResponse getSubscribersDataResponse;
+  final GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse;
 
   @override
   String toString() {
-    return 'SubscribersState<$T>.getWithdrawnSubscribersSuccessState(getSubscribersDataResponse: $getSubscribersDataResponse)';
+    return 'SubscribersState<$T>.getWithdrawnSubscribersSuccessState(getWithdrawnSubscribersResponse: $getWithdrawnSubscribersResponse)';
   }
 
   @override
@@ -20950,14 +21095,14 @@ class _$GetWithdrawnSubscribersSuccessStateImpl<T>
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetWithdrawnSubscribersSuccessStateImpl<T> &&
-            (identical(other.getSubscribersDataResponse,
-                    getSubscribersDataResponse) ||
-                other.getSubscribersDataResponse ==
-                    getSubscribersDataResponse));
+            (identical(other.getWithdrawnSubscribersResponse,
+                    getWithdrawnSubscribersResponse) ||
+                other.getWithdrawnSubscribersResponse ==
+                    getWithdrawnSubscribersResponse));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, getSubscribersDataResponse);
+  int get hashCode => Object.hash(runtimeType, getWithdrawnSubscribersResponse);
 
   @JsonKey(ignore: true)
   @override
@@ -21010,17 +21155,17 @@ class _$GetWithdrawnSubscribersSuccessStateImpl<T>
     required TResult Function(String error) getActiveSubscribersErrorState,
     required TResult Function() getLateSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetLateSubscribersResponse getLateSubscribersResponse)
         getLateSubscribersSuccessState,
     required TResult Function(String error) getLateSubscribersErrorState,
     required TResult Function() getDisabledSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
         getDisabledSubscribersSuccessState,
     required TResult Function(String error) getDisabledSubscribersErrorState,
     required TResult Function() getWithdrawnSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
         getWithdrawnSubscribersSuccessState,
     required TResult Function(String error) getWithdrawnSubscribersErrorState,
     required TResult Function() getCompaniesListLoadingState,
@@ -21037,7 +21182,7 @@ class _$GetWithdrawnSubscribersSuccessStateImpl<T>
     required TResult Function(String error) getPlansListErrorState,
     required TResult Function() changeListData,
   }) {
-    return getWithdrawnSubscribersSuccessState(getSubscribersDataResponse);
+    return getWithdrawnSubscribersSuccessState(getWithdrawnSubscribersResponse);
   }
 
   @override
@@ -21081,15 +21226,17 @@ class _$GetWithdrawnSubscribersSuccessStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult? Function(String error)? getActiveSubscribersErrorState,
     TResult? Function()? getLateSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult? Function(String error)? getLateSubscribersErrorState,
     TResult? Function()? getDisabledSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult? Function(String error)? getDisabledSubscribersErrorState,
     TResult? Function()? getWithdrawnSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult? Function(String error)? getWithdrawnSubscribersErrorState,
     TResult? Function()? getCompaniesListLoadingState,
@@ -21107,7 +21254,7 @@ class _$GetWithdrawnSubscribersSuccessStateImpl<T>
     TResult? Function()? changeListData,
   }) {
     return getWithdrawnSubscribersSuccessState
-        ?.call(getSubscribersDataResponse);
+        ?.call(getWithdrawnSubscribersResponse);
   }
 
   @override
@@ -21151,15 +21298,17 @@ class _$GetWithdrawnSubscribersSuccessStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult Function(String error)? getActiveSubscribersErrorState,
     TResult Function()? getLateSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult Function(String error)? getLateSubscribersErrorState,
     TResult Function()? getDisabledSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult Function(String error)? getDisabledSubscribersErrorState,
     TResult Function()? getWithdrawnSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult Function(String error)? getWithdrawnSubscribersErrorState,
     TResult Function()? getCompaniesListLoadingState,
@@ -21178,7 +21327,8 @@ class _$GetWithdrawnSubscribersSuccessStateImpl<T>
     required TResult orElse(),
   }) {
     if (getWithdrawnSubscribersSuccessState != null) {
-      return getWithdrawnSubscribersSuccessState(getSubscribersDataResponse);
+      return getWithdrawnSubscribersSuccessState(
+          getWithdrawnSubscribersResponse);
     }
     return orElse();
   }
@@ -21486,10 +21636,11 @@ class _$GetWithdrawnSubscribersSuccessStateImpl<T>
 abstract class GetWithdrawnSubscribersSuccessState<T>
     implements SubscribersState<T> {
   const factory GetWithdrawnSubscribersSuccessState(
-          final GetSubscribersDataResponse getSubscribersDataResponse) =
+          final GetWithdrawnSubscribersResponse
+              getWithdrawnSubscribersResponse) =
       _$GetWithdrawnSubscribersSuccessStateImpl<T>;
 
-  GetSubscribersDataResponse get getSubscribersDataResponse;
+  GetWithdrawnSubscribersResponse get getWithdrawnSubscribersResponse;
   @JsonKey(ignore: true)
   _$$GetWithdrawnSubscribersSuccessStateImplCopyWith<T,
           _$GetWithdrawnSubscribersSuccessStateImpl<T>>
@@ -21606,17 +21757,17 @@ class _$GetWithdrawnSubscribersErrorStateImpl<T>
     required TResult Function(String error) getActiveSubscribersErrorState,
     required TResult Function() getLateSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetLateSubscribersResponse getLateSubscribersResponse)
         getLateSubscribersSuccessState,
     required TResult Function(String error) getLateSubscribersErrorState,
     required TResult Function() getDisabledSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
         getDisabledSubscribersSuccessState,
     required TResult Function(String error) getDisabledSubscribersErrorState,
     required TResult Function() getWithdrawnSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
         getWithdrawnSubscribersSuccessState,
     required TResult Function(String error) getWithdrawnSubscribersErrorState,
     required TResult Function() getCompaniesListLoadingState,
@@ -21677,15 +21828,17 @@ class _$GetWithdrawnSubscribersErrorStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult? Function(String error)? getActiveSubscribersErrorState,
     TResult? Function()? getLateSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult? Function(String error)? getLateSubscribersErrorState,
     TResult? Function()? getDisabledSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult? Function(String error)? getDisabledSubscribersErrorState,
     TResult? Function()? getWithdrawnSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult? Function(String error)? getWithdrawnSubscribersErrorState,
     TResult? Function()? getCompaniesListLoadingState,
@@ -21746,15 +21899,17 @@ class _$GetWithdrawnSubscribersErrorStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult Function(String error)? getActiveSubscribersErrorState,
     TResult Function()? getLateSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult Function(String error)? getLateSubscribersErrorState,
     TResult Function()? getDisabledSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult Function(String error)? getDisabledSubscribersErrorState,
     TResult Function()? getWithdrawnSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult Function(String error)? getWithdrawnSubscribersErrorState,
     TResult Function()? getCompaniesListLoadingState,
@@ -22174,17 +22329,17 @@ class _$GetCompaniesListloadingStateImpl<T>
     required TResult Function(String error) getActiveSubscribersErrorState,
     required TResult Function() getLateSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetLateSubscribersResponse getLateSubscribersResponse)
         getLateSubscribersSuccessState,
     required TResult Function(String error) getLateSubscribersErrorState,
     required TResult Function() getDisabledSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
         getDisabledSubscribersSuccessState,
     required TResult Function(String error) getDisabledSubscribersErrorState,
     required TResult Function() getWithdrawnSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
         getWithdrawnSubscribersSuccessState,
     required TResult Function(String error) getWithdrawnSubscribersErrorState,
     required TResult Function() getCompaniesListLoadingState,
@@ -22245,15 +22400,17 @@ class _$GetCompaniesListloadingStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult? Function(String error)? getActiveSubscribersErrorState,
     TResult? Function()? getLateSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult? Function(String error)? getLateSubscribersErrorState,
     TResult? Function()? getDisabledSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult? Function(String error)? getDisabledSubscribersErrorState,
     TResult? Function()? getWithdrawnSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult? Function(String error)? getWithdrawnSubscribersErrorState,
     TResult? Function()? getCompaniesListLoadingState,
@@ -22314,15 +22471,17 @@ class _$GetCompaniesListloadingStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult Function(String error)? getActiveSubscribersErrorState,
     TResult Function()? getLateSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult Function(String error)? getLateSubscribersErrorState,
     TResult Function()? getDisabledSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult Function(String error)? getDisabledSubscribersErrorState,
     TResult Function()? getWithdrawnSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult Function(String error)? getWithdrawnSubscribersErrorState,
     TResult Function()? getCompaniesListLoadingState,
@@ -22762,17 +22921,17 @@ class _$GetCompaniesListSuccessStateImpl<T>
     required TResult Function(String error) getActiveSubscribersErrorState,
     required TResult Function() getLateSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetLateSubscribersResponse getLateSubscribersResponse)
         getLateSubscribersSuccessState,
     required TResult Function(String error) getLateSubscribersErrorState,
     required TResult Function() getDisabledSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
         getDisabledSubscribersSuccessState,
     required TResult Function(String error) getDisabledSubscribersErrorState,
     required TResult Function() getWithdrawnSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
         getWithdrawnSubscribersSuccessState,
     required TResult Function(String error) getWithdrawnSubscribersErrorState,
     required TResult Function() getCompaniesListLoadingState,
@@ -22833,15 +22992,17 @@ class _$GetCompaniesListSuccessStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult? Function(String error)? getActiveSubscribersErrorState,
     TResult? Function()? getLateSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult? Function(String error)? getLateSubscribersErrorState,
     TResult? Function()? getDisabledSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult? Function(String error)? getDisabledSubscribersErrorState,
     TResult? Function()? getWithdrawnSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult? Function(String error)? getWithdrawnSubscribersErrorState,
     TResult? Function()? getCompaniesListLoadingState,
@@ -22902,15 +23063,17 @@ class _$GetCompaniesListSuccessStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult Function(String error)? getActiveSubscribersErrorState,
     TResult Function()? getLateSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult Function(String error)? getLateSubscribersErrorState,
     TResult Function()? getDisabledSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult Function(String error)? getDisabledSubscribersErrorState,
     TResult Function()? getWithdrawnSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult Function(String error)? getWithdrawnSubscribersErrorState,
     TResult Function()? getCompaniesListLoadingState,
@@ -23356,17 +23519,17 @@ class _$GetCompaniesListErrorStateImpl<T>
     required TResult Function(String error) getActiveSubscribersErrorState,
     required TResult Function() getLateSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetLateSubscribersResponse getLateSubscribersResponse)
         getLateSubscribersSuccessState,
     required TResult Function(String error) getLateSubscribersErrorState,
     required TResult Function() getDisabledSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
         getDisabledSubscribersSuccessState,
     required TResult Function(String error) getDisabledSubscribersErrorState,
     required TResult Function() getWithdrawnSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
         getWithdrawnSubscribersSuccessState,
     required TResult Function(String error) getWithdrawnSubscribersErrorState,
     required TResult Function() getCompaniesListLoadingState,
@@ -23427,15 +23590,17 @@ class _$GetCompaniesListErrorStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult? Function(String error)? getActiveSubscribersErrorState,
     TResult? Function()? getLateSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult? Function(String error)? getLateSubscribersErrorState,
     TResult? Function()? getDisabledSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult? Function(String error)? getDisabledSubscribersErrorState,
     TResult? Function()? getWithdrawnSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult? Function(String error)? getWithdrawnSubscribersErrorState,
     TResult? Function()? getCompaniesListLoadingState,
@@ -23496,15 +23661,17 @@ class _$GetCompaniesListErrorStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult Function(String error)? getActiveSubscribersErrorState,
     TResult Function()? getLateSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult Function(String error)? getLateSubscribersErrorState,
     TResult Function()? getDisabledSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult Function(String error)? getDisabledSubscribersErrorState,
     TResult Function()? getWithdrawnSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult Function(String error)? getWithdrawnSubscribersErrorState,
     TResult Function()? getCompaniesListLoadingState,
@@ -23922,17 +24089,17 @@ class _$GetCollectorsEmailsloadingStateImpl<T>
     required TResult Function(String error) getActiveSubscribersErrorState,
     required TResult Function() getLateSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetLateSubscribersResponse getLateSubscribersResponse)
         getLateSubscribersSuccessState,
     required TResult Function(String error) getLateSubscribersErrorState,
     required TResult Function() getDisabledSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
         getDisabledSubscribersSuccessState,
     required TResult Function(String error) getDisabledSubscribersErrorState,
     required TResult Function() getWithdrawnSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
         getWithdrawnSubscribersSuccessState,
     required TResult Function(String error) getWithdrawnSubscribersErrorState,
     required TResult Function() getCompaniesListLoadingState,
@@ -23993,15 +24160,17 @@ class _$GetCollectorsEmailsloadingStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult? Function(String error)? getActiveSubscribersErrorState,
     TResult? Function()? getLateSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult? Function(String error)? getLateSubscribersErrorState,
     TResult? Function()? getDisabledSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult? Function(String error)? getDisabledSubscribersErrorState,
     TResult? Function()? getWithdrawnSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult? Function(String error)? getWithdrawnSubscribersErrorState,
     TResult? Function()? getCompaniesListLoadingState,
@@ -24062,15 +24231,17 @@ class _$GetCollectorsEmailsloadingStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult Function(String error)? getActiveSubscribersErrorState,
     TResult Function()? getLateSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult Function(String error)? getLateSubscribersErrorState,
     TResult Function()? getDisabledSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult Function(String error)? getDisabledSubscribersErrorState,
     TResult Function()? getWithdrawnSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult Function(String error)? getWithdrawnSubscribersErrorState,
     TResult Function()? getCompaniesListLoadingState,
@@ -24511,17 +24682,17 @@ class _$GetCollectorsEmailsSuccessStateImpl<T>
     required TResult Function(String error) getActiveSubscribersErrorState,
     required TResult Function() getLateSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetLateSubscribersResponse getLateSubscribersResponse)
         getLateSubscribersSuccessState,
     required TResult Function(String error) getLateSubscribersErrorState,
     required TResult Function() getDisabledSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
         getDisabledSubscribersSuccessState,
     required TResult Function(String error) getDisabledSubscribersErrorState,
     required TResult Function() getWithdrawnSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
         getWithdrawnSubscribersSuccessState,
     required TResult Function(String error) getWithdrawnSubscribersErrorState,
     required TResult Function() getCompaniesListLoadingState,
@@ -24582,15 +24753,17 @@ class _$GetCollectorsEmailsSuccessStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult? Function(String error)? getActiveSubscribersErrorState,
     TResult? Function()? getLateSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult? Function(String error)? getLateSubscribersErrorState,
     TResult? Function()? getDisabledSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult? Function(String error)? getDisabledSubscribersErrorState,
     TResult? Function()? getWithdrawnSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult? Function(String error)? getWithdrawnSubscribersErrorState,
     TResult? Function()? getCompaniesListLoadingState,
@@ -24651,15 +24824,17 @@ class _$GetCollectorsEmailsSuccessStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult Function(String error)? getActiveSubscribersErrorState,
     TResult Function()? getLateSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult Function(String error)? getLateSubscribersErrorState,
     TResult Function()? getDisabledSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult Function(String error)? getDisabledSubscribersErrorState,
     TResult Function()? getWithdrawnSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult Function(String error)? getWithdrawnSubscribersErrorState,
     TResult Function()? getCompaniesListLoadingState,
@@ -25106,17 +25281,17 @@ class _$GetCollectorsEmailsErrorStateImpl<T>
     required TResult Function(String error) getActiveSubscribersErrorState,
     required TResult Function() getLateSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetLateSubscribersResponse getLateSubscribersResponse)
         getLateSubscribersSuccessState,
     required TResult Function(String error) getLateSubscribersErrorState,
     required TResult Function() getDisabledSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
         getDisabledSubscribersSuccessState,
     required TResult Function(String error) getDisabledSubscribersErrorState,
     required TResult Function() getWithdrawnSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
         getWithdrawnSubscribersSuccessState,
     required TResult Function(String error) getWithdrawnSubscribersErrorState,
     required TResult Function() getCompaniesListLoadingState,
@@ -25177,15 +25352,17 @@ class _$GetCollectorsEmailsErrorStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult? Function(String error)? getActiveSubscribersErrorState,
     TResult? Function()? getLateSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult? Function(String error)? getLateSubscribersErrorState,
     TResult? Function()? getDisabledSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult? Function(String error)? getDisabledSubscribersErrorState,
     TResult? Function()? getWithdrawnSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult? Function(String error)? getWithdrawnSubscribersErrorState,
     TResult? Function()? getCompaniesListLoadingState,
@@ -25246,15 +25423,17 @@ class _$GetCollectorsEmailsErrorStateImpl<T>
         getActiveSubscribersSuccessState,
     TResult Function(String error)? getActiveSubscribersErrorState,
     TResult Function()? getLateSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult Function(String error)? getLateSubscribersErrorState,
     TResult Function()? getDisabledSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult Function(String error)? getDisabledSubscribersErrorState,
     TResult Function()? getWithdrawnSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult Function(String error)? getWithdrawnSubscribersErrorState,
     TResult Function()? getCompaniesListLoadingState,
@@ -25671,17 +25850,17 @@ class _$GetPlansListloadingStateImpl<T> implements GetPlansListloadingState<T> {
     required TResult Function(String error) getActiveSubscribersErrorState,
     required TResult Function() getLateSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetLateSubscribersResponse getLateSubscribersResponse)
         getLateSubscribersSuccessState,
     required TResult Function(String error) getLateSubscribersErrorState,
     required TResult Function() getDisabledSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
         getDisabledSubscribersSuccessState,
     required TResult Function(String error) getDisabledSubscribersErrorState,
     required TResult Function() getWithdrawnSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
         getWithdrawnSubscribersSuccessState,
     required TResult Function(String error) getWithdrawnSubscribersErrorState,
     required TResult Function() getCompaniesListLoadingState,
@@ -25742,15 +25921,17 @@ class _$GetPlansListloadingStateImpl<T> implements GetPlansListloadingState<T> {
         getActiveSubscribersSuccessState,
     TResult? Function(String error)? getActiveSubscribersErrorState,
     TResult? Function()? getLateSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult? Function(String error)? getLateSubscribersErrorState,
     TResult? Function()? getDisabledSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult? Function(String error)? getDisabledSubscribersErrorState,
     TResult? Function()? getWithdrawnSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult? Function(String error)? getWithdrawnSubscribersErrorState,
     TResult? Function()? getCompaniesListLoadingState,
@@ -25811,15 +25992,17 @@ class _$GetPlansListloadingStateImpl<T> implements GetPlansListloadingState<T> {
         getActiveSubscribersSuccessState,
     TResult Function(String error)? getActiveSubscribersErrorState,
     TResult Function()? getLateSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult Function(String error)? getLateSubscribersErrorState,
     TResult Function()? getDisabledSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult Function(String error)? getDisabledSubscribersErrorState,
     TResult Function()? getWithdrawnSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult Function(String error)? getWithdrawnSubscribersErrorState,
     TResult Function()? getCompaniesListLoadingState,
@@ -26256,17 +26439,17 @@ class _$GetPlansListSuccessStateImpl<T> implements GetPlansListSuccessState<T> {
     required TResult Function(String error) getActiveSubscribersErrorState,
     required TResult Function() getLateSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetLateSubscribersResponse getLateSubscribersResponse)
         getLateSubscribersSuccessState,
     required TResult Function(String error) getLateSubscribersErrorState,
     required TResult Function() getDisabledSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
         getDisabledSubscribersSuccessState,
     required TResult Function(String error) getDisabledSubscribersErrorState,
     required TResult Function() getWithdrawnSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
         getWithdrawnSubscribersSuccessState,
     required TResult Function(String error) getWithdrawnSubscribersErrorState,
     required TResult Function() getCompaniesListLoadingState,
@@ -26327,15 +26510,17 @@ class _$GetPlansListSuccessStateImpl<T> implements GetPlansListSuccessState<T> {
         getActiveSubscribersSuccessState,
     TResult? Function(String error)? getActiveSubscribersErrorState,
     TResult? Function()? getLateSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult? Function(String error)? getLateSubscribersErrorState,
     TResult? Function()? getDisabledSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult? Function(String error)? getDisabledSubscribersErrorState,
     TResult? Function()? getWithdrawnSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult? Function(String error)? getWithdrawnSubscribersErrorState,
     TResult? Function()? getCompaniesListLoadingState,
@@ -26396,15 +26581,17 @@ class _$GetPlansListSuccessStateImpl<T> implements GetPlansListSuccessState<T> {
         getActiveSubscribersSuccessState,
     TResult Function(String error)? getActiveSubscribersErrorState,
     TResult Function()? getLateSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult Function(String error)? getLateSubscribersErrorState,
     TResult Function()? getDisabledSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult Function(String error)? getDisabledSubscribersErrorState,
     TResult Function()? getWithdrawnSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult Function(String error)? getWithdrawnSubscribersErrorState,
     TResult Function()? getCompaniesListLoadingState,
@@ -26847,17 +27034,17 @@ class _$GetPlansListErrorStateImpl<T> implements GetPlansListErrorState<T> {
     required TResult Function(String error) getActiveSubscribersErrorState,
     required TResult Function() getLateSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetLateSubscribersResponse getLateSubscribersResponse)
         getLateSubscribersSuccessState,
     required TResult Function(String error) getLateSubscribersErrorState,
     required TResult Function() getDisabledSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
         getDisabledSubscribersSuccessState,
     required TResult Function(String error) getDisabledSubscribersErrorState,
     required TResult Function() getWithdrawnSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
         getWithdrawnSubscribersSuccessState,
     required TResult Function(String error) getWithdrawnSubscribersErrorState,
     required TResult Function() getCompaniesListLoadingState,
@@ -26918,15 +27105,17 @@ class _$GetPlansListErrorStateImpl<T> implements GetPlansListErrorState<T> {
         getActiveSubscribersSuccessState,
     TResult? Function(String error)? getActiveSubscribersErrorState,
     TResult? Function()? getLateSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult? Function(String error)? getLateSubscribersErrorState,
     TResult? Function()? getDisabledSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult? Function(String error)? getDisabledSubscribersErrorState,
     TResult? Function()? getWithdrawnSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult? Function(String error)? getWithdrawnSubscribersErrorState,
     TResult? Function()? getCompaniesListLoadingState,
@@ -26987,15 +27176,17 @@ class _$GetPlansListErrorStateImpl<T> implements GetPlansListErrorState<T> {
         getActiveSubscribersSuccessState,
     TResult Function(String error)? getActiveSubscribersErrorState,
     TResult Function()? getLateSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult Function(String error)? getLateSubscribersErrorState,
     TResult Function()? getDisabledSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult Function(String error)? getDisabledSubscribersErrorState,
     TResult Function()? getWithdrawnSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult Function(String error)? getWithdrawnSubscribersErrorState,
     TResult Function()? getCompaniesListLoadingState,
@@ -27407,17 +27598,17 @@ class _$ChangeListDataImpl<T> implements ChangeListData<T> {
     required TResult Function(String error) getActiveSubscribersErrorState,
     required TResult Function() getLateSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetLateSubscribersResponse getLateSubscribersResponse)
         getLateSubscribersSuccessState,
     required TResult Function(String error) getLateSubscribersErrorState,
     required TResult Function() getDisabledSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
         getDisabledSubscribersSuccessState,
     required TResult Function(String error) getDisabledSubscribersErrorState,
     required TResult Function() getWithdrawnSubscribersLoadingState,
     required TResult Function(
-            GetSubscribersDataResponse getSubscribersDataResponse)
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
         getWithdrawnSubscribersSuccessState,
     required TResult Function(String error) getWithdrawnSubscribersErrorState,
     required TResult Function() getCompaniesListLoadingState,
@@ -27478,15 +27669,17 @@ class _$ChangeListDataImpl<T> implements ChangeListData<T> {
         getActiveSubscribersSuccessState,
     TResult? Function(String error)? getActiveSubscribersErrorState,
     TResult? Function()? getLateSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult? Function(String error)? getLateSubscribersErrorState,
     TResult? Function()? getDisabledSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult? Function(String error)? getDisabledSubscribersErrorState,
     TResult? Function()? getWithdrawnSubscribersLoadingState,
-    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult? Function(String error)? getWithdrawnSubscribersErrorState,
     TResult? Function()? getCompaniesListLoadingState,
@@ -27547,15 +27740,17 @@ class _$ChangeListDataImpl<T> implements ChangeListData<T> {
         getActiveSubscribersSuccessState,
     TResult Function(String error)? getActiveSubscribersErrorState,
     TResult Function()? getLateSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
         getLateSubscribersSuccessState,
     TResult Function(String error)? getLateSubscribersErrorState,
     TResult Function()? getDisabledSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
         getDisabledSubscribersSuccessState,
     TResult Function(String error)? getDisabledSubscribersErrorState,
     TResult Function()? getWithdrawnSubscribersLoadingState,
-    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
         getWithdrawnSubscribersSuccessState,
     TResult Function(String error)? getWithdrawnSubscribersErrorState,
     TResult Function()? getCompaniesListLoadingState,

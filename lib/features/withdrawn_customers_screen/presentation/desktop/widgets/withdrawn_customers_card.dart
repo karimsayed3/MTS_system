@@ -1,23 +1,50 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:system/core/di/dependency_injection.dart';
+import 'package:system/core/helpers/convert_string_to_date.dart';
 import 'package:system/core/helpers/dimensions.dart';
 import 'package:system/core/helpers/spacing.dart';
 import 'package:system/core/theming/colors.dart';
+import 'package:system/core/widgets/add_balance_widget.dart';
 import 'package:system/core/widgets/default_button.dart';
 import 'package:system/core/widgets/default_text.dart';
+import 'package:system/core/widgets/make_zero_widget.dart';
+import 'package:system/core/widgets/show_alert_dialog.dart';
+import 'package:system/features/subscribers_screen/business_logic/subscribers_cubit.dart';
+import 'package:system/features/subscribers_screen/data/models/activate_subscriber_request_body.dart';
+import 'package:system/features/subscribers_screen/data/models/zero_subscriber_balance_request_body.dart';
+import 'package:system/features/subscribers_screen/presentation/desktop/widgets/update_subsciber_widget.dart';
+import 'package:system/features/withdrawn_customers_screen/data/models/get_withdraw_subscribers_response.dart';
 
 class WithdrawnCustomersCard extends StatelessWidget {
-  const WithdrawnCustomersCard({super.key});
+  const WithdrawnCustomersCard({super.key, required this.subscriberData});
+
+  final WithdrawnSubscriberData subscriberData;
 
   @override
   Widget build(BuildContext context) {
     var dimension = Dimensions(context);
     return Container(
       padding: EdgeInsets.only(
-        left: MediaQuery.of(context).size.width * .01,
-        right: MediaQuery.of(context).size.width * .01,
-        top: MediaQuery.of(context).size.height * .01,
-        bottom: MediaQuery.of(context).size.height * .01,
+        left: MediaQuery
+            .of(context)
+            .size
+            .width * .01,
+        right: MediaQuery
+            .of(context)
+            .size
+            .width * .01,
+        top: MediaQuery
+            .of(context)
+            .size
+            .height * .01,
+        bottom: MediaQuery
+            .of(context)
+            .size
+            .height * .01,
       ),
       decoration: const BoxDecoration(
           border: Border(bottom: BorderSide(color: ColorsManager.lightGray))),
@@ -27,7 +54,7 @@ class WithdrawnCustomersCard extends StatelessWidget {
           SizedBox(
             width: dimension.width130,
             child: DefaultText(
-              text: 'كريم سيد ابراهيم عبدالتواب',
+              text: subscriberData.name ?? '',
               color: ColorsManager.darkBlack,
               fontSize: dimension.width10,
               fontWeight: FontWeight.w400,
@@ -37,7 +64,7 @@ class WithdrawnCustomersCard extends StatelessWidget {
           SizedBox(
             width: dimension.width80,
             child: DefaultText(
-              text: '01156788394',
+              text: subscriberData.phoneNo ?? '',
               color: ColorsManager.secondaryColor,
               fontSize: dimension.width10,
               fontWeight: FontWeight.w400,
@@ -47,7 +74,7 @@ class WithdrawnCustomersCard extends StatelessWidget {
           SizedBox(
             width: dimension.width100,
             child: DefaultText(
-              text: 'ايمن يوسف ايمن',
+              text: subscriberData.relatedTo ?? '',
               color: ColorsManager.darkBlack,
               fontSize: dimension.width10,
               fontWeight: FontWeight.w400,
@@ -60,7 +87,7 @@ class WithdrawnCustomersCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 DefaultText(
-                  text: 'شركة لواته',
+                  text: subscriberData.companyName ?? '',
                   color: ColorsManager.secondaryColor,
                   fontSize: dimension.width10,
                   fontWeight: FontWeight.w400,
@@ -74,7 +101,7 @@ class WithdrawnCustomersCard extends StatelessWidget {
                       fontWeight: FontWeight.w400,
                     ),
                     DefaultText(
-                      text: 'كريم سيد ابراهيم',
+                      text: subscriberData.collectorName ?? '',
                       color: ColorsManager.darkBlack,
                       fontSize: dimension.width10,
                       fontWeight: FontWeight.w400,
@@ -88,7 +115,9 @@ class WithdrawnCustomersCard extends StatelessWidget {
           SizedBox(
             width: dimension.width80,
             child: DefaultText(
-              text: '04/18/2020',
+              text: subscriberData.registrationDate != null
+                  ? convertDateToString(subscriberData.registrationDate)
+                  : '',
               color: ColorsManager.secondaryColor,
               fontSize: dimension.width10,
               fontWeight: FontWeight.w400,
@@ -109,7 +138,7 @@ class WithdrawnCustomersCard extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10)),
                   child: Center(
                     child: DefaultText(
-                      text: 'Super Flix 30',
+                      text: subscriberData.planName ?? '',
                       color: ColorsManager.secondaryColor,
                       fontSize: dimension.width10,
                       fontWeight: FontWeight.w400,
@@ -129,7 +158,9 @@ class WithdrawnCustomersCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 DefaultText(
-                  text: '04/18/2020',
+                  text: subscriberData.actionDate != null
+                      ? convertDateToString(subscriberData.actionDate)
+                      : '',
                   color: Color(0xFFCC232A),
                   fontSize: dimension.width10,
                   fontWeight: FontWeight.w600,
@@ -140,9 +171,15 @@ class WithdrawnCustomersCard extends StatelessWidget {
                   child: DefaultButton(
                     color: Color(0xffebf5f6),
                     padding: EdgeInsets.symmetric(
-                        // horizontal: dimension.width15,
+                      // horizontal: dimension.width15,
                         vertical: dimension.height5),
-                    onPressed: () {},
+                    onPressed: () {
+                      SubscribersCubit.get(context).activateSubscriber(
+                        activateSubscriberRequestBody:
+                        ActivateSubscriberRequestBody(
+                            phone: subscriberData.phoneNo),
+                      );
+                    },
                     child: DefaultText(
                       text: 'تفعيل',
                       color: ColorsManager.secondaryColor,
@@ -169,7 +206,7 @@ class WithdrawnCustomersCard extends StatelessWidget {
                       fontWeight: FontWeight.w500,
                     ),
                     DefaultText(
-                      text: ' 15-',
+                      text: subscriberData.balance.toString(),
                       color: Color(0xFFCC232A),
                       fontSize: dimension.width10,
                       fontWeight: FontWeight.w500,
@@ -194,7 +231,7 @@ class WithdrawnCustomersCard extends StatelessWidget {
                           fontWeight: FontWeight.w600,
                         ),
                         DefaultText(
-                          text: ' 33',
+                          text: subscriberData.lastPositiveDepoit.toString(),
                           color: ColorsManager.lightGray,
                           fontSize: dimension.width10,
                           fontWeight: FontWeight.w600,
@@ -211,7 +248,24 @@ class WithdrawnCustomersCard extends StatelessWidget {
                           horizontal: dimension.width15,
                           vertical: dimension.height5),
                       color: ColorsManager.lightBlueColor,
-                      onPressed: () {},
+                      onPressed: () {
+                        showDataAlert(
+                          context: context,
+                          child: MakeZeroWidget(
+                            onPressed: () {
+                              SubscribersCubit.get(context)
+                                  .zeroSubscriberBalance(
+                                zeroSubscriberBalanceRequestBody:
+                                ZeroSubscriberBalanceRequestBody(
+                                  phone: subscriberData.phoneNo,
+                                  collectingType: 'نقدى',
+                                ),
+                              );
+                            },
+                            subscriberName: subscriberData.name ?? "",
+                          ),
+                        );
+                      },
                       child: DefaultText(
                         text: 'تصفير',
                         color: Color(0xFFFFA800),
@@ -225,7 +279,12 @@ class WithdrawnCustomersCard extends StatelessWidget {
                       padding: EdgeInsets.symmetric(
                           horizontal: dimension.width15,
                           vertical: dimension.height5),
-                      onPressed: () {},
+                      onPressed: () {
+                        // showDataAlert(
+                        //   context: context,
+                        //   child: AddBalanceWidget(UserID: subscriberData.phoneNo),
+                        // );
+                      },
                       child: DefaultText(
                         text: 'اضافة',
                         color: ColorsManager.secondaryColor,
@@ -247,16 +306,28 @@ class WithdrawnCustomersCard extends StatelessWidget {
                 // Handle menu item selection
                 if (choice == 'option1') {
                   // Perform action for option 1
-                  // showDataAlert(
-                  //   context: context,
-                  //   child: UpdateSubscriberWidget(
-                  //     onPressed: () {},
-                  //     // companyName: "شركة فودافون كفرالشيخ",
-                  //   ),
-                  // );
+                  showDataAlert(
+                    context: context,
+                    child: BlocProvider.value(
+                      value: getIt<SubscribersCubit>(),
+                      child: UpdateSubscriberWidget(
+                        name: subscriberData.name ?? "",
+                        phoneNumber: subscriberData.phoneNo ?? "",
+                        lineType: subscriberData.lineType ?? "",
+                        companyName: subscriberData.companyName ?? "",
+                        planName: subscriberData.planName ?? "",
+                        relatedTo: subscriberData.relatedTo ?? "",
+                        address: "",
+                        NID: "",
+                        onPressed: () {},
+                        // companyName: "شركة فودافون كفرالشيخ",
+                      ),
+                    ),
+                  );
                 }
               },
-              itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
+              itemBuilder: (BuildContext context) =>
+              <PopupMenuEntry<String>>[
                 PopupMenuItem<String>(
                   value: 'option1',
                   child: Directionality(

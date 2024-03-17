@@ -8,11 +8,13 @@ class DefaultButton extends StatelessWidget {
         this.shape,
         this.color,
         this.padding,
+        this.elevation,
         required this.child});
 
   final Widget child;
   final Function() onPressed;
   OutlinedBorder? shape;
+  double? elevation;
 
   Color? color;
   EdgeInsetsGeometry? padding;
@@ -21,6 +23,7 @@ class DefaultButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
+        elevation: elevation,
         padding: padding?? const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
         backgroundColor: color?? ColorsManager.secondaryColor,
         shape:shape?? RoundedRectangleBorder(
