@@ -9,6 +9,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get_it/get_it.dart';
 import 'package:system/core/helpers/cache_helper.dart';
 import 'package:system/core/helpers/check_platform.dart';
+import 'package:system/core/helpers/scroll_behavior.dart';
 import 'package:system/core/networking/tokenDecode.dart';
 import 'package:window_manager/window_manager.dart';
 import 'core/di/dependency_injection.dart';
@@ -85,7 +86,7 @@ void main() async {
 //     await windowManager.setTitleBarStyle(windowButtonVisibility: true,TitleBarStyle.normal);
 //     await windowManager.setFullScreen(false);
       await windowManager.center();
-      await windowManager.setMinimumSize(Size(screenWidth, screenHeight));
+      // await windowManager.setMinimumSize(Size(screenWidth, screenHeight));
       // await windowManager.setMaximumSize(const Size(1440, 1045));
       await windowManager.show();
       await windowManager.focus();
@@ -121,6 +122,7 @@ class MTSMobileApp extends StatelessWidget {
           useInheritedMediaQuery: true,
           // locale: DevicePreview.locale(context),
           // builder: DevicePreview.appBuilder,
+          // scrollBehavior: MyCustomScrollBehavior(),
           navigatorKey: navigatorKey,
           title: 'شركة لواتة',
           theme: ThemeData(
@@ -147,11 +149,13 @@ class MTSDesktopApp extends StatelessWidget {
     screenHeight = MediaQuery.of(context).size.height;
     return MaterialApp(
       navigatorKey: navigatorKey,
+      scrollBehavior: MyCustomScrollBehavior(),
       title: 'شركة لواتة',
       theme: ThemeData(
         primaryColor: Colors.black,
         scaffoldBackgroundColor: Colors.white,
       ),
+
       debugShowCheckedModeBanner: false,
       // home: const Scaffold(
       //   body: Center(child: Text("desktop app 2"),),

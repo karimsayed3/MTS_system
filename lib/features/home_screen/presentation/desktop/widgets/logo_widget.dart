@@ -5,7 +5,7 @@ class LogoWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Image(
+    return const Image(
       image: AssetImage('assets/images/vodafone-logo.png'),
     );
   }

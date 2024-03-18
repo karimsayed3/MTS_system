@@ -11,6 +11,7 @@ import 'package:system/features/companies_screen/business_logic/companies_cubit.
 import 'package:system/features/companies_screen/presentation/desktop/screen/companies_screen_desktop.dart';
 import 'package:system/features/customers_screen/presentation/screen/customers_screen.dart';
 import 'package:system/features/history_operations_screen/presentation/desktop/screen/history_operations_screen_desktop.dart';
+import 'package:system/features/main_screen/presentation/desktop/screen/main_screen_desktop.dart';
 import 'package:system/features/review_data_screen/presentation/desktop/screen/review_data_screen.dart';
 
 class HomeDesktopScreen extends StatefulWidget {
@@ -42,9 +43,7 @@ class _HomeDesktopScreenState extends State<HomeDesktopScreen> {
   List<Widget> body = CacheHelper.getdata(key: "accountType") == "ادمن" ||
       CacheHelper.getdata(key: "accountType") == "موزع"
       ?  [
-          Container(
-            color: ColorsManager.secondaryColor,
-          ),
+    const MainScreenDesktop(),
           const CompaniesScreen(),
           CollectorsScreen(),
           const CustomersScreen(),
@@ -53,7 +52,7 @@ class _HomeDesktopScreenState extends State<HomeDesktopScreen> {
         ]
       : [
           Container(
-            color: ColorsManager.secondaryColor,
+            color: ColorsManager.lighterGray,
           ),
           const CompaniesScreen(),
           const CustomersScreen(),
