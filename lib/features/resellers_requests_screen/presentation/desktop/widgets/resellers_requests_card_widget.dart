@@ -124,18 +124,22 @@ class ResellersRequestsCardWidget extends StatelessWidget {
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    DefaultText(
-                      text: "الجديدة:",
-                      color: ColorsManager.lightGray,
-                      fontSize: dimension.width10,
-                      fontWeight: FontWeight.w400,
+                    Expanded(
+                      child: DefaultText(
+                        text: "الجديدة:",
+                        color: ColorsManager.lightGray,
+                        fontSize: dimension.width10,
+                        fontWeight: FontWeight.w400,
+                      ),
                     ),
                     horizontalSpace(dimension.width5),
-                    DefaultText(
-                      text: requestData.newValue ?? "",
-                      color: ColorsManager.lightGray,
-                      fontSize: dimension.width10,
-                      fontWeight: FontWeight.w400,
+                    Expanded(
+                      child: DefaultText(
+                        text: requestData.newValue ?? "",
+                        color: ColorsManager.lightGray,
+                        fontSize: dimension.width10,
+                        fontWeight: FontWeight.w400,
+                      ),
                     ),
                     // Row(
                     //   crossAxisAlignment: CrossAxisAlignment.center,
@@ -160,18 +164,22 @@ class ResellersRequestsCardWidget extends StatelessWidget {
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    DefaultText(
-                      text: "القديمة:",
-                      color: ColorsManager.lightGray,
-                      fontSize: dimension.width10,
-                      fontWeight: FontWeight.w400,
+                    Expanded(
+                      child: DefaultText(
+                        text: "القديمة:",
+                        color: ColorsManager.lightGray,
+                        fontSize: dimension.width10,
+                        fontWeight: FontWeight.w400,
+                      ),
                     ),
                     horizontalSpace(dimension.width5),
-                    DefaultText(
-                      text: requestData.oldValue ?? "",
-                      color: ColorsManager.lightGray,
-                      fontSize: dimension.width10,
-                      fontWeight: FontWeight.w400,
+                    Expanded(
+                      child: DefaultText(
+                        text: requestData.oldValue ?? "",
+                        color: ColorsManager.lightGray,
+                        fontSize: dimension.width10,
+                        fontWeight: FontWeight.w400,
+                      ),
                     ),
                     // Row(
                     //   crossAxisAlignment: CrossAxisAlignment.center,
@@ -207,11 +215,13 @@ class ResellersRequestsCardWidget extends StatelessWidget {
                   width: dimension.width10,
                 ),
                 horizontalSpace(dimension.width5),
-                DefaultText(
-                  text: requestData.requestType ?? "",
-                  color: ColorsManager.orangeColor,
-                  fontSize: dimension.reduce20,
-                  fontWeight: FontWeight.w400,
+                Expanded(
+                  child: DefaultText(
+                    text: requestData.requestType ?? "",
+                    color: ColorsManager.orangeColor,
+                    fontSize: dimension.reduce20,
+                    fontWeight: FontWeight.w400,
+                  ),
                 ),
               ],
             ),

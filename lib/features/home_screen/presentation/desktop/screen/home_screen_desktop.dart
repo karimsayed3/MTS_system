@@ -10,6 +10,7 @@ import 'package:system/features/collectors_screen/presentation/desktop/screen/co
 import 'package:system/features/companies_screen/business_logic/companies_cubit.dart';
 import 'package:system/features/companies_screen/presentation/desktop/screen/companies_screen_desktop.dart';
 import 'package:system/features/customers_screen/presentation/screen/customers_screen.dart';
+import 'package:system/features/history_operations_screen/business_logic/history_operations_cubit.dart';
 import 'package:system/features/history_operations_screen/presentation/desktop/screen/history_operations_screen_desktop.dart';
 import 'package:system/features/main_screen/presentation/desktop/screen/main_screen_desktop.dart';
 import 'package:system/features/review_data_screen/presentation/desktop/screen/review_data_screen.dart';
@@ -22,43 +23,54 @@ class HomeDesktopScreen extends StatefulWidget {
 }
 
 class _HomeDesktopScreenState extends State<HomeDesktopScreen> {
-  List<String> titles = CacheHelper.getdata(key: "accountType") == "ادمن" ||
-          CacheHelper.getdata(key: "accountType") == "موزع"
-      ? [
-          'الرئيسية',
-          'الشركات',
-          'المحصلون',
-          'العملاء',
-          'سجل العمليات',
-          'مراجعة البيانات',
-        ]
-      : [
-          'الرئيسية',
-          'الشركات',
-          'العملاء',
-          'سجل العمليات',
-          'مراجعة البيانات',
-        ];
 
-  List<Widget> body = CacheHelper.getdata(key: "accountType") == "ادمن" ||
-      CacheHelper.getdata(key: "accountType") == "موزع"
-      ?  [
-    const MainScreenDesktop(),
-          const CompaniesScreen(),
-          CollectorsScreen(),
-          const CustomersScreen(),
-          const HistoryOperationsDesktopScreen(),
-          const ReviewDataScreenDesktop(),
-        ]
-      : [
-          Container(
-            color: ColorsManager.lighterGray,
-          ),
-          const CompaniesScreen(),
-          const CustomersScreen(),
-          const HistoryOperationsDesktopScreen(),
-          const ReviewDataScreenDesktop(),
-        ];
+  List<String> titles = CacheHelper.getdata(key: "accountType") == "ادمن" ? [
+    'الرئيسية',
+    'الشركات',
+    'المحصلون',
+    'العملاء',
+    'سجل العمليات',
+    'مراجعة البيانات',
+  ] : CacheHelper.getdata(key: "accountType") == "موزع" ? [
+    'الرئيسية',
+    'المحصلون',
+    'العملاء',
+    'سجل العمليات',
+  ] : CacheHelper.getdata(key: "accountType") == "محصل" ? [
+    'الرئيسية',
+    'العملاء',
+    'سجل العمليات',
+  ] : [];
+
+  List<Widget> body = CacheHelper.getdata(key: "accountType") == "ادمن" ? [
+    BlocProvider.value(
+      value: getIt<HistoryOperationsCubit>(),
+      child: const MainScreenDesktop(),
+    ),
+    const CompaniesScreen(),
+    CollectorsScreen(),
+    const CustomersScreen(),
+    const HistoryOperationsDesktopScreen(),
+    const ReviewDataScreenDesktop(),
+  ] : CacheHelper.getdata(key: "accountType") == "موزع" ? [
+    BlocProvider.value(
+      value: getIt<HistoryOperationsCubit>(),
+      child: const MainScreenDesktop(),
+    ),
+    CollectorsScreen(),
+    const CustomersScreen(),
+    const HistoryOperationsDesktopScreen(),
+  ] : CacheHelper.getdata(key: "accountType") == "محصل" ? [
+    BlocProvider.value(
+      value: getIt<HistoryOperationsCubit>(),
+      child: const MainScreenDesktop(),
+    ),
+    const CustomersScreen(),
+    /// TODO
+    /// remove this from here
+    const HistoryOperationsDesktopScreen(),
+  ] : [];
+
   int index = 0;
 
   @override

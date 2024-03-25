@@ -174,6 +174,7 @@ class _DisabledCustomersCardWidgetMobileState extends State<DisabledCustomersCar
                     child: BlocProvider.value(
                       value: getIt<SubscribersCubit>(),
                       child: AddBalanceWidget(
+                        flag: "from subscriber",
                         phone: widget.subscriber.phoneNo ?? "",
                         onPressed: () {},
                         currentBalance: widget.subscriber.balance!,

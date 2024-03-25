@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'dart:math';
+import 'package:file_picker/file_picker.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:open_file/open_file.dart';
 
@@ -33,4 +34,22 @@ String generateUniqueString() {
   String uniqueString = timestampPart + randomPart;
 
   return uniqueString;
+}
+
+Future<String> selectFileFromDesktop() async {
+  final result = await FilePicker.platform.pickFiles(allowMultiple: false);
+  if (result != null) {
+    final platformFile = result.files.single;
+    return platformFile.path!; // Assuming a single file selection
+  } else {
+    // Handle no file selected case (e.g., print message)
+    return "";
+  }
+}
+Future<FilePickerResult> pickFileFromWindows() async {
+  FilePickerResult? result = await FilePicker.platform.pickFiles(
+    type: FileType.any, // You can specify the file types to allow
+  );
+  // print(MID);
+  return result!;
 }

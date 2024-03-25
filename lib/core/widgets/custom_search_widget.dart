@@ -10,7 +10,6 @@ final Function(String)? onChange;
   Widget build(BuildContext context) {
     return SizedBox(
       width: width,
-      // height: 50,
       child: DefaultTextFormField(
         controller: searchController,
         color: Colors.white,

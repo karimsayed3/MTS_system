@@ -13,6 +13,7 @@ import 'package:system/core/widgets/make_zero_widget.dart';
 import 'package:system/core/widgets/show_alert_dialog.dart';
 import 'package:system/features/late_customers_screen/data/models/get_late_subscribers_response.dart';
 import 'package:system/features/subscribers_screen/business_logic/subscribers_cubit.dart';
+import 'package:system/features/subscribers_screen/data/models/delete_subscriber_request_body.dart';
 import 'package:system/features/subscribers_screen/data/models/disable_subscriber_request_body.dart';
 import 'package:system/features/subscribers_screen/data/models/get_subscribers_data_response.dart';
 import 'package:system/features/subscribers_screen/data/models/withdraw_subscriber_request_body.dart';
@@ -181,6 +182,7 @@ class LateCustomersCard extends StatelessWidget {
                         child: BlocProvider.value(
                           value: getIt<SubscribersCubit>(),
                           child: AddBalanceWidget(
+                            flag: "from subscriber",
                             phone: subscriber.phoneNo ?? "",
                             onPressed: () {},
                             currentBalance: subscriber.balance!,
@@ -227,13 +229,20 @@ class LateCustomersCard extends StatelessWidget {
                       );
                     }
                     if (choice == 'option2') {
+                      SubscribersCubit.get(context).deleteSubscriber(
+                          deleteSubscriberRequestBody:
+                              DeleteSubscriberRequestBody(
+                        phone: subscriber.phoneNo,
+                      ));
+                    }
+                    if (choice == 'option3') {
                       SubscribersCubit.get(context).withdrawSubscriber(
                           withdrawSubscriberRequestBody:
                               WithdrawSubscriberRequestBody(
                         phone: subscriber.phoneNo,
                       ));
                     }
-                    if (choice == 'option3') {
+                    if (choice == 'option4') {
                       SubscribersCubit.get(context).disableSubscriber(
                           disableSubscriberRequestBody:
                               DisableSubscriberRequestBody(
@@ -277,6 +286,29 @@ class LateCustomersCard extends StatelessWidget {
                             SizedBox(
                                 width: dimension.width15,
                                 child: SvgPicture.asset(
+                                    'assets/icons/remove.svg')),
+                            horizontalSpace(dimension.width10),
+                            DefaultText(
+                              text: 'حذف',
+                              color: ColorsManager.primaryColor,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                        PopupMenuItem<String>(
+                      value: 'option3',
+                      child: Directionality(
+                        textDirection: TextDirection.rtl,
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            SizedBox(
+                                width: dimension.width15,
+                                child: SvgPicture.asset(
                                     'assets/icons/withdraw_icon.svg')),
                             horizontalSpace(dimension.width10),
                             DefaultText(
@@ -290,7 +322,7 @@ class LateCustomersCard extends StatelessWidget {
                       ),
                     ),
                     PopupMenuItem<String>(
-                      value: 'option3',
+                      value: 'option4',
                       child: Directionality(
                         textDirection: TextDirection.rtl,
                         child: Row(

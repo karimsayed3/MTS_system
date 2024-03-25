@@ -1,7 +1,7 @@
 class ApiConstants {
   /// base url
-  static const String apiBaseUrl = "https://3vn1srv7-3000.euw.devtunnels.ms/api/";
-  // static const String apiBaseUrl = "https://ddc9h9lj-3000.uks1.devtunnels.ms/api/";
+  // static const String apiBaseUrl = "https://3vn1srv7-3000.euw.devtunnels.ms/api/";
+  static const String apiBaseUrl = "https://ddc9h9lj-3000.uks1.devtunnels.ms/api/";
   /// auth
   static const String login = "auth/login";
   static const String logout = "auth/logout";
@@ -49,6 +49,10 @@ class ApiConstants {
   static const String approveRequest = "collectoRequests/approveRequest";
   static const String declineRequest = "collectoRequests/declineRequest";
   static const String getCollectorRequests = "collectoRequests/getCollectorRequests";
+
+
+  /// getLoggedOperations
+  static const String getLoggedOperations = "operations/getLoggedOperations";
 
 
 }

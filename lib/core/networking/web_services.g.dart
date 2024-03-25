@@ -13,7 +13,7 @@ class _WebServices implements WebServices {
     this._dio, {
     this.baseUrl,
   }) {
-    baseUrl ??= 'https://3vn1srv7-3000.euw.devtunnels.ms/api/';
+    baseUrl ??= 'https://ddc9h9lj-3000.uks1.devtunnels.ms/api/';
   }
 
   final Dio _dio;
@@ -36,6 +36,33 @@ class _WebServices implements WebServices {
             .compose(
               _dio.options,
               'auth/login',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = LoginResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<LoginResponse> logout() async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final Map<String, dynamic>? _data = null;
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<LoginResponse>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'auth/logout',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -1033,6 +1060,70 @@ class _WebServices implements WebServices {
               baseUrl,
             ))));
     final value = DefaultApiResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<GetReviewSubscribersPlans> reviewSubscribersPlans(File excel) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = FormData();
+    _data.files.add(MapEntry(
+      'excel',
+      MultipartFile.fromFileSync(
+        excel.path,
+        filename: excel.path.split(Platform.pathSeparator).last,
+      ),
+    ));
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<GetReviewSubscribersPlans>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+      contentType: 'multipart/form-data',
+    )
+            .compose(
+              _dio.options,
+              'excel/reviewSubscribersPlans',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = GetReviewSubscribersPlans.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<GetLoggedOperationsResponse> getLoggedOperations(
+      GetLoggedOperationsRequestBody getLoggedOperationsRequestBody) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(getLoggedOperationsRequestBody.toJson());
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<GetLoggedOperationsResponse>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'operations/getLoggedOperations',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = GetLoggedOperationsResponse.fromJson(_result.data!);
     return value;
   }
 

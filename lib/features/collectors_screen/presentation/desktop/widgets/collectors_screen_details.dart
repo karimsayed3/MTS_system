@@ -48,113 +48,115 @@ class _CollectorsScreenDetailsState extends State<CollectorsScreenDetails> {
       child: Padding(
         padding: EdgeInsets.symmetric(
             horizontal: dimension.width30, vertical: dimension.height10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            DefaultText(
-              text: 'المحصلون',
-              fontSize: dimension.reduce20,
-              fontWeight: FontWeight.w400,
-            ),
-            verticalSpace(dimension.height5),
-            HomeWidget(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      CollectorsSearchWidget(
-                        searchController:
-                            CollectorsCubit.get(context).searchController,
-                        onChange: (value) {
-                          CollectorsCubit.get(context).getUsers(
-                            getUsersRequestBody: GetUsersRequestBody(
-                              username: value,
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              DefaultText(
+                text: 'المحصلون',
+                fontSize: dimension.reduce20,
+                fontWeight: FontWeight.w400,
+              ),
+              verticalSpace(dimension.height5),
+              HomeWidget(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        CollectorsSearchWidget(
+                          searchController:
+                              CollectorsCubit.get(context).searchController,
+                          onChange: (value) {
+                            CollectorsCubit.get(context).getUsers(
+                              getUsersRequestBody: GetUsersRequestBody(
+                                username: value,
+                              ),
+                            );
+                          },
+                        ),
+                        DefaultButton(
+                          color: const Color(0xffebf5f6),
+                          padding: EdgeInsets.symmetric(
+                            horizontal: dimension.width15,
+                            vertical: dimension.height10,
+                          ),
+                          onPressed: () {
+                            showDataAlert(
+                                context: context,
+                                child: BlocProvider.value(
+                                  value: getIt<CollectorsCubit>(),
+                                  child: const AddCollectorWidget(),
+                                ));
+                          },
+                          child: DefaultText(
+                            text: "+ اضافة محصل",
+                            color: const Color(0xFF007C92),
+                            fontSize: dimension.reduce20,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ],
+                    ),
+                    BlocBuilder<CollectorsCubit, CollectorsState>(
+                      builder: (context, state) {
+                        if (CollectorsCubit.get(context).users.isEmpty) {
+                          return Expanded(
+                              child: NoDataWidget(
+                            child: DefaultButton(
+                              color: const Color(0xffebf5f6),
+                              padding: EdgeInsets.symmetric(
+                                horizontal: dimension.width15,
+                                vertical: dimension.height10,
+                              ),
+                              onPressed: () {
+                                showDataAlert(
+                                    context: context,
+                                    child: BlocProvider.value(
+                                      value: getIt<CollectorsCubit>(),
+                                      child: const AddCollectorWidget(),
+                                    ));
+                              },
+                              child: DefaultText(
+                                text: "+ اضافة محصل",
+                                color: const Color(0xFF007C92),
+                                fontSize: dimension.reduce20,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ));
+                        } else {
+                          return Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                verticalSpace(dimension.height10),
+                                const CollectorsHeaderWidget(),
+                                Expanded(
+                                  child: ListView.builder(
+                                    itemBuilder: (context, index) {
+                                      return CollectorsCard(
+                                          user: CollectorsCubit.get(context)
+                                              .users[index]);
+                                    },
+                                    itemCount:
+                                        CollectorsCubit.get(context).users.length,
+                                  ),
+                                ),
+                              ],
                             ),
                           );
-                        },
-                      ),
-                      DefaultButton(
-                        color: const Color(0xffebf5f6),
-                        padding: EdgeInsets.symmetric(
-                          horizontal: dimension.width15,
-                          vertical: dimension.height10,
-                        ),
-                        onPressed: () {
-                          showDataAlert(
-                              context: context,
-                              child: BlocProvider.value(
-                                value: getIt<CollectorsCubit>(),
-                                child: const AddCollectorWidget(),
-                              ));
-                        },
-                        child: DefaultText(
-                          text: "+ اضافة محصل",
-                          color: const Color(0xFF007C92),
-                          fontSize: dimension.reduce20,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                    ],
-                  ),
-                  BlocBuilder<CollectorsCubit, CollectorsState>(
-                    builder: (context, state) {
-                      if (CollectorsCubit.get(context).users.isEmpty) {
-                        return Expanded(
-                            child: NoDataWidget(
-                          child: DefaultButton(
-                            color: const Color(0xffebf5f6),
-                            padding: EdgeInsets.symmetric(
-                              horizontal: dimension.width15,
-                              vertical: dimension.height10,
-                            ),
-                            onPressed: () {
-                              showDataAlert(
-                                  context: context,
-                                  child: BlocProvider.value(
-                                    value: getIt<CollectorsCubit>(),
-                                    child: const AddCollectorWidget(),
-                                  ));
-                            },
-                            child: DefaultText(
-                              text: "+ اضافة محصل",
-                              color: const Color(0xFF007C92),
-                              fontSize: dimension.reduce20,
-                              fontWeight: FontWeight.w400,
-                            ),
-                          ),
-                        ));
-                      } else {
-                        return Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              verticalSpace(dimension.height10),
-                              const CollectorsHeaderWidget(),
-                              Expanded(
-                                child: ListView.builder(
-                                  itemBuilder: (context, index) {
-                                    return CollectorsCard(
-                                        user: CollectorsCubit.get(context)
-                                            .users[index]);
-                                  },
-                                  itemCount:
-                                      CollectorsCubit.get(context).users.length,
-                                ),
-                              ),
-                            ],
-                          ),
-                        );
-                      }
-                    },
-                  ),
-                  const BlocListenerCollectorsCubit()
-                ],
-              ),
-            )
-          ],
+                        }
+                      },
+                    ),
+                    const BlocListenerCollectorsCubit()
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

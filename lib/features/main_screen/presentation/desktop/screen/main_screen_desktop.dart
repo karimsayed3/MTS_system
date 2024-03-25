@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:system/core/helpers/dimensions.dart';
 import 'package:system/core/helpers/spacing.dart';
 import 'package:system/core/theming/colors.dart';
 import 'package:system/core/widgets/default_text.dart';
+import 'package:system/features/history_operations_screen/business_logic/history_operations_cubit.dart';
+import 'package:system/features/history_operations_screen/business_logic/history_operations_state.dart';
 import 'package:system/features/main_screen/presentation/desktop/widgets/card_for_total_invoice.dart';
+
+import '../../../../history_operations_screen/data/models/get_logged_operations_request_body.dart';
+import '../../../../history_operations_screen/presentation/desktop/widgets/bloc_listener_for_history_operations_cubit.dart';
+import '../../../../history_operations_screen/presentation/desktop/widgets/history_operation_card.dart';
+import '../../../../history_operations_screen/presentation/desktop/widgets/history_operations_header_widget.dart';
+import '../widgets/card_for_short_cuts.dart';
+import '../widgets/title_widget.dart';
 
 class MainScreenDesktop extends StatefulWidget {
   const MainScreenDesktop({super.key});
@@ -14,6 +24,16 @@ class MainScreenDesktop extends StatefulWidget {
 }
 
 class _MainScreenDesktopState extends State<MainScreenDesktop> {
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    HistoryOperationsCubit.get(context).loggedOperations = [];
+    HistoryOperationsCubit.get(context).getLoggedOperations(
+        getLoggedOperationsRequestBody: GetLoggedOperationsRequestBody());
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     var dimension = Dimensions(context);
@@ -24,231 +44,120 @@ class _MainScreenDesktopState extends State<MainScreenDesktop> {
       child: Padding(
         padding: EdgeInsets.symmetric(
             horizontal: dimension.width30, vertical: dimension.height10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            /// cards of total invoices
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  const CardForTotalInvoice(
-                    infoText: 'EGP 5,209',
-                    titleText: 'اجمالي مبلغ الفواتير المضافة',
-                  ),
-                  horizontalSpace(dimension.width15),
-                  const CardForTotalInvoice(
-                    infoText: '1234',
-                    titleText: "عدد الفواتير المضافة",
-                  ),
-                  horizontalSpace(dimension.width15),
-                  const CardForTotalInvoice(
-                    infoText: '45157',
-                    titleText: 'مشتركين تم اضافتهم',
-                  ),
-                  horizontalSpace(dimension.width15),
-                  const CardForTotalInvoice(
-                    infoText: '1247474',
-                    titleText: 'محصلين تم اضافتهم',
-                  ),
-                ],
-              ),
-            ),
-            verticalSpace(dimension.height10),
-            Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: dimension.width10,
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  DefaultText(
-                    text: "الوصول السريع:",
-                    color: ColorsManager.darkBlack,
-                    fontSize: dimension.width10,
-                    fontWeight: FontWeight.w500,
-                  ),
-                  verticalSpace(dimension.height5),
-                  SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: [
-                        SizedBox(
-                          width: dimension.width230,
-                          child: Card(
-                            elevation: 0,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.all(
-                              Radius.circular(dimension.reduce15),
-                            )),
-                            child: Padding(
-                              padding: EdgeInsets.only(
-                                // left: dimension.width50,
-                                right: dimension.width10,
-                                top: dimension.height10,
-                                bottom: dimension.height10,
-                              ),
-                              child: Row(
-                                children: [
-                                  Container(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: dimension.width10,
-                                        vertical: dimension.height10),
-                                    decoration: const BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        color: ColorsManager.lightBlueColor),
-                                    child: SvgPicture.asset(
-                                      'assets/icons/wallet-add.svg',
-                                    ),
-                                  ),
-                                  horizontalSpace(dimension.width10),
-                                  DefaultText(
-                                    text: 'اضافة فاتورة',
-                                    color: ColorsManager.darkBlack,
-                                    fontSize: dimension.width15,
-                                    fontWeight: FontWeight.w500,
-                                  )
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                        horizontalSpace(dimension.width15),
-                        SizedBox(
-                          width: dimension.width230,
-                          child: Card(
-                            elevation: 0,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.all(
-                              Radius.circular(dimension.reduce15),
-                            )),
-                            child: Padding(
-                              padding: EdgeInsets.only(
-                                right: dimension.width10,
-                                top: dimension.height10,
-                                bottom: dimension.height10,
-                              ),
-                              child: Row(
-                                children: [
-                                  Container(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: dimension.width10,
-                                        vertical: dimension.height10),
-                                    decoration: const BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        color: ColorsManager.lightBlueColor),
-                                    child: SvgPicture.asset(
-                                      'assets/icons/receipt-text.svg',
-                                    ),
-                                  ),
-                                  horizontalSpace(dimension.width10),
-                                  DefaultText(
-                                    text: 'ايصال سداد فاتورة',
-                                    color: ColorsManager.darkBlack,
-                                    fontSize: dimension.width15,
-                                    fontWeight: FontWeight.w500,
-                                  )
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                        horizontalSpace(dimension.width15),
-                        SizedBox(
-                          width: dimension.width230,
-                          child: Card(
-                            elevation: 0,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.all(
-                              Radius.circular(dimension.reduce15),
-                            )),
-                            child: Padding(
-                              padding: EdgeInsets.only(
-                                right: dimension.width10,
-                                top: dimension.height10,
-                                bottom: dimension.height10,
-                              ),
-                              child: Row(
-                                children: [
-                                  Container(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: dimension.width10,
-                                        vertical: dimension.height10),
-                                    decoration: const BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        color: ColorsManager.lightBlueColor),
-                                    child: SvgPicture.asset(
-                                      'assets/icons/user-add.svg',
-                                    ),
-                                  ),
-                                  horizontalSpace(dimension.width10),
-                                  DefaultText(
-                                    text: 'اضافة مشترك',
-                                    color: ColorsManager.darkBlack,
-                                    fontSize: dimension.width15,
-                                    fontWeight: FontWeight.w500,
-                                  )
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                        horizontalSpace(dimension.width15),
-                        SizedBox(
-                          width: dimension.width230,
-                          child: Card(
-                            elevation: 0,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.all(
-                              Radius.circular(dimension.reduce15),
-                            )),
-                            child: Padding(
-                              padding: EdgeInsets.only(
-                                right: dimension.width10,
-                                top: dimension.height10,
-                                bottom: dimension.height10,
-                              ),
-                              child: Row(
-                                children: [
-                                  Container(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: dimension.width10,
-                                        vertical: dimension.height10),
-                                    decoration: const BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        color: ColorsManager.lightBlueColor),
-                                    child: SvgPicture.asset(
-                                      'assets/icons/user-add.svg',
-                                    ),
-                                  ),
-                                  horizontalSpace(dimension.width10),
-                                  DefaultText(
-                                    text: 'اضافة محصل',
-                                    color: ColorsManager.darkBlack,
-                                    fontSize: dimension.width15,
-                                    fontWeight: FontWeight.w500,
-                                  )
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              /// cards of total invoices
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    const CardForTotalInvoice(
+                      infoText: 'EGP 5,209',
+                      titleText: 'اجمالي مبلغ الفواتير المضافة',
                     ),
-                  ),
-                  verticalSpace(dimension.height10),
-                  DefaultText(
-                    text: "احدث العمليات:",
-                    color: ColorsManager.darkBlack,
-                    fontSize: dimension.width10,
-                    fontWeight: FontWeight.w500,
-                  ),
-                  verticalSpace(dimension.height5),
-                ],
+                    horizontalSpace(dimension.width15),
+                    const CardForTotalInvoice(
+                      infoText: '1234',
+                      titleText: "عدد الفواتير المضافة",
+                    ),
+                    horizontalSpace(dimension.width15),
+                    const CardForTotalInvoice(
+                      infoText: '45157',
+                      titleText: 'مشتركين تم اضافتهم',
+                    ),
+                    horizontalSpace(dimension.width15),
+                    const CardForTotalInvoice(
+                      infoText: '1247474',
+                      titleText: 'محصلين تم اضافتهم',
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
+              verticalSpace(dimension.height10),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * .6,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: dimension.width10,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const TitleWidget(
+                        title: "الوصول السريع:",
+                      ),
+                      verticalSpace(dimension.height5),
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          children: [
+                            CardForShortCuts(
+                              iconPath: 'assets/icons/wallet-add.svg',
+                              title: 'اضافة رصيد',
+                              onTap: () {},
+                            ),
+                            horizontalSpace(dimension.width15),
+                            CardForShortCuts(
+                              iconPath: 'assets/icons/receipt-text.svg',
+                              title: 'ايصال سداد فاتورة',
+                              onTap: () {},
+                            ),
+                            horizontalSpace(dimension.width15),
+                            CardForShortCuts(
+                              iconPath: 'assets/icons/user-add.svg',
+                              title: 'اضافة مشترك',
+                              onTap: () {},
+                            ),
+                            horizontalSpace(dimension.width15),
+                            CardForShortCuts(
+                              iconPath: 'assets/icons/user-add.svg',
+                              title: 'اضافة محصل',
+                              onTap: () {},
+                            ),
+                          ],
+                        ),
+                      ),
+                      verticalSpace(dimension.height10),
+                      const TitleWidget(
+                        title: "احدث العمليات:",
+                      ),
+                      verticalSpace(dimension.height5),
+                      const HistoryOperationsHeaderWidget(),
+                      BlocBuilder<HistoryOperationsCubit,
+                          HistoryOperationsState>(
+                        builder: (context, state) {
+                          return Expanded(
+                              child: ListView.builder(
+                            itemBuilder: (context, index) {
+                              return HistoryOperationCard(
+                                loggedOperation:
+                                    HistoryOperationsCubit.get(context)
+                                        .loggedOperations[index],
+                              );
+                              // return SizedBox.shrink();
+                            },
+                            itemCount: HistoryOperationsCubit.get(context)
+                                        .loggedOperations
+                                        .length >
+                                    10
+                                ? 10
+                                : HistoryOperationsCubit.get(context)
+                                    .loggedOperations
+                                    .length,
+                          ));
+                        },
+                      ),
+                      const BlocListenerForHistoryOperationsCubit()
+
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

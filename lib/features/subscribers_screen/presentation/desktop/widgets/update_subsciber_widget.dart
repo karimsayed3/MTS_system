@@ -635,7 +635,8 @@ class _UpdateSubscriberWidgetState extends State<UpdateSubscriberWidget> {
                       SubscribersCubit.get(context).updateSubscriber(
                         updateSubscriberRequestBody:
                             UpdateSubscriberRequestBody(
-                          phone: phoneNumberController.text,
+                          phoneNo: phoneNumberController.text,
+                          oldPhone: widget.phoneNumber,
                           name: subscriberNameController.text,
                           relatedTo: relatedToController.text,
                           address: addressController.text,

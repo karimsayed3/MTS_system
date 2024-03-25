@@ -33,4 +33,21 @@ class LoginCubit extends Cubit<LoginState> {
       },
     );
   }
+
+  logout() async {
+    emit(const LoginState.logoutLoading());
+
+    final response = await loginRepo.logout();
+    response.when(
+      success: (data) {
+        emit(LoginState.logoutSuccess(data));
+      },
+      failure: (errorHandler) {
+        emit(LoginState.logoutError(error: errorHandler.apiErrorModel.message ?? ""));
+      },
+    );
+  }
+
+
+
 }

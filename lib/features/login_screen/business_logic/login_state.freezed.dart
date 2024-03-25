@@ -22,6 +22,9 @@ mixin _$LoginState<T> {
     required TResult Function() loading,
     required TResult Function(LoginResponse data) success,
     required TResult Function(String error) error,
+    required TResult Function() logoutLoading,
+    required TResult Function(LoginResponse data) logoutSuccess,
+    required TResult Function(String error) logoutError,
     required TResult Function() obscureTextState,
   }) =>
       throw _privateConstructorUsedError;
@@ -31,6 +34,9 @@ mixin _$LoginState<T> {
     TResult? Function()? loading,
     TResult? Function(LoginResponse data)? success,
     TResult? Function(String error)? error,
+    TResult? Function()? logoutLoading,
+    TResult? Function(LoginResponse data)? logoutSuccess,
+    TResult? Function(String error)? logoutError,
     TResult? Function()? obscureTextState,
   }) =>
       throw _privateConstructorUsedError;
@@ -40,6 +46,9 @@ mixin _$LoginState<T> {
     TResult Function()? loading,
     TResult Function(LoginResponse data)? success,
     TResult Function(String error)? error,
+    TResult Function()? logoutLoading,
+    TResult Function(LoginResponse data)? logoutSuccess,
+    TResult Function(String error)? logoutError,
     TResult Function()? obscureTextState,
     required TResult orElse(),
   }) =>
@@ -50,6 +59,9 @@ mixin _$LoginState<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Success<T> value) success,
     required TResult Function(Error<T> value) error,
+    required TResult Function(LogoutLoading<T> value) logoutLoading,
+    required TResult Function(LogoutSuccess<T> value) logoutSuccess,
+    required TResult Function(LogoutError<T> value) logoutError,
     required TResult Function(ObscureTextState<T> value) obscureTextState,
   }) =>
       throw _privateConstructorUsedError;
@@ -59,6 +71,9 @@ mixin _$LoginState<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Success<T> value)? success,
     TResult? Function(Error<T> value)? error,
+    TResult? Function(LogoutLoading<T> value)? logoutLoading,
+    TResult? Function(LogoutSuccess<T> value)? logoutSuccess,
+    TResult? Function(LogoutError<T> value)? logoutError,
     TResult? Function(ObscureTextState<T> value)? obscureTextState,
   }) =>
       throw _privateConstructorUsedError;
@@ -68,6 +83,9 @@ mixin _$LoginState<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(Success<T> value)? success,
     TResult Function(Error<T> value)? error,
+    TResult Function(LogoutLoading<T> value)? logoutLoading,
+    TResult Function(LogoutSuccess<T> value)? logoutSuccess,
+    TResult Function(LogoutError<T> value)? logoutError,
     TResult Function(ObscureTextState<T> value)? obscureTextState,
     required TResult orElse(),
   }) =>
@@ -134,6 +152,9 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function() loading,
     required TResult Function(LoginResponse data) success,
     required TResult Function(String error) error,
+    required TResult Function() logoutLoading,
+    required TResult Function(LoginResponse data) logoutSuccess,
+    required TResult Function(String error) logoutError,
     required TResult Function() obscureTextState,
   }) {
     return initial();
@@ -146,6 +167,9 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function()? loading,
     TResult? Function(LoginResponse data)? success,
     TResult? Function(String error)? error,
+    TResult? Function()? logoutLoading,
+    TResult? Function(LoginResponse data)? logoutSuccess,
+    TResult? Function(String error)? logoutError,
     TResult? Function()? obscureTextState,
   }) {
     return initial?.call();
@@ -158,6 +182,9 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function()? loading,
     TResult Function(LoginResponse data)? success,
     TResult Function(String error)? error,
+    TResult Function()? logoutLoading,
+    TResult Function(LoginResponse data)? logoutSuccess,
+    TResult Function(String error)? logoutError,
     TResult Function()? obscureTextState,
     required TResult orElse(),
   }) {
@@ -174,6 +201,9 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Success<T> value) success,
     required TResult Function(Error<T> value) error,
+    required TResult Function(LogoutLoading<T> value) logoutLoading,
+    required TResult Function(LogoutSuccess<T> value) logoutSuccess,
+    required TResult Function(LogoutError<T> value) logoutError,
     required TResult Function(ObscureTextState<T> value) obscureTextState,
   }) {
     return initial(this);
@@ -186,6 +216,9 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Success<T> value)? success,
     TResult? Function(Error<T> value)? error,
+    TResult? Function(LogoutLoading<T> value)? logoutLoading,
+    TResult? Function(LogoutSuccess<T> value)? logoutSuccess,
+    TResult? Function(LogoutError<T> value)? logoutError,
     TResult? Function(ObscureTextState<T> value)? obscureTextState,
   }) {
     return initial?.call(this);
@@ -198,6 +231,9 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(Success<T> value)? success,
     TResult Function(Error<T> value)? error,
+    TResult Function(LogoutLoading<T> value)? logoutLoading,
+    TResult Function(LogoutSuccess<T> value)? logoutSuccess,
+    TResult Function(LogoutError<T> value)? logoutError,
     TResult Function(ObscureTextState<T> value)? obscureTextState,
     required TResult orElse(),
   }) {
@@ -254,6 +290,9 @@ class _$LoadingImpl<T> implements Loading<T> {
     required TResult Function() loading,
     required TResult Function(LoginResponse data) success,
     required TResult Function(String error) error,
+    required TResult Function() logoutLoading,
+    required TResult Function(LoginResponse data) logoutSuccess,
+    required TResult Function(String error) logoutError,
     required TResult Function() obscureTextState,
   }) {
     return loading();
@@ -266,6 +305,9 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult? Function()? loading,
     TResult? Function(LoginResponse data)? success,
     TResult? Function(String error)? error,
+    TResult? Function()? logoutLoading,
+    TResult? Function(LoginResponse data)? logoutSuccess,
+    TResult? Function(String error)? logoutError,
     TResult? Function()? obscureTextState,
   }) {
     return loading?.call();
@@ -278,6 +320,9 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult Function()? loading,
     TResult Function(LoginResponse data)? success,
     TResult Function(String error)? error,
+    TResult Function()? logoutLoading,
+    TResult Function(LoginResponse data)? logoutSuccess,
+    TResult Function(String error)? logoutError,
     TResult Function()? obscureTextState,
     required TResult orElse(),
   }) {
@@ -294,6 +339,9 @@ class _$LoadingImpl<T> implements Loading<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Success<T> value) success,
     required TResult Function(Error<T> value) error,
+    required TResult Function(LogoutLoading<T> value) logoutLoading,
+    required TResult Function(LogoutSuccess<T> value) logoutSuccess,
+    required TResult Function(LogoutError<T> value) logoutError,
     required TResult Function(ObscureTextState<T> value) obscureTextState,
   }) {
     return loading(this);
@@ -306,6 +354,9 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Success<T> value)? success,
     TResult? Function(Error<T> value)? error,
+    TResult? Function(LogoutLoading<T> value)? logoutLoading,
+    TResult? Function(LogoutSuccess<T> value)? logoutSuccess,
+    TResult? Function(LogoutError<T> value)? logoutError,
     TResult? Function(ObscureTextState<T> value)? obscureTextState,
   }) {
     return loading?.call(this);
@@ -318,6 +369,9 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(Success<T> value)? success,
     TResult Function(Error<T> value)? error,
+    TResult Function(LogoutLoading<T> value)? logoutLoading,
+    TResult Function(LogoutSuccess<T> value)? logoutSuccess,
+    TResult Function(LogoutError<T> value)? logoutError,
     TResult Function(ObscureTextState<T> value)? obscureTextState,
     required TResult orElse(),
   }) {
@@ -400,6 +454,9 @@ class _$SuccessImpl<T> implements Success<T> {
     required TResult Function() loading,
     required TResult Function(LoginResponse data) success,
     required TResult Function(String error) error,
+    required TResult Function() logoutLoading,
+    required TResult Function(LoginResponse data) logoutSuccess,
+    required TResult Function(String error) logoutError,
     required TResult Function() obscureTextState,
   }) {
     return success(data);
@@ -412,6 +469,9 @@ class _$SuccessImpl<T> implements Success<T> {
     TResult? Function()? loading,
     TResult? Function(LoginResponse data)? success,
     TResult? Function(String error)? error,
+    TResult? Function()? logoutLoading,
+    TResult? Function(LoginResponse data)? logoutSuccess,
+    TResult? Function(String error)? logoutError,
     TResult? Function()? obscureTextState,
   }) {
     return success?.call(data);
@@ -424,6 +484,9 @@ class _$SuccessImpl<T> implements Success<T> {
     TResult Function()? loading,
     TResult Function(LoginResponse data)? success,
     TResult Function(String error)? error,
+    TResult Function()? logoutLoading,
+    TResult Function(LoginResponse data)? logoutSuccess,
+    TResult Function(String error)? logoutError,
     TResult Function()? obscureTextState,
     required TResult orElse(),
   }) {
@@ -440,6 +503,9 @@ class _$SuccessImpl<T> implements Success<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Success<T> value) success,
     required TResult Function(Error<T> value) error,
+    required TResult Function(LogoutLoading<T> value) logoutLoading,
+    required TResult Function(LogoutSuccess<T> value) logoutSuccess,
+    required TResult Function(LogoutError<T> value) logoutError,
     required TResult Function(ObscureTextState<T> value) obscureTextState,
   }) {
     return success(this);
@@ -452,6 +518,9 @@ class _$SuccessImpl<T> implements Success<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Success<T> value)? success,
     TResult? Function(Error<T> value)? error,
+    TResult? Function(LogoutLoading<T> value)? logoutLoading,
+    TResult? Function(LogoutSuccess<T> value)? logoutSuccess,
+    TResult? Function(LogoutError<T> value)? logoutError,
     TResult? Function(ObscureTextState<T> value)? obscureTextState,
   }) {
     return success?.call(this);
@@ -464,6 +533,9 @@ class _$SuccessImpl<T> implements Success<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(Success<T> value)? success,
     TResult Function(Error<T> value)? error,
+    TResult Function(LogoutLoading<T> value)? logoutLoading,
+    TResult Function(LogoutSuccess<T> value)? logoutSuccess,
+    TResult Function(LogoutError<T> value)? logoutError,
     TResult Function(ObscureTextState<T> value)? obscureTextState,
     required TResult orElse(),
   }) {
@@ -551,6 +623,9 @@ class _$ErrorImpl<T> implements Error<T> {
     required TResult Function() loading,
     required TResult Function(LoginResponse data) success,
     required TResult Function(String error) error,
+    required TResult Function() logoutLoading,
+    required TResult Function(LoginResponse data) logoutSuccess,
+    required TResult Function(String error) logoutError,
     required TResult Function() obscureTextState,
   }) {
     return error(this.error);
@@ -563,6 +638,9 @@ class _$ErrorImpl<T> implements Error<T> {
     TResult? Function()? loading,
     TResult? Function(LoginResponse data)? success,
     TResult? Function(String error)? error,
+    TResult? Function()? logoutLoading,
+    TResult? Function(LoginResponse data)? logoutSuccess,
+    TResult? Function(String error)? logoutError,
     TResult? Function()? obscureTextState,
   }) {
     return error?.call(this.error);
@@ -575,6 +653,9 @@ class _$ErrorImpl<T> implements Error<T> {
     TResult Function()? loading,
     TResult Function(LoginResponse data)? success,
     TResult Function(String error)? error,
+    TResult Function()? logoutLoading,
+    TResult Function(LoginResponse data)? logoutSuccess,
+    TResult Function(String error)? logoutError,
     TResult Function()? obscureTextState,
     required TResult orElse(),
   }) {
@@ -591,6 +672,9 @@ class _$ErrorImpl<T> implements Error<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Success<T> value) success,
     required TResult Function(Error<T> value) error,
+    required TResult Function(LogoutLoading<T> value) logoutLoading,
+    required TResult Function(LogoutSuccess<T> value) logoutSuccess,
+    required TResult Function(LogoutError<T> value) logoutError,
     required TResult Function(ObscureTextState<T> value) obscureTextState,
   }) {
     return error(this);
@@ -603,6 +687,9 @@ class _$ErrorImpl<T> implements Error<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Success<T> value)? success,
     TResult? Function(Error<T> value)? error,
+    TResult? Function(LogoutLoading<T> value)? logoutLoading,
+    TResult? Function(LogoutSuccess<T> value)? logoutSuccess,
+    TResult? Function(LogoutError<T> value)? logoutError,
     TResult? Function(ObscureTextState<T> value)? obscureTextState,
   }) {
     return error?.call(this);
@@ -615,6 +702,9 @@ class _$ErrorImpl<T> implements Error<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(Success<T> value)? success,
     TResult Function(Error<T> value)? error,
+    TResult Function(LogoutLoading<T> value)? logoutLoading,
+    TResult Function(LogoutSuccess<T> value)? logoutSuccess,
+    TResult Function(LogoutError<T> value)? logoutError,
     TResult Function(ObscureTextState<T> value)? obscureTextState,
     required TResult orElse(),
   }) {
@@ -631,6 +721,486 @@ abstract class Error<T> implements LoginState<T> {
   String get error;
   @JsonKey(ignore: true)
   _$$ErrorImplCopyWith<T, _$ErrorImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LogoutLoadingImplCopyWith<T, $Res> {
+  factory _$$LogoutLoadingImplCopyWith(_$LogoutLoadingImpl<T> value,
+          $Res Function(_$LogoutLoadingImpl<T>) then) =
+      __$$LogoutLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$LogoutLoadingImplCopyWithImpl<T, $Res>
+    extends _$LoginStateCopyWithImpl<T, $Res, _$LogoutLoadingImpl<T>>
+    implements _$$LogoutLoadingImplCopyWith<T, $Res> {
+  __$$LogoutLoadingImplCopyWithImpl(_$LogoutLoadingImpl<T> _value,
+      $Res Function(_$LogoutLoadingImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$LogoutLoadingImpl<T> implements LogoutLoading<T> {
+  const _$LogoutLoadingImpl();
+
+  @override
+  String toString() {
+    return 'LoginState<$T>.logoutLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$LogoutLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(LoginResponse data) success,
+    required TResult Function(String error) error,
+    required TResult Function() logoutLoading,
+    required TResult Function(LoginResponse data) logoutSuccess,
+    required TResult Function(String error) logoutError,
+    required TResult Function() obscureTextState,
+  }) {
+    return logoutLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(LoginResponse data)? success,
+    TResult? Function(String error)? error,
+    TResult? Function()? logoutLoading,
+    TResult? Function(LoginResponse data)? logoutSuccess,
+    TResult? Function(String error)? logoutError,
+    TResult? Function()? obscureTextState,
+  }) {
+    return logoutLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(LoginResponse data)? success,
+    TResult Function(String error)? error,
+    TResult Function()? logoutLoading,
+    TResult Function(LoginResponse data)? logoutSuccess,
+    TResult Function(String error)? logoutError,
+    TResult Function()? obscureTextState,
+    required TResult orElse(),
+  }) {
+    if (logoutLoading != null) {
+      return logoutLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(Loading<T> value) loading,
+    required TResult Function(Success<T> value) success,
+    required TResult Function(Error<T> value) error,
+    required TResult Function(LogoutLoading<T> value) logoutLoading,
+    required TResult Function(LogoutSuccess<T> value) logoutSuccess,
+    required TResult Function(LogoutError<T> value) logoutError,
+    required TResult Function(ObscureTextState<T> value) obscureTextState,
+  }) {
+    return logoutLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(Loading<T> value)? loading,
+    TResult? Function(Success<T> value)? success,
+    TResult? Function(Error<T> value)? error,
+    TResult? Function(LogoutLoading<T> value)? logoutLoading,
+    TResult? Function(LogoutSuccess<T> value)? logoutSuccess,
+    TResult? Function(LogoutError<T> value)? logoutError,
+    TResult? Function(ObscureTextState<T> value)? obscureTextState,
+  }) {
+    return logoutLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(Loading<T> value)? loading,
+    TResult Function(Success<T> value)? success,
+    TResult Function(Error<T> value)? error,
+    TResult Function(LogoutLoading<T> value)? logoutLoading,
+    TResult Function(LogoutSuccess<T> value)? logoutSuccess,
+    TResult Function(LogoutError<T> value)? logoutError,
+    TResult Function(ObscureTextState<T> value)? obscureTextState,
+    required TResult orElse(),
+  }) {
+    if (logoutLoading != null) {
+      return logoutLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LogoutLoading<T> implements LoginState<T> {
+  const factory LogoutLoading() = _$LogoutLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$LogoutSuccessImplCopyWith<T, $Res> {
+  factory _$$LogoutSuccessImplCopyWith(_$LogoutSuccessImpl<T> value,
+          $Res Function(_$LogoutSuccessImpl<T>) then) =
+      __$$LogoutSuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({LoginResponse data});
+}
+
+/// @nodoc
+class __$$LogoutSuccessImplCopyWithImpl<T, $Res>
+    extends _$LoginStateCopyWithImpl<T, $Res, _$LogoutSuccessImpl<T>>
+    implements _$$LogoutSuccessImplCopyWith<T, $Res> {
+  __$$LogoutSuccessImplCopyWithImpl(_$LogoutSuccessImpl<T> _value,
+      $Res Function(_$LogoutSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$LogoutSuccessImpl<T>(
+      null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as LoginResponse,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$LogoutSuccessImpl<T> implements LogoutSuccess<T> {
+  const _$LogoutSuccessImpl(this.data);
+
+  @override
+  final LoginResponse data;
+
+  @override
+  String toString() {
+    return 'LoginState<$T>.logoutSuccess(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LogoutSuccessImpl<T> &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LogoutSuccessImplCopyWith<T, _$LogoutSuccessImpl<T>> get copyWith =>
+      __$$LogoutSuccessImplCopyWithImpl<T, _$LogoutSuccessImpl<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(LoginResponse data) success,
+    required TResult Function(String error) error,
+    required TResult Function() logoutLoading,
+    required TResult Function(LoginResponse data) logoutSuccess,
+    required TResult Function(String error) logoutError,
+    required TResult Function() obscureTextState,
+  }) {
+    return logoutSuccess(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(LoginResponse data)? success,
+    TResult? Function(String error)? error,
+    TResult? Function()? logoutLoading,
+    TResult? Function(LoginResponse data)? logoutSuccess,
+    TResult? Function(String error)? logoutError,
+    TResult? Function()? obscureTextState,
+  }) {
+    return logoutSuccess?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(LoginResponse data)? success,
+    TResult Function(String error)? error,
+    TResult Function()? logoutLoading,
+    TResult Function(LoginResponse data)? logoutSuccess,
+    TResult Function(String error)? logoutError,
+    TResult Function()? obscureTextState,
+    required TResult orElse(),
+  }) {
+    if (logoutSuccess != null) {
+      return logoutSuccess(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(Loading<T> value) loading,
+    required TResult Function(Success<T> value) success,
+    required TResult Function(Error<T> value) error,
+    required TResult Function(LogoutLoading<T> value) logoutLoading,
+    required TResult Function(LogoutSuccess<T> value) logoutSuccess,
+    required TResult Function(LogoutError<T> value) logoutError,
+    required TResult Function(ObscureTextState<T> value) obscureTextState,
+  }) {
+    return logoutSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(Loading<T> value)? loading,
+    TResult? Function(Success<T> value)? success,
+    TResult? Function(Error<T> value)? error,
+    TResult? Function(LogoutLoading<T> value)? logoutLoading,
+    TResult? Function(LogoutSuccess<T> value)? logoutSuccess,
+    TResult? Function(LogoutError<T> value)? logoutError,
+    TResult? Function(ObscureTextState<T> value)? obscureTextState,
+  }) {
+    return logoutSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(Loading<T> value)? loading,
+    TResult Function(Success<T> value)? success,
+    TResult Function(Error<T> value)? error,
+    TResult Function(LogoutLoading<T> value)? logoutLoading,
+    TResult Function(LogoutSuccess<T> value)? logoutSuccess,
+    TResult Function(LogoutError<T> value)? logoutError,
+    TResult Function(ObscureTextState<T> value)? obscureTextState,
+    required TResult orElse(),
+  }) {
+    if (logoutSuccess != null) {
+      return logoutSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LogoutSuccess<T> implements LoginState<T> {
+  const factory LogoutSuccess(final LoginResponse data) =
+      _$LogoutSuccessImpl<T>;
+
+  LoginResponse get data;
+  @JsonKey(ignore: true)
+  _$$LogoutSuccessImplCopyWith<T, _$LogoutSuccessImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LogoutErrorImplCopyWith<T, $Res> {
+  factory _$$LogoutErrorImplCopyWith(_$LogoutErrorImpl<T> value,
+          $Res Function(_$LogoutErrorImpl<T>) then) =
+      __$$LogoutErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$LogoutErrorImplCopyWithImpl<T, $Res>
+    extends _$LoginStateCopyWithImpl<T, $Res, _$LogoutErrorImpl<T>>
+    implements _$$LogoutErrorImplCopyWith<T, $Res> {
+  __$$LogoutErrorImplCopyWithImpl(
+      _$LogoutErrorImpl<T> _value, $Res Function(_$LogoutErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$LogoutErrorImpl<T>(
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$LogoutErrorImpl<T> implements LogoutError<T> {
+  const _$LogoutErrorImpl({required this.error});
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'LoginState<$T>.logoutError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LogoutErrorImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LogoutErrorImplCopyWith<T, _$LogoutErrorImpl<T>> get copyWith =>
+      __$$LogoutErrorImplCopyWithImpl<T, _$LogoutErrorImpl<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(LoginResponse data) success,
+    required TResult Function(String error) error,
+    required TResult Function() logoutLoading,
+    required TResult Function(LoginResponse data) logoutSuccess,
+    required TResult Function(String error) logoutError,
+    required TResult Function() obscureTextState,
+  }) {
+    return logoutError(this.error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(LoginResponse data)? success,
+    TResult? Function(String error)? error,
+    TResult? Function()? logoutLoading,
+    TResult? Function(LoginResponse data)? logoutSuccess,
+    TResult? Function(String error)? logoutError,
+    TResult? Function()? obscureTextState,
+  }) {
+    return logoutError?.call(this.error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(LoginResponse data)? success,
+    TResult Function(String error)? error,
+    TResult Function()? logoutLoading,
+    TResult Function(LoginResponse data)? logoutSuccess,
+    TResult Function(String error)? logoutError,
+    TResult Function()? obscureTextState,
+    required TResult orElse(),
+  }) {
+    if (logoutError != null) {
+      return logoutError(this.error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(Loading<T> value) loading,
+    required TResult Function(Success<T> value) success,
+    required TResult Function(Error<T> value) error,
+    required TResult Function(LogoutLoading<T> value) logoutLoading,
+    required TResult Function(LogoutSuccess<T> value) logoutSuccess,
+    required TResult Function(LogoutError<T> value) logoutError,
+    required TResult Function(ObscureTextState<T> value) obscureTextState,
+  }) {
+    return logoutError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(Loading<T> value)? loading,
+    TResult? Function(Success<T> value)? success,
+    TResult? Function(Error<T> value)? error,
+    TResult? Function(LogoutLoading<T> value)? logoutLoading,
+    TResult? Function(LogoutSuccess<T> value)? logoutSuccess,
+    TResult? Function(LogoutError<T> value)? logoutError,
+    TResult? Function(ObscureTextState<T> value)? obscureTextState,
+  }) {
+    return logoutError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(Loading<T> value)? loading,
+    TResult Function(Success<T> value)? success,
+    TResult Function(Error<T> value)? error,
+    TResult Function(LogoutLoading<T> value)? logoutLoading,
+    TResult Function(LogoutSuccess<T> value)? logoutSuccess,
+    TResult Function(LogoutError<T> value)? logoutError,
+    TResult Function(ObscureTextState<T> value)? obscureTextState,
+    required TResult orElse(),
+  }) {
+    if (logoutError != null) {
+      return logoutError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LogoutError<T> implements LoginState<T> {
+  const factory LogoutError({required final String error}) =
+      _$LogoutErrorImpl<T>;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$$LogoutErrorImplCopyWith<T, _$LogoutErrorImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -677,6 +1247,9 @@ class _$ObscureTextStateImpl<T> implements ObscureTextState<T> {
     required TResult Function() loading,
     required TResult Function(LoginResponse data) success,
     required TResult Function(String error) error,
+    required TResult Function() logoutLoading,
+    required TResult Function(LoginResponse data) logoutSuccess,
+    required TResult Function(String error) logoutError,
     required TResult Function() obscureTextState,
   }) {
     return obscureTextState();
@@ -689,6 +1262,9 @@ class _$ObscureTextStateImpl<T> implements ObscureTextState<T> {
     TResult? Function()? loading,
     TResult? Function(LoginResponse data)? success,
     TResult? Function(String error)? error,
+    TResult? Function()? logoutLoading,
+    TResult? Function(LoginResponse data)? logoutSuccess,
+    TResult? Function(String error)? logoutError,
     TResult? Function()? obscureTextState,
   }) {
     return obscureTextState?.call();
@@ -701,6 +1277,9 @@ class _$ObscureTextStateImpl<T> implements ObscureTextState<T> {
     TResult Function()? loading,
     TResult Function(LoginResponse data)? success,
     TResult Function(String error)? error,
+    TResult Function()? logoutLoading,
+    TResult Function(LoginResponse data)? logoutSuccess,
+    TResult Function(String error)? logoutError,
     TResult Function()? obscureTextState,
     required TResult orElse(),
   }) {
@@ -717,6 +1296,9 @@ class _$ObscureTextStateImpl<T> implements ObscureTextState<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Success<T> value) success,
     required TResult Function(Error<T> value) error,
+    required TResult Function(LogoutLoading<T> value) logoutLoading,
+    required TResult Function(LogoutSuccess<T> value) logoutSuccess,
+    required TResult Function(LogoutError<T> value) logoutError,
     required TResult Function(ObscureTextState<T> value) obscureTextState,
   }) {
     return obscureTextState(this);
@@ -729,6 +1311,9 @@ class _$ObscureTextStateImpl<T> implements ObscureTextState<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Success<T> value)? success,
     TResult? Function(Error<T> value)? error,
+    TResult? Function(LogoutLoading<T> value)? logoutLoading,
+    TResult? Function(LogoutSuccess<T> value)? logoutSuccess,
+    TResult? Function(LogoutError<T> value)? logoutError,
     TResult? Function(ObscureTextState<T> value)? obscureTextState,
   }) {
     return obscureTextState?.call(this);
@@ -741,6 +1326,9 @@ class _$ObscureTextStateImpl<T> implements ObscureTextState<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(Success<T> value)? success,
     TResult Function(Error<T> value)? error,
+    TResult Function(LogoutLoading<T> value)? logoutLoading,
+    TResult Function(LogoutSuccess<T> value)? logoutSuccess,
+    TResult Function(LogoutError<T> value)? logoutError,
     TResult Function(ObscureTextState<T> value)? obscureTextState,
     required TResult orElse(),
   }) {

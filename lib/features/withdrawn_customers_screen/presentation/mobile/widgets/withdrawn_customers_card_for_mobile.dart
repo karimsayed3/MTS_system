@@ -175,6 +175,7 @@ class _WithdrawnCustomersCardWidgetMobileState extends State<WithdrawnCustomersC
                     child: BlocProvider.value(
                       value: getIt<SubscribersCubit>(),
                       child: AddBalanceWidget(
+                        flag: "from subscriber",
                         phone: widget.withdrawnSubscriberData.phoneNo ?? "",
                         onPressed: () {},
                         currentBalance: widget.withdrawnSubscriberData.balance!,

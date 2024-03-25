@@ -268,6 +268,7 @@ class DisabledCustomersCard extends StatelessWidget {
                           child: BlocProvider.value(
                             value: getIt<SubscribersCubit>(),
                             child: AddBalanceWidget(
+                              flag: "from subscriber",
                               phone: disabledSubscriber.phoneNo ?? "",
                               onPressed: () {},
                               currentBalance: disabledSubscriber.balance!,

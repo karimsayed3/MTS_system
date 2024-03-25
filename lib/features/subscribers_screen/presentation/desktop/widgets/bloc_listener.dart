@@ -114,8 +114,7 @@ class _BlocListenerForSubscribersCubitState
               //           color: ColorsManager.secondaryColor,
               //         )));
             },
-            getWithdrawnSubscribersSuccessState:
-                (getWithdrawnSubscribersResponse) {
+            getWithdrawnSubscribersSuccessState: (getWithdrawnSubscribersResponse) {
               // Navigator.pop(context);
               SubscribersCubit.get(context).changeWithdrawSubscribersData(
                   withdrawSubscribers: getWithdrawnSubscribersResponse.result!);

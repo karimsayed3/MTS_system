@@ -8,8 +8,25 @@ import 'package:system/core/widgets/default_text.dart';
 import 'package:system/core/widgets/title_of_screen_with_logo_widget.dart';
 import 'package:system/features/review_data_screen/presentation/mobile/widgets/review_data_card.dart';
 
-class ReviewDataScreenMobile extends StatelessWidget {
+import '../../../business_logic/review_data_cubit.dart';
+
+class ReviewDataScreenMobile extends StatefulWidget {
   const ReviewDataScreenMobile({super.key});
+
+  @override
+  State<ReviewDataScreenMobile> createState() => _ReviewDataScreenMobileState();
+}
+
+class _ReviewDataScreenMobileState extends State<ReviewDataScreenMobile> {
+
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    ReviewDataCubit.get(context).reviewSubscriberData = [];
+    super.initState();
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -62,6 +79,8 @@ class ReviewDataScreenMobile extends StatelessWidget {
                         itemCount: 10,
                       ),
                     ),
+
+
                   ],
                 ),
               ),

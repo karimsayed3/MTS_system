@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:system/core/helpers/dimensions.dart';
 
+import '../../../../core/helpers/cache_helper.dart';
 import '../../../../core/helpers/spacing.dart';
 import '../../../companies_screen/presentation/desktop/widgets/nav_card_widget.dart';
 
 class CustomersNavBarWidget extends StatefulWidget {
-   CustomersNavBarWidget({super.key,required this.index, required this.onTapSubscribers, required this.onTapLatecomers, required this.onTapDisabled, required this.onTapWithdrawn});
+  CustomersNavBarWidget(
+      {super.key,
+      required this.index,
+      required this.onTapSubscribers,
+      required this.onTapLatecomers,
+      required this.onTapDisabled,
+      required this.onTapWithdrawn});
+
   int index;
   final Function() onTapSubscribers;
   final Function() onTapLatecomers;
@@ -31,27 +39,41 @@ class _CustomersNavBarWidgetState extends State<CustomersNavBarWidget> {
               index: widget.index,
               selectedIndex: 0,
               onTap: widget.onTapSubscribers,
-                title: "المشتركين",
+              title: "المشتركين",
             ),
-            horizontalSpace(dimension.width20),
-            NavBarCardWidget(
-              selectedIndex: 1,
-              index: widget.index,
-              onTap:widget.onTapLatecomers,
-              title: "المتأخرين",
-            ), horizontalSpace(dimension.width20),
-            NavBarCardWidget(
-              selectedIndex: 2,
-              index: widget.index,
-              onTap:widget.onTapDisabled,
-              title: "المعطلين",
-            ), horizontalSpace(dimension.width20),
-            NavBarCardWidget(
-              selectedIndex: 3,
-              index: widget.index,
-              onTap:widget.onTapWithdrawn,
-              title: "المسحوبين",
-            ),
+            CacheHelper.getdata(key: "accountType") == "محصل" || CacheHelper.getdata(key: "accountType") == "موزع"
+                ? const SizedBox.shrink()
+                : horizontalSpace(dimension.width20),
+            CacheHelper.getdata(key: "accountType") == "محصل" || CacheHelper.getdata(key: "accountType") == "موزع"
+                ? const SizedBox.shrink()
+                    : NavBarCardWidget(
+                        selectedIndex: 1,
+                        index: widget.index,
+                        onTap: widget.onTapLatecomers,
+                        title: "المتأخرين",
+                      ),
+            CacheHelper.getdata(key: "accountType") == "محصل"
+                ? const SizedBox.shrink()
+                : horizontalSpace(dimension.width20),
+            CacheHelper.getdata(key: "accountType") == "محصل"
+                ? const SizedBox.shrink()
+                : NavBarCardWidget(
+                    selectedIndex:CacheHelper.getdata(key: "accountType") == "موزع"? 1: 2,
+                    index: widget.index,
+                    onTap: widget.onTapDisabled,
+                    title: "المعطلين",
+                  ),
+            CacheHelper.getdata(key: "accountType") == "محصل"
+                ? const SizedBox.shrink()
+                : horizontalSpace(dimension.width20),
+            CacheHelper.getdata(key: "accountType") == "محصل"
+                ? const SizedBox.shrink()
+                : NavBarCardWidget(
+                    selectedIndex: CacheHelper.getdata(key: "accountType") == "موزع"? 2 :3,
+                    index: widget.index,
+                    onTap: widget.onTapWithdrawn,
+                    title: "المسحوبين",
+                  ),
           ],
         ),
       ),

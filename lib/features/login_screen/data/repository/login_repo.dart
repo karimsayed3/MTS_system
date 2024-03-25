@@ -17,5 +17,14 @@ class LoginRepo {
     }
   }
 
+  Future<ApiResult<LoginResponse>> logout() async {
+    try {
+      final response = await webServices.logout();
+      return ApiResult.success(response);
+    }catch (error) {
+      return ApiResult.failure(ErrorHandler.handle(error));
+    }
+  }
+
 
 }

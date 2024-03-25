@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:dio/dio.dart';
 import 'package:retrofit/http.dart';
 import 'package:system/core/networking/api_constants.dart';
@@ -20,6 +22,8 @@ import 'package:system/features/companies_screen/data/models/get_companies_respo
 import 'package:system/features/companies_screen/data/models/undo_plan_from_subscribers_request_body.dart';
 import 'package:system/features/companies_screen/data/models/update_company_request_body.dart';
 import 'package:system/features/disabled_customers_screen/data/models/get_disabled_subscribers_response.dart';
+import 'package:system/features/history_operations_screen/data/models/get_logged_operations_request_body.dart';
+import 'package:system/features/history_operations_screen/data/models/get_logged_operations_response.dart';
 import 'package:system/features/late_customers_screen/data/models/get_late_subscribers_response.dart';
 import 'package:system/features/login_screen/data/models/login_request_body.dart';
 import 'package:system/features/login_screen/data/models/login_response.dart';
@@ -44,6 +48,7 @@ import 'package:system/features/withdrawn_customers_screen/data/models/get_withd
 import '../../features/collectors_screen/data/models/add_user_request_body.dart';
 import '../../features/collectors_screen/data/models/delete_user_request_body.dart';
 import '../../features/collectors_screen/data/models/update_user_request_body.dart';
+import '../../features/review_data_screen/data/models/get_review_subscribers_plans.dart';
 
 part 'web_services.g.dart';
 
@@ -54,6 +59,8 @@ abstract class WebServices {
   /// auth
   @POST(ApiConstants.login)
   Future<LoginResponse> login(@Body() LoginRequestBody loginRequestBody);
+  @POST(ApiConstants.logout)
+  Future<LoginResponse> logout();
 
   /// companies
   @POST(ApiConstants.getCompanies)
@@ -203,7 +210,15 @@ abstract class WebServices {
 
 
 
+  /// review data
+  @POST("excel/reviewSubscribersPlans")
+  @MultiPart()
+  Future<GetReviewSubscribersPlans> reviewSubscribersPlans(@Part() File excel,);
 
+
+  /// getLoggedOperations
+  @POST(ApiConstants.getLoggedOperations)
+  Future<GetLoggedOperationsResponse> getLoggedOperations( @Body() GetLoggedOperationsRequestBody getLoggedOperationsRequestBody);
 
 
 }

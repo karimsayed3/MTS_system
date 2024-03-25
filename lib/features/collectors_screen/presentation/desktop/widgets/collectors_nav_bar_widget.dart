@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:system/core/helpers/spacing.dart';
 import 'package:system/features/companies_screen/presentation/desktop/widgets/nav_card_widget.dart';
 
+import '../../../../../core/helpers/cache_helper.dart';
 import '../../../../../core/helpers/dimensions.dart';
 
 class CollectorsNavBarWidget extends StatefulWidget {
@@ -32,8 +33,8 @@ class _CollectorsNavBarWidgetState extends State<CollectorsNavBarWidget> {
               onTap: widget.onTapCompanies,
               title: "المحصلون",
             ),
-            horizontalSpace(dimension.width10),
-            NavBarCardWidget(
+            CacheHelper.getdata(key: "accountType") == "موزع" ? const SizedBox.shrink(): horizontalSpace(dimension.width10),
+            CacheHelper.getdata(key: "accountType") == "موزع" ? const SizedBox.shrink():     NavBarCardWidget(
               selectedIndex: 1,
               index: widget.index,
               onTap:widget.onTapBunch,

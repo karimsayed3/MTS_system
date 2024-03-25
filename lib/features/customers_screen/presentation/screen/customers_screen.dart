@@ -9,6 +9,7 @@ import 'package:system/features/late_customers_screen/presentation/desktop/scree
 import 'package:system/features/subscribers_screen/business_logic/subscribers_cubit.dart';
 import 'package:system/features/subscribers_screen/presentation/desktop/screen/subscribers_screen.dart';
 import 'package:system/features/withdrawn_customers_screen/presentation/desktop/screen/withdrawn_customers_screen.dart';
+import '../../../../core/helpers/cache_helper.dart';
 import '../widgets/customers_nav_bar_widget.dart';
 
 class CustomersScreen extends StatefulWidget {
@@ -19,14 +20,14 @@ class CustomersScreen extends StatefulWidget {
 }
 
 class _CustomersScreenState extends State<CustomersScreen> {
-  List<Widget> body = [
+  List<Widget> body = CacheHelper.getdata(key: "accountType") == "ادمن" ? [
     BlocProvider.value(
       value: getIt<SubscribersCubit>(),
       child: SubscribersScreen(),
     ),
     BlocProvider.value(
       value: getIt<SubscribersCubit>(),
-      child: LateCustomersScreen(),
+      child: const LateCustomersScreen(),
     ),
     BlocProvider.value(
       value: getIt<SubscribersCubit>(),
@@ -36,7 +37,25 @@ class _CustomersScreenState extends State<CustomersScreen> {
       value: getIt<SubscribersCubit>(),
       child: WithdrawnCustomersScreen(),
     ),
-  ];
+  ]:CacheHelper.getdata(key: "accountType") == "موزع" ?[
+    BlocProvider.value(
+      value: getIt<SubscribersCubit>(),
+      child: SubscribersScreen(),
+    ),
+    BlocProvider.value(
+      value: getIt<SubscribersCubit>(),
+      child: DisabledCustomersScreen(),
+    ),
+    BlocProvider.value(
+      value: getIt<SubscribersCubit>(),
+      child: WithdrawnCustomersScreen(),
+    ),
+  ]:CacheHelper.getdata(key: "accountType") == "محصل" ?[
+    BlocProvider.value(
+      value: getIt<SubscribersCubit>(),
+      child: SubscribersScreen(),
+    ),
+  ]:[];
 
   int index = 0;
 
@@ -45,7 +64,7 @@ class _CustomersScreenState extends State<CustomersScreen> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        CustomersNavBarWidget(
+        CacheHelper.getdata(key: "accountType") == "ادمن" ? CustomersNavBarWidget(
           index: index,
           onTapSubscribers: () {
             setState(() {
@@ -64,7 +83,29 @@ class _CustomersScreenState extends State<CustomersScreen> {
           },
           onTapWithdrawn: () {
             setState(() {
-              index = 3;
+               index = 3;
+            });
+          },
+        ): CustomersNavBarWidget(
+          index: index,
+          onTapSubscribers: () {
+            setState(() {
+              index = 0;
+            });
+          },
+          onTapLatecomers: () {
+            setState(() {
+              index = 5;
+            });
+          },
+          onTapDisabled: () {
+            setState(() {
+              index = 1;
+            });
+          },
+          onTapWithdrawn: () {
+            setState(() {
+            index = 2;
             });
           },
         ),

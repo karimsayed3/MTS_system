@@ -5,6 +5,7 @@ import 'package:system/core/theming/colors.dart';
 
 class FilterWidget extends StatelessWidget {
   const FilterWidget({super.key, required this.onTap});
+
   final Function() onTap;
 
   @override
@@ -13,12 +14,16 @@ class FilterWidget extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: dimension.width10,vertical: dimension.height10),
+        padding: EdgeInsets.symmetric(
+            horizontal: dimension.width10, vertical: dimension.height10),
         decoration: ShapeDecoration(
           color: ColorsManager.lighterGray,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
         ),
-        child: SvgPicture.asset("assets/icons/filter.svg"),
+        child: SizedBox(
+            width: dimension.width15,
+            height: dimension.height15,
+            child: SvgPicture.asset("assets/icons/filter.svg")),
       ),
     );
   }

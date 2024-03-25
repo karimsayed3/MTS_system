@@ -8,10 +8,16 @@ import 'package:system/core/widgets/default_text.dart';
 import 'package:system/core/widgets/show_alert_dialog.dart';
 import 'package:system/features/collectors_screen/presentation/desktop/widgets/delete_collector_widget.dart';
 import 'package:system/features/collectors_screen/presentation/desktop/widgets/update_collector_widget.dart';
+import 'package:system/features/review_data_screen/business_logic/review_data_cubit.dart';
+
+import '../../../../subscribers_screen/data/models/update_subscriber_request_body.dart';
+import '../../../data/models/get_review_subscribers_plans.dart';
 
 class ReviewDataCard extends StatelessWidget {
-  const ReviewDataCard({super.key});
+  ReviewDataCard({super.key, required this.reviewSubscriberData, required this.onPressed});
 
+  final ReviewSubscriberData reviewSubscriberData;
+  dynamic Function() onPressed;
   @override
   Widget build(BuildContext context) {
     var dimension = Dimensions(context);
@@ -30,7 +36,7 @@ class ReviewDataCard extends StatelessWidget {
           SizedBox(
             width: dimension.width150,
             child: DefaultText(
-              text: 'كريم سيد ابراهيم عبدالتواب',
+              text: reviewSubscriberData.name??"",
               color: ColorsManager.darkBlack,
               fontSize: dimension.width10,
               fontWeight: FontWeight.w400,
@@ -40,7 +46,7 @@ class ReviewDataCard extends StatelessWidget {
           SizedBox(
             width: dimension.width100,
             child: DefaultText(
-              text: '01156783894',
+              text: reviewSubscriberData.phoneNo??"",
               color: ColorsManager.secondaryColor,
               fontSize: dimension.width10,
               fontWeight: FontWeight.w400,
@@ -61,7 +67,7 @@ class ReviewDataCard extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10)),
                   child: Center(
                     child: DefaultText(
-                      text: 'Super Flix 30',
+                      text: reviewSubscriberData.systemPlanName??"",
                       color: ColorsManager.secondaryColor,
                       fontSize: dimension.width10,
                       fontWeight: FontWeight.w400,
@@ -89,7 +95,7 @@ class ReviewDataCard extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10)),
                   child: Center(
                     child: DefaultText(
-                      text: 'Super Flix 30',
+                      text:  reviewSubscriberData.companyPlanName??"",
                       color: ColorsManager.secondaryColor,
                       fontSize: dimension.width10,
                       fontWeight: FontWeight.w400,
@@ -106,7 +112,7 @@ class ReviewDataCard extends StatelessWidget {
           SizedBox(
             width: dimension.width200,
             child: DefaultText(
-              text: 'لوريم ابسيوم دولر لوريم ابسيوم دولر لوريم ابسيوم دولر لوريم ابسيوم دولر لوريم ابسيوم دولر لوريم ابسيوم دولر',
+              text:  reviewSubscriberData.notes??"",
               color: ColorsManager.darkBlack,
               fontSize: dimension.width10,
               fontWeight: FontWeight.w400,
@@ -120,7 +126,7 @@ class ReviewDataCard extends StatelessWidget {
                 Expanded(
                   child: DefaultButton(
                     color: Color(0xFFFFF4DE),
-                    onPressed: () {},
+                    onPressed: onPressed,
                     child: DefaultText(
                       text: 'تغاضى',
                       color: Color(0xFFFFA800),
@@ -133,12 +139,18 @@ class ReviewDataCard extends StatelessWidget {
                 Expanded(
                   child: DefaultButton(
                     color: Color(0xffebf5f6),
-                    onPressed: () {},
+                    onPressed: () {
+                      ReviewDataCubit.get(context).updateSubscriber(
+                        updateSubscriberRequestBody:
+                        UpdateSubscriberRequestBody(
+                          oldPhone: reviewSubscriberData.phoneNo,
+                          planName: reviewSubscriberData.companyPlanName,
+                        ),
+                      );
+                    },
                     child: DefaultText(
                       text: 'تنفيذ التعديل',
                       color: ColorsManager.secondaryColor,
-
-                      // color: Color(0xFFCC232A),
                       fontSize: dimension.width10,
                       fontWeight: FontWeight.w500,
                     ),

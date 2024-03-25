@@ -16,13 +16,15 @@ import 'default_text_form_field.dart';
 import 'drop_down_button.dart';
 
 class AddBalanceWidget extends StatefulWidget {
-  const AddBalanceWidget({super.key, required this.phone,required this.onPressed, required this.name, required this.lastPositiveBalance, required this.currentBalance, required this.dateOfLastAddedBalance});
+   AddBalanceWidget({super.key, required this.phone,this.userId,required this.onPressed, required this.name, required this.lastPositiveBalance, required this.currentBalance, required this.dateOfLastAddedBalance, required this.flag});
   final String phone;
+  int? userId;
   final Function() onPressed;
   final String name;
   final int lastPositiveBalance;
   final int currentBalance;
   final String dateOfLastAddedBalance;
+  final String flag;
 
   @override
   State<AddBalanceWidget> createState() => _AddBalanceWidgetState();
@@ -251,12 +253,20 @@ class _AddBalanceWidgetState extends State<AddBalanceWidget> {
                                     //       ),
                                     // );
                                     // widget.onPressed();
+                                    if(widget.flag== "from collectors"){
+                                      CollectorsCubit.get(context).deductBalanceCollector(deductBalanceCollectorRequestBody: DeductBalanceCollectorRequestBody(
+                                        userID: widget.userId,
+                                        collectingType: balanceType,
+                                        collectedAmount: int.parse(balanceController.text),
+                                      ));
+                                    }else{
+                                      SubscribersCubit.get(context).collectSubscriberBalance(collectSubscriberBalanceRequestBody: CollectSubscriberBalanceRequestBody(
+                                        phone: widget.phone,
+                                        collectingType: balanceType,
+                                        amount: int.parse(balanceController.text),
+                                      ));
+                                    }
 
-                                    SubscribersCubit.get(context).collectSubscriberBalance(collectSubscriberBalanceRequestBody: CollectSubscriberBalanceRequestBody(
-                                      phone: widget.phone,
-                                      collectingType: balanceType,
-                                      amount: int.parse(balanceController.text),
-                                    ));
                                     // Navigator.pop(context);
                                   }
                                 },
@@ -481,11 +491,19 @@ class _AddBalanceWidgetState extends State<AddBalanceWidget> {
                                     //     collectingType: balanceType,
                                     //   ),
                                     // );
-                                    SubscribersCubit.get(context).collectSubscriberBalance(collectSubscriberBalanceRequestBody: CollectSubscriberBalanceRequestBody(
-                                      phone: widget.phone,
-                                      collectingType: balanceType,
-                                      amount: int.parse(balanceController.text),
-                                    ));
+                                    if(widget.flag== "from collectors"){
+                                      CollectorsCubit.get(context).deductBalanceCollector(deductBalanceCollectorRequestBody: DeductBalanceCollectorRequestBody(
+                                        userID: widget.userId,
+                                        collectingType: balanceType,
+                                        collectedAmount: int.parse(balanceController.text),
+                                      ));
+                                    }else{
+                                      SubscribersCubit.get(context).collectSubscriberBalance(collectSubscriberBalanceRequestBody: CollectSubscriberBalanceRequestBody(
+                                        phone: widget.phone,
+                                        collectingType: balanceType,
+                                        amount: int.parse(balanceController.text),
+                                      ));
+                                    }
                                   }
                                 },
                                 child: DefaultText(

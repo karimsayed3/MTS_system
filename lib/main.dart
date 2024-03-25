@@ -52,6 +52,7 @@ double screenHeight = 0;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   await CacheHelper.init();
   Bloc.observer = MyBlocObserver();
 
@@ -155,7 +156,6 @@ class MTSDesktopApp extends StatelessWidget {
         primaryColor: Colors.black,
         scaffoldBackgroundColor: Colors.white,
       ),
-
       debugShowCheckedModeBanner: false,
       // home: const Scaffold(
       //   body: Center(child: Text("desktop app 2"),),

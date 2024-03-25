@@ -17,9 +17,12 @@ import 'package:system/features/subscribers_screen/presentation/mobile/screen/su
 
 import '../../../../collectors_screen/presentation/mobile/screen/collectors_screen_mobile.dart';
 import '../../../../disabled_customers_screen/presentation/mobile/screen/disabled_customers_screen_mobile.dart';
+import '../../../../history_operations_screen/business_logic/history_operations_cubit.dart';
 import '../../../../history_operations_screen/presentation/mobile/screen/history_operations_mobile_screen.dart';
 import '../../../../late_customers_screen/presentation/mobile/screen/late_customers_screen_mobile.dart';
+import '../../../../login_screen/business_logic/login_cubit.dart';
 import '../../../../resellers_requests_screen/presentation/mobile/screen/resellers_requests_screen.dart';
+import '../../../../review_data_screen/business_logic/review_data_cubit.dart';
 import '../../../../review_data_screen/presentation/mobile/screen/review_data_screen_mobile.dart';
 import '../../../../withdrawn_customers_screen/presentation/mobile/screen/withdrawn_customers_screen_mobile.dart';
 
@@ -32,7 +35,7 @@ class HomeScreenMobile extends StatefulWidget {
 
 class _HomeScreenMobileState extends State<HomeScreenMobile> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-  int _currentIndex = 0;
+  int _currentIndex = 1;
   late PageController pageController;
 
   @override
@@ -65,10 +68,13 @@ class _HomeScreenMobileState extends State<HomeScreenMobile> {
         textDirection: TextDirection.ltr,
         child: Scaffold(
           key: _scaffoldKey,
-          drawer: DrawerWidget(
-            pageController: pageController,
+          drawer: BlocProvider.value(
+            value: getIt<LoginCubit>(),
+            child: DrawerWidget(
+              pageController: pageController,
+            ),
           ),
-          body: PageView(
+          body: _currentIndex == 0 ? PageView(
             controller: pageController,
             onPageChanged: _onItemTapped,
             physics: const NeverScrollableScrollPhysics(),
@@ -101,15 +107,21 @@ class _HomeScreenMobileState extends State<HomeScreenMobile> {
                 value: getIt<CollectorsCubit>(),
                 child: const CollectorsScreenMobile(),
               ),
-              const HistoryOperationsMobileScreen(),
-              const ReviewDataScreenMobile(),
+              BlocProvider.value(
+                value: getIt<HistoryOperationsCubit>(),
+                child: const HistoryOperationsMobileScreen(),
+              ),
+              BlocProvider.value(
+                value: getIt<ReviewDataCubit>(),
+                child: const ReviewDataScreenMobile(),
+              ),
               BlocProvider.value(
                 value: getIt<CollectorsRequestsCubit>(),
                 child: const ResellersRequestsScreen(),
               ),
               const Center(child: Text('HomeScreen')),
             ],
-          ),
+          ) : const Center(child: Text('HomeScreen')),
           bottomNavigationBar: Directionality(
             textDirection: TextDirection.ltr,
             child: BottomNavigationBar(

@@ -28,35 +28,37 @@ class CardForTotalInvoice extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Padding(
-                padding: EdgeInsets.symmetric(
-                    horizontal: dimension.width10,
-                    vertical: dimension.height10),
-                child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SvgPicture.asset("assets/icons/mail_icon.svg"),
-                      verticalSpace(dimension.height20),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          DefaultText(
-                            text: infoText,
-                            color: ColorsManager.darkBlack,
-                            fontSize: dimension.width15,
-                            fontWeight: FontWeight.w700,
-                          ),
-                          DefaultText(
-                            text: titleText,
-                            color: ColorsManager.lightGray,
-                            fontSize: dimension.width10,
-                            fontWeight: FontWeight.w700,
-                          )
-                        ],
-                      ),
-                    ]),
+              Expanded(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(
+                      horizontal: dimension.width10,
+                      vertical: dimension.height10),
+                  child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SvgPicture.asset("assets/icons/mail_icon.svg"),
+                        verticalSpace(dimension.height20),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            DefaultText(
+                              text: infoText,
+                              color: ColorsManager.darkBlack,
+                              fontSize: dimension.width15,
+                              fontWeight: FontWeight.w700,
+                            ),
+                            DefaultText(
+                              text: titleText,
+                              color: ColorsManager.lightGray,
+                              fontSize: dimension.width10,
+                              fontWeight: FontWeight.w700,
+                            )
+                          ],
+                        ),
+                      ],),
+                ),
               ),
-              SvgPicture.asset('assets/icons/decorate_icon.svg'),
+              Expanded(child: SvgPicture.asset('assets/icons/decorate_icon.svg')),
             ],
           ),
         ),

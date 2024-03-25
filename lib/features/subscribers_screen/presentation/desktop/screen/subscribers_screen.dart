@@ -6,6 +6,8 @@ import 'package:system/core/helpers/dimensions.dart';
 import 'package:system/core/helpers/spacing.dart';
 import 'package:system/core/theming/colors.dart';
 import 'package:system/core/widgets/button_with_text_and_image.dart';
+import 'package:system/core/widgets/default_text.dart';
+import 'package:system/core/widgets/drop_down_button.dart';
 import 'package:system/core/widgets/home_widget.dart';
 import 'package:system/core/widgets/info_widget.dart';
 import 'package:system/core/widgets/screen_title_widget.dart';
@@ -16,6 +18,7 @@ import 'package:system/features/subscribers_screen/business_logic/subscribers_st
 import 'package:system/features/subscribers_screen/data/models/get_active_subscribers_request_body.dart';
 import 'package:system/features/subscribers_screen/presentation/desktop/widgets/add_subsciber_widget.dart';
 import 'package:system/features/subscribers_screen/presentation/desktop/widgets/create_excel.dart';
+import '../../../../../core/widgets/muilti_drop_down_button.dart';
 import '../widgets/bloc_listener.dart';
 import '../widgets/subscribers_card.dart';
 import '../widgets/subscribers_header_widget.dart';
@@ -27,7 +30,8 @@ class SubscribersScreen extends StatefulWidget {
   State<SubscribersScreen> createState() => _SubscribersScreenState();
 }
 
-class _SubscribersScreenState extends State<SubscribersScreen> with AutomaticKeepAliveClientMixin {
+class _SubscribersScreenState extends State<SubscribersScreen>
+    with AutomaticKeepAliveClientMixin {
   @override
   bool get wantKeepAlive => true;
   TextEditingController searchController = TextEditingController();
@@ -40,6 +44,7 @@ class _SubscribersScreenState extends State<SubscribersScreen> with AutomaticKee
       getActiveSubscribersRequestBody: GetActiveSubscribersRequestBody(),
     );
   }
+
   SubscribersCubit? _subscribersCubit;
 
   @override
@@ -60,6 +65,11 @@ class _SubscribersScreenState extends State<SubscribersScreen> with AutomaticKee
     super.dispose();
   }
 
+  bool visible = false;
+
+  List<String> lineTypeList = ["جديد", "محول"];
+  String lineType = "جديد";
+
   @override
   Widget build(BuildContext context) {
     super.build(context);
@@ -71,128 +81,215 @@ class _SubscribersScreenState extends State<SubscribersScreen> with AutomaticKee
       child: Padding(
         padding: EdgeInsets.symmetric(
             horizontal: dimension.width30, vertical: dimension.height10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const ScreenTitleWidget(
-              coloredTitle: 'العملاء',
-              title: 'المشتركين',
-            ),
-            verticalSpace(dimension.height5),
-            HomeWidget(
-              horizontal: dimension.width10,
-              vertical: dimension.height10,
-              height: MediaQuery.of(context).size.height * .72,
-              width: MediaQuery.of(context).size.width,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      SearchWithFilterButtonWidget(
-                        onTap: () {
-
-                        },
-                        searchController: searchController,
-                        onChange: (value) {
-                          SubscribersCubit.get(context).getActiveSubscribers(
-                            getActiveSubscribersRequestBody: GetActiveSubscribersRequestBody(
-                              name: value
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const ScreenTitleWidget(
+                coloredTitle: 'العملاء',
+                title: 'المشتركين',
+              ),
+              verticalSpace(dimension.height5),
+              HomeWidget(
+                horizontal: dimension.width10,
+                vertical: dimension.height10,
+                height: MediaQuery.of(context).size.height * .72,
+                width: MediaQuery.of(context).size.width,
+                child: Stack(
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            SearchWithFilterButtonWidget(
+                              onTap: () {
+                                setState(() {
+                                  visible = !visible;
+                                });
+                              },
+                              searchController: searchController,
+                              onChange: (value) {
+                                SubscribersCubit.get(context)
+                                    .getActiveSubscribers(
+                                  getActiveSubscribersRequestBody:
+                                      GetActiveSubscribersRequestBody(
+                                          name: value),
+                                );
+                              },
                             ),
-                          );
-                        },
-                      ),
-                      Row(
-                        children: [
-                          CacheHelper.getdata(key: "accountType") == "ادمن"
-                              ? ButtonWithTextAndImageWidget(
+                            Row(
+                              children: [
+                                CacheHelper.getdata(key: "accountType") ==
+                                        "ادمن"
+                                    ? ButtonWithTextAndImageWidget(
+                                        onPressed: () {
+                                          createExcelForActiveSubscribers(
+                                              data:
+                                                  SubscribersCubit.get(context)
+                                                      .subscribers);
+                                        },
+                                        color: const Color(0xffebf5f6),
+                                        image: 'assets/icons/excel.svg',
+                                        text: "تنزيل اكسيل",
+                                      )
+                                    : const SizedBox.shrink(),
+                                CacheHelper.getdata(key: "accountType") ==
+                                        "ادمن"
+                                    ? horizontalSpace(dimension.width10)
+                                    : const SizedBox.shrink(),
+                                ButtonWithTextAndImageWidget(
                                   onPressed: () {
-                                    createExcelForActiveSubscribers(
-                                      data: SubscribersCubit.get(context).subscribers
+                                    showDataAlert(
+                                      context: context,
+                                      child: BlocProvider.value(
+                                        value: getIt<SubscribersCubit>(),
+                                        child: const AddSubscriberWidget(),
+                                      ),
                                     );
                                   },
                                   color: const Color(0xffebf5f6),
-                                  image: 'assets/icons/excel.svg',
-                                  text: "تنزيل اكسيل",
-                                )
-                              : const SizedBox.shrink(),
-                          CacheHelper.getdata(key: "accountType") == "ادمن"
-                              ? horizontalSpace(dimension.width10)
-                              : const SizedBox.shrink(),
-                          ButtonWithTextAndImageWidget(
-                            onPressed: () {
-                              showDataAlert(
-                                context: context,
-                                child: BlocProvider.value(
-                                  value: getIt<SubscribersCubit>(),
-                                  child: const AddSubscriberWidget(),
+                                  text: "+ اضافة مشترك",
                                 ),
-                              );
-                            },
-                            color: const Color(0xffebf5f6),
-                            text: "+ اضافة مشترك",
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                  verticalSpace(dimension.height10),
-                  const SubscribersHeaderWidget(),
-                  BlocBuilder<SubscribersCubit, SubscribersState>(
-                    builder: (context, state) {
-                      return Expanded(
-                        child: ListView.builder(
-                          itemBuilder: (context, index) {
-                            return SubscribersCard(
-                              subscriber: SubscribersCubit.get(context)
-                                  .subscribers[index],
+                              ],
+                            ),
+                          ],
+                        ),
+                        verticalSpace(dimension.height10),
+                        const SubscribersHeaderWidget(),
+                        BlocBuilder<SubscribersCubit, SubscribersState>(
+                          builder: (context, state) {
+                            return Expanded(
+                              child: ListView.builder(
+                                itemBuilder: (context, index) {
+                                  return SubscribersCard(
+                                    subscriber: SubscribersCubit.get(context)
+                                        .subscribers[index],
+                                  );
+                                },
+                                itemCount: SubscribersCubit.get(context)
+                                    .subscribers
+                                    .length,
+                              ),
                             );
                           },
-                          itemCount:
-                              SubscribersCubit.get(context).subscribers.length,
                         ),
-                      );
-                    },
-                  ),
-                  const BlocListenerForSubscribersCubit(),
-                  verticalSpace(dimension.height10),
-                  Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: dimension.width10,
-                    ),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        const Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [],
-                        ),
+                        const BlocListenerForSubscribersCubit(),
+                        verticalSpace(dimension.height10),
                         Container(
                           padding: EdgeInsets.symmetric(
-                              horizontal: dimension.width10,
-                              vertical: dimension.height5),
+                            horizontal: dimension.width10,
+                          ),
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              InfoWidget(
-                                color: const Color(0xffA92087),
-                                text: 'خط محول',
-                                textColor: const Color(0xFF969AB0),
+                              const Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [],
                               ),
-                              horizontalSpace(dimension.width5),
+                              Container(
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: dimension.width10,
+                                    vertical: dimension.height5),
+                                child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    InfoWidget(
+                                      color: const Color(0xffA92087),
+                                      text: 'خط محول',
+                                      textColor: const Color(0xFF969AB0),
+                                    ),
+                                    horizontalSpace(dimension.width5),
+                                  ],
+                                ),
+                              )
                             ],
                           ),
-                        )
+                        ),
                       ],
                     ),
-                  ),
-                ],
-              ),
-            )
-          ],
+                    Positioned(
+                      top: dimension.height45,
+                      right: dimension.width200,
+                      child: Visibility(
+                        visible: visible,
+                        child: Stack(
+                          children: [
+                            Container(
+                              padding: EdgeInsets.symmetric(
+                                vertical: dimension.height10,
+                                horizontal: dimension.width10,
+                              ),
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(12)),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      MultiDropDownButton(
+                                        items: lineTypeList,
+                                        mainList: lineTypeList,
+                                        title:'نوع الخط',
+                                        hintText: 'نوع الخط',
+                                        onMenuStateChange:(isOpen) {
+                                          // print(selectAllCenters);
+                                          // selectedCenters
+                                          //     .remove('اختر الكل');
+                                          // if (!isOpen) {
+                                          //   textEditingController
+                                          //       .clear();
+                                          // }
+                                        },
+                                        searchText: "نوع الخط",
+                                        selectedList: [],
+                                        textEditingController: TextEditingController(),
+                                      ),
+                                      buildDropdown(
+                                        hintText: 'نوع الخط',
+                                        labelText: '',
+                                        itemList: lineTypeList,
+                                        selectedValue: lineType,
+                                        onChanged: (value) {
+                                          setState(() {
+                                            lineType = value!;
+                                          });
+                                        },
+                                        context: context,
+                                      ),
+                                      horizontalSpace(dimension.width10),
+                                      buildDropdown(
+                                        labelText: '',
+                                        itemList: lineTypeList,
+                                        selectedValue: lineType,
+                                        onChanged: (value) {
+                                          setState(() {
+                                            lineType = value!;
+                                          });
+                                        },
+                                        context: context,
+                                      ),
+                                    ],
+                                  ),
+                                  // verticalSpace(dimension.height5),
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

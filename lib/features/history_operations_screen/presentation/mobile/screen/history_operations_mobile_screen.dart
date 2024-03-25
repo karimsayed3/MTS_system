@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:system/core/widgets/custom_search_widget.dart';
 import 'package:system/core/widgets/title_of_screen_with_logo_widget.dart';
+import 'package:system/features/history_operations_screen/presentation/desktop/widgets/bloc_listener_for_history_operations_cubit.dart';
 
 import '../../../../../core/theming/colors.dart';
+import '../../../business_logic/history_operations_cubit.dart';
+import '../../../data/models/get_logged_operations_request_body.dart';
 import '../widgets/history_operations_card_widget_mobile.dart';
 import '../widgets/history_operations_header_mobile.dart';
 
@@ -15,6 +18,17 @@ class HistoryOperationsMobileScreen extends StatefulWidget {
 }
 
 class _HistoryOperationsMobileScreenState extends State<HistoryOperationsMobileScreen> {
+
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    HistoryOperationsCubit.get(context).loggedOperations = [];
+    HistoryOperationsCubit.get(context).getLoggedOperations(
+        getLoggedOperationsRequestBody: GetLoggedOperationsRequestBody()
+    );
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -56,12 +70,15 @@ class _HistoryOperationsMobileScreenState extends State<HistoryOperationsMobileS
                     Expanded(
                       child: ListView.builder(
                         itemBuilder: (context, index) {
-                          return const HistoryOperationsCardWidgetMobile();
+                          return HistoryOperationsCardWidgetMobile(
+                            loggedOperation: HistoryOperationsCubit.get(context).loggedOperations[index],
+                          );
                           // return const SizedBox.shrink();
                         },
-                        itemCount: 20,
+                        itemCount: HistoryOperationsCubit.get(context).loggedOperations.length,
                       ),
                     ),
+                    const BlocListenerForHistoryOperationsCubit(),
                   ],
                 ),
               ),

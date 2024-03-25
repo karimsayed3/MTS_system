@@ -46,91 +46,93 @@ class _WithdrawnCustomersScreenState extends State<WithdrawnCustomersScreen> {
       child: Padding(
         padding: EdgeInsets.symmetric(
             horizontal: dimension.width30, vertical: dimension.height10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const ScreenTitleWidget(
-              coloredTitle: 'العملاء',
-              title: 'المسحوبين',
-            ),
-            verticalSpace(dimension.height5),
-            HomeWidget(
-              horizontal: dimension.width10,
-              vertical: dimension.height10,
-              height: MediaQuery.of(context).size.height * .72,
-              width: MediaQuery.of(context).size.width,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      // const SubscribersSearchWidget(),
-                      SearchWithFilterButtonWidget(
-                        onTap: () {},
-                        searchController: searchController,
-                        onChange: (value) {
-                          SubscribersCubit.get(context).getWithdrawnSubscribers(
-                            getWithdrawnSubscribersRequestBody:
-                                GetWithdrawnSubscribersRequestBody(name: value),
-                          );
-                        },
-                      ),
-                      ButtonWithTextAndImageWidget(
-                        onPressed: () {
-                          createExcelForWithdrawnSubscribers(
-                            data: SubscribersCubit.get(context)
-                                .withdrawSubscribers,
-                          );
-                        },
-                        color: const Color(0xffebf5f6),
-                        image: 'assets/icons/excel.svg',
-                        text: "تنزيل اكسيل",
-                      ),
-                    ],
-                  ),
-                  verticalSpace(dimension.height10),
-                  const WithdrawnCustomersHeaderWidget(),
-                  BlocBuilder<SubscribersCubit, SubscribersState>(
-                    builder: (context, state) {
-                      return Expanded(
-                        child: ListView.builder(
-                          itemBuilder: (context, index) {
-                            return WithdrawnCustomersCard(
-                              subscriberData: SubscribersCubit.get(context)
-                                  .withdrawSubscribers[index],
-                            );
-                          },
-                          itemCount: SubscribersCubit.get(context)
-                              .withdrawSubscribers
-                              .length,
-                        ),
-                      );
-                    },
-                  ),
-                  const BlocListenerForSubscribersCubit(),
-                  verticalSpace(dimension.height10),
-                  Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: dimension.width10,
-                    ),
-                    child: const Row(
+        child:  SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const ScreenTitleWidget(
+                coloredTitle: 'العملاء',
+                title: 'المسحوبين',
+              ),
+              verticalSpace(dimension.height5),
+              HomeWidget(
+                horizontal: dimension.width10,
+                vertical: dimension.height10,
+                height: MediaQuery.of(context).size.height * .72,
+                width: MediaQuery.of(context).size.width,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [],
+                        // const SubscribersSearchWidget(),
+                        SearchWithFilterButtonWidget(
+                          onTap: () {},
+                          searchController: searchController,
+                          onChange: (value) {
+                            SubscribersCubit.get(context).getWithdrawnSubscribers(
+                              getWithdrawnSubscribersRequestBody:
+                                  GetWithdrawnSubscribersRequestBody(name: value),
+                            );
+                          },
                         ),
-                        // LateCustomersInformationWidget(),
+                        ButtonWithTextAndImageWidget(
+                          onPressed: () {
+                            createExcelForWithdrawnSubscribers(
+                              data: SubscribersCubit.get(context)
+                                  .withdrawSubscribers,
+                            );
+                          },
+                          color: const Color(0xffebf5f6),
+                          image: 'assets/icons/excel.svg',
+                          text: "تنزيل اكسيل",
+                        ),
                       ],
                     ),
-                  ),
-                ],
-              ),
-            )
-          ],
+                    verticalSpace(dimension.height10),
+                    const WithdrawnCustomersHeaderWidget(),
+                    BlocBuilder<SubscribersCubit, SubscribersState>(
+                      builder: (context, state) {
+                        return Expanded(
+                          child: ListView.builder(
+                            itemBuilder: (context, index) {
+                              return WithdrawnCustomersCard(
+                                subscriberData: SubscribersCubit.get(context)
+                                    .withdrawSubscribers[index],
+                              );
+                            },
+                            itemCount: SubscribersCubit.get(context)
+                                .withdrawSubscribers
+                                .length,
+                          ),
+                        );
+                      },
+                    ),
+                    const BlocListenerForSubscribersCubit(),
+                    verticalSpace(dimension.height10),
+                    Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: dimension.width10,
+                      ),
+                      child: const Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [],
+                          ),
+                          // LateCustomersInformationWidget(),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

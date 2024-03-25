@@ -4,10 +4,14 @@ import 'package:system/core/networking/web_services.dart';
 import 'package:system/features/bunches_screen/business_logic/bunch_cubit.dart';
 import 'package:system/features/companies_screen/business_logic/companies_cubit.dart';
 import 'package:system/features/companies_screen/data/repository/companies_repo.dart';
+import 'package:system/features/history_operations_screen/business_logic/history_operations_cubit.dart';
+import 'package:system/features/history_operations_screen/data/repository/history_operations_repository.dart';
 import 'package:system/features/login_screen/business_logic/login_cubit.dart';
 import 'package:system/features/login_screen/data/repository/login_repo.dart';
 import 'package:system/features/resellers_requests_screen/business_logic/collectors_requests_cubit.dart';
 import 'package:system/features/resellers_requests_screen/data/repository/collectors_requests_repository.dart';
+import 'package:system/features/review_data_screen/business_logic/review_data_cubit.dart';
+import 'package:system/features/review_data_screen/data/repository/review_data_repository.dart';
 import 'package:system/features/subscribers_screen/business_logic/subscribers_cubit.dart';
 import 'package:system/features/subscribers_screen/data/repository/subscribers_repository.dart';
 
@@ -44,6 +48,12 @@ Future<void> setupGetIt() async {
 
   getIt.registerLazySingleton<CollectorsRequestsCubit>(() => CollectorsRequestsCubit(getIt()));
   getIt.registerFactory<CollectorRequestsRepository>(() => CollectorRequestsRepository(getIt()));
+
+  getIt.registerLazySingleton<ReviewDataCubit>(() => ReviewDataCubit(getIt()));
+  getIt.registerFactory<ReviewDataRepository>(() => ReviewDataRepository(getIt()));
+
+  getIt.registerLazySingleton<HistoryOperationsCubit>(() => HistoryOperationsCubit(getIt()));
+  getIt.registerFactory<HistoryOperationsRepo>(() => HistoryOperationsRepo(getIt()));
 
   //  // signup
   // getIt.registerLazySingleton<SignupRepo>(() => SignupRepo(getIt()));

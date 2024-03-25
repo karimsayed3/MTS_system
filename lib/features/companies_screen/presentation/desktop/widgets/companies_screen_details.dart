@@ -73,99 +73,101 @@ class _CompaniesScreenDetailsState extends State<CompaniesScreenDetails>
       child: Padding(
         padding: EdgeInsets.symmetric(
             horizontal: dimension.width30, vertical: dimension.height10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            DefaultText(
-              text: 'الشركات',
-              fontSize: dimension.reduce20,
-              fontWeight: FontWeight.w400,
-            ),
-            verticalSpace(dimension.height5),
-            HomeWidget(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      CompaniesSearchWidget(
-                        searchController:
-                            CompaniesCubit.get(context).searchController,
-                        onChange: (value) {
-                          CompaniesCubit.get(context).getCompanies(
-                            getCompaniesRequestBody: GetCompaniesRequestBody(
-                              companyName: value,
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              DefaultText(
+                text: 'الشركات',
+                fontSize: dimension.reduce20,
+                fontWeight: FontWeight.w400,
+              ),
+              verticalSpace(dimension.height5),
+              HomeWidget(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        CompaniesSearchWidget(
+                          searchController:
+                              CompaniesCubit.get(context).searchController,
+                          onChange: (value) {
+                            CompaniesCubit.get(context).getCompanies(
+                              getCompaniesRequestBody: GetCompaniesRequestBody(
+                                companyName: value,
+                              )
+                            );
+                          }
+                        ),
+                        const AddCompanyButton(),
+                      ],
+                    ),
+                    BlocBuilder<CompaniesCubit, CompaniesState>(
+                      builder: (context, state) {
+                        if (CompaniesCubit.get(context).companiesData.isEmpty) {
+                          return const Expanded(
+                            child: NoDataWidget(
+                              child: AddCompanyButton(),
                             )
+                            // child: Center(
+                            //   child: Column(
+                            //     crossAxisAlignment: CrossAxisAlignment.center,
+                            //     mainAxisAlignment: MainAxisAlignment.center,
+                            //     children: [
+                            //       SvgPicture.asset(
+                            //         'assets/icons/no_data.svg',
+                            //         fit: BoxFit.contain,
+                            //       ),
+                            //       verticalSpace(dimension.height10),
+                            //       DefaultText(
+                            //         text: 'لا توجد بيانات متاحة للعرض حتي الان',
+                            //         fontSize: dimension.reduce20,
+                            //         fontWeight: FontWeight.w400,
+                            //         color: ColorsManager.darkBlack,
+                            //       ),
+                            //       verticalSpace(dimension.height10),
+                            //       SizedBox(width: dimension.width125,child: const AddCompanyButton()),
+                            //     ],
+                            //   ),
+                            // ),
                           );
                         }
-                      ),
-                      const AddCompanyButton(),
-                    ],
-                  ),
-                  BlocBuilder<CompaniesCubit, CompaniesState>(
-                    builder: (context, state) {
-                      if (CompaniesCubit.get(context).companiesData.isEmpty) {
-                        return const Expanded(
-                          child: NoDataWidget(
-                            child: AddCompanyButton(),
-                          )
-                          // child: Center(
-                          //   child: Column(
-                          //     crossAxisAlignment: CrossAxisAlignment.center,
-                          //     mainAxisAlignment: MainAxisAlignment.center,
-                          //     children: [
-                          //       SvgPicture.asset(
-                          //         'assets/icons/no_data.svg',
-                          //         fit: BoxFit.contain,
-                          //       ),
-                          //       verticalSpace(dimension.height10),
-                          //       DefaultText(
-                          //         text: 'لا توجد بيانات متاحة للعرض حتي الان',
-                          //         fontSize: dimension.reduce20,
-                          //         fontWeight: FontWeight.w400,
-                          //         color: ColorsManager.darkBlack,
-                          //       ),
-                          //       verticalSpace(dimension.height10),
-                          //       SizedBox(width: dimension.width125,child: const AddCompanyButton()),
-                          //     ],
-                          //   ),
-                          // ),
-                        );
-                      }
-                      else
-                      {
-                        return Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              verticalSpace(dimension.height10),
-                              const CompaniesHeaderWidget(),
-                              Expanded(
-                                child: ListView.builder(
-                                  itemBuilder: (context, index) {
-                                    return CompaniesCard(
-                                      companyData: CompaniesCubit.get(context)
-                                          .companiesData[index],
-                                    );
-                                  },
-                                  itemCount: CompaniesCubit.get(context)
-                                      .companiesData
-                                      .length,
+                        else
+                        {
+                          return Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                verticalSpace(dimension.height10),
+                                const CompaniesHeaderWidget(),
+                                Expanded(
+                                  child: ListView.builder(
+                                    itemBuilder: (context, index) {
+                                      return CompaniesCard(
+                                        companyData: CompaniesCubit.get(context)
+                                            .companiesData[index],
+                                      );
+                                    },
+                                    itemCount: CompaniesCubit.get(context)
+                                        .companiesData
+                                        .length,
+                                  ),
                                 ),
-                              ),
-                            ],
-                          ),
-                        );
-                      }
-                    },
-                  ),
-                ],
+                              ],
+                            ),
+                          );
+                        }
+                      },
+                    ),
+                  ],
+                ),
               ),
-            ),
-            const BlocListenerForCompaniesCubit(),
-          ],
+              const BlocListenerForCompaniesCubit(),
+            ],
+          ),
         ),
       ),
     );

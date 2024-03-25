@@ -73,91 +73,93 @@ class _LateCustomersScreenState extends State<LateCustomersScreen>
       child: Padding(
         padding: EdgeInsets.symmetric(
             horizontal: dimension.width30, vertical: dimension.height10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const ScreenTitleWidget(
-              coloredTitle: 'العملاء',
-              title: 'المتأخرين',
-            ),
-            verticalSpace(dimension.height5),
-            HomeWidget(
-              horizontal: dimension.width10,
-              vertical: dimension.height10,
-              height: MediaQuery.of(context).size.height * .72,
-              width: MediaQuery.of(context).size.width,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      // const SubscribersSearchWidget(),
-                      SearchWithFilterButtonWidget(
-                        onTap: () {},
-                        searchController: searchController,
-                        onChange: (value) {
-                          SubscribersCubit.get(context).getLateSubscribers(
-                            getLateSubscribersRequestBody:
-                                GetLateSubscribersRequestBody(
-                              name: value,
-                            ),
-                          );
-                        },
-                      ),
-                      ButtonWithTextAndImageWidget(
-                        onPressed: () {
-                          createExcelForLateSubscribers(
-                            data: SubscribersCubit.get(context).lateSubscribers,
-                          );
-                        },
-                        color: const Color(0xffebf5f6),
-                        image: 'assets/icons/excel.svg',
-                        text: "تنزيل اكسيل",
-                      ),
-                    ],
-                  ),
-                  verticalSpace(dimension.height10),
-                  const LateCustomersHeaderWidget(),
-                  BlocBuilder<SubscribersCubit, SubscribersState>(
-                    builder: (context, state) {
-                      return Expanded(
-                        child: ListView.builder(
-                          itemBuilder: (context, index) {
-                            return LateCustomersCard(
-                                subscriber: SubscribersCubit.get(context)
-                                    .lateSubscribers[index]);
-                          },
-                          itemCount: SubscribersCubit.get(context)
-                              .lateSubscribers
-                              .length,
-                        ),
-                      );
-                    },
-                  ),
-                  const BlocListenerForSubscribersCubit(),
-                  verticalSpace(dimension.height10),
-                  Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: dimension.width10,
-                    ),
-                    child: const Row(
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const ScreenTitleWidget(
+                coloredTitle: 'العملاء',
+                title: 'المتأخرين',
+              ),
+              verticalSpace(dimension.height5),
+              HomeWidget(
+                horizontal: dimension.width10,
+                vertical: dimension.height10,
+                height: MediaQuery.of(context).size.height * .72,
+                width: MediaQuery.of(context).size.width,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [],
+                        // const SubscribersSearchWidget(),
+                        SearchWithFilterButtonWidget(
+                          onTap: () {},
+                          searchController: searchController,
+                          onChange: (value) {
+                            SubscribersCubit.get(context).getLateSubscribers(
+                              getLateSubscribersRequestBody:
+                                  GetLateSubscribersRequestBody(
+                                name: value,
+                              ),
+                            );
+                          },
                         ),
-                        LateCustomersInformationWidget(),
+                        ButtonWithTextAndImageWidget(
+                          onPressed: () {
+                            createExcelForLateSubscribers(
+                              data: SubscribersCubit.get(context).lateSubscribers,
+                            );
+                          },
+                          color: const Color(0xffebf5f6),
+                          image: 'assets/icons/excel.svg',
+                          text: "تنزيل اكسيل",
+                        ),
                       ],
                     ),
-                  ),
-                ],
-              ),
-            )
-          ],
+                    verticalSpace(dimension.height10),
+                    const LateCustomersHeaderWidget(),
+                    BlocBuilder<SubscribersCubit, SubscribersState>(
+                      builder: (context, state) {
+                        return Expanded(
+                          child: ListView.builder(
+                            itemBuilder: (context, index) {
+                              return LateCustomersCard(
+                                  subscriber: SubscribersCubit.get(context)
+                                      .lateSubscribers[index]);
+                            },
+                            itemCount: SubscribersCubit.get(context)
+                                .lateSubscribers
+                                .length,
+                          ),
+                        );
+                      },
+                    ),
+                    const BlocListenerForSubscribersCubit(),
+                    verticalSpace(dimension.height10),
+                    Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: dimension.width10,
+                      ),
+                      child: const Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [],
+                          ),
+                          LateCustomersInformationWidget(),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

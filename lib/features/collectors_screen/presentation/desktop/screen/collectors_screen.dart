@@ -9,6 +9,7 @@ import 'package:system/features/collectors_screen/presentation/desktop/widgets/c
 import 'package:system/features/resellers_requests_screen/business_logic/collectors_requests_cubit.dart';
 import 'package:system/features/resellers_requests_screen/data/models/get_collector_requests_request_body.dart';
 
+import '../../../../../core/helpers/cache_helper.dart';
 import '../../../../resellers_requests_screen/presentation/desktop/screen/resellers_requests_screen_desktop.dart';
 import '../../../business_logic/collectors_cubit.dart';
 
@@ -22,7 +23,7 @@ class CollectorsScreen extends StatefulWidget {
 class _CollectorsScreenState extends State<CollectorsScreen> {
   int index = 0;
 
-  List<Widget> body = [
+  List<Widget> body = CacheHelper.getdata(key: "accountType") == "ادمن" ?[
     BlocProvider.value(
       value: getIt<CollectorsCubit>(),
       child: const CollectorsScreenDetails(),
@@ -30,6 +31,11 @@ class _CollectorsScreenState extends State<CollectorsScreen> {
     BlocProvider.value(
       value: getIt<CollectorsRequestsCubit>(),
       child: const ResellersRequestsScreenDesktop(),
+    ),
+  ]:[
+    BlocProvider.value(
+      value: getIt<CollectorsCubit>(),
+      child: const CollectorsScreenDetails(),
     ),
   ];
 

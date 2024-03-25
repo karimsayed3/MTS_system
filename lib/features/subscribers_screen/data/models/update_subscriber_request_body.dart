@@ -2,7 +2,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'update_subscriber_request_body.g.dart';
 @JsonSerializable()
 class UpdateSubscriberRequestBody {
-  String? phone;
+  String? phoneNo;
+  String? oldPhone;
   String? name;
   @JsonKey(name: "NID")
   String? nID;
@@ -16,7 +17,8 @@ class UpdateSubscriberRequestBody {
   String? offer;
 
   UpdateSubscriberRequestBody(
-      {this.phone,
+      {this.phoneNo,
+        this.oldPhone,
         this.name,
         this.nID,
         this.email,

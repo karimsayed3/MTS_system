@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:system/features/history_operations_screen/data/models/get_logged_operations_response.dart';
 
 import '../../../../../core/theming/colors.dart';
 import '../../../../../core/widgets/default_text.dart';
 
 class HistoryOperationsCardWidgetMobile extends StatelessWidget {
-  const HistoryOperationsCardWidgetMobile({super.key});
+  const HistoryOperationsCardWidgetMobile({super.key, required this.loggedOperation});
+  final LoggedOperation loggedOperation;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +31,7 @@ class HistoryOperationsCardWidgetMobile extends StatelessWidget {
           SizedBox(
             width: 120.w,
             child: DefaultText(
-              text: 'ابو خديجة',
+              text: loggedOperation.subscriberName ?? '',
               fontSize: 16.sp,
               fontWeight: FontWeight.w400,
             ),
@@ -38,7 +40,7 @@ class HistoryOperationsCardWidgetMobile extends StatelessWidget {
           SizedBox(
             width: 110.w,
             child:  DefaultText(
-              text: '01156788394',
+              text: loggedOperation.phoneNo ?? '',
               color: ColorsManager.secondaryColor,
               fontSize: 16.sp,
               fontWeight: FontWeight.w400,
@@ -48,7 +50,7 @@ class HistoryOperationsCardWidgetMobile extends StatelessWidget {
           SizedBox(
             width: 130.w,
             child: DefaultText(
-              text: 'اضافة رصيد',
+              text: loggedOperation.operationType ?? '',
               color: ColorsManager.orangeColor,
               fontSize: 16.sp,
               fontWeight: FontWeight.w400,

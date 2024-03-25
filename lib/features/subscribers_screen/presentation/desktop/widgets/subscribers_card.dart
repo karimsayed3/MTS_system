@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:system/core/di/dependency_injection.dart';
+import 'package:system/core/helpers/cache_helper.dart';
 import 'package:system/core/helpers/convert_string_to_date.dart';
 import 'package:system/core/helpers/dimensions.dart';
 import 'package:system/core/helpers/spacing.dart';
@@ -69,8 +70,8 @@ class SubscribersCard extends StatelessWidget {
               fontWeight: FontWeight.w400,
             ),
           ),
-          const Spacer(),
-          SizedBox(
+          CacheHelper.getdata(key: 'accountType')  == "ادمن"?  const Spacer() : SizedBox.shrink(),
+          CacheHelper.getdata(key: 'accountType')  == "ادمن"?    SizedBox(
             width: dimension.width150,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -99,7 +100,7 @@ class SubscribersCard extends StatelessWidget {
                 ),
               ],
             ),
-          ),
+          ): SizedBox.shrink(),
           const Spacer(),
           SizedBox(
             width: dimension.width80,
@@ -220,64 +221,69 @@ class SubscribersCard extends StatelessWidget {
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    DefaultButton(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: dimension.width15,
-                          vertical: dimension.height5),
-                      color: ColorsManager.lightBlueColor,
-                      onPressed: () {
-                        showDataAlert(
-                          context: context,
-                          child: MakeZeroWidget(
-                            onPressed: () {
-                              SubscribersCubit.get(context)
-                                  .zeroSubscriberBalance(
-                                zeroSubscriberBalanceRequestBody:
-                                    ZeroSubscriberBalanceRequestBody(
-                                  phone: subscriber.phoneNo,
-                                  collectingType: 'نقدى',
-                                ),
-                              );
-                            },
-                            subscriberName: subscriber.name ?? "",
-                          ),
-                        );
-                      },
-                      child: DefaultText(
-                        text: 'تصفير',
-                        color: Color(0xFFFFA800),
-                        fontWeight: FontWeight.w400,
-                        fontSize: dimension.width10,
+                    Expanded(
+                      child : DefaultButton(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: dimension.width15,
+                            vertical: dimension.height5),
+                        color: ColorsManager.lightBlueColor,
+                        onPressed: () {
+                          showDataAlert(
+                            context: context,
+                            child: MakeZeroWidget(
+                              onPressed: () {
+                                SubscribersCubit.get(context)
+                                    .zeroSubscriberBalance(
+                                  zeroSubscriberBalanceRequestBody:
+                                      ZeroSubscriberBalanceRequestBody(
+                                    phone: subscriber.phoneNo,
+                                    collectingType: 'نقدى',
+                                  ),
+                                );
+                              },
+                              subscriberName: subscriber.name ?? "",
+                            ),
+                          );
+                        },
+                        child: DefaultText(
+                          text: 'تصفير',
+                          color: Color(0xFFFFA800),
+                          fontWeight: FontWeight.w400,
+                          fontSize: dimension.width10,
+                        ),
                       ),
                     ),
                     horizontalSpace(dimension.width5),
-                    DefaultButton(
-                      color: Color(0xffebf5f6),
-                      padding: EdgeInsets.symmetric(
-                          horizontal: dimension.width15,
-                          vertical: dimension.height5),
-                      onPressed: () {
-                        showDataAlert(
-                          context: context,
-                          child: BlocProvider.value(
-                            value: getIt<SubscribersCubit>(),
-                            child: AddBalanceWidget(
-                              phone: subscriber.phoneNo ?? "",
-                              onPressed: () {},
-                              currentBalance: subscriber.balance!,
-                              dateOfLastAddedBalance: "",
-                              lastPositiveBalance:
-                                  subscriber.lastPositiveDepoit!,
-                              name: subscriber.name ?? "",
+                    Expanded(
+                      child : DefaultButton(
+                        color: Color(0xffebf5f6),
+                        padding: EdgeInsets.symmetric(
+                            horizontal: dimension.width15,
+                            vertical: dimension.height5),
+                        onPressed: () {
+                          showDataAlert(
+                            context: context,
+                            child: BlocProvider.value(
+                              value: getIt<SubscribersCubit>(),
+                              child: AddBalanceWidget(
+                                flag: "from subscriber",
+                                phone: subscriber.phoneNo ?? "",
+                                onPressed: () {},
+                                currentBalance: subscriber.balance!,
+                                dateOfLastAddedBalance: "",
+                                lastPositiveBalance:
+                                    subscriber.lastPositiveDepoit!,
+                                name: subscriber.name ?? "",
+                              ),
                             ),
-                          ),
-                        );
-                      },
-                      child: DefaultText(
-                        text: 'اضافة',
-                        color: ColorsManager.secondaryColor,
-                        fontSize: dimension.width10,
-                        fontWeight: FontWeight.w500,
+                          );
+                        },
+                        child: DefaultText(
+                          text: 'اضافة',
+                          color: ColorsManager.secondaryColor,
+                          fontSize: dimension.width10,
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
                     ),
                   ],

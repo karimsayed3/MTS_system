@@ -9,7 +9,8 @@ part of 'update_subscriber_request_body.dart';
 UpdateSubscriberRequestBody _$UpdateSubscriberRequestBodyFromJson(
         Map<String, dynamic> json) =>
     UpdateSubscriberRequestBody(
-      phone: json['phone'] as String?,
+      phoneNo: json['phoneNo'] as String?,
+      oldPhone: json['oldPhone'] as String?,
       name: json['name'] as String?,
       nID: json['NID'] as String?,
       email: json['email'] as String?,
@@ -25,7 +26,8 @@ UpdateSubscriberRequestBody _$UpdateSubscriberRequestBodyFromJson(
 Map<String, dynamic> _$UpdateSubscriberRequestBodyToJson(
         UpdateSubscriberRequestBody instance) =>
     <String, dynamic>{
-      'phone': instance.phone,
+      'phoneNo': instance.phoneNo,
+      'oldPhone': instance.oldPhone,
       'name': instance.name,
       'NID': instance.nID,
       'email': instance.email,

@@ -53,92 +53,94 @@ class _DisabledCustomersScreenState extends State<DisabledCustomersScreen>
       child: Padding(
         padding: EdgeInsets.symmetric(
             horizontal: dimension.width30, vertical: dimension.height10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const ScreenTitleWidget(
-              coloredTitle: 'العملاء',
-              title: 'المعطلين',
-            ),
-            verticalSpace(dimension.height5),
-            HomeWidget(
-              horizontal: dimension.width10,
-              vertical: dimension.height10,
-              height: MediaQuery.of(context).size.height * .72,
-              width: MediaQuery.of(context).size.width,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      // const SubscribersSearchWidget(),
-                      SearchWithFilterButtonWidget(
-                        onTap: () {},
-                        searchController: searchController,
-                        onChange: (value) {
-                          SubscribersCubit.get(context).getDisabledSubscribers(
-                              getDisabledSubscribersRequestBody:
-                                  GetDisabledSubscribersRequestBody(
-                                    name: value,
-                                  ));
-                        },
-                      ),
-                      ButtonWithTextAndImageWidget(
-                        onPressed: () {
-                          createExcelForDisabledSubscribers(
-                            data: SubscribersCubit.get(context)
-                                .disableSubscribers,
-                          );
-                        },
-                        color: const Color(0xffebf5f6),
-                        image: 'assets/icons/excel.svg',
-                        text: "تنزيل اكسيل",
-                      ),
-                    ],
-                  ),
-                  verticalSpace(dimension.height10),
-                  const DisabledCustomersHeaderWidget(),
-                  BlocBuilder<SubscribersCubit, SubscribersState>(
-                    builder: (context, state) {
-                      return Expanded(
-                        child: ListView.builder(
-                          itemBuilder: (context, index) {
-                            return DisabledCustomersCard(
-                              disabledSubscriber: SubscribersCubit.get(context)
-                                  .disableSubscribers[index],
-                            );
-                          },
-                          itemCount: SubscribersCubit.get(context)
-                              .disableSubscribers
-                              .length,
-                        ),
-                      );
-                    },
-                  ),
-                  const BlocListenerForSubscribersCubit(),
-                  verticalSpace(dimension.height10),
-                  Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: dimension.width10,
-                    ),
-                    child: const Row(
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const ScreenTitleWidget(
+                coloredTitle: 'العملاء',
+                title: 'المعطلين',
+              ),
+              verticalSpace(dimension.height5),
+              HomeWidget(
+                horizontal: dimension.width10,
+                vertical: dimension.height10,
+                height: MediaQuery.of(context).size.height * .72,
+                width: MediaQuery.of(context).size.width,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [],
+                        // const SubscribersSearchWidget(),
+                        SearchWithFilterButtonWidget(
+                          onTap: () {},
+                          searchController: searchController,
+                          onChange: (value) {
+                            SubscribersCubit.get(context).getDisabledSubscribers(
+                                getDisabledSubscribersRequestBody:
+                                    GetDisabledSubscribersRequestBody(
+                                      name: value,
+                                    ));
+                          },
                         ),
-                        // LateCustomersInformationWidget(),
+                        ButtonWithTextAndImageWidget(
+                          onPressed: () {
+                            createExcelForDisabledSubscribers(
+                              data: SubscribersCubit.get(context)
+                                  .disableSubscribers,
+                            );
+                          },
+                          color: const Color(0xffebf5f6),
+                          image: 'assets/icons/excel.svg',
+                          text: "تنزيل اكسيل",
+                        ),
                       ],
                     ),
-                  ),
-                ],
-              ),
-            )
-          ],
+                    verticalSpace(dimension.height10),
+                    const DisabledCustomersHeaderWidget(),
+                    BlocBuilder<SubscribersCubit, SubscribersState>(
+                      builder: (context, state) {
+                        return Expanded(
+                          child: ListView.builder(
+                            itemBuilder: (context, index) {
+                              return DisabledCustomersCard(
+                                disabledSubscriber: SubscribersCubit.get(context)
+                                    .disableSubscribers[index],
+                              );
+                            },
+                            itemCount: SubscribersCubit.get(context)
+                                .disableSubscribers
+                                .length,
+                          ),
+                        );
+                      },
+                    ),
+                    const BlocListenerForSubscribersCubit(),
+                    verticalSpace(dimension.height10),
+                    Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: dimension.width10,
+                      ),
+                      child: const Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [],
+                          ),
+                          // LateCustomersInformationWidget(),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

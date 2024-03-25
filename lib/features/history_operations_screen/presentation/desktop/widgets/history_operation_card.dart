@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:system/core/helpers/convert_string_to_date.dart';
 import 'package:system/core/helpers/dimensions.dart';
 import 'package:system/core/helpers/spacing.dart';
 import 'package:system/core/theming/colors.dart';
 import 'package:system/core/widgets/default_button.dart';
 import 'package:system/core/widgets/default_text.dart';
 
+import '../../../data/models/get_logged_operations_response.dart';
+
 class HistoryOperationCard extends StatelessWidget {
-  const HistoryOperationCard({super.key});
+  const HistoryOperationCard({super.key, required this.loggedOperation});
+  final LoggedOperation loggedOperation;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +31,7 @@ class HistoryOperationCard extends StatelessWidget {
           SizedBox(
             width: dimension.width150,
             child: DefaultText(
-              text: 'كريم سيد ابراهيم عبدالتواب',
+              text: loggedOperation.subscriberName ?? '',
               color: ColorsManager.darkBlack,
               fontSize: dimension.width10,
               fontWeight: FontWeight.w400,
@@ -37,7 +41,7 @@ class HistoryOperationCard extends StatelessWidget {
           SizedBox(
             width: dimension.width80,
             child: DefaultText(
-              text: '01226139476',
+              text: loggedOperation.phoneNo ?? '',
               color: ColorsManager.secondaryColor,
               fontSize: dimension.width10,
               fontWeight: FontWeight.w400,
@@ -58,7 +62,7 @@ class HistoryOperationCard extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10)),
                   child: Center(
                     child: DefaultText(
-                      text: 'Super Flix 30',
+                      text: loggedOperation.planName ?? '',
                       color: ColorsManager.secondaryColor,
                       fontSize: dimension.width10,
                       fontWeight: FontWeight.w400,
@@ -87,7 +91,7 @@ class HistoryOperationCard extends StatelessWidget {
                     ),
                     Expanded(
                       child: DefaultText(
-                        text: 'شركة لواته',
+                        text: loggedOperation.relatedTo ?? '',
                         color: ColorsManager.darkBlack,
                         fontSize: dimension.width10,
                         fontWeight: FontWeight.w400,
@@ -105,7 +109,7 @@ class HistoryOperationCard extends StatelessWidget {
                     ),
                     Expanded(
                       child: DefaultText(
-                        text: 'كريم سيد ابراهيم',
+                        text: loggedOperation.userName ?? '',
                         color: ColorsManager.darkBlack,
                         fontSize: dimension.width10,
                         fontWeight: FontWeight.w400,
@@ -129,7 +133,7 @@ class HistoryOperationCard extends StatelessWidget {
                 ),
                 Expanded(
                   child: DefaultText(
-                    text: '10',
+                    text: loggedOperation.balanceBeforeOperation.toString(),
                     color: ColorsManager.orangeColor,
                     fontSize: dimension.width10,
                     fontWeight: FontWeight.w400,
@@ -151,7 +155,7 @@ class HistoryOperationCard extends StatelessWidget {
                 ),
                 Expanded(
                   child: DefaultText(
-                    text: '10',
+                    text: loggedOperation.balanceBeforeOperation.toString(),
                     color: ColorsManager.secondaryColor,
                     fontSize: dimension.width10,
                     fontWeight: FontWeight.w400,
@@ -164,7 +168,7 @@ class HistoryOperationCard extends StatelessWidget {
           SizedBox(
             width: dimension.width80,
             child: DefaultText(
-              text: 'تصفير',
+              text: loggedOperation.operationType ?? '',
               color: const Color(0xFFFFA800),
               fontSize: dimension.width10,
               fontWeight: FontWeight.w500,
@@ -174,7 +178,7 @@ class HistoryOperationCard extends StatelessWidget {
           SizedBox(
             width: dimension.width100,
             child: DefaultText(
-              text: '04/18/2020',
+              text:  loggedOperation.operationDate!=null? convertDateToString(loggedOperation.operationDate!):'',
               color: ColorsManager.secondaryColor,
               fontSize: dimension.width10,
               fontWeight: FontWeight.w500,

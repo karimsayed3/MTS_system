@@ -9,5 +9,9 @@ class LoginState<T> with _$LoginState<T> {
   const factory LoginState.loading() = Loading;
   const factory LoginState.success(LoginResponse data) = Success<T>;
   const factory LoginState.error({required String error}) = Error;
+
+  const factory LoginState.logoutLoading() = LogoutLoading;
+  const factory LoginState.logoutSuccess(LoginResponse data) = LogoutSuccess<T>;
+  const factory LoginState.logoutError({required String error}) = LogoutError;
   const factory LoginState.obscureTextState() = ObscureTextState;
 }

@@ -7,6 +7,7 @@ import 'package:system/core/theming/colors.dart';
 import 'default_text.dart';
 Widget buildDropdown({
   required String labelText,
+  String? hintText,
   required List<String> itemList,
   required String selectedValue,
   required Function(String?) onChanged,
@@ -17,17 +18,17 @@ Widget buildDropdown({
 }) {
   var dimension = Dimensions(context);
   return SizedBox(
-    // width: width ?? dimension.width200,
+    width: width ?? dimension.width200,
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        DefaultText(
+        labelText ==""?   const SizedBox.shrink():  DefaultText(
           text: labelText,
           color: titleColor ?? ColorsManager.lightBlack,
           fontSize: 16,
           // fontFamily: "Almarai",
         ),
-      isMobile()? verticalSpace(5.h) : SizedBox(
+      isMobile()? verticalSpace(5.h) :  labelText ==""?   const SizedBox.shrink(): SizedBox(
           height: dimension.height5,
         ),
         Container(
@@ -51,7 +52,10 @@ Widget buildDropdown({
                 ),
               )),
           child: DropdownButton<String>(
-            value: selectedValue,
+            hint: DefaultText(
+              text: hintText??"",
+            ),
+            value: selectedValue ,
             onChanged: onChanged,
             padding: const EdgeInsets.symmetric(horizontal: 10),
             isExpanded: true,
@@ -61,6 +65,10 @@ Widget buildDropdown({
             underline: Container(
               height: 0,
               color: Colors.deepPurpleAccent,
+            ),
+            icon: const Icon(
+              Icons.keyboard_arrow_down_outlined,
+              color: ColorsManager.lightGray,
             ),
             items: itemList.map((itemValue) {
               return DropdownMenuItem(

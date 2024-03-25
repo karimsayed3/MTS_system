@@ -19,11 +19,19 @@ class AppRouter {
     switch (settings.name) {
       case Routes.homeDesktopScreen:
         return MaterialPageRoute(
-          builder: (_) => const HomeDesktopScreen(),
+          builder: (_) =>
+              BlocProvider.value(
+                value: getIt<LoginCubit>(),
+                child: const HomeDesktopScreen(),
+              ),
         );
       case Routes.homeMobileScreen:
         return MaterialPageRoute(
-          builder: (_) => const HomeScreenMobile(),
+          builder: (_) =>
+              BlocProvider.value(
+                value: getIt<LoginCubit>(),
+                child: const HomeScreenMobile(),
+              ),
         );
       case Routes.customersScreen:
         return MaterialPageRoute(
@@ -35,35 +43,36 @@ class AppRouter {
         );
       case Routes.loginScreenDesktop:
         return MaterialPageRoute(
-          builder: (_) => BlocProvider(
-            create: (context) => getIt<LoginCubit>(),
-            child: const LoginScreenDesktop(),
-          ),
+          builder: (_) =>
+              BlocProvider(
+                create: (context) => getIt<LoginCubit>(),
+                child: const LoginScreenDesktop(),
+              ),
         );
       case Routes.loginScreenMobile:
         return MaterialPageRoute(
-          builder: (_) => BlocProvider(
-            create: (context) => getIt<LoginCubit>(),
-            child: const LoginScreenMobile(),
-          ),
+          builder: (_) =>
+              BlocProvider(
+                create: (context) => getIt<LoginCubit>(),
+                child: const LoginScreenMobile(),
+              ),
         );
-      // case Routes.signUpScreen:
-      //   return MaterialPageRoute(
-      //     builder: (_) => BlocProvider(
-      //       create: (context) => getIt<SignupCubit>(),
-      //       child: const SignupScreen(),
-      //     ),
-      //   );
-      // case Routes.homeScreen:
-      //   return MaterialPageRoute(
-      //     builder: (_) => const HomeScreen(),
-      //   );
+    // case Routes.signUpScreen:
+    //   return MaterialPageRoute(
+    //     builder: (_) => BlocProvider(
+    //       create: (context) => getIt<SignupCubit>(),
+    //       child: const SignupScreen(),
+    //     ),
+    //   );
+    // case Routes.homeScreen:
+    //   return MaterialPageRoute(
+    //     builder: (_) => const HomeScreen(),
+    //   );
 
       case Routes.animationTestScreen:
         return MaterialPageRoute(
           builder: (_) => const AnimationTestScreen(),
         );
-
     }
     return null;
   }
