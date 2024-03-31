@@ -10,12 +10,15 @@ import 'package:system/core/widgets/screen_title_widget.dart';
 import 'package:system/core/widgets/search_with_filter_widget.dart';
 import 'package:system/features/late_customers_screen/presentation/desktop/widgets/Information_widget.dart';
 import 'package:system/features/late_customers_screen/presentation/desktop/widgets/create_excel.dart';
+import 'package:system/features/late_customers_screen/presentation/desktop/widgets/filter_widget_for_late_subscribers.dart';
 import 'package:system/features/late_customers_screen/presentation/desktop/widgets/late_customers_header_widget.dart';
 import 'package:system/features/late_customers_screen/presentation/desktop/widgets/late_customrers_card.dart';
 import 'package:system/features/subscribers_screen/business_logic/subscribers_cubit.dart';
 import 'package:system/features/subscribers_screen/business_logic/subscribers_state.dart';
 import 'package:system/features/subscribers_screen/data/models/get_late_subscribers_request_body.dart';
 import 'package:system/features/subscribers_screen/presentation/desktop/widgets/bloc_listener.dart';
+
+import '../../../../subscribers_screen/presentation/desktop/widgets/filter_widget_details_for_subscribers.dart';
 
 class LateCustomersScreen extends StatefulWidget {
   const LateCustomersScreen({super.key});
@@ -29,6 +32,7 @@ class _LateCustomersScreenState extends State<LateCustomersScreen>
   @override
   bool get wantKeepAlive => true;
   TextEditingController searchController = TextEditingController();
+  List<String> companiesList = [];
 
   @override
   void initState() {
@@ -40,6 +44,7 @@ class _LateCustomersScreenState extends State<LateCustomersScreen>
     SubscribersCubit.get(context).getLateSubscribers(
       getLateSubscribersRequestBody: GetLateSubscribersRequestBody(),
     );
+    SubscribersCubit.get(context).getCompaniesList();
   }
 
   SubscribersCubit? _subscribersCubit;
@@ -61,6 +66,7 @@ class _LateCustomersScreenState extends State<LateCustomersScreen>
 
     super.dispose();
   }
+  bool visible = false;
 
   @override
   Widget build(BuildContext context) {
@@ -77,6 +83,19 @@ class _LateCustomersScreenState extends State<LateCustomersScreen>
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              BlocListener<SubscribersCubit, SubscribersState>(
+                listener: (context, state) {
+                  if (state is GetCompaniesListSuccessState) {
+                    companiesList =
+                        ['اختر الكل'] + state.getListsResponse.result!;
+                    SubscribersCubit.get(context).getPlansList(companyName: {
+                      'companyName': state.getListsResponse.result!.join(',')
+                    });
+                    // setState(() {});
+                  }
+                },
+                child: const SizedBox.shrink(),
+              ),
               const ScreenTitleWidget(
                 coloredTitle: 'العملاء',
                 title: 'المتأخرين',
@@ -87,73 +106,85 @@ class _LateCustomersScreenState extends State<LateCustomersScreen>
                 vertical: dimension.height10,
                 height: MediaQuery.of(context).size.height * .72,
                 width: MediaQuery.of(context).size.width,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                child: Stack(
                   children: [
-                    Row(
+                    Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        // const SubscribersSearchWidget(),
-                        SearchWithFilterButtonWidget(
-                          onTap: () {},
-                          searchController: searchController,
-                          onChange: (value) {
-                            SubscribersCubit.get(context).getLateSubscribers(
-                              getLateSubscribersRequestBody:
-                                  GetLateSubscribersRequestBody(
-                                name: value,
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            // const SubscribersSearchWidget(),
+                            SearchWithFilterButtonWidget(
+                              onTap: () {
+                                setState(() {
+                                  visible = !visible;
+                                });
+                              },
+                              searchController: searchController,
+                              onChange: (value) {
+                                SubscribersCubit.get(context).getLateSubscribers(
+                                  getLateSubscribersRequestBody:
+                                      GetLateSubscribersRequestBody(
+                                    name: value,
+                                  ),
+                                );
+                              },
+                            ),
+                            ButtonWithTextAndImageWidget(
+                              onPressed: () {
+                                createExcelForLateSubscribers(
+                                  data: SubscribersCubit.get(context).lateSubscribers,
+                                );
+                              },
+                              color: const Color(0xffebf5f6),
+                              image: 'assets/icons/excel.svg',
+                              text: "تنزيل اكسيل",
+                            ),
+                          ],
+                        ),
+                        verticalSpace(dimension.height10),
+                        const LateCustomersHeaderWidget(),
+                        BlocBuilder<SubscribersCubit, SubscribersState>(
+                          builder: (context, state) {
+                            return Expanded(
+                              child: ListView.builder(
+                                itemBuilder: (context, index) {
+                                  return LateCustomersCard(
+                                      subscriber: SubscribersCubit.get(context)
+                                          .lateSubscribers[index]);
+                                },
+                                itemCount: SubscribersCubit.get(context)
+                                    .lateSubscribers
+                                    .length,
                               ),
                             );
                           },
                         ),
-                        ButtonWithTextAndImageWidget(
-                          onPressed: () {
-                            createExcelForLateSubscribers(
-                              data: SubscribersCubit.get(context).lateSubscribers,
-                            );
-                          },
-                          color: const Color(0xffebf5f6),
-                          image: 'assets/icons/excel.svg',
-                          text: "تنزيل اكسيل",
+                        const BlocListenerForSubscribersCubit(),
+                        verticalSpace(dimension.height10),
+                        Container(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: dimension.width10,
+                          ),
+                          child: const Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [],
+                              ),
+                              LateCustomersInformationWidget(),
+                            ],
+                          ),
                         ),
                       ],
                     ),
-                    verticalSpace(dimension.height10),
-                    const LateCustomersHeaderWidget(),
-                    BlocBuilder<SubscribersCubit, SubscribersState>(
-                      builder: (context, state) {
-                        return Expanded(
-                          child: ListView.builder(
-                            itemBuilder: (context, index) {
-                              return LateCustomersCard(
-                                  subscriber: SubscribersCubit.get(context)
-                                      .lateSubscribers[index]);
-                            },
-                            itemCount: SubscribersCubit.get(context)
-                                .lateSubscribers
-                                .length,
-                          ),
-                        );
-                      },
-                    ),
-                    const BlocListenerForSubscribersCubit(),
-                    verticalSpace(dimension.height10),
-                    Container(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: dimension.width10,
-                      ),
-                      child: const Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [],
-                          ),
-                          LateCustomersInformationWidget(),
-                        ],
-                      ),
+                    FilterWidgetForLateSubscribers(
+                      visible: visible,
+                      companiesList: companiesList,
                     ),
                   ],
                 ),

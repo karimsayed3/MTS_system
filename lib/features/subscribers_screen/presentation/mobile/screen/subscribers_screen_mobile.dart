@@ -16,6 +16,7 @@ import 'package:system/features/subscribers_screen/presentation/mobile/widgets/s
 
 import '../../../../../core/di/dependency_injection.dart';
 import '../../desktop/widgets/bloc_listener.dart';
+import '../widgets/filter_widget_for_subscribers_mobile.dart';
 import '../widgets/subscribers_card_for_mobile.dart';
 
 class SubscribersScreenMobile extends StatefulWidget {
@@ -29,9 +30,13 @@ class SubscribersScreenMobile extends StatefulWidget {
 class _SubscribersScreenMobileState extends State<SubscribersScreenMobile> {
   TextEditingController searchController = TextEditingController();
 
+  List<String> companiesList = [];
+
   @override
   void initState() {
     // TODO: implement initState
+    SubscribersCubit.get(context).subscribers = [];
+    SubscribersCubit.get(context).getCompaniesList();
     SubscribersCubit.get(context).getActiveSubscribers(
       getActiveSubscribersRequestBody: GetActiveSubscribersRequestBody(),
     );
@@ -49,6 +54,19 @@ class _SubscribersScreenMobileState extends State<SubscribersScreenMobile> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              BlocListener<SubscribersCubit, SubscribersState>(
+                listener: (context, state) {
+                  if (state is GetCompaniesListSuccessState) {
+                    companiesList =
+                        ['اختر الكل'] + state.getListsResponse.result!;
+                    SubscribersCubit.get(context).getPlansList(companyName: {
+                      'companyName': state.getListsResponse.result!.join(',')
+                    });
+                    // setState(() {});
+                  }
+                },
+                child: const SizedBox.shrink(),
+              ),
               Container(
                 padding: EdgeInsets.symmetric(vertical: 10.h),
                 color: Colors.transparent,
@@ -97,11 +115,40 @@ class _SubscribersScreenMobileState extends State<SubscribersScreenMobile> {
                 padding: EdgeInsets.symmetric(vertical: 10.h),
                 // color: Colors.blueAccent,
                 child: CustomSearchWidget(
+                  onTap: () {
+                    showModalBottomSheet<void>(
+                        context: context,
+                        builder: (context) {
+                          return Container(
+                            height: 400.h,
+                            padding: EdgeInsets.symmetric(
+                              vertical: 10.h,
+                              horizontal: 10.w,
+                            ),
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(10.r),
+                                  topRight: Radius.circular(10.r),
+                                )
+                            ),
+                            child: Center(
+                              child: BlocProvider.value(
+                                value: getIt<SubscribersCubit>(),
+                                child: FilterWidgetForSubscribersMobile(
+                                  companiesList: companiesList,
+                                ),
+                              ),
+                            ),
+                          );
+                        });
+                  },
                   width: double.infinity,
                   searchController: searchController,
                   onChange: (value) {
                     SubscribersCubit.get(context).getActiveSubscribers(
-                      getActiveSubscribersRequestBody: GetActiveSubscribersRequestBody(
+                      getActiveSubscribersRequestBody:
+                          GetActiveSubscribersRequestBody(
                         phone: value,
                       ),
                     );
@@ -117,12 +164,15 @@ class _SubscribersScreenMobileState extends State<SubscribersScreenMobile> {
                         return Expanded(
                           child: ListView.builder(
                               itemBuilder: (context, index) {
-                                return  SubscribersCardWidgetMobile(
-                                  subscriber: SubscribersCubit.get(context).subscribers[index],
+                                return SubscribersCardWidgetMobile(
+                                  subscriber: SubscribersCubit.get(context)
+                                      .subscribers[index],
                                 );
                                 // return const SizedBox.shrink();
                               },
-                              itemCount: SubscribersCubit.get(context).subscribers.length),
+                              itemCount: SubscribersCubit.get(context)
+                                  .subscribers
+                                  .length),
                         );
                       },
                     ),

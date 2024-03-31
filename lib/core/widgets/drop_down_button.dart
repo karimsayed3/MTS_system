@@ -18,7 +18,7 @@ Widget buildDropdown({
 }) {
   var dimension = Dimensions(context);
   return SizedBox(
-    width: width ?? dimension.width200,
+    // width: width ?? isMobile()? 300.w : dimension.width200,
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [

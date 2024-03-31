@@ -20,15 +20,15 @@ class ReviewDataSearchWidget extends StatelessWidget {
           width: dimension.width200,
           searchController: searchController,
         ),
-        horizontalSpace(dimension.width10),
-        Container(
-          padding: EdgeInsets.symmetric(horizontal: dimension.width10,vertical: dimension.height10),
-          decoration: ShapeDecoration(
-            color: ColorsManager.lighterGray,
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-          ),
-          child: SvgPicture.asset("assets/icons/filter.svg"),
-        ),
+        // horizontalSpace(dimension.width10),
+        // Container(
+        //   padding: EdgeInsets.symmetric(horizontal: dimension.width10,vertical: dimension.height10),
+        //   decoration: ShapeDecoration(
+        //     color: ColorsManager.lighterGray,
+        //     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+        //   ),
+        //   child: SvgPicture.asset("assets/icons/filter.svg"),
+        // ),
       ],
     );
   }

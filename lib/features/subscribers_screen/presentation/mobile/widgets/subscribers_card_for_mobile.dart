@@ -45,22 +45,58 @@ class _SubscribersCardWidgetMobileState
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           SizedBox(
-            width: 110.w,
-            child: DefaultText(
-              text: widget.subscriber.name ?? "",
-              fontSize: 16.sp,
-              fontFamily: 'din',
-              fontWeight: FontWeight.w400,
+            width: 100.w,
+            child: Column(
+              crossAxisAlignment:  CrossAxisAlignment.start,
+              children: [
+                DefaultText(
+                  text: widget.subscriber.name ?? "",
+                  fontSize: 16.sp,
+                  fontFamily: 'din',
+                  fontWeight: FontWeight.w400,
+                ),
+                  Row(
+                    children: [
+                      DefaultText(
+                        text: "التبعية:",
+                        fontSize: 12.sp,
+                        fontFamily: 'din',
+                        color: ColorsManager.lightGray,
+                        fontWeight: FontWeight.w400,
+                      ),
+                      Expanded(
+                        child: DefaultText(
+                          text: widget.subscriber.relatedTo ?? "",
+                          fontSize: 12.sp,
+                          fontFamily: 'din',
+                          color: ColorsManager.lightGray,
+
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ],
+                  ),
+              ],
             ),
           ),
           const Spacer(),
           SizedBox(
-            width: 100.w,
-            child: DefaultText(
-              text: widget.subscriber.phoneNo ?? "",
-              color: ColorsManager.secondaryColor,
-              fontSize: 16.sp,
-              fontWeight: FontWeight.w400,
+            width: 110.w,
+            child: Column(
+              children: [
+                DefaultText(
+                  text: widget.subscriber.phoneNo ?? "",
+                  color: ColorsManager.secondaryColor,
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w400,
+                ),
+                DefaultText(
+                  text: widget.subscriber.planName ?? "",
+                  color: ColorsManager.lightGray,
+                  fontSize: 12.sp,
+                  fontWeight: FontWeight.w400,
+                ),
+              ],
             ),
           ),
           const Spacer(),
@@ -117,7 +153,7 @@ class _SubscribersCardWidgetMobileState
           ),
           const Spacer(),
           SizedBox(
-            width: 30.w,
+            width: 20.w,
             child: PopupMenuButton(
               surfaceTintColor: Colors.white,
               // icon: SvgPicture.asset('assets/icons/more.svg'),

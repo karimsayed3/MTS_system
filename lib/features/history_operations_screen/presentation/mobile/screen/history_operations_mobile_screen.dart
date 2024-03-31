@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:system/core/widgets/custom_search_widget.dart';
 import 'package:system/core/widgets/title_of_screen_with_logo_widget.dart';
+import 'package:system/features/history_operations_screen/business_logic/history_operations_state.dart';
 import 'package:system/features/history_operations_screen/presentation/desktop/widgets/bloc_listener_for_history_operations_cubit.dart';
+import 'package:system/features/subscribers_screen/business_logic/subscribers_cubit.dart';
+import 'package:system/features/subscribers_screen/business_logic/subscribers_state.dart';
 
 import '../../../../../core/theming/colors.dart';
 import '../../../business_logic/history_operations_cubit.dart';
@@ -14,19 +18,18 @@ class HistoryOperationsMobileScreen extends StatefulWidget {
   const HistoryOperationsMobileScreen({super.key});
 
   @override
-  State<HistoryOperationsMobileScreen> createState() => _HistoryOperationsMobileScreenState();
+  State<HistoryOperationsMobileScreen> createState() =>
+      _HistoryOperationsMobileScreenState();
 }
 
-class _HistoryOperationsMobileScreenState extends State<HistoryOperationsMobileScreen> {
-
-
+class _HistoryOperationsMobileScreenState
+    extends State<HistoryOperationsMobileScreen> {
   @override
   void initState() {
     // TODO: implement initState
     HistoryOperationsCubit.get(context).loggedOperations = [];
     HistoryOperationsCubit.get(context).getLoggedOperations(
-        getLoggedOperationsRequestBody: GetLoggedOperationsRequestBody()
-    );
+        getLoggedOperationsRequestBody: GetLoggedOperationsRequestBody());
     super.initState();
   }
 
@@ -44,7 +47,7 @@ class _HistoryOperationsMobileScreenState extends State<HistoryOperationsMobileS
               Container(
                 padding: EdgeInsets.symmetric(vertical: 10.h),
                 color: Colors.transparent,
-                child:   const Row(
+                child: const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     TitleForScreenWithWidget(
@@ -67,16 +70,24 @@ class _HistoryOperationsMobileScreenState extends State<HistoryOperationsMobileS
                 child: Column(
                   children: [
                     const HistoryOperationsHeaderMobile(),
-                    Expanded(
-                      child: ListView.builder(
-                        itemBuilder: (context, index) {
-                          return HistoryOperationsCardWidgetMobile(
-                            loggedOperation: HistoryOperationsCubit.get(context).loggedOperations[index],
-                          );
-                          // return const SizedBox.shrink();
-                        },
-                        itemCount: HistoryOperationsCubit.get(context).loggedOperations.length,
-                      ),
+                    BlocBuilder<HistoryOperationsCubit, HistoryOperationsState>(
+                      builder: (context, state) {
+                        return Expanded(
+                          child: ListView.builder(
+                            itemBuilder: (context, index) {
+                              return HistoryOperationsCardWidgetMobile(
+                                loggedOperation:
+                                    HistoryOperationsCubit.get(context)
+                                        .loggedOperations[index],
+                              );
+                              // return const SizedBox.shrink();
+                            },
+                            itemCount: HistoryOperationsCubit.get(context)
+                                .loggedOperations
+                                .length,
+                          ),
+                        );
+                      },
                     ),
                     const BlocListenerForHistoryOperationsCubit(),
                   ],

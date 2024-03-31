@@ -7,9 +7,11 @@ class GetActiveSubscribersRequestBody {
   String? relatedTo;
   String? planName;
   String? lineType;
+  String? companyName;
+  String? collectorName;
 
   GetActiveSubscribersRequestBody(
-      {this.phone, this.name, this.relatedTo, this.planName, this.lineType});
+      {this.phone, this.name,this.collectorName,this.companyName, this.relatedTo, this.planName, this.lineType});
 
   factory GetActiveSubscribersRequestBody.fromJson(Map<String, dynamic> json) => _$GetActiveSubscribersRequestBodyFromJson(json);
 

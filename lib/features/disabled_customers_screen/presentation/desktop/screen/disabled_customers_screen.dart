@@ -19,8 +19,10 @@ import 'package:system/features/subscribers_screen/business_logic/subscribers_st
 import 'package:system/features/subscribers_screen/data/models/get_disabled_subscribers_request_body.dart';
 import 'package:system/features/subscribers_screen/presentation/desktop/widgets/bloc_listener.dart';
 
+import '../widgets/filter_widget_for_disabled_subscribers.dart';
+
 class DisabledCustomersScreen extends StatefulWidget {
-  DisabledCustomersScreen({super.key});
+  const DisabledCustomersScreen({super.key});
 
   @override
   State<DisabledCustomersScreen> createState() =>
@@ -39,9 +41,11 @@ class _DisabledCustomersScreenState extends State<DisabledCustomersScreen>
     SubscribersCubit.get(context).disableSubscribers = [];
     SubscribersCubit.get(context).getDisabledSubscribers(
         getDisabledSubscribersRequestBody: GetDisabledSubscribersRequestBody());
+    SubscribersCubit.get(context).getCompaniesList();
     super.initState();
   }
-
+bool visible = false;
+  List<String> companiesList = [];
   @override
   Widget build(BuildContext context) {
     super.build(context);
@@ -57,6 +61,19 @@ class _DisabledCustomersScreenState extends State<DisabledCustomersScreen>
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              BlocListener<SubscribersCubit, SubscribersState>(
+                listener: (context, state) {
+                  if (state is GetCompaniesListSuccessState) {
+                    companiesList =
+                        ['اختر الكل'] + state.getListsResponse.result!;
+                    SubscribersCubit.get(context).getPlansList(companyName: {
+                      'companyName': state.getListsResponse.result!.join(',')
+                    });
+                    // setState(() {});
+                  }
+                },
+                child: const SizedBox.shrink(),
+              ),
               const ScreenTitleWidget(
                 coloredTitle: 'العملاء',
                 title: 'المعطلين',
@@ -67,75 +84,87 @@ class _DisabledCustomersScreenState extends State<DisabledCustomersScreen>
                 vertical: dimension.height10,
                 height: MediaQuery.of(context).size.height * .72,
                 width: MediaQuery.of(context).size.width,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                child: Stack(
                   children: [
-                    Row(
+                    Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        // const SubscribersSearchWidget(),
-                        SearchWithFilterButtonWidget(
-                          onTap: () {},
-                          searchController: searchController,
-                          onChange: (value) {
-                            SubscribersCubit.get(context).getDisabledSubscribers(
-                                getDisabledSubscribersRequestBody:
-                                    GetDisabledSubscribersRequestBody(
-                                      name: value,
-                                    ));
-                          },
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            // const SubscribersSearchWidget(),
+                            SearchWithFilterButtonWidget(
+                              onTap: () {
+                                setState(() {
+                                  visible = !visible;
+                                });
+                              },
+                              searchController: searchController,
+                              onChange: (value) {
+                                SubscribersCubit.get(context).getDisabledSubscribers(
+                                    getDisabledSubscribersRequestBody:
+                                        GetDisabledSubscribersRequestBody(
+                                          name: value,
+                                        ));
+                              },
+                            ),
+                            ButtonWithTextAndImageWidget(
+                              onPressed: () {
+                                createExcelForDisabledSubscribers(
+                                  data: SubscribersCubit.get(context)
+                                      .disableSubscribers,
+                                );
+                              },
+                              color: const Color(0xffebf5f6),
+                              image: 'assets/icons/excel.svg',
+                              text: "تنزيل اكسيل",
+                            ),
+                          ],
                         ),
-                        ButtonWithTextAndImageWidget(
-                          onPressed: () {
-                            createExcelForDisabledSubscribers(
-                              data: SubscribersCubit.get(context)
-                                  .disableSubscribers,
+                        verticalSpace(dimension.height10),
+                        const DisabledCustomersHeaderWidget(),
+                        BlocBuilder<SubscribersCubit, SubscribersState>(
+                          builder: (context, state) {
+                            return Expanded(
+                              child: ListView.builder(
+                                itemBuilder: (context, index) {
+                                  return DisabledCustomersCard(
+                                    disabledSubscriber: SubscribersCubit.get(context)
+                                        .disableSubscribers[index],
+                                  );
+                                },
+                                itemCount: SubscribersCubit.get(context)
+                                    .disableSubscribers
+                                    .length,
+                              ),
                             );
                           },
-                          color: const Color(0xffebf5f6),
-                          image: 'assets/icons/excel.svg',
-                          text: "تنزيل اكسيل",
+                        ),
+                        const BlocListenerForSubscribersCubit(),
+                        verticalSpace(dimension.height10),
+                        Container(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: dimension.width10,
+                          ),
+                          child: const Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [],
+                              ),
+                              // LateCustomersInformationWidget(),
+                            ],
+                          ),
                         ),
                       ],
                     ),
-                    verticalSpace(dimension.height10),
-                    const DisabledCustomersHeaderWidget(),
-                    BlocBuilder<SubscribersCubit, SubscribersState>(
-                      builder: (context, state) {
-                        return Expanded(
-                          child: ListView.builder(
-                            itemBuilder: (context, index) {
-                              return DisabledCustomersCard(
-                                disabledSubscriber: SubscribersCubit.get(context)
-                                    .disableSubscribers[index],
-                              );
-                            },
-                            itemCount: SubscribersCubit.get(context)
-                                .disableSubscribers
-                                .length,
-                          ),
-                        );
-                      },
-                    ),
-                    const BlocListenerForSubscribersCubit(),
-                    verticalSpace(dimension.height10),
-                    Container(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: dimension.width10,
-                      ),
-                      child: const Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [],
-                          ),
-                          // LateCustomersInformationWidget(),
-                        ],
-                      ),
-                    ),
+                    FilterWidgetForDisabledSubscribers(
+                      visible: visible,
+                      companiesList: companiesList,
+                    )
                   ],
                 ),
               )

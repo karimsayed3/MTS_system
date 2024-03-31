@@ -37,21 +37,57 @@ class _LateCustomersCardWidgetMobileState extends State<LateCustomersCardWidgetM
         children: [
           SizedBox(
             width: 130.w,
-            child: DefaultText(
-              text: widget.subscriber.name ?? "",
-              fontSize: 16.sp,
-              fontFamily: 'din',
-              fontWeight: FontWeight.w400,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                DefaultText(
+                  text: widget.subscriber.name ?? "",
+                  fontSize: 16.sp,
+                  fontFamily: 'din',
+                  fontWeight: FontWeight.w400,
+                ),
+                Row(
+                  children: [
+                    DefaultText(
+                      text: "التبعية:",
+                      fontSize: 12.sp,
+                      fontFamily: 'din',
+                      color: ColorsManager.lightGray,
+                      fontWeight: FontWeight.w400,
+                    ),
+                    Expanded(
+                      child: DefaultText(
+                        text: widget.subscriber.relatedTo ?? "",
+                        fontSize: 12.sp,
+                        fontFamily: 'din',
+                        color: ColorsManager.lightGray,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
             ),
           ),
           const Spacer(),
           SizedBox(
             width: 110.w,
-            child: DefaultText(
-              text: widget.subscriber.phoneNo ?? "",
-              color: ColorsManager.secondaryColor,
-              fontSize: 16.sp,
-              fontWeight: FontWeight.w400,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                DefaultText(
+                  text: widget.subscriber.phoneNo ?? "",
+                  color:widget.subscriber.monthsLate! > 1 && widget.subscriber.monthsLate! < 2? ColorsManager.secondaryColor: widget.subscriber.monthsLate! > 2? ColorsManager.orangeColor: ColorsManager.primaryColor,
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w400,
+                ),
+                DefaultText(
+                  text: widget.subscriber.planName ?? "",
+                  color: ColorsManager.lightGray,
+                  fontSize: 12.sp,
+                  fontWeight: FontWeight.w400,
+                ),
+              ],
             ),
           ),
           const Spacer(),
@@ -66,11 +102,13 @@ class _LateCustomersCardWidgetMobileState extends State<LateCustomersCardWidgetM
                   fontWeight: FontWeight.w400,
                 ),
                 horizontalSpace(5.w),
-                DefaultText(
-                  text: widget.subscriber.balance.toString(),
-                  color: ColorsManager.secondaryColor,
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w400,
+                Expanded(
+                  child: DefaultText(
+                    text: widget.subscriber.balance.toString(),
+                    color: ColorsManager.secondaryColor,
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w400,
+                  ),
                 ),
               ],
             ),

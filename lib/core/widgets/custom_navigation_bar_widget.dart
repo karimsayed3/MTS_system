@@ -13,6 +13,8 @@ import 'package:system/features/login_screen/business_logic/login_cubit.dart';
 import 'package:system/features/login_screen/business_logic/login_state.dart';
 import 'package:system/main.dart';
 
+import '../../create_pdf.dart';
+
 class CustomNavigationBarWidget extends StatefulWidget {
   CustomNavigationBarWidget(
       {super.key,
@@ -93,7 +95,8 @@ class _CustomNavigationBarWidgetState extends State<CustomNavigationBarWidget> {
                   // SvgPicture.asset("assets/icons/power-off-icon.svg"),
                   TextButton(
                       onPressed: () {
-                        LoginCubit.get(context).logout();
+                        // LoginCubit.get(context).logout();
+                        createPdfReceipt();
                       },
                       child: DefaultText(
                         text: "تسجيل خروج",

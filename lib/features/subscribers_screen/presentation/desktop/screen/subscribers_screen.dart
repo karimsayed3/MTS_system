@@ -18,8 +18,12 @@ import 'package:system/features/subscribers_screen/business_logic/subscribers_st
 import 'package:system/features/subscribers_screen/data/models/get_active_subscribers_request_body.dart';
 import 'package:system/features/subscribers_screen/presentation/desktop/widgets/add_subsciber_widget.dart';
 import 'package:system/features/subscribers_screen/presentation/desktop/widgets/create_excel.dart';
+import '../../../../../core/utils/items_for_multi_drop_down_button.dart';
+import '../../../../../core/widgets/check_box_outline.dart';
+import '../../../../../core/widgets/filter_widget.dart';
 import '../../../../../core/widgets/muilti_drop_down_button.dart';
 import '../widgets/bloc_listener.dart';
+import '../widgets/filter_widget_details_for_subscribers.dart';
 import '../widgets/subscribers_card.dart';
 import '../widgets/subscribers_header_widget.dart';
 
@@ -43,6 +47,7 @@ class _SubscribersScreenState extends State<SubscribersScreen>
     SubscribersCubit.get(context).getActiveSubscribers(
       getActiveSubscribersRequestBody: GetActiveSubscribersRequestBody(),
     );
+    SubscribersCubit.get(context).getCompaniesList();
   }
 
   SubscribersCubit? _subscribersCubit;
@@ -67,8 +72,8 @@ class _SubscribersScreenState extends State<SubscribersScreen>
 
   bool visible = false;
 
-  List<String> lineTypeList = ["جديد", "محول"];
-  String lineType = "جديد";
+
+  List<String> companiesList = [];
 
   @override
   Widget build(BuildContext context) {
@@ -85,6 +90,19 @@ class _SubscribersScreenState extends State<SubscribersScreen>
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              BlocListener<SubscribersCubit, SubscribersState>(
+                listener: (context, state) {
+                  if (state is GetCompaniesListSuccessState) {
+                    companiesList =
+                        ['اختر الكل'] + state.getListsResponse.result!;
+                    SubscribersCubit.get(context).getPlansList(companyName: {
+                      'companyName': state.getListsResponse.result!.join(',')
+                    });
+                    // setState(() {});
+                  }
+                },
+                child: const SizedBox.shrink(),
+              ),
               const ScreenTitleWidget(
                 coloredTitle: 'العملاء',
                 title: 'المشتركين',
@@ -211,79 +229,9 @@ class _SubscribersScreenState extends State<SubscribersScreen>
                         ),
                       ],
                     ),
-                    Positioned(
-                      top: dimension.height45,
-                      right: dimension.width200,
-                      child: Visibility(
-                        visible: visible,
-                        child: Stack(
-                          children: [
-                            Container(
-                              padding: EdgeInsets.symmetric(
-                                vertical: dimension.height10,
-                                horizontal: dimension.width10,
-                              ),
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(12)),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Row(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      MultiDropDownButton(
-                                        items: lineTypeList,
-                                        mainList: lineTypeList,
-                                        title:'نوع الخط',
-                                        hintText: 'نوع الخط',
-                                        onMenuStateChange:(isOpen) {
-                                          // print(selectAllCenters);
-                                          // selectedCenters
-                                          //     .remove('اختر الكل');
-                                          // if (!isOpen) {
-                                          //   textEditingController
-                                          //       .clear();
-                                          // }
-                                        },
-                                        searchText: "نوع الخط",
-                                        selectedList: [],
-                                        textEditingController: TextEditingController(),
-                                      ),
-                                      buildDropdown(
-                                        hintText: 'نوع الخط',
-                                        labelText: '',
-                                        itemList: lineTypeList,
-                                        selectedValue: lineType,
-                                        onChanged: (value) {
-                                          setState(() {
-                                            lineType = value!;
-                                          });
-                                        },
-                                        context: context,
-                                      ),
-                                      horizontalSpace(dimension.width10),
-                                      buildDropdown(
-                                        labelText: '',
-                                        itemList: lineTypeList,
-                                        selectedValue: lineType,
-                                        onChanged: (value) {
-                                          setState(() {
-                                            lineType = value!;
-                                          });
-                                        },
-                                        context: context,
-                                      ),
-                                    ],
-                                  ),
-                                  // verticalSpace(dimension.height5),
-                                ],
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
+                    FilterWidgetForSubscribers(
+                      visible: visible,
+                      companiesList: companiesList,
                     ),
                   ],
                 ),

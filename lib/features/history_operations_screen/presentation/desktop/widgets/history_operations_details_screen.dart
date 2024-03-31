@@ -15,6 +15,7 @@ import 'package:system/features/history_operations_screen/presentation/desktop/w
 import 'package:system/features/history_operations_screen/presentation/desktop/widgets/history_operations_header_widget.dart';
 
 import 'bloc_listener_for_history_operations_cubit.dart';
+import 'filter_widget_for_historical_operations.dart';
 
 class HistoryOperationDetailsScreen extends StatefulWidget {
   const HistoryOperationDetailsScreen({super.key});
@@ -28,6 +29,7 @@ class _HistoryOperationDetailsScreenState
     extends State<HistoryOperationDetailsScreen> {
   TextEditingController searchController = TextEditingController();
 
+  bool visible = false;
   @override
   void initState() {
     // TODO: implement initState
@@ -63,44 +65,62 @@ class _HistoryOperationDetailsScreenState
                 vertical: dimension.height10,
                 height: MediaQuery.of(context).size.height * .8,
                 width: MediaQuery.of(context).size.width,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                child: Stack(
                   children: [
-                    Row(
+                    Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        // CollectorsSearchWidgeget(),
-                        SearchWithFilterButtonWidget(
-                          onTap: () {},
-                          searchController: searchController,
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            // CollectorsSearchWidgeget(),
+                            SearchWithFilterButtonWidget(
+                              onTap: () {
+                                setState(() {
+                                  visible = !visible;
+                                });
+                              },
+                              onChange: (value) {
+                                HistoryOperationsCubit.get(context).getLoggedOperations(
+                                    getLoggedOperationsRequestBody: GetLoggedOperationsRequestBody(
+                                      phone: value,
+                                    )
+                                );
+                              },
+                              searchController: searchController,
+                            ),
+                            ButtonWithTextAndImageWidget(
+                              onPressed: () {},
+                              color: const Color(0xffebf5f6),
+                              image: 'assets/icons/excel.svg',
+                              text: "تنزيل اكسيل",
+                            ),
+                          ],
                         ),
-                        ButtonWithTextAndImageWidget(
-                          onPressed: () {},
-                          color: const Color(0xffebf5f6),
-                          image: 'assets/icons/excel.svg',
-                          text: "تنزيل اكسيل",
+                        verticalSpace(dimension.height10),
+                        const HistoryOperationsHeaderWidget(),
+                        BlocBuilder<HistoryOperationsCubit, HistoryOperationsState>(
+                          builder: (context, state) {
+                            return Expanded(
+                                child: ListView.builder(
+                              itemBuilder: (context, index) {
+                                return HistoryOperationCard
+                                  (
+                                  loggedOperation: HistoryOperationsCubit.get(context).loggedOperations[index],
+                                );
+                                // return SizedBox.shrink();
+                              },
+                              itemCount: HistoryOperationsCubit.get(context).loggedOperations.length,
+                            ));
+                          },
                         ),
+                        const BlocListenerForHistoryOperationsCubit()
                       ],
                     ),
-                    verticalSpace(dimension.height10),
-                    const HistoryOperationsHeaderWidget(),
-                    BlocBuilder<HistoryOperationsCubit, HistoryOperationsState>(
-                      builder: (context, state) {
-                        return Expanded(
-                            child: ListView.builder(
-                          itemBuilder: (context, index) {
-                            return HistoryOperationCard
-                              (
-                              loggedOperation: HistoryOperationsCubit.get(context).loggedOperations[index],
-                            );
-                            // return SizedBox.shrink();
-                          },
-                          itemCount: HistoryOperationsCubit.get(context).loggedOperations.length,
-                        ));
-                      },
-                    ),
-                    const BlocListenerForHistoryOperationsCubit()
+                    FilterWidgetForHistoricalOperations(
+                      visible: visible,
+                    )
                   ],
                 ),
               )

@@ -11,6 +11,7 @@ import 'package:system/features/login_screen/business_logic/login_cubit.dart';
 import '../../../../../core/helpers/cache_helper.dart';
 import '../../../../../core/routing/routers.dart';
 import '../../../../../core/widgets/custom_navigation_bar_widget.dart';
+import '../../../../../create_pdf.dart';
 import '../../../../login_screen/business_logic/login_state.dart';
 
 class DrawerWidget extends StatefulWidget {
@@ -337,7 +338,9 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                 // SvgPicture.asset("assets/icons/power-off-icon.svg"),
                 TextButton(
                   onPressed: () {
-                    LoginCubit.get(context).logout();
+                    // LoginCubit.get(context).logout();
+                    createPdfReceipt();
+
                   },
                   child: DefaultText(
                     text: "تسجيل خروج",

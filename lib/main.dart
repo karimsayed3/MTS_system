@@ -11,6 +11,7 @@ import 'package:system/core/helpers/cache_helper.dart';
 import 'package:system/core/helpers/check_platform.dart';
 import 'package:system/core/helpers/scroll_behavior.dart';
 import 'package:system/core/networking/tokenDecode.dart';
+import 'package:system/print_page.dart';
 import 'package:window_manager/window_manager.dart';
 import 'core/di/dependency_injection.dart';
 import 'package:flutter/material.dart';
@@ -134,6 +135,7 @@ class MTSMobileApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           initialRoute: Routes.splashScreen,
           onGenerateRoute: appRouter.generateRoute,
+          // home: const PrintersView(),
         ));
   }
 }
@@ -162,6 +164,7 @@ class MTSDesktopApp extends StatelessWidget {
       // ),
       initialRoute: Routes.loginScreenDesktop,
       onGenerateRoute: appRouter.generateRoute,
+      // home: const PrintersView(),
     );
   }
 }

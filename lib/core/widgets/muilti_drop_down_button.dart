@@ -1,9 +1,12 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:system/core/helpers/check_platform.dart';
 import 'package:system/core/widgets/search_inner_widget.dart';
 
 import '../helpers/dimensions.dart';
 import '../helpers/spacing.dart';
+import '../utils/items_for_multi_drop_down_button.dart';
 import 'default_text.dart';
 
 class MultiDropDownButton extends StatefulWidget {
@@ -14,6 +17,7 @@ class MultiDropDownButton extends StatefulWidget {
     required this.textEditingController,
     required this.onMenuStateChange,
     required this.items,
+    required this.flag,
     this.width, required this.title,required this.hintText,this.titleColor,this.color,required this.searchText,
   });
 
@@ -28,6 +32,7 @@ class MultiDropDownButton extends StatefulWidget {
   final String searchText;
   Color? titleColor;
   Color? color;
+  bool? flag;
 
   @override
   State<MultiDropDownButton> createState() => _MultiDropDownButtonState();
@@ -38,26 +43,26 @@ class _MultiDropDownButtonState extends State<MultiDropDownButton> {
   Widget build(BuildContext context) {
     var dimension = Dimensions(context);
     return SizedBox(
-      width: widget.width ?? dimension.width100,
+      width:isMobile()? null : widget.width ?? dimension.width100,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          DefaultText(
+          widget.title ==""?    DefaultText(
             text: widget.title,
-            color:widget.titleColor?? Color(0xFFF5EFE7),
-          ),
-          verticalSpace(
+            color:widget.titleColor?? const Color(0xFFF5EFE7),
+          ): const SizedBox.shrink(),
+          widget.title ==""?  verticalSpace(
         dimension.height5,
-          ),
+          ): const SizedBox.shrink(),
           Container(
-            width: dimension.width250,
-            height: dimension.height30,
+            width:isMobile()?300.w :dimension.width250,
+            // height: dimension.height30,
             decoration: BoxDecoration(
               color: widget.color??Colors.white,
               shape: BoxShape.rectangle,
               borderRadius: BorderRadius.circular(dimension.reduce5),
               border: Border.all(
-                color: Colors.black,
+                color: const Color(0x14007C92)
               ),
             ),
             child: DropdownButtonHideUnderline(
@@ -66,9 +71,10 @@ class _MultiDropDownButtonState extends State<MultiDropDownButton> {
                 hint: Text(
                   widget.hintText,
                   style: TextStyle(
-                    fontSize: dimension.reduce15,
-                    color: Colors.black,
-                    fontFamily: 'Almarai',
+                    fontWeight: FontWeight.w400,
+                    fontSize: 16,
+                    color: Color(0xFFA9ADC3),
+                    fontFamily: 'din',
                   ),
                 ),
                 items: widget.items,
@@ -95,13 +101,13 @@ class _MultiDropDownButtonState extends State<MultiDropDownButton> {
                         (item) {
                       // print("N'${selectedItems.join(', ')}'");
                       return Container(
-                        width: dimension.width100,
+                        // width: dimension.width100,
                         alignment: AlignmentDirectional.center,
                         child: Text(
                           // "N'${selectedItems.join(', ')}'",
                           widget.selectedList.join(', '),
                           style: TextStyle(
-                            fontSize: dimension.reduce15,
+                            fontSize: isMobile()? 15.sp :  dimension.reduce15,
                             fontFamily: 'Almarai',
                             overflow: TextOverflow.ellipsis,
                             color: Colors.black,
@@ -113,19 +119,27 @@ class _MultiDropDownButtonState extends State<MultiDropDownButton> {
                   ).toList();
                 },
                 buttonStyleData: ButtonStyleData(
-                  padding: EdgeInsets.only(
+                  padding: const EdgeInsets.only(
                     left: 16,
                     right: 8,
                   ),
                   // height: dimension.height20,
-                  width: dimension.width300,
+                  // width: dimension.width300,
                 ),
                 menuItemStyleData: MenuItemStyleData(
-                  height: dimension.height35,
                   padding: EdgeInsets.zero,
                 ),
-                style: TextStyle(
+                style: const TextStyle(
+                  // fontWeight: FontWeight.w400,
+                  fontSize: 16,
+                  color: Colors.black,
                   fontFamily: 'Almarai',
+                ),
+                iconStyleData: const IconStyleData(
+                  icon: Icon(
+                    Icons.keyboard_arrow_down,
+                    color:  Color(0x14007C92),
+                  ),
                 ),
               ),
             ),
