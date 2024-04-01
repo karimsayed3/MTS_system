@@ -15,4 +15,7 @@ class Routes {
   /// animation test screen
   static const String animationTestScreen = '/animationTestScreen';
 
+
+  static const String printerScreen = '/printerScreen';
+
 }

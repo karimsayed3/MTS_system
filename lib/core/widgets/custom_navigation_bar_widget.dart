@@ -96,7 +96,9 @@ class _CustomNavigationBarWidgetState extends State<CustomNavigationBarWidget> {
                   TextButton(
                       onPressed: () {
                         // LoginCubit.get(context).logout();
-                        createPdfReceipt();
+                        createPdfReceipt(
+                          context: context,
+                        );
                       },
                       child: DefaultText(
                         text: "تسجيل خروج",
@@ -132,7 +134,7 @@ class _CustomNavigationBarWidgetState extends State<CustomNavigationBarWidget> {
   }
 }
 
-void navigateToPage(String pageName, {dynamic arguments}) {
+void navigateToPage(String pageName, {Map<dynamic,dynamic>? arguments}) {
   if (openedPages.last.keys.last != pageName) {
     openedPages.add({pageName: arguments});
     navigatorKey.currentState?.popAndPushNamed(pageName, arguments: arguments);

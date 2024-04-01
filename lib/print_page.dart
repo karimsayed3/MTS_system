@@ -125,7 +125,9 @@ import 'package:path_provider/path_provider.dart';
 import 'package:system/printer_manager.dart';
 
 class PrintersView extends StatefulWidget {
-  const PrintersView({Key? key}) : super(key: key);
+  const PrintersView({Key? key, required this.imgPath}) : super(key: key);
+
+  final File imgPath;
 
   @override
   State<PrintersView> createState() => _PrintersViewState();
@@ -145,10 +147,9 @@ class _PrintersViewState extends State<PrintersView> {
     _devices = [];
     _scanBluetooth = FlutterScanBluetooth();
     _startScan();
-    _initImg();
+    imgFile = widget.imgPath;
+    // _initImg(widget.imgPath);
   }
-
-
 
   _startScan() async {
     setState(() {
@@ -178,17 +179,17 @@ class _PrintersViewState extends State<PrintersView> {
   bool _isDeviceAdded(BluetoothDevice device) => _devices.contains(device);
 
 
-  _initImg() async {
-    try {
-      ByteData byteData = await rootBundle.load("assets/images/login_picture.png");
-      Uint8List buffer = byteData.buffer.asUint8List();
-      String path = (await getTemporaryDirectory()).path;
-      imgFile = File("$path/img.png");
-      imgFile.writeAsBytes(buffer);
-    } catch (e) {
-      rethrow;
-    }
-  }
+  // _initImg(File imageFile) async {
+  //   try {
+  //     // ByteData byteData = await rootBundle.load(imgPath);
+  //     // Uint8List buffer = byteData.buffer.asUint8List();
+  //     // String path = (await getTemporaryDirectory()).path;
+  //     imageFile = File("$path/img.png");
+  //     imgFile.writeAsBytes(imageFile);
+  //   } catch (e) {
+  //     rethrow;
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {

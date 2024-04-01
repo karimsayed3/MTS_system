@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:system/animation_test_screen.dart';
@@ -8,6 +10,7 @@ import 'package:system/features/login_screen/business_logic/login_cubit.dart';
 import 'package:system/features/login_screen/presentation/desktop/screen/login_screen.dart';
 import 'package:system/features/login_screen/presentation/mobile/screen/login_screen_mobile.dart';
 import 'package:system/features/splash_screen/presentation/screen/splash_screen.dart';
+import '../../print_page.dart';
 import 'routers.dart';
 import '../di/dependency_injection.dart';
 
@@ -56,6 +59,14 @@ class AppRouter {
                 create: (context) => getIt<LoginCubit>(),
                 child: const LoginScreenMobile(),
               ),
+        );
+      case Routes.printerScreen:
+        final imgPath = settings.arguments as Map<dynamic,dynamic>;
+
+        return MaterialPageRoute(
+          builder: (_) => PrintersView(
+            imgPath: imgPath['imgPath'],
+          ),
         );
     // case Routes.signUpScreen:
     //   return MaterialPageRoute(
