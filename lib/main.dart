@@ -25,7 +25,11 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:desktop_window/desktop_window.dart';
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
-List<Map<String, dynamic>> openedPages = [
+List<Map<String, dynamic>> openedPages = isMobile()? [
+  {
+    Routes.homeMobileScreen   : null,
+  }
+]: [
   {
     Routes.loginScreenDesktop: null,
   }

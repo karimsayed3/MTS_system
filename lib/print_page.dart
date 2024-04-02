@@ -122,6 +122,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_scan_bluetooth/flutter_scan_bluetooth.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:system/core/widgets/custom_navigation_bar_widget.dart';
 import 'package:system/printer_manager.dart';
 
 class PrintersView extends StatefulWidget {
@@ -178,7 +179,7 @@ class _PrintersViewState extends State<PrintersView> {
 
   bool _isDeviceAdded(BluetoothDevice device) => _devices.contains(device);
 
-
+  //
   // _initImg(File imageFile) async {
   //   try {
   //     // ByteData byteData = await rootBundle.load(imgPath);
@@ -193,89 +194,95 @@ class _PrintersViewState extends State<PrintersView> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        toolbarHeight: 0.0,
-      ),
-      body: Column(
-        children: [
-          const SizedBox(
-            height: 15,
-          ),
-          ConditionalBuilder(
-            condition: !isScanning,
-            builder: (context) => FloatingActionButton(
-              onPressed: () {
-                _startScan();
-              },
-              child: const Icon(
-                Icons.bluetooth_audio,
+    return WillPopScope(
+      onWillPop: () {
+        onPop();
+        return Future.value(false);
+      },
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        appBar: AppBar(
+          toolbarHeight: 0.0,
+        ),
+        body: Column(
+          children: [
+            const SizedBox(
+              height: 15,
+            ),
+            ConditionalBuilder(
+              condition: !isScanning,
+              builder: (context) => FloatingActionButton(
+                onPressed: () {
+                  _startScan();
+                },
+                child: const Icon(
+                  Icons.bluetooth_audio,
+                ),
+              ),
+              fallback: (context) => const CircularProgressIndicator(
+                color: Colors.lightBlue,
               ),
             ),
-            fallback: (context) => const CircularProgressIndicator(
+            const SizedBox(
+              height: 15,
+            ),
+            ConditionalBuilder(
+                condition: _selectedDevice != null,
+                builder: (context) => Column(
+                  children: [
+                    _buildDev(_selectedDevice!),
+                    const SizedBox(height: 15),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        MaterialButton(
+                          onPressed: () {
+                            PrinterManager.printImg(imgFile.path);
+                          }, color: Colors.lightBlue,
+                          child: const Text(
+                            "Print",
+                            style: TextStyle(color: Colors.white),),
+                        ),
+                        MaterialButton(
+                          onPressed: () {
+                            PrinterManager.connect(_selectedDevice!.address);
+                          }, color: Colors.lightBlue,
+                          child: const Text(
+                            "Connect",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+                fallback: (context) => Container(
+                  child: const Text("لم يتم تحديد طابعة"),
+                )),
+            const SizedBox(
+              height: 15,
+            ),
+            Container(
+              height: 1,
+              width: double.infinity,
               color: Colors.lightBlue,
             ),
-          ),
-          const SizedBox(
-            height: 15,
-          ),
-          ConditionalBuilder(
-              condition: _selectedDevice != null,
-              builder: (context) => Column(
-                children: [
-                  _buildDev(_selectedDevice!),
-                  const SizedBox(height: 15),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      MaterialButton(
-                        onPressed: () {
-                          PrinterManager.printImg(imgFile.path);
-                        }, color: Colors.lightBlue,
-                        child: const Text(
-                          "Print",
-                          style: TextStyle(color: Colors.white),),
-                      ),
-                      MaterialButton(
-                        onPressed: () {
-                          PrinterManager.connect(_selectedDevice!.address);
-                        }, color: Colors.lightBlue,
-                        child: const Text(
-                          "Connect",
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
-                    ],
-                  )
-                ],
-              ),
-              fallback: (context) => Container(
-                child: const Text("لم يتم تحديد طابعة"),
-              )),
-          const SizedBox(
-            height: 15,
-          ),
-          Container(
-            height: 1,
-            width: double.infinity,
-            color: Colors.lightBlue,
-          ),
-          const SizedBox(
-            height: 15,
-          ),
-          Expanded(
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  ..._devices.map(
-                        (dev) => _buildDev(dev),
-                  )
-                ],
+            const SizedBox(
+              height: 15,
+            ),
+            Expanded(
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    ..._devices.map(
+                          (dev) => _buildDev(dev),
+                    )
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

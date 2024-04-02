@@ -342,7 +342,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                     // createPdfReceipt(
                     //   context: context,
                     // );
-                    navigateToPage(Routes.printerScreen,arguments:  {'imgPath': await createPdfReceipt(context: context)});
+                    navigateToPage(Routes.printerScreen,arguments:  {'imgPath': await createPdfReceiptForMobile(context: context)});
 
                   },
                   child: DefaultText(
