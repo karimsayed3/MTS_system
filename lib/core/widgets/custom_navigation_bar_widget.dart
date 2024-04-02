@@ -51,7 +51,7 @@ class _CustomNavigationBarWidgetState extends State<CustomNavigationBarWidget> {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const LogoWidget(),
+          // const LogoWidget(),
           Row(
             children: List.generate(widget.body.length, (idx) {
               return InkWell(
@@ -95,10 +95,10 @@ class _CustomNavigationBarWidgetState extends State<CustomNavigationBarWidget> {
                   // SvgPicture.asset("assets/icons/power-off-icon.svg"),
                   TextButton(
                       onPressed: () {
-                        // LoginCubit.get(context).logout();
-                        createPdfReceipt(
-                          context: context,
-                        );
+                        LoginCubit.get(context).logout();
+                        // createPdfReceipt(
+                        //   context: context,
+                        // );
                       },
                       child: DefaultText(
                         text: "تسجيل خروج",

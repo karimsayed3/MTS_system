@@ -17,16 +17,16 @@ class TitleForScreenWithWidget extends StatelessWidget {
         Container(
           width: 50.w,
           height: 50.h,
-          decoration: ShapeDecoration(
-            image: const DecorationImage(
-              image:
-              AssetImage('assets/images/vodafone-logo.png'),
-              fit: BoxFit.contain,
-            ),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(16),
-            ),
-          ),
+          // decoration: ShapeDecoration(
+          //   image: const DecorationImage(
+          //     image:
+          //     AssetImage('assets/images/vodafone-logo.png'),
+          //     fit: BoxFit.contain,
+          //   ),
+          //   shape: RoundedRectangleBorder(
+          //     borderRadius: BorderRadius.circular(16),
+          //   ),
+          // ),
         ),
         horizontalSpace(10.w),
         DefaultText(
