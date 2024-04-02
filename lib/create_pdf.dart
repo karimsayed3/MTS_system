@@ -16,16 +16,9 @@ import 'core/widgets/custom_navigation_bar_widget.dart';
 
 Future<File> createPdfReceipt({
   required BuildContext context,
-  required String phoneNumber,
-  required String planName,
-  required int balance,
-  required int paidAmount,
-  required String type,
-  required String receiptDate,
-  required String toDate,
 }) async {
   final doc = pw.Document();
-  PdfPageFormat customReceiptFormat = const PdfPageFormat(72 * PdfPageFormat.mm,300 * PdfPageFormat.mm,marginRight: 5.0 ,marginLeft: 5.0); // Adjust width and height as needed
+  PdfPageFormat customReceiptFormat = PdfPageFormat(72 * PdfPageFormat.mm,300 * PdfPageFormat.mm,marginRight: 5.0 ,marginLeft: 5.0); // Adjust width and height as needed
   final img = await rootBundle.load('assets/images/logo-mk.png');
   final imageBytes = img.buffer.asUint8List();
   pw.Image logo = pw.Image(pw.MemoryImage(imageBytes));
@@ -77,17 +70,14 @@ Future<File> createPdfReceipt({
                   verticalAlignment: pw.TableCellVerticalAlignment.middle,
                   children: [
                     pw.Center(
-                      // child: pw.Text(
-                      //     '${DateTime
-                      //         .now()
-                      //         .year}-${DateTime
-                      //         .now()
-                      //         .month}-${DateTime
-                      //         .now()
-                      //         .day}',
-                      //     style: pw.TextStyle(font: myFont)),
                       child: pw.Text(
-                          receiptDate,
+                          '${DateTime
+                              .now()
+                              .year}-${DateTime
+                              .now()
+                              .month}-${DateTime
+                              .now()
+                              .day}',
                           style: pw.TextStyle(font: myFont)),
                     ),
                     tableRowItem(
@@ -101,7 +91,7 @@ Future<File> createPdfReceipt({
                   children: [
                     pw.Center(
                       child: pw.Text(
-                          phoneNumber, style: pw.TextStyle(font: myFont)),
+                          '01156788394', style: pw.TextStyle(font: myFont)),
                     ),
                     tableRowItem(
                       title: 'رقم التليفون',
@@ -118,7 +108,7 @@ Future<File> createPdfReceipt({
                   verticalAlignment: pw.TableCellVerticalAlignment.middle,
                   children: [
                     pw.Center(
-                      child: pw.Text(planName, style: pw.TextStyle(font: myFont)),
+                      child: pw.Text('', style: pw.TextStyle(font: myFont)),
                     ),
                     tableRowItem(
                       title: 'خطة الاسعار',
@@ -136,7 +126,7 @@ Future<File> createPdfReceipt({
                   children: [
                     pw.Center(
                       child:
-                      pw.Text(balance.toString(), style: pw.TextStyle(font: myFont)),
+                      pw.Text('100', style: pw.TextStyle(font: myFont)),
                     ),
                     tableRowItem(
                       title: 'اجمالى قيمة الفاتورة المستحقة',
@@ -153,7 +143,7 @@ Future<File> createPdfReceipt({
                 pw.TableRow(
                   children: [
                     pw.Center(
-                      child: pw.Text(paidAmount.toString(), style: pw.TextStyle(font: myFont)),
+                      child: pw.Text('', style: pw.TextStyle(font: myFont)),
                     ),
                     tableRowItem(
                       title: 'المبلغ المدفوع',
@@ -168,7 +158,7 @@ Future<File> createPdfReceipt({
                 ),
                 pw.TableRow(
                   children: [
-                    pw.Text((balance - paidAmount).toString(), style: pw.TextStyle(font: myFont)),
+                    pw.Text('', style: pw.TextStyle(font: myFont)),
                     tableRowItem(
                       title: 'المتبقى بعد دفع الفاتورة',
                       myFont: myFont,
@@ -180,7 +170,7 @@ Future<File> createPdfReceipt({
                 ),
                 pw.TableRow(
                   children: [
-                    pw.Text(type, style: pw.TextStyle(font: myFont)),
+                    pw.Text('', style: pw.TextStyle(font: myFont)),
                     tableRowItem(
                       title: 'نوع التحصيل',
                       myFont: myFont,
@@ -215,7 +205,13 @@ Future<File> createPdfReceipt({
             ),
             defaultTextInPW(
               title:
-              'الحساب الموضح عاليه حتى يوم ${toDate}',
+              'الحساب الموضح عاليه حتى يوم ${DateTime
+                  .now()
+                  .day}/${DateTime
+                  .now()
+                  .month}/${DateTime
+                  .now()
+                  .year}',
               myFont: myFont,
             ),
             defaultTextInPW(

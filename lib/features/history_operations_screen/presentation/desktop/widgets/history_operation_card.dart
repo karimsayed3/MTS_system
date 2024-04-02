@@ -7,12 +7,10 @@ import 'package:system/core/theming/colors.dart';
 import 'package:system/core/widgets/default_button.dart';
 import 'package:system/core/widgets/default_text.dart';
 
-import '../../../../../create_pdf.dart';
 import '../../../data/models/get_logged_operations_response.dart';
 
 class HistoryOperationCard extends StatelessWidget {
   const HistoryOperationCard({super.key, required this.loggedOperation});
-
   final LoggedOperation loggedOperation;
 
   @override
@@ -157,7 +155,7 @@ class HistoryOperationCard extends StatelessWidget {
                 ),
                 Expanded(
                   child: DefaultText(
-                    text: loggedOperation.addedAmount.toString(),
+                    text: loggedOperation.balanceBeforeOperation.toString(),
                     color: ColorsManager.secondaryColor,
                     fontSize: dimension.width10,
                     fontWeight: FontWeight.w400,
@@ -180,36 +178,21 @@ class HistoryOperationCard extends StatelessWidget {
           SizedBox(
             width: dimension.width100,
             child: DefaultText(
-              text: loggedOperation.operationDate != null
-                  ? convertDateToString(loggedOperation.operationDate!)
-                  : '',
+              text:  loggedOperation.operationDate!=null? convertDateToString(loggedOperation.operationDate!):'',
               color: ColorsManager.secondaryColor,
               fontSize: dimension.width10,
               fontWeight: FontWeight.w500,
             ),
           ),
           const Spacer(),
-          InkWell(
-            onTap: () {
-              createPdfReceipt(
-                context: context,
-                phoneNumber: loggedOperation.phoneNo!,
-                balance: loggedOperation.balanceBeforeOperation!,
-                paidAmount: loggedOperation.addedAmount!,
-                planName: loggedOperation.planName!,
-                receiptDate:
-                    convertDateToString(loggedOperation.operationDate!),
-                toDate: convertDateToString(loggedOperation.operationDate!),
-                type: loggedOperation.collectType??"كاش",
-              );
-            },
-            child: Container(
-              width: dimension.width30,
-              padding: EdgeInsets.symmetric(vertical: dimension.height10),
-              decoration: BoxDecoration(
-                color: const Color(0xFFEBF5F6),
-                borderRadius: BorderRadius.circular(10),
-              ),
+          Container(
+            width: dimension.width30,
+            padding: EdgeInsets.symmetric(vertical: dimension.height10),
+            decoration: BoxDecoration(
+              color: const Color(0xFFEBF5F6),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: InkWell(
               child: SvgPicture.asset('assets/icons/printer.svg'),
             ),
           ),

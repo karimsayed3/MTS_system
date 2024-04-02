@@ -338,11 +338,11 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                 // SvgPicture.asset("assets/icons/power-off-icon.svg"),
                 TextButton(
                   onPressed: () async {
-                    LoginCubit.get(context).logout();
+                    // LoginCubit.get(context).logout();
                     // createPdfReceipt(
                     //   context: context,
                     // );
-                    // navigateToPage(Routes.printerScreen,arguments:  {'imgPath': await createPdfReceipt(context: context)});
+                    navigateToPage(Routes.printerScreen,arguments:  {'imgPath': await createPdfReceipt(context: context)});
 
                   },
                   child: DefaultText(

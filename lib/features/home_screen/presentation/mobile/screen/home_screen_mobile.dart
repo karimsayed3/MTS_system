@@ -147,7 +147,7 @@ class _HomeScreenMobileState extends State<HomeScreenMobile> {
                       curve: Curves.easeInOut);
                 }
                 setState(() {
-                  _currentIndex = value; 
+                  _currentIndex = value;
                 });
               },
             ),

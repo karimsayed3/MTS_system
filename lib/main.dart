@@ -79,7 +79,8 @@ void main() async {
     //   ), // Wrap your app
     // ),);
   }
-  else {
+  else
+  {
     print(CacheHelper.getdata(key: 'accountType'));
     await windowManager.ensureInitialized();
     windowManager.waitUntilReadyToShow().then((_) async {

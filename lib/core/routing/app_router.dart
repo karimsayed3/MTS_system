@@ -64,10 +64,9 @@ class AppRouter {
         final imgPath = settings.arguments as Map<dynamic,dynamic>;
 
         return MaterialPageRoute(
-          // builder: (_) => PrintersView(
-          //   imgPath: imgPath['imgPath'],
-          // ),
-          builder: (_) => Container(),
+          builder: (_) => PrintersView(
+            imgPath: imgPath['imgPath'],
+          ),
         );
     // case Routes.signUpScreen:
     //   return MaterialPageRoute(
