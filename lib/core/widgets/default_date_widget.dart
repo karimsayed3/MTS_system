@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart' as intl;
+import 'package:system/core/helpers/check_platform.dart';
 import '../helpers/dimensions.dart';
 import 'default_text.dart';
 
@@ -14,6 +15,7 @@ class DefaultDateFormField extends StatefulWidget {
       this.enabled = true,
       this.validator,
       this.width,
+      this.hint,
       this.value,
       this.borderRadius,
       this.onFieldSubmitted});
@@ -24,6 +26,7 @@ class DefaultDateFormField extends StatefulWidget {
   dynamic enabled;
   double? width;
   String? value;
+  String? hint;
   Color? titleColor;
   BorderRadius? borderRadius;
   dynamic color;
@@ -41,7 +44,7 @@ class _DefaultDateFormFieldState extends State<DefaultDateFormField> {
     DateTime now = DateTime.now();
     String formattedDate = intl.DateFormat('yyyy-MM-dd').format(now);
     return SizedBox(
-      width: widget.width ?? dimension.width200,
+      width:isMobile()?  null :  dimension.width200,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -58,7 +61,7 @@ class _DefaultDateFormFieldState extends State<DefaultDateFormField> {
               : const SizedBox.shrink(),
           SizedBox(
             // height: MediaQuery.of(context).size.height * .05,
-            width: dimension.width300,
+            width:isMobile()?  null : dimension.width300,
             child: TextFormField(
               controller: widget.controller,
               enabled: widget.enabled ?? true,
@@ -68,7 +71,7 @@ class _DefaultDateFormFieldState extends State<DefaultDateFormField> {
                 fontFamily: 'Almarai',
               ),
               decoration: InputDecoration(
-                  hintText: widget.value ?? formattedDate,
+                  hintText: widget.hint ?? formattedDate,
                   border: OutlineInputBorder(
                     borderSide: const BorderSide(color: Colors.black,),
                     borderRadius:
