@@ -43,7 +43,7 @@ class _MultiDropDownButtonState extends State<MultiDropDownButton> {
   Widget build(BuildContext context) {
     var dimension = Dimensions(context);
     return SizedBox(
-      width:isMobile()? null : widget.width ?? dimension.width100,
+      width:isMobile()? null : widget.width ?? dimension.width150,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -55,7 +55,7 @@ class _MultiDropDownButtonState extends State<MultiDropDownButton> {
         dimension.height5,
           ): const SizedBox.shrink(),
           Container(
-            width:isMobile()?350.w :dimension.width250,
+            width:isMobile()? 400.w :dimension.width150,
             // height: dimension.height30,
             decoration: BoxDecoration(
               color: widget.color??Colors.white,

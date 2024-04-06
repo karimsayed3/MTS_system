@@ -8,9 +8,11 @@ import 'package:system/features/history_operations_screen/presentation/desktop/w
 import 'package:system/features/subscribers_screen/business_logic/subscribers_cubit.dart';
 import 'package:system/features/subscribers_screen/business_logic/subscribers_state.dart';
 
+import '../../../../../core/di/dependency_injection.dart';
 import '../../../../../core/theming/colors.dart';
 import '../../../business_logic/history_operations_cubit.dart';
 import '../../../data/models/get_logged_operations_request_body.dart';
+import '../widgets/filter_widget_for_historical_operations.dart';
 import '../widgets/history_operations_card_widget_mobile.dart';
 import '../widgets/history_operations_header_mobile.dart';
 
@@ -62,6 +64,33 @@ class _HistoryOperationsMobileScreenState
                 padding: EdgeInsets.symmetric(vertical: 10.h),
                 // color: Colors.blueAccent,
                 child: CustomSearchWidget(
+                  onTap: () {
+                    showModalBottomSheet<void>(
+                        context: context,
+                        builder: (context) {
+                          return Container(
+                            height: 350.h,
+                            padding: EdgeInsets.symmetric(
+                              // vertical: 10.h,
+                              horizontal: 10.w,
+                            ),
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(10.r),
+                                  topRight: Radius.circular(10.r),
+                                )
+                            ),
+                            child: Center(
+                              child: BlocProvider.value(
+                                value: getIt<HistoryOperationsCubit>(),
+                                child: const FilterWidgetForHistoricalOperationsMobile(
+                                ),
+                              ),
+                            ),
+                          );
+                        });
+                  },
                   width: double.infinity,
                   searchController: TextEditingController(),
                 ),

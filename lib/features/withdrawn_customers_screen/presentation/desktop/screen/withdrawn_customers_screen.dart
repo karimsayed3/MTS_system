@@ -158,7 +158,7 @@ class _WithdrawnCustomersScreenState extends State<WithdrawnCustomersScreen> {
                     ),
                     FilterWidgetForWithdrawnSubscribers(
                       visible:  visible,
-                      companiesList: [],
+                      companiesList: companiesList,
                     ),
                   ],
                 ),

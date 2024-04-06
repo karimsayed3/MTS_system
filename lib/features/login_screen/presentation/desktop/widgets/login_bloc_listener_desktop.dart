@@ -13,6 +13,8 @@ import 'package:system/features/login_screen/business_logic/login_cubit.dart';
 import 'package:system/features/login_screen/business_logic/login_state.dart';
 import 'package:system/features/login_screen/data/models/login_response.dart';
 
+import '../../../../../core/helpers/check_platform.dart';
+
 class LoginBlocListenerDesktop extends StatelessWidget {
   const LoginBlocListenerDesktop({super.key});
 
@@ -50,7 +52,7 @@ class LoginBlocListenerDesktop extends StatelessWidget {
                   CacheHelper.saveData(
                           key: "accountType", value: decodedToken.accountType)
                       .then((value) {
-                    navigateToPage(Routes.homeDesktopScreen);
+                isMobile()?  navigateToPage(Routes.homeDesktopScreen):    navigateToPage(Routes.homeDesktopScreen);
                   });
                 });
               });
