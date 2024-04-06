@@ -120,9 +120,9 @@ class _SubscribersScreenMobileState extends State<SubscribersScreenMobile> {
                         context: context,
                         builder: (context) {
                           return Container(
-                            height: 400.h,
+                            height: 350.h,
                             padding: EdgeInsets.symmetric(
-                              vertical: 10.h,
+                              // vertical: 10.h,
                               horizontal: 10.w,
                             ),
                             decoration: BoxDecoration(

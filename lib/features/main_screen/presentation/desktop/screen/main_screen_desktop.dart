@@ -89,36 +89,38 @@ class _MainScreenDesktopState extends State<MainScreenDesktop> {
                       const TitleWidget(
                         title: "الوصول السريع:",
                       ),
+                      // CardForShortCuts(
+                      //   iconPath: 'assets/icons/wallet-add.svg',
+                      //   title: 'اضافة رصيد',
+                      //   onTap: () {},
+                      // ),
                       verticalSpace(dimension.height5),
-                      SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
-                        child: Row(
-                          children: [
-                            CardForShortCuts(
-                              iconPath: 'assets/icons/wallet-add.svg',
-                              title: 'اضافة رصيد',
-                              onTap: () {},
-                            ),
-                            horizontalSpace(dimension.width15),
-                            CardForShortCuts(
-                              iconPath: 'assets/icons/receipt-text.svg',
-                              title: 'ايصال سداد فاتورة',
-                              onTap: () {},
-                            ),
-                            horizontalSpace(dimension.width15),
-                            CardForShortCuts(
-                              iconPath: 'assets/icons/user-add.svg',
-                              title: 'اضافة مشترك',
-                              onTap: () {},
-                            ),
-                            horizontalSpace(dimension.width15),
-                            CardForShortCuts(
-                              iconPath: 'assets/icons/user-add.svg',
-                              title: 'اضافة محصل',
-                              onTap: () {},
-                            ),
-                          ],
-                        ),
+                      Row(
+                        children: [
+                          CardForShortCuts(
+                            iconPath: 'assets/icons/wallet-add.svg',
+                            title: 'اضافة رصيد',
+                            onTap: () {},
+                          ),
+                          horizontalSpace(dimension.width15),
+                          CardForShortCuts(
+                            iconPath: 'assets/icons/receipt-text.svg',
+                            title: 'ايصال سداد فاتورة',
+                            onTap: () {},
+                          ),
+                          horizontalSpace(dimension.width15),
+                          CardForShortCuts(
+                            iconPath: 'assets/icons/user-add.svg',
+                            title: 'اضافة مشترك',
+                            onTap: () {},
+                          ),
+                          horizontalSpace(dimension.width15),
+                          CardForShortCuts(
+                            iconPath: 'assets/icons/user-add.svg',
+                            title: 'اضافة محصل',
+                            onTap: () {},
+                          ),
+                        ],
                       ),
                       verticalSpace(dimension.height10),
                       const TitleWidget(

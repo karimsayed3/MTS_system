@@ -18,7 +18,7 @@ Future<File> createPdfReceipt({
   required BuildContext context,
 }) async {
   final doc = pw.Document();
-  PdfPageFormat customReceiptFormat = PdfPageFormat(72 * PdfPageFormat.mm,160 * PdfPageFormat.mm,marginRight: 5.0 ,marginLeft: 5.0); // Adjust width and height as needed
+  PdfPageFormat customReceiptFormat = const PdfPageFormat(72 * PdfPageFormat.mm,160 * PdfPageFormat.mm,marginRight: 5.0 ,marginLeft: 5.0); // Adjust width and height as needed
   final img = await rootBundle.load('assets/images/logo-mk.png');
   final imageBytes = img.buffer.asUint8List();
   pw.Image logo = pw.Image(pw.MemoryImage(imageBytes));
@@ -320,7 +320,7 @@ Future<File> createPdfReceiptForMobile({
 
 }) async {
   final doc = pw.Document();
-  PdfPageFormat customReceiptFormat = PdfPageFormat(270 * PdfPageFormat.mm,330 * PdfPageFormat.mm,marginRight: 3.0 ,marginLeft: 3.0); // Adjust width and height as needed
+  PdfPageFormat customReceiptFormat = const PdfPageFormat(270 * PdfPageFormat.mm,330 * PdfPageFormat.mm,marginRight: 3.0 ,marginLeft: 3.0); // Adjust width and height as needed
   final img = await rootBundle.load('assets/images/logo-mk.png');
   final imageBytes = img.buffer.asUint8List();
   pw.Image logo = pw.Image(pw.MemoryImage(imageBytes));

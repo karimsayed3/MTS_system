@@ -35,7 +35,6 @@ String generateUniqueString() {
 
   return uniqueString;
 }
-
 Future<String> selectFileFromDesktop() async {
   final result = await FilePicker.platform.pickFiles(allowMultiple: false);
   if (result != null) {

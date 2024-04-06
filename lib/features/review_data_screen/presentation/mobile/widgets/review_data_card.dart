@@ -5,8 +5,15 @@ import 'package:system/core/theming/colors.dart';
 import 'package:system/core/widgets/default_button.dart';
 import 'package:system/core/widgets/default_text.dart';
 
+import '../../../../subscribers_screen/data/models/update_subscriber_request_body.dart';
+import '../../../business_logic/review_data_cubit.dart';
+import '../../../data/models/get_review_subscribers_plans.dart';
+
 class ReviewDataCardMobile extends StatelessWidget {
-  const ReviewDataCardMobile({super.key});
+  ReviewDataCardMobile({super.key, required this.reviewSubscriberData,required this.onPressed});
+
+  final ReviewSubscriberData reviewSubscriberData;
+  dynamic Function() onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -27,12 +34,12 @@ class ReviewDataCardMobile extends StatelessWidget {
               CrossAxisAlignment.start,
               children: [
                 DefaultText(
-                  text: "عبدالرحمن العبدالله",
+                  text: reviewSubscriberData.name ?? "",
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w500,
                 ),
                 DefaultText(
-                  text: "01156788394",
+                  text: reviewSubscriberData.phoneNo ?? "",
                   fontSize: 16.sp,
                   color: ColorsManager.secondaryColor,
                   fontWeight: FontWeight.w500,
@@ -46,7 +53,7 @@ class ReviewDataCardMobile extends StatelessWidget {
                 ),
                 DefaultText(
                   text:
-                  "لوريم ابسيوم دولر لوريم ابسيوم دولر لوريم ابسيوم دولر",
+                  reviewSubscriberData.notes ?? "",
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w500,
                 ),
@@ -61,7 +68,7 @@ class ReviewDataCardMobile extends StatelessWidget {
                             horizontal: 5.w,
                             vertical: 5.h),
                         color: ColorsManager.lightYellowColor,
-                        onPressed: () {},
+                        onPressed: onPressed,
                         child: DefaultText(
                           text: 'تغاضى',
                           color: const Color(0xFFFFA800),
@@ -78,7 +85,15 @@ class ReviewDataCardMobile extends StatelessWidget {
                             vertical: 5.h),
                         color:
                         ColorsManager.lightBlueColor,
-                        onPressed: () {},
+                        onPressed: () {
+                          ReviewDataCubit.get(context).updateSubscriber(
+                            updateSubscriberRequestBody:
+                            UpdateSubscriberRequestBody(
+                              oldPhone: reviewSubscriberData.phoneNo,
+                              planName: reviewSubscriberData.companyPlanName,
+                            ),
+                          );
+                        },
                         child: DefaultText(
                           text: 'تنفيذ التعديل',
                           color: ColorsManager
@@ -89,25 +104,25 @@ class ReviewDataCardMobile extends StatelessWidget {
                         ),
                       ),
                     ),
-                    horizontalSpace(5.w),
-                    Expanded(
-                      child: DefaultButton(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: 5.w,
-                            vertical: 5.h),
-                        color:
-                        ColorsManager.lightRedColor,
-                        onPressed: () {},
-                        child: DefaultText(
-                          text: 'حذف',
-                          color:
-                          ColorsManager.primaryColor,
-                          // color: Color(0xFFCC232A),
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ),
+                    // horizontalSpace(5.w),
+                    // Expanded(
+                    //   child: DefaultButton(
+                    //     padding: EdgeInsets.symmetric(
+                    //         horizontal: 5.w,
+                    //         vertical: 5.h),
+                    //     color:
+                    //     ColorsManager.lightRedColor,
+                    //     onPressed: () {},
+                    //     child: DefaultText(
+                    //       text: 'حذف',
+                    //       color:
+                    //       ColorsManager.primaryColor,
+                    //       // color: Color(0xFFCC232A),
+                    //       fontSize: 14.sp,
+                    //       fontWeight: FontWeight.w500,
+                    //     ),
+                    //   ),
+                    // ),
                   ],
                 )
               ],
@@ -141,7 +156,7 @@ class ReviewDataCardMobile extends StatelessWidget {
                         fontSize: 10.sp,
                       ),
                       DefaultText(
-                        text: 'Super Flix 30',
+                        text: reviewSubscriberData.systemPlanName ?? "",
                         fontSize: 12.sp,
                       ),
                     ],
@@ -170,7 +185,7 @@ class ReviewDataCardMobile extends StatelessWidget {
                         fontSize: 10.sp,
                       ),
                       DefaultText(
-                        text: 'Super Flix 30',
+                        text: reviewSubscriberData.companyPlanName ?? "",
                         fontSize: 12.sp,
                       ),
                     ],

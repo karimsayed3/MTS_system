@@ -92,7 +92,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                 title: const Text('الشركات'),
                 onTap: () {
                   // Change to page 1
-                  widget.pageController.animateToPage(0,
+                  widget.pageController.animateToPage(1,
                       duration: const Duration(milliseconds: 300),
                       curve: Curves.easeInOut);
                   Navigator.pop(context); // Close drawer
@@ -103,15 +103,13 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                 title: const Text('الباقات'),
                 onTap: () {
                   // Change to page 2
-                  widget.pageController.animateToPage(1,
+                  widget.pageController.animateToPage(2,
                       duration: const Duration(milliseconds: 300),
                       curve: Curves.easeInOut);
                   Navigator.pop(context); // Close drawer
                 },
               ),
-            CacheHelper.getdata(key: "accountType") == "ادمن" ||
-                    CacheHelper.getdata(key: "accountType") == "موزع"
-                ? DefaultButton(
+             DefaultButton(
                     color: Colors.white,
                     elevation: 0,
                     onPressed: () {
@@ -140,32 +138,29 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                         ],
                       ),
                     ),
-                  )
-                : const SizedBox.shrink(),
+                  ),
             if (index == 1)
               ListTile(
                 title: const Text('المحصلين'),
                 onTap: () {
                   // Change to page 2
-                  widget.pageController.animateToPage(6,
+                  widget.pageController.animateToPage(7,
                       duration: const Duration(milliseconds: 300),
                       curve: Curves.easeInOut);
                   Navigator.pop(context); // Close drawer
                 },
               ),
-
-            index == 1 && CacheHelper.getdata(key: "accountType") == "ادمن"
-                ? ListTile(
-                    title: const Text('طلبات المحصلون'),
-                    onTap: () {
-                      // Change to page 2
-                      widget.pageController.animateToPage(9,
-                          duration: const Duration(milliseconds: 300),
-                          curve: Curves.easeInOut);
-                      Navigator.pop(context); // Close drawer
-                    },
-                  )
-                : const SizedBox.shrink(),
+            if (index == 1)
+              ListTile(
+              title: const Text('طلبات المحصلون'),
+              onTap: () {
+                // Change to page 2
+                widget.pageController.animateToPage(10,
+                    duration: const Duration(milliseconds: 300),
+                    curve: Curves.easeInOut);
+                Navigator.pop(context); // Close drawer
+              },
+            ),
             DefaultButton(
               color: Colors.white,
               elevation: 0,
@@ -201,7 +196,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                 title: const Text('المشتركين'),
                 onTap: () {
                   // Change to page 2
-                  widget.pageController.animateToPage(2,
+                  widget.pageController.animateToPage(3,
                       duration: const Duration(milliseconds: 300),
                       curve: Curves.easeInOut);
                   Navigator.pop(context); // Close drawer
@@ -211,20 +206,6 @@ class _DrawerWidgetState extends State<DrawerWidget> {
               CacheHelper.getdata(key: "accountType") == "ادمن"
                   ? ListTile(
                       title: const Text('المتأخرين'),
-                      onTap: () {
-                        // Change to page 2
-                        widget.pageController.animateToPage(3,
-                            duration: const Duration(milliseconds: 300),
-                            curve: Curves.easeInOut);
-                        Navigator.pop(context); // Close drawer
-                      },
-                    )
-                  : const SizedBox.shrink(),
-            if (index == 2)
-              CacheHelper.getdata(key: "accountType") == "ادمن" ||
-                      CacheHelper.getdata(key: "accountType") == "موزع"
-                  ? ListTile(
-                      title: const Text('المعطلين'),
                       onTap: () {
                         // Change to page 2
                         widget.pageController.animateToPage(4,
@@ -238,10 +219,24 @@ class _DrawerWidgetState extends State<DrawerWidget> {
               CacheHelper.getdata(key: "accountType") == "ادمن" ||
                       CacheHelper.getdata(key: "accountType") == "موزع"
                   ? ListTile(
-                      title: const Text('المسحوبين'),
+                      title: const Text('المعطلين'),
                       onTap: () {
                         // Change to page 2
                         widget.pageController.animateToPage(5,
+                            duration: const Duration(milliseconds: 300),
+                            curve: Curves.easeInOut);
+                        Navigator.pop(context); // Close drawer
+                      },
+                    )
+                  : const SizedBox.shrink(),
+            if (index == 2)
+              CacheHelper.getdata(key: "accountType") == "ادمن" ||
+                      CacheHelper.getdata(key: "accountType") == "موزع"
+                  ? ListTile(
+                      title: const Text('المسحوبين'),
+                      onTap: () {
+                        // Change to page 2
+                        widget.pageController.animateToPage(6,
                             duration: const Duration(milliseconds: 300),
                             curve: Curves.easeInOut);
                         Navigator.pop(context); // Close drawer
@@ -283,7 +278,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                 title: const Text('سجل العمليات'),
                 onTap: () {
                   // Change to page 2
-                  widget.pageController.animateToPage(7,
+                  widget.pageController.animateToPage(8,
                       duration: const Duration(milliseconds: 300),
                       curve: Curves.easeInOut);
                   Navigator.pop(context); // Close drawer
@@ -326,7 +321,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                 title: const Text('مراجعة البيانات'),
                 onTap: () {
                   // Change to page 2
-                  widget.pageController.animateToPage(8,
+                  widget.pageController.animateToPage(9,
                       duration: const Duration(milliseconds: 300),
                       curve: Curves.easeInOut);
                   Navigator.pop(context); // Close drawer

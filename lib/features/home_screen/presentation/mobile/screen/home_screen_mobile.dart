@@ -21,6 +21,7 @@ import '../../../../history_operations_screen/business_logic/history_operations_
 import '../../../../history_operations_screen/presentation/mobile/screen/history_operations_mobile_screen.dart';
 import '../../../../late_customers_screen/presentation/mobile/screen/late_customers_screen_mobile.dart';
 import '../../../../login_screen/business_logic/login_cubit.dart';
+import '../../../../main_screen/presentation/mobile/screen/main_screen_mobile.dart';
 import '../../../../resellers_requests_screen/presentation/mobile/screen/resellers_requests_screen.dart';
 import '../../../../review_data_screen/business_logic/review_data_cubit.dart';
 import '../../../../review_data_screen/presentation/mobile/screen/review_data_screen_mobile.dart';
@@ -79,6 +80,7 @@ class _HomeScreenMobileState extends State<HomeScreenMobile> {
             onPageChanged: _onItemTapped,
             physics: const NeverScrollableScrollPhysics(),
             children: [
+              const SizedBox.shrink(),
               BlocProvider.value(
                 value: getIt<CompaniesCubit>(),
                 child: const CompaniesScreenMobile(),
@@ -121,7 +123,7 @@ class _HomeScreenMobileState extends State<HomeScreenMobile> {
               ),
               const Center(child: Text('HomeScreen')),
             ],
-          ) : const Center(child: Text('HomeScreen')),
+          ) : const MainMobileScreen(),
           bottomNavigationBar: Directionality(
             textDirection: TextDirection.ltr,
             child: BottomNavigationBar(

@@ -55,7 +55,7 @@ class _MultiDropDownButtonState extends State<MultiDropDownButton> {
         dimension.height5,
           ): const SizedBox.shrink(),
           Container(
-            width:isMobile()?300.w :dimension.width250,
+            width:isMobile()?350.w :dimension.width250,
             // height: dimension.height30,
             decoration: BoxDecoration(
               color: widget.color??Colors.white,
