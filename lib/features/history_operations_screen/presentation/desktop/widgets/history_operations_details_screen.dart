@@ -115,7 +115,9 @@ class _HistoryOperationDetailsScreenState
                             ));
                           },
                         ),
-                        const BlocListenerForHistoryOperationsCubit()
+                        BlocListenerForHistoryOperationsCubit(
+
+                        )
                       ],
                     ),
                     FilterWidgetForHistoricalOperations(

@@ -3,9 +3,10 @@ import 'package:json_annotation/json_annotation.dart';
 part 'get_logged_operations_response.g.dart';
 @JsonSerializable()
 class GetLoggedOperationsResponse {
+  int? totalPages ;
   List<LoggedOperation>? result;
 
-  GetLoggedOperationsResponse({this.result});
+  GetLoggedOperationsResponse({this.result,this.totalPages});
   factory GetLoggedOperationsResponse.fromJson(Map<String, dynamic> json) => _$GetLoggedOperationsResponseFromJson(json);
   Map<String, dynamic> toJson() => _$GetLoggedOperationsResponseToJson(this);
 }

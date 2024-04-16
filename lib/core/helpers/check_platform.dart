@@ -1,8 +1,6 @@
 import 'dart:io';
+import 'package:flutter/foundation.dart';
+
 bool isMobile() {
-  if (Platform.isIOS || Platform.isAndroid) {
-    return true; // Running on iOS or Android (mobile)
-  } else {
-    return false; // Running on another platform (web, desktop, etc.)
-  }
+  return true; //
 }

@@ -152,7 +152,8 @@ class _MainScreenDesktopState extends State<MainScreenDesktop> {
                           ));
                         },
                       ),
-                      const BlocListenerForHistoryOperationsCubit()
+                      BlocListenerForHistoryOperationsCubit(
+                      )
 
                     ],
                   ),

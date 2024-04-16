@@ -333,11 +333,9 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                 // SvgPicture.asset("assets/icons/power-off-icon.svg"),
                 TextButton(
                   onPressed: () async {
-                    // LoginCubit.get(context).logout();
-                    // createPdfReceipt(
-                    //   context: context,
-                    // );
-                    navigateToPage(Routes.printerScreen,arguments:  {'imgPath': await createPdfReceiptForMobile(context: context)});
+                    LoginCubit.get(context).logout();
+
+                    // navigateToPage(Routes.printerScreen,arguments:  {'imgPath': await createPdfReceiptForMobile(context: context)});
 
                   },
                   child: DefaultText(
@@ -359,7 +357,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                 }
               },
               child: const SizedBox.shrink(),
-            )
+            ),
           ],
         ),
       ),

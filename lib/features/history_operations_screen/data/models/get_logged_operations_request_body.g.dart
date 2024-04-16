@@ -13,6 +13,7 @@ GetLoggedOperationsRequestBody _$GetLoggedOperationsRequestBodyFromJson(
       relatedTo: json['relatedTo'] as String?,
       operationDateFrom: json['operationDateFrom'] as String?,
       operationDateTo: json['operationDateTo'] as String?,
+      pageNumber: json['pageNumber'] as int?,
       operationTypes: json['operationTypes'] as String?,
     );
 
@@ -24,4 +25,5 @@ Map<String, dynamic> _$GetLoggedOperationsRequestBodyToJson(
       'operationDateFrom': instance.operationDateFrom,
       'operationDateTo': instance.operationDateTo,
       'operationTypes': instance.operationTypes,
+      'pageNumber': instance.pageNumber,
     };

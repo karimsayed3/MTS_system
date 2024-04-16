@@ -16,11 +16,16 @@ class HistoryOperationsCubit extends Cubit<HistoryOperationsState> {
   static HistoryOperationsCubit get(context) => BlocProvider.of(context);
 
   List<LoggedOperation> loggedOperations = [];
+  int pageNumber = 1;
+  bool hasMore = true;
+  bool isLoading = false;
+
+
   changeListData({
     required List<LoggedOperation> loggedOperations
   }){
     emit(const HistoryOperationsState.changeListData());
-    this.loggedOperations = loggedOperations;
+    this.loggedOperations =  loggedOperations;
   }
 
   Future<void> getLoggedOperations({

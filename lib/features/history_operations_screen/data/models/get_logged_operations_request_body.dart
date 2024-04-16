@@ -8,12 +8,14 @@ class GetLoggedOperationsRequestBody {
   String? operationDateFrom;
   String? operationDateTo;
   String? operationTypes;
+  int? pageNumber;
 
   GetLoggedOperationsRequestBody(
       {this.phone,
         this.relatedTo,
         this.operationDateFrom,
         this.operationDateTo,
+        this.pageNumber,
         this.operationTypes});
 
   factory GetLoggedOperationsRequestBody.fromJson(Map<String, dynamic> json) => _$GetLoggedOperationsRequestBodyFromJson(json);

@@ -10,6 +10,7 @@ import 'package:system/features/subscribers_screen/business_logic/subscribers_st
 
 import '../../../../../core/di/dependency_injection.dart';
 import '../../../../../core/theming/colors.dart';
+import '../../../../../core/widgets/default_text.dart';
 import '../../../business_logic/history_operations_cubit.dart';
 import '../../../data/models/get_logged_operations_request_body.dart';
 import '../widgets/filter_widget_for_historical_operations.dart';
@@ -26,13 +27,37 @@ class HistoryOperationsMobileScreen extends StatefulWidget {
 
 class _HistoryOperationsMobileScreenState
     extends State<HistoryOperationsMobileScreen> {
+  ScrollController controller = ScrollController();
+  int pageNumber = 1;
+
   @override
   void initState() {
     // TODO: implement initState
     HistoryOperationsCubit.get(context).loggedOperations = [];
-    HistoryOperationsCubit.get(context).getLoggedOperations(
-        getLoggedOperationsRequestBody: GetLoggedOperationsRequestBody());
+    fetch();
+    controller.addListener(() {
+      if (controller.position.maxScrollExtent == controller.offset) {
+        fetch();
+      }
+    });
+
     super.initState();
+  }
+
+  void fetch() {
+    if (HistoryOperationsCubit.get(context).isLoading) return;
+    HistoryOperationsCubit.get(context).isLoading = true;
+    HistoryOperationsCubit.get(context).getLoggedOperations(
+        getLoggedOperationsRequestBody: GetLoggedOperationsRequestBody(
+            pageNumber: HistoryOperationsCubit.get(context).pageNumber));
+  }
+
+  Future refresh() async {
+    HistoryOperationsCubit.get(context).isLoading = false;
+    HistoryOperationsCubit.get(context).hasMore = true;
+    HistoryOperationsCubit.get(context).pageNumber = 1;
+    HistoryOperationsCubit.get(context).loggedOperations = [];
+    fetch();
   }
 
   @override
@@ -79,13 +104,12 @@ class _HistoryOperationsMobileScreenState
                                 borderRadius: BorderRadius.only(
                                   topLeft: Radius.circular(10.r),
                                   topRight: Radius.circular(10.r),
-                                )
-                            ),
+                                )),
                             child: Center(
                               child: BlocProvider.value(
                                 value: getIt<HistoryOperationsCubit>(),
-                                child: const FilterWidgetForHistoricalOperationsMobile(
-                                ),
+                                child:
+                                    const FilterWidgetForHistoricalOperationsMobile(),
                               ),
                             ),
                           );
@@ -102,23 +126,49 @@ class _HistoryOperationsMobileScreenState
                     BlocBuilder<HistoryOperationsCubit, HistoryOperationsState>(
                       builder: (context, state) {
                         return Expanded(
-                          child: ListView.builder(
-                            itemBuilder: (context, index) {
-                              return HistoryOperationsCardWidgetMobile(
-                                loggedOperation:
+                          child: RefreshIndicator(
+                            onRefresh: refresh,
+                            child: ListView.builder(
+                              controller: controller,
+                              itemBuilder: (context, index) {
+                                if (index <
                                     HistoryOperationsCubit.get(context)
-                                        .loggedOperations[index],
-                              );
-                              // return const SizedBox.shrink();
-                            },
-                            itemCount: HistoryOperationsCubit.get(context)
-                                .loggedOperations
-                                .length,
+                                        .loggedOperations
+                                        .length) {
+                                  return HistoryOperationsCardWidgetMobile(
+                                    loggedOperation:
+                                        HistoryOperationsCubit.get(context)
+                                            .loggedOperations[index],
+                                  );
+                                } else {
+                                  return Padding(
+                                    padding: EdgeInsets.symmetric(
+                                      vertical: 15.h,
+                                    ),
+                                    child: Center(
+                                      child: HistoryOperationsCubit.get(context)
+                                              .hasMore
+                                          ? const CircularProgressIndicator()
+                                          : DefaultText(
+                                              text: 'لا يوجد مزيد من البيانات',
+                                              fontSize: 16.sp,
+                                            ),
+                                    ),
+                                  );
+                                }
+
+                                // return const SizedBox.shrink();
+                              },
+                              itemCount: HistoryOperationsCubit.get(context)
+                                      .loggedOperations
+                                      .length +
+                                  1,
+                            ),
                           ),
                         );
                       },
                     ),
-                    const BlocListenerForHistoryOperationsCubit(),
+                    BlocListenerForHistoryOperationsCubit(),
                   ],
                 ),
               ),

@@ -12,11 +12,13 @@ GetLoggedOperationsResponse _$GetLoggedOperationsResponseFromJson(
       result: (json['result'] as List<dynamic>?)
           ?.map((e) => LoggedOperation.fromJson(e as Map<String, dynamic>))
           .toList(),
+      totalPages: json['totalPages'] as int?,
     );
 
 Map<String, dynamic> _$GetLoggedOperationsResponseToJson(
         GetLoggedOperationsResponse instance) =>
     <String, dynamic>{
+      'totalPages': instance.totalPages,
       'result': instance.result,
     };
 
