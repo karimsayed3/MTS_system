@@ -36,7 +36,9 @@ class _HistoryOperationDetailsScreenState
     HistoryOperationsCubit.get(context).loggedOperations = [];
 
     HistoryOperationsCubit.get(context).getLoggedOperations(
-        getLoggedOperationsRequestBody: GetLoggedOperationsRequestBody());
+        getLoggedOperationsRequestBody: GetLoggedOperationsRequestBody(
+          pageNumber: 1
+        ));
     super.initState();
   }
 

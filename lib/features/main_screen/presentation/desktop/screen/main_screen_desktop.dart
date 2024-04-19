@@ -30,7 +30,9 @@ class _MainScreenDesktopState extends State<MainScreenDesktop> {
     // TODO: implement initState
     HistoryOperationsCubit.get(context).loggedOperations = [];
     HistoryOperationsCubit.get(context).getLoggedOperations(
-        getLoggedOperationsRequestBody: GetLoggedOperationsRequestBody());
+        getLoggedOperationsRequestBody: GetLoggedOperationsRequestBody(
+          pageNumber: 1
+        ));
     super.initState();
   }
 

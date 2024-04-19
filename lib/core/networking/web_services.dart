@@ -49,6 +49,7 @@ import '../../features/collectors_screen/data/models/add_user_request_body.dart'
 import '../../features/collectors_screen/data/models/delete_user_request_body.dart';
 import '../../features/collectors_screen/data/models/update_user_request_body.dart';
 import '../../features/review_data_screen/data/models/get_review_subscribers_plans.dart';
+import 'models/results_of_uploaded_excel_model.dart';
 
 part 'web_services.g.dart';
 
@@ -214,6 +215,26 @@ abstract class WebServices {
   @POST("excel/reviewSubscribersPlans")
   @MultiPart()
   Future<GetReviewSubscribersPlans> reviewSubscribersPlans(@Part() File excel,);
+
+
+  /// disableSubscribers
+  @POST("excel/disableSubscribers")
+  @MultiPart()
+  Future<ResultsOfUploadedExcelModel> disableSubscribersByExcel(@Part() File excel,);
+
+
+  /// withdrawSubscribers
+  @POST("excel/withdrawSubscribers")
+  @MultiPart()
+  Future<ResultsOfUploadedExcelModel> withdrawSubscribersByExcel(@Part() File excel,);
+
+
+  /// collectSubscriberBalance
+  @POST("excel/collectSubscriberBalance")
+  @MultiPart()
+  Future<ResultsOfUploadedExcelModel> collectSubscriberBalanceByExcel(@Part() File excel,);
+
+
 
 
   /// getLoggedOperations

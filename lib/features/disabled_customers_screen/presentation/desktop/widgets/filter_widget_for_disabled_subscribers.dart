@@ -86,6 +86,14 @@ class _FilterWidgetForDisabledSubscribersState
                 width: dimension.width200,
                 controller: to,
                 title: "",
+                onFieldSubmitted: (value) {
+                  // value = convertDateToString(value);
+                  // SubscribersCubit.get(context).getDisabledSubscribers(
+                  //     getDisabledSubscribersRequestBody: GetDisabledSubscribersRequestBody(
+                  //       collectorName: collectorName.text,
+                  //
+                  //     ));
+                },
                 // hintText: "اسم المحصل",
               ),
               // CustomSearchWidget(

@@ -22,7 +22,7 @@ class _WebServices implements WebServices {
 
   @override
   Future<LoginResponse> login(LoginRequestBody loginRequestBody) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -50,10 +50,10 @@ class _WebServices implements WebServices {
 
   @override
   Future<LoginResponse> logout() async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<LoginResponse>(Options(
       method: 'POST',
@@ -78,7 +78,7 @@ class _WebServices implements WebServices {
   @override
   Future<GetCompaniesResponse> getCompanies(
       GetCompaniesRequestBody getCompaniesRequestBody) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -107,7 +107,7 @@ class _WebServices implements WebServices {
   @override
   Future<DefaultApiResponse> addCompany(
       AddCompanyRequestBody addCompanyRequestBody) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -136,7 +136,7 @@ class _WebServices implements WebServices {
   @override
   Future<DefaultApiResponse> updateCompany(
       UpdateCompanyRequestBody updateCompanyRequestBody) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -165,7 +165,7 @@ class _WebServices implements WebServices {
   @override
   Future<DefaultApiResponse> deleteCompany(
       DeleteCompanyRequestBody deleteCompanyRequestBody) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -195,7 +195,7 @@ class _WebServices implements WebServices {
   Future<DefaultApiResponse> deductPlanFromSubscribers(
       DeductPlanFromSubscribersRequestBody
           deductPlanFromSubscribersRequestBody) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -225,7 +225,7 @@ class _WebServices implements WebServices {
   Future<DefaultApiResponse> undoPlanFromSubscribers(
       UndoPlanFromSubscribersRequestBody
           undoPlanFromSubscribersRequestBody) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -254,7 +254,7 @@ class _WebServices implements WebServices {
   @override
   Future<GetPlansResponse> getPlans(
       GetPlansRequestBody getPlansRequestBody) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -283,7 +283,7 @@ class _WebServices implements WebServices {
   @override
   Future<DefaultApiResponse> addPlan(
       AddPlanRequestBody addPlanRequestBody) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -312,7 +312,7 @@ class _WebServices implements WebServices {
   @override
   Future<DefaultApiResponse> updatePlan(
       UpdatePlanRequestBody updatePlanRequestBody) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -341,7 +341,7 @@ class _WebServices implements WebServices {
   @override
   Future<DefaultApiResponse> deletePlan(
       DeletePlanRequestBody deletePlanRequestBody) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -370,7 +370,7 @@ class _WebServices implements WebServices {
   @override
   Future<DefaultApiResponse> addUser(
       AddUserRequestBody addUserRequestBody) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -399,7 +399,7 @@ class _WebServices implements WebServices {
   @override
   Future<DefaultApiResponse> updateUser(
       UpdateUserRequestBody updateUserRequestBody) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -428,7 +428,7 @@ class _WebServices implements WebServices {
   @override
   Future<DefaultApiResponse> deleteUser(
       DeleteUserRequestBody deleteUserRequestBody) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -457,7 +457,7 @@ class _WebServices implements WebServices {
   @override
   Future<DefaultApiResponse> zeroCollectorTotal(
       ZeroCollectorTotalRequestBody zeroCollectorTotalRequestBody) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -487,7 +487,7 @@ class _WebServices implements WebServices {
   Future<DefaultApiResponse> deductBalanceCollector(
       DeductBalanceCollectorRequestBody
           deductBalanceCollectorRequestBody) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -516,7 +516,7 @@ class _WebServices implements WebServices {
   @override
   Future<GetUsersResponse> getUsers(
       GetUsersRequestBody getUsersRequestBody) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -545,7 +545,7 @@ class _WebServices implements WebServices {
   @override
   Future<DefaultApiResponse> addSubscriber(
       AddNewSubscriberRequestBody addNewSubscriberRequestBody) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -574,7 +574,7 @@ class _WebServices implements WebServices {
   @override
   Future<DefaultApiResponse> updateSubscriber(
       UpdateSubscriberRequestBody updateSubscriberRequestBody) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -603,7 +603,7 @@ class _WebServices implements WebServices {
   @override
   Future<DefaultApiResponse> deleteSubscriber(
       DeleteSubscriberRequestBody deleteSubscriberRequestBody) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -632,7 +632,7 @@ class _WebServices implements WebServices {
   @override
   Future<DefaultApiResponse> disableSubscriber(
       DisableSubscriberRequestBody disableSubscriberRequestBody) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -661,7 +661,7 @@ class _WebServices implements WebServices {
   @override
   Future<DefaultApiResponse> withdrawSubscriber(
       WithdrawSubscriberRequestBody withdrawSubscriberRequestBody) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -690,7 +690,7 @@ class _WebServices implements WebServices {
   @override
   Future<DefaultApiResponse> activateSubscriber(
       ActivateSubscriberRequestBody activateSubscriberRequestBody) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -719,7 +719,7 @@ class _WebServices implements WebServices {
   @override
   Future<DefaultApiResponse> zeroSubscriberBalance(
       ZeroSubscriberBalanceRequestBody zeroSubscriberBalanceRequestBody) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -749,7 +749,7 @@ class _WebServices implements WebServices {
   Future<DefaultApiResponse> collectSubscriberBalance(
       CollectSubscriberBalanceRequestBody
           collectSubscriberBalanceRequestBody) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -778,7 +778,7 @@ class _WebServices implements WebServices {
   @override
   Future<GetSubscribersDataResponse> getActiveSubscribers(
       GetActiveSubscribersRequestBody getActiveSubscribersRequestBody) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -807,7 +807,7 @@ class _WebServices implements WebServices {
   @override
   Future<GetLateSubscribersResponse> getLateSubscribers(
       GetLateSubscribersRequestBody getLateSubscribersRequestBody) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -837,7 +837,7 @@ class _WebServices implements WebServices {
   Future<GetDisabledSubscribersResponse> getDisabledSubscribers(
       GetDisabledSubscribersRequestBody
           getDisabledSubscribersRequestBody) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -867,7 +867,7 @@ class _WebServices implements WebServices {
   Future<GetWithdrawnSubscribersResponse> getWithdrawnSubscribers(
       GetWithdrawnSubscribersRequestBody
           getWithdrawnSubscribersRequestBody) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -896,7 +896,7 @@ class _WebServices implements WebServices {
   @override
   Future<GetListsResponse> getPlansList(
       Map<String, dynamic> companyName) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -924,10 +924,10 @@ class _WebServices implements WebServices {
 
   @override
   Future<GetListsResponse> getCompaniesList() async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<GetListsResponse>(Options(
       method: 'GET',
@@ -951,10 +951,10 @@ class _WebServices implements WebServices {
 
   @override
   Future<GetListsResponse> getCollectorsEmails() async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<GetListsResponse>(Options(
       method: 'GET',
@@ -979,7 +979,7 @@ class _WebServices implements WebServices {
   @override
   Future<GetCollectorRequestsResponse> getCollectorRequests(
       GetCollectorRequestsRequestBody getCollectorRequestsRequestBody) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -1008,7 +1008,7 @@ class _WebServices implements WebServices {
   @override
   Future<DefaultApiResponse> declineRequest(
       ApproveOrDeclineRequestBody approveOrDeclineRequestBody) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -1037,7 +1037,7 @@ class _WebServices implements WebServices {
   @override
   Future<DefaultApiResponse> approveRequest(
       ApproveOrDeclineRequestBody approveOrDeclineRequestBody) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -1065,7 +1065,7 @@ class _WebServices implements WebServices {
 
   @override
   Future<GetReviewSubscribersPlans> reviewSubscribersPlans(File excel) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = FormData();
@@ -1099,9 +1099,117 @@ class _WebServices implements WebServices {
   }
 
   @override
+  Future<ResultsOfUploadedExcelModel> disableSubscribersByExcel(
+      File excel) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = FormData();
+    _data.files.add(MapEntry(
+      'excel',
+      MultipartFile.fromFileSync(
+        excel.path,
+        filename: excel.path.split(Platform.pathSeparator).last,
+      ),
+    ));
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<ResultsOfUploadedExcelModel>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+      contentType: 'multipart/form-data',
+    )
+            .compose(
+              _dio.options,
+              'excel/disableSubscribers',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = ResultsOfUploadedExcelModel.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<ResultsOfUploadedExcelModel> withdrawSubscribersByExcel(
+      File excel) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = FormData();
+    _data.files.add(MapEntry(
+      'excel',
+      MultipartFile.fromFileSync(
+        excel.path,
+        filename: excel.path.split(Platform.pathSeparator).last,
+      ),
+    ));
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<ResultsOfUploadedExcelModel>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+      contentType: 'multipart/form-data',
+    )
+            .compose(
+              _dio.options,
+              'excel/withdrawSubscribers',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = ResultsOfUploadedExcelModel.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<ResultsOfUploadedExcelModel> collectSubscriberBalanceByExcel(
+      File excel) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = FormData();
+    _data.files.add(MapEntry(
+      'excel',
+      MultipartFile.fromFileSync(
+        excel.path,
+        filename: excel.path.split(Platform.pathSeparator).last,
+      ),
+    ));
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<ResultsOfUploadedExcelModel>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+      contentType: 'multipart/form-data',
+    )
+            .compose(
+              _dio.options,
+              'excel/collectSubscriberBalance',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = ResultsOfUploadedExcelModel.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
   Future<GetLoggedOperationsResponse> getLoggedOperations(
       GetLoggedOperationsRequestBody getLoggedOperationsRequestBody) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};

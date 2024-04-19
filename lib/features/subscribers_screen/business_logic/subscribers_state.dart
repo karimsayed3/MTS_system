@@ -1,6 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:system/core/networking/default_api_response.dart';
 import 'package:system/core/networking/models/get_lists_response.dart';
+import 'package:system/core/networking/models/results_of_uploaded_excel_model.dart';
 import 'package:system/features/disabled_customers_screen/data/models/get_disabled_subscribers_response.dart';
 import 'package:system/features/late_customers_screen/data/models/get_late_subscribers_response.dart';
 import 'package:system/features/login_screen/data/models/login_response.dart';
@@ -85,6 +86,19 @@ class SubscribersState<T> with _$SubscribersState<T> {
   const factory SubscribersState.getPlansListLoadingState() = GetPlansListloadingState;
   const factory SubscribersState.getPlansListSuccessState(GetListsResponse getListsResponse) = GetPlansListSuccessState<T>;
   const factory SubscribersState.getPlansListErrorState({required String error}) =  GetPlansListErrorState;
+
+
+  const factory SubscribersState.disableSubscribersByExcelLoadingState() = DisableSubscribersByExcelloadingState;
+  const factory SubscribersState.disableSubscribersByExcelSuccessState(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel) = DisableSubscribersByExcelSuccessState<T>;
+  const factory SubscribersState.disableSubscribersByExcelErrorState({required String error}) =  DisableSubscribersByExcelErrorState;
+
+  const factory SubscribersState.withdrawSubscribersByExcelLoadingState() = WithdrawSubscribersByExcelloadingState;
+  const factory SubscribersState.withdrawSubscribersByExcelSuccessState(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel) = WithdrawSubscribersByExcelSuccessState<T>;
+  const factory SubscribersState.withdrawSubscribersByExcelErrorState({required String error}) =  WithdrawSubscribersByExcelErrorState;
+
+  const factory SubscribersState.collectSubscriberBalanceByExcelLoadingState() = CollectSubscriberBalanceByExcelloadingState;
+  const factory SubscribersState.collectSubscriberBalanceByExcelSuccessState(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel) = CollectSubscriberBalanceByExcelSuccessState<T>;
+  const factory SubscribersState.collectSubscriberBalanceByExcelErrorState({required String error}) =  CollectSubscriberBalanceByExcelErrorState;
 
   const factory SubscribersState.changeListData() = ChangeListData;
 

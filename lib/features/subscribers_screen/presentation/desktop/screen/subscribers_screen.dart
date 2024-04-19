@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:system/core/di/dependency_injection.dart';
@@ -19,6 +21,7 @@ import 'package:system/features/subscribers_screen/data/models/get_active_subscr
 import 'package:system/features/subscribers_screen/presentation/desktop/widgets/add_subsciber_widget.dart';
 import 'package:system/features/subscribers_screen/presentation/desktop/widgets/create_excel.dart';
 import '../../../../../core/utils/items_for_multi_drop_down_button.dart';
+import '../../../../../core/utils/utils.dart';
 import '../../../../../core/widgets/check_box_outline.dart';
 import '../../../../../core/widgets/filter_widget.dart';
 import '../../../../../core/widgets/muilti_drop_down_button.dart';
@@ -39,6 +42,7 @@ class _SubscribersScreenState extends State<SubscribersScreen>
   @override
   bool get wantKeepAlive => true;
   TextEditingController searchController = TextEditingController();
+  String filePath = "";
 
   @override
   void initState() {
@@ -140,6 +144,30 @@ class _SubscribersScreenState extends State<SubscribersScreen>
                             ),
                             Row(
                               children: [
+                                ButtonWithTextAndImageWidget(
+                                  onPressed: () async {
+                                    // createExcelForActiveSubscribers(
+                                    //     data: SubscribersCubit.get(context).subscribers
+                                    // );
+                                    filePath = await selectFileFromDesktop();
+                                    print(filePath);
+
+                                    setState(() {});
+                                    // print(filePath);
+                                    // result = await pickFileFromWindows();
+                                    if (filePath.isNotEmpty) {
+                                      SubscribersCubit.get(context)
+                                          .collectSubscriberBalanceByExcel(
+                                        excel: File(filePath),
+                                      );
+                                    } else {}
+                                    // ReviewDataCubit.get(context).reviewSubscribersPlans(files: files);
+                                  },
+                                  color: const Color(0xffebf5f6),
+                                  image: 'assets/icons/excel.svg',
+                                  text: "اضافة رصيد",
+                                ),
+                                horizontalSpace(dimension.width10,),
                                 CacheHelper.getdata(key: "accountType") ==
                                         "ادمن"
                                     ? ButtonWithTextAndImageWidget(

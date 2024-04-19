@@ -1,7 +1,10 @@
+import 'dart:io';
+
 import 'package:system/core/networking/api_error_handler.dart';
 import 'package:system/core/networking/api_result.dart';
 import 'package:system/core/networking/default_api_response.dart';
 import 'package:system/core/networking/models/get_lists_response.dart';
+import 'package:system/core/networking/models/results_of_uploaded_excel_model.dart';
 import 'package:system/core/networking/web_services.dart';
 import 'package:system/features/disabled_customers_screen/data/models/get_disabled_subscribers_response.dart';
 import 'package:system/features/late_customers_screen/data/models/get_late_subscribers_response.dart';
@@ -31,6 +34,36 @@ class SubscribersRepository {
     try {
       final response =
           await webServices.addSubscriber(addNewSubscriberRequestBody);
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(ErrorHandler.handle(error));
+    }
+  }
+
+  Future<ApiResult<ResultsOfUploadedExcelModel>> disableSubscribersByExcel(
+      File file ) async {
+    try {
+      final response = await webServices.disableSubscribersByExcel(file);
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(ErrorHandler.handle(error));
+    }
+  }
+
+  Future<ApiResult<ResultsOfUploadedExcelModel>> withdrawSubscribersByExcel(
+      File file ) async {
+    try {
+      final response = await webServices.withdrawSubscribersByExcel(file);
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(ErrorHandler.handle(error));
+    }
+  }
+
+  Future<ApiResult<ResultsOfUploadedExcelModel>> collectSubscriberBalanceByExcel(
+      File file ) async {
+    try {
+      final response = await webServices.collectSubscriberBalanceByExcel(file);
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(ErrorHandler.handle(error));

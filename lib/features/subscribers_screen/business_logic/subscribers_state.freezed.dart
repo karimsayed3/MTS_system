@@ -12,7 +12,7 @@ part of 'subscribers_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$SubscribersState<T> {
@@ -83,6 +83,23 @@ mixin _$SubscribersState<T> {
     required TResult Function(GetListsResponse getListsResponse)
         getPlansListSuccessState,
     required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function() changeListData,
   }) =>
       throw _privateConstructorUsedError;
@@ -151,6 +168,18 @@ mixin _$SubscribersState<T> {
     TResult? Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult? Function()? changeListData,
   }) =>
       throw _privateConstructorUsedError;
@@ -219,6 +248,18 @@ mixin _$SubscribersState<T> {
     TResult Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) =>
@@ -316,6 +357,27 @@ mixin _$SubscribersState<T> {
         getPlansListSuccessState,
     required TResult Function(GetPlansListErrorState<T> value)
         getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) =>
       throw _privateConstructorUsedError;
@@ -411,6 +473,24 @@ mixin _$SubscribersState<T> {
     TResult? Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) =>
       throw _privateConstructorUsedError;
@@ -506,6 +586,24 @@ mixin _$SubscribersState<T> {
     TResult Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) =>
@@ -633,6 +731,23 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function(GetListsResponse getListsResponse)
         getPlansListSuccessState,
     required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function() changeListData,
   }) {
     return initial();
@@ -704,6 +819,18 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult? Function()? changeListData,
   }) {
     return initial?.call();
@@ -775,6 +902,18 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -878,6 +1017,27 @@ class _$InitialImpl<T> implements _Initial<T> {
         getPlansListSuccessState,
     required TResult Function(GetPlansListErrorState<T> value)
         getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return initial(this);
@@ -976,6 +1136,24 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return initial?.call(this);
@@ -1074,6 +1252,24 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -1196,6 +1392,23 @@ class _$AddNewSubscriberloadingStateImpl<T>
     required TResult Function(GetListsResponse getListsResponse)
         getPlansListSuccessState,
     required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function() changeListData,
   }) {
     return addNewSubscriberLoadingState();
@@ -1267,6 +1480,18 @@ class _$AddNewSubscriberloadingStateImpl<T>
     TResult? Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult? Function()? changeListData,
   }) {
     return addNewSubscriberLoadingState?.call();
@@ -1338,6 +1563,18 @@ class _$AddNewSubscriberloadingStateImpl<T>
     TResult Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -1441,6 +1678,27 @@ class _$AddNewSubscriberloadingStateImpl<T>
         getPlansListSuccessState,
     required TResult Function(GetPlansListErrorState<T> value)
         getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return addNewSubscriberLoadingState(this);
@@ -1539,6 +1797,24 @@ class _$AddNewSubscriberloadingStateImpl<T>
     TResult? Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return addNewSubscriberLoadingState?.call(this);
@@ -1637,6 +1913,24 @@ class _$AddNewSubscriberloadingStateImpl<T>
     TResult Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -1788,6 +2082,23 @@ class _$AddNewSubscriberSuccessStateImpl<T>
     required TResult Function(GetListsResponse getListsResponse)
         getPlansListSuccessState,
     required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function() changeListData,
   }) {
     return addNewSubscriberSuccessState(defaultApiResponse);
@@ -1859,6 +2170,18 @@ class _$AddNewSubscriberSuccessStateImpl<T>
     TResult? Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult? Function()? changeListData,
   }) {
     return addNewSubscriberSuccessState?.call(defaultApiResponse);
@@ -1930,6 +2253,18 @@ class _$AddNewSubscriberSuccessStateImpl<T>
     TResult Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -2033,6 +2368,27 @@ class _$AddNewSubscriberSuccessStateImpl<T>
         getPlansListSuccessState,
     required TResult Function(GetPlansListErrorState<T> value)
         getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return addNewSubscriberSuccessState(this);
@@ -2131,6 +2487,24 @@ class _$AddNewSubscriberSuccessStateImpl<T>
     TResult? Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return addNewSubscriberSuccessState?.call(this);
@@ -2229,6 +2603,24 @@ class _$AddNewSubscriberSuccessStateImpl<T>
     TResult Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -2386,6 +2778,23 @@ class _$AddNewSubscriberErrorStateImpl<T>
     required TResult Function(GetListsResponse getListsResponse)
         getPlansListSuccessState,
     required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function() changeListData,
   }) {
     return addNewSubscriberErrorState(error);
@@ -2457,6 +2866,18 @@ class _$AddNewSubscriberErrorStateImpl<T>
     TResult? Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult? Function()? changeListData,
   }) {
     return addNewSubscriberErrorState?.call(error);
@@ -2528,6 +2949,18 @@ class _$AddNewSubscriberErrorStateImpl<T>
     TResult Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -2631,6 +3064,27 @@ class _$AddNewSubscriberErrorStateImpl<T>
         getPlansListSuccessState,
     required TResult Function(GetPlansListErrorState<T> value)
         getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return addNewSubscriberErrorState(this);
@@ -2729,6 +3183,24 @@ class _$AddNewSubscriberErrorStateImpl<T>
     TResult? Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return addNewSubscriberErrorState?.call(this);
@@ -2827,6 +3299,24 @@ class _$AddNewSubscriberErrorStateImpl<T>
     TResult Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -2956,6 +3446,23 @@ class _$UpdateSubscriberloadingStateImpl<T>
     required TResult Function(GetListsResponse getListsResponse)
         getPlansListSuccessState,
     required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function() changeListData,
   }) {
     return updateSubscriberLoadingState();
@@ -3027,6 +3534,18 @@ class _$UpdateSubscriberloadingStateImpl<T>
     TResult? Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult? Function()? changeListData,
   }) {
     return updateSubscriberLoadingState?.call();
@@ -3098,6 +3617,18 @@ class _$UpdateSubscriberloadingStateImpl<T>
     TResult Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -3201,6 +3732,27 @@ class _$UpdateSubscriberloadingStateImpl<T>
         getPlansListSuccessState,
     required TResult Function(GetPlansListErrorState<T> value)
         getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return updateSubscriberLoadingState(this);
@@ -3299,6 +3851,24 @@ class _$UpdateSubscriberloadingStateImpl<T>
     TResult? Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return updateSubscriberLoadingState?.call(this);
@@ -3397,6 +3967,24 @@ class _$UpdateSubscriberloadingStateImpl<T>
     TResult Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -3548,6 +4136,23 @@ class _$UpdateSubscriberSuccessStateImpl<T>
     required TResult Function(GetListsResponse getListsResponse)
         getPlansListSuccessState,
     required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function() changeListData,
   }) {
     return updateSubscriberSuccessState(defaultApiResponse);
@@ -3619,6 +4224,18 @@ class _$UpdateSubscriberSuccessStateImpl<T>
     TResult? Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult? Function()? changeListData,
   }) {
     return updateSubscriberSuccessState?.call(defaultApiResponse);
@@ -3690,6 +4307,18 @@ class _$UpdateSubscriberSuccessStateImpl<T>
     TResult Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -3793,6 +4422,27 @@ class _$UpdateSubscriberSuccessStateImpl<T>
         getPlansListSuccessState,
     required TResult Function(GetPlansListErrorState<T> value)
         getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return updateSubscriberSuccessState(this);
@@ -3891,6 +4541,24 @@ class _$UpdateSubscriberSuccessStateImpl<T>
     TResult? Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return updateSubscriberSuccessState?.call(this);
@@ -3989,6 +4657,24 @@ class _$UpdateSubscriberSuccessStateImpl<T>
     TResult Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -4146,6 +4832,23 @@ class _$UpdateSubscriberErrorStateImpl<T>
     required TResult Function(GetListsResponse getListsResponse)
         getPlansListSuccessState,
     required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function() changeListData,
   }) {
     return updateSubscriberErrorState(error);
@@ -4217,6 +4920,18 @@ class _$UpdateSubscriberErrorStateImpl<T>
     TResult? Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult? Function()? changeListData,
   }) {
     return updateSubscriberErrorState?.call(error);
@@ -4288,6 +5003,18 @@ class _$UpdateSubscriberErrorStateImpl<T>
     TResult Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -4391,6 +5118,27 @@ class _$UpdateSubscriberErrorStateImpl<T>
         getPlansListSuccessState,
     required TResult Function(GetPlansListErrorState<T> value)
         getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return updateSubscriberErrorState(this);
@@ -4489,6 +5237,24 @@ class _$UpdateSubscriberErrorStateImpl<T>
     TResult? Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return updateSubscriberErrorState?.call(this);
@@ -4587,6 +5353,24 @@ class _$UpdateSubscriberErrorStateImpl<T>
     TResult Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -4716,6 +5500,23 @@ class _$DeleteSubscriberloadingStateImpl<T>
     required TResult Function(GetListsResponse getListsResponse)
         getPlansListSuccessState,
     required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function() changeListData,
   }) {
     return deleteSubscriberLoadingState();
@@ -4787,6 +5588,18 @@ class _$DeleteSubscriberloadingStateImpl<T>
     TResult? Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult? Function()? changeListData,
   }) {
     return deleteSubscriberLoadingState?.call();
@@ -4858,6 +5671,18 @@ class _$DeleteSubscriberloadingStateImpl<T>
     TResult Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -4961,6 +5786,27 @@ class _$DeleteSubscriberloadingStateImpl<T>
         getPlansListSuccessState,
     required TResult Function(GetPlansListErrorState<T> value)
         getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return deleteSubscriberLoadingState(this);
@@ -5059,6 +5905,24 @@ class _$DeleteSubscriberloadingStateImpl<T>
     TResult? Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return deleteSubscriberLoadingState?.call(this);
@@ -5157,6 +6021,24 @@ class _$DeleteSubscriberloadingStateImpl<T>
     TResult Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -5308,6 +6190,23 @@ class _$DeleteSubscriberSuccessStateImpl<T>
     required TResult Function(GetListsResponse getListsResponse)
         getPlansListSuccessState,
     required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function() changeListData,
   }) {
     return deleteSubscriberSuccessState(defaultApiResponse);
@@ -5379,6 +6278,18 @@ class _$DeleteSubscriberSuccessStateImpl<T>
     TResult? Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult? Function()? changeListData,
   }) {
     return deleteSubscriberSuccessState?.call(defaultApiResponse);
@@ -5450,6 +6361,18 @@ class _$DeleteSubscriberSuccessStateImpl<T>
     TResult Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -5553,6 +6476,27 @@ class _$DeleteSubscriberSuccessStateImpl<T>
         getPlansListSuccessState,
     required TResult Function(GetPlansListErrorState<T> value)
         getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return deleteSubscriberSuccessState(this);
@@ -5651,6 +6595,24 @@ class _$DeleteSubscriberSuccessStateImpl<T>
     TResult? Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return deleteSubscriberSuccessState?.call(this);
@@ -5749,6 +6711,24 @@ class _$DeleteSubscriberSuccessStateImpl<T>
     TResult Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -5906,6 +6886,23 @@ class _$DeleteSubscriberErrorStateImpl<T>
     required TResult Function(GetListsResponse getListsResponse)
         getPlansListSuccessState,
     required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function() changeListData,
   }) {
     return deleteSubscriberErrorState(error);
@@ -5977,6 +6974,18 @@ class _$DeleteSubscriberErrorStateImpl<T>
     TResult? Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult? Function()? changeListData,
   }) {
     return deleteSubscriberErrorState?.call(error);
@@ -6048,6 +7057,18 @@ class _$DeleteSubscriberErrorStateImpl<T>
     TResult Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -6151,6 +7172,27 @@ class _$DeleteSubscriberErrorStateImpl<T>
         getPlansListSuccessState,
     required TResult Function(GetPlansListErrorState<T> value)
         getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return deleteSubscriberErrorState(this);
@@ -6249,6 +7291,24 @@ class _$DeleteSubscriberErrorStateImpl<T>
     TResult? Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return deleteSubscriberErrorState?.call(this);
@@ -6347,6 +7407,24 @@ class _$DeleteSubscriberErrorStateImpl<T>
     TResult Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -6476,6 +7554,23 @@ class _$DisableSubscriberloadingStateImpl<T>
     required TResult Function(GetListsResponse getListsResponse)
         getPlansListSuccessState,
     required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function() changeListData,
   }) {
     return disableSubscriberLoadingState();
@@ -6547,6 +7642,18 @@ class _$DisableSubscriberloadingStateImpl<T>
     TResult? Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult? Function()? changeListData,
   }) {
     return disableSubscriberLoadingState?.call();
@@ -6618,6 +7725,18 @@ class _$DisableSubscriberloadingStateImpl<T>
     TResult Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -6721,6 +7840,27 @@ class _$DisableSubscriberloadingStateImpl<T>
         getPlansListSuccessState,
     required TResult Function(GetPlansListErrorState<T> value)
         getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return disableSubscriberLoadingState(this);
@@ -6819,6 +7959,24 @@ class _$DisableSubscriberloadingStateImpl<T>
     TResult? Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return disableSubscriberLoadingState?.call(this);
@@ -6917,6 +8075,24 @@ class _$DisableSubscriberloadingStateImpl<T>
     TResult Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -7068,6 +8244,23 @@ class _$DisableSubscriberSuccessStateImpl<T>
     required TResult Function(GetListsResponse getListsResponse)
         getPlansListSuccessState,
     required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function() changeListData,
   }) {
     return disableSubscriberSuccessState(defaultApiResponse);
@@ -7139,6 +8332,18 @@ class _$DisableSubscriberSuccessStateImpl<T>
     TResult? Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult? Function()? changeListData,
   }) {
     return disableSubscriberSuccessState?.call(defaultApiResponse);
@@ -7210,6 +8415,18 @@ class _$DisableSubscriberSuccessStateImpl<T>
     TResult Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -7313,6 +8530,27 @@ class _$DisableSubscriberSuccessStateImpl<T>
         getPlansListSuccessState,
     required TResult Function(GetPlansListErrorState<T> value)
         getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return disableSubscriberSuccessState(this);
@@ -7411,6 +8649,24 @@ class _$DisableSubscriberSuccessStateImpl<T>
     TResult? Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return disableSubscriberSuccessState?.call(this);
@@ -7509,6 +8765,24 @@ class _$DisableSubscriberSuccessStateImpl<T>
     TResult Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -7666,6 +8940,23 @@ class _$DisableSubscriberErrorStateImpl<T>
     required TResult Function(GetListsResponse getListsResponse)
         getPlansListSuccessState,
     required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function() changeListData,
   }) {
     return disableSubscriberErrorState(error);
@@ -7737,6 +9028,18 @@ class _$DisableSubscriberErrorStateImpl<T>
     TResult? Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult? Function()? changeListData,
   }) {
     return disableSubscriberErrorState?.call(error);
@@ -7808,6 +9111,18 @@ class _$DisableSubscriberErrorStateImpl<T>
     TResult Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -7911,6 +9226,27 @@ class _$DisableSubscriberErrorStateImpl<T>
         getPlansListSuccessState,
     required TResult Function(GetPlansListErrorState<T> value)
         getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return disableSubscriberErrorState(this);
@@ -8009,6 +9345,24 @@ class _$DisableSubscriberErrorStateImpl<T>
     TResult? Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return disableSubscriberErrorState?.call(this);
@@ -8107,6 +9461,24 @@ class _$DisableSubscriberErrorStateImpl<T>
     TResult Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -8236,6 +9608,23 @@ class _$WithdrawSubscriberloadingStateImpl<T>
     required TResult Function(GetListsResponse getListsResponse)
         getPlansListSuccessState,
     required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function() changeListData,
   }) {
     return withdrawSubscriberLoadingState();
@@ -8307,6 +9696,18 @@ class _$WithdrawSubscriberloadingStateImpl<T>
     TResult? Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult? Function()? changeListData,
   }) {
     return withdrawSubscriberLoadingState?.call();
@@ -8378,6 +9779,18 @@ class _$WithdrawSubscriberloadingStateImpl<T>
     TResult Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -8481,6 +9894,27 @@ class _$WithdrawSubscriberloadingStateImpl<T>
         getPlansListSuccessState,
     required TResult Function(GetPlansListErrorState<T> value)
         getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return withdrawSubscriberLoadingState(this);
@@ -8579,6 +10013,24 @@ class _$WithdrawSubscriberloadingStateImpl<T>
     TResult? Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return withdrawSubscriberLoadingState?.call(this);
@@ -8677,6 +10129,24 @@ class _$WithdrawSubscriberloadingStateImpl<T>
     TResult Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -8829,6 +10299,23 @@ class _$WithdrawSubscriberSuccessStateImpl<T>
     required TResult Function(GetListsResponse getListsResponse)
         getPlansListSuccessState,
     required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function() changeListData,
   }) {
     return withdrawSubscriberSuccessState(defaultApiResponse);
@@ -8900,6 +10387,18 @@ class _$WithdrawSubscriberSuccessStateImpl<T>
     TResult? Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult? Function()? changeListData,
   }) {
     return withdrawSubscriberSuccessState?.call(defaultApiResponse);
@@ -8971,6 +10470,18 @@ class _$WithdrawSubscriberSuccessStateImpl<T>
     TResult Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -9074,6 +10585,27 @@ class _$WithdrawSubscriberSuccessStateImpl<T>
         getPlansListSuccessState,
     required TResult Function(GetPlansListErrorState<T> value)
         getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return withdrawSubscriberSuccessState(this);
@@ -9172,6 +10704,24 @@ class _$WithdrawSubscriberSuccessStateImpl<T>
     TResult? Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return withdrawSubscriberSuccessState?.call(this);
@@ -9270,6 +10820,24 @@ class _$WithdrawSubscriberSuccessStateImpl<T>
     TResult Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -9428,6 +10996,23 @@ class _$WithdrawSubscriberErrorStateImpl<T>
     required TResult Function(GetListsResponse getListsResponse)
         getPlansListSuccessState,
     required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function() changeListData,
   }) {
     return withdrawSubscriberErrorState(error);
@@ -9499,6 +11084,18 @@ class _$WithdrawSubscriberErrorStateImpl<T>
     TResult? Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult? Function()? changeListData,
   }) {
     return withdrawSubscriberErrorState?.call(error);
@@ -9570,6 +11167,18 @@ class _$WithdrawSubscriberErrorStateImpl<T>
     TResult Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -9673,6 +11282,27 @@ class _$WithdrawSubscriberErrorStateImpl<T>
         getPlansListSuccessState,
     required TResult Function(GetPlansListErrorState<T> value)
         getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return withdrawSubscriberErrorState(this);
@@ -9771,6 +11401,24 @@ class _$WithdrawSubscriberErrorStateImpl<T>
     TResult? Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return withdrawSubscriberErrorState?.call(this);
@@ -9869,6 +11517,24 @@ class _$WithdrawSubscriberErrorStateImpl<T>
     TResult Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -9998,6 +11664,23 @@ class _$ActivateSubscriberloadingStateImpl<T>
     required TResult Function(GetListsResponse getListsResponse)
         getPlansListSuccessState,
     required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function() changeListData,
   }) {
     return activateSubscriberLoadingState();
@@ -10069,6 +11752,18 @@ class _$ActivateSubscriberloadingStateImpl<T>
     TResult? Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult? Function()? changeListData,
   }) {
     return activateSubscriberLoadingState?.call();
@@ -10140,6 +11835,18 @@ class _$ActivateSubscriberloadingStateImpl<T>
     TResult Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -10243,6 +11950,27 @@ class _$ActivateSubscriberloadingStateImpl<T>
         getPlansListSuccessState,
     required TResult Function(GetPlansListErrorState<T> value)
         getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return activateSubscriberLoadingState(this);
@@ -10341,6 +12069,24 @@ class _$ActivateSubscriberloadingStateImpl<T>
     TResult? Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return activateSubscriberLoadingState?.call(this);
@@ -10439,6 +12185,24 @@ class _$ActivateSubscriberloadingStateImpl<T>
     TResult Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -10591,6 +12355,23 @@ class _$ActivateSubscriberSuccessStateImpl<T>
     required TResult Function(GetListsResponse getListsResponse)
         getPlansListSuccessState,
     required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function() changeListData,
   }) {
     return activateSubscriberSuccessState(defaultApiResponse);
@@ -10662,6 +12443,18 @@ class _$ActivateSubscriberSuccessStateImpl<T>
     TResult? Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult? Function()? changeListData,
   }) {
     return activateSubscriberSuccessState?.call(defaultApiResponse);
@@ -10733,6 +12526,18 @@ class _$ActivateSubscriberSuccessStateImpl<T>
     TResult Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -10836,6 +12641,27 @@ class _$ActivateSubscriberSuccessStateImpl<T>
         getPlansListSuccessState,
     required TResult Function(GetPlansListErrorState<T> value)
         getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return activateSubscriberSuccessState(this);
@@ -10934,6 +12760,24 @@ class _$ActivateSubscriberSuccessStateImpl<T>
     TResult? Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return activateSubscriberSuccessState?.call(this);
@@ -11032,6 +12876,24 @@ class _$ActivateSubscriberSuccessStateImpl<T>
     TResult Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -11190,6 +13052,23 @@ class _$ActivateSubscriberErrorStateImpl<T>
     required TResult Function(GetListsResponse getListsResponse)
         getPlansListSuccessState,
     required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function() changeListData,
   }) {
     return activateSubscriberErrorState(error);
@@ -11261,6 +13140,18 @@ class _$ActivateSubscriberErrorStateImpl<T>
     TResult? Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult? Function()? changeListData,
   }) {
     return activateSubscriberErrorState?.call(error);
@@ -11332,6 +13223,18 @@ class _$ActivateSubscriberErrorStateImpl<T>
     TResult Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -11435,6 +13338,27 @@ class _$ActivateSubscriberErrorStateImpl<T>
         getPlansListSuccessState,
     required TResult Function(GetPlansListErrorState<T> value)
         getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return activateSubscriberErrorState(this);
@@ -11533,6 +13457,24 @@ class _$ActivateSubscriberErrorStateImpl<T>
     TResult? Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return activateSubscriberErrorState?.call(this);
@@ -11631,6 +13573,24 @@ class _$ActivateSubscriberErrorStateImpl<T>
     TResult Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -11760,6 +13720,23 @@ class _$ZeroSubscriberBalanceloadingStateImpl<T>
     required TResult Function(GetListsResponse getListsResponse)
         getPlansListSuccessState,
     required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function() changeListData,
   }) {
     return zeroSubscriberBalanceLoadingState();
@@ -11831,6 +13808,18 @@ class _$ZeroSubscriberBalanceloadingStateImpl<T>
     TResult? Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult? Function()? changeListData,
   }) {
     return zeroSubscriberBalanceLoadingState?.call();
@@ -11902,6 +13891,18 @@ class _$ZeroSubscriberBalanceloadingStateImpl<T>
     TResult Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -12005,6 +14006,27 @@ class _$ZeroSubscriberBalanceloadingStateImpl<T>
         getPlansListSuccessState,
     required TResult Function(GetPlansListErrorState<T> value)
         getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return zeroSubscriberBalanceLoadingState(this);
@@ -12103,6 +14125,24 @@ class _$ZeroSubscriberBalanceloadingStateImpl<T>
     TResult? Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return zeroSubscriberBalanceLoadingState?.call(this);
@@ -12201,6 +14241,24 @@ class _$ZeroSubscriberBalanceloadingStateImpl<T>
     TResult Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -12353,6 +14411,23 @@ class _$ZeroSubscriberBalanceSuccessStateImpl<T>
     required TResult Function(GetListsResponse getListsResponse)
         getPlansListSuccessState,
     required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function() changeListData,
   }) {
     return zeroSubscriberBalanceSuccessState(defaultApiResponse);
@@ -12424,6 +14499,18 @@ class _$ZeroSubscriberBalanceSuccessStateImpl<T>
     TResult? Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult? Function()? changeListData,
   }) {
     return zeroSubscriberBalanceSuccessState?.call(defaultApiResponse);
@@ -12495,6 +14582,18 @@ class _$ZeroSubscriberBalanceSuccessStateImpl<T>
     TResult Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -12598,6 +14697,27 @@ class _$ZeroSubscriberBalanceSuccessStateImpl<T>
         getPlansListSuccessState,
     required TResult Function(GetPlansListErrorState<T> value)
         getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return zeroSubscriberBalanceSuccessState(this);
@@ -12696,6 +14816,24 @@ class _$ZeroSubscriberBalanceSuccessStateImpl<T>
     TResult? Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return zeroSubscriberBalanceSuccessState?.call(this);
@@ -12794,6 +14932,24 @@ class _$ZeroSubscriberBalanceSuccessStateImpl<T>
     TResult Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -12952,6 +15108,23 @@ class _$ZeroSubscriberBalanceErrorStateImpl<T>
     required TResult Function(GetListsResponse getListsResponse)
         getPlansListSuccessState,
     required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function() changeListData,
   }) {
     return zeroSubscriberBalanceErrorState(error);
@@ -13023,6 +15196,18 @@ class _$ZeroSubscriberBalanceErrorStateImpl<T>
     TResult? Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult? Function()? changeListData,
   }) {
     return zeroSubscriberBalanceErrorState?.call(error);
@@ -13094,6 +15279,18 @@ class _$ZeroSubscriberBalanceErrorStateImpl<T>
     TResult Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -13197,6 +15394,27 @@ class _$ZeroSubscriberBalanceErrorStateImpl<T>
         getPlansListSuccessState,
     required TResult Function(GetPlansListErrorState<T> value)
         getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return zeroSubscriberBalanceErrorState(this);
@@ -13295,6 +15513,24 @@ class _$ZeroSubscriberBalanceErrorStateImpl<T>
     TResult? Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return zeroSubscriberBalanceErrorState?.call(this);
@@ -13393,6 +15629,24 @@ class _$ZeroSubscriberBalanceErrorStateImpl<T>
     TResult Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -13523,6 +15777,23 @@ class _$CollectSubscriberBalanceloadingStateImpl<T>
     required TResult Function(GetListsResponse getListsResponse)
         getPlansListSuccessState,
     required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function() changeListData,
   }) {
     return collectSubscriberBalanceLoadingState();
@@ -13594,6 +15865,18 @@ class _$CollectSubscriberBalanceloadingStateImpl<T>
     TResult? Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult? Function()? changeListData,
   }) {
     return collectSubscriberBalanceLoadingState?.call();
@@ -13665,6 +15948,18 @@ class _$CollectSubscriberBalanceloadingStateImpl<T>
     TResult Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -13768,6 +16063,27 @@ class _$CollectSubscriberBalanceloadingStateImpl<T>
         getPlansListSuccessState,
     required TResult Function(GetPlansListErrorState<T> value)
         getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return collectSubscriberBalanceLoadingState(this);
@@ -13866,6 +16182,24 @@ class _$CollectSubscriberBalanceloadingStateImpl<T>
     TResult? Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return collectSubscriberBalanceLoadingState?.call(this);
@@ -13964,6 +16298,24 @@ class _$CollectSubscriberBalanceloadingStateImpl<T>
     TResult Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -14116,6 +16468,23 @@ class _$CollectSubscriberBalanceSuccessStateImpl<T>
     required TResult Function(GetListsResponse getListsResponse)
         getPlansListSuccessState,
     required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function() changeListData,
   }) {
     return collectSubscriberBalanceSuccessState(defaultApiResponse);
@@ -14187,6 +16556,18 @@ class _$CollectSubscriberBalanceSuccessStateImpl<T>
     TResult? Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult? Function()? changeListData,
   }) {
     return collectSubscriberBalanceSuccessState?.call(defaultApiResponse);
@@ -14258,6 +16639,18 @@ class _$CollectSubscriberBalanceSuccessStateImpl<T>
     TResult Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -14361,6 +16754,27 @@ class _$CollectSubscriberBalanceSuccessStateImpl<T>
         getPlansListSuccessState,
     required TResult Function(GetPlansListErrorState<T> value)
         getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return collectSubscriberBalanceSuccessState(this);
@@ -14459,6 +16873,24 @@ class _$CollectSubscriberBalanceSuccessStateImpl<T>
     TResult? Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return collectSubscriberBalanceSuccessState?.call(this);
@@ -14557,6 +16989,24 @@ class _$CollectSubscriberBalanceSuccessStateImpl<T>
     TResult Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -14715,6 +17165,23 @@ class _$CollectSubscriberBalanceErrorStateImpl<T>
     required TResult Function(GetListsResponse getListsResponse)
         getPlansListSuccessState,
     required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function() changeListData,
   }) {
     return collectSubscriberBalanceErrorState(error);
@@ -14786,6 +17253,18 @@ class _$CollectSubscriberBalanceErrorStateImpl<T>
     TResult? Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult? Function()? changeListData,
   }) {
     return collectSubscriberBalanceErrorState?.call(error);
@@ -14857,6 +17336,18 @@ class _$CollectSubscriberBalanceErrorStateImpl<T>
     TResult Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -14960,6 +17451,27 @@ class _$CollectSubscriberBalanceErrorStateImpl<T>
         getPlansListSuccessState,
     required TResult Function(GetPlansListErrorState<T> value)
         getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return collectSubscriberBalanceErrorState(this);
@@ -15058,6 +17570,24 @@ class _$CollectSubscriberBalanceErrorStateImpl<T>
     TResult? Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return collectSubscriberBalanceErrorState?.call(this);
@@ -15156,6 +17686,24 @@ class _$CollectSubscriberBalanceErrorStateImpl<T>
     TResult Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -15287,6 +17835,23 @@ class _$GetActiveSubscribersloadingStateImpl<T>
     required TResult Function(GetListsResponse getListsResponse)
         getPlansListSuccessState,
     required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function() changeListData,
   }) {
     return getActiveSubscribersLoadingState();
@@ -15358,6 +17923,18 @@ class _$GetActiveSubscribersloadingStateImpl<T>
     TResult? Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult? Function()? changeListData,
   }) {
     return getActiveSubscribersLoadingState?.call();
@@ -15429,6 +18006,18 @@ class _$GetActiveSubscribersloadingStateImpl<T>
     TResult Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -15532,6 +18121,27 @@ class _$GetActiveSubscribersloadingStateImpl<T>
         getPlansListSuccessState,
     required TResult Function(GetPlansListErrorState<T> value)
         getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return getActiveSubscribersLoadingState(this);
@@ -15630,6 +18240,24 @@ class _$GetActiveSubscribersloadingStateImpl<T>
     TResult? Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return getActiveSubscribersLoadingState?.call(this);
@@ -15728,6 +18356,24 @@ class _$GetActiveSubscribersloadingStateImpl<T>
     TResult Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -15882,6 +18528,23 @@ class _$GetActiveSubscribersSuccessStateImpl<T>
     required TResult Function(GetListsResponse getListsResponse)
         getPlansListSuccessState,
     required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function() changeListData,
   }) {
     return getActiveSubscribersSuccessState(getSubscribersDataResponse);
@@ -15953,6 +18616,18 @@ class _$GetActiveSubscribersSuccessStateImpl<T>
     TResult? Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult? Function()? changeListData,
   }) {
     return getActiveSubscribersSuccessState?.call(getSubscribersDataResponse);
@@ -16024,6 +18699,18 @@ class _$GetActiveSubscribersSuccessStateImpl<T>
     TResult Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -16127,6 +18814,27 @@ class _$GetActiveSubscribersSuccessStateImpl<T>
         getPlansListSuccessState,
     required TResult Function(GetPlansListErrorState<T> value)
         getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return getActiveSubscribersSuccessState(this);
@@ -16225,6 +18933,24 @@ class _$GetActiveSubscribersSuccessStateImpl<T>
     TResult? Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return getActiveSubscribersSuccessState?.call(this);
@@ -16323,6 +19049,24 @@ class _$GetActiveSubscribersSuccessStateImpl<T>
     TResult Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -16481,6 +19225,23 @@ class _$GetActiveSubscribersErrorStateImpl<T>
     required TResult Function(GetListsResponse getListsResponse)
         getPlansListSuccessState,
     required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function() changeListData,
   }) {
     return getActiveSubscribersErrorState(error);
@@ -16552,6 +19313,18 @@ class _$GetActiveSubscribersErrorStateImpl<T>
     TResult? Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult? Function()? changeListData,
   }) {
     return getActiveSubscribersErrorState?.call(error);
@@ -16623,6 +19396,18 @@ class _$GetActiveSubscribersErrorStateImpl<T>
     TResult Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -16726,6 +19511,27 @@ class _$GetActiveSubscribersErrorStateImpl<T>
         getPlansListSuccessState,
     required TResult Function(GetPlansListErrorState<T> value)
         getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return getActiveSubscribersErrorState(this);
@@ -16824,6 +19630,24 @@ class _$GetActiveSubscribersErrorStateImpl<T>
     TResult? Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return getActiveSubscribersErrorState?.call(this);
@@ -16922,6 +19746,24 @@ class _$GetActiveSubscribersErrorStateImpl<T>
     TResult Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -17052,6 +19894,23 @@ class _$GetLateSubscribersloadingStateImpl<T>
     required TResult Function(GetListsResponse getListsResponse)
         getPlansListSuccessState,
     required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function() changeListData,
   }) {
     return getLateSubscribersLoadingState();
@@ -17123,6 +19982,18 @@ class _$GetLateSubscribersloadingStateImpl<T>
     TResult? Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult? Function()? changeListData,
   }) {
     return getLateSubscribersLoadingState?.call();
@@ -17194,6 +20065,18 @@ class _$GetLateSubscribersloadingStateImpl<T>
     TResult Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -17297,6 +20180,27 @@ class _$GetLateSubscribersloadingStateImpl<T>
         getPlansListSuccessState,
     required TResult Function(GetPlansListErrorState<T> value)
         getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return getLateSubscribersLoadingState(this);
@@ -17395,6 +20299,24 @@ class _$GetLateSubscribersloadingStateImpl<T>
     TResult? Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return getLateSubscribersLoadingState?.call(this);
@@ -17493,6 +20415,24 @@ class _$GetLateSubscribersloadingStateImpl<T>
     TResult Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -17647,6 +20587,23 @@ class _$GetLateSubscribersSuccessStateImpl<T>
     required TResult Function(GetListsResponse getListsResponse)
         getPlansListSuccessState,
     required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function() changeListData,
   }) {
     return getLateSubscribersSuccessState(getLateSubscribersResponse);
@@ -17718,6 +20675,18 @@ class _$GetLateSubscribersSuccessStateImpl<T>
     TResult? Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult? Function()? changeListData,
   }) {
     return getLateSubscribersSuccessState?.call(getLateSubscribersResponse);
@@ -17789,6 +20758,18 @@ class _$GetLateSubscribersSuccessStateImpl<T>
     TResult Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -17892,6 +20873,27 @@ class _$GetLateSubscribersSuccessStateImpl<T>
         getPlansListSuccessState,
     required TResult Function(GetPlansListErrorState<T> value)
         getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return getLateSubscribersSuccessState(this);
@@ -17990,6 +20992,24 @@ class _$GetLateSubscribersSuccessStateImpl<T>
     TResult? Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return getLateSubscribersSuccessState?.call(this);
@@ -18088,6 +21108,24 @@ class _$GetLateSubscribersSuccessStateImpl<T>
     TResult Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -18246,6 +21284,23 @@ class _$GetLateSubscribersErrorStateImpl<T>
     required TResult Function(GetListsResponse getListsResponse)
         getPlansListSuccessState,
     required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function() changeListData,
   }) {
     return getLateSubscribersErrorState(error);
@@ -18317,6 +21372,18 @@ class _$GetLateSubscribersErrorStateImpl<T>
     TResult? Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult? Function()? changeListData,
   }) {
     return getLateSubscribersErrorState?.call(error);
@@ -18388,6 +21455,18 @@ class _$GetLateSubscribersErrorStateImpl<T>
     TResult Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -18491,6 +21570,27 @@ class _$GetLateSubscribersErrorStateImpl<T>
         getPlansListSuccessState,
     required TResult Function(GetPlansListErrorState<T> value)
         getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return getLateSubscribersErrorState(this);
@@ -18589,6 +21689,24 @@ class _$GetLateSubscribersErrorStateImpl<T>
     TResult? Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return getLateSubscribersErrorState?.call(this);
@@ -18687,6 +21805,24 @@ class _$GetLateSubscribersErrorStateImpl<T>
     TResult Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -18816,6 +21952,23 @@ class _$GetDisabledSubscribersloadingStateImpl<T>
     required TResult Function(GetListsResponse getListsResponse)
         getPlansListSuccessState,
     required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function() changeListData,
   }) {
     return getDisabledSubscribersLoadingState();
@@ -18887,6 +22040,18 @@ class _$GetDisabledSubscribersloadingStateImpl<T>
     TResult? Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult? Function()? changeListData,
   }) {
     return getDisabledSubscribersLoadingState?.call();
@@ -18958,6 +22123,18 @@ class _$GetDisabledSubscribersloadingStateImpl<T>
     TResult Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -19061,6 +22238,27 @@ class _$GetDisabledSubscribersloadingStateImpl<T>
         getPlansListSuccessState,
     required TResult Function(GetPlansListErrorState<T> value)
         getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return getDisabledSubscribersLoadingState(this);
@@ -19159,6 +22357,24 @@ class _$GetDisabledSubscribersloadingStateImpl<T>
     TResult? Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return getDisabledSubscribersLoadingState?.call(this);
@@ -19257,6 +22473,24 @@ class _$GetDisabledSubscribersloadingStateImpl<T>
     TResult Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -19412,6 +22646,23 @@ class _$GetDisabledSubscribersSuccessStateImpl<T>
     required TResult Function(GetListsResponse getListsResponse)
         getPlansListSuccessState,
     required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function() changeListData,
   }) {
     return getDisabledSubscribersSuccessState(getDisabledSubscribersResponse);
@@ -19483,6 +22734,18 @@ class _$GetDisabledSubscribersSuccessStateImpl<T>
     TResult? Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult? Function()? changeListData,
   }) {
     return getDisabledSubscribersSuccessState
@@ -19555,6 +22818,18 @@ class _$GetDisabledSubscribersSuccessStateImpl<T>
     TResult Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -19658,6 +22933,27 @@ class _$GetDisabledSubscribersSuccessStateImpl<T>
         getPlansListSuccessState,
     required TResult Function(GetPlansListErrorState<T> value)
         getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return getDisabledSubscribersSuccessState(this);
@@ -19756,6 +23052,24 @@ class _$GetDisabledSubscribersSuccessStateImpl<T>
     TResult? Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return getDisabledSubscribersSuccessState?.call(this);
@@ -19854,6 +23168,24 @@ class _$GetDisabledSubscribersSuccessStateImpl<T>
     TResult Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -20012,6 +23344,23 @@ class _$GetDisabledSubscribersErrorStateImpl<T>
     required TResult Function(GetListsResponse getListsResponse)
         getPlansListSuccessState,
     required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function() changeListData,
   }) {
     return getDisabledSubscribersErrorState(error);
@@ -20083,6 +23432,18 @@ class _$GetDisabledSubscribersErrorStateImpl<T>
     TResult? Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult? Function()? changeListData,
   }) {
     return getDisabledSubscribersErrorState?.call(error);
@@ -20154,6 +23515,18 @@ class _$GetDisabledSubscribersErrorStateImpl<T>
     TResult Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -20257,6 +23630,27 @@ class _$GetDisabledSubscribersErrorStateImpl<T>
         getPlansListSuccessState,
     required TResult Function(GetPlansListErrorState<T> value)
         getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return getDisabledSubscribersErrorState(this);
@@ -20355,6 +23749,24 @@ class _$GetDisabledSubscribersErrorStateImpl<T>
     TResult? Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return getDisabledSubscribersErrorState?.call(this);
@@ -20453,6 +23865,24 @@ class _$GetDisabledSubscribersErrorStateImpl<T>
     TResult Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -20584,6 +24014,23 @@ class _$GetWithdrawnSubscribersloadingStateImpl<T>
     required TResult Function(GetListsResponse getListsResponse)
         getPlansListSuccessState,
     required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function() changeListData,
   }) {
     return getWithdrawnSubscribersLoadingState();
@@ -20655,6 +24102,18 @@ class _$GetWithdrawnSubscribersloadingStateImpl<T>
     TResult? Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult? Function()? changeListData,
   }) {
     return getWithdrawnSubscribersLoadingState?.call();
@@ -20726,6 +24185,18 @@ class _$GetWithdrawnSubscribersloadingStateImpl<T>
     TResult Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -20829,6 +24300,27 @@ class _$GetWithdrawnSubscribersloadingStateImpl<T>
         getPlansListSuccessState,
     required TResult Function(GetPlansListErrorState<T> value)
         getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return getWithdrawnSubscribersLoadingState(this);
@@ -20927,6 +24419,24 @@ class _$GetWithdrawnSubscribersloadingStateImpl<T>
     TResult? Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return getWithdrawnSubscribersLoadingState?.call(this);
@@ -21025,6 +24535,24 @@ class _$GetWithdrawnSubscribersloadingStateImpl<T>
     TResult Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -21180,6 +24708,23 @@ class _$GetWithdrawnSubscribersSuccessStateImpl<T>
     required TResult Function(GetListsResponse getListsResponse)
         getPlansListSuccessState,
     required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function() changeListData,
   }) {
     return getWithdrawnSubscribersSuccessState(getWithdrawnSubscribersResponse);
@@ -21251,6 +24796,18 @@ class _$GetWithdrawnSubscribersSuccessStateImpl<T>
     TResult? Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult? Function()? changeListData,
   }) {
     return getWithdrawnSubscribersSuccessState
@@ -21323,6 +24880,18 @@ class _$GetWithdrawnSubscribersSuccessStateImpl<T>
     TResult Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -21427,6 +24996,27 @@ class _$GetWithdrawnSubscribersSuccessStateImpl<T>
         getPlansListSuccessState,
     required TResult Function(GetPlansListErrorState<T> value)
         getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return getWithdrawnSubscribersSuccessState(this);
@@ -21525,6 +25115,24 @@ class _$GetWithdrawnSubscribersSuccessStateImpl<T>
     TResult? Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return getWithdrawnSubscribersSuccessState?.call(this);
@@ -21623,6 +25231,24 @@ class _$GetWithdrawnSubscribersSuccessStateImpl<T>
     TResult Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -21782,6 +25408,23 @@ class _$GetWithdrawnSubscribersErrorStateImpl<T>
     required TResult Function(GetListsResponse getListsResponse)
         getPlansListSuccessState,
     required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function() changeListData,
   }) {
     return getWithdrawnSubscribersErrorState(error);
@@ -21853,6 +25496,18 @@ class _$GetWithdrawnSubscribersErrorStateImpl<T>
     TResult? Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult? Function()? changeListData,
   }) {
     return getWithdrawnSubscribersErrorState?.call(error);
@@ -21924,6 +25579,18 @@ class _$GetWithdrawnSubscribersErrorStateImpl<T>
     TResult Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -22027,6 +25694,27 @@ class _$GetWithdrawnSubscribersErrorStateImpl<T>
         getPlansListSuccessState,
     required TResult Function(GetPlansListErrorState<T> value)
         getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return getWithdrawnSubscribersErrorState(this);
@@ -22125,6 +25813,24 @@ class _$GetWithdrawnSubscribersErrorStateImpl<T>
     TResult? Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return getWithdrawnSubscribersErrorState?.call(this);
@@ -22223,6 +25929,24 @@ class _$GetWithdrawnSubscribersErrorStateImpl<T>
     TResult Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -22354,6 +26078,23 @@ class _$GetCompaniesListloadingStateImpl<T>
     required TResult Function(GetListsResponse getListsResponse)
         getPlansListSuccessState,
     required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function() changeListData,
   }) {
     return getCompaniesListLoadingState();
@@ -22425,6 +26166,18 @@ class _$GetCompaniesListloadingStateImpl<T>
     TResult? Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult? Function()? changeListData,
   }) {
     return getCompaniesListLoadingState?.call();
@@ -22496,6 +26249,18 @@ class _$GetCompaniesListloadingStateImpl<T>
     TResult Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -22599,6 +26364,27 @@ class _$GetCompaniesListloadingStateImpl<T>
         getPlansListSuccessState,
     required TResult Function(GetPlansListErrorState<T> value)
         getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return getCompaniesListLoadingState(this);
@@ -22697,6 +26483,24 @@ class _$GetCompaniesListloadingStateImpl<T>
     TResult? Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return getCompaniesListLoadingState?.call(this);
@@ -22795,6 +26599,24 @@ class _$GetCompaniesListloadingStateImpl<T>
     TResult Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -22946,6 +26768,23 @@ class _$GetCompaniesListSuccessStateImpl<T>
     required TResult Function(GetListsResponse getListsResponse)
         getPlansListSuccessState,
     required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function() changeListData,
   }) {
     return getCompaniesListSuccessState(getListsResponse);
@@ -23017,6 +26856,18 @@ class _$GetCompaniesListSuccessStateImpl<T>
     TResult? Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult? Function()? changeListData,
   }) {
     return getCompaniesListSuccessState?.call(getListsResponse);
@@ -23088,6 +26939,18 @@ class _$GetCompaniesListSuccessStateImpl<T>
     TResult Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -23191,6 +27054,27 @@ class _$GetCompaniesListSuccessStateImpl<T>
         getPlansListSuccessState,
     required TResult Function(GetPlansListErrorState<T> value)
         getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return getCompaniesListSuccessState(this);
@@ -23289,6 +27173,24 @@ class _$GetCompaniesListSuccessStateImpl<T>
     TResult? Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return getCompaniesListSuccessState?.call(this);
@@ -23387,6 +27289,24 @@ class _$GetCompaniesListSuccessStateImpl<T>
     TResult Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -23544,6 +27464,23 @@ class _$GetCompaniesListErrorStateImpl<T>
     required TResult Function(GetListsResponse getListsResponse)
         getPlansListSuccessState,
     required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function() changeListData,
   }) {
     return getCompaniesListErrorState(error);
@@ -23615,6 +27552,18 @@ class _$GetCompaniesListErrorStateImpl<T>
     TResult? Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult? Function()? changeListData,
   }) {
     return getCompaniesListErrorState?.call(error);
@@ -23686,6 +27635,18 @@ class _$GetCompaniesListErrorStateImpl<T>
     TResult Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -23789,6 +27750,27 @@ class _$GetCompaniesListErrorStateImpl<T>
         getPlansListSuccessState,
     required TResult Function(GetPlansListErrorState<T> value)
         getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return getCompaniesListErrorState(this);
@@ -23887,6 +27869,24 @@ class _$GetCompaniesListErrorStateImpl<T>
     TResult? Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return getCompaniesListErrorState?.call(this);
@@ -23985,6 +27985,24 @@ class _$GetCompaniesListErrorStateImpl<T>
     TResult Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -24114,6 +28132,23 @@ class _$GetCollectorsEmailsloadingStateImpl<T>
     required TResult Function(GetListsResponse getListsResponse)
         getPlansListSuccessState,
     required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function() changeListData,
   }) {
     return getCollectorsEmailsLoadingState();
@@ -24185,6 +28220,18 @@ class _$GetCollectorsEmailsloadingStateImpl<T>
     TResult? Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult? Function()? changeListData,
   }) {
     return getCollectorsEmailsLoadingState?.call();
@@ -24256,6 +28303,18 @@ class _$GetCollectorsEmailsloadingStateImpl<T>
     TResult Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -24359,6 +28418,27 @@ class _$GetCollectorsEmailsloadingStateImpl<T>
         getPlansListSuccessState,
     required TResult Function(GetPlansListErrorState<T> value)
         getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return getCollectorsEmailsLoadingState(this);
@@ -24457,6 +28537,24 @@ class _$GetCollectorsEmailsloadingStateImpl<T>
     TResult? Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return getCollectorsEmailsLoadingState?.call(this);
@@ -24555,6 +28653,24 @@ class _$GetCollectorsEmailsloadingStateImpl<T>
     TResult Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -24707,6 +28823,23 @@ class _$GetCollectorsEmailsSuccessStateImpl<T>
     required TResult Function(GetListsResponse getListsResponse)
         getPlansListSuccessState,
     required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function() changeListData,
   }) {
     return getCollectorsEmailsSuccessState(getListsResponse);
@@ -24778,6 +28911,18 @@ class _$GetCollectorsEmailsSuccessStateImpl<T>
     TResult? Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult? Function()? changeListData,
   }) {
     return getCollectorsEmailsSuccessState?.call(getListsResponse);
@@ -24849,6 +28994,18 @@ class _$GetCollectorsEmailsSuccessStateImpl<T>
     TResult Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -24952,6 +29109,27 @@ class _$GetCollectorsEmailsSuccessStateImpl<T>
         getPlansListSuccessState,
     required TResult Function(GetPlansListErrorState<T> value)
         getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return getCollectorsEmailsSuccessState(this);
@@ -25050,6 +29228,24 @@ class _$GetCollectorsEmailsSuccessStateImpl<T>
     TResult? Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return getCollectorsEmailsSuccessState?.call(this);
@@ -25148,6 +29344,24 @@ class _$GetCollectorsEmailsSuccessStateImpl<T>
     TResult Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -25306,6 +29520,23 @@ class _$GetCollectorsEmailsErrorStateImpl<T>
     required TResult Function(GetListsResponse getListsResponse)
         getPlansListSuccessState,
     required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function() changeListData,
   }) {
     return getCollectorsEmailsErrorState(error);
@@ -25377,6 +29608,18 @@ class _$GetCollectorsEmailsErrorStateImpl<T>
     TResult? Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult? Function()? changeListData,
   }) {
     return getCollectorsEmailsErrorState?.call(error);
@@ -25448,6 +29691,18 @@ class _$GetCollectorsEmailsErrorStateImpl<T>
     TResult Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -25551,6 +29806,27 @@ class _$GetCollectorsEmailsErrorStateImpl<T>
         getPlansListSuccessState,
     required TResult Function(GetPlansListErrorState<T> value)
         getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return getCollectorsEmailsErrorState(this);
@@ -25649,6 +29925,24 @@ class _$GetCollectorsEmailsErrorStateImpl<T>
     TResult? Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return getCollectorsEmailsErrorState?.call(this);
@@ -25747,6 +30041,24 @@ class _$GetCollectorsEmailsErrorStateImpl<T>
     TResult Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -25875,6 +30187,23 @@ class _$GetPlansListloadingStateImpl<T> implements GetPlansListloadingState<T> {
     required TResult Function(GetListsResponse getListsResponse)
         getPlansListSuccessState,
     required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function() changeListData,
   }) {
     return getPlansListLoadingState();
@@ -25946,6 +30275,18 @@ class _$GetPlansListloadingStateImpl<T> implements GetPlansListloadingState<T> {
     TResult? Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult? Function()? changeListData,
   }) {
     return getPlansListLoadingState?.call();
@@ -26017,6 +30358,18 @@ class _$GetPlansListloadingStateImpl<T> implements GetPlansListloadingState<T> {
     TResult Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -26120,6 +30473,27 @@ class _$GetPlansListloadingStateImpl<T> implements GetPlansListloadingState<T> {
         getPlansListSuccessState,
     required TResult Function(GetPlansListErrorState<T> value)
         getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return getPlansListLoadingState(this);
@@ -26218,6 +30592,24 @@ class _$GetPlansListloadingStateImpl<T> implements GetPlansListloadingState<T> {
     TResult? Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return getPlansListLoadingState?.call(this);
@@ -26316,6 +30708,24 @@ class _$GetPlansListloadingStateImpl<T> implements GetPlansListloadingState<T> {
     TResult Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -26464,6 +30874,23 @@ class _$GetPlansListSuccessStateImpl<T> implements GetPlansListSuccessState<T> {
     required TResult Function(GetListsResponse getListsResponse)
         getPlansListSuccessState,
     required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function() changeListData,
   }) {
     return getPlansListSuccessState(getListsResponse);
@@ -26535,6 +30962,18 @@ class _$GetPlansListSuccessStateImpl<T> implements GetPlansListSuccessState<T> {
     TResult? Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult? Function()? changeListData,
   }) {
     return getPlansListSuccessState?.call(getListsResponse);
@@ -26606,6 +31045,18 @@ class _$GetPlansListSuccessStateImpl<T> implements GetPlansListSuccessState<T> {
     TResult Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -26709,6 +31160,27 @@ class _$GetPlansListSuccessStateImpl<T> implements GetPlansListSuccessState<T> {
         getPlansListSuccessState,
     required TResult Function(GetPlansListErrorState<T> value)
         getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return getPlansListSuccessState(this);
@@ -26807,6 +31279,24 @@ class _$GetPlansListSuccessStateImpl<T> implements GetPlansListSuccessState<T> {
     TResult? Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return getPlansListSuccessState?.call(this);
@@ -26905,6 +31395,24 @@ class _$GetPlansListSuccessStateImpl<T> implements GetPlansListSuccessState<T> {
     TResult Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -27059,6 +31567,23 @@ class _$GetPlansListErrorStateImpl<T> implements GetPlansListErrorState<T> {
     required TResult Function(GetListsResponse getListsResponse)
         getPlansListSuccessState,
     required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function() changeListData,
   }) {
     return getPlansListErrorState(error);
@@ -27130,6 +31655,18 @@ class _$GetPlansListErrorStateImpl<T> implements GetPlansListErrorState<T> {
     TResult? Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult? Function()? changeListData,
   }) {
     return getPlansListErrorState?.call(error);
@@ -27201,6 +31738,18 @@ class _$GetPlansListErrorStateImpl<T> implements GetPlansListErrorState<T> {
     TResult Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -27304,6 +31853,27 @@ class _$GetPlansListErrorStateImpl<T> implements GetPlansListErrorState<T> {
         getPlansListSuccessState,
     required TResult Function(GetPlansListErrorState<T> value)
         getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return getPlansListErrorState(this);
@@ -27402,6 +31972,24 @@ class _$GetPlansListErrorStateImpl<T> implements GetPlansListErrorState<T> {
     TResult? Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return getPlansListErrorState?.call(this);
@@ -27500,6 +32088,24 @@ class _$GetPlansListErrorStateImpl<T> implements GetPlansListErrorState<T> {
     TResult Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {
@@ -27517,6 +32123,6210 @@ abstract class GetPlansListErrorState<T> implements SubscribersState<T> {
   String get error;
   @JsonKey(ignore: true)
   _$$GetPlansListErrorStateImplCopyWith<T, _$GetPlansListErrorStateImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$DisableSubscribersByExcelloadingStateImplCopyWith<T, $Res> {
+  factory _$$DisableSubscribersByExcelloadingStateImplCopyWith(
+          _$DisableSubscribersByExcelloadingStateImpl<T> value,
+          $Res Function(_$DisableSubscribersByExcelloadingStateImpl<T>) then) =
+      __$$DisableSubscribersByExcelloadingStateImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$DisableSubscribersByExcelloadingStateImplCopyWithImpl<T, $Res>
+    extends _$SubscribersStateCopyWithImpl<T, $Res,
+        _$DisableSubscribersByExcelloadingStateImpl<T>>
+    implements _$$DisableSubscribersByExcelloadingStateImplCopyWith<T, $Res> {
+  __$$DisableSubscribersByExcelloadingStateImplCopyWithImpl(
+      _$DisableSubscribersByExcelloadingStateImpl<T> _value,
+      $Res Function(_$DisableSubscribersByExcelloadingStateImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$DisableSubscribersByExcelloadingStateImpl<T>
+    implements DisableSubscribersByExcelloadingState<T> {
+  const _$DisableSubscribersByExcelloadingStateImpl();
+
+  @override
+  String toString() {
+    return 'SubscribersState<$T>.disableSubscribersByExcelLoadingState()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DisableSubscribersByExcelloadingStateImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() addNewSubscriberLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        addNewSubscriberSuccessState,
+    required TResult Function(String error) addNewSubscriberErrorState,
+    required TResult Function() updateSubscriberLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        updateSubscriberSuccessState,
+    required TResult Function(String error) updateSubscriberErrorState,
+    required TResult Function() deleteSubscriberLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        deleteSubscriberSuccessState,
+    required TResult Function(String error) deleteSubscriberErrorState,
+    required TResult Function() disableSubscriberLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        disableSubscriberSuccessState,
+    required TResult Function(String error) disableSubscriberErrorState,
+    required TResult Function() withdrawSubscriberLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        withdrawSubscriberSuccessState,
+    required TResult Function(String error) withdrawSubscriberErrorState,
+    required TResult Function() activateSubscriberLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        activateSubscriberSuccessState,
+    required TResult Function(String error) activateSubscriberErrorState,
+    required TResult Function() zeroSubscriberBalanceLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        zeroSubscriberBalanceSuccessState,
+    required TResult Function(String error) zeroSubscriberBalanceErrorState,
+    required TResult Function() collectSubscriberBalanceLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        collectSubscriberBalanceSuccessState,
+    required TResult Function(String error) collectSubscriberBalanceErrorState,
+    required TResult Function() getActiveSubscribersLoadingState,
+    required TResult Function(
+            GetSubscribersDataResponse getSubscribersDataResponse)
+        getActiveSubscribersSuccessState,
+    required TResult Function(String error) getActiveSubscribersErrorState,
+    required TResult Function() getLateSubscribersLoadingState,
+    required TResult Function(
+            GetLateSubscribersResponse getLateSubscribersResponse)
+        getLateSubscribersSuccessState,
+    required TResult Function(String error) getLateSubscribersErrorState,
+    required TResult Function() getDisabledSubscribersLoadingState,
+    required TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
+        getDisabledSubscribersSuccessState,
+    required TResult Function(String error) getDisabledSubscribersErrorState,
+    required TResult Function() getWithdrawnSubscribersLoadingState,
+    required TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
+        getWithdrawnSubscribersSuccessState,
+    required TResult Function(String error) getWithdrawnSubscribersErrorState,
+    required TResult Function() getCompaniesListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getCompaniesListSuccessState,
+    required TResult Function(String error) getCompaniesListErrorState,
+    required TResult Function() getCollectorsEmailsLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getCollectorsEmailsSuccessState,
+    required TResult Function(String error) getCollectorsEmailsErrorState,
+    required TResult Function() getPlansListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getPlansListSuccessState,
+    required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
+    required TResult Function() changeListData,
+  }) {
+    return disableSubscribersByExcelLoadingState();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? addNewSubscriberLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        addNewSubscriberSuccessState,
+    TResult? Function(String error)? addNewSubscriberErrorState,
+    TResult? Function()? updateSubscriberLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        updateSubscriberSuccessState,
+    TResult? Function(String error)? updateSubscriberErrorState,
+    TResult? Function()? deleteSubscriberLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        deleteSubscriberSuccessState,
+    TResult? Function(String error)? deleteSubscriberErrorState,
+    TResult? Function()? disableSubscriberLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        disableSubscriberSuccessState,
+    TResult? Function(String error)? disableSubscriberErrorState,
+    TResult? Function()? withdrawSubscriberLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        withdrawSubscriberSuccessState,
+    TResult? Function(String error)? withdrawSubscriberErrorState,
+    TResult? Function()? activateSubscriberLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        activateSubscriberSuccessState,
+    TResult? Function(String error)? activateSubscriberErrorState,
+    TResult? Function()? zeroSubscriberBalanceLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        zeroSubscriberBalanceSuccessState,
+    TResult? Function(String error)? zeroSubscriberBalanceErrorState,
+    TResult? Function()? collectSubscriberBalanceLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        collectSubscriberBalanceSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceErrorState,
+    TResult? Function()? getActiveSubscribersLoadingState,
+    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+        getActiveSubscribersSuccessState,
+    TResult? Function(String error)? getActiveSubscribersErrorState,
+    TResult? Function()? getLateSubscribersLoadingState,
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
+        getLateSubscribersSuccessState,
+    TResult? Function(String error)? getLateSubscribersErrorState,
+    TResult? Function()? getDisabledSubscribersLoadingState,
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
+        getDisabledSubscribersSuccessState,
+    TResult? Function(String error)? getDisabledSubscribersErrorState,
+    TResult? Function()? getWithdrawnSubscribersLoadingState,
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
+        getWithdrawnSubscribersSuccessState,
+    TResult? Function(String error)? getWithdrawnSubscribersErrorState,
+    TResult? Function()? getCompaniesListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult? Function(String error)? getCompaniesListErrorState,
+    TResult? Function()? getCollectorsEmailsLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getCollectorsEmailsSuccessState,
+    TResult? Function(String error)? getCollectorsEmailsErrorState,
+    TResult? Function()? getPlansListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
+    TResult? Function()? changeListData,
+  }) {
+    return disableSubscribersByExcelLoadingState?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? addNewSubscriberLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        addNewSubscriberSuccessState,
+    TResult Function(String error)? addNewSubscriberErrorState,
+    TResult Function()? updateSubscriberLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        updateSubscriberSuccessState,
+    TResult Function(String error)? updateSubscriberErrorState,
+    TResult Function()? deleteSubscriberLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        deleteSubscriberSuccessState,
+    TResult Function(String error)? deleteSubscriberErrorState,
+    TResult Function()? disableSubscriberLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        disableSubscriberSuccessState,
+    TResult Function(String error)? disableSubscriberErrorState,
+    TResult Function()? withdrawSubscriberLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        withdrawSubscriberSuccessState,
+    TResult Function(String error)? withdrawSubscriberErrorState,
+    TResult Function()? activateSubscriberLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        activateSubscriberSuccessState,
+    TResult Function(String error)? activateSubscriberErrorState,
+    TResult Function()? zeroSubscriberBalanceLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        zeroSubscriberBalanceSuccessState,
+    TResult Function(String error)? zeroSubscriberBalanceErrorState,
+    TResult Function()? collectSubscriberBalanceLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        collectSubscriberBalanceSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceErrorState,
+    TResult Function()? getActiveSubscribersLoadingState,
+    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+        getActiveSubscribersSuccessState,
+    TResult Function(String error)? getActiveSubscribersErrorState,
+    TResult Function()? getLateSubscribersLoadingState,
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
+        getLateSubscribersSuccessState,
+    TResult Function(String error)? getLateSubscribersErrorState,
+    TResult Function()? getDisabledSubscribersLoadingState,
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
+        getDisabledSubscribersSuccessState,
+    TResult Function(String error)? getDisabledSubscribersErrorState,
+    TResult Function()? getWithdrawnSubscribersLoadingState,
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
+        getWithdrawnSubscribersSuccessState,
+    TResult Function(String error)? getWithdrawnSubscribersErrorState,
+    TResult Function()? getCompaniesListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult Function(String error)? getCompaniesListErrorState,
+    TResult Function()? getCollectorsEmailsLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getCollectorsEmailsSuccessState,
+    TResult Function(String error)? getCollectorsEmailsErrorState,
+    TResult Function()? getPlansListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
+    TResult Function()? changeListData,
+    required TResult orElse(),
+  }) {
+    if (disableSubscribersByExcelLoadingState != null) {
+      return disableSubscribersByExcelLoadingState();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(AddNewSubscriberloadingState<T> value)
+        addNewSubscriberLoadingState,
+    required TResult Function(AddNewSubscriberSuccessState<T> value)
+        addNewSubscriberSuccessState,
+    required TResult Function(AddNewSubscriberErrorState<T> value)
+        addNewSubscriberErrorState,
+    required TResult Function(UpdateSubscriberloadingState<T> value)
+        updateSubscriberLoadingState,
+    required TResult Function(UpdateSubscriberSuccessState<T> value)
+        updateSubscriberSuccessState,
+    required TResult Function(UpdateSubscriberErrorState<T> value)
+        updateSubscriberErrorState,
+    required TResult Function(DeleteSubscriberloadingState<T> value)
+        deleteSubscriberLoadingState,
+    required TResult Function(DeleteSubscriberSuccessState<T> value)
+        deleteSubscriberSuccessState,
+    required TResult Function(DeleteSubscriberErrorState<T> value)
+        deleteSubscriberErrorState,
+    required TResult Function(DisableSubscriberloadingState<T> value)
+        disableSubscriberLoadingState,
+    required TResult Function(DisableSubscriberSuccessState<T> value)
+        disableSubscriberSuccessState,
+    required TResult Function(DisableSubscriberErrorState<T> value)
+        disableSubscriberErrorState,
+    required TResult Function(WithdrawSubscriberloadingState<T> value)
+        withdrawSubscriberLoadingState,
+    required TResult Function(WithdrawSubscriberSuccessState<T> value)
+        withdrawSubscriberSuccessState,
+    required TResult Function(WithdrawSubscriberErrorState<T> value)
+        withdrawSubscriberErrorState,
+    required TResult Function(ActivateSubscriberloadingState<T> value)
+        activateSubscriberLoadingState,
+    required TResult Function(ActivateSubscriberSuccessState<T> value)
+        activateSubscriberSuccessState,
+    required TResult Function(ActivateSubscriberErrorState<T> value)
+        activateSubscriberErrorState,
+    required TResult Function(ZeroSubscriberBalanceloadingState<T> value)
+        zeroSubscriberBalanceLoadingState,
+    required TResult Function(ZeroSubscriberBalanceSuccessState<T> value)
+        zeroSubscriberBalanceSuccessState,
+    required TResult Function(ZeroSubscriberBalanceErrorState<T> value)
+        zeroSubscriberBalanceErrorState,
+    required TResult Function(CollectSubscriberBalanceloadingState<T> value)
+        collectSubscriberBalanceLoadingState,
+    required TResult Function(CollectSubscriberBalanceSuccessState<T> value)
+        collectSubscriberBalanceSuccessState,
+    required TResult Function(CollectSubscriberBalanceErrorState<T> value)
+        collectSubscriberBalanceErrorState,
+    required TResult Function(GetActiveSubscribersloadingState<T> value)
+        getActiveSubscribersLoadingState,
+    required TResult Function(GetActiveSubscribersSuccessState<T> value)
+        getActiveSubscribersSuccessState,
+    required TResult Function(GetActiveSubscribersErrorState<T> value)
+        getActiveSubscribersErrorState,
+    required TResult Function(GetLateSubscribersloadingState<T> value)
+        getLateSubscribersLoadingState,
+    required TResult Function(GetLateSubscribersSuccessState<T> value)
+        getLateSubscribersSuccessState,
+    required TResult Function(GetLateSubscribersErrorState<T> value)
+        getLateSubscribersErrorState,
+    required TResult Function(GetDisabledSubscribersloadingState<T> value)
+        getDisabledSubscribersLoadingState,
+    required TResult Function(GetDisabledSubscribersSuccessState<T> value)
+        getDisabledSubscribersSuccessState,
+    required TResult Function(GetDisabledSubscribersErrorState<T> value)
+        getDisabledSubscribersErrorState,
+    required TResult Function(GetWithdrawnSubscribersloadingState<T> value)
+        getWithdrawnSubscribersLoadingState,
+    required TResult Function(GetWithdrawnSubscribersSuccessState<T> value)
+        getWithdrawnSubscribersSuccessState,
+    required TResult Function(GetWithdrawnSubscribersErrorState<T> value)
+        getWithdrawnSubscribersErrorState,
+    required TResult Function(GetCompaniesListloadingState<T> value)
+        getCompaniesListLoadingState,
+    required TResult Function(GetCompaniesListSuccessState<T> value)
+        getCompaniesListSuccessState,
+    required TResult Function(GetCompaniesListErrorState<T> value)
+        getCompaniesListErrorState,
+    required TResult Function(GetCollectorsEmailsloadingState<T> value)
+        getCollectorsEmailsLoadingState,
+    required TResult Function(GetCollectorsEmailsSuccessState<T> value)
+        getCollectorsEmailsSuccessState,
+    required TResult Function(GetCollectorsEmailsErrorState<T> value)
+        getCollectorsEmailsErrorState,
+    required TResult Function(GetPlansListloadingState<T> value)
+        getPlansListLoadingState,
+    required TResult Function(GetPlansListSuccessState<T> value)
+        getPlansListSuccessState,
+    required TResult Function(GetPlansListErrorState<T> value)
+        getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
+    required TResult Function(ChangeListData<T> value) changeListData,
+  }) {
+    return disableSubscribersByExcelLoadingState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(AddNewSubscriberloadingState<T> value)?
+        addNewSubscriberLoadingState,
+    TResult? Function(AddNewSubscriberSuccessState<T> value)?
+        addNewSubscriberSuccessState,
+    TResult? Function(AddNewSubscriberErrorState<T> value)?
+        addNewSubscriberErrorState,
+    TResult? Function(UpdateSubscriberloadingState<T> value)?
+        updateSubscriberLoadingState,
+    TResult? Function(UpdateSubscriberSuccessState<T> value)?
+        updateSubscriberSuccessState,
+    TResult? Function(UpdateSubscriberErrorState<T> value)?
+        updateSubscriberErrorState,
+    TResult? Function(DeleteSubscriberloadingState<T> value)?
+        deleteSubscriberLoadingState,
+    TResult? Function(DeleteSubscriberSuccessState<T> value)?
+        deleteSubscriberSuccessState,
+    TResult? Function(DeleteSubscriberErrorState<T> value)?
+        deleteSubscriberErrorState,
+    TResult? Function(DisableSubscriberloadingState<T> value)?
+        disableSubscriberLoadingState,
+    TResult? Function(DisableSubscriberSuccessState<T> value)?
+        disableSubscriberSuccessState,
+    TResult? Function(DisableSubscriberErrorState<T> value)?
+        disableSubscriberErrorState,
+    TResult? Function(WithdrawSubscriberloadingState<T> value)?
+        withdrawSubscriberLoadingState,
+    TResult? Function(WithdrawSubscriberSuccessState<T> value)?
+        withdrawSubscriberSuccessState,
+    TResult? Function(WithdrawSubscriberErrorState<T> value)?
+        withdrawSubscriberErrorState,
+    TResult? Function(ActivateSubscriberloadingState<T> value)?
+        activateSubscriberLoadingState,
+    TResult? Function(ActivateSubscriberSuccessState<T> value)?
+        activateSubscriberSuccessState,
+    TResult? Function(ActivateSubscriberErrorState<T> value)?
+        activateSubscriberErrorState,
+    TResult? Function(ZeroSubscriberBalanceloadingState<T> value)?
+        zeroSubscriberBalanceLoadingState,
+    TResult? Function(ZeroSubscriberBalanceSuccessState<T> value)?
+        zeroSubscriberBalanceSuccessState,
+    TResult? Function(ZeroSubscriberBalanceErrorState<T> value)?
+        zeroSubscriberBalanceErrorState,
+    TResult? Function(CollectSubscriberBalanceloadingState<T> value)?
+        collectSubscriberBalanceLoadingState,
+    TResult? Function(CollectSubscriberBalanceSuccessState<T> value)?
+        collectSubscriberBalanceSuccessState,
+    TResult? Function(CollectSubscriberBalanceErrorState<T> value)?
+        collectSubscriberBalanceErrorState,
+    TResult? Function(GetActiveSubscribersloadingState<T> value)?
+        getActiveSubscribersLoadingState,
+    TResult? Function(GetActiveSubscribersSuccessState<T> value)?
+        getActiveSubscribersSuccessState,
+    TResult? Function(GetActiveSubscribersErrorState<T> value)?
+        getActiveSubscribersErrorState,
+    TResult? Function(GetLateSubscribersloadingState<T> value)?
+        getLateSubscribersLoadingState,
+    TResult? Function(GetLateSubscribersSuccessState<T> value)?
+        getLateSubscribersSuccessState,
+    TResult? Function(GetLateSubscribersErrorState<T> value)?
+        getLateSubscribersErrorState,
+    TResult? Function(GetDisabledSubscribersloadingState<T> value)?
+        getDisabledSubscribersLoadingState,
+    TResult? Function(GetDisabledSubscribersSuccessState<T> value)?
+        getDisabledSubscribersSuccessState,
+    TResult? Function(GetDisabledSubscribersErrorState<T> value)?
+        getDisabledSubscribersErrorState,
+    TResult? Function(GetWithdrawnSubscribersloadingState<T> value)?
+        getWithdrawnSubscribersLoadingState,
+    TResult? Function(GetWithdrawnSubscribersSuccessState<T> value)?
+        getWithdrawnSubscribersSuccessState,
+    TResult? Function(GetWithdrawnSubscribersErrorState<T> value)?
+        getWithdrawnSubscribersErrorState,
+    TResult? Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult? Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult? Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
+    TResult? Function(GetCollectorsEmailsloadingState<T> value)?
+        getCollectorsEmailsLoadingState,
+    TResult? Function(GetCollectorsEmailsSuccessState<T> value)?
+        getCollectorsEmailsSuccessState,
+    TResult? Function(GetCollectorsEmailsErrorState<T> value)?
+        getCollectorsEmailsErrorState,
+    TResult? Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult? Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
+    TResult? Function(ChangeListData<T> value)? changeListData,
+  }) {
+    return disableSubscribersByExcelLoadingState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(AddNewSubscriberloadingState<T> value)?
+        addNewSubscriberLoadingState,
+    TResult Function(AddNewSubscriberSuccessState<T> value)?
+        addNewSubscriberSuccessState,
+    TResult Function(AddNewSubscriberErrorState<T> value)?
+        addNewSubscriberErrorState,
+    TResult Function(UpdateSubscriberloadingState<T> value)?
+        updateSubscriberLoadingState,
+    TResult Function(UpdateSubscriberSuccessState<T> value)?
+        updateSubscriberSuccessState,
+    TResult Function(UpdateSubscriberErrorState<T> value)?
+        updateSubscriberErrorState,
+    TResult Function(DeleteSubscriberloadingState<T> value)?
+        deleteSubscriberLoadingState,
+    TResult Function(DeleteSubscriberSuccessState<T> value)?
+        deleteSubscriberSuccessState,
+    TResult Function(DeleteSubscriberErrorState<T> value)?
+        deleteSubscriberErrorState,
+    TResult Function(DisableSubscriberloadingState<T> value)?
+        disableSubscriberLoadingState,
+    TResult Function(DisableSubscriberSuccessState<T> value)?
+        disableSubscriberSuccessState,
+    TResult Function(DisableSubscriberErrorState<T> value)?
+        disableSubscriberErrorState,
+    TResult Function(WithdrawSubscriberloadingState<T> value)?
+        withdrawSubscriberLoadingState,
+    TResult Function(WithdrawSubscriberSuccessState<T> value)?
+        withdrawSubscriberSuccessState,
+    TResult Function(WithdrawSubscriberErrorState<T> value)?
+        withdrawSubscriberErrorState,
+    TResult Function(ActivateSubscriberloadingState<T> value)?
+        activateSubscriberLoadingState,
+    TResult Function(ActivateSubscriberSuccessState<T> value)?
+        activateSubscriberSuccessState,
+    TResult Function(ActivateSubscriberErrorState<T> value)?
+        activateSubscriberErrorState,
+    TResult Function(ZeroSubscriberBalanceloadingState<T> value)?
+        zeroSubscriberBalanceLoadingState,
+    TResult Function(ZeroSubscriberBalanceSuccessState<T> value)?
+        zeroSubscriberBalanceSuccessState,
+    TResult Function(ZeroSubscriberBalanceErrorState<T> value)?
+        zeroSubscriberBalanceErrorState,
+    TResult Function(CollectSubscriberBalanceloadingState<T> value)?
+        collectSubscriberBalanceLoadingState,
+    TResult Function(CollectSubscriberBalanceSuccessState<T> value)?
+        collectSubscriberBalanceSuccessState,
+    TResult Function(CollectSubscriberBalanceErrorState<T> value)?
+        collectSubscriberBalanceErrorState,
+    TResult Function(GetActiveSubscribersloadingState<T> value)?
+        getActiveSubscribersLoadingState,
+    TResult Function(GetActiveSubscribersSuccessState<T> value)?
+        getActiveSubscribersSuccessState,
+    TResult Function(GetActiveSubscribersErrorState<T> value)?
+        getActiveSubscribersErrorState,
+    TResult Function(GetLateSubscribersloadingState<T> value)?
+        getLateSubscribersLoadingState,
+    TResult Function(GetLateSubscribersSuccessState<T> value)?
+        getLateSubscribersSuccessState,
+    TResult Function(GetLateSubscribersErrorState<T> value)?
+        getLateSubscribersErrorState,
+    TResult Function(GetDisabledSubscribersloadingState<T> value)?
+        getDisabledSubscribersLoadingState,
+    TResult Function(GetDisabledSubscribersSuccessState<T> value)?
+        getDisabledSubscribersSuccessState,
+    TResult Function(GetDisabledSubscribersErrorState<T> value)?
+        getDisabledSubscribersErrorState,
+    TResult Function(GetWithdrawnSubscribersloadingState<T> value)?
+        getWithdrawnSubscribersLoadingState,
+    TResult Function(GetWithdrawnSubscribersSuccessState<T> value)?
+        getWithdrawnSubscribersSuccessState,
+    TResult Function(GetWithdrawnSubscribersErrorState<T> value)?
+        getWithdrawnSubscribersErrorState,
+    TResult Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
+    TResult Function(GetCollectorsEmailsloadingState<T> value)?
+        getCollectorsEmailsLoadingState,
+    TResult Function(GetCollectorsEmailsSuccessState<T> value)?
+        getCollectorsEmailsSuccessState,
+    TResult Function(GetCollectorsEmailsErrorState<T> value)?
+        getCollectorsEmailsErrorState,
+    TResult Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
+    TResult Function(ChangeListData<T> value)? changeListData,
+    required TResult orElse(),
+  }) {
+    if (disableSubscribersByExcelLoadingState != null) {
+      return disableSubscribersByExcelLoadingState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DisableSubscribersByExcelloadingState<T>
+    implements SubscribersState<T> {
+  const factory DisableSubscribersByExcelloadingState() =
+      _$DisableSubscribersByExcelloadingStateImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$DisableSubscribersByExcelSuccessStateImplCopyWith<T, $Res> {
+  factory _$$DisableSubscribersByExcelSuccessStateImplCopyWith(
+          _$DisableSubscribersByExcelSuccessStateImpl<T> value,
+          $Res Function(_$DisableSubscribersByExcelSuccessStateImpl<T>) then) =
+      __$$DisableSubscribersByExcelSuccessStateImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({ResultsOfUploadedExcelModel resultsOfUploadedExcelModel});
+}
+
+/// @nodoc
+class __$$DisableSubscribersByExcelSuccessStateImplCopyWithImpl<T, $Res>
+    extends _$SubscribersStateCopyWithImpl<T, $Res,
+        _$DisableSubscribersByExcelSuccessStateImpl<T>>
+    implements _$$DisableSubscribersByExcelSuccessStateImplCopyWith<T, $Res> {
+  __$$DisableSubscribersByExcelSuccessStateImplCopyWithImpl(
+      _$DisableSubscribersByExcelSuccessStateImpl<T> _value,
+      $Res Function(_$DisableSubscribersByExcelSuccessStateImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? resultsOfUploadedExcelModel = null,
+  }) {
+    return _then(_$DisableSubscribersByExcelSuccessStateImpl<T>(
+      null == resultsOfUploadedExcelModel
+          ? _value.resultsOfUploadedExcelModel
+          : resultsOfUploadedExcelModel // ignore: cast_nullable_to_non_nullable
+              as ResultsOfUploadedExcelModel,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DisableSubscribersByExcelSuccessStateImpl<T>
+    implements DisableSubscribersByExcelSuccessState<T> {
+  const _$DisableSubscribersByExcelSuccessStateImpl(
+      this.resultsOfUploadedExcelModel);
+
+  @override
+  final ResultsOfUploadedExcelModel resultsOfUploadedExcelModel;
+
+  @override
+  String toString() {
+    return 'SubscribersState<$T>.disableSubscribersByExcelSuccessState(resultsOfUploadedExcelModel: $resultsOfUploadedExcelModel)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DisableSubscribersByExcelSuccessStateImpl<T> &&
+            (identical(other.resultsOfUploadedExcelModel,
+                    resultsOfUploadedExcelModel) ||
+                other.resultsOfUploadedExcelModel ==
+                    resultsOfUploadedExcelModel));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, resultsOfUploadedExcelModel);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DisableSubscribersByExcelSuccessStateImplCopyWith<T,
+          _$DisableSubscribersByExcelSuccessStateImpl<T>>
+      get copyWith => __$$DisableSubscribersByExcelSuccessStateImplCopyWithImpl<
+          T, _$DisableSubscribersByExcelSuccessStateImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() addNewSubscriberLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        addNewSubscriberSuccessState,
+    required TResult Function(String error) addNewSubscriberErrorState,
+    required TResult Function() updateSubscriberLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        updateSubscriberSuccessState,
+    required TResult Function(String error) updateSubscriberErrorState,
+    required TResult Function() deleteSubscriberLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        deleteSubscriberSuccessState,
+    required TResult Function(String error) deleteSubscriberErrorState,
+    required TResult Function() disableSubscriberLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        disableSubscriberSuccessState,
+    required TResult Function(String error) disableSubscriberErrorState,
+    required TResult Function() withdrawSubscriberLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        withdrawSubscriberSuccessState,
+    required TResult Function(String error) withdrawSubscriberErrorState,
+    required TResult Function() activateSubscriberLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        activateSubscriberSuccessState,
+    required TResult Function(String error) activateSubscriberErrorState,
+    required TResult Function() zeroSubscriberBalanceLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        zeroSubscriberBalanceSuccessState,
+    required TResult Function(String error) zeroSubscriberBalanceErrorState,
+    required TResult Function() collectSubscriberBalanceLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        collectSubscriberBalanceSuccessState,
+    required TResult Function(String error) collectSubscriberBalanceErrorState,
+    required TResult Function() getActiveSubscribersLoadingState,
+    required TResult Function(
+            GetSubscribersDataResponse getSubscribersDataResponse)
+        getActiveSubscribersSuccessState,
+    required TResult Function(String error) getActiveSubscribersErrorState,
+    required TResult Function() getLateSubscribersLoadingState,
+    required TResult Function(
+            GetLateSubscribersResponse getLateSubscribersResponse)
+        getLateSubscribersSuccessState,
+    required TResult Function(String error) getLateSubscribersErrorState,
+    required TResult Function() getDisabledSubscribersLoadingState,
+    required TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
+        getDisabledSubscribersSuccessState,
+    required TResult Function(String error) getDisabledSubscribersErrorState,
+    required TResult Function() getWithdrawnSubscribersLoadingState,
+    required TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
+        getWithdrawnSubscribersSuccessState,
+    required TResult Function(String error) getWithdrawnSubscribersErrorState,
+    required TResult Function() getCompaniesListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getCompaniesListSuccessState,
+    required TResult Function(String error) getCompaniesListErrorState,
+    required TResult Function() getCollectorsEmailsLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getCollectorsEmailsSuccessState,
+    required TResult Function(String error) getCollectorsEmailsErrorState,
+    required TResult Function() getPlansListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getPlansListSuccessState,
+    required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
+    required TResult Function() changeListData,
+  }) {
+    return disableSubscribersByExcelSuccessState(resultsOfUploadedExcelModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? addNewSubscriberLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        addNewSubscriberSuccessState,
+    TResult? Function(String error)? addNewSubscriberErrorState,
+    TResult? Function()? updateSubscriberLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        updateSubscriberSuccessState,
+    TResult? Function(String error)? updateSubscriberErrorState,
+    TResult? Function()? deleteSubscriberLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        deleteSubscriberSuccessState,
+    TResult? Function(String error)? deleteSubscriberErrorState,
+    TResult? Function()? disableSubscriberLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        disableSubscriberSuccessState,
+    TResult? Function(String error)? disableSubscriberErrorState,
+    TResult? Function()? withdrawSubscriberLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        withdrawSubscriberSuccessState,
+    TResult? Function(String error)? withdrawSubscriberErrorState,
+    TResult? Function()? activateSubscriberLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        activateSubscriberSuccessState,
+    TResult? Function(String error)? activateSubscriberErrorState,
+    TResult? Function()? zeroSubscriberBalanceLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        zeroSubscriberBalanceSuccessState,
+    TResult? Function(String error)? zeroSubscriberBalanceErrorState,
+    TResult? Function()? collectSubscriberBalanceLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        collectSubscriberBalanceSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceErrorState,
+    TResult? Function()? getActiveSubscribersLoadingState,
+    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+        getActiveSubscribersSuccessState,
+    TResult? Function(String error)? getActiveSubscribersErrorState,
+    TResult? Function()? getLateSubscribersLoadingState,
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
+        getLateSubscribersSuccessState,
+    TResult? Function(String error)? getLateSubscribersErrorState,
+    TResult? Function()? getDisabledSubscribersLoadingState,
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
+        getDisabledSubscribersSuccessState,
+    TResult? Function(String error)? getDisabledSubscribersErrorState,
+    TResult? Function()? getWithdrawnSubscribersLoadingState,
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
+        getWithdrawnSubscribersSuccessState,
+    TResult? Function(String error)? getWithdrawnSubscribersErrorState,
+    TResult? Function()? getCompaniesListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult? Function(String error)? getCompaniesListErrorState,
+    TResult? Function()? getCollectorsEmailsLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getCollectorsEmailsSuccessState,
+    TResult? Function(String error)? getCollectorsEmailsErrorState,
+    TResult? Function()? getPlansListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
+    TResult? Function()? changeListData,
+  }) {
+    return disableSubscribersByExcelSuccessState
+        ?.call(resultsOfUploadedExcelModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? addNewSubscriberLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        addNewSubscriberSuccessState,
+    TResult Function(String error)? addNewSubscriberErrorState,
+    TResult Function()? updateSubscriberLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        updateSubscriberSuccessState,
+    TResult Function(String error)? updateSubscriberErrorState,
+    TResult Function()? deleteSubscriberLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        deleteSubscriberSuccessState,
+    TResult Function(String error)? deleteSubscriberErrorState,
+    TResult Function()? disableSubscriberLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        disableSubscriberSuccessState,
+    TResult Function(String error)? disableSubscriberErrorState,
+    TResult Function()? withdrawSubscriberLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        withdrawSubscriberSuccessState,
+    TResult Function(String error)? withdrawSubscriberErrorState,
+    TResult Function()? activateSubscriberLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        activateSubscriberSuccessState,
+    TResult Function(String error)? activateSubscriberErrorState,
+    TResult Function()? zeroSubscriberBalanceLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        zeroSubscriberBalanceSuccessState,
+    TResult Function(String error)? zeroSubscriberBalanceErrorState,
+    TResult Function()? collectSubscriberBalanceLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        collectSubscriberBalanceSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceErrorState,
+    TResult Function()? getActiveSubscribersLoadingState,
+    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+        getActiveSubscribersSuccessState,
+    TResult Function(String error)? getActiveSubscribersErrorState,
+    TResult Function()? getLateSubscribersLoadingState,
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
+        getLateSubscribersSuccessState,
+    TResult Function(String error)? getLateSubscribersErrorState,
+    TResult Function()? getDisabledSubscribersLoadingState,
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
+        getDisabledSubscribersSuccessState,
+    TResult Function(String error)? getDisabledSubscribersErrorState,
+    TResult Function()? getWithdrawnSubscribersLoadingState,
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
+        getWithdrawnSubscribersSuccessState,
+    TResult Function(String error)? getWithdrawnSubscribersErrorState,
+    TResult Function()? getCompaniesListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult Function(String error)? getCompaniesListErrorState,
+    TResult Function()? getCollectorsEmailsLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getCollectorsEmailsSuccessState,
+    TResult Function(String error)? getCollectorsEmailsErrorState,
+    TResult Function()? getPlansListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
+    TResult Function()? changeListData,
+    required TResult orElse(),
+  }) {
+    if (disableSubscribersByExcelSuccessState != null) {
+      return disableSubscribersByExcelSuccessState(resultsOfUploadedExcelModel);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(AddNewSubscriberloadingState<T> value)
+        addNewSubscriberLoadingState,
+    required TResult Function(AddNewSubscriberSuccessState<T> value)
+        addNewSubscriberSuccessState,
+    required TResult Function(AddNewSubscriberErrorState<T> value)
+        addNewSubscriberErrorState,
+    required TResult Function(UpdateSubscriberloadingState<T> value)
+        updateSubscriberLoadingState,
+    required TResult Function(UpdateSubscriberSuccessState<T> value)
+        updateSubscriberSuccessState,
+    required TResult Function(UpdateSubscriberErrorState<T> value)
+        updateSubscriberErrorState,
+    required TResult Function(DeleteSubscriberloadingState<T> value)
+        deleteSubscriberLoadingState,
+    required TResult Function(DeleteSubscriberSuccessState<T> value)
+        deleteSubscriberSuccessState,
+    required TResult Function(DeleteSubscriberErrorState<T> value)
+        deleteSubscriberErrorState,
+    required TResult Function(DisableSubscriberloadingState<T> value)
+        disableSubscriberLoadingState,
+    required TResult Function(DisableSubscriberSuccessState<T> value)
+        disableSubscriberSuccessState,
+    required TResult Function(DisableSubscriberErrorState<T> value)
+        disableSubscriberErrorState,
+    required TResult Function(WithdrawSubscriberloadingState<T> value)
+        withdrawSubscriberLoadingState,
+    required TResult Function(WithdrawSubscriberSuccessState<T> value)
+        withdrawSubscriberSuccessState,
+    required TResult Function(WithdrawSubscriberErrorState<T> value)
+        withdrawSubscriberErrorState,
+    required TResult Function(ActivateSubscriberloadingState<T> value)
+        activateSubscriberLoadingState,
+    required TResult Function(ActivateSubscriberSuccessState<T> value)
+        activateSubscriberSuccessState,
+    required TResult Function(ActivateSubscriberErrorState<T> value)
+        activateSubscriberErrorState,
+    required TResult Function(ZeroSubscriberBalanceloadingState<T> value)
+        zeroSubscriberBalanceLoadingState,
+    required TResult Function(ZeroSubscriberBalanceSuccessState<T> value)
+        zeroSubscriberBalanceSuccessState,
+    required TResult Function(ZeroSubscriberBalanceErrorState<T> value)
+        zeroSubscriberBalanceErrorState,
+    required TResult Function(CollectSubscriberBalanceloadingState<T> value)
+        collectSubscriberBalanceLoadingState,
+    required TResult Function(CollectSubscriberBalanceSuccessState<T> value)
+        collectSubscriberBalanceSuccessState,
+    required TResult Function(CollectSubscriberBalanceErrorState<T> value)
+        collectSubscriberBalanceErrorState,
+    required TResult Function(GetActiveSubscribersloadingState<T> value)
+        getActiveSubscribersLoadingState,
+    required TResult Function(GetActiveSubscribersSuccessState<T> value)
+        getActiveSubscribersSuccessState,
+    required TResult Function(GetActiveSubscribersErrorState<T> value)
+        getActiveSubscribersErrorState,
+    required TResult Function(GetLateSubscribersloadingState<T> value)
+        getLateSubscribersLoadingState,
+    required TResult Function(GetLateSubscribersSuccessState<T> value)
+        getLateSubscribersSuccessState,
+    required TResult Function(GetLateSubscribersErrorState<T> value)
+        getLateSubscribersErrorState,
+    required TResult Function(GetDisabledSubscribersloadingState<T> value)
+        getDisabledSubscribersLoadingState,
+    required TResult Function(GetDisabledSubscribersSuccessState<T> value)
+        getDisabledSubscribersSuccessState,
+    required TResult Function(GetDisabledSubscribersErrorState<T> value)
+        getDisabledSubscribersErrorState,
+    required TResult Function(GetWithdrawnSubscribersloadingState<T> value)
+        getWithdrawnSubscribersLoadingState,
+    required TResult Function(GetWithdrawnSubscribersSuccessState<T> value)
+        getWithdrawnSubscribersSuccessState,
+    required TResult Function(GetWithdrawnSubscribersErrorState<T> value)
+        getWithdrawnSubscribersErrorState,
+    required TResult Function(GetCompaniesListloadingState<T> value)
+        getCompaniesListLoadingState,
+    required TResult Function(GetCompaniesListSuccessState<T> value)
+        getCompaniesListSuccessState,
+    required TResult Function(GetCompaniesListErrorState<T> value)
+        getCompaniesListErrorState,
+    required TResult Function(GetCollectorsEmailsloadingState<T> value)
+        getCollectorsEmailsLoadingState,
+    required TResult Function(GetCollectorsEmailsSuccessState<T> value)
+        getCollectorsEmailsSuccessState,
+    required TResult Function(GetCollectorsEmailsErrorState<T> value)
+        getCollectorsEmailsErrorState,
+    required TResult Function(GetPlansListloadingState<T> value)
+        getPlansListLoadingState,
+    required TResult Function(GetPlansListSuccessState<T> value)
+        getPlansListSuccessState,
+    required TResult Function(GetPlansListErrorState<T> value)
+        getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
+    required TResult Function(ChangeListData<T> value) changeListData,
+  }) {
+    return disableSubscribersByExcelSuccessState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(AddNewSubscriberloadingState<T> value)?
+        addNewSubscriberLoadingState,
+    TResult? Function(AddNewSubscriberSuccessState<T> value)?
+        addNewSubscriberSuccessState,
+    TResult? Function(AddNewSubscriberErrorState<T> value)?
+        addNewSubscriberErrorState,
+    TResult? Function(UpdateSubscriberloadingState<T> value)?
+        updateSubscriberLoadingState,
+    TResult? Function(UpdateSubscriberSuccessState<T> value)?
+        updateSubscriberSuccessState,
+    TResult? Function(UpdateSubscriberErrorState<T> value)?
+        updateSubscriberErrorState,
+    TResult? Function(DeleteSubscriberloadingState<T> value)?
+        deleteSubscriberLoadingState,
+    TResult? Function(DeleteSubscriberSuccessState<T> value)?
+        deleteSubscriberSuccessState,
+    TResult? Function(DeleteSubscriberErrorState<T> value)?
+        deleteSubscriberErrorState,
+    TResult? Function(DisableSubscriberloadingState<T> value)?
+        disableSubscriberLoadingState,
+    TResult? Function(DisableSubscriberSuccessState<T> value)?
+        disableSubscriberSuccessState,
+    TResult? Function(DisableSubscriberErrorState<T> value)?
+        disableSubscriberErrorState,
+    TResult? Function(WithdrawSubscriberloadingState<T> value)?
+        withdrawSubscriberLoadingState,
+    TResult? Function(WithdrawSubscriberSuccessState<T> value)?
+        withdrawSubscriberSuccessState,
+    TResult? Function(WithdrawSubscriberErrorState<T> value)?
+        withdrawSubscriberErrorState,
+    TResult? Function(ActivateSubscriberloadingState<T> value)?
+        activateSubscriberLoadingState,
+    TResult? Function(ActivateSubscriberSuccessState<T> value)?
+        activateSubscriberSuccessState,
+    TResult? Function(ActivateSubscriberErrorState<T> value)?
+        activateSubscriberErrorState,
+    TResult? Function(ZeroSubscriberBalanceloadingState<T> value)?
+        zeroSubscriberBalanceLoadingState,
+    TResult? Function(ZeroSubscriberBalanceSuccessState<T> value)?
+        zeroSubscriberBalanceSuccessState,
+    TResult? Function(ZeroSubscriberBalanceErrorState<T> value)?
+        zeroSubscriberBalanceErrorState,
+    TResult? Function(CollectSubscriberBalanceloadingState<T> value)?
+        collectSubscriberBalanceLoadingState,
+    TResult? Function(CollectSubscriberBalanceSuccessState<T> value)?
+        collectSubscriberBalanceSuccessState,
+    TResult? Function(CollectSubscriberBalanceErrorState<T> value)?
+        collectSubscriberBalanceErrorState,
+    TResult? Function(GetActiveSubscribersloadingState<T> value)?
+        getActiveSubscribersLoadingState,
+    TResult? Function(GetActiveSubscribersSuccessState<T> value)?
+        getActiveSubscribersSuccessState,
+    TResult? Function(GetActiveSubscribersErrorState<T> value)?
+        getActiveSubscribersErrorState,
+    TResult? Function(GetLateSubscribersloadingState<T> value)?
+        getLateSubscribersLoadingState,
+    TResult? Function(GetLateSubscribersSuccessState<T> value)?
+        getLateSubscribersSuccessState,
+    TResult? Function(GetLateSubscribersErrorState<T> value)?
+        getLateSubscribersErrorState,
+    TResult? Function(GetDisabledSubscribersloadingState<T> value)?
+        getDisabledSubscribersLoadingState,
+    TResult? Function(GetDisabledSubscribersSuccessState<T> value)?
+        getDisabledSubscribersSuccessState,
+    TResult? Function(GetDisabledSubscribersErrorState<T> value)?
+        getDisabledSubscribersErrorState,
+    TResult? Function(GetWithdrawnSubscribersloadingState<T> value)?
+        getWithdrawnSubscribersLoadingState,
+    TResult? Function(GetWithdrawnSubscribersSuccessState<T> value)?
+        getWithdrawnSubscribersSuccessState,
+    TResult? Function(GetWithdrawnSubscribersErrorState<T> value)?
+        getWithdrawnSubscribersErrorState,
+    TResult? Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult? Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult? Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
+    TResult? Function(GetCollectorsEmailsloadingState<T> value)?
+        getCollectorsEmailsLoadingState,
+    TResult? Function(GetCollectorsEmailsSuccessState<T> value)?
+        getCollectorsEmailsSuccessState,
+    TResult? Function(GetCollectorsEmailsErrorState<T> value)?
+        getCollectorsEmailsErrorState,
+    TResult? Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult? Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
+    TResult? Function(ChangeListData<T> value)? changeListData,
+  }) {
+    return disableSubscribersByExcelSuccessState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(AddNewSubscriberloadingState<T> value)?
+        addNewSubscriberLoadingState,
+    TResult Function(AddNewSubscriberSuccessState<T> value)?
+        addNewSubscriberSuccessState,
+    TResult Function(AddNewSubscriberErrorState<T> value)?
+        addNewSubscriberErrorState,
+    TResult Function(UpdateSubscriberloadingState<T> value)?
+        updateSubscriberLoadingState,
+    TResult Function(UpdateSubscriberSuccessState<T> value)?
+        updateSubscriberSuccessState,
+    TResult Function(UpdateSubscriberErrorState<T> value)?
+        updateSubscriberErrorState,
+    TResult Function(DeleteSubscriberloadingState<T> value)?
+        deleteSubscriberLoadingState,
+    TResult Function(DeleteSubscriberSuccessState<T> value)?
+        deleteSubscriberSuccessState,
+    TResult Function(DeleteSubscriberErrorState<T> value)?
+        deleteSubscriberErrorState,
+    TResult Function(DisableSubscriberloadingState<T> value)?
+        disableSubscriberLoadingState,
+    TResult Function(DisableSubscriberSuccessState<T> value)?
+        disableSubscriberSuccessState,
+    TResult Function(DisableSubscriberErrorState<T> value)?
+        disableSubscriberErrorState,
+    TResult Function(WithdrawSubscriberloadingState<T> value)?
+        withdrawSubscriberLoadingState,
+    TResult Function(WithdrawSubscriberSuccessState<T> value)?
+        withdrawSubscriberSuccessState,
+    TResult Function(WithdrawSubscriberErrorState<T> value)?
+        withdrawSubscriberErrorState,
+    TResult Function(ActivateSubscriberloadingState<T> value)?
+        activateSubscriberLoadingState,
+    TResult Function(ActivateSubscriberSuccessState<T> value)?
+        activateSubscriberSuccessState,
+    TResult Function(ActivateSubscriberErrorState<T> value)?
+        activateSubscriberErrorState,
+    TResult Function(ZeroSubscriberBalanceloadingState<T> value)?
+        zeroSubscriberBalanceLoadingState,
+    TResult Function(ZeroSubscriberBalanceSuccessState<T> value)?
+        zeroSubscriberBalanceSuccessState,
+    TResult Function(ZeroSubscriberBalanceErrorState<T> value)?
+        zeroSubscriberBalanceErrorState,
+    TResult Function(CollectSubscriberBalanceloadingState<T> value)?
+        collectSubscriberBalanceLoadingState,
+    TResult Function(CollectSubscriberBalanceSuccessState<T> value)?
+        collectSubscriberBalanceSuccessState,
+    TResult Function(CollectSubscriberBalanceErrorState<T> value)?
+        collectSubscriberBalanceErrorState,
+    TResult Function(GetActiveSubscribersloadingState<T> value)?
+        getActiveSubscribersLoadingState,
+    TResult Function(GetActiveSubscribersSuccessState<T> value)?
+        getActiveSubscribersSuccessState,
+    TResult Function(GetActiveSubscribersErrorState<T> value)?
+        getActiveSubscribersErrorState,
+    TResult Function(GetLateSubscribersloadingState<T> value)?
+        getLateSubscribersLoadingState,
+    TResult Function(GetLateSubscribersSuccessState<T> value)?
+        getLateSubscribersSuccessState,
+    TResult Function(GetLateSubscribersErrorState<T> value)?
+        getLateSubscribersErrorState,
+    TResult Function(GetDisabledSubscribersloadingState<T> value)?
+        getDisabledSubscribersLoadingState,
+    TResult Function(GetDisabledSubscribersSuccessState<T> value)?
+        getDisabledSubscribersSuccessState,
+    TResult Function(GetDisabledSubscribersErrorState<T> value)?
+        getDisabledSubscribersErrorState,
+    TResult Function(GetWithdrawnSubscribersloadingState<T> value)?
+        getWithdrawnSubscribersLoadingState,
+    TResult Function(GetWithdrawnSubscribersSuccessState<T> value)?
+        getWithdrawnSubscribersSuccessState,
+    TResult Function(GetWithdrawnSubscribersErrorState<T> value)?
+        getWithdrawnSubscribersErrorState,
+    TResult Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
+    TResult Function(GetCollectorsEmailsloadingState<T> value)?
+        getCollectorsEmailsLoadingState,
+    TResult Function(GetCollectorsEmailsSuccessState<T> value)?
+        getCollectorsEmailsSuccessState,
+    TResult Function(GetCollectorsEmailsErrorState<T> value)?
+        getCollectorsEmailsErrorState,
+    TResult Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
+    TResult Function(ChangeListData<T> value)? changeListData,
+    required TResult orElse(),
+  }) {
+    if (disableSubscribersByExcelSuccessState != null) {
+      return disableSubscribersByExcelSuccessState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DisableSubscribersByExcelSuccessState<T>
+    implements SubscribersState<T> {
+  const factory DisableSubscribersByExcelSuccessState(
+          final ResultsOfUploadedExcelModel resultsOfUploadedExcelModel) =
+      _$DisableSubscribersByExcelSuccessStateImpl<T>;
+
+  ResultsOfUploadedExcelModel get resultsOfUploadedExcelModel;
+  @JsonKey(ignore: true)
+  _$$DisableSubscribersByExcelSuccessStateImplCopyWith<T,
+          _$DisableSubscribersByExcelSuccessStateImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$DisableSubscribersByExcelErrorStateImplCopyWith<T, $Res> {
+  factory _$$DisableSubscribersByExcelErrorStateImplCopyWith(
+          _$DisableSubscribersByExcelErrorStateImpl<T> value,
+          $Res Function(_$DisableSubscribersByExcelErrorStateImpl<T>) then) =
+      __$$DisableSubscribersByExcelErrorStateImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$DisableSubscribersByExcelErrorStateImplCopyWithImpl<T, $Res>
+    extends _$SubscribersStateCopyWithImpl<T, $Res,
+        _$DisableSubscribersByExcelErrorStateImpl<T>>
+    implements _$$DisableSubscribersByExcelErrorStateImplCopyWith<T, $Res> {
+  __$$DisableSubscribersByExcelErrorStateImplCopyWithImpl(
+      _$DisableSubscribersByExcelErrorStateImpl<T> _value,
+      $Res Function(_$DisableSubscribersByExcelErrorStateImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$DisableSubscribersByExcelErrorStateImpl<T>(
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DisableSubscribersByExcelErrorStateImpl<T>
+    implements DisableSubscribersByExcelErrorState<T> {
+  const _$DisableSubscribersByExcelErrorStateImpl({required this.error});
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'SubscribersState<$T>.disableSubscribersByExcelErrorState(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DisableSubscribersByExcelErrorStateImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DisableSubscribersByExcelErrorStateImplCopyWith<T,
+          _$DisableSubscribersByExcelErrorStateImpl<T>>
+      get copyWith => __$$DisableSubscribersByExcelErrorStateImplCopyWithImpl<T,
+          _$DisableSubscribersByExcelErrorStateImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() addNewSubscriberLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        addNewSubscriberSuccessState,
+    required TResult Function(String error) addNewSubscriberErrorState,
+    required TResult Function() updateSubscriberLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        updateSubscriberSuccessState,
+    required TResult Function(String error) updateSubscriberErrorState,
+    required TResult Function() deleteSubscriberLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        deleteSubscriberSuccessState,
+    required TResult Function(String error) deleteSubscriberErrorState,
+    required TResult Function() disableSubscriberLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        disableSubscriberSuccessState,
+    required TResult Function(String error) disableSubscriberErrorState,
+    required TResult Function() withdrawSubscriberLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        withdrawSubscriberSuccessState,
+    required TResult Function(String error) withdrawSubscriberErrorState,
+    required TResult Function() activateSubscriberLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        activateSubscriberSuccessState,
+    required TResult Function(String error) activateSubscriberErrorState,
+    required TResult Function() zeroSubscriberBalanceLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        zeroSubscriberBalanceSuccessState,
+    required TResult Function(String error) zeroSubscriberBalanceErrorState,
+    required TResult Function() collectSubscriberBalanceLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        collectSubscriberBalanceSuccessState,
+    required TResult Function(String error) collectSubscriberBalanceErrorState,
+    required TResult Function() getActiveSubscribersLoadingState,
+    required TResult Function(
+            GetSubscribersDataResponse getSubscribersDataResponse)
+        getActiveSubscribersSuccessState,
+    required TResult Function(String error) getActiveSubscribersErrorState,
+    required TResult Function() getLateSubscribersLoadingState,
+    required TResult Function(
+            GetLateSubscribersResponse getLateSubscribersResponse)
+        getLateSubscribersSuccessState,
+    required TResult Function(String error) getLateSubscribersErrorState,
+    required TResult Function() getDisabledSubscribersLoadingState,
+    required TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
+        getDisabledSubscribersSuccessState,
+    required TResult Function(String error) getDisabledSubscribersErrorState,
+    required TResult Function() getWithdrawnSubscribersLoadingState,
+    required TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
+        getWithdrawnSubscribersSuccessState,
+    required TResult Function(String error) getWithdrawnSubscribersErrorState,
+    required TResult Function() getCompaniesListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getCompaniesListSuccessState,
+    required TResult Function(String error) getCompaniesListErrorState,
+    required TResult Function() getCollectorsEmailsLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getCollectorsEmailsSuccessState,
+    required TResult Function(String error) getCollectorsEmailsErrorState,
+    required TResult Function() getPlansListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getPlansListSuccessState,
+    required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
+    required TResult Function() changeListData,
+  }) {
+    return disableSubscribersByExcelErrorState(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? addNewSubscriberLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        addNewSubscriberSuccessState,
+    TResult? Function(String error)? addNewSubscriberErrorState,
+    TResult? Function()? updateSubscriberLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        updateSubscriberSuccessState,
+    TResult? Function(String error)? updateSubscriberErrorState,
+    TResult? Function()? deleteSubscriberLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        deleteSubscriberSuccessState,
+    TResult? Function(String error)? deleteSubscriberErrorState,
+    TResult? Function()? disableSubscriberLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        disableSubscriberSuccessState,
+    TResult? Function(String error)? disableSubscriberErrorState,
+    TResult? Function()? withdrawSubscriberLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        withdrawSubscriberSuccessState,
+    TResult? Function(String error)? withdrawSubscriberErrorState,
+    TResult? Function()? activateSubscriberLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        activateSubscriberSuccessState,
+    TResult? Function(String error)? activateSubscriberErrorState,
+    TResult? Function()? zeroSubscriberBalanceLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        zeroSubscriberBalanceSuccessState,
+    TResult? Function(String error)? zeroSubscriberBalanceErrorState,
+    TResult? Function()? collectSubscriberBalanceLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        collectSubscriberBalanceSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceErrorState,
+    TResult? Function()? getActiveSubscribersLoadingState,
+    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+        getActiveSubscribersSuccessState,
+    TResult? Function(String error)? getActiveSubscribersErrorState,
+    TResult? Function()? getLateSubscribersLoadingState,
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
+        getLateSubscribersSuccessState,
+    TResult? Function(String error)? getLateSubscribersErrorState,
+    TResult? Function()? getDisabledSubscribersLoadingState,
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
+        getDisabledSubscribersSuccessState,
+    TResult? Function(String error)? getDisabledSubscribersErrorState,
+    TResult? Function()? getWithdrawnSubscribersLoadingState,
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
+        getWithdrawnSubscribersSuccessState,
+    TResult? Function(String error)? getWithdrawnSubscribersErrorState,
+    TResult? Function()? getCompaniesListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult? Function(String error)? getCompaniesListErrorState,
+    TResult? Function()? getCollectorsEmailsLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getCollectorsEmailsSuccessState,
+    TResult? Function(String error)? getCollectorsEmailsErrorState,
+    TResult? Function()? getPlansListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
+    TResult? Function()? changeListData,
+  }) {
+    return disableSubscribersByExcelErrorState?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? addNewSubscriberLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        addNewSubscriberSuccessState,
+    TResult Function(String error)? addNewSubscriberErrorState,
+    TResult Function()? updateSubscriberLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        updateSubscriberSuccessState,
+    TResult Function(String error)? updateSubscriberErrorState,
+    TResult Function()? deleteSubscriberLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        deleteSubscriberSuccessState,
+    TResult Function(String error)? deleteSubscriberErrorState,
+    TResult Function()? disableSubscriberLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        disableSubscriberSuccessState,
+    TResult Function(String error)? disableSubscriberErrorState,
+    TResult Function()? withdrawSubscriberLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        withdrawSubscriberSuccessState,
+    TResult Function(String error)? withdrawSubscriberErrorState,
+    TResult Function()? activateSubscriberLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        activateSubscriberSuccessState,
+    TResult Function(String error)? activateSubscriberErrorState,
+    TResult Function()? zeroSubscriberBalanceLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        zeroSubscriberBalanceSuccessState,
+    TResult Function(String error)? zeroSubscriberBalanceErrorState,
+    TResult Function()? collectSubscriberBalanceLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        collectSubscriberBalanceSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceErrorState,
+    TResult Function()? getActiveSubscribersLoadingState,
+    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+        getActiveSubscribersSuccessState,
+    TResult Function(String error)? getActiveSubscribersErrorState,
+    TResult Function()? getLateSubscribersLoadingState,
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
+        getLateSubscribersSuccessState,
+    TResult Function(String error)? getLateSubscribersErrorState,
+    TResult Function()? getDisabledSubscribersLoadingState,
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
+        getDisabledSubscribersSuccessState,
+    TResult Function(String error)? getDisabledSubscribersErrorState,
+    TResult Function()? getWithdrawnSubscribersLoadingState,
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
+        getWithdrawnSubscribersSuccessState,
+    TResult Function(String error)? getWithdrawnSubscribersErrorState,
+    TResult Function()? getCompaniesListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult Function(String error)? getCompaniesListErrorState,
+    TResult Function()? getCollectorsEmailsLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getCollectorsEmailsSuccessState,
+    TResult Function(String error)? getCollectorsEmailsErrorState,
+    TResult Function()? getPlansListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
+    TResult Function()? changeListData,
+    required TResult orElse(),
+  }) {
+    if (disableSubscribersByExcelErrorState != null) {
+      return disableSubscribersByExcelErrorState(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(AddNewSubscriberloadingState<T> value)
+        addNewSubscriberLoadingState,
+    required TResult Function(AddNewSubscriberSuccessState<T> value)
+        addNewSubscriberSuccessState,
+    required TResult Function(AddNewSubscriberErrorState<T> value)
+        addNewSubscriberErrorState,
+    required TResult Function(UpdateSubscriberloadingState<T> value)
+        updateSubscriberLoadingState,
+    required TResult Function(UpdateSubscriberSuccessState<T> value)
+        updateSubscriberSuccessState,
+    required TResult Function(UpdateSubscriberErrorState<T> value)
+        updateSubscriberErrorState,
+    required TResult Function(DeleteSubscriberloadingState<T> value)
+        deleteSubscriberLoadingState,
+    required TResult Function(DeleteSubscriberSuccessState<T> value)
+        deleteSubscriberSuccessState,
+    required TResult Function(DeleteSubscriberErrorState<T> value)
+        deleteSubscriberErrorState,
+    required TResult Function(DisableSubscriberloadingState<T> value)
+        disableSubscriberLoadingState,
+    required TResult Function(DisableSubscriberSuccessState<T> value)
+        disableSubscriberSuccessState,
+    required TResult Function(DisableSubscriberErrorState<T> value)
+        disableSubscriberErrorState,
+    required TResult Function(WithdrawSubscriberloadingState<T> value)
+        withdrawSubscriberLoadingState,
+    required TResult Function(WithdrawSubscriberSuccessState<T> value)
+        withdrawSubscriberSuccessState,
+    required TResult Function(WithdrawSubscriberErrorState<T> value)
+        withdrawSubscriberErrorState,
+    required TResult Function(ActivateSubscriberloadingState<T> value)
+        activateSubscriberLoadingState,
+    required TResult Function(ActivateSubscriberSuccessState<T> value)
+        activateSubscriberSuccessState,
+    required TResult Function(ActivateSubscriberErrorState<T> value)
+        activateSubscriberErrorState,
+    required TResult Function(ZeroSubscriberBalanceloadingState<T> value)
+        zeroSubscriberBalanceLoadingState,
+    required TResult Function(ZeroSubscriberBalanceSuccessState<T> value)
+        zeroSubscriberBalanceSuccessState,
+    required TResult Function(ZeroSubscriberBalanceErrorState<T> value)
+        zeroSubscriberBalanceErrorState,
+    required TResult Function(CollectSubscriberBalanceloadingState<T> value)
+        collectSubscriberBalanceLoadingState,
+    required TResult Function(CollectSubscriberBalanceSuccessState<T> value)
+        collectSubscriberBalanceSuccessState,
+    required TResult Function(CollectSubscriberBalanceErrorState<T> value)
+        collectSubscriberBalanceErrorState,
+    required TResult Function(GetActiveSubscribersloadingState<T> value)
+        getActiveSubscribersLoadingState,
+    required TResult Function(GetActiveSubscribersSuccessState<T> value)
+        getActiveSubscribersSuccessState,
+    required TResult Function(GetActiveSubscribersErrorState<T> value)
+        getActiveSubscribersErrorState,
+    required TResult Function(GetLateSubscribersloadingState<T> value)
+        getLateSubscribersLoadingState,
+    required TResult Function(GetLateSubscribersSuccessState<T> value)
+        getLateSubscribersSuccessState,
+    required TResult Function(GetLateSubscribersErrorState<T> value)
+        getLateSubscribersErrorState,
+    required TResult Function(GetDisabledSubscribersloadingState<T> value)
+        getDisabledSubscribersLoadingState,
+    required TResult Function(GetDisabledSubscribersSuccessState<T> value)
+        getDisabledSubscribersSuccessState,
+    required TResult Function(GetDisabledSubscribersErrorState<T> value)
+        getDisabledSubscribersErrorState,
+    required TResult Function(GetWithdrawnSubscribersloadingState<T> value)
+        getWithdrawnSubscribersLoadingState,
+    required TResult Function(GetWithdrawnSubscribersSuccessState<T> value)
+        getWithdrawnSubscribersSuccessState,
+    required TResult Function(GetWithdrawnSubscribersErrorState<T> value)
+        getWithdrawnSubscribersErrorState,
+    required TResult Function(GetCompaniesListloadingState<T> value)
+        getCompaniesListLoadingState,
+    required TResult Function(GetCompaniesListSuccessState<T> value)
+        getCompaniesListSuccessState,
+    required TResult Function(GetCompaniesListErrorState<T> value)
+        getCompaniesListErrorState,
+    required TResult Function(GetCollectorsEmailsloadingState<T> value)
+        getCollectorsEmailsLoadingState,
+    required TResult Function(GetCollectorsEmailsSuccessState<T> value)
+        getCollectorsEmailsSuccessState,
+    required TResult Function(GetCollectorsEmailsErrorState<T> value)
+        getCollectorsEmailsErrorState,
+    required TResult Function(GetPlansListloadingState<T> value)
+        getPlansListLoadingState,
+    required TResult Function(GetPlansListSuccessState<T> value)
+        getPlansListSuccessState,
+    required TResult Function(GetPlansListErrorState<T> value)
+        getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
+    required TResult Function(ChangeListData<T> value) changeListData,
+  }) {
+    return disableSubscribersByExcelErrorState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(AddNewSubscriberloadingState<T> value)?
+        addNewSubscriberLoadingState,
+    TResult? Function(AddNewSubscriberSuccessState<T> value)?
+        addNewSubscriberSuccessState,
+    TResult? Function(AddNewSubscriberErrorState<T> value)?
+        addNewSubscriberErrorState,
+    TResult? Function(UpdateSubscriberloadingState<T> value)?
+        updateSubscriberLoadingState,
+    TResult? Function(UpdateSubscriberSuccessState<T> value)?
+        updateSubscriberSuccessState,
+    TResult? Function(UpdateSubscriberErrorState<T> value)?
+        updateSubscriberErrorState,
+    TResult? Function(DeleteSubscriberloadingState<T> value)?
+        deleteSubscriberLoadingState,
+    TResult? Function(DeleteSubscriberSuccessState<T> value)?
+        deleteSubscriberSuccessState,
+    TResult? Function(DeleteSubscriberErrorState<T> value)?
+        deleteSubscriberErrorState,
+    TResult? Function(DisableSubscriberloadingState<T> value)?
+        disableSubscriberLoadingState,
+    TResult? Function(DisableSubscriberSuccessState<T> value)?
+        disableSubscriberSuccessState,
+    TResult? Function(DisableSubscriberErrorState<T> value)?
+        disableSubscriberErrorState,
+    TResult? Function(WithdrawSubscriberloadingState<T> value)?
+        withdrawSubscriberLoadingState,
+    TResult? Function(WithdrawSubscriberSuccessState<T> value)?
+        withdrawSubscriberSuccessState,
+    TResult? Function(WithdrawSubscriberErrorState<T> value)?
+        withdrawSubscriberErrorState,
+    TResult? Function(ActivateSubscriberloadingState<T> value)?
+        activateSubscriberLoadingState,
+    TResult? Function(ActivateSubscriberSuccessState<T> value)?
+        activateSubscriberSuccessState,
+    TResult? Function(ActivateSubscriberErrorState<T> value)?
+        activateSubscriberErrorState,
+    TResult? Function(ZeroSubscriberBalanceloadingState<T> value)?
+        zeroSubscriberBalanceLoadingState,
+    TResult? Function(ZeroSubscriberBalanceSuccessState<T> value)?
+        zeroSubscriberBalanceSuccessState,
+    TResult? Function(ZeroSubscriberBalanceErrorState<T> value)?
+        zeroSubscriberBalanceErrorState,
+    TResult? Function(CollectSubscriberBalanceloadingState<T> value)?
+        collectSubscriberBalanceLoadingState,
+    TResult? Function(CollectSubscriberBalanceSuccessState<T> value)?
+        collectSubscriberBalanceSuccessState,
+    TResult? Function(CollectSubscriberBalanceErrorState<T> value)?
+        collectSubscriberBalanceErrorState,
+    TResult? Function(GetActiveSubscribersloadingState<T> value)?
+        getActiveSubscribersLoadingState,
+    TResult? Function(GetActiveSubscribersSuccessState<T> value)?
+        getActiveSubscribersSuccessState,
+    TResult? Function(GetActiveSubscribersErrorState<T> value)?
+        getActiveSubscribersErrorState,
+    TResult? Function(GetLateSubscribersloadingState<T> value)?
+        getLateSubscribersLoadingState,
+    TResult? Function(GetLateSubscribersSuccessState<T> value)?
+        getLateSubscribersSuccessState,
+    TResult? Function(GetLateSubscribersErrorState<T> value)?
+        getLateSubscribersErrorState,
+    TResult? Function(GetDisabledSubscribersloadingState<T> value)?
+        getDisabledSubscribersLoadingState,
+    TResult? Function(GetDisabledSubscribersSuccessState<T> value)?
+        getDisabledSubscribersSuccessState,
+    TResult? Function(GetDisabledSubscribersErrorState<T> value)?
+        getDisabledSubscribersErrorState,
+    TResult? Function(GetWithdrawnSubscribersloadingState<T> value)?
+        getWithdrawnSubscribersLoadingState,
+    TResult? Function(GetWithdrawnSubscribersSuccessState<T> value)?
+        getWithdrawnSubscribersSuccessState,
+    TResult? Function(GetWithdrawnSubscribersErrorState<T> value)?
+        getWithdrawnSubscribersErrorState,
+    TResult? Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult? Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult? Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
+    TResult? Function(GetCollectorsEmailsloadingState<T> value)?
+        getCollectorsEmailsLoadingState,
+    TResult? Function(GetCollectorsEmailsSuccessState<T> value)?
+        getCollectorsEmailsSuccessState,
+    TResult? Function(GetCollectorsEmailsErrorState<T> value)?
+        getCollectorsEmailsErrorState,
+    TResult? Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult? Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
+    TResult? Function(ChangeListData<T> value)? changeListData,
+  }) {
+    return disableSubscribersByExcelErrorState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(AddNewSubscriberloadingState<T> value)?
+        addNewSubscriberLoadingState,
+    TResult Function(AddNewSubscriberSuccessState<T> value)?
+        addNewSubscriberSuccessState,
+    TResult Function(AddNewSubscriberErrorState<T> value)?
+        addNewSubscriberErrorState,
+    TResult Function(UpdateSubscriberloadingState<T> value)?
+        updateSubscriberLoadingState,
+    TResult Function(UpdateSubscriberSuccessState<T> value)?
+        updateSubscriberSuccessState,
+    TResult Function(UpdateSubscriberErrorState<T> value)?
+        updateSubscriberErrorState,
+    TResult Function(DeleteSubscriberloadingState<T> value)?
+        deleteSubscriberLoadingState,
+    TResult Function(DeleteSubscriberSuccessState<T> value)?
+        deleteSubscriberSuccessState,
+    TResult Function(DeleteSubscriberErrorState<T> value)?
+        deleteSubscriberErrorState,
+    TResult Function(DisableSubscriberloadingState<T> value)?
+        disableSubscriberLoadingState,
+    TResult Function(DisableSubscriberSuccessState<T> value)?
+        disableSubscriberSuccessState,
+    TResult Function(DisableSubscriberErrorState<T> value)?
+        disableSubscriberErrorState,
+    TResult Function(WithdrawSubscriberloadingState<T> value)?
+        withdrawSubscriberLoadingState,
+    TResult Function(WithdrawSubscriberSuccessState<T> value)?
+        withdrawSubscriberSuccessState,
+    TResult Function(WithdrawSubscriberErrorState<T> value)?
+        withdrawSubscriberErrorState,
+    TResult Function(ActivateSubscriberloadingState<T> value)?
+        activateSubscriberLoadingState,
+    TResult Function(ActivateSubscriberSuccessState<T> value)?
+        activateSubscriberSuccessState,
+    TResult Function(ActivateSubscriberErrorState<T> value)?
+        activateSubscriberErrorState,
+    TResult Function(ZeroSubscriberBalanceloadingState<T> value)?
+        zeroSubscriberBalanceLoadingState,
+    TResult Function(ZeroSubscriberBalanceSuccessState<T> value)?
+        zeroSubscriberBalanceSuccessState,
+    TResult Function(ZeroSubscriberBalanceErrorState<T> value)?
+        zeroSubscriberBalanceErrorState,
+    TResult Function(CollectSubscriberBalanceloadingState<T> value)?
+        collectSubscriberBalanceLoadingState,
+    TResult Function(CollectSubscriberBalanceSuccessState<T> value)?
+        collectSubscriberBalanceSuccessState,
+    TResult Function(CollectSubscriberBalanceErrorState<T> value)?
+        collectSubscriberBalanceErrorState,
+    TResult Function(GetActiveSubscribersloadingState<T> value)?
+        getActiveSubscribersLoadingState,
+    TResult Function(GetActiveSubscribersSuccessState<T> value)?
+        getActiveSubscribersSuccessState,
+    TResult Function(GetActiveSubscribersErrorState<T> value)?
+        getActiveSubscribersErrorState,
+    TResult Function(GetLateSubscribersloadingState<T> value)?
+        getLateSubscribersLoadingState,
+    TResult Function(GetLateSubscribersSuccessState<T> value)?
+        getLateSubscribersSuccessState,
+    TResult Function(GetLateSubscribersErrorState<T> value)?
+        getLateSubscribersErrorState,
+    TResult Function(GetDisabledSubscribersloadingState<T> value)?
+        getDisabledSubscribersLoadingState,
+    TResult Function(GetDisabledSubscribersSuccessState<T> value)?
+        getDisabledSubscribersSuccessState,
+    TResult Function(GetDisabledSubscribersErrorState<T> value)?
+        getDisabledSubscribersErrorState,
+    TResult Function(GetWithdrawnSubscribersloadingState<T> value)?
+        getWithdrawnSubscribersLoadingState,
+    TResult Function(GetWithdrawnSubscribersSuccessState<T> value)?
+        getWithdrawnSubscribersSuccessState,
+    TResult Function(GetWithdrawnSubscribersErrorState<T> value)?
+        getWithdrawnSubscribersErrorState,
+    TResult Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
+    TResult Function(GetCollectorsEmailsloadingState<T> value)?
+        getCollectorsEmailsLoadingState,
+    TResult Function(GetCollectorsEmailsSuccessState<T> value)?
+        getCollectorsEmailsSuccessState,
+    TResult Function(GetCollectorsEmailsErrorState<T> value)?
+        getCollectorsEmailsErrorState,
+    TResult Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
+    TResult Function(ChangeListData<T> value)? changeListData,
+    required TResult orElse(),
+  }) {
+    if (disableSubscribersByExcelErrorState != null) {
+      return disableSubscribersByExcelErrorState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DisableSubscribersByExcelErrorState<T>
+    implements SubscribersState<T> {
+  const factory DisableSubscribersByExcelErrorState(
+          {required final String error}) =
+      _$DisableSubscribersByExcelErrorStateImpl<T>;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$$DisableSubscribersByExcelErrorStateImplCopyWith<T,
+          _$DisableSubscribersByExcelErrorStateImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$WithdrawSubscribersByExcelloadingStateImplCopyWith<T, $Res> {
+  factory _$$WithdrawSubscribersByExcelloadingStateImplCopyWith(
+          _$WithdrawSubscribersByExcelloadingStateImpl<T> value,
+          $Res Function(_$WithdrawSubscribersByExcelloadingStateImpl<T>) then) =
+      __$$WithdrawSubscribersByExcelloadingStateImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$WithdrawSubscribersByExcelloadingStateImplCopyWithImpl<T, $Res>
+    extends _$SubscribersStateCopyWithImpl<T, $Res,
+        _$WithdrawSubscribersByExcelloadingStateImpl<T>>
+    implements _$$WithdrawSubscribersByExcelloadingStateImplCopyWith<T, $Res> {
+  __$$WithdrawSubscribersByExcelloadingStateImplCopyWithImpl(
+      _$WithdrawSubscribersByExcelloadingStateImpl<T> _value,
+      $Res Function(_$WithdrawSubscribersByExcelloadingStateImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$WithdrawSubscribersByExcelloadingStateImpl<T>
+    implements WithdrawSubscribersByExcelloadingState<T> {
+  const _$WithdrawSubscribersByExcelloadingStateImpl();
+
+  @override
+  String toString() {
+    return 'SubscribersState<$T>.withdrawSubscribersByExcelLoadingState()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$WithdrawSubscribersByExcelloadingStateImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() addNewSubscriberLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        addNewSubscriberSuccessState,
+    required TResult Function(String error) addNewSubscriberErrorState,
+    required TResult Function() updateSubscriberLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        updateSubscriberSuccessState,
+    required TResult Function(String error) updateSubscriberErrorState,
+    required TResult Function() deleteSubscriberLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        deleteSubscriberSuccessState,
+    required TResult Function(String error) deleteSubscriberErrorState,
+    required TResult Function() disableSubscriberLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        disableSubscriberSuccessState,
+    required TResult Function(String error) disableSubscriberErrorState,
+    required TResult Function() withdrawSubscriberLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        withdrawSubscriberSuccessState,
+    required TResult Function(String error) withdrawSubscriberErrorState,
+    required TResult Function() activateSubscriberLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        activateSubscriberSuccessState,
+    required TResult Function(String error) activateSubscriberErrorState,
+    required TResult Function() zeroSubscriberBalanceLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        zeroSubscriberBalanceSuccessState,
+    required TResult Function(String error) zeroSubscriberBalanceErrorState,
+    required TResult Function() collectSubscriberBalanceLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        collectSubscriberBalanceSuccessState,
+    required TResult Function(String error) collectSubscriberBalanceErrorState,
+    required TResult Function() getActiveSubscribersLoadingState,
+    required TResult Function(
+            GetSubscribersDataResponse getSubscribersDataResponse)
+        getActiveSubscribersSuccessState,
+    required TResult Function(String error) getActiveSubscribersErrorState,
+    required TResult Function() getLateSubscribersLoadingState,
+    required TResult Function(
+            GetLateSubscribersResponse getLateSubscribersResponse)
+        getLateSubscribersSuccessState,
+    required TResult Function(String error) getLateSubscribersErrorState,
+    required TResult Function() getDisabledSubscribersLoadingState,
+    required TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
+        getDisabledSubscribersSuccessState,
+    required TResult Function(String error) getDisabledSubscribersErrorState,
+    required TResult Function() getWithdrawnSubscribersLoadingState,
+    required TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
+        getWithdrawnSubscribersSuccessState,
+    required TResult Function(String error) getWithdrawnSubscribersErrorState,
+    required TResult Function() getCompaniesListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getCompaniesListSuccessState,
+    required TResult Function(String error) getCompaniesListErrorState,
+    required TResult Function() getCollectorsEmailsLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getCollectorsEmailsSuccessState,
+    required TResult Function(String error) getCollectorsEmailsErrorState,
+    required TResult Function() getPlansListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getPlansListSuccessState,
+    required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
+    required TResult Function() changeListData,
+  }) {
+    return withdrawSubscribersByExcelLoadingState();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? addNewSubscriberLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        addNewSubscriberSuccessState,
+    TResult? Function(String error)? addNewSubscriberErrorState,
+    TResult? Function()? updateSubscriberLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        updateSubscriberSuccessState,
+    TResult? Function(String error)? updateSubscriberErrorState,
+    TResult? Function()? deleteSubscriberLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        deleteSubscriberSuccessState,
+    TResult? Function(String error)? deleteSubscriberErrorState,
+    TResult? Function()? disableSubscriberLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        disableSubscriberSuccessState,
+    TResult? Function(String error)? disableSubscriberErrorState,
+    TResult? Function()? withdrawSubscriberLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        withdrawSubscriberSuccessState,
+    TResult? Function(String error)? withdrawSubscriberErrorState,
+    TResult? Function()? activateSubscriberLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        activateSubscriberSuccessState,
+    TResult? Function(String error)? activateSubscriberErrorState,
+    TResult? Function()? zeroSubscriberBalanceLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        zeroSubscriberBalanceSuccessState,
+    TResult? Function(String error)? zeroSubscriberBalanceErrorState,
+    TResult? Function()? collectSubscriberBalanceLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        collectSubscriberBalanceSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceErrorState,
+    TResult? Function()? getActiveSubscribersLoadingState,
+    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+        getActiveSubscribersSuccessState,
+    TResult? Function(String error)? getActiveSubscribersErrorState,
+    TResult? Function()? getLateSubscribersLoadingState,
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
+        getLateSubscribersSuccessState,
+    TResult? Function(String error)? getLateSubscribersErrorState,
+    TResult? Function()? getDisabledSubscribersLoadingState,
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
+        getDisabledSubscribersSuccessState,
+    TResult? Function(String error)? getDisabledSubscribersErrorState,
+    TResult? Function()? getWithdrawnSubscribersLoadingState,
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
+        getWithdrawnSubscribersSuccessState,
+    TResult? Function(String error)? getWithdrawnSubscribersErrorState,
+    TResult? Function()? getCompaniesListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult? Function(String error)? getCompaniesListErrorState,
+    TResult? Function()? getCollectorsEmailsLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getCollectorsEmailsSuccessState,
+    TResult? Function(String error)? getCollectorsEmailsErrorState,
+    TResult? Function()? getPlansListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
+    TResult? Function()? changeListData,
+  }) {
+    return withdrawSubscribersByExcelLoadingState?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? addNewSubscriberLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        addNewSubscriberSuccessState,
+    TResult Function(String error)? addNewSubscriberErrorState,
+    TResult Function()? updateSubscriberLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        updateSubscriberSuccessState,
+    TResult Function(String error)? updateSubscriberErrorState,
+    TResult Function()? deleteSubscriberLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        deleteSubscriberSuccessState,
+    TResult Function(String error)? deleteSubscriberErrorState,
+    TResult Function()? disableSubscriberLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        disableSubscriberSuccessState,
+    TResult Function(String error)? disableSubscriberErrorState,
+    TResult Function()? withdrawSubscriberLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        withdrawSubscriberSuccessState,
+    TResult Function(String error)? withdrawSubscriberErrorState,
+    TResult Function()? activateSubscriberLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        activateSubscriberSuccessState,
+    TResult Function(String error)? activateSubscriberErrorState,
+    TResult Function()? zeroSubscriberBalanceLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        zeroSubscriberBalanceSuccessState,
+    TResult Function(String error)? zeroSubscriberBalanceErrorState,
+    TResult Function()? collectSubscriberBalanceLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        collectSubscriberBalanceSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceErrorState,
+    TResult Function()? getActiveSubscribersLoadingState,
+    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+        getActiveSubscribersSuccessState,
+    TResult Function(String error)? getActiveSubscribersErrorState,
+    TResult Function()? getLateSubscribersLoadingState,
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
+        getLateSubscribersSuccessState,
+    TResult Function(String error)? getLateSubscribersErrorState,
+    TResult Function()? getDisabledSubscribersLoadingState,
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
+        getDisabledSubscribersSuccessState,
+    TResult Function(String error)? getDisabledSubscribersErrorState,
+    TResult Function()? getWithdrawnSubscribersLoadingState,
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
+        getWithdrawnSubscribersSuccessState,
+    TResult Function(String error)? getWithdrawnSubscribersErrorState,
+    TResult Function()? getCompaniesListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult Function(String error)? getCompaniesListErrorState,
+    TResult Function()? getCollectorsEmailsLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getCollectorsEmailsSuccessState,
+    TResult Function(String error)? getCollectorsEmailsErrorState,
+    TResult Function()? getPlansListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
+    TResult Function()? changeListData,
+    required TResult orElse(),
+  }) {
+    if (withdrawSubscribersByExcelLoadingState != null) {
+      return withdrawSubscribersByExcelLoadingState();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(AddNewSubscriberloadingState<T> value)
+        addNewSubscriberLoadingState,
+    required TResult Function(AddNewSubscriberSuccessState<T> value)
+        addNewSubscriberSuccessState,
+    required TResult Function(AddNewSubscriberErrorState<T> value)
+        addNewSubscriberErrorState,
+    required TResult Function(UpdateSubscriberloadingState<T> value)
+        updateSubscriberLoadingState,
+    required TResult Function(UpdateSubscriberSuccessState<T> value)
+        updateSubscriberSuccessState,
+    required TResult Function(UpdateSubscriberErrorState<T> value)
+        updateSubscriberErrorState,
+    required TResult Function(DeleteSubscriberloadingState<T> value)
+        deleteSubscriberLoadingState,
+    required TResult Function(DeleteSubscriberSuccessState<T> value)
+        deleteSubscriberSuccessState,
+    required TResult Function(DeleteSubscriberErrorState<T> value)
+        deleteSubscriberErrorState,
+    required TResult Function(DisableSubscriberloadingState<T> value)
+        disableSubscriberLoadingState,
+    required TResult Function(DisableSubscriberSuccessState<T> value)
+        disableSubscriberSuccessState,
+    required TResult Function(DisableSubscriberErrorState<T> value)
+        disableSubscriberErrorState,
+    required TResult Function(WithdrawSubscriberloadingState<T> value)
+        withdrawSubscriberLoadingState,
+    required TResult Function(WithdrawSubscriberSuccessState<T> value)
+        withdrawSubscriberSuccessState,
+    required TResult Function(WithdrawSubscriberErrorState<T> value)
+        withdrawSubscriberErrorState,
+    required TResult Function(ActivateSubscriberloadingState<T> value)
+        activateSubscriberLoadingState,
+    required TResult Function(ActivateSubscriberSuccessState<T> value)
+        activateSubscriberSuccessState,
+    required TResult Function(ActivateSubscriberErrorState<T> value)
+        activateSubscriberErrorState,
+    required TResult Function(ZeroSubscriberBalanceloadingState<T> value)
+        zeroSubscriberBalanceLoadingState,
+    required TResult Function(ZeroSubscriberBalanceSuccessState<T> value)
+        zeroSubscriberBalanceSuccessState,
+    required TResult Function(ZeroSubscriberBalanceErrorState<T> value)
+        zeroSubscriberBalanceErrorState,
+    required TResult Function(CollectSubscriberBalanceloadingState<T> value)
+        collectSubscriberBalanceLoadingState,
+    required TResult Function(CollectSubscriberBalanceSuccessState<T> value)
+        collectSubscriberBalanceSuccessState,
+    required TResult Function(CollectSubscriberBalanceErrorState<T> value)
+        collectSubscriberBalanceErrorState,
+    required TResult Function(GetActiveSubscribersloadingState<T> value)
+        getActiveSubscribersLoadingState,
+    required TResult Function(GetActiveSubscribersSuccessState<T> value)
+        getActiveSubscribersSuccessState,
+    required TResult Function(GetActiveSubscribersErrorState<T> value)
+        getActiveSubscribersErrorState,
+    required TResult Function(GetLateSubscribersloadingState<T> value)
+        getLateSubscribersLoadingState,
+    required TResult Function(GetLateSubscribersSuccessState<T> value)
+        getLateSubscribersSuccessState,
+    required TResult Function(GetLateSubscribersErrorState<T> value)
+        getLateSubscribersErrorState,
+    required TResult Function(GetDisabledSubscribersloadingState<T> value)
+        getDisabledSubscribersLoadingState,
+    required TResult Function(GetDisabledSubscribersSuccessState<T> value)
+        getDisabledSubscribersSuccessState,
+    required TResult Function(GetDisabledSubscribersErrorState<T> value)
+        getDisabledSubscribersErrorState,
+    required TResult Function(GetWithdrawnSubscribersloadingState<T> value)
+        getWithdrawnSubscribersLoadingState,
+    required TResult Function(GetWithdrawnSubscribersSuccessState<T> value)
+        getWithdrawnSubscribersSuccessState,
+    required TResult Function(GetWithdrawnSubscribersErrorState<T> value)
+        getWithdrawnSubscribersErrorState,
+    required TResult Function(GetCompaniesListloadingState<T> value)
+        getCompaniesListLoadingState,
+    required TResult Function(GetCompaniesListSuccessState<T> value)
+        getCompaniesListSuccessState,
+    required TResult Function(GetCompaniesListErrorState<T> value)
+        getCompaniesListErrorState,
+    required TResult Function(GetCollectorsEmailsloadingState<T> value)
+        getCollectorsEmailsLoadingState,
+    required TResult Function(GetCollectorsEmailsSuccessState<T> value)
+        getCollectorsEmailsSuccessState,
+    required TResult Function(GetCollectorsEmailsErrorState<T> value)
+        getCollectorsEmailsErrorState,
+    required TResult Function(GetPlansListloadingState<T> value)
+        getPlansListLoadingState,
+    required TResult Function(GetPlansListSuccessState<T> value)
+        getPlansListSuccessState,
+    required TResult Function(GetPlansListErrorState<T> value)
+        getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
+    required TResult Function(ChangeListData<T> value) changeListData,
+  }) {
+    return withdrawSubscribersByExcelLoadingState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(AddNewSubscriberloadingState<T> value)?
+        addNewSubscriberLoadingState,
+    TResult? Function(AddNewSubscriberSuccessState<T> value)?
+        addNewSubscriberSuccessState,
+    TResult? Function(AddNewSubscriberErrorState<T> value)?
+        addNewSubscriberErrorState,
+    TResult? Function(UpdateSubscriberloadingState<T> value)?
+        updateSubscriberLoadingState,
+    TResult? Function(UpdateSubscriberSuccessState<T> value)?
+        updateSubscriberSuccessState,
+    TResult? Function(UpdateSubscriberErrorState<T> value)?
+        updateSubscriberErrorState,
+    TResult? Function(DeleteSubscriberloadingState<T> value)?
+        deleteSubscriberLoadingState,
+    TResult? Function(DeleteSubscriberSuccessState<T> value)?
+        deleteSubscriberSuccessState,
+    TResult? Function(DeleteSubscriberErrorState<T> value)?
+        deleteSubscriberErrorState,
+    TResult? Function(DisableSubscriberloadingState<T> value)?
+        disableSubscriberLoadingState,
+    TResult? Function(DisableSubscriberSuccessState<T> value)?
+        disableSubscriberSuccessState,
+    TResult? Function(DisableSubscriberErrorState<T> value)?
+        disableSubscriberErrorState,
+    TResult? Function(WithdrawSubscriberloadingState<T> value)?
+        withdrawSubscriberLoadingState,
+    TResult? Function(WithdrawSubscriberSuccessState<T> value)?
+        withdrawSubscriberSuccessState,
+    TResult? Function(WithdrawSubscriberErrorState<T> value)?
+        withdrawSubscriberErrorState,
+    TResult? Function(ActivateSubscriberloadingState<T> value)?
+        activateSubscriberLoadingState,
+    TResult? Function(ActivateSubscriberSuccessState<T> value)?
+        activateSubscriberSuccessState,
+    TResult? Function(ActivateSubscriberErrorState<T> value)?
+        activateSubscriberErrorState,
+    TResult? Function(ZeroSubscriberBalanceloadingState<T> value)?
+        zeroSubscriberBalanceLoadingState,
+    TResult? Function(ZeroSubscriberBalanceSuccessState<T> value)?
+        zeroSubscriberBalanceSuccessState,
+    TResult? Function(ZeroSubscriberBalanceErrorState<T> value)?
+        zeroSubscriberBalanceErrorState,
+    TResult? Function(CollectSubscriberBalanceloadingState<T> value)?
+        collectSubscriberBalanceLoadingState,
+    TResult? Function(CollectSubscriberBalanceSuccessState<T> value)?
+        collectSubscriberBalanceSuccessState,
+    TResult? Function(CollectSubscriberBalanceErrorState<T> value)?
+        collectSubscriberBalanceErrorState,
+    TResult? Function(GetActiveSubscribersloadingState<T> value)?
+        getActiveSubscribersLoadingState,
+    TResult? Function(GetActiveSubscribersSuccessState<T> value)?
+        getActiveSubscribersSuccessState,
+    TResult? Function(GetActiveSubscribersErrorState<T> value)?
+        getActiveSubscribersErrorState,
+    TResult? Function(GetLateSubscribersloadingState<T> value)?
+        getLateSubscribersLoadingState,
+    TResult? Function(GetLateSubscribersSuccessState<T> value)?
+        getLateSubscribersSuccessState,
+    TResult? Function(GetLateSubscribersErrorState<T> value)?
+        getLateSubscribersErrorState,
+    TResult? Function(GetDisabledSubscribersloadingState<T> value)?
+        getDisabledSubscribersLoadingState,
+    TResult? Function(GetDisabledSubscribersSuccessState<T> value)?
+        getDisabledSubscribersSuccessState,
+    TResult? Function(GetDisabledSubscribersErrorState<T> value)?
+        getDisabledSubscribersErrorState,
+    TResult? Function(GetWithdrawnSubscribersloadingState<T> value)?
+        getWithdrawnSubscribersLoadingState,
+    TResult? Function(GetWithdrawnSubscribersSuccessState<T> value)?
+        getWithdrawnSubscribersSuccessState,
+    TResult? Function(GetWithdrawnSubscribersErrorState<T> value)?
+        getWithdrawnSubscribersErrorState,
+    TResult? Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult? Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult? Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
+    TResult? Function(GetCollectorsEmailsloadingState<T> value)?
+        getCollectorsEmailsLoadingState,
+    TResult? Function(GetCollectorsEmailsSuccessState<T> value)?
+        getCollectorsEmailsSuccessState,
+    TResult? Function(GetCollectorsEmailsErrorState<T> value)?
+        getCollectorsEmailsErrorState,
+    TResult? Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult? Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
+    TResult? Function(ChangeListData<T> value)? changeListData,
+  }) {
+    return withdrawSubscribersByExcelLoadingState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(AddNewSubscriberloadingState<T> value)?
+        addNewSubscriberLoadingState,
+    TResult Function(AddNewSubscriberSuccessState<T> value)?
+        addNewSubscriberSuccessState,
+    TResult Function(AddNewSubscriberErrorState<T> value)?
+        addNewSubscriberErrorState,
+    TResult Function(UpdateSubscriberloadingState<T> value)?
+        updateSubscriberLoadingState,
+    TResult Function(UpdateSubscriberSuccessState<T> value)?
+        updateSubscriberSuccessState,
+    TResult Function(UpdateSubscriberErrorState<T> value)?
+        updateSubscriberErrorState,
+    TResult Function(DeleteSubscriberloadingState<T> value)?
+        deleteSubscriberLoadingState,
+    TResult Function(DeleteSubscriberSuccessState<T> value)?
+        deleteSubscriberSuccessState,
+    TResult Function(DeleteSubscriberErrorState<T> value)?
+        deleteSubscriberErrorState,
+    TResult Function(DisableSubscriberloadingState<T> value)?
+        disableSubscriberLoadingState,
+    TResult Function(DisableSubscriberSuccessState<T> value)?
+        disableSubscriberSuccessState,
+    TResult Function(DisableSubscriberErrorState<T> value)?
+        disableSubscriberErrorState,
+    TResult Function(WithdrawSubscriberloadingState<T> value)?
+        withdrawSubscriberLoadingState,
+    TResult Function(WithdrawSubscriberSuccessState<T> value)?
+        withdrawSubscriberSuccessState,
+    TResult Function(WithdrawSubscriberErrorState<T> value)?
+        withdrawSubscriberErrorState,
+    TResult Function(ActivateSubscriberloadingState<T> value)?
+        activateSubscriberLoadingState,
+    TResult Function(ActivateSubscriberSuccessState<T> value)?
+        activateSubscriberSuccessState,
+    TResult Function(ActivateSubscriberErrorState<T> value)?
+        activateSubscriberErrorState,
+    TResult Function(ZeroSubscriberBalanceloadingState<T> value)?
+        zeroSubscriberBalanceLoadingState,
+    TResult Function(ZeroSubscriberBalanceSuccessState<T> value)?
+        zeroSubscriberBalanceSuccessState,
+    TResult Function(ZeroSubscriberBalanceErrorState<T> value)?
+        zeroSubscriberBalanceErrorState,
+    TResult Function(CollectSubscriberBalanceloadingState<T> value)?
+        collectSubscriberBalanceLoadingState,
+    TResult Function(CollectSubscriberBalanceSuccessState<T> value)?
+        collectSubscriberBalanceSuccessState,
+    TResult Function(CollectSubscriberBalanceErrorState<T> value)?
+        collectSubscriberBalanceErrorState,
+    TResult Function(GetActiveSubscribersloadingState<T> value)?
+        getActiveSubscribersLoadingState,
+    TResult Function(GetActiveSubscribersSuccessState<T> value)?
+        getActiveSubscribersSuccessState,
+    TResult Function(GetActiveSubscribersErrorState<T> value)?
+        getActiveSubscribersErrorState,
+    TResult Function(GetLateSubscribersloadingState<T> value)?
+        getLateSubscribersLoadingState,
+    TResult Function(GetLateSubscribersSuccessState<T> value)?
+        getLateSubscribersSuccessState,
+    TResult Function(GetLateSubscribersErrorState<T> value)?
+        getLateSubscribersErrorState,
+    TResult Function(GetDisabledSubscribersloadingState<T> value)?
+        getDisabledSubscribersLoadingState,
+    TResult Function(GetDisabledSubscribersSuccessState<T> value)?
+        getDisabledSubscribersSuccessState,
+    TResult Function(GetDisabledSubscribersErrorState<T> value)?
+        getDisabledSubscribersErrorState,
+    TResult Function(GetWithdrawnSubscribersloadingState<T> value)?
+        getWithdrawnSubscribersLoadingState,
+    TResult Function(GetWithdrawnSubscribersSuccessState<T> value)?
+        getWithdrawnSubscribersSuccessState,
+    TResult Function(GetWithdrawnSubscribersErrorState<T> value)?
+        getWithdrawnSubscribersErrorState,
+    TResult Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
+    TResult Function(GetCollectorsEmailsloadingState<T> value)?
+        getCollectorsEmailsLoadingState,
+    TResult Function(GetCollectorsEmailsSuccessState<T> value)?
+        getCollectorsEmailsSuccessState,
+    TResult Function(GetCollectorsEmailsErrorState<T> value)?
+        getCollectorsEmailsErrorState,
+    TResult Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
+    TResult Function(ChangeListData<T> value)? changeListData,
+    required TResult orElse(),
+  }) {
+    if (withdrawSubscribersByExcelLoadingState != null) {
+      return withdrawSubscribersByExcelLoadingState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class WithdrawSubscribersByExcelloadingState<T>
+    implements SubscribersState<T> {
+  const factory WithdrawSubscribersByExcelloadingState() =
+      _$WithdrawSubscribersByExcelloadingStateImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$WithdrawSubscribersByExcelSuccessStateImplCopyWith<T, $Res> {
+  factory _$$WithdrawSubscribersByExcelSuccessStateImplCopyWith(
+          _$WithdrawSubscribersByExcelSuccessStateImpl<T> value,
+          $Res Function(_$WithdrawSubscribersByExcelSuccessStateImpl<T>) then) =
+      __$$WithdrawSubscribersByExcelSuccessStateImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({ResultsOfUploadedExcelModel resultsOfUploadedExcelModel});
+}
+
+/// @nodoc
+class __$$WithdrawSubscribersByExcelSuccessStateImplCopyWithImpl<T, $Res>
+    extends _$SubscribersStateCopyWithImpl<T, $Res,
+        _$WithdrawSubscribersByExcelSuccessStateImpl<T>>
+    implements _$$WithdrawSubscribersByExcelSuccessStateImplCopyWith<T, $Res> {
+  __$$WithdrawSubscribersByExcelSuccessStateImplCopyWithImpl(
+      _$WithdrawSubscribersByExcelSuccessStateImpl<T> _value,
+      $Res Function(_$WithdrawSubscribersByExcelSuccessStateImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? resultsOfUploadedExcelModel = null,
+  }) {
+    return _then(_$WithdrawSubscribersByExcelSuccessStateImpl<T>(
+      null == resultsOfUploadedExcelModel
+          ? _value.resultsOfUploadedExcelModel
+          : resultsOfUploadedExcelModel // ignore: cast_nullable_to_non_nullable
+              as ResultsOfUploadedExcelModel,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$WithdrawSubscribersByExcelSuccessStateImpl<T>
+    implements WithdrawSubscribersByExcelSuccessState<T> {
+  const _$WithdrawSubscribersByExcelSuccessStateImpl(
+      this.resultsOfUploadedExcelModel);
+
+  @override
+  final ResultsOfUploadedExcelModel resultsOfUploadedExcelModel;
+
+  @override
+  String toString() {
+    return 'SubscribersState<$T>.withdrawSubscribersByExcelSuccessState(resultsOfUploadedExcelModel: $resultsOfUploadedExcelModel)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$WithdrawSubscribersByExcelSuccessStateImpl<T> &&
+            (identical(other.resultsOfUploadedExcelModel,
+                    resultsOfUploadedExcelModel) ||
+                other.resultsOfUploadedExcelModel ==
+                    resultsOfUploadedExcelModel));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, resultsOfUploadedExcelModel);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$WithdrawSubscribersByExcelSuccessStateImplCopyWith<T,
+          _$WithdrawSubscribersByExcelSuccessStateImpl<T>>
+      get copyWith =>
+          __$$WithdrawSubscribersByExcelSuccessStateImplCopyWithImpl<T,
+                  _$WithdrawSubscribersByExcelSuccessStateImpl<T>>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() addNewSubscriberLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        addNewSubscriberSuccessState,
+    required TResult Function(String error) addNewSubscriberErrorState,
+    required TResult Function() updateSubscriberLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        updateSubscriberSuccessState,
+    required TResult Function(String error) updateSubscriberErrorState,
+    required TResult Function() deleteSubscriberLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        deleteSubscriberSuccessState,
+    required TResult Function(String error) deleteSubscriberErrorState,
+    required TResult Function() disableSubscriberLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        disableSubscriberSuccessState,
+    required TResult Function(String error) disableSubscriberErrorState,
+    required TResult Function() withdrawSubscriberLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        withdrawSubscriberSuccessState,
+    required TResult Function(String error) withdrawSubscriberErrorState,
+    required TResult Function() activateSubscriberLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        activateSubscriberSuccessState,
+    required TResult Function(String error) activateSubscriberErrorState,
+    required TResult Function() zeroSubscriberBalanceLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        zeroSubscriberBalanceSuccessState,
+    required TResult Function(String error) zeroSubscriberBalanceErrorState,
+    required TResult Function() collectSubscriberBalanceLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        collectSubscriberBalanceSuccessState,
+    required TResult Function(String error) collectSubscriberBalanceErrorState,
+    required TResult Function() getActiveSubscribersLoadingState,
+    required TResult Function(
+            GetSubscribersDataResponse getSubscribersDataResponse)
+        getActiveSubscribersSuccessState,
+    required TResult Function(String error) getActiveSubscribersErrorState,
+    required TResult Function() getLateSubscribersLoadingState,
+    required TResult Function(
+            GetLateSubscribersResponse getLateSubscribersResponse)
+        getLateSubscribersSuccessState,
+    required TResult Function(String error) getLateSubscribersErrorState,
+    required TResult Function() getDisabledSubscribersLoadingState,
+    required TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
+        getDisabledSubscribersSuccessState,
+    required TResult Function(String error) getDisabledSubscribersErrorState,
+    required TResult Function() getWithdrawnSubscribersLoadingState,
+    required TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
+        getWithdrawnSubscribersSuccessState,
+    required TResult Function(String error) getWithdrawnSubscribersErrorState,
+    required TResult Function() getCompaniesListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getCompaniesListSuccessState,
+    required TResult Function(String error) getCompaniesListErrorState,
+    required TResult Function() getCollectorsEmailsLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getCollectorsEmailsSuccessState,
+    required TResult Function(String error) getCollectorsEmailsErrorState,
+    required TResult Function() getPlansListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getPlansListSuccessState,
+    required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
+    required TResult Function() changeListData,
+  }) {
+    return withdrawSubscribersByExcelSuccessState(resultsOfUploadedExcelModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? addNewSubscriberLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        addNewSubscriberSuccessState,
+    TResult? Function(String error)? addNewSubscriberErrorState,
+    TResult? Function()? updateSubscriberLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        updateSubscriberSuccessState,
+    TResult? Function(String error)? updateSubscriberErrorState,
+    TResult? Function()? deleteSubscriberLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        deleteSubscriberSuccessState,
+    TResult? Function(String error)? deleteSubscriberErrorState,
+    TResult? Function()? disableSubscriberLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        disableSubscriberSuccessState,
+    TResult? Function(String error)? disableSubscriberErrorState,
+    TResult? Function()? withdrawSubscriberLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        withdrawSubscriberSuccessState,
+    TResult? Function(String error)? withdrawSubscriberErrorState,
+    TResult? Function()? activateSubscriberLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        activateSubscriberSuccessState,
+    TResult? Function(String error)? activateSubscriberErrorState,
+    TResult? Function()? zeroSubscriberBalanceLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        zeroSubscriberBalanceSuccessState,
+    TResult? Function(String error)? zeroSubscriberBalanceErrorState,
+    TResult? Function()? collectSubscriberBalanceLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        collectSubscriberBalanceSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceErrorState,
+    TResult? Function()? getActiveSubscribersLoadingState,
+    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+        getActiveSubscribersSuccessState,
+    TResult? Function(String error)? getActiveSubscribersErrorState,
+    TResult? Function()? getLateSubscribersLoadingState,
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
+        getLateSubscribersSuccessState,
+    TResult? Function(String error)? getLateSubscribersErrorState,
+    TResult? Function()? getDisabledSubscribersLoadingState,
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
+        getDisabledSubscribersSuccessState,
+    TResult? Function(String error)? getDisabledSubscribersErrorState,
+    TResult? Function()? getWithdrawnSubscribersLoadingState,
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
+        getWithdrawnSubscribersSuccessState,
+    TResult? Function(String error)? getWithdrawnSubscribersErrorState,
+    TResult? Function()? getCompaniesListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult? Function(String error)? getCompaniesListErrorState,
+    TResult? Function()? getCollectorsEmailsLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getCollectorsEmailsSuccessState,
+    TResult? Function(String error)? getCollectorsEmailsErrorState,
+    TResult? Function()? getPlansListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
+    TResult? Function()? changeListData,
+  }) {
+    return withdrawSubscribersByExcelSuccessState
+        ?.call(resultsOfUploadedExcelModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? addNewSubscriberLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        addNewSubscriberSuccessState,
+    TResult Function(String error)? addNewSubscriberErrorState,
+    TResult Function()? updateSubscriberLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        updateSubscriberSuccessState,
+    TResult Function(String error)? updateSubscriberErrorState,
+    TResult Function()? deleteSubscriberLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        deleteSubscriberSuccessState,
+    TResult Function(String error)? deleteSubscriberErrorState,
+    TResult Function()? disableSubscriberLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        disableSubscriberSuccessState,
+    TResult Function(String error)? disableSubscriberErrorState,
+    TResult Function()? withdrawSubscriberLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        withdrawSubscriberSuccessState,
+    TResult Function(String error)? withdrawSubscriberErrorState,
+    TResult Function()? activateSubscriberLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        activateSubscriberSuccessState,
+    TResult Function(String error)? activateSubscriberErrorState,
+    TResult Function()? zeroSubscriberBalanceLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        zeroSubscriberBalanceSuccessState,
+    TResult Function(String error)? zeroSubscriberBalanceErrorState,
+    TResult Function()? collectSubscriberBalanceLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        collectSubscriberBalanceSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceErrorState,
+    TResult Function()? getActiveSubscribersLoadingState,
+    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+        getActiveSubscribersSuccessState,
+    TResult Function(String error)? getActiveSubscribersErrorState,
+    TResult Function()? getLateSubscribersLoadingState,
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
+        getLateSubscribersSuccessState,
+    TResult Function(String error)? getLateSubscribersErrorState,
+    TResult Function()? getDisabledSubscribersLoadingState,
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
+        getDisabledSubscribersSuccessState,
+    TResult Function(String error)? getDisabledSubscribersErrorState,
+    TResult Function()? getWithdrawnSubscribersLoadingState,
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
+        getWithdrawnSubscribersSuccessState,
+    TResult Function(String error)? getWithdrawnSubscribersErrorState,
+    TResult Function()? getCompaniesListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult Function(String error)? getCompaniesListErrorState,
+    TResult Function()? getCollectorsEmailsLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getCollectorsEmailsSuccessState,
+    TResult Function(String error)? getCollectorsEmailsErrorState,
+    TResult Function()? getPlansListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
+    TResult Function()? changeListData,
+    required TResult orElse(),
+  }) {
+    if (withdrawSubscribersByExcelSuccessState != null) {
+      return withdrawSubscribersByExcelSuccessState(
+          resultsOfUploadedExcelModel);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(AddNewSubscriberloadingState<T> value)
+        addNewSubscriberLoadingState,
+    required TResult Function(AddNewSubscriberSuccessState<T> value)
+        addNewSubscriberSuccessState,
+    required TResult Function(AddNewSubscriberErrorState<T> value)
+        addNewSubscriberErrorState,
+    required TResult Function(UpdateSubscriberloadingState<T> value)
+        updateSubscriberLoadingState,
+    required TResult Function(UpdateSubscriberSuccessState<T> value)
+        updateSubscriberSuccessState,
+    required TResult Function(UpdateSubscriberErrorState<T> value)
+        updateSubscriberErrorState,
+    required TResult Function(DeleteSubscriberloadingState<T> value)
+        deleteSubscriberLoadingState,
+    required TResult Function(DeleteSubscriberSuccessState<T> value)
+        deleteSubscriberSuccessState,
+    required TResult Function(DeleteSubscriberErrorState<T> value)
+        deleteSubscriberErrorState,
+    required TResult Function(DisableSubscriberloadingState<T> value)
+        disableSubscriberLoadingState,
+    required TResult Function(DisableSubscriberSuccessState<T> value)
+        disableSubscriberSuccessState,
+    required TResult Function(DisableSubscriberErrorState<T> value)
+        disableSubscriberErrorState,
+    required TResult Function(WithdrawSubscriberloadingState<T> value)
+        withdrawSubscriberLoadingState,
+    required TResult Function(WithdrawSubscriberSuccessState<T> value)
+        withdrawSubscriberSuccessState,
+    required TResult Function(WithdrawSubscriberErrorState<T> value)
+        withdrawSubscriberErrorState,
+    required TResult Function(ActivateSubscriberloadingState<T> value)
+        activateSubscriberLoadingState,
+    required TResult Function(ActivateSubscriberSuccessState<T> value)
+        activateSubscriberSuccessState,
+    required TResult Function(ActivateSubscriberErrorState<T> value)
+        activateSubscriberErrorState,
+    required TResult Function(ZeroSubscriberBalanceloadingState<T> value)
+        zeroSubscriberBalanceLoadingState,
+    required TResult Function(ZeroSubscriberBalanceSuccessState<T> value)
+        zeroSubscriberBalanceSuccessState,
+    required TResult Function(ZeroSubscriberBalanceErrorState<T> value)
+        zeroSubscriberBalanceErrorState,
+    required TResult Function(CollectSubscriberBalanceloadingState<T> value)
+        collectSubscriberBalanceLoadingState,
+    required TResult Function(CollectSubscriberBalanceSuccessState<T> value)
+        collectSubscriberBalanceSuccessState,
+    required TResult Function(CollectSubscriberBalanceErrorState<T> value)
+        collectSubscriberBalanceErrorState,
+    required TResult Function(GetActiveSubscribersloadingState<T> value)
+        getActiveSubscribersLoadingState,
+    required TResult Function(GetActiveSubscribersSuccessState<T> value)
+        getActiveSubscribersSuccessState,
+    required TResult Function(GetActiveSubscribersErrorState<T> value)
+        getActiveSubscribersErrorState,
+    required TResult Function(GetLateSubscribersloadingState<T> value)
+        getLateSubscribersLoadingState,
+    required TResult Function(GetLateSubscribersSuccessState<T> value)
+        getLateSubscribersSuccessState,
+    required TResult Function(GetLateSubscribersErrorState<T> value)
+        getLateSubscribersErrorState,
+    required TResult Function(GetDisabledSubscribersloadingState<T> value)
+        getDisabledSubscribersLoadingState,
+    required TResult Function(GetDisabledSubscribersSuccessState<T> value)
+        getDisabledSubscribersSuccessState,
+    required TResult Function(GetDisabledSubscribersErrorState<T> value)
+        getDisabledSubscribersErrorState,
+    required TResult Function(GetWithdrawnSubscribersloadingState<T> value)
+        getWithdrawnSubscribersLoadingState,
+    required TResult Function(GetWithdrawnSubscribersSuccessState<T> value)
+        getWithdrawnSubscribersSuccessState,
+    required TResult Function(GetWithdrawnSubscribersErrorState<T> value)
+        getWithdrawnSubscribersErrorState,
+    required TResult Function(GetCompaniesListloadingState<T> value)
+        getCompaniesListLoadingState,
+    required TResult Function(GetCompaniesListSuccessState<T> value)
+        getCompaniesListSuccessState,
+    required TResult Function(GetCompaniesListErrorState<T> value)
+        getCompaniesListErrorState,
+    required TResult Function(GetCollectorsEmailsloadingState<T> value)
+        getCollectorsEmailsLoadingState,
+    required TResult Function(GetCollectorsEmailsSuccessState<T> value)
+        getCollectorsEmailsSuccessState,
+    required TResult Function(GetCollectorsEmailsErrorState<T> value)
+        getCollectorsEmailsErrorState,
+    required TResult Function(GetPlansListloadingState<T> value)
+        getPlansListLoadingState,
+    required TResult Function(GetPlansListSuccessState<T> value)
+        getPlansListSuccessState,
+    required TResult Function(GetPlansListErrorState<T> value)
+        getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
+    required TResult Function(ChangeListData<T> value) changeListData,
+  }) {
+    return withdrawSubscribersByExcelSuccessState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(AddNewSubscriberloadingState<T> value)?
+        addNewSubscriberLoadingState,
+    TResult? Function(AddNewSubscriberSuccessState<T> value)?
+        addNewSubscriberSuccessState,
+    TResult? Function(AddNewSubscriberErrorState<T> value)?
+        addNewSubscriberErrorState,
+    TResult? Function(UpdateSubscriberloadingState<T> value)?
+        updateSubscriberLoadingState,
+    TResult? Function(UpdateSubscriberSuccessState<T> value)?
+        updateSubscriberSuccessState,
+    TResult? Function(UpdateSubscriberErrorState<T> value)?
+        updateSubscriberErrorState,
+    TResult? Function(DeleteSubscriberloadingState<T> value)?
+        deleteSubscriberLoadingState,
+    TResult? Function(DeleteSubscriberSuccessState<T> value)?
+        deleteSubscriberSuccessState,
+    TResult? Function(DeleteSubscriberErrorState<T> value)?
+        deleteSubscriberErrorState,
+    TResult? Function(DisableSubscriberloadingState<T> value)?
+        disableSubscriberLoadingState,
+    TResult? Function(DisableSubscriberSuccessState<T> value)?
+        disableSubscriberSuccessState,
+    TResult? Function(DisableSubscriberErrorState<T> value)?
+        disableSubscriberErrorState,
+    TResult? Function(WithdrawSubscriberloadingState<T> value)?
+        withdrawSubscriberLoadingState,
+    TResult? Function(WithdrawSubscriberSuccessState<T> value)?
+        withdrawSubscriberSuccessState,
+    TResult? Function(WithdrawSubscriberErrorState<T> value)?
+        withdrawSubscriberErrorState,
+    TResult? Function(ActivateSubscriberloadingState<T> value)?
+        activateSubscriberLoadingState,
+    TResult? Function(ActivateSubscriberSuccessState<T> value)?
+        activateSubscriberSuccessState,
+    TResult? Function(ActivateSubscriberErrorState<T> value)?
+        activateSubscriberErrorState,
+    TResult? Function(ZeroSubscriberBalanceloadingState<T> value)?
+        zeroSubscriberBalanceLoadingState,
+    TResult? Function(ZeroSubscriberBalanceSuccessState<T> value)?
+        zeroSubscriberBalanceSuccessState,
+    TResult? Function(ZeroSubscriberBalanceErrorState<T> value)?
+        zeroSubscriberBalanceErrorState,
+    TResult? Function(CollectSubscriberBalanceloadingState<T> value)?
+        collectSubscriberBalanceLoadingState,
+    TResult? Function(CollectSubscriberBalanceSuccessState<T> value)?
+        collectSubscriberBalanceSuccessState,
+    TResult? Function(CollectSubscriberBalanceErrorState<T> value)?
+        collectSubscriberBalanceErrorState,
+    TResult? Function(GetActiveSubscribersloadingState<T> value)?
+        getActiveSubscribersLoadingState,
+    TResult? Function(GetActiveSubscribersSuccessState<T> value)?
+        getActiveSubscribersSuccessState,
+    TResult? Function(GetActiveSubscribersErrorState<T> value)?
+        getActiveSubscribersErrorState,
+    TResult? Function(GetLateSubscribersloadingState<T> value)?
+        getLateSubscribersLoadingState,
+    TResult? Function(GetLateSubscribersSuccessState<T> value)?
+        getLateSubscribersSuccessState,
+    TResult? Function(GetLateSubscribersErrorState<T> value)?
+        getLateSubscribersErrorState,
+    TResult? Function(GetDisabledSubscribersloadingState<T> value)?
+        getDisabledSubscribersLoadingState,
+    TResult? Function(GetDisabledSubscribersSuccessState<T> value)?
+        getDisabledSubscribersSuccessState,
+    TResult? Function(GetDisabledSubscribersErrorState<T> value)?
+        getDisabledSubscribersErrorState,
+    TResult? Function(GetWithdrawnSubscribersloadingState<T> value)?
+        getWithdrawnSubscribersLoadingState,
+    TResult? Function(GetWithdrawnSubscribersSuccessState<T> value)?
+        getWithdrawnSubscribersSuccessState,
+    TResult? Function(GetWithdrawnSubscribersErrorState<T> value)?
+        getWithdrawnSubscribersErrorState,
+    TResult? Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult? Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult? Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
+    TResult? Function(GetCollectorsEmailsloadingState<T> value)?
+        getCollectorsEmailsLoadingState,
+    TResult? Function(GetCollectorsEmailsSuccessState<T> value)?
+        getCollectorsEmailsSuccessState,
+    TResult? Function(GetCollectorsEmailsErrorState<T> value)?
+        getCollectorsEmailsErrorState,
+    TResult? Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult? Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
+    TResult? Function(ChangeListData<T> value)? changeListData,
+  }) {
+    return withdrawSubscribersByExcelSuccessState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(AddNewSubscriberloadingState<T> value)?
+        addNewSubscriberLoadingState,
+    TResult Function(AddNewSubscriberSuccessState<T> value)?
+        addNewSubscriberSuccessState,
+    TResult Function(AddNewSubscriberErrorState<T> value)?
+        addNewSubscriberErrorState,
+    TResult Function(UpdateSubscriberloadingState<T> value)?
+        updateSubscriberLoadingState,
+    TResult Function(UpdateSubscriberSuccessState<T> value)?
+        updateSubscriberSuccessState,
+    TResult Function(UpdateSubscriberErrorState<T> value)?
+        updateSubscriberErrorState,
+    TResult Function(DeleteSubscriberloadingState<T> value)?
+        deleteSubscriberLoadingState,
+    TResult Function(DeleteSubscriberSuccessState<T> value)?
+        deleteSubscriberSuccessState,
+    TResult Function(DeleteSubscriberErrorState<T> value)?
+        deleteSubscriberErrorState,
+    TResult Function(DisableSubscriberloadingState<T> value)?
+        disableSubscriberLoadingState,
+    TResult Function(DisableSubscriberSuccessState<T> value)?
+        disableSubscriberSuccessState,
+    TResult Function(DisableSubscriberErrorState<T> value)?
+        disableSubscriberErrorState,
+    TResult Function(WithdrawSubscriberloadingState<T> value)?
+        withdrawSubscriberLoadingState,
+    TResult Function(WithdrawSubscriberSuccessState<T> value)?
+        withdrawSubscriberSuccessState,
+    TResult Function(WithdrawSubscriberErrorState<T> value)?
+        withdrawSubscriberErrorState,
+    TResult Function(ActivateSubscriberloadingState<T> value)?
+        activateSubscriberLoadingState,
+    TResult Function(ActivateSubscriberSuccessState<T> value)?
+        activateSubscriberSuccessState,
+    TResult Function(ActivateSubscriberErrorState<T> value)?
+        activateSubscriberErrorState,
+    TResult Function(ZeroSubscriberBalanceloadingState<T> value)?
+        zeroSubscriberBalanceLoadingState,
+    TResult Function(ZeroSubscriberBalanceSuccessState<T> value)?
+        zeroSubscriberBalanceSuccessState,
+    TResult Function(ZeroSubscriberBalanceErrorState<T> value)?
+        zeroSubscriberBalanceErrorState,
+    TResult Function(CollectSubscriberBalanceloadingState<T> value)?
+        collectSubscriberBalanceLoadingState,
+    TResult Function(CollectSubscriberBalanceSuccessState<T> value)?
+        collectSubscriberBalanceSuccessState,
+    TResult Function(CollectSubscriberBalanceErrorState<T> value)?
+        collectSubscriberBalanceErrorState,
+    TResult Function(GetActiveSubscribersloadingState<T> value)?
+        getActiveSubscribersLoadingState,
+    TResult Function(GetActiveSubscribersSuccessState<T> value)?
+        getActiveSubscribersSuccessState,
+    TResult Function(GetActiveSubscribersErrorState<T> value)?
+        getActiveSubscribersErrorState,
+    TResult Function(GetLateSubscribersloadingState<T> value)?
+        getLateSubscribersLoadingState,
+    TResult Function(GetLateSubscribersSuccessState<T> value)?
+        getLateSubscribersSuccessState,
+    TResult Function(GetLateSubscribersErrorState<T> value)?
+        getLateSubscribersErrorState,
+    TResult Function(GetDisabledSubscribersloadingState<T> value)?
+        getDisabledSubscribersLoadingState,
+    TResult Function(GetDisabledSubscribersSuccessState<T> value)?
+        getDisabledSubscribersSuccessState,
+    TResult Function(GetDisabledSubscribersErrorState<T> value)?
+        getDisabledSubscribersErrorState,
+    TResult Function(GetWithdrawnSubscribersloadingState<T> value)?
+        getWithdrawnSubscribersLoadingState,
+    TResult Function(GetWithdrawnSubscribersSuccessState<T> value)?
+        getWithdrawnSubscribersSuccessState,
+    TResult Function(GetWithdrawnSubscribersErrorState<T> value)?
+        getWithdrawnSubscribersErrorState,
+    TResult Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
+    TResult Function(GetCollectorsEmailsloadingState<T> value)?
+        getCollectorsEmailsLoadingState,
+    TResult Function(GetCollectorsEmailsSuccessState<T> value)?
+        getCollectorsEmailsSuccessState,
+    TResult Function(GetCollectorsEmailsErrorState<T> value)?
+        getCollectorsEmailsErrorState,
+    TResult Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
+    TResult Function(ChangeListData<T> value)? changeListData,
+    required TResult orElse(),
+  }) {
+    if (withdrawSubscribersByExcelSuccessState != null) {
+      return withdrawSubscribersByExcelSuccessState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class WithdrawSubscribersByExcelSuccessState<T>
+    implements SubscribersState<T> {
+  const factory WithdrawSubscribersByExcelSuccessState(
+          final ResultsOfUploadedExcelModel resultsOfUploadedExcelModel) =
+      _$WithdrawSubscribersByExcelSuccessStateImpl<T>;
+
+  ResultsOfUploadedExcelModel get resultsOfUploadedExcelModel;
+  @JsonKey(ignore: true)
+  _$$WithdrawSubscribersByExcelSuccessStateImplCopyWith<T,
+          _$WithdrawSubscribersByExcelSuccessStateImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$WithdrawSubscribersByExcelErrorStateImplCopyWith<T, $Res> {
+  factory _$$WithdrawSubscribersByExcelErrorStateImplCopyWith(
+          _$WithdrawSubscribersByExcelErrorStateImpl<T> value,
+          $Res Function(_$WithdrawSubscribersByExcelErrorStateImpl<T>) then) =
+      __$$WithdrawSubscribersByExcelErrorStateImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$WithdrawSubscribersByExcelErrorStateImplCopyWithImpl<T, $Res>
+    extends _$SubscribersStateCopyWithImpl<T, $Res,
+        _$WithdrawSubscribersByExcelErrorStateImpl<T>>
+    implements _$$WithdrawSubscribersByExcelErrorStateImplCopyWith<T, $Res> {
+  __$$WithdrawSubscribersByExcelErrorStateImplCopyWithImpl(
+      _$WithdrawSubscribersByExcelErrorStateImpl<T> _value,
+      $Res Function(_$WithdrawSubscribersByExcelErrorStateImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$WithdrawSubscribersByExcelErrorStateImpl<T>(
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$WithdrawSubscribersByExcelErrorStateImpl<T>
+    implements WithdrawSubscribersByExcelErrorState<T> {
+  const _$WithdrawSubscribersByExcelErrorStateImpl({required this.error});
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'SubscribersState<$T>.withdrawSubscribersByExcelErrorState(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$WithdrawSubscribersByExcelErrorStateImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$WithdrawSubscribersByExcelErrorStateImplCopyWith<T,
+          _$WithdrawSubscribersByExcelErrorStateImpl<T>>
+      get copyWith => __$$WithdrawSubscribersByExcelErrorStateImplCopyWithImpl<
+          T, _$WithdrawSubscribersByExcelErrorStateImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() addNewSubscriberLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        addNewSubscriberSuccessState,
+    required TResult Function(String error) addNewSubscriberErrorState,
+    required TResult Function() updateSubscriberLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        updateSubscriberSuccessState,
+    required TResult Function(String error) updateSubscriberErrorState,
+    required TResult Function() deleteSubscriberLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        deleteSubscriberSuccessState,
+    required TResult Function(String error) deleteSubscriberErrorState,
+    required TResult Function() disableSubscriberLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        disableSubscriberSuccessState,
+    required TResult Function(String error) disableSubscriberErrorState,
+    required TResult Function() withdrawSubscriberLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        withdrawSubscriberSuccessState,
+    required TResult Function(String error) withdrawSubscriberErrorState,
+    required TResult Function() activateSubscriberLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        activateSubscriberSuccessState,
+    required TResult Function(String error) activateSubscriberErrorState,
+    required TResult Function() zeroSubscriberBalanceLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        zeroSubscriberBalanceSuccessState,
+    required TResult Function(String error) zeroSubscriberBalanceErrorState,
+    required TResult Function() collectSubscriberBalanceLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        collectSubscriberBalanceSuccessState,
+    required TResult Function(String error) collectSubscriberBalanceErrorState,
+    required TResult Function() getActiveSubscribersLoadingState,
+    required TResult Function(
+            GetSubscribersDataResponse getSubscribersDataResponse)
+        getActiveSubscribersSuccessState,
+    required TResult Function(String error) getActiveSubscribersErrorState,
+    required TResult Function() getLateSubscribersLoadingState,
+    required TResult Function(
+            GetLateSubscribersResponse getLateSubscribersResponse)
+        getLateSubscribersSuccessState,
+    required TResult Function(String error) getLateSubscribersErrorState,
+    required TResult Function() getDisabledSubscribersLoadingState,
+    required TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
+        getDisabledSubscribersSuccessState,
+    required TResult Function(String error) getDisabledSubscribersErrorState,
+    required TResult Function() getWithdrawnSubscribersLoadingState,
+    required TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
+        getWithdrawnSubscribersSuccessState,
+    required TResult Function(String error) getWithdrawnSubscribersErrorState,
+    required TResult Function() getCompaniesListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getCompaniesListSuccessState,
+    required TResult Function(String error) getCompaniesListErrorState,
+    required TResult Function() getCollectorsEmailsLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getCollectorsEmailsSuccessState,
+    required TResult Function(String error) getCollectorsEmailsErrorState,
+    required TResult Function() getPlansListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getPlansListSuccessState,
+    required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
+    required TResult Function() changeListData,
+  }) {
+    return withdrawSubscribersByExcelErrorState(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? addNewSubscriberLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        addNewSubscriberSuccessState,
+    TResult? Function(String error)? addNewSubscriberErrorState,
+    TResult? Function()? updateSubscriberLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        updateSubscriberSuccessState,
+    TResult? Function(String error)? updateSubscriberErrorState,
+    TResult? Function()? deleteSubscriberLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        deleteSubscriberSuccessState,
+    TResult? Function(String error)? deleteSubscriberErrorState,
+    TResult? Function()? disableSubscriberLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        disableSubscriberSuccessState,
+    TResult? Function(String error)? disableSubscriberErrorState,
+    TResult? Function()? withdrawSubscriberLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        withdrawSubscriberSuccessState,
+    TResult? Function(String error)? withdrawSubscriberErrorState,
+    TResult? Function()? activateSubscriberLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        activateSubscriberSuccessState,
+    TResult? Function(String error)? activateSubscriberErrorState,
+    TResult? Function()? zeroSubscriberBalanceLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        zeroSubscriberBalanceSuccessState,
+    TResult? Function(String error)? zeroSubscriberBalanceErrorState,
+    TResult? Function()? collectSubscriberBalanceLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        collectSubscriberBalanceSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceErrorState,
+    TResult? Function()? getActiveSubscribersLoadingState,
+    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+        getActiveSubscribersSuccessState,
+    TResult? Function(String error)? getActiveSubscribersErrorState,
+    TResult? Function()? getLateSubscribersLoadingState,
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
+        getLateSubscribersSuccessState,
+    TResult? Function(String error)? getLateSubscribersErrorState,
+    TResult? Function()? getDisabledSubscribersLoadingState,
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
+        getDisabledSubscribersSuccessState,
+    TResult? Function(String error)? getDisabledSubscribersErrorState,
+    TResult? Function()? getWithdrawnSubscribersLoadingState,
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
+        getWithdrawnSubscribersSuccessState,
+    TResult? Function(String error)? getWithdrawnSubscribersErrorState,
+    TResult? Function()? getCompaniesListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult? Function(String error)? getCompaniesListErrorState,
+    TResult? Function()? getCollectorsEmailsLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getCollectorsEmailsSuccessState,
+    TResult? Function(String error)? getCollectorsEmailsErrorState,
+    TResult? Function()? getPlansListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
+    TResult? Function()? changeListData,
+  }) {
+    return withdrawSubscribersByExcelErrorState?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? addNewSubscriberLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        addNewSubscriberSuccessState,
+    TResult Function(String error)? addNewSubscriberErrorState,
+    TResult Function()? updateSubscriberLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        updateSubscriberSuccessState,
+    TResult Function(String error)? updateSubscriberErrorState,
+    TResult Function()? deleteSubscriberLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        deleteSubscriberSuccessState,
+    TResult Function(String error)? deleteSubscriberErrorState,
+    TResult Function()? disableSubscriberLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        disableSubscriberSuccessState,
+    TResult Function(String error)? disableSubscriberErrorState,
+    TResult Function()? withdrawSubscriberLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        withdrawSubscriberSuccessState,
+    TResult Function(String error)? withdrawSubscriberErrorState,
+    TResult Function()? activateSubscriberLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        activateSubscriberSuccessState,
+    TResult Function(String error)? activateSubscriberErrorState,
+    TResult Function()? zeroSubscriberBalanceLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        zeroSubscriberBalanceSuccessState,
+    TResult Function(String error)? zeroSubscriberBalanceErrorState,
+    TResult Function()? collectSubscriberBalanceLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        collectSubscriberBalanceSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceErrorState,
+    TResult Function()? getActiveSubscribersLoadingState,
+    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+        getActiveSubscribersSuccessState,
+    TResult Function(String error)? getActiveSubscribersErrorState,
+    TResult Function()? getLateSubscribersLoadingState,
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
+        getLateSubscribersSuccessState,
+    TResult Function(String error)? getLateSubscribersErrorState,
+    TResult Function()? getDisabledSubscribersLoadingState,
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
+        getDisabledSubscribersSuccessState,
+    TResult Function(String error)? getDisabledSubscribersErrorState,
+    TResult Function()? getWithdrawnSubscribersLoadingState,
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
+        getWithdrawnSubscribersSuccessState,
+    TResult Function(String error)? getWithdrawnSubscribersErrorState,
+    TResult Function()? getCompaniesListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult Function(String error)? getCompaniesListErrorState,
+    TResult Function()? getCollectorsEmailsLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getCollectorsEmailsSuccessState,
+    TResult Function(String error)? getCollectorsEmailsErrorState,
+    TResult Function()? getPlansListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
+    TResult Function()? changeListData,
+    required TResult orElse(),
+  }) {
+    if (withdrawSubscribersByExcelErrorState != null) {
+      return withdrawSubscribersByExcelErrorState(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(AddNewSubscriberloadingState<T> value)
+        addNewSubscriberLoadingState,
+    required TResult Function(AddNewSubscriberSuccessState<T> value)
+        addNewSubscriberSuccessState,
+    required TResult Function(AddNewSubscriberErrorState<T> value)
+        addNewSubscriberErrorState,
+    required TResult Function(UpdateSubscriberloadingState<T> value)
+        updateSubscriberLoadingState,
+    required TResult Function(UpdateSubscriberSuccessState<T> value)
+        updateSubscriberSuccessState,
+    required TResult Function(UpdateSubscriberErrorState<T> value)
+        updateSubscriberErrorState,
+    required TResult Function(DeleteSubscriberloadingState<T> value)
+        deleteSubscriberLoadingState,
+    required TResult Function(DeleteSubscriberSuccessState<T> value)
+        deleteSubscriberSuccessState,
+    required TResult Function(DeleteSubscriberErrorState<T> value)
+        deleteSubscriberErrorState,
+    required TResult Function(DisableSubscriberloadingState<T> value)
+        disableSubscriberLoadingState,
+    required TResult Function(DisableSubscriberSuccessState<T> value)
+        disableSubscriberSuccessState,
+    required TResult Function(DisableSubscriberErrorState<T> value)
+        disableSubscriberErrorState,
+    required TResult Function(WithdrawSubscriberloadingState<T> value)
+        withdrawSubscriberLoadingState,
+    required TResult Function(WithdrawSubscriberSuccessState<T> value)
+        withdrawSubscriberSuccessState,
+    required TResult Function(WithdrawSubscriberErrorState<T> value)
+        withdrawSubscriberErrorState,
+    required TResult Function(ActivateSubscriberloadingState<T> value)
+        activateSubscriberLoadingState,
+    required TResult Function(ActivateSubscriberSuccessState<T> value)
+        activateSubscriberSuccessState,
+    required TResult Function(ActivateSubscriberErrorState<T> value)
+        activateSubscriberErrorState,
+    required TResult Function(ZeroSubscriberBalanceloadingState<T> value)
+        zeroSubscriberBalanceLoadingState,
+    required TResult Function(ZeroSubscriberBalanceSuccessState<T> value)
+        zeroSubscriberBalanceSuccessState,
+    required TResult Function(ZeroSubscriberBalanceErrorState<T> value)
+        zeroSubscriberBalanceErrorState,
+    required TResult Function(CollectSubscriberBalanceloadingState<T> value)
+        collectSubscriberBalanceLoadingState,
+    required TResult Function(CollectSubscriberBalanceSuccessState<T> value)
+        collectSubscriberBalanceSuccessState,
+    required TResult Function(CollectSubscriberBalanceErrorState<T> value)
+        collectSubscriberBalanceErrorState,
+    required TResult Function(GetActiveSubscribersloadingState<T> value)
+        getActiveSubscribersLoadingState,
+    required TResult Function(GetActiveSubscribersSuccessState<T> value)
+        getActiveSubscribersSuccessState,
+    required TResult Function(GetActiveSubscribersErrorState<T> value)
+        getActiveSubscribersErrorState,
+    required TResult Function(GetLateSubscribersloadingState<T> value)
+        getLateSubscribersLoadingState,
+    required TResult Function(GetLateSubscribersSuccessState<T> value)
+        getLateSubscribersSuccessState,
+    required TResult Function(GetLateSubscribersErrorState<T> value)
+        getLateSubscribersErrorState,
+    required TResult Function(GetDisabledSubscribersloadingState<T> value)
+        getDisabledSubscribersLoadingState,
+    required TResult Function(GetDisabledSubscribersSuccessState<T> value)
+        getDisabledSubscribersSuccessState,
+    required TResult Function(GetDisabledSubscribersErrorState<T> value)
+        getDisabledSubscribersErrorState,
+    required TResult Function(GetWithdrawnSubscribersloadingState<T> value)
+        getWithdrawnSubscribersLoadingState,
+    required TResult Function(GetWithdrawnSubscribersSuccessState<T> value)
+        getWithdrawnSubscribersSuccessState,
+    required TResult Function(GetWithdrawnSubscribersErrorState<T> value)
+        getWithdrawnSubscribersErrorState,
+    required TResult Function(GetCompaniesListloadingState<T> value)
+        getCompaniesListLoadingState,
+    required TResult Function(GetCompaniesListSuccessState<T> value)
+        getCompaniesListSuccessState,
+    required TResult Function(GetCompaniesListErrorState<T> value)
+        getCompaniesListErrorState,
+    required TResult Function(GetCollectorsEmailsloadingState<T> value)
+        getCollectorsEmailsLoadingState,
+    required TResult Function(GetCollectorsEmailsSuccessState<T> value)
+        getCollectorsEmailsSuccessState,
+    required TResult Function(GetCollectorsEmailsErrorState<T> value)
+        getCollectorsEmailsErrorState,
+    required TResult Function(GetPlansListloadingState<T> value)
+        getPlansListLoadingState,
+    required TResult Function(GetPlansListSuccessState<T> value)
+        getPlansListSuccessState,
+    required TResult Function(GetPlansListErrorState<T> value)
+        getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
+    required TResult Function(ChangeListData<T> value) changeListData,
+  }) {
+    return withdrawSubscribersByExcelErrorState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(AddNewSubscriberloadingState<T> value)?
+        addNewSubscriberLoadingState,
+    TResult? Function(AddNewSubscriberSuccessState<T> value)?
+        addNewSubscriberSuccessState,
+    TResult? Function(AddNewSubscriberErrorState<T> value)?
+        addNewSubscriberErrorState,
+    TResult? Function(UpdateSubscriberloadingState<T> value)?
+        updateSubscriberLoadingState,
+    TResult? Function(UpdateSubscriberSuccessState<T> value)?
+        updateSubscriberSuccessState,
+    TResult? Function(UpdateSubscriberErrorState<T> value)?
+        updateSubscriberErrorState,
+    TResult? Function(DeleteSubscriberloadingState<T> value)?
+        deleteSubscriberLoadingState,
+    TResult? Function(DeleteSubscriberSuccessState<T> value)?
+        deleteSubscriberSuccessState,
+    TResult? Function(DeleteSubscriberErrorState<T> value)?
+        deleteSubscriberErrorState,
+    TResult? Function(DisableSubscriberloadingState<T> value)?
+        disableSubscriberLoadingState,
+    TResult? Function(DisableSubscriberSuccessState<T> value)?
+        disableSubscriberSuccessState,
+    TResult? Function(DisableSubscriberErrorState<T> value)?
+        disableSubscriberErrorState,
+    TResult? Function(WithdrawSubscriberloadingState<T> value)?
+        withdrawSubscriberLoadingState,
+    TResult? Function(WithdrawSubscriberSuccessState<T> value)?
+        withdrawSubscriberSuccessState,
+    TResult? Function(WithdrawSubscriberErrorState<T> value)?
+        withdrawSubscriberErrorState,
+    TResult? Function(ActivateSubscriberloadingState<T> value)?
+        activateSubscriberLoadingState,
+    TResult? Function(ActivateSubscriberSuccessState<T> value)?
+        activateSubscriberSuccessState,
+    TResult? Function(ActivateSubscriberErrorState<T> value)?
+        activateSubscriberErrorState,
+    TResult? Function(ZeroSubscriberBalanceloadingState<T> value)?
+        zeroSubscriberBalanceLoadingState,
+    TResult? Function(ZeroSubscriberBalanceSuccessState<T> value)?
+        zeroSubscriberBalanceSuccessState,
+    TResult? Function(ZeroSubscriberBalanceErrorState<T> value)?
+        zeroSubscriberBalanceErrorState,
+    TResult? Function(CollectSubscriberBalanceloadingState<T> value)?
+        collectSubscriberBalanceLoadingState,
+    TResult? Function(CollectSubscriberBalanceSuccessState<T> value)?
+        collectSubscriberBalanceSuccessState,
+    TResult? Function(CollectSubscriberBalanceErrorState<T> value)?
+        collectSubscriberBalanceErrorState,
+    TResult? Function(GetActiveSubscribersloadingState<T> value)?
+        getActiveSubscribersLoadingState,
+    TResult? Function(GetActiveSubscribersSuccessState<T> value)?
+        getActiveSubscribersSuccessState,
+    TResult? Function(GetActiveSubscribersErrorState<T> value)?
+        getActiveSubscribersErrorState,
+    TResult? Function(GetLateSubscribersloadingState<T> value)?
+        getLateSubscribersLoadingState,
+    TResult? Function(GetLateSubscribersSuccessState<T> value)?
+        getLateSubscribersSuccessState,
+    TResult? Function(GetLateSubscribersErrorState<T> value)?
+        getLateSubscribersErrorState,
+    TResult? Function(GetDisabledSubscribersloadingState<T> value)?
+        getDisabledSubscribersLoadingState,
+    TResult? Function(GetDisabledSubscribersSuccessState<T> value)?
+        getDisabledSubscribersSuccessState,
+    TResult? Function(GetDisabledSubscribersErrorState<T> value)?
+        getDisabledSubscribersErrorState,
+    TResult? Function(GetWithdrawnSubscribersloadingState<T> value)?
+        getWithdrawnSubscribersLoadingState,
+    TResult? Function(GetWithdrawnSubscribersSuccessState<T> value)?
+        getWithdrawnSubscribersSuccessState,
+    TResult? Function(GetWithdrawnSubscribersErrorState<T> value)?
+        getWithdrawnSubscribersErrorState,
+    TResult? Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult? Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult? Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
+    TResult? Function(GetCollectorsEmailsloadingState<T> value)?
+        getCollectorsEmailsLoadingState,
+    TResult? Function(GetCollectorsEmailsSuccessState<T> value)?
+        getCollectorsEmailsSuccessState,
+    TResult? Function(GetCollectorsEmailsErrorState<T> value)?
+        getCollectorsEmailsErrorState,
+    TResult? Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult? Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
+    TResult? Function(ChangeListData<T> value)? changeListData,
+  }) {
+    return withdrawSubscribersByExcelErrorState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(AddNewSubscriberloadingState<T> value)?
+        addNewSubscriberLoadingState,
+    TResult Function(AddNewSubscriberSuccessState<T> value)?
+        addNewSubscriberSuccessState,
+    TResult Function(AddNewSubscriberErrorState<T> value)?
+        addNewSubscriberErrorState,
+    TResult Function(UpdateSubscriberloadingState<T> value)?
+        updateSubscriberLoadingState,
+    TResult Function(UpdateSubscriberSuccessState<T> value)?
+        updateSubscriberSuccessState,
+    TResult Function(UpdateSubscriberErrorState<T> value)?
+        updateSubscriberErrorState,
+    TResult Function(DeleteSubscriberloadingState<T> value)?
+        deleteSubscriberLoadingState,
+    TResult Function(DeleteSubscriberSuccessState<T> value)?
+        deleteSubscriberSuccessState,
+    TResult Function(DeleteSubscriberErrorState<T> value)?
+        deleteSubscriberErrorState,
+    TResult Function(DisableSubscriberloadingState<T> value)?
+        disableSubscriberLoadingState,
+    TResult Function(DisableSubscriberSuccessState<T> value)?
+        disableSubscriberSuccessState,
+    TResult Function(DisableSubscriberErrorState<T> value)?
+        disableSubscriberErrorState,
+    TResult Function(WithdrawSubscriberloadingState<T> value)?
+        withdrawSubscriberLoadingState,
+    TResult Function(WithdrawSubscriberSuccessState<T> value)?
+        withdrawSubscriberSuccessState,
+    TResult Function(WithdrawSubscriberErrorState<T> value)?
+        withdrawSubscriberErrorState,
+    TResult Function(ActivateSubscriberloadingState<T> value)?
+        activateSubscriberLoadingState,
+    TResult Function(ActivateSubscriberSuccessState<T> value)?
+        activateSubscriberSuccessState,
+    TResult Function(ActivateSubscriberErrorState<T> value)?
+        activateSubscriberErrorState,
+    TResult Function(ZeroSubscriberBalanceloadingState<T> value)?
+        zeroSubscriberBalanceLoadingState,
+    TResult Function(ZeroSubscriberBalanceSuccessState<T> value)?
+        zeroSubscriberBalanceSuccessState,
+    TResult Function(ZeroSubscriberBalanceErrorState<T> value)?
+        zeroSubscriberBalanceErrorState,
+    TResult Function(CollectSubscriberBalanceloadingState<T> value)?
+        collectSubscriberBalanceLoadingState,
+    TResult Function(CollectSubscriberBalanceSuccessState<T> value)?
+        collectSubscriberBalanceSuccessState,
+    TResult Function(CollectSubscriberBalanceErrorState<T> value)?
+        collectSubscriberBalanceErrorState,
+    TResult Function(GetActiveSubscribersloadingState<T> value)?
+        getActiveSubscribersLoadingState,
+    TResult Function(GetActiveSubscribersSuccessState<T> value)?
+        getActiveSubscribersSuccessState,
+    TResult Function(GetActiveSubscribersErrorState<T> value)?
+        getActiveSubscribersErrorState,
+    TResult Function(GetLateSubscribersloadingState<T> value)?
+        getLateSubscribersLoadingState,
+    TResult Function(GetLateSubscribersSuccessState<T> value)?
+        getLateSubscribersSuccessState,
+    TResult Function(GetLateSubscribersErrorState<T> value)?
+        getLateSubscribersErrorState,
+    TResult Function(GetDisabledSubscribersloadingState<T> value)?
+        getDisabledSubscribersLoadingState,
+    TResult Function(GetDisabledSubscribersSuccessState<T> value)?
+        getDisabledSubscribersSuccessState,
+    TResult Function(GetDisabledSubscribersErrorState<T> value)?
+        getDisabledSubscribersErrorState,
+    TResult Function(GetWithdrawnSubscribersloadingState<T> value)?
+        getWithdrawnSubscribersLoadingState,
+    TResult Function(GetWithdrawnSubscribersSuccessState<T> value)?
+        getWithdrawnSubscribersSuccessState,
+    TResult Function(GetWithdrawnSubscribersErrorState<T> value)?
+        getWithdrawnSubscribersErrorState,
+    TResult Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
+    TResult Function(GetCollectorsEmailsloadingState<T> value)?
+        getCollectorsEmailsLoadingState,
+    TResult Function(GetCollectorsEmailsSuccessState<T> value)?
+        getCollectorsEmailsSuccessState,
+    TResult Function(GetCollectorsEmailsErrorState<T> value)?
+        getCollectorsEmailsErrorState,
+    TResult Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
+    TResult Function(ChangeListData<T> value)? changeListData,
+    required TResult orElse(),
+  }) {
+    if (withdrawSubscribersByExcelErrorState != null) {
+      return withdrawSubscribersByExcelErrorState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class WithdrawSubscribersByExcelErrorState<T>
+    implements SubscribersState<T> {
+  const factory WithdrawSubscribersByExcelErrorState(
+          {required final String error}) =
+      _$WithdrawSubscribersByExcelErrorStateImpl<T>;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$$WithdrawSubscribersByExcelErrorStateImplCopyWith<T,
+          _$WithdrawSubscribersByExcelErrorStateImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$CollectSubscriberBalanceByExcelloadingStateImplCopyWith<T,
+    $Res> {
+  factory _$$CollectSubscriberBalanceByExcelloadingStateImplCopyWith(
+          _$CollectSubscriberBalanceByExcelloadingStateImpl<T> value,
+          $Res Function(_$CollectSubscriberBalanceByExcelloadingStateImpl<T>)
+              then) =
+      __$$CollectSubscriberBalanceByExcelloadingStateImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$CollectSubscriberBalanceByExcelloadingStateImplCopyWithImpl<T, $Res>
+    extends _$SubscribersStateCopyWithImpl<T, $Res,
+        _$CollectSubscriberBalanceByExcelloadingStateImpl<T>>
+    implements
+        _$$CollectSubscriberBalanceByExcelloadingStateImplCopyWith<T, $Res> {
+  __$$CollectSubscriberBalanceByExcelloadingStateImplCopyWithImpl(
+      _$CollectSubscriberBalanceByExcelloadingStateImpl<T> _value,
+      $Res Function(_$CollectSubscriberBalanceByExcelloadingStateImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$CollectSubscriberBalanceByExcelloadingStateImpl<T>
+    implements CollectSubscriberBalanceByExcelloadingState<T> {
+  const _$CollectSubscriberBalanceByExcelloadingStateImpl();
+
+  @override
+  String toString() {
+    return 'SubscribersState<$T>.collectSubscriberBalanceByExcelLoadingState()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CollectSubscriberBalanceByExcelloadingStateImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() addNewSubscriberLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        addNewSubscriberSuccessState,
+    required TResult Function(String error) addNewSubscriberErrorState,
+    required TResult Function() updateSubscriberLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        updateSubscriberSuccessState,
+    required TResult Function(String error) updateSubscriberErrorState,
+    required TResult Function() deleteSubscriberLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        deleteSubscriberSuccessState,
+    required TResult Function(String error) deleteSubscriberErrorState,
+    required TResult Function() disableSubscriberLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        disableSubscriberSuccessState,
+    required TResult Function(String error) disableSubscriberErrorState,
+    required TResult Function() withdrawSubscriberLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        withdrawSubscriberSuccessState,
+    required TResult Function(String error) withdrawSubscriberErrorState,
+    required TResult Function() activateSubscriberLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        activateSubscriberSuccessState,
+    required TResult Function(String error) activateSubscriberErrorState,
+    required TResult Function() zeroSubscriberBalanceLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        zeroSubscriberBalanceSuccessState,
+    required TResult Function(String error) zeroSubscriberBalanceErrorState,
+    required TResult Function() collectSubscriberBalanceLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        collectSubscriberBalanceSuccessState,
+    required TResult Function(String error) collectSubscriberBalanceErrorState,
+    required TResult Function() getActiveSubscribersLoadingState,
+    required TResult Function(
+            GetSubscribersDataResponse getSubscribersDataResponse)
+        getActiveSubscribersSuccessState,
+    required TResult Function(String error) getActiveSubscribersErrorState,
+    required TResult Function() getLateSubscribersLoadingState,
+    required TResult Function(
+            GetLateSubscribersResponse getLateSubscribersResponse)
+        getLateSubscribersSuccessState,
+    required TResult Function(String error) getLateSubscribersErrorState,
+    required TResult Function() getDisabledSubscribersLoadingState,
+    required TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
+        getDisabledSubscribersSuccessState,
+    required TResult Function(String error) getDisabledSubscribersErrorState,
+    required TResult Function() getWithdrawnSubscribersLoadingState,
+    required TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
+        getWithdrawnSubscribersSuccessState,
+    required TResult Function(String error) getWithdrawnSubscribersErrorState,
+    required TResult Function() getCompaniesListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getCompaniesListSuccessState,
+    required TResult Function(String error) getCompaniesListErrorState,
+    required TResult Function() getCollectorsEmailsLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getCollectorsEmailsSuccessState,
+    required TResult Function(String error) getCollectorsEmailsErrorState,
+    required TResult Function() getPlansListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getPlansListSuccessState,
+    required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
+    required TResult Function() changeListData,
+  }) {
+    return collectSubscriberBalanceByExcelLoadingState();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? addNewSubscriberLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        addNewSubscriberSuccessState,
+    TResult? Function(String error)? addNewSubscriberErrorState,
+    TResult? Function()? updateSubscriberLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        updateSubscriberSuccessState,
+    TResult? Function(String error)? updateSubscriberErrorState,
+    TResult? Function()? deleteSubscriberLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        deleteSubscriberSuccessState,
+    TResult? Function(String error)? deleteSubscriberErrorState,
+    TResult? Function()? disableSubscriberLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        disableSubscriberSuccessState,
+    TResult? Function(String error)? disableSubscriberErrorState,
+    TResult? Function()? withdrawSubscriberLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        withdrawSubscriberSuccessState,
+    TResult? Function(String error)? withdrawSubscriberErrorState,
+    TResult? Function()? activateSubscriberLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        activateSubscriberSuccessState,
+    TResult? Function(String error)? activateSubscriberErrorState,
+    TResult? Function()? zeroSubscriberBalanceLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        zeroSubscriberBalanceSuccessState,
+    TResult? Function(String error)? zeroSubscriberBalanceErrorState,
+    TResult? Function()? collectSubscriberBalanceLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        collectSubscriberBalanceSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceErrorState,
+    TResult? Function()? getActiveSubscribersLoadingState,
+    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+        getActiveSubscribersSuccessState,
+    TResult? Function(String error)? getActiveSubscribersErrorState,
+    TResult? Function()? getLateSubscribersLoadingState,
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
+        getLateSubscribersSuccessState,
+    TResult? Function(String error)? getLateSubscribersErrorState,
+    TResult? Function()? getDisabledSubscribersLoadingState,
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
+        getDisabledSubscribersSuccessState,
+    TResult? Function(String error)? getDisabledSubscribersErrorState,
+    TResult? Function()? getWithdrawnSubscribersLoadingState,
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
+        getWithdrawnSubscribersSuccessState,
+    TResult? Function(String error)? getWithdrawnSubscribersErrorState,
+    TResult? Function()? getCompaniesListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult? Function(String error)? getCompaniesListErrorState,
+    TResult? Function()? getCollectorsEmailsLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getCollectorsEmailsSuccessState,
+    TResult? Function(String error)? getCollectorsEmailsErrorState,
+    TResult? Function()? getPlansListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
+    TResult? Function()? changeListData,
+  }) {
+    return collectSubscriberBalanceByExcelLoadingState?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? addNewSubscriberLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        addNewSubscriberSuccessState,
+    TResult Function(String error)? addNewSubscriberErrorState,
+    TResult Function()? updateSubscriberLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        updateSubscriberSuccessState,
+    TResult Function(String error)? updateSubscriberErrorState,
+    TResult Function()? deleteSubscriberLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        deleteSubscriberSuccessState,
+    TResult Function(String error)? deleteSubscriberErrorState,
+    TResult Function()? disableSubscriberLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        disableSubscriberSuccessState,
+    TResult Function(String error)? disableSubscriberErrorState,
+    TResult Function()? withdrawSubscriberLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        withdrawSubscriberSuccessState,
+    TResult Function(String error)? withdrawSubscriberErrorState,
+    TResult Function()? activateSubscriberLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        activateSubscriberSuccessState,
+    TResult Function(String error)? activateSubscriberErrorState,
+    TResult Function()? zeroSubscriberBalanceLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        zeroSubscriberBalanceSuccessState,
+    TResult Function(String error)? zeroSubscriberBalanceErrorState,
+    TResult Function()? collectSubscriberBalanceLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        collectSubscriberBalanceSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceErrorState,
+    TResult Function()? getActiveSubscribersLoadingState,
+    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+        getActiveSubscribersSuccessState,
+    TResult Function(String error)? getActiveSubscribersErrorState,
+    TResult Function()? getLateSubscribersLoadingState,
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
+        getLateSubscribersSuccessState,
+    TResult Function(String error)? getLateSubscribersErrorState,
+    TResult Function()? getDisabledSubscribersLoadingState,
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
+        getDisabledSubscribersSuccessState,
+    TResult Function(String error)? getDisabledSubscribersErrorState,
+    TResult Function()? getWithdrawnSubscribersLoadingState,
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
+        getWithdrawnSubscribersSuccessState,
+    TResult Function(String error)? getWithdrawnSubscribersErrorState,
+    TResult Function()? getCompaniesListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult Function(String error)? getCompaniesListErrorState,
+    TResult Function()? getCollectorsEmailsLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getCollectorsEmailsSuccessState,
+    TResult Function(String error)? getCollectorsEmailsErrorState,
+    TResult Function()? getPlansListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
+    TResult Function()? changeListData,
+    required TResult orElse(),
+  }) {
+    if (collectSubscriberBalanceByExcelLoadingState != null) {
+      return collectSubscriberBalanceByExcelLoadingState();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(AddNewSubscriberloadingState<T> value)
+        addNewSubscriberLoadingState,
+    required TResult Function(AddNewSubscriberSuccessState<T> value)
+        addNewSubscriberSuccessState,
+    required TResult Function(AddNewSubscriberErrorState<T> value)
+        addNewSubscriberErrorState,
+    required TResult Function(UpdateSubscriberloadingState<T> value)
+        updateSubscriberLoadingState,
+    required TResult Function(UpdateSubscriberSuccessState<T> value)
+        updateSubscriberSuccessState,
+    required TResult Function(UpdateSubscriberErrorState<T> value)
+        updateSubscriberErrorState,
+    required TResult Function(DeleteSubscriberloadingState<T> value)
+        deleteSubscriberLoadingState,
+    required TResult Function(DeleteSubscriberSuccessState<T> value)
+        deleteSubscriberSuccessState,
+    required TResult Function(DeleteSubscriberErrorState<T> value)
+        deleteSubscriberErrorState,
+    required TResult Function(DisableSubscriberloadingState<T> value)
+        disableSubscriberLoadingState,
+    required TResult Function(DisableSubscriberSuccessState<T> value)
+        disableSubscriberSuccessState,
+    required TResult Function(DisableSubscriberErrorState<T> value)
+        disableSubscriberErrorState,
+    required TResult Function(WithdrawSubscriberloadingState<T> value)
+        withdrawSubscriberLoadingState,
+    required TResult Function(WithdrawSubscriberSuccessState<T> value)
+        withdrawSubscriberSuccessState,
+    required TResult Function(WithdrawSubscriberErrorState<T> value)
+        withdrawSubscriberErrorState,
+    required TResult Function(ActivateSubscriberloadingState<T> value)
+        activateSubscriberLoadingState,
+    required TResult Function(ActivateSubscriberSuccessState<T> value)
+        activateSubscriberSuccessState,
+    required TResult Function(ActivateSubscriberErrorState<T> value)
+        activateSubscriberErrorState,
+    required TResult Function(ZeroSubscriberBalanceloadingState<T> value)
+        zeroSubscriberBalanceLoadingState,
+    required TResult Function(ZeroSubscriberBalanceSuccessState<T> value)
+        zeroSubscriberBalanceSuccessState,
+    required TResult Function(ZeroSubscriberBalanceErrorState<T> value)
+        zeroSubscriberBalanceErrorState,
+    required TResult Function(CollectSubscriberBalanceloadingState<T> value)
+        collectSubscriberBalanceLoadingState,
+    required TResult Function(CollectSubscriberBalanceSuccessState<T> value)
+        collectSubscriberBalanceSuccessState,
+    required TResult Function(CollectSubscriberBalanceErrorState<T> value)
+        collectSubscriberBalanceErrorState,
+    required TResult Function(GetActiveSubscribersloadingState<T> value)
+        getActiveSubscribersLoadingState,
+    required TResult Function(GetActiveSubscribersSuccessState<T> value)
+        getActiveSubscribersSuccessState,
+    required TResult Function(GetActiveSubscribersErrorState<T> value)
+        getActiveSubscribersErrorState,
+    required TResult Function(GetLateSubscribersloadingState<T> value)
+        getLateSubscribersLoadingState,
+    required TResult Function(GetLateSubscribersSuccessState<T> value)
+        getLateSubscribersSuccessState,
+    required TResult Function(GetLateSubscribersErrorState<T> value)
+        getLateSubscribersErrorState,
+    required TResult Function(GetDisabledSubscribersloadingState<T> value)
+        getDisabledSubscribersLoadingState,
+    required TResult Function(GetDisabledSubscribersSuccessState<T> value)
+        getDisabledSubscribersSuccessState,
+    required TResult Function(GetDisabledSubscribersErrorState<T> value)
+        getDisabledSubscribersErrorState,
+    required TResult Function(GetWithdrawnSubscribersloadingState<T> value)
+        getWithdrawnSubscribersLoadingState,
+    required TResult Function(GetWithdrawnSubscribersSuccessState<T> value)
+        getWithdrawnSubscribersSuccessState,
+    required TResult Function(GetWithdrawnSubscribersErrorState<T> value)
+        getWithdrawnSubscribersErrorState,
+    required TResult Function(GetCompaniesListloadingState<T> value)
+        getCompaniesListLoadingState,
+    required TResult Function(GetCompaniesListSuccessState<T> value)
+        getCompaniesListSuccessState,
+    required TResult Function(GetCompaniesListErrorState<T> value)
+        getCompaniesListErrorState,
+    required TResult Function(GetCollectorsEmailsloadingState<T> value)
+        getCollectorsEmailsLoadingState,
+    required TResult Function(GetCollectorsEmailsSuccessState<T> value)
+        getCollectorsEmailsSuccessState,
+    required TResult Function(GetCollectorsEmailsErrorState<T> value)
+        getCollectorsEmailsErrorState,
+    required TResult Function(GetPlansListloadingState<T> value)
+        getPlansListLoadingState,
+    required TResult Function(GetPlansListSuccessState<T> value)
+        getPlansListSuccessState,
+    required TResult Function(GetPlansListErrorState<T> value)
+        getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
+    required TResult Function(ChangeListData<T> value) changeListData,
+  }) {
+    return collectSubscriberBalanceByExcelLoadingState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(AddNewSubscriberloadingState<T> value)?
+        addNewSubscriberLoadingState,
+    TResult? Function(AddNewSubscriberSuccessState<T> value)?
+        addNewSubscriberSuccessState,
+    TResult? Function(AddNewSubscriberErrorState<T> value)?
+        addNewSubscriberErrorState,
+    TResult? Function(UpdateSubscriberloadingState<T> value)?
+        updateSubscriberLoadingState,
+    TResult? Function(UpdateSubscriberSuccessState<T> value)?
+        updateSubscriberSuccessState,
+    TResult? Function(UpdateSubscriberErrorState<T> value)?
+        updateSubscriberErrorState,
+    TResult? Function(DeleteSubscriberloadingState<T> value)?
+        deleteSubscriberLoadingState,
+    TResult? Function(DeleteSubscriberSuccessState<T> value)?
+        deleteSubscriberSuccessState,
+    TResult? Function(DeleteSubscriberErrorState<T> value)?
+        deleteSubscriberErrorState,
+    TResult? Function(DisableSubscriberloadingState<T> value)?
+        disableSubscriberLoadingState,
+    TResult? Function(DisableSubscriberSuccessState<T> value)?
+        disableSubscriberSuccessState,
+    TResult? Function(DisableSubscriberErrorState<T> value)?
+        disableSubscriberErrorState,
+    TResult? Function(WithdrawSubscriberloadingState<T> value)?
+        withdrawSubscriberLoadingState,
+    TResult? Function(WithdrawSubscriberSuccessState<T> value)?
+        withdrawSubscriberSuccessState,
+    TResult? Function(WithdrawSubscriberErrorState<T> value)?
+        withdrawSubscriberErrorState,
+    TResult? Function(ActivateSubscriberloadingState<T> value)?
+        activateSubscriberLoadingState,
+    TResult? Function(ActivateSubscriberSuccessState<T> value)?
+        activateSubscriberSuccessState,
+    TResult? Function(ActivateSubscriberErrorState<T> value)?
+        activateSubscriberErrorState,
+    TResult? Function(ZeroSubscriberBalanceloadingState<T> value)?
+        zeroSubscriberBalanceLoadingState,
+    TResult? Function(ZeroSubscriberBalanceSuccessState<T> value)?
+        zeroSubscriberBalanceSuccessState,
+    TResult? Function(ZeroSubscriberBalanceErrorState<T> value)?
+        zeroSubscriberBalanceErrorState,
+    TResult? Function(CollectSubscriberBalanceloadingState<T> value)?
+        collectSubscriberBalanceLoadingState,
+    TResult? Function(CollectSubscriberBalanceSuccessState<T> value)?
+        collectSubscriberBalanceSuccessState,
+    TResult? Function(CollectSubscriberBalanceErrorState<T> value)?
+        collectSubscriberBalanceErrorState,
+    TResult? Function(GetActiveSubscribersloadingState<T> value)?
+        getActiveSubscribersLoadingState,
+    TResult? Function(GetActiveSubscribersSuccessState<T> value)?
+        getActiveSubscribersSuccessState,
+    TResult? Function(GetActiveSubscribersErrorState<T> value)?
+        getActiveSubscribersErrorState,
+    TResult? Function(GetLateSubscribersloadingState<T> value)?
+        getLateSubscribersLoadingState,
+    TResult? Function(GetLateSubscribersSuccessState<T> value)?
+        getLateSubscribersSuccessState,
+    TResult? Function(GetLateSubscribersErrorState<T> value)?
+        getLateSubscribersErrorState,
+    TResult? Function(GetDisabledSubscribersloadingState<T> value)?
+        getDisabledSubscribersLoadingState,
+    TResult? Function(GetDisabledSubscribersSuccessState<T> value)?
+        getDisabledSubscribersSuccessState,
+    TResult? Function(GetDisabledSubscribersErrorState<T> value)?
+        getDisabledSubscribersErrorState,
+    TResult? Function(GetWithdrawnSubscribersloadingState<T> value)?
+        getWithdrawnSubscribersLoadingState,
+    TResult? Function(GetWithdrawnSubscribersSuccessState<T> value)?
+        getWithdrawnSubscribersSuccessState,
+    TResult? Function(GetWithdrawnSubscribersErrorState<T> value)?
+        getWithdrawnSubscribersErrorState,
+    TResult? Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult? Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult? Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
+    TResult? Function(GetCollectorsEmailsloadingState<T> value)?
+        getCollectorsEmailsLoadingState,
+    TResult? Function(GetCollectorsEmailsSuccessState<T> value)?
+        getCollectorsEmailsSuccessState,
+    TResult? Function(GetCollectorsEmailsErrorState<T> value)?
+        getCollectorsEmailsErrorState,
+    TResult? Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult? Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
+    TResult? Function(ChangeListData<T> value)? changeListData,
+  }) {
+    return collectSubscriberBalanceByExcelLoadingState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(AddNewSubscriberloadingState<T> value)?
+        addNewSubscriberLoadingState,
+    TResult Function(AddNewSubscriberSuccessState<T> value)?
+        addNewSubscriberSuccessState,
+    TResult Function(AddNewSubscriberErrorState<T> value)?
+        addNewSubscriberErrorState,
+    TResult Function(UpdateSubscriberloadingState<T> value)?
+        updateSubscriberLoadingState,
+    TResult Function(UpdateSubscriberSuccessState<T> value)?
+        updateSubscriberSuccessState,
+    TResult Function(UpdateSubscriberErrorState<T> value)?
+        updateSubscriberErrorState,
+    TResult Function(DeleteSubscriberloadingState<T> value)?
+        deleteSubscriberLoadingState,
+    TResult Function(DeleteSubscriberSuccessState<T> value)?
+        deleteSubscriberSuccessState,
+    TResult Function(DeleteSubscriberErrorState<T> value)?
+        deleteSubscriberErrorState,
+    TResult Function(DisableSubscriberloadingState<T> value)?
+        disableSubscriberLoadingState,
+    TResult Function(DisableSubscriberSuccessState<T> value)?
+        disableSubscriberSuccessState,
+    TResult Function(DisableSubscriberErrorState<T> value)?
+        disableSubscriberErrorState,
+    TResult Function(WithdrawSubscriberloadingState<T> value)?
+        withdrawSubscriberLoadingState,
+    TResult Function(WithdrawSubscriberSuccessState<T> value)?
+        withdrawSubscriberSuccessState,
+    TResult Function(WithdrawSubscriberErrorState<T> value)?
+        withdrawSubscriberErrorState,
+    TResult Function(ActivateSubscriberloadingState<T> value)?
+        activateSubscriberLoadingState,
+    TResult Function(ActivateSubscriberSuccessState<T> value)?
+        activateSubscriberSuccessState,
+    TResult Function(ActivateSubscriberErrorState<T> value)?
+        activateSubscriberErrorState,
+    TResult Function(ZeroSubscriberBalanceloadingState<T> value)?
+        zeroSubscriberBalanceLoadingState,
+    TResult Function(ZeroSubscriberBalanceSuccessState<T> value)?
+        zeroSubscriberBalanceSuccessState,
+    TResult Function(ZeroSubscriberBalanceErrorState<T> value)?
+        zeroSubscriberBalanceErrorState,
+    TResult Function(CollectSubscriberBalanceloadingState<T> value)?
+        collectSubscriberBalanceLoadingState,
+    TResult Function(CollectSubscriberBalanceSuccessState<T> value)?
+        collectSubscriberBalanceSuccessState,
+    TResult Function(CollectSubscriberBalanceErrorState<T> value)?
+        collectSubscriberBalanceErrorState,
+    TResult Function(GetActiveSubscribersloadingState<T> value)?
+        getActiveSubscribersLoadingState,
+    TResult Function(GetActiveSubscribersSuccessState<T> value)?
+        getActiveSubscribersSuccessState,
+    TResult Function(GetActiveSubscribersErrorState<T> value)?
+        getActiveSubscribersErrorState,
+    TResult Function(GetLateSubscribersloadingState<T> value)?
+        getLateSubscribersLoadingState,
+    TResult Function(GetLateSubscribersSuccessState<T> value)?
+        getLateSubscribersSuccessState,
+    TResult Function(GetLateSubscribersErrorState<T> value)?
+        getLateSubscribersErrorState,
+    TResult Function(GetDisabledSubscribersloadingState<T> value)?
+        getDisabledSubscribersLoadingState,
+    TResult Function(GetDisabledSubscribersSuccessState<T> value)?
+        getDisabledSubscribersSuccessState,
+    TResult Function(GetDisabledSubscribersErrorState<T> value)?
+        getDisabledSubscribersErrorState,
+    TResult Function(GetWithdrawnSubscribersloadingState<T> value)?
+        getWithdrawnSubscribersLoadingState,
+    TResult Function(GetWithdrawnSubscribersSuccessState<T> value)?
+        getWithdrawnSubscribersSuccessState,
+    TResult Function(GetWithdrawnSubscribersErrorState<T> value)?
+        getWithdrawnSubscribersErrorState,
+    TResult Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
+    TResult Function(GetCollectorsEmailsloadingState<T> value)?
+        getCollectorsEmailsLoadingState,
+    TResult Function(GetCollectorsEmailsSuccessState<T> value)?
+        getCollectorsEmailsSuccessState,
+    TResult Function(GetCollectorsEmailsErrorState<T> value)?
+        getCollectorsEmailsErrorState,
+    TResult Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
+    TResult Function(ChangeListData<T> value)? changeListData,
+    required TResult orElse(),
+  }) {
+    if (collectSubscriberBalanceByExcelLoadingState != null) {
+      return collectSubscriberBalanceByExcelLoadingState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CollectSubscriberBalanceByExcelloadingState<T>
+    implements SubscribersState<T> {
+  const factory CollectSubscriberBalanceByExcelloadingState() =
+      _$CollectSubscriberBalanceByExcelloadingStateImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$CollectSubscriberBalanceByExcelSuccessStateImplCopyWith<T,
+    $Res> {
+  factory _$$CollectSubscriberBalanceByExcelSuccessStateImplCopyWith(
+          _$CollectSubscriberBalanceByExcelSuccessStateImpl<T> value,
+          $Res Function(_$CollectSubscriberBalanceByExcelSuccessStateImpl<T>)
+              then) =
+      __$$CollectSubscriberBalanceByExcelSuccessStateImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({ResultsOfUploadedExcelModel resultsOfUploadedExcelModel});
+}
+
+/// @nodoc
+class __$$CollectSubscriberBalanceByExcelSuccessStateImplCopyWithImpl<T, $Res>
+    extends _$SubscribersStateCopyWithImpl<T, $Res,
+        _$CollectSubscriberBalanceByExcelSuccessStateImpl<T>>
+    implements
+        _$$CollectSubscriberBalanceByExcelSuccessStateImplCopyWith<T, $Res> {
+  __$$CollectSubscriberBalanceByExcelSuccessStateImplCopyWithImpl(
+      _$CollectSubscriberBalanceByExcelSuccessStateImpl<T> _value,
+      $Res Function(_$CollectSubscriberBalanceByExcelSuccessStateImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? resultsOfUploadedExcelModel = null,
+  }) {
+    return _then(_$CollectSubscriberBalanceByExcelSuccessStateImpl<T>(
+      null == resultsOfUploadedExcelModel
+          ? _value.resultsOfUploadedExcelModel
+          : resultsOfUploadedExcelModel // ignore: cast_nullable_to_non_nullable
+              as ResultsOfUploadedExcelModel,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$CollectSubscriberBalanceByExcelSuccessStateImpl<T>
+    implements CollectSubscriberBalanceByExcelSuccessState<T> {
+  const _$CollectSubscriberBalanceByExcelSuccessStateImpl(
+      this.resultsOfUploadedExcelModel);
+
+  @override
+  final ResultsOfUploadedExcelModel resultsOfUploadedExcelModel;
+
+  @override
+  String toString() {
+    return 'SubscribersState<$T>.collectSubscriberBalanceByExcelSuccessState(resultsOfUploadedExcelModel: $resultsOfUploadedExcelModel)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CollectSubscriberBalanceByExcelSuccessStateImpl<T> &&
+            (identical(other.resultsOfUploadedExcelModel,
+                    resultsOfUploadedExcelModel) ||
+                other.resultsOfUploadedExcelModel ==
+                    resultsOfUploadedExcelModel));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, resultsOfUploadedExcelModel);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CollectSubscriberBalanceByExcelSuccessStateImplCopyWith<T,
+          _$CollectSubscriberBalanceByExcelSuccessStateImpl<T>>
+      get copyWith =>
+          __$$CollectSubscriberBalanceByExcelSuccessStateImplCopyWithImpl<T,
+                  _$CollectSubscriberBalanceByExcelSuccessStateImpl<T>>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() addNewSubscriberLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        addNewSubscriberSuccessState,
+    required TResult Function(String error) addNewSubscriberErrorState,
+    required TResult Function() updateSubscriberLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        updateSubscriberSuccessState,
+    required TResult Function(String error) updateSubscriberErrorState,
+    required TResult Function() deleteSubscriberLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        deleteSubscriberSuccessState,
+    required TResult Function(String error) deleteSubscriberErrorState,
+    required TResult Function() disableSubscriberLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        disableSubscriberSuccessState,
+    required TResult Function(String error) disableSubscriberErrorState,
+    required TResult Function() withdrawSubscriberLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        withdrawSubscriberSuccessState,
+    required TResult Function(String error) withdrawSubscriberErrorState,
+    required TResult Function() activateSubscriberLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        activateSubscriberSuccessState,
+    required TResult Function(String error) activateSubscriberErrorState,
+    required TResult Function() zeroSubscriberBalanceLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        zeroSubscriberBalanceSuccessState,
+    required TResult Function(String error) zeroSubscriberBalanceErrorState,
+    required TResult Function() collectSubscriberBalanceLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        collectSubscriberBalanceSuccessState,
+    required TResult Function(String error) collectSubscriberBalanceErrorState,
+    required TResult Function() getActiveSubscribersLoadingState,
+    required TResult Function(
+            GetSubscribersDataResponse getSubscribersDataResponse)
+        getActiveSubscribersSuccessState,
+    required TResult Function(String error) getActiveSubscribersErrorState,
+    required TResult Function() getLateSubscribersLoadingState,
+    required TResult Function(
+            GetLateSubscribersResponse getLateSubscribersResponse)
+        getLateSubscribersSuccessState,
+    required TResult Function(String error) getLateSubscribersErrorState,
+    required TResult Function() getDisabledSubscribersLoadingState,
+    required TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
+        getDisabledSubscribersSuccessState,
+    required TResult Function(String error) getDisabledSubscribersErrorState,
+    required TResult Function() getWithdrawnSubscribersLoadingState,
+    required TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
+        getWithdrawnSubscribersSuccessState,
+    required TResult Function(String error) getWithdrawnSubscribersErrorState,
+    required TResult Function() getCompaniesListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getCompaniesListSuccessState,
+    required TResult Function(String error) getCompaniesListErrorState,
+    required TResult Function() getCollectorsEmailsLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getCollectorsEmailsSuccessState,
+    required TResult Function(String error) getCollectorsEmailsErrorState,
+    required TResult Function() getPlansListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getPlansListSuccessState,
+    required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
+    required TResult Function() changeListData,
+  }) {
+    return collectSubscriberBalanceByExcelSuccessState(
+        resultsOfUploadedExcelModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? addNewSubscriberLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        addNewSubscriberSuccessState,
+    TResult? Function(String error)? addNewSubscriberErrorState,
+    TResult? Function()? updateSubscriberLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        updateSubscriberSuccessState,
+    TResult? Function(String error)? updateSubscriberErrorState,
+    TResult? Function()? deleteSubscriberLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        deleteSubscriberSuccessState,
+    TResult? Function(String error)? deleteSubscriberErrorState,
+    TResult? Function()? disableSubscriberLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        disableSubscriberSuccessState,
+    TResult? Function(String error)? disableSubscriberErrorState,
+    TResult? Function()? withdrawSubscriberLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        withdrawSubscriberSuccessState,
+    TResult? Function(String error)? withdrawSubscriberErrorState,
+    TResult? Function()? activateSubscriberLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        activateSubscriberSuccessState,
+    TResult? Function(String error)? activateSubscriberErrorState,
+    TResult? Function()? zeroSubscriberBalanceLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        zeroSubscriberBalanceSuccessState,
+    TResult? Function(String error)? zeroSubscriberBalanceErrorState,
+    TResult? Function()? collectSubscriberBalanceLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        collectSubscriberBalanceSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceErrorState,
+    TResult? Function()? getActiveSubscribersLoadingState,
+    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+        getActiveSubscribersSuccessState,
+    TResult? Function(String error)? getActiveSubscribersErrorState,
+    TResult? Function()? getLateSubscribersLoadingState,
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
+        getLateSubscribersSuccessState,
+    TResult? Function(String error)? getLateSubscribersErrorState,
+    TResult? Function()? getDisabledSubscribersLoadingState,
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
+        getDisabledSubscribersSuccessState,
+    TResult? Function(String error)? getDisabledSubscribersErrorState,
+    TResult? Function()? getWithdrawnSubscribersLoadingState,
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
+        getWithdrawnSubscribersSuccessState,
+    TResult? Function(String error)? getWithdrawnSubscribersErrorState,
+    TResult? Function()? getCompaniesListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult? Function(String error)? getCompaniesListErrorState,
+    TResult? Function()? getCollectorsEmailsLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getCollectorsEmailsSuccessState,
+    TResult? Function(String error)? getCollectorsEmailsErrorState,
+    TResult? Function()? getPlansListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
+    TResult? Function()? changeListData,
+  }) {
+    return collectSubscriberBalanceByExcelSuccessState
+        ?.call(resultsOfUploadedExcelModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? addNewSubscriberLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        addNewSubscriberSuccessState,
+    TResult Function(String error)? addNewSubscriberErrorState,
+    TResult Function()? updateSubscriberLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        updateSubscriberSuccessState,
+    TResult Function(String error)? updateSubscriberErrorState,
+    TResult Function()? deleteSubscriberLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        deleteSubscriberSuccessState,
+    TResult Function(String error)? deleteSubscriberErrorState,
+    TResult Function()? disableSubscriberLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        disableSubscriberSuccessState,
+    TResult Function(String error)? disableSubscriberErrorState,
+    TResult Function()? withdrawSubscriberLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        withdrawSubscriberSuccessState,
+    TResult Function(String error)? withdrawSubscriberErrorState,
+    TResult Function()? activateSubscriberLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        activateSubscriberSuccessState,
+    TResult Function(String error)? activateSubscriberErrorState,
+    TResult Function()? zeroSubscriberBalanceLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        zeroSubscriberBalanceSuccessState,
+    TResult Function(String error)? zeroSubscriberBalanceErrorState,
+    TResult Function()? collectSubscriberBalanceLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        collectSubscriberBalanceSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceErrorState,
+    TResult Function()? getActiveSubscribersLoadingState,
+    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+        getActiveSubscribersSuccessState,
+    TResult Function(String error)? getActiveSubscribersErrorState,
+    TResult Function()? getLateSubscribersLoadingState,
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
+        getLateSubscribersSuccessState,
+    TResult Function(String error)? getLateSubscribersErrorState,
+    TResult Function()? getDisabledSubscribersLoadingState,
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
+        getDisabledSubscribersSuccessState,
+    TResult Function(String error)? getDisabledSubscribersErrorState,
+    TResult Function()? getWithdrawnSubscribersLoadingState,
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
+        getWithdrawnSubscribersSuccessState,
+    TResult Function(String error)? getWithdrawnSubscribersErrorState,
+    TResult Function()? getCompaniesListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult Function(String error)? getCompaniesListErrorState,
+    TResult Function()? getCollectorsEmailsLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getCollectorsEmailsSuccessState,
+    TResult Function(String error)? getCollectorsEmailsErrorState,
+    TResult Function()? getPlansListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
+    TResult Function()? changeListData,
+    required TResult orElse(),
+  }) {
+    if (collectSubscriberBalanceByExcelSuccessState != null) {
+      return collectSubscriberBalanceByExcelSuccessState(
+          resultsOfUploadedExcelModel);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(AddNewSubscriberloadingState<T> value)
+        addNewSubscriberLoadingState,
+    required TResult Function(AddNewSubscriberSuccessState<T> value)
+        addNewSubscriberSuccessState,
+    required TResult Function(AddNewSubscriberErrorState<T> value)
+        addNewSubscriberErrorState,
+    required TResult Function(UpdateSubscriberloadingState<T> value)
+        updateSubscriberLoadingState,
+    required TResult Function(UpdateSubscriberSuccessState<T> value)
+        updateSubscriberSuccessState,
+    required TResult Function(UpdateSubscriberErrorState<T> value)
+        updateSubscriberErrorState,
+    required TResult Function(DeleteSubscriberloadingState<T> value)
+        deleteSubscriberLoadingState,
+    required TResult Function(DeleteSubscriberSuccessState<T> value)
+        deleteSubscriberSuccessState,
+    required TResult Function(DeleteSubscriberErrorState<T> value)
+        deleteSubscriberErrorState,
+    required TResult Function(DisableSubscriberloadingState<T> value)
+        disableSubscriberLoadingState,
+    required TResult Function(DisableSubscriberSuccessState<T> value)
+        disableSubscriberSuccessState,
+    required TResult Function(DisableSubscriberErrorState<T> value)
+        disableSubscriberErrorState,
+    required TResult Function(WithdrawSubscriberloadingState<T> value)
+        withdrawSubscriberLoadingState,
+    required TResult Function(WithdrawSubscriberSuccessState<T> value)
+        withdrawSubscriberSuccessState,
+    required TResult Function(WithdrawSubscriberErrorState<T> value)
+        withdrawSubscriberErrorState,
+    required TResult Function(ActivateSubscriberloadingState<T> value)
+        activateSubscriberLoadingState,
+    required TResult Function(ActivateSubscriberSuccessState<T> value)
+        activateSubscriberSuccessState,
+    required TResult Function(ActivateSubscriberErrorState<T> value)
+        activateSubscriberErrorState,
+    required TResult Function(ZeroSubscriberBalanceloadingState<T> value)
+        zeroSubscriberBalanceLoadingState,
+    required TResult Function(ZeroSubscriberBalanceSuccessState<T> value)
+        zeroSubscriberBalanceSuccessState,
+    required TResult Function(ZeroSubscriberBalanceErrorState<T> value)
+        zeroSubscriberBalanceErrorState,
+    required TResult Function(CollectSubscriberBalanceloadingState<T> value)
+        collectSubscriberBalanceLoadingState,
+    required TResult Function(CollectSubscriberBalanceSuccessState<T> value)
+        collectSubscriberBalanceSuccessState,
+    required TResult Function(CollectSubscriberBalanceErrorState<T> value)
+        collectSubscriberBalanceErrorState,
+    required TResult Function(GetActiveSubscribersloadingState<T> value)
+        getActiveSubscribersLoadingState,
+    required TResult Function(GetActiveSubscribersSuccessState<T> value)
+        getActiveSubscribersSuccessState,
+    required TResult Function(GetActiveSubscribersErrorState<T> value)
+        getActiveSubscribersErrorState,
+    required TResult Function(GetLateSubscribersloadingState<T> value)
+        getLateSubscribersLoadingState,
+    required TResult Function(GetLateSubscribersSuccessState<T> value)
+        getLateSubscribersSuccessState,
+    required TResult Function(GetLateSubscribersErrorState<T> value)
+        getLateSubscribersErrorState,
+    required TResult Function(GetDisabledSubscribersloadingState<T> value)
+        getDisabledSubscribersLoadingState,
+    required TResult Function(GetDisabledSubscribersSuccessState<T> value)
+        getDisabledSubscribersSuccessState,
+    required TResult Function(GetDisabledSubscribersErrorState<T> value)
+        getDisabledSubscribersErrorState,
+    required TResult Function(GetWithdrawnSubscribersloadingState<T> value)
+        getWithdrawnSubscribersLoadingState,
+    required TResult Function(GetWithdrawnSubscribersSuccessState<T> value)
+        getWithdrawnSubscribersSuccessState,
+    required TResult Function(GetWithdrawnSubscribersErrorState<T> value)
+        getWithdrawnSubscribersErrorState,
+    required TResult Function(GetCompaniesListloadingState<T> value)
+        getCompaniesListLoadingState,
+    required TResult Function(GetCompaniesListSuccessState<T> value)
+        getCompaniesListSuccessState,
+    required TResult Function(GetCompaniesListErrorState<T> value)
+        getCompaniesListErrorState,
+    required TResult Function(GetCollectorsEmailsloadingState<T> value)
+        getCollectorsEmailsLoadingState,
+    required TResult Function(GetCollectorsEmailsSuccessState<T> value)
+        getCollectorsEmailsSuccessState,
+    required TResult Function(GetCollectorsEmailsErrorState<T> value)
+        getCollectorsEmailsErrorState,
+    required TResult Function(GetPlansListloadingState<T> value)
+        getPlansListLoadingState,
+    required TResult Function(GetPlansListSuccessState<T> value)
+        getPlansListSuccessState,
+    required TResult Function(GetPlansListErrorState<T> value)
+        getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
+    required TResult Function(ChangeListData<T> value) changeListData,
+  }) {
+    return collectSubscriberBalanceByExcelSuccessState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(AddNewSubscriberloadingState<T> value)?
+        addNewSubscriberLoadingState,
+    TResult? Function(AddNewSubscriberSuccessState<T> value)?
+        addNewSubscriberSuccessState,
+    TResult? Function(AddNewSubscriberErrorState<T> value)?
+        addNewSubscriberErrorState,
+    TResult? Function(UpdateSubscriberloadingState<T> value)?
+        updateSubscriberLoadingState,
+    TResult? Function(UpdateSubscriberSuccessState<T> value)?
+        updateSubscriberSuccessState,
+    TResult? Function(UpdateSubscriberErrorState<T> value)?
+        updateSubscriberErrorState,
+    TResult? Function(DeleteSubscriberloadingState<T> value)?
+        deleteSubscriberLoadingState,
+    TResult? Function(DeleteSubscriberSuccessState<T> value)?
+        deleteSubscriberSuccessState,
+    TResult? Function(DeleteSubscriberErrorState<T> value)?
+        deleteSubscriberErrorState,
+    TResult? Function(DisableSubscriberloadingState<T> value)?
+        disableSubscriberLoadingState,
+    TResult? Function(DisableSubscriberSuccessState<T> value)?
+        disableSubscriberSuccessState,
+    TResult? Function(DisableSubscriberErrorState<T> value)?
+        disableSubscriberErrorState,
+    TResult? Function(WithdrawSubscriberloadingState<T> value)?
+        withdrawSubscriberLoadingState,
+    TResult? Function(WithdrawSubscriberSuccessState<T> value)?
+        withdrawSubscriberSuccessState,
+    TResult? Function(WithdrawSubscriberErrorState<T> value)?
+        withdrawSubscriberErrorState,
+    TResult? Function(ActivateSubscriberloadingState<T> value)?
+        activateSubscriberLoadingState,
+    TResult? Function(ActivateSubscriberSuccessState<T> value)?
+        activateSubscriberSuccessState,
+    TResult? Function(ActivateSubscriberErrorState<T> value)?
+        activateSubscriberErrorState,
+    TResult? Function(ZeroSubscriberBalanceloadingState<T> value)?
+        zeroSubscriberBalanceLoadingState,
+    TResult? Function(ZeroSubscriberBalanceSuccessState<T> value)?
+        zeroSubscriberBalanceSuccessState,
+    TResult? Function(ZeroSubscriberBalanceErrorState<T> value)?
+        zeroSubscriberBalanceErrorState,
+    TResult? Function(CollectSubscriberBalanceloadingState<T> value)?
+        collectSubscriberBalanceLoadingState,
+    TResult? Function(CollectSubscriberBalanceSuccessState<T> value)?
+        collectSubscriberBalanceSuccessState,
+    TResult? Function(CollectSubscriberBalanceErrorState<T> value)?
+        collectSubscriberBalanceErrorState,
+    TResult? Function(GetActiveSubscribersloadingState<T> value)?
+        getActiveSubscribersLoadingState,
+    TResult? Function(GetActiveSubscribersSuccessState<T> value)?
+        getActiveSubscribersSuccessState,
+    TResult? Function(GetActiveSubscribersErrorState<T> value)?
+        getActiveSubscribersErrorState,
+    TResult? Function(GetLateSubscribersloadingState<T> value)?
+        getLateSubscribersLoadingState,
+    TResult? Function(GetLateSubscribersSuccessState<T> value)?
+        getLateSubscribersSuccessState,
+    TResult? Function(GetLateSubscribersErrorState<T> value)?
+        getLateSubscribersErrorState,
+    TResult? Function(GetDisabledSubscribersloadingState<T> value)?
+        getDisabledSubscribersLoadingState,
+    TResult? Function(GetDisabledSubscribersSuccessState<T> value)?
+        getDisabledSubscribersSuccessState,
+    TResult? Function(GetDisabledSubscribersErrorState<T> value)?
+        getDisabledSubscribersErrorState,
+    TResult? Function(GetWithdrawnSubscribersloadingState<T> value)?
+        getWithdrawnSubscribersLoadingState,
+    TResult? Function(GetWithdrawnSubscribersSuccessState<T> value)?
+        getWithdrawnSubscribersSuccessState,
+    TResult? Function(GetWithdrawnSubscribersErrorState<T> value)?
+        getWithdrawnSubscribersErrorState,
+    TResult? Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult? Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult? Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
+    TResult? Function(GetCollectorsEmailsloadingState<T> value)?
+        getCollectorsEmailsLoadingState,
+    TResult? Function(GetCollectorsEmailsSuccessState<T> value)?
+        getCollectorsEmailsSuccessState,
+    TResult? Function(GetCollectorsEmailsErrorState<T> value)?
+        getCollectorsEmailsErrorState,
+    TResult? Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult? Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
+    TResult? Function(ChangeListData<T> value)? changeListData,
+  }) {
+    return collectSubscriberBalanceByExcelSuccessState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(AddNewSubscriberloadingState<T> value)?
+        addNewSubscriberLoadingState,
+    TResult Function(AddNewSubscriberSuccessState<T> value)?
+        addNewSubscriberSuccessState,
+    TResult Function(AddNewSubscriberErrorState<T> value)?
+        addNewSubscriberErrorState,
+    TResult Function(UpdateSubscriberloadingState<T> value)?
+        updateSubscriberLoadingState,
+    TResult Function(UpdateSubscriberSuccessState<T> value)?
+        updateSubscriberSuccessState,
+    TResult Function(UpdateSubscriberErrorState<T> value)?
+        updateSubscriberErrorState,
+    TResult Function(DeleteSubscriberloadingState<T> value)?
+        deleteSubscriberLoadingState,
+    TResult Function(DeleteSubscriberSuccessState<T> value)?
+        deleteSubscriberSuccessState,
+    TResult Function(DeleteSubscriberErrorState<T> value)?
+        deleteSubscriberErrorState,
+    TResult Function(DisableSubscriberloadingState<T> value)?
+        disableSubscriberLoadingState,
+    TResult Function(DisableSubscriberSuccessState<T> value)?
+        disableSubscriberSuccessState,
+    TResult Function(DisableSubscriberErrorState<T> value)?
+        disableSubscriberErrorState,
+    TResult Function(WithdrawSubscriberloadingState<T> value)?
+        withdrawSubscriberLoadingState,
+    TResult Function(WithdrawSubscriberSuccessState<T> value)?
+        withdrawSubscriberSuccessState,
+    TResult Function(WithdrawSubscriberErrorState<T> value)?
+        withdrawSubscriberErrorState,
+    TResult Function(ActivateSubscriberloadingState<T> value)?
+        activateSubscriberLoadingState,
+    TResult Function(ActivateSubscriberSuccessState<T> value)?
+        activateSubscriberSuccessState,
+    TResult Function(ActivateSubscriberErrorState<T> value)?
+        activateSubscriberErrorState,
+    TResult Function(ZeroSubscriberBalanceloadingState<T> value)?
+        zeroSubscriberBalanceLoadingState,
+    TResult Function(ZeroSubscriberBalanceSuccessState<T> value)?
+        zeroSubscriberBalanceSuccessState,
+    TResult Function(ZeroSubscriberBalanceErrorState<T> value)?
+        zeroSubscriberBalanceErrorState,
+    TResult Function(CollectSubscriberBalanceloadingState<T> value)?
+        collectSubscriberBalanceLoadingState,
+    TResult Function(CollectSubscriberBalanceSuccessState<T> value)?
+        collectSubscriberBalanceSuccessState,
+    TResult Function(CollectSubscriberBalanceErrorState<T> value)?
+        collectSubscriberBalanceErrorState,
+    TResult Function(GetActiveSubscribersloadingState<T> value)?
+        getActiveSubscribersLoadingState,
+    TResult Function(GetActiveSubscribersSuccessState<T> value)?
+        getActiveSubscribersSuccessState,
+    TResult Function(GetActiveSubscribersErrorState<T> value)?
+        getActiveSubscribersErrorState,
+    TResult Function(GetLateSubscribersloadingState<T> value)?
+        getLateSubscribersLoadingState,
+    TResult Function(GetLateSubscribersSuccessState<T> value)?
+        getLateSubscribersSuccessState,
+    TResult Function(GetLateSubscribersErrorState<T> value)?
+        getLateSubscribersErrorState,
+    TResult Function(GetDisabledSubscribersloadingState<T> value)?
+        getDisabledSubscribersLoadingState,
+    TResult Function(GetDisabledSubscribersSuccessState<T> value)?
+        getDisabledSubscribersSuccessState,
+    TResult Function(GetDisabledSubscribersErrorState<T> value)?
+        getDisabledSubscribersErrorState,
+    TResult Function(GetWithdrawnSubscribersloadingState<T> value)?
+        getWithdrawnSubscribersLoadingState,
+    TResult Function(GetWithdrawnSubscribersSuccessState<T> value)?
+        getWithdrawnSubscribersSuccessState,
+    TResult Function(GetWithdrawnSubscribersErrorState<T> value)?
+        getWithdrawnSubscribersErrorState,
+    TResult Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
+    TResult Function(GetCollectorsEmailsloadingState<T> value)?
+        getCollectorsEmailsLoadingState,
+    TResult Function(GetCollectorsEmailsSuccessState<T> value)?
+        getCollectorsEmailsSuccessState,
+    TResult Function(GetCollectorsEmailsErrorState<T> value)?
+        getCollectorsEmailsErrorState,
+    TResult Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
+    TResult Function(ChangeListData<T> value)? changeListData,
+    required TResult orElse(),
+  }) {
+    if (collectSubscriberBalanceByExcelSuccessState != null) {
+      return collectSubscriberBalanceByExcelSuccessState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CollectSubscriberBalanceByExcelSuccessState<T>
+    implements SubscribersState<T> {
+  const factory CollectSubscriberBalanceByExcelSuccessState(
+          final ResultsOfUploadedExcelModel resultsOfUploadedExcelModel) =
+      _$CollectSubscriberBalanceByExcelSuccessStateImpl<T>;
+
+  ResultsOfUploadedExcelModel get resultsOfUploadedExcelModel;
+  @JsonKey(ignore: true)
+  _$$CollectSubscriberBalanceByExcelSuccessStateImplCopyWith<T,
+          _$CollectSubscriberBalanceByExcelSuccessStateImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$CollectSubscriberBalanceByExcelErrorStateImplCopyWith<T,
+    $Res> {
+  factory _$$CollectSubscriberBalanceByExcelErrorStateImplCopyWith(
+          _$CollectSubscriberBalanceByExcelErrorStateImpl<T> value,
+          $Res Function(_$CollectSubscriberBalanceByExcelErrorStateImpl<T>)
+              then) =
+      __$$CollectSubscriberBalanceByExcelErrorStateImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$CollectSubscriberBalanceByExcelErrorStateImplCopyWithImpl<T, $Res>
+    extends _$SubscribersStateCopyWithImpl<T, $Res,
+        _$CollectSubscriberBalanceByExcelErrorStateImpl<T>>
+    implements
+        _$$CollectSubscriberBalanceByExcelErrorStateImplCopyWith<T, $Res> {
+  __$$CollectSubscriberBalanceByExcelErrorStateImplCopyWithImpl(
+      _$CollectSubscriberBalanceByExcelErrorStateImpl<T> _value,
+      $Res Function(_$CollectSubscriberBalanceByExcelErrorStateImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$CollectSubscriberBalanceByExcelErrorStateImpl<T>(
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$CollectSubscriberBalanceByExcelErrorStateImpl<T>
+    implements CollectSubscriberBalanceByExcelErrorState<T> {
+  const _$CollectSubscriberBalanceByExcelErrorStateImpl({required this.error});
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'SubscribersState<$T>.collectSubscriberBalanceByExcelErrorState(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CollectSubscriberBalanceByExcelErrorStateImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CollectSubscriberBalanceByExcelErrorStateImplCopyWith<T,
+          _$CollectSubscriberBalanceByExcelErrorStateImpl<T>>
+      get copyWith =>
+          __$$CollectSubscriberBalanceByExcelErrorStateImplCopyWithImpl<T,
+                  _$CollectSubscriberBalanceByExcelErrorStateImpl<T>>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() addNewSubscriberLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        addNewSubscriberSuccessState,
+    required TResult Function(String error) addNewSubscriberErrorState,
+    required TResult Function() updateSubscriberLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        updateSubscriberSuccessState,
+    required TResult Function(String error) updateSubscriberErrorState,
+    required TResult Function() deleteSubscriberLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        deleteSubscriberSuccessState,
+    required TResult Function(String error) deleteSubscriberErrorState,
+    required TResult Function() disableSubscriberLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        disableSubscriberSuccessState,
+    required TResult Function(String error) disableSubscriberErrorState,
+    required TResult Function() withdrawSubscriberLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        withdrawSubscriberSuccessState,
+    required TResult Function(String error) withdrawSubscriberErrorState,
+    required TResult Function() activateSubscriberLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        activateSubscriberSuccessState,
+    required TResult Function(String error) activateSubscriberErrorState,
+    required TResult Function() zeroSubscriberBalanceLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        zeroSubscriberBalanceSuccessState,
+    required TResult Function(String error) zeroSubscriberBalanceErrorState,
+    required TResult Function() collectSubscriberBalanceLoadingState,
+    required TResult Function(DefaultApiResponse defaultApiResponse)
+        collectSubscriberBalanceSuccessState,
+    required TResult Function(String error) collectSubscriberBalanceErrorState,
+    required TResult Function() getActiveSubscribersLoadingState,
+    required TResult Function(
+            GetSubscribersDataResponse getSubscribersDataResponse)
+        getActiveSubscribersSuccessState,
+    required TResult Function(String error) getActiveSubscribersErrorState,
+    required TResult Function() getLateSubscribersLoadingState,
+    required TResult Function(
+            GetLateSubscribersResponse getLateSubscribersResponse)
+        getLateSubscribersSuccessState,
+    required TResult Function(String error) getLateSubscribersErrorState,
+    required TResult Function() getDisabledSubscribersLoadingState,
+    required TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)
+        getDisabledSubscribersSuccessState,
+    required TResult Function(String error) getDisabledSubscribersErrorState,
+    required TResult Function() getWithdrawnSubscribersLoadingState,
+    required TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)
+        getWithdrawnSubscribersSuccessState,
+    required TResult Function(String error) getWithdrawnSubscribersErrorState,
+    required TResult Function() getCompaniesListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getCompaniesListSuccessState,
+    required TResult Function(String error) getCompaniesListErrorState,
+    required TResult Function() getCollectorsEmailsLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getCollectorsEmailsSuccessState,
+    required TResult Function(String error) getCollectorsEmailsErrorState,
+    required TResult Function() getPlansListLoadingState,
+    required TResult Function(GetListsResponse getListsResponse)
+        getPlansListSuccessState,
+    required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
+    required TResult Function() changeListData,
+  }) {
+    return collectSubscriberBalanceByExcelErrorState(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? addNewSubscriberLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        addNewSubscriberSuccessState,
+    TResult? Function(String error)? addNewSubscriberErrorState,
+    TResult? Function()? updateSubscriberLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        updateSubscriberSuccessState,
+    TResult? Function(String error)? updateSubscriberErrorState,
+    TResult? Function()? deleteSubscriberLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        deleteSubscriberSuccessState,
+    TResult? Function(String error)? deleteSubscriberErrorState,
+    TResult? Function()? disableSubscriberLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        disableSubscriberSuccessState,
+    TResult? Function(String error)? disableSubscriberErrorState,
+    TResult? Function()? withdrawSubscriberLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        withdrawSubscriberSuccessState,
+    TResult? Function(String error)? withdrawSubscriberErrorState,
+    TResult? Function()? activateSubscriberLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        activateSubscriberSuccessState,
+    TResult? Function(String error)? activateSubscriberErrorState,
+    TResult? Function()? zeroSubscriberBalanceLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        zeroSubscriberBalanceSuccessState,
+    TResult? Function(String error)? zeroSubscriberBalanceErrorState,
+    TResult? Function()? collectSubscriberBalanceLoadingState,
+    TResult? Function(DefaultApiResponse defaultApiResponse)?
+        collectSubscriberBalanceSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceErrorState,
+    TResult? Function()? getActiveSubscribersLoadingState,
+    TResult? Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+        getActiveSubscribersSuccessState,
+    TResult? Function(String error)? getActiveSubscribersErrorState,
+    TResult? Function()? getLateSubscribersLoadingState,
+    TResult? Function(GetLateSubscribersResponse getLateSubscribersResponse)?
+        getLateSubscribersSuccessState,
+    TResult? Function(String error)? getLateSubscribersErrorState,
+    TResult? Function()? getDisabledSubscribersLoadingState,
+    TResult? Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
+        getDisabledSubscribersSuccessState,
+    TResult? Function(String error)? getDisabledSubscribersErrorState,
+    TResult? Function()? getWithdrawnSubscribersLoadingState,
+    TResult? Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
+        getWithdrawnSubscribersSuccessState,
+    TResult? Function(String error)? getWithdrawnSubscribersErrorState,
+    TResult? Function()? getCompaniesListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult? Function(String error)? getCompaniesListErrorState,
+    TResult? Function()? getCollectorsEmailsLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getCollectorsEmailsSuccessState,
+    TResult? Function(String error)? getCollectorsEmailsErrorState,
+    TResult? Function()? getPlansListLoadingState,
+    TResult? Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
+    TResult? Function()? changeListData,
+  }) {
+    return collectSubscriberBalanceByExcelErrorState?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? addNewSubscriberLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        addNewSubscriberSuccessState,
+    TResult Function(String error)? addNewSubscriberErrorState,
+    TResult Function()? updateSubscriberLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        updateSubscriberSuccessState,
+    TResult Function(String error)? updateSubscriberErrorState,
+    TResult Function()? deleteSubscriberLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        deleteSubscriberSuccessState,
+    TResult Function(String error)? deleteSubscriberErrorState,
+    TResult Function()? disableSubscriberLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        disableSubscriberSuccessState,
+    TResult Function(String error)? disableSubscriberErrorState,
+    TResult Function()? withdrawSubscriberLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        withdrawSubscriberSuccessState,
+    TResult Function(String error)? withdrawSubscriberErrorState,
+    TResult Function()? activateSubscriberLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        activateSubscriberSuccessState,
+    TResult Function(String error)? activateSubscriberErrorState,
+    TResult Function()? zeroSubscriberBalanceLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        zeroSubscriberBalanceSuccessState,
+    TResult Function(String error)? zeroSubscriberBalanceErrorState,
+    TResult Function()? collectSubscriberBalanceLoadingState,
+    TResult Function(DefaultApiResponse defaultApiResponse)?
+        collectSubscriberBalanceSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceErrorState,
+    TResult Function()? getActiveSubscribersLoadingState,
+    TResult Function(GetSubscribersDataResponse getSubscribersDataResponse)?
+        getActiveSubscribersSuccessState,
+    TResult Function(String error)? getActiveSubscribersErrorState,
+    TResult Function()? getLateSubscribersLoadingState,
+    TResult Function(GetLateSubscribersResponse getLateSubscribersResponse)?
+        getLateSubscribersSuccessState,
+    TResult Function(String error)? getLateSubscribersErrorState,
+    TResult Function()? getDisabledSubscribersLoadingState,
+    TResult Function(
+            GetDisabledSubscribersResponse getDisabledSubscribersResponse)?
+        getDisabledSubscribersSuccessState,
+    TResult Function(String error)? getDisabledSubscribersErrorState,
+    TResult Function()? getWithdrawnSubscribersLoadingState,
+    TResult Function(
+            GetWithdrawnSubscribersResponse getWithdrawnSubscribersResponse)?
+        getWithdrawnSubscribersSuccessState,
+    TResult Function(String error)? getWithdrawnSubscribersErrorState,
+    TResult Function()? getCompaniesListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getCompaniesListSuccessState,
+    TResult Function(String error)? getCompaniesListErrorState,
+    TResult Function()? getCollectorsEmailsLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getCollectorsEmailsSuccessState,
+    TResult Function(String error)? getCollectorsEmailsErrorState,
+    TResult Function()? getPlansListLoadingState,
+    TResult Function(GetListsResponse getListsResponse)?
+        getPlansListSuccessState,
+    TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
+    TResult Function()? changeListData,
+    required TResult orElse(),
+  }) {
+    if (collectSubscriberBalanceByExcelErrorState != null) {
+      return collectSubscriberBalanceByExcelErrorState(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(AddNewSubscriberloadingState<T> value)
+        addNewSubscriberLoadingState,
+    required TResult Function(AddNewSubscriberSuccessState<T> value)
+        addNewSubscriberSuccessState,
+    required TResult Function(AddNewSubscriberErrorState<T> value)
+        addNewSubscriberErrorState,
+    required TResult Function(UpdateSubscriberloadingState<T> value)
+        updateSubscriberLoadingState,
+    required TResult Function(UpdateSubscriberSuccessState<T> value)
+        updateSubscriberSuccessState,
+    required TResult Function(UpdateSubscriberErrorState<T> value)
+        updateSubscriberErrorState,
+    required TResult Function(DeleteSubscriberloadingState<T> value)
+        deleteSubscriberLoadingState,
+    required TResult Function(DeleteSubscriberSuccessState<T> value)
+        deleteSubscriberSuccessState,
+    required TResult Function(DeleteSubscriberErrorState<T> value)
+        deleteSubscriberErrorState,
+    required TResult Function(DisableSubscriberloadingState<T> value)
+        disableSubscriberLoadingState,
+    required TResult Function(DisableSubscriberSuccessState<T> value)
+        disableSubscriberSuccessState,
+    required TResult Function(DisableSubscriberErrorState<T> value)
+        disableSubscriberErrorState,
+    required TResult Function(WithdrawSubscriberloadingState<T> value)
+        withdrawSubscriberLoadingState,
+    required TResult Function(WithdrawSubscriberSuccessState<T> value)
+        withdrawSubscriberSuccessState,
+    required TResult Function(WithdrawSubscriberErrorState<T> value)
+        withdrawSubscriberErrorState,
+    required TResult Function(ActivateSubscriberloadingState<T> value)
+        activateSubscriberLoadingState,
+    required TResult Function(ActivateSubscriberSuccessState<T> value)
+        activateSubscriberSuccessState,
+    required TResult Function(ActivateSubscriberErrorState<T> value)
+        activateSubscriberErrorState,
+    required TResult Function(ZeroSubscriberBalanceloadingState<T> value)
+        zeroSubscriberBalanceLoadingState,
+    required TResult Function(ZeroSubscriberBalanceSuccessState<T> value)
+        zeroSubscriberBalanceSuccessState,
+    required TResult Function(ZeroSubscriberBalanceErrorState<T> value)
+        zeroSubscriberBalanceErrorState,
+    required TResult Function(CollectSubscriberBalanceloadingState<T> value)
+        collectSubscriberBalanceLoadingState,
+    required TResult Function(CollectSubscriberBalanceSuccessState<T> value)
+        collectSubscriberBalanceSuccessState,
+    required TResult Function(CollectSubscriberBalanceErrorState<T> value)
+        collectSubscriberBalanceErrorState,
+    required TResult Function(GetActiveSubscribersloadingState<T> value)
+        getActiveSubscribersLoadingState,
+    required TResult Function(GetActiveSubscribersSuccessState<T> value)
+        getActiveSubscribersSuccessState,
+    required TResult Function(GetActiveSubscribersErrorState<T> value)
+        getActiveSubscribersErrorState,
+    required TResult Function(GetLateSubscribersloadingState<T> value)
+        getLateSubscribersLoadingState,
+    required TResult Function(GetLateSubscribersSuccessState<T> value)
+        getLateSubscribersSuccessState,
+    required TResult Function(GetLateSubscribersErrorState<T> value)
+        getLateSubscribersErrorState,
+    required TResult Function(GetDisabledSubscribersloadingState<T> value)
+        getDisabledSubscribersLoadingState,
+    required TResult Function(GetDisabledSubscribersSuccessState<T> value)
+        getDisabledSubscribersSuccessState,
+    required TResult Function(GetDisabledSubscribersErrorState<T> value)
+        getDisabledSubscribersErrorState,
+    required TResult Function(GetWithdrawnSubscribersloadingState<T> value)
+        getWithdrawnSubscribersLoadingState,
+    required TResult Function(GetWithdrawnSubscribersSuccessState<T> value)
+        getWithdrawnSubscribersSuccessState,
+    required TResult Function(GetWithdrawnSubscribersErrorState<T> value)
+        getWithdrawnSubscribersErrorState,
+    required TResult Function(GetCompaniesListloadingState<T> value)
+        getCompaniesListLoadingState,
+    required TResult Function(GetCompaniesListSuccessState<T> value)
+        getCompaniesListSuccessState,
+    required TResult Function(GetCompaniesListErrorState<T> value)
+        getCompaniesListErrorState,
+    required TResult Function(GetCollectorsEmailsloadingState<T> value)
+        getCollectorsEmailsLoadingState,
+    required TResult Function(GetCollectorsEmailsSuccessState<T> value)
+        getCollectorsEmailsSuccessState,
+    required TResult Function(GetCollectorsEmailsErrorState<T> value)
+        getCollectorsEmailsErrorState,
+    required TResult Function(GetPlansListloadingState<T> value)
+        getPlansListLoadingState,
+    required TResult Function(GetPlansListSuccessState<T> value)
+        getPlansListSuccessState,
+    required TResult Function(GetPlansListErrorState<T> value)
+        getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
+    required TResult Function(ChangeListData<T> value) changeListData,
+  }) {
+    return collectSubscriberBalanceByExcelErrorState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(AddNewSubscriberloadingState<T> value)?
+        addNewSubscriberLoadingState,
+    TResult? Function(AddNewSubscriberSuccessState<T> value)?
+        addNewSubscriberSuccessState,
+    TResult? Function(AddNewSubscriberErrorState<T> value)?
+        addNewSubscriberErrorState,
+    TResult? Function(UpdateSubscriberloadingState<T> value)?
+        updateSubscriberLoadingState,
+    TResult? Function(UpdateSubscriberSuccessState<T> value)?
+        updateSubscriberSuccessState,
+    TResult? Function(UpdateSubscriberErrorState<T> value)?
+        updateSubscriberErrorState,
+    TResult? Function(DeleteSubscriberloadingState<T> value)?
+        deleteSubscriberLoadingState,
+    TResult? Function(DeleteSubscriberSuccessState<T> value)?
+        deleteSubscriberSuccessState,
+    TResult? Function(DeleteSubscriberErrorState<T> value)?
+        deleteSubscriberErrorState,
+    TResult? Function(DisableSubscriberloadingState<T> value)?
+        disableSubscriberLoadingState,
+    TResult? Function(DisableSubscriberSuccessState<T> value)?
+        disableSubscriberSuccessState,
+    TResult? Function(DisableSubscriberErrorState<T> value)?
+        disableSubscriberErrorState,
+    TResult? Function(WithdrawSubscriberloadingState<T> value)?
+        withdrawSubscriberLoadingState,
+    TResult? Function(WithdrawSubscriberSuccessState<T> value)?
+        withdrawSubscriberSuccessState,
+    TResult? Function(WithdrawSubscriberErrorState<T> value)?
+        withdrawSubscriberErrorState,
+    TResult? Function(ActivateSubscriberloadingState<T> value)?
+        activateSubscriberLoadingState,
+    TResult? Function(ActivateSubscriberSuccessState<T> value)?
+        activateSubscriberSuccessState,
+    TResult? Function(ActivateSubscriberErrorState<T> value)?
+        activateSubscriberErrorState,
+    TResult? Function(ZeroSubscriberBalanceloadingState<T> value)?
+        zeroSubscriberBalanceLoadingState,
+    TResult? Function(ZeroSubscriberBalanceSuccessState<T> value)?
+        zeroSubscriberBalanceSuccessState,
+    TResult? Function(ZeroSubscriberBalanceErrorState<T> value)?
+        zeroSubscriberBalanceErrorState,
+    TResult? Function(CollectSubscriberBalanceloadingState<T> value)?
+        collectSubscriberBalanceLoadingState,
+    TResult? Function(CollectSubscriberBalanceSuccessState<T> value)?
+        collectSubscriberBalanceSuccessState,
+    TResult? Function(CollectSubscriberBalanceErrorState<T> value)?
+        collectSubscriberBalanceErrorState,
+    TResult? Function(GetActiveSubscribersloadingState<T> value)?
+        getActiveSubscribersLoadingState,
+    TResult? Function(GetActiveSubscribersSuccessState<T> value)?
+        getActiveSubscribersSuccessState,
+    TResult? Function(GetActiveSubscribersErrorState<T> value)?
+        getActiveSubscribersErrorState,
+    TResult? Function(GetLateSubscribersloadingState<T> value)?
+        getLateSubscribersLoadingState,
+    TResult? Function(GetLateSubscribersSuccessState<T> value)?
+        getLateSubscribersSuccessState,
+    TResult? Function(GetLateSubscribersErrorState<T> value)?
+        getLateSubscribersErrorState,
+    TResult? Function(GetDisabledSubscribersloadingState<T> value)?
+        getDisabledSubscribersLoadingState,
+    TResult? Function(GetDisabledSubscribersSuccessState<T> value)?
+        getDisabledSubscribersSuccessState,
+    TResult? Function(GetDisabledSubscribersErrorState<T> value)?
+        getDisabledSubscribersErrorState,
+    TResult? Function(GetWithdrawnSubscribersloadingState<T> value)?
+        getWithdrawnSubscribersLoadingState,
+    TResult? Function(GetWithdrawnSubscribersSuccessState<T> value)?
+        getWithdrawnSubscribersSuccessState,
+    TResult? Function(GetWithdrawnSubscribersErrorState<T> value)?
+        getWithdrawnSubscribersErrorState,
+    TResult? Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult? Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult? Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
+    TResult? Function(GetCollectorsEmailsloadingState<T> value)?
+        getCollectorsEmailsLoadingState,
+    TResult? Function(GetCollectorsEmailsSuccessState<T> value)?
+        getCollectorsEmailsSuccessState,
+    TResult? Function(GetCollectorsEmailsErrorState<T> value)?
+        getCollectorsEmailsErrorState,
+    TResult? Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult? Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
+    TResult? Function(ChangeListData<T> value)? changeListData,
+  }) {
+    return collectSubscriberBalanceByExcelErrorState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(AddNewSubscriberloadingState<T> value)?
+        addNewSubscriberLoadingState,
+    TResult Function(AddNewSubscriberSuccessState<T> value)?
+        addNewSubscriberSuccessState,
+    TResult Function(AddNewSubscriberErrorState<T> value)?
+        addNewSubscriberErrorState,
+    TResult Function(UpdateSubscriberloadingState<T> value)?
+        updateSubscriberLoadingState,
+    TResult Function(UpdateSubscriberSuccessState<T> value)?
+        updateSubscriberSuccessState,
+    TResult Function(UpdateSubscriberErrorState<T> value)?
+        updateSubscriberErrorState,
+    TResult Function(DeleteSubscriberloadingState<T> value)?
+        deleteSubscriberLoadingState,
+    TResult Function(DeleteSubscriberSuccessState<T> value)?
+        deleteSubscriberSuccessState,
+    TResult Function(DeleteSubscriberErrorState<T> value)?
+        deleteSubscriberErrorState,
+    TResult Function(DisableSubscriberloadingState<T> value)?
+        disableSubscriberLoadingState,
+    TResult Function(DisableSubscriberSuccessState<T> value)?
+        disableSubscriberSuccessState,
+    TResult Function(DisableSubscriberErrorState<T> value)?
+        disableSubscriberErrorState,
+    TResult Function(WithdrawSubscriberloadingState<T> value)?
+        withdrawSubscriberLoadingState,
+    TResult Function(WithdrawSubscriberSuccessState<T> value)?
+        withdrawSubscriberSuccessState,
+    TResult Function(WithdrawSubscriberErrorState<T> value)?
+        withdrawSubscriberErrorState,
+    TResult Function(ActivateSubscriberloadingState<T> value)?
+        activateSubscriberLoadingState,
+    TResult Function(ActivateSubscriberSuccessState<T> value)?
+        activateSubscriberSuccessState,
+    TResult Function(ActivateSubscriberErrorState<T> value)?
+        activateSubscriberErrorState,
+    TResult Function(ZeroSubscriberBalanceloadingState<T> value)?
+        zeroSubscriberBalanceLoadingState,
+    TResult Function(ZeroSubscriberBalanceSuccessState<T> value)?
+        zeroSubscriberBalanceSuccessState,
+    TResult Function(ZeroSubscriberBalanceErrorState<T> value)?
+        zeroSubscriberBalanceErrorState,
+    TResult Function(CollectSubscriberBalanceloadingState<T> value)?
+        collectSubscriberBalanceLoadingState,
+    TResult Function(CollectSubscriberBalanceSuccessState<T> value)?
+        collectSubscriberBalanceSuccessState,
+    TResult Function(CollectSubscriberBalanceErrorState<T> value)?
+        collectSubscriberBalanceErrorState,
+    TResult Function(GetActiveSubscribersloadingState<T> value)?
+        getActiveSubscribersLoadingState,
+    TResult Function(GetActiveSubscribersSuccessState<T> value)?
+        getActiveSubscribersSuccessState,
+    TResult Function(GetActiveSubscribersErrorState<T> value)?
+        getActiveSubscribersErrorState,
+    TResult Function(GetLateSubscribersloadingState<T> value)?
+        getLateSubscribersLoadingState,
+    TResult Function(GetLateSubscribersSuccessState<T> value)?
+        getLateSubscribersSuccessState,
+    TResult Function(GetLateSubscribersErrorState<T> value)?
+        getLateSubscribersErrorState,
+    TResult Function(GetDisabledSubscribersloadingState<T> value)?
+        getDisabledSubscribersLoadingState,
+    TResult Function(GetDisabledSubscribersSuccessState<T> value)?
+        getDisabledSubscribersSuccessState,
+    TResult Function(GetDisabledSubscribersErrorState<T> value)?
+        getDisabledSubscribersErrorState,
+    TResult Function(GetWithdrawnSubscribersloadingState<T> value)?
+        getWithdrawnSubscribersLoadingState,
+    TResult Function(GetWithdrawnSubscribersSuccessState<T> value)?
+        getWithdrawnSubscribersSuccessState,
+    TResult Function(GetWithdrawnSubscribersErrorState<T> value)?
+        getWithdrawnSubscribersErrorState,
+    TResult Function(GetCompaniesListloadingState<T> value)?
+        getCompaniesListLoadingState,
+    TResult Function(GetCompaniesListSuccessState<T> value)?
+        getCompaniesListSuccessState,
+    TResult Function(GetCompaniesListErrorState<T> value)?
+        getCompaniesListErrorState,
+    TResult Function(GetCollectorsEmailsloadingState<T> value)?
+        getCollectorsEmailsLoadingState,
+    TResult Function(GetCollectorsEmailsSuccessState<T> value)?
+        getCollectorsEmailsSuccessState,
+    TResult Function(GetCollectorsEmailsErrorState<T> value)?
+        getCollectorsEmailsErrorState,
+    TResult Function(GetPlansListloadingState<T> value)?
+        getPlansListLoadingState,
+    TResult Function(GetPlansListSuccessState<T> value)?
+        getPlansListSuccessState,
+    TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
+    TResult Function(ChangeListData<T> value)? changeListData,
+    required TResult orElse(),
+  }) {
+    if (collectSubscriberBalanceByExcelErrorState != null) {
+      return collectSubscriberBalanceByExcelErrorState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CollectSubscriberBalanceByExcelErrorState<T>
+    implements SubscribersState<T> {
+  const factory CollectSubscriberBalanceByExcelErrorState(
+          {required final String error}) =
+      _$CollectSubscriberBalanceByExcelErrorStateImpl<T>;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$$CollectSubscriberBalanceByExcelErrorStateImplCopyWith<T,
+          _$CollectSubscriberBalanceByExcelErrorStateImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -27623,6 +38433,23 @@ class _$ChangeListDataImpl<T> implements ChangeListData<T> {
     required TResult Function(GetListsResponse getListsResponse)
         getPlansListSuccessState,
     required TResult Function(String error) getPlansListErrorState,
+    required TResult Function() disableSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(String error) disableSubscribersByExcelErrorState,
+    required TResult Function() withdrawSubscribersByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(String error)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function() collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(String error)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function() changeListData,
   }) {
     return changeListData();
@@ -27694,6 +38521,18 @@ class _$ChangeListDataImpl<T> implements ChangeListData<T> {
     TResult? Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult? Function(String error)? getPlansListErrorState,
+    TResult? Function()? disableSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(String error)? disableSubscribersByExcelErrorState,
+    TResult? Function()? withdrawSubscribersByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult? Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult? Function()? changeListData,
   }) {
     return changeListData?.call();
@@ -27765,6 +38604,18 @@ class _$ChangeListDataImpl<T> implements ChangeListData<T> {
     TResult Function(GetListsResponse getListsResponse)?
         getPlansListSuccessState,
     TResult Function(String error)? getPlansListErrorState,
+    TResult Function()? disableSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(String error)? disableSubscribersByExcelErrorState,
+    TResult Function()? withdrawSubscribersByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(String error)? withdrawSubscribersByExcelErrorState,
+    TResult Function()? collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(ResultsOfUploadedExcelModel resultsOfUploadedExcelModel)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(String error)? collectSubscriberBalanceByExcelErrorState,
     TResult Function()? changeListData,
     required TResult orElse(),
   }) {
@@ -27868,6 +38719,27 @@ class _$ChangeListDataImpl<T> implements ChangeListData<T> {
         getPlansListSuccessState,
     required TResult Function(GetPlansListErrorState<T> value)
         getPlansListErrorState,
+    required TResult Function(DisableSubscribersByExcelloadingState<T> value)
+        disableSubscribersByExcelLoadingState,
+    required TResult Function(DisableSubscribersByExcelSuccessState<T> value)
+        disableSubscribersByExcelSuccessState,
+    required TResult Function(DisableSubscribersByExcelErrorState<T> value)
+        disableSubscribersByExcelErrorState,
+    required TResult Function(WithdrawSubscribersByExcelloadingState<T> value)
+        withdrawSubscribersByExcelLoadingState,
+    required TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)
+        withdrawSubscribersByExcelSuccessState,
+    required TResult Function(WithdrawSubscribersByExcelErrorState<T> value)
+        withdrawSubscribersByExcelErrorState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelloadingState<T> value)
+        collectSubscriberBalanceByExcelLoadingState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelSuccessState<T> value)
+        collectSubscriberBalanceByExcelSuccessState,
+    required TResult Function(
+            CollectSubscriberBalanceByExcelErrorState<T> value)
+        collectSubscriberBalanceByExcelErrorState,
     required TResult Function(ChangeListData<T> value) changeListData,
   }) {
     return changeListData(this);
@@ -27966,6 +38838,24 @@ class _$ChangeListDataImpl<T> implements ChangeListData<T> {
     TResult? Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult? Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult? Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult? Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult? Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult? Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult? Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult? Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult? Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult? Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult? Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult? Function(ChangeListData<T> value)? changeListData,
   }) {
     return changeListData?.call(this);
@@ -28064,6 +38954,24 @@ class _$ChangeListDataImpl<T> implements ChangeListData<T> {
     TResult Function(GetPlansListSuccessState<T> value)?
         getPlansListSuccessState,
     TResult Function(GetPlansListErrorState<T> value)? getPlansListErrorState,
+    TResult Function(DisableSubscribersByExcelloadingState<T> value)?
+        disableSubscribersByExcelLoadingState,
+    TResult Function(DisableSubscribersByExcelSuccessState<T> value)?
+        disableSubscribersByExcelSuccessState,
+    TResult Function(DisableSubscribersByExcelErrorState<T> value)?
+        disableSubscribersByExcelErrorState,
+    TResult Function(WithdrawSubscribersByExcelloadingState<T> value)?
+        withdrawSubscribersByExcelLoadingState,
+    TResult Function(WithdrawSubscribersByExcelSuccessState<T> value)?
+        withdrawSubscribersByExcelSuccessState,
+    TResult Function(WithdrawSubscribersByExcelErrorState<T> value)?
+        withdrawSubscribersByExcelErrorState,
+    TResult Function(CollectSubscriberBalanceByExcelloadingState<T> value)?
+        collectSubscriberBalanceByExcelLoadingState,
+    TResult Function(CollectSubscriberBalanceByExcelSuccessState<T> value)?
+        collectSubscriberBalanceByExcelSuccessState,
+    TResult Function(CollectSubscriberBalanceByExcelErrorState<T> value)?
+        collectSubscriberBalanceByExcelErrorState,
     TResult Function(ChangeListData<T> value)? changeListData,
     required TResult orElse(),
   }) {

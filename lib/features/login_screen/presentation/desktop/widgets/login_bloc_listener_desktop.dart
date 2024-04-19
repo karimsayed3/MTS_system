@@ -52,7 +52,9 @@ class LoginBlocListenerDesktop extends StatelessWidget {
                   CacheHelper.saveData(
                           key: "accountType", value: decodedToken.accountType)
                       .then((value) {
-                isMobile()?  navigateToPage(Routes.homeDesktopScreen):    navigateToPage(Routes.homeDesktopScreen);
+                    isMobile()
+                        ? navigateToPage(Routes.homeDesktopScreen)
+                        : navigateToPage(Routes.homeDesktopScreen);
                   });
                 });
               });

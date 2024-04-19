@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:bloc/bloc.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -109,6 +111,50 @@ class SubscribersCubit extends Cubit<SubscribersState> {
       },
     );
   }
+
+
+  disableSubscribersByExcel({
+    required File excel,
+  })async {
+    emit(const SubscribersState.disableSubscribersByExcelLoadingState());
+    final response = await   repository.disableSubscribersByExcel(excel).then((value) {
+      value.when(success: (data) {
+        emit(SubscribersState.disableSubscribersByExcelSuccessState(data));
+      }, failure: (errorHandler) {
+        emit(SubscribersState.disableSubscribersByExcelErrorState(error: errorHandler.apiErrorModel.message??""));
+      },);
+    });
+  }
+
+
+  withdrawSubscribersByExcel({
+    required File excel,
+  })async {
+    emit(const SubscribersState.withdrawSubscribersByExcelLoadingState());
+    final response = await   repository.withdrawSubscribersByExcel(excel).then((value) {
+      value.when(success: (data) {
+        emit(SubscribersState.withdrawSubscribersByExcelSuccessState(data));
+      }, failure: (errorHandler) {
+        emit(SubscribersState.withdrawSubscribersByExcelErrorState(error: errorHandler.apiErrorModel.message??""));
+      },);
+    });
+  }
+
+
+  collectSubscriberBalanceByExcel({
+    required File excel,
+  })async {
+    emit(const SubscribersState.collectSubscriberBalanceByExcelLoadingState());
+    final response = await   repository.collectSubscriberBalanceByExcel(excel).then((value) {
+      value.when(success: (data) {
+        emit(SubscribersState.collectSubscriberBalanceByExcelSuccessState(data));
+      }, failure: (errorHandler) {
+        emit(SubscribersState.collectSubscriberBalanceByExcelErrorState(error: errorHandler.apiErrorModel.message??""));
+      },);
+    });
+  }
+
+
 
   Future<void> updateSubscriber(
       {required UpdateSubscriberRequestBody

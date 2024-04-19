@@ -8,7 +8,6 @@ import 'package:pdf/widgets.dart' as pw;
 import 'package:printing/printing.dart';
 import 'package:image/image.dart' as img;
 import 'package:path_provider/path_provider.dart';
-import 'package:printing/printing.dart';
 import 'package:system/print_page.dart';
 import 'core/helpers/check_platform.dart';
 import 'core/routing/routers.dart';

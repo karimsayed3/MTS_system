@@ -28,12 +28,14 @@ class HistoryOperationsMobileScreen extends StatefulWidget {
 class _HistoryOperationsMobileScreenState
     extends State<HistoryOperationsMobileScreen> {
   ScrollController controller = ScrollController();
-  int pageNumber = 1;
 
   @override
   void initState() {
     // TODO: implement initState
     HistoryOperationsCubit.get(context).loggedOperations = [];
+    HistoryOperationsCubit.get(context).pageNumber = 1;
+    HistoryOperationsCubit.get(context).hasMore = true;
+    HistoryOperationsCubit.get(context).isLoading = false;
     fetch();
     controller.addListener(() {
       if (controller.position.maxScrollExtent == controller.offset) {
@@ -44,7 +46,7 @@ class _HistoryOperationsMobileScreenState
     super.initState();
   }
 
-  void fetch() {
+  fetch() {
     if (HistoryOperationsCubit.get(context).isLoading) return;
     HistoryOperationsCubit.get(context).isLoading = true;
     HistoryOperationsCubit.get(context).getLoggedOperations(
@@ -156,7 +158,6 @@ class _HistoryOperationsMobileScreenState
                                     ),
                                   );
                                 }
-
                                 // return const SizedBox.shrink();
                               },
                               itemCount: HistoryOperationsCubit.get(context)

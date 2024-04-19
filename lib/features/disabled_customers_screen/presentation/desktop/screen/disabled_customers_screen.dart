@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:system/core/helpers/dimensions.dart';
@@ -19,6 +21,7 @@ import 'package:system/features/subscribers_screen/business_logic/subscribers_st
 import 'package:system/features/subscribers_screen/data/models/get_disabled_subscribers_request_body.dart';
 import 'package:system/features/subscribers_screen/presentation/desktop/widgets/bloc_listener.dart';
 
+import '../../../../../core/utils/utils.dart';
 import '../widgets/filter_widget_for_disabled_subscribers.dart';
 
 class DisabledCustomersScreen extends StatefulWidget {
@@ -34,7 +37,7 @@ class _DisabledCustomersScreenState extends State<DisabledCustomersScreen>
   @override
   bool get wantKeepAlive => true;
   TextEditingController searchController = TextEditingController();
-
+  String filePath = "";
   @override
   void initState() {
     // TODO: implement initState
@@ -109,16 +112,45 @@ bool visible = false;
                                         ));
                               },
                             ),
-                            ButtonWithTextAndImageWidget(
-                              onPressed: () {
-                                createExcelForDisabledSubscribers(
-                                  data: SubscribersCubit.get(context)
-                                      .disableSubscribers,
-                                );
-                              },
-                              color: const Color(0xffebf5f6),
-                              image: 'assets/icons/excel.svg',
-                              text: "تنزيل اكسيل",
+
+                            Row(
+                              children: [
+                                ButtonWithTextAndImageWidget(
+                                  onPressed: () async {
+                                    // createExcelForActiveSubscribers(
+                                    //     data: SubscribersCubit.get(context).subscribers
+                                    // );
+                                    filePath = await selectFileFromDesktop();
+                                    print(filePath);
+
+                                    setState(() {});
+                                    // print(filePath);
+                                    // result = await pickFileFromWindows();
+                                    if (filePath.isNotEmpty) {
+                                      SubscribersCubit.get(context)
+                                          .disableSubscribersByExcel(
+                                        excel: File(filePath),
+                                      );
+                                    } else {}
+                                    // ReviewDataCubit.get(context).reviewSubscribersPlans(files: files);
+                                  },
+                                  color: const Color(0xffebf5f6),
+                                  image: 'assets/icons/excel.svg',
+                                  text: "تعطيل مشتركين",
+                                ),
+                                horizontalSpace(dimension.width10,),
+                                ButtonWithTextAndImageWidget(
+                                  onPressed: () {
+                                    createExcelForDisabledSubscribers(
+                                      data: SubscribersCubit.get(context)
+                                          .disableSubscribers,
+                                    );
+                                  },
+                                  color: const Color(0xffebf5f6),
+                                  image: 'assets/icons/excel.svg',
+                                  text: "تنزيل اكسيل",
+                                ),
+                              ],
                             ),
                           ],
                         ),

@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:system/core/helpers/dimensions.dart';
@@ -15,6 +17,7 @@ import 'package:system/features/withdrawn_customers_screen/presentation/desktop/
 import 'package:system/features/withdrawn_customers_screen/presentation/desktop/widgets/withdrawn_customers_card.dart';
 import 'package:system/features/withdrawn_customers_screen/presentation/desktop/widgets/withdrawn_customers_header_widget.dart';
 
+import '../../../../../core/utils/utils.dart';
 import '../widgets/filter_widget_fot_withdrawn_subscribers.dart';
 
 class WithdrawnCustomersScreen extends StatefulWidget {
@@ -31,6 +34,7 @@ class _WithdrawnCustomersScreenState extends State<WithdrawnCustomersScreen> {
   bool visible = false;
 
   List<String> companiesList = [];
+  String filePath = "";
 
   @override
   void initState() {
@@ -104,16 +108,44 @@ class _WithdrawnCustomersScreenState extends State<WithdrawnCustomersScreen> {
                                 );
                               },
                             ),
-                            ButtonWithTextAndImageWidget(
-                              onPressed: () {
-                                createExcelForWithdrawnSubscribers(
-                                  data: SubscribersCubit.get(context)
-                                      .withdrawSubscribers,
-                                );
-                              },
-                              color: const Color(0xffebf5f6),
-                              image: 'assets/icons/excel.svg',
-                              text: "تنزيل اكسيل",
+                            Row(
+                              children: [
+                                ButtonWithTextAndImageWidget(
+                                  onPressed: () async {
+                                    // createExcelForActiveSubscribers(
+                                    //     data: SubscribersCubit.get(context).subscribers
+                                    // );
+                                    filePath = await selectFileFromDesktop();
+                                    print(filePath);
+
+                                    setState(() {});
+                                    // print(filePath);
+                                    // result = await pickFileFromWindows();
+                                    if (filePath.isNotEmpty) {
+                                      SubscribersCubit.get(context)
+                                          .withdrawSubscribersByExcel(
+                                        excel: File(filePath),
+                                      );
+                                    } else {}
+                                    // ReviewDataCubit.get(context).reviewSubscribersPlans(files: files);
+                                  },
+                                  color: const Color(0xffebf5f6),
+                                  image: 'assets/icons/excel.svg',
+                                  text: "سحب مشتركين",
+                                ),
+                                horizontalSpace(dimension.width10,),
+                                ButtonWithTextAndImageWidget(
+                                  onPressed: () {
+                                    createExcelForWithdrawnSubscribers(
+                                      data: SubscribersCubit.get(context)
+                                          .withdrawSubscribers,
+                                    );
+                                  },
+                                  color: const Color(0xffebf5f6),
+                                  image: 'assets/icons/excel.svg',
+                                  text: "تنزيل اكسيل",
+                                ),
+                              ],
                             ),
                           ],
                         ),
