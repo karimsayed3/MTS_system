@@ -62,7 +62,7 @@ class _FilterWidgetForDisabledSubscribersState
             children: [
               DefaultText(
                 text: "فترة التعطيل:",
-                color: Color(0xFF333333),
+                color: const Color(0xFF333333),
                 fontSize: 16,
                 fontWeight: FontWeight.w400,
               ),

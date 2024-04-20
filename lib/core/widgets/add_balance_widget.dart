@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:system/core/helpers/dimensions.dart';
 import 'package:system/features/collectors_screen/business_logic/collectors_cubit.dart';
 import 'package:system/features/collectors_screen/data/models/deduct_balance_collector_request_body.dart';
@@ -511,6 +512,56 @@ class _AddBalanceWidgetState extends State<AddBalanceWidget> {
                                   color: Colors.white,
                                   fontSize: 14,
                                   fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                              horizontalSpace(dimension.width10), DefaultButton(
+                                padding: isMobile()
+                                    ? EdgeInsets.symmetric(
+                                        horizontal: 24.w,
+                                        vertical: 12.h,
+                                      )
+                                    : EdgeInsets.symmetric(
+                                        horizontal: dimension.width15,
+                                        vertical: dimension.height15,
+                                      ),
+                                color: ColorsManager.lightBlueColor,
+                                onPressed: () {
+                                  if (formKey.currentState!.validate()) {
+                                    // CollectorsCubit.get(context)
+                                    //     .deductBalanceCollector(
+                                    //   deductBalanceCollectorRequestBody:
+                                    //   DeductBalanceCollectorRequestBody(
+                                    //     userID: widget.UserID,
+                                    //     collectedAmount: int.parse(balanceController.text),
+                                    //     collectingType: balanceType,
+                                    //   ),
+                                    // );
+                                    if(widget.flag== "from collectors"){
+                                      CollectorsCubit.get(context).deductBalanceCollector(deductBalanceCollectorRequestBody: DeductBalanceCollectorRequestBody(
+                                        userID: widget.userId,
+                                        collectingType: balanceType,
+                                        collectedAmount: int.parse(balanceController.text),
+                                      ));
+                                    }else{
+                                      SubscribersCubit.get(context).collectSubscriberBalance(collectSubscriberBalanceRequestBody: CollectSubscriberBalanceRequestBody(
+                                        phone: widget.phone,
+                                        collectingType: balanceType,
+                                        amount: int.parse(balanceController.text),
+                                      ));
+                                    }
+                                  }
+                                },
+                                child: Row(
+                                  children: [
+                                    SvgPicture.asset("assets/icons/printer.svg"),
+                                    horizontalSpace(dimension.width5),
+                                    DefaultText(
+                                      text: 'اضافة وحفظ',
+                                      color: ColorsManager.secondaryColor,
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ],
                                 ),
                               ),
                               horizontalSpace(dimension.width10),
