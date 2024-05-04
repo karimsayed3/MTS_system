@@ -31,14 +31,11 @@ Future<void> setupGetIt() async {
   getIt.registerLazySingleton<LoginRepo>(() => LoginRepo(getIt()));
   getIt.registerFactory<LoginCubit>(() => LoginCubit(getIt()));
 
-
   getIt.registerLazySingleton<CompaniesCubit>(() => CompaniesCubit(getIt()));
   getIt.registerFactory<CompaniesRepo>(() => CompaniesRepo(getIt()));
 
-
   getIt.registerLazySingleton<BunchCubit>(() => BunchCubit(getIt()));
   getIt.registerFactory<BunchRepo>(() => BunchRepo(getIt()));
-
 
   getIt.registerLazySingleton<CollectorsCubit>(() => CollectorsCubit(getIt()));
   getIt.registerFactory<CollectorsRepo>(() => CollectorsRepo(getIt()));

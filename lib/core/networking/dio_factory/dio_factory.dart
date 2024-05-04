@@ -10,13 +10,13 @@ class DioFactory {
   static Dio? dio;
 
   static Dio getDio() {
-    Duration timeOut = const Duration(seconds: 30);
+    Duration timeOut = const Duration(seconds: 100);
 
     if (dio == null) {
       dio = Dio();
       dio!
-        ..options.connectTimeout = timeOut
-        ..options.receiveTimeout = timeOut;
+        ..options.connectTimeout = Duration(seconds: 400)
+        ..options.receiveTimeout = Duration(seconds: 400);
       addDioInterceptor();
       return dio!;
     } else {
@@ -30,8 +30,8 @@ class DioFactory {
       PrettyDioLogger(
         requestBody: true,
         requestHeader: true,
-        responseHeader: true,
-        responseBody: true,
+        responseHeader: false,
+        responseBody: false,
       ),
     );
   }

@@ -24,6 +24,8 @@ class CollectorsCubit extends Cubit<CollectorsState> {
 
   List<UserData> users = [];
 
+  int totalBNegativeBalance = 0 ;
+
   TextEditingController searchController = TextEditingController();
 
 

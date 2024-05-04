@@ -24,6 +24,7 @@ class GetSubscribersDataResponse {
 class SubscriberData {
   String? phoneNo;
   String? name;
+  String? NID;
   int? balance;
   String? relatedTo;
   String? collectorName;
@@ -32,11 +33,13 @@ class SubscriberData {
   String? lineType;
   String? registrationDate;
   String? offer;
+  String? address;
   int? lastPositiveDepoit;
 
   SubscriberData(
       {this.phoneNo,
         this.name,
+        this.NID,
         this.balance,
         this.relatedTo,
         this.collectorName,
@@ -45,6 +48,7 @@ class SubscriberData {
         this.lineType,
         this.registrationDate,
         this.offer,
+        this.address,
         this.lastPositiveDepoit});
 
   SubscriberData.fromJson(Map<String, dynamic> json) {
@@ -52,12 +56,14 @@ class SubscriberData {
     name = json['name'];
     balance = json['balance'];
     relatedTo = json['relatedTo'];
+    NID = json['NID'];
     collectorName = json['collectorName'];
     companyName = json['companyName'];
     planName = json['planName'];
     lineType = json['lineType'];
     registrationDate = json['registrationDate'];
     offer = json['offer'];
+    address = json['address'];
     lastPositiveDepoit = json['lastPositiveDepoit'];
   }
 
@@ -65,6 +71,7 @@ class SubscriberData {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['phoneNo'] = this.phoneNo;
     data['name'] = this.name;
+    data['NID'] = this.NID;
     data['balance'] = this.balance;
     data['relatedTo'] = this.relatedTo;
     data['collectorName'] = this.collectorName;
@@ -74,6 +81,7 @@ class SubscriberData {
     data['registrationDate'] = this.registrationDate;
     data['offer'] = this.offer;
     data['lastPositiveDepoit'] = this.lastPositiveDepoit;
+    data['address'] = this.address;
     return data;
   }
 }

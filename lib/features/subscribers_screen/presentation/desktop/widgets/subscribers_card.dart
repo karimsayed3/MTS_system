@@ -19,7 +19,10 @@ import 'package:system/features/subscribers_screen/data/models/zero_subscriber_b
 import 'package:system/features/subscribers_screen/presentation/desktop/widgets/update_subsciber_widget.dart';
 
 import '../../../../../core/widgets/add_balance_widget.dart';
+import '../../../data/models/delete_subscriber_request_body.dart';
+import '../../../data/models/disable_subscriber_request_body.dart';
 import '../../../data/models/get_subscribers_data_response.dart';
+import '../../../data/models/withdraw_subscriber_request_body.dart';
 
 class SubscribersCard extends StatelessWidget {
   const SubscribersCard({super.key, required this.subscriber});
@@ -299,7 +302,6 @@ class SubscribersCard extends StatelessWidget {
               onSelected: (String choice) {
                 // Handle menu item selection
                 if (choice == 'option1') {
-                  // Perform action for option 1
                   showDataAlert(
                     context: context,
                     child: BlocProvider.value(
@@ -307,8 +309,8 @@ class SubscribersCard extends StatelessWidget {
                       child: UpdateSubscriberWidget(
                         name: subscriber.name ?? "",
                         phoneNumber: subscriber.phoneNo ?? "",
-                        lineType: subscriber.lineType ?? "",
-                        companyName: subscriber.companyName ?? "",
+                        lineType: "جديد",
+                        companyName: "",
                         planName: subscriber.planName ?? "",
                         relatedTo: subscriber.relatedTo ?? "",
                         address: "",
@@ -319,8 +321,30 @@ class SubscribersCard extends StatelessWidget {
                     ),
                   );
                 }
+                if (choice == 'option2') {
+                  SubscribersCubit.get(context).deleteSubscriber(
+                      deleteSubscriberRequestBody:
+                      DeleteSubscriberRequestBody(
+                        phone: subscriber.phoneNo,
+                      ));
+                }
+                if (choice == 'option3') {
+                  SubscribersCubit.get(context).withdrawSubscriber(
+                      withdrawSubscriberRequestBody:
+                      WithdrawSubscriberRequestBody(
+                        phone: subscriber.phoneNo,
+                      ));
+                }
+                if (choice == 'option4') {
+                  SubscribersCubit.get(context).disableSubscriber(
+                      disableSubscriberRequestBody:
+                      DisableSubscriberRequestBody(
+                        phone: subscriber.phoneNo,
+                      ));
+                }
               },
-              itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
+              itemBuilder: (BuildContext context) =>
+              <PopupMenuEntry<String>>[
                 PopupMenuItem<String>(
                   value: 'option1',
                   child: Directionality(
@@ -331,10 +355,80 @@ class SubscribersCard extends StatelessWidget {
                       children: [
                         SizedBox(
                             width: dimension.width15,
-                            child: SvgPicture.asset('assets/icons/edit.svg')),
+                            child:
+                            SvgPicture.asset('assets/icons/edit.svg')),
                         horizontalSpace(dimension.width10),
                         DefaultText(
                           text: 'تعديل مشترك',
+                          color: ColorsManager.darkBlack,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                PopupMenuItem<String>(
+                  value: 'option2',
+                  child: Directionality(
+                    textDirection: TextDirection.rtl,
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                            width: dimension.width15,
+                            child: SvgPicture.asset(
+                                'assets/icons/remove.svg')),
+                        horizontalSpace(dimension.width10),
+                        DefaultText(
+                          text: 'حذف',
+                          color: ColorsManager.primaryColor,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                PopupMenuItem<String>(
+                  value: 'option3',
+                  child: Directionality(
+                    textDirection: TextDirection.rtl,
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                            width: dimension.width15,
+                            child: SvgPicture.asset(
+                                'assets/icons/withdraw_icon.svg')),
+                        horizontalSpace(dimension.width10),
+                        DefaultText(
+                          text: 'سحب',
+                          color: ColorsManager.darkBlack,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                PopupMenuItem<String>(
+                  value: 'option4',
+                  child: Directionality(
+                    textDirection: TextDirection.rtl,
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                            width: dimension.width15,
+                            child: SvgPicture.asset(
+                                'assets/icons/disabled_icon.svg')),
+                        horizontalSpace(dimension.width10),
+                        DefaultText(
+                          text: 'تعطيل',
                           color: ColorsManager.darkBlack,
                           fontSize: 14,
                           fontWeight: FontWeight.w500,

@@ -29,10 +29,11 @@ class _BlocListenerForHistoryOperationsCubitState
         state.whenOrNull(
             getLoggedOperationsLoadingState: () {},
             getLoggedOperationsSuccessState: (getLoggedOperationsResponse) {
+              HistoryOperationsCubit.get(context).pageNumbers = getLoggedOperationsResponse.totalPages!;
               if(getLoggedOperationsResponse.result!.length < 100){
                 HistoryOperationsCubit.get(context).hasMore = false;
               }
-              HistoryOperationsCubit.get(context).pageNumber ++;
+              // HistoryOperationsCubit.get(context).pageNumber ++;
               HistoryOperationsCubit.get(context).isLoading = false;
               HistoryOperationsCubit.get(context).changeListData(
                   loggedOperations: getLoggedOperationsResponse.result!);

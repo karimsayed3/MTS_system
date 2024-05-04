@@ -94,17 +94,26 @@ class _CustomNavigationBarWidgetState extends State<CustomNavigationBarWidget> {
                 children: [
                   // SvgPicture.asset("assets/icons/power-off-icon.svg"),
                   TextButton(
-                      onPressed: () {
-                        // LoginCubit.get(context).logout();
-                        createPdfReceipt(
-                          context: context,
-                        );
-                      },
-                      child: DefaultText(
-                        text: "تسجيل خروج",
-                        fontSize: 20,
-                        color: ColorsManager.primaryColor,
-                      )),
+                    onPressed: () {
+                      LoginCubit.get(context).logout();
+
+                      // createPdfReceipt(
+                      //   context: context,
+                      //   phoneNumber:  "",
+                      //   date: "",
+                      //   planType:  "",
+                      //   balance:
+                      //   "",
+                      //   paidMoney: "",
+                      //   collectType:"",
+                      // );
+                    },
+                    child: DefaultText(
+                      text: "تسجيل خروج",
+                      fontSize: 20,
+                      color: ColorsManager.primaryColor,
+                    ),
+                  ),
                 ],
               ),
               BlocListener<LoginCubit, LoginState>(
@@ -114,7 +123,7 @@ class _CustomNavigationBarWidgetState extends State<CustomNavigationBarWidget> {
                     CacheHelper.removeData(key: 'accessToken');
                     CacheHelper.removeData(key: 'unit');
                     CacheHelper.removeData(key: 'token');
-                    navigateToPage(Routes.loginScreenDesktop);
+                    Navigator.pushNamedAndRemoveUntil(context, Routes.loginScreenDesktop, (route) => false);
                   }
                 },
                 child: const SizedBox.shrink(),
@@ -134,7 +143,7 @@ class _CustomNavigationBarWidgetState extends State<CustomNavigationBarWidget> {
   }
 }
 
-void navigateToPage(String pageName, {Map<dynamic,dynamic>? arguments}) {
+void navigateToPage(String pageName, {Map<dynamic, dynamic>? arguments}) {
   if (openedPages.last.keys.last != pageName) {
     openedPages.add({pageName: arguments});
     navigatorKey.currentState?.popAndPushNamed(pageName, arguments: arguments);

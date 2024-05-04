@@ -11,6 +11,7 @@ import 'package:system/features/login_screen/presentation/desktop/screen/login_s
 import 'package:system/features/login_screen/presentation/mobile/screen/login_screen_mobile.dart';
 import 'package:system/features/splash_screen/presentation/screen/splash_screen.dart';
 import '../../print_page.dart';
+import '../../print_page_for_windows.dart';
 import 'routers.dart';
 import '../di/dependency_injection.dart';
 
@@ -22,19 +23,17 @@ class AppRouter {
     switch (settings.name) {
       case Routes.homeDesktopScreen:
         return MaterialPageRoute(
-          builder: (_) =>
-              BlocProvider.value(
-                value: getIt<LoginCubit>(),
-                child: const HomeDesktopScreen(),
-              ),
+          builder: (_) => BlocProvider.value(
+            value: getIt<LoginCubit>(),
+            child: const HomeDesktopScreen(),
+          ),
         );
       case Routes.homeMobileScreen:
         return MaterialPageRoute(
-          builder: (_) =>
-              BlocProvider.value(
-                value: getIt<LoginCubit>(),
-                child: const HomeScreenMobile(),
-              ),
+          builder: (_) => BlocProvider.value(
+            value: getIt<LoginCubit>(),
+            child: const HomeScreenMobile(),
+          ),
         );
       case Routes.customersScreen:
         return MaterialPageRoute(
@@ -46,39 +45,45 @@ class AppRouter {
         );
       case Routes.loginScreenDesktop:
         return MaterialPageRoute(
-          builder: (_) =>
-              BlocProvider(
-                create: (context) => getIt<LoginCubit>(),
-                child: const LoginScreenDesktop(),
-              ),
+          builder: (_) => BlocProvider(
+            create: (context) => getIt<LoginCubit>(),
+            child: const LoginScreenDesktop(),
+          ),
         );
       case Routes.loginScreenMobile:
         return MaterialPageRoute(
-          builder: (_) =>
-              BlocProvider(
-                create: (context) => getIt<LoginCubit>(),
-                child: const LoginScreenMobile(),
-              ),
+          builder: (_) => BlocProvider(
+            create: (context) => getIt<LoginCubit>(),
+            child: const LoginScreenMobile(),
+          ),
         );
       case Routes.printerScreen:
-        final imgPath = settings.arguments as Map<dynamic,dynamic>;
+        final imgPath = settings.arguments as Map<dynamic, dynamic>;
 
         return MaterialPageRoute(
           builder: (_) => PrintersView(
             imgPath: imgPath['imgPath'],
           ),
         );
-    // case Routes.signUpScreen:
-    //   return MaterialPageRoute(
-    //     builder: (_) => BlocProvider(
-    //       create: (context) => getIt<SignupCubit>(),
-    //       child: const SignupScreen(),
-    //     ),
-    //   );
-    // case Routes.homeScreen:
-    //   return MaterialPageRoute(
-    //     builder: (_) => const HomeScreen(),
-    //   );
+      case Routes.printerScreenForWindows:
+        final imgPath = settings.arguments as Map<dynamic, dynamic>;
+
+        return MaterialPageRoute(
+          builder: (_) => PrintersViewForWindows(
+            imgPath: imgPath['imgPath'],
+          ),
+        );
+      // case Routes.signUpScreen:
+      //   return MaterialPageRoute(
+      //     builder: (_) => BlocProvider(
+      //       create: (context) => getIt<SignupCubit>(),
+      //       child: const SignupScreen(),
+      //     ),
+      //   );
+      // case Routes.homeScreen:
+      //   return MaterialPageRoute(
+      //     builder: (_) => const HomeScreen(),
+      //   );
 
       case Routes.animationTestScreen:
         return MaterialPageRoute(

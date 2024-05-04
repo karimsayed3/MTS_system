@@ -17,5 +17,6 @@ class Routes {
 
 
   static const String printerScreen = '/printerScreen';
+  static const String printerScreenForWindows = '/printerScreenForWindows';
 
 }

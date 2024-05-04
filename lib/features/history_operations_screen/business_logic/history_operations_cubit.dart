@@ -17,6 +17,7 @@ class HistoryOperationsCubit extends Cubit<HistoryOperationsState> {
 
   List<LoggedOperation> loggedOperations = [];
   int pageNumber = 1;
+  int pageNumbers = 0;
   bool hasMore = true;
   bool isLoading = false;
 

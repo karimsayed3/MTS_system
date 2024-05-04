@@ -23,7 +23,23 @@ class CollectorsScreen extends StatefulWidget {
 class _CollectorsScreenState extends State<CollectorsScreen> {
   int index = 0;
 
-  List<Widget> body = CacheHelper.getdata(key: "accountType") == "ادمن" ?[
+  // List<Widget> body = CacheHelper.getdata(key: "accountType") == "ادمن" ?[
+  //   BlocProvider.value(
+  //     value: getIt<CollectorsCubit>(),
+  //     child: const CollectorsScreenDetails(),
+  //   ),
+  //   BlocProvider.value(
+  //     value: getIt<CollectorsRequestsCubit>(),
+  //     child: const ResellersRequestsScreenDesktop(),
+  //   ),
+  // ]:[
+  //   BlocProvider.value(
+  //     value: getIt<CollectorsCubit>(),
+  //     child: const CollectorsScreenDetails(),
+  //   ),
+  // ];
+
+  List<Widget> body =[
     BlocProvider.value(
       value: getIt<CollectorsCubit>(),
       child: const CollectorsScreenDetails(),
@@ -31,11 +47,6 @@ class _CollectorsScreenState extends State<CollectorsScreen> {
     BlocProvider.value(
       value: getIt<CollectorsRequestsCubit>(),
       child: const ResellersRequestsScreenDesktop(),
-    ),
-  ]:[
-    BlocProvider.value(
-      value: getIt<CollectorsCubit>(),
-      child: const CollectorsScreenDetails(),
     ),
   ];
 

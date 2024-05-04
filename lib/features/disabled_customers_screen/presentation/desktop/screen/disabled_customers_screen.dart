@@ -22,6 +22,7 @@ import 'package:system/features/subscribers_screen/data/models/get_disabled_subs
 import 'package:system/features/subscribers_screen/presentation/desktop/widgets/bloc_listener.dart';
 
 import '../../../../../core/utils/utils.dart';
+import '../../../../../core/widgets/number_of_totals.dart';
 import '../widgets/filter_widget_for_disabled_subscribers.dart';
 
 class DisabledCustomersScreen extends StatefulWidget {
@@ -36,21 +37,27 @@ class _DisabledCustomersScreenState extends State<DisabledCustomersScreen>
     with AutomaticKeepAliveClientMixin {
   @override
   bool get wantKeepAlive => true;
+  int totalBalance = 0;
   TextEditingController searchController = TextEditingController();
   String filePath = "";
+
   @override
   void initState() {
     // TODO: implement initState
     SubscribersCubit.get(context).disableSubscribers = [];
+    SubscribersCubit.get(context).totalBalanceForDisabledSubscribers = 0;
     SubscribersCubit.get(context).getDisabledSubscribers(
         getDisabledSubscribersRequestBody: GetDisabledSubscribersRequestBody());
     SubscribersCubit.get(context).getCompaniesList();
     super.initState();
   }
-bool visible = false;
+
+  bool visible = false;
   List<String> companiesList = [];
+
   @override
   Widget build(BuildContext context) {
+
     super.build(context);
     var dimension = Dimensions(context);
     return Container(
@@ -105,11 +112,12 @@ bool visible = false;
                               },
                               searchController: searchController,
                               onChange: (value) {
-                                SubscribersCubit.get(context).getDisabledSubscribers(
-                                    getDisabledSubscribersRequestBody:
-                                        GetDisabledSubscribersRequestBody(
-                                          name: value,
-                                        ));
+                                SubscribersCubit.get(context)
+                                    .getDisabledSubscribers(
+                                        getDisabledSubscribersRequestBody:
+                                            GetDisabledSubscribersRequestBody(
+                                  name: value,
+                                ));
                               },
                             ),
 
@@ -138,7 +146,9 @@ bool visible = false;
                                   image: 'assets/icons/excel.svg',
                                   text: "تعطيل مشتركين",
                                 ),
-                                horizontalSpace(dimension.width10,),
+                                horizontalSpace(
+                                  dimension.width10,
+                                ),
                                 ButtonWithTextAndImageWidget(
                                   onPressed: () {
                                     createExcelForDisabledSubscribers(
@@ -155,6 +165,42 @@ bool visible = false;
                           ],
                         ),
                         verticalSpace(dimension.height10),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            BlocBuilder<SubscribersCubit, SubscribersState>(
+                              builder: (context, state) {
+                                return NumberOfSoliderStatus(
+                                  containerColor: const Color(0xFFEBFBF1),
+                                  containerBorderColor: const Color(0xFF3ABB66),
+                                  textColor: const Color(0xFF3E3F43),
+                                  numberColor: const Color(0xFF3ABB66),
+                                  title: "اجمالى المعطلين: ",
+                                  fontSize: dimension.reduce20,
+                                  number: SubscribersCubit.get(context)
+                                      .disableSubscribers
+                                      .length
+                                      .toString(),
+                                );
+                              },
+                            ),
+                            horizontalSpace(dimension.width10),
+                            BlocBuilder<SubscribersCubit, SubscribersState>(
+                              builder: (context, state) {
+                                return NumberOfSoliderStatus(
+                                  containerColor: const Color(0xFFE5F7FF),
+                                  containerBorderColor: const Color(0xFF1C9BD1),
+                                  textColor: const Color(0xFF3E3F43),
+                                  numberColor: const Color(0xFF1C9BD1),
+                                  title: "اجمالى الحساب: ",
+                                  fontSize: dimension.reduce20,
+                                  number: SubscribersCubit.get(context).totalBalanceForDisabledSubscribers.toString(),
+                                );
+                              },
+                            ),
+                          ],
+                        ),
+                        verticalSpace(dimension.height10),
                         const DisabledCustomersHeaderWidget(),
                         BlocBuilder<SubscribersCubit, SubscribersState>(
                           builder: (context, state) {
@@ -162,8 +208,9 @@ bool visible = false;
                               child: ListView.builder(
                                 itemBuilder: (context, index) {
                                   return DisabledCustomersCard(
-                                    disabledSubscriber: SubscribersCubit.get(context)
-                                        .disableSubscribers[index],
+                                    disabledSubscriber:
+                                        SubscribersCubit.get(context)
+                                            .disableSubscribers[index],
                                   );
                                 },
                                 itemCount: SubscribersCubit.get(context)

@@ -36,6 +36,7 @@ class SubscribersCubit extends Cubit<SubscribersState> {
   TextEditingController activatedSubscriberRelatedTo = TextEditingController();
   TextEditingController activatedSubscriberPlanName = TextEditingController();
   TextEditingController activatedSubscriberLineType = TextEditingController();
+  int totalBalanceForActiveSubscribers = 0;
 
   /// filter for late subscribers
   TextEditingController lateSubscriberPhone = TextEditingController();
@@ -44,6 +45,7 @@ class SubscribersCubit extends Cubit<SubscribersState> {
   TextEditingController lateSubscriberPlanName = TextEditingController();
   TextEditingController lateSubscriberCollectorName = TextEditingController();
   TextEditingController lateSubscriberMonthsLate = TextEditingController();
+  int totalBalanceForLateSubscribers = 0;
 
   /// filter for disabled subscribers
   TextEditingController disabledSubscriberPhone = TextEditingController();
@@ -53,6 +55,7 @@ class SubscribersCubit extends Cubit<SubscribersState> {
   TextEditingController disabledSubscriberLineType = TextEditingController();
   TextEditingController disabledSubscriberCollectorName = TextEditingController();
   TextEditingController disabledSubscriberCompanyName = TextEditingController();
+  int totalBalanceForDisabledSubscribers = 0;
 
   /// filter for withdrawn subscribers
   TextEditingController withdrawnSubscriberPhone =TextEditingController();
@@ -62,6 +65,7 @@ class SubscribersCubit extends Cubit<SubscribersState> {
   TextEditingController withdrawnSubscriberLineType = TextEditingController();
   TextEditingController withdrawnSubscriberCollectorName = TextEditingController();
   TextEditingController withdrawnSubscriberCompanyName = TextEditingController();
+  int totalBalanceForWithdrawnSubscribers = 0;
 
   List<SubscriberData> subscribers = [];
   List<LateSubscriberData> lateSubscribers = [];
@@ -71,8 +75,8 @@ class SubscribersCubit extends Cubit<SubscribersState> {
   changeListData({
     required  List<SubscriberData>  subscribers
   }){
-    emit(const SubscribersState.changeListData());
     this.subscribers = subscribers;
+    emit(const SubscribersState.changeListData());
   }
 
   changeLateSubscriberData({
@@ -283,9 +287,12 @@ class SubscribersCubit extends Cubit<SubscribersState> {
         await repository.getActiveSubscribers(getActiveSubscribersRequestBody);
     response.when(
       success: (data) {
+        print("sas");
         emit(SubscribersState.getActiveSubscribersSuccessState(data));
+        // subscribers = data.result!;
       },
       failure: (errorHandler) {
+        print("5555555555");
         emit(SubscribersState.getActiveSubscribersErrorState(
             error: errorHandler.apiErrorModel.message ?? ""));
       },

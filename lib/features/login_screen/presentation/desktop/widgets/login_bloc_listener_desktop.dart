@@ -36,29 +36,29 @@ class LoginBlocListenerDesktop extends StatelessWidget {
           },
           success: (loginResponse) async {
             Navigator.pop(context);
-            debugPrint(loginResponse.accessToken);
-            TokenDecode decodedToken = TokenDecode.fromJson(
-                JwtDecoder.decode(loginResponse.accessToken!));
-            print(CacheHelper.getdata(key: 'token'));
-            await CacheHelper.saveData(
-                    key: 'token', value: loginResponse.accessToken)
-                .then((value) {
-              print(CacheHelper.getdata(key: 'token'));
-              CacheHelper.saveData(
-                      key: 'userName', value: decodedToken.username)
-                  .then((value) {
-                CacheHelper.saveData(key: "userID", value: decodedToken.userID)
-                    .then((value) {
-                  CacheHelper.saveData(
-                          key: "accountType", value: decodedToken.accountType)
-                      .then((value) {
-                    isMobile()
-                        ? navigateToPage(Routes.homeDesktopScreen)
-                        : navigateToPage(Routes.homeDesktopScreen);
-                  });
-                });
-              });
-            });
+            // debugPrint(loginResponse.accessToken);
+            // TokenDecode decodedToken = TokenDecode.fromJson(
+            //     JwtDecoder.decode(loginResponse.accessToken!));
+            // print(CacheHelper.getdata(key: 'token'));
+            // await CacheHelper.saveData(
+            //         key: 'token', value: loginResponse.accessToken)
+            //     .then((value) {
+            //   print(CacheHelper.getdata(key: 'token'));
+            //   CacheHelper.saveData(
+            //           key: 'userName', value: decodedToken.username)
+            //       .then((value) {
+            //     CacheHelper.saveData(key: "userID", value: decodedToken.userID)
+            //         .then((value) {
+            //       CacheHelper.saveData(
+            //               key: "accountType", value: decodedToken.accountType)
+            //           .then((value) {
+            //         isMobile()
+            //             ? navigateToPage(Routes.homeDesktopScreen)
+            //             : navigateToPage(Routes.homeDesktopScreen);
+            //       });
+            //     });
+            //   });
+            // });
             // context.pushNamedAndRemoveUntil(Routes.homeDesktopScreen, (route) => false);
           },
           error: (error) {

@@ -5,6 +5,7 @@
 list(APPEND FLUTTER_PLUGIN_LIST
   desktop_window
   printing
+  quick_blue_windows
   screen_retriever
   window_manager
 )

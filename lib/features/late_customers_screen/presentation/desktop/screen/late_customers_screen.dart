@@ -18,6 +18,7 @@ import 'package:system/features/subscribers_screen/business_logic/subscribers_st
 import 'package:system/features/subscribers_screen/data/models/get_late_subscribers_request_body.dart';
 import 'package:system/features/subscribers_screen/presentation/desktop/widgets/bloc_listener.dart';
 
+import '../../../../../core/widgets/number_of_totals.dart';
 import '../../../../subscribers_screen/presentation/desktop/widgets/filter_widget_details_for_subscribers.dart';
 
 class LateCustomersScreen extends StatefulWidget {
@@ -33,6 +34,7 @@ class _LateCustomersScreenState extends State<LateCustomersScreen>
   bool get wantKeepAlive => true;
   TextEditingController searchController = TextEditingController();
   List<String> companiesList = [];
+  int totalBalance = 0;
 
   @override
   void initState() {
@@ -41,6 +43,7 @@ class _LateCustomersScreenState extends State<LateCustomersScreen>
     // SubscribersCubit.get(context).subscribers = [];
     // SubscribersCubit.get(context).changeListData(subscribers: []);
     SubscribersCubit.get(context).lateSubscribers = [];
+    SubscribersCubit.get(context).totalBalanceForLateSubscribers = 0;
     SubscribersCubit.get(context).getLateSubscribers(
       getLateSubscribersRequestBody: GetLateSubscribersRequestBody(),
     );
@@ -70,6 +73,11 @@ class _LateCustomersScreenState extends State<LateCustomersScreen>
 
   @override
   Widget build(BuildContext context) {
+    for (int i = 0; i < SubscribersCubit.get(context).lateSubscribers.length; i++) {
+      setState(() {
+        totalBalance += SubscribersCubit.get(context).lateSubscribers[i].balance!;
+      });
+    }
     super.build(context);
     var dimension = Dimensions(context);
     return Container(
@@ -141,6 +149,42 @@ class _LateCustomersScreenState extends State<LateCustomersScreen>
                               color: const Color(0xffebf5f6),
                               image: 'assets/icons/excel.svg',
                               text: "تنزيل اكسيل",
+                            ),
+                          ],
+                        ),
+                        verticalSpace(dimension.height10),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            BlocBuilder<SubscribersCubit, SubscribersState>(
+                              builder: (context, state) {
+                                return NumberOfSoliderStatus(
+                                  containerColor: const Color(0xFFEBFBF1),
+                                  containerBorderColor: const Color(0xFF3ABB66),
+                                  textColor: const Color(0xFF3E3F43),
+                                  numberColor: const Color(0xFF3ABB66),
+                                  title: "اجمالى المتأخرين: ",
+                                  fontSize: dimension.reduce20,
+                                  number: SubscribersCubit.get(context)
+                                      .lateSubscribers
+                                      .length
+                                      .toString(),
+                                );
+                              },
+                            ),
+                            horizontalSpace(dimension.width10),
+                            BlocBuilder<SubscribersCubit, SubscribersState>(
+                              builder: (context, state) {
+                                return NumberOfSoliderStatus(
+                                  containerColor: const Color(0xFFE5F7FF),
+                                  containerBorderColor: const Color(0xFF1C9BD1),
+                                  textColor: const Color(0xFF3E3F43),
+                                  numberColor: const Color(0xFF1C9BD1),
+                                  title: "اجمالى الحساب: ",
+                                  fontSize: dimension.reduce20,
+                                  number: SubscribersCubit.get(context).totalBalanceForLateSubscribers.toString(),
+                                );
+                              },
                             ),
                           ],
                         ),

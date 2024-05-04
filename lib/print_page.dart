@@ -113,13 +113,13 @@
 //   }
 // }
 
-
 import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
 import 'package:flutter_scan_bluetooth/flutter_scan_bluetooth.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:system/core/widgets/custom_navigation_bar_widget.dart';
@@ -165,7 +165,6 @@ class _PrintersViewState extends State<PrintersView> {
         });
       }
     });
-
     await Future.delayed(const Duration(seconds: 10));
     _stopScan();
   }

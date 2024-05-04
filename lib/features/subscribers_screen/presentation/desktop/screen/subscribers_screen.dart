@@ -25,6 +25,8 @@ import '../../../../../core/utils/utils.dart';
 import '../../../../../core/widgets/check_box_outline.dart';
 import '../../../../../core/widgets/filter_widget.dart';
 import '../../../../../core/widgets/muilti_drop_down_button.dart';
+import '../../../../../core/widgets/number_of_totals.dart';
+import '../../../data/models/get_subscribers_data_response.dart';
 import '../widgets/bloc_listener.dart';
 import '../widgets/filter_widget_details_for_subscribers.dart';
 import '../widgets/subscribers_card.dart';
@@ -44,14 +46,22 @@ class _SubscribersScreenState extends State<SubscribersScreen>
   TextEditingController searchController = TextEditingController();
   String filePath = "";
 
+  int totalBalance = 0;
+
+  List<SubscriberData> customers = [];
+  bool isLoading = false;
+  int currentPage = 1;
+  final int itemsPerPage = 10; // Number of items per page
+
   @override
-  void initState() {
+  void initState(){
     // TODO: implement initState
     super.initState();
     SubscribersCubit.get(context).getActiveSubscribers(
       getActiveSubscribersRequestBody: GetActiveSubscribersRequestBody(),
     );
-    SubscribersCubit.get(context).getCompaniesList();
+    // SubscribersCubit.get(context).getCompaniesList();
+    // Future.delayed(Duration(seconds: 2));
   }
 
   SubscribersCubit? _subscribersCubit;
@@ -70,17 +80,22 @@ class _SubscribersScreenState extends State<SubscribersScreen>
     // Clear the companiesData list
     _subscribersCubit!.changeListData(subscribers: []);
     _subscribersCubit!.subscribers = [];
+    _subscribersCubit!.totalBalanceForActiveSubscribers = 0;
 
     super.dispose();
   }
 
   bool visible = false;
 
-
   List<String> companiesList = [];
 
   @override
   Widget build(BuildContext context) {
+    for (int i = 0; i < SubscribersCubit.get(context).subscribers.length; i++) {
+      setState(() {
+        totalBalance += SubscribersCubit.get(context).subscribers[i].balance!;
+      });
+    }
     super.build(context);
     var dimension = Dimensions(context);
     return Container(
@@ -102,7 +117,7 @@ class _SubscribersScreenState extends State<SubscribersScreen>
                     SubscribersCubit.get(context).getPlansList(companyName: {
                       'companyName': state.getListsResponse.result!.join(',')
                     });
-                    // setState(() {});
+                    setState(() {});
                   }
                 },
                 child: const SizedBox.shrink(),
@@ -167,7 +182,9 @@ class _SubscribersScreenState extends State<SubscribersScreen>
                                   image: 'assets/icons/excel.svg',
                                   text: "اضافة رصيد",
                                 ),
-                                horizontalSpace(dimension.width10,),
+                                horizontalSpace(
+                                  dimension.width10,
+                                ),
                                 CacheHelper.getdata(key: "accountType") ==
                                         "ادمن"
                                     ? ButtonWithTextAndImageWidget(
@@ -204,6 +221,42 @@ class _SubscribersScreenState extends State<SubscribersScreen>
                           ],
                         ),
                         verticalSpace(dimension.height10),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            BlocBuilder<SubscribersCubit, SubscribersState>(
+                              builder: (context, state) {
+                                return NumberOfSoliderStatus(
+                                  containerColor: const Color(0xFFEBFBF1),
+                                  containerBorderColor: const Color(0xFF3ABB66),
+                                  textColor: const Color(0xFF3E3F43),
+                                  numberColor: const Color(0xFF3ABB66),
+                                  title: "اجمالى المشتركين: ",
+                                  fontSize: dimension.reduce20,
+                                  number: SubscribersCubit.get(context)
+                                      .subscribers
+                                      .length
+                                      .toString(),
+                                );
+                              },
+                            ),
+                            horizontalSpace(dimension.width10),
+                            BlocBuilder<SubscribersCubit, SubscribersState>(
+                              builder: (context, state) {
+                                return NumberOfSoliderStatus(
+                                  containerColor: const Color(0xFFE5F7FF),
+                                  containerBorderColor: const Color(0xFF1C9BD1),
+                                  textColor: const Color(0xFF3E3F43),
+                                  numberColor: const Color(0xFF1C9BD1),
+                                  title: "اجمالى الحساب: ",
+                                  fontSize: dimension.reduce20,
+                                  number: SubscribersCubit.get(context).totalBalanceForActiveSubscribers.toString(),
+                                );
+                              },
+                            ),
+                          ],
+                        ),
+                        verticalSpace(dimension.height10),
                         const SubscribersHeaderWidget(),
                         BlocBuilder<SubscribersCubit, SubscribersState>(
                           builder: (context, state) {
@@ -211,6 +264,8 @@ class _SubscribersScreenState extends State<SubscribersScreen>
                               child: ListView.builder(
                                 itemBuilder: (context, index) {
                                   return SubscribersCard(
+                                    key: Key(SubscribersCubit.get(context)
+                                        .subscribers[index].phoneNo.toString()),
                                     subscriber: SubscribersCubit.get(context)
                                         .subscribers[index],
                                   );

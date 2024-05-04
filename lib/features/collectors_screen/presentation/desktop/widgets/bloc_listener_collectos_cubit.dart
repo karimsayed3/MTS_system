@@ -19,6 +19,15 @@ class BlocListenerCollectorsCubit extends StatelessWidget {
         state.whenOrNull(
           getUsersLoadingState: () {},
           getUsersSuccessState: (getUsersResponse) {
+            for (int i = 0;
+            i < getUsersResponse.users!.length;
+            i++) {
+              if(getUsersResponse.users![i].collectorBalance!<0){
+                CollectorsCubit.get(context)
+                    .totalBNegativeBalance +=
+                getUsersResponse.users![i].collectorBalance!;
+              }
+            }
             CollectorsCubit.get(context).changeListDate(getUsersResponse.users!);
           },
           getUsersErrorState: (error) {

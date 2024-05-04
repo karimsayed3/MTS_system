@@ -13,6 +13,10 @@ import 'package:system/features/history_operations_screen/presentation/desktop/s
 import 'package:system/features/main_screen/presentation/desktop/screen/main_screen_desktop.dart';
 import 'package:system/features/review_data_screen/presentation/desktop/screen/review_data_screen.dart';
 
+import '../../../../../core/routing/routers.dart';
+import '../../../../login_screen/business_logic/login_cubit.dart';
+import '../../../../login_screen/business_logic/login_state.dart';
+
 class HomeDesktopScreen extends StatefulWidget {
   const HomeDesktopScreen({super.key});
 
@@ -95,6 +99,19 @@ class _HomeDesktopScreenState extends State<HomeDesktopScreen> {
             Expanded(
               flex: 12,
               child: body[index],
+            ),
+            BlocConsumer<LoginCubit, LoginState>(
+              listener: (context, state) {
+                state.whenOrNull(
+                    logoutSuccess: (data) {
+                      navigateToPage(Routes.loginScreenDesktop,);
+                      print("object");
+                    }
+                );
+              },
+              builder: (context, state) {
+                return SizedBox.shrink();
+              },
             ),
           ],
         ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:number_pagination/number_pagination.dart';
 import 'package:system/core/helpers/dimensions.dart';
 import 'package:system/core/helpers/spacing.dart';
 import 'package:system/core/theming/colors.dart';
@@ -30,15 +31,17 @@ class _HistoryOperationDetailsScreenState
   TextEditingController searchController = TextEditingController();
 
   bool visible = false;
+
   @override
   void initState() {
     // TODO: implement initState
     HistoryOperationsCubit.get(context).loggedOperations = [];
+    HistoryOperationsCubit.get(context).pageNumbers = 0;
+    // HistoryOperationsCubit.get(context).pageNumber = 0;
 
     HistoryOperationsCubit.get(context).getLoggedOperations(
-        getLoggedOperationsRequestBody: GetLoggedOperationsRequestBody(
-          pageNumber: 1
-        ));
+        getLoggedOperationsRequestBody:
+            GetLoggedOperationsRequestBody(pageNumber: 1));
     super.initState();
   }
 
@@ -71,6 +74,7 @@ class _HistoryOperationDetailsScreenState
                   children: [
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -84,11 +88,14 @@ class _HistoryOperationDetailsScreenState
                                 });
                               },
                               onChange: (value) {
-                                HistoryOperationsCubit.get(context).getLoggedOperations(
-                                    getLoggedOperationsRequestBody: GetLoggedOperationsRequestBody(
-                                      phone: value,
-                                    )
-                                );
+                                HistoryOperationsCubit.get(context)
+                                    .getLoggedOperations(
+                                        getLoggedOperationsRequestBody:
+                                            GetLoggedOperationsRequestBody(
+                                  phone: value,
+                                              pageNumber: HistoryOperationsCubit.get(context)
+                                                  .pageNumber
+                                ));
                               },
                               searchController: searchController,
                             ),
@@ -102,29 +109,63 @@ class _HistoryOperationDetailsScreenState
                         ),
                         verticalSpace(dimension.height10),
                         const HistoryOperationsHeaderWidget(),
-                        BlocBuilder<HistoryOperationsCubit, HistoryOperationsState>(
+                        BlocBuilder<HistoryOperationsCubit,
+                            HistoryOperationsState>(
                           builder: (context, state) {
                             return Expanded(
                                 child: ListView.builder(
                               itemBuilder: (context, index) {
-                                return HistoryOperationCard
-                                  (
-                                  loggedOperation: HistoryOperationsCubit.get(context).loggedOperations[index],
+                                return HistoryOperationCard(
+                                  loggedOperation:
+                                      HistoryOperationsCubit.get(context)
+                                          .loggedOperations[index],
                                 );
                                 // return SizedBox.shrink();
                               },
-                              itemCount: HistoryOperationsCubit.get(context).loggedOperations.length,
+                              itemCount: HistoryOperationsCubit.get(context)
+                                  .loggedOperations
+                                  .length,
                             ));
                           },
                         ),
-                        BlocListenerForHistoryOperationsCubit(
-
-                        )
+                        verticalSpace(dimension.height10),
+                        SizedBox(
+                          // width: double.infinity,
+                          height: dimension.height30,
+                          // color: Colors.red,
+                          child: BlocBuilder<HistoryOperationsCubit,
+                              HistoryOperationsState>(
+                            builder: (context, state) {
+                              return NumberPagination(
+                                onPageChanged: (int pageNumber) {
+                                  //do somthing for selected page
+                                  setState(() {
+                                    HistoryOperationsCubit.get(context)
+                                        .pageNumber = pageNumber;
+                                  });
+                                  HistoryOperationsCubit.get(context)
+                                      .getLoggedOperations(
+                                          getLoggedOperationsRequestBody:
+                                              GetLoggedOperationsRequestBody(
+                                                  pageNumber: pageNumber));
+                                },
+                                threshold: 15,
+                                pageTotal: HistoryOperationsCubit.get(context)
+                                    .pageNumbers,
+                                pageInit: 1,
+                                // picked number when init page
+                                colorPrimary: Colors.red,
+                                colorSub: Colors.yellow,
+                              );
+                            },
+                          ),
+                        ),
+                        BlocListenerForHistoryOperationsCubit(),
                       ],
                     ),
                     FilterWidgetForHistoricalOperations(
                       visible: visible,
-                    )
+                    ),
                   ],
                 ),
               )

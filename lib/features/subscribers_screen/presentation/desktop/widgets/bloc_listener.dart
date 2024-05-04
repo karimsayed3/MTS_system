@@ -62,6 +62,16 @@ class _BlocListenerForSubscribersCubitState
             },
             getActiveSubscribersSuccessState: (getActiveSubscribersResponse) {
               // Navigator.pop(context);
+              SubscribersCubit.get(context).totalBalanceForActiveSubscribers = 0;
+              for (int i = 0;
+                  i < getActiveSubscribersResponse.result!.length;
+                  i++) {
+                if (getActiveSubscribersResponse.result![i].balance! < 0) {
+                  SubscribersCubit.get(context)
+                          .totalBalanceForActiveSubscribers +=
+                      getActiveSubscribersResponse.result![i].balance!;
+                }
+              }
               SubscribersCubit.get(context).changeListData(
                   subscribers: getActiveSubscribersResponse.result!);
             },
@@ -87,6 +97,17 @@ class _BlocListenerForSubscribersCubitState
               //         )));
             },
             getLateSubscribersSuccessState: (getActiveSubscribersResponse) {
+              SubscribersCubit.get(context)
+                  .totalBalanceForLateSubscribers = 0;
+              for (int i = 0;
+                  i < getActiveSubscribersResponse.result!.length;
+                  i++) {
+                if (getActiveSubscribersResponse.result![i].balance! < 0) {
+                  SubscribersCubit.get(context)
+                          .totalBalanceForLateSubscribers +=
+                      getActiveSubscribersResponse.result![i].balance!;
+                }
+              }
               // Navigator.pop(context);
               SubscribersCubit.get(context).lateSubscribers =
                   getActiveSubscribersResponse.result!;
@@ -114,7 +135,19 @@ class _BlocListenerForSubscribersCubitState
               //           color: ColorsManager.secondaryColor,
               //         )));
             },
-            getWithdrawnSubscribersSuccessState: (getWithdrawnSubscribersResponse) {
+            getWithdrawnSubscribersSuccessState:
+                (getWithdrawnSubscribersResponse) {SubscribersCubit.get(context)
+                    .totalBalanceForWithdrawnSubscribers = 0;
+
+              for (int i = 0;
+                  i < getWithdrawnSubscribersResponse.result!.length;
+                  i++) {
+                if (getWithdrawnSubscribersResponse.result![i].balance! < 0) {
+                  SubscribersCubit.get(context)
+                          .totalBalanceForWithdrawnSubscribers +=
+                      getWithdrawnSubscribersResponse.result![i].balance!;
+                }
+              }
               // Navigator.pop(context);
               SubscribersCubit.get(context).changeWithdrawSubscribersData(
                   withdrawSubscribers: getWithdrawnSubscribersResponse.result!);
@@ -141,6 +174,17 @@ class _BlocListenerForSubscribersCubitState
               //         )));
             },
             getDisabledSubscribersSuccessState: (getActiveSubscribersResponse) {
+              SubscribersCubit.get(context)
+                  .totalBalanceForDisabledSubscribers = 0;
+              for (int i = 0;
+                  i < getActiveSubscribersResponse.result!.length;
+                  i++) {
+                if (getActiveSubscribersResponse.result![i].balance! < 0) {
+                  SubscribersCubit.get(context)
+                          .totalBalanceForDisabledSubscribers +=
+                      getActiveSubscribersResponse.result![i].balance!;
+                }
+              }
               // Navigator.pop(context);
               SubscribersCubit.get(context).changeDisabledSubscribersData(
                   disableSubscribers: getActiveSubscribersResponse.result!);
@@ -351,7 +395,7 @@ class _BlocListenerForSubscribersCubitState
                   collectorName: SubscribersCubit.get(context)
                       .lateSubscriberCollectorName
                       .text,
-                  monthsLate:null,
+                  monthsLate: null,
                 ),
               );
               SubscribersCubit.get(context).getDisabledSubscribers(

@@ -18,6 +18,7 @@ import 'package:system/features/withdrawn_customers_screen/presentation/desktop/
 import 'package:system/features/withdrawn_customers_screen/presentation/desktop/widgets/withdrawn_customers_header_widget.dart';
 
 import '../../../../../core/utils/utils.dart';
+import '../../../../../core/widgets/number_of_totals.dart';
 import '../widgets/filter_widget_fot_withdrawn_subscribers.dart';
 
 class WithdrawnCustomersScreen extends StatefulWidget {
@@ -40,15 +41,21 @@ class _WithdrawnCustomersScreenState extends State<WithdrawnCustomersScreen> {
   void initState() {
     // TODO: implement initState
     SubscribersCubit.get(context).withdrawSubscribers = [];
+    SubscribersCubit.get(context).totalBalanceForWithdrawnSubscribers = 0;
     SubscribersCubit.get(context).getCompaniesList();
     SubscribersCubit.get(context).getWithdrawnSubscribers(
         getWithdrawnSubscribersRequestBody:
             GetWithdrawnSubscribersRequestBody());
     super.initState();
   }
-
+  int totalBalance = 0;
   @override
   Widget build(BuildContext context) {
+    // for (int i = 0; i < SubscribersCubit.get(context).withdrawSubscribers.length; i++) {
+    //   setState(() {
+    //     totalBalance += SubscribersCubit.get(context).withdrawSubscribers[i].balance!;
+    //   });
+    // }
     var dimension = Dimensions(context);
     return Container(
       width: double.infinity,
@@ -146,6 +153,42 @@ class _WithdrawnCustomersScreenState extends State<WithdrawnCustomersScreen> {
                                   text: "تنزيل اكسيل",
                                 ),
                               ],
+                            ),
+                          ],
+                        ),
+                        verticalSpace(dimension.height10),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            BlocBuilder<SubscribersCubit, SubscribersState>(
+                              builder: (context, state) {
+                                return NumberOfSoliderStatus(
+                                  containerColor: const Color(0xFFEBFBF1),
+                                  containerBorderColor: const Color(0xFF3ABB66),
+                                  textColor: const Color(0xFF3E3F43),
+                                  numberColor: const Color(0xFF3ABB66),
+                                  title: "اجمالى المسحوبين: ",
+                                  fontSize: dimension.reduce20,
+                                  number: SubscribersCubit.get(context)
+                                      .withdrawSubscribers
+                                      .length
+                                      .toString(),
+                                );
+                              },
+                            ),
+                            horizontalSpace(dimension.width10),
+                            BlocBuilder<SubscribersCubit, SubscribersState>(
+                              builder: (context, state) {
+                                return NumberOfSoliderStatus(
+                                  containerColor: const Color(0xFFE5F7FF),
+                                  containerBorderColor: const Color(0xFF1C9BD1),
+                                  textColor: const Color(0xFF3E3F43),
+                                  numberColor: const Color(0xFF1C9BD1),
+                                  title: "اجمالى الحساب: ",
+                                  fontSize: dimension.reduce20,
+                                  number: SubscribersCubit.get(context).totalBalanceForWithdrawnSubscribers.toString(),
+                                );
+                              },
                             ),
                           ],
                         ),

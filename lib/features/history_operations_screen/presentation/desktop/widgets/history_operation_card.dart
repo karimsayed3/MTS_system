@@ -7,6 +7,9 @@ import 'package:system/core/theming/colors.dart';
 import 'package:system/core/widgets/default_button.dart';
 import 'package:system/core/widgets/default_text.dart';
 
+import '../../../../../core/routing/routers.dart';
+import '../../../../../core/widgets/custom_navigation_bar_widget.dart';
+import '../../../../../create_pdf.dart';
 import '../../../data/models/get_logged_operations_response.dart';
 
 class HistoryOperationCard extends StatelessWidget {
@@ -193,6 +196,32 @@ class HistoryOperationCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
             ),
             child: InkWell(
+              onTap: () async {
+                // navigateToPage(Routes.printerScreenForWindows, arguments: {
+                //   'imgPath': await createPdfReceipt(
+                //     context: context,
+                //     // phoneNumber: loggedOperation.phoneNo ?? "",
+                //     // date: convertDateToString(
+                //     //     loggedOperation.operationDate ?? ""),
+                //     // planType: loggedOperation.planName ?? "",
+                //     // balance:
+                //     // loggedOperation.balanceBeforeOperation.toString(),
+                //     // paidMoney: loggedOperation.addedAmount.toString(),
+                //     // collectType: loggedOperation.collectType ?? "",
+                //   ),
+                // });
+                createPdfReceipt(
+                  context: context,
+                  phoneNumber: loggedOperation.phoneNo ?? "",
+                  date: convertDateToString(
+                      loggedOperation.operationDate ?? ""),
+                  planType: loggedOperation.planName ?? "",
+                  balance:
+                  loggedOperation.balanceBeforeOperation.toString(),
+                  paidMoney: loggedOperation.addedAmount.toString(),
+                  collectType: loggedOperation.collectType ?? "",
+                );
+              },
               child: SvgPicture.asset('assets/icons/printer.svg'),
             ),
           ),

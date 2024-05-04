@@ -15,6 +15,7 @@ import 'package:system/features/collectors_screen/data/models/get_users_request_
 import 'package:system/features/collectors_screen/presentation/desktop/widgets/add_collector_widget.dart';
 import 'package:system/features/collectors_screen/presentation/desktop/widgets/collectors_card.dart';
 import 'package:system/features/collectors_screen/presentation/desktop/widgets/collectors_search_widget.dart';
+import '../../../../../core/widgets/number_of_totals.dart';
 import 'bloc_listener_collectos_cubit.dart';
 import 'collectors_header_widget.dart';
 
@@ -30,6 +31,8 @@ class _CollectorsScreenDetailsState extends State<CollectorsScreenDetails> {
   @override
   void initState() {
     // TODO: implement initState
+    CollectorsCubit.get(context).totalBNegativeBalance = 0;
+    CollectorsCubit.get(context).users =[];
     CollectorsCubit.get(context).getUsers(
       getUsersRequestBody: GetUsersRequestBody(
         username: '',
@@ -97,6 +100,42 @@ class _CollectorsScreenDetailsState extends State<CollectorsScreenDetails> {
                             fontSize: dimension.reduce20,
                             fontWeight: FontWeight.w400,
                           ),
+                        ),
+                      ],
+                    ),
+                    verticalSpace(dimension.height10),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        BlocBuilder<CollectorsCubit, CollectorsState>(
+                          builder: (context, state) {
+                            return NumberOfSoliderStatus(
+                              containerColor: const Color(0xFFEBFBF1),
+                              containerBorderColor: const Color(0xFF3ABB66),
+                              textColor: const Color(0xFF3E3F43),
+                              numberColor: const Color(0xFF3ABB66),
+                              title: "اجمالى المحصلين: ",
+                              fontSize: dimension.reduce20,
+                              number: CollectorsCubit.get(context)
+                                  .users
+                                  .length
+                                  .toString(),
+                            );
+                          },
+                        ),
+                        horizontalSpace(dimension.width10),
+                        BlocBuilder<CollectorsCubit, CollectorsState>(
+                          builder: (context, state) {
+                            return NumberOfSoliderStatus(
+                              containerColor: const Color(0xFFE5F7FF),
+                              containerBorderColor: const Color(0xFF1C9BD1),
+                              textColor: const Color(0xFF3E3F43),
+                              numberColor: const Color(0xFF1C9BD1),
+                              title: "اجمالى الحساب: ",
+                              fontSize: dimension.reduce20,
+                              number: CollectorsCubit.get(context).totalBNegativeBalance.toString(),
+                            );
+                          },
                         ),
                       ],
                     ),
