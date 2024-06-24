@@ -1,8 +1,61 @@
 class ApiConstants {
-  static const String apiBaseUrl = "https://vcare.integration25.com/api/";
-
+  /// base url
+  static const String apiBaseUrl = "https://jch9js3m-3000.uks1.devtunnels.ms/api/";
+  // static const String apiBaseUrl = "https://3vn1srv7-3000.euw.devtunnels.ms/api/";
+  // static const String apiBaseUrl = "https://ddc9h9lj-3000.uks1.devtunnels.ms/api/";
+  /// auth
   static const String login = "auth/login";
-  static const String signup = "auth/register";
+  static const String logout = "auth/logout";
+  /// companies
+  static const String getCompanies = "company/getCompanies";
+  static const String addCompany = "company/addCompany";
+  static const String updateCompany = "company/updateCompany";
+  static const String deleteCompany = "company/deleteCompany";
+  static const String deductPlanFromSubscribers = "company/deductPlanFromSubscribers";
+  static const String undoPlanFromSubscribers = "company/undoPlanFromSubscribers";
+  /// plans
+  static const String getPlans = "plan/getPlans";
+  static const String addPlan = "plan/addPlan";
+  static const String updatePlan = "plan/updatePlan";
+  static const String deletePlan = "plan/deletePlan";
+  /// users
+  static const String addUser = "user/addUser";
+  static const String updateUser = "user/updateUser";
+  static const String deleteUser = "user/deleteUser";
+  static const String getUsers = "user/getUsers";
+  static const String zeroCollectorTotal = "user/zeroCollectorTotal";
+  static const String deductBalanceCollector = "user/deductBalanceCollector";
+
+  /// subscribers
+  static const String addSubscriber = "subscriber/addNewSubscriber";
+  static const String updateSubscriber = "subscriber/updateSubscriber";
+  static const String deleteSubscriber = "subscriber/deleteSubscriber";
+  static const String disableSubscriber = "subscriber/disableSubscriber";
+  static const String withdrawSubscriber = "subscriber/withdrawSubscriber";
+  static const String activateSubscriber = "subscriber/activateSubscriber";
+  static const String zeroSubscriberBalance = "subscriber/zeroSubscriberBalance";
+  static const String collectSubscriberBalance = "subscriber/collectSubscriberBalance";
+  static const String getActiveSubscribers = "subscriber/getActiveSubscribers";
+  static const String getLateSubscribers = "subscriber/getLateSubscribers";
+  static const String getDisabledSubscribers = "subscriber/getDisabledSubscribers";
+  static const String getWithdrawnSubscribers = "subscriber/getWithdrawnSubscribers";
+
+
+  /// lists
+  static const String getCompaniesList = "lists/getCompanies";
+  static const String getPlansList = "lists/getPlans";
+  static const String getCollectorsEmails = "lists/getCollectorsEmails";
+
+  /// collectorRequests
+  static const String approveRequest = "collectoRequests/approveRequest";
+  static const String declineRequest = "collectoRequests/declineRequest";
+  static const String getCollectorRequests = "collectoRequests/getCollectorRequests";
+
+
+  /// getLoggedOperations
+  static const String getLoggedOperations = "operations/getLoggedOperations";
+
+
 }
 
 class ApiErrors {

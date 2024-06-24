@@ -32,9 +32,10 @@ dependencies:
   build_runner: ^2.4.8
   cupertino_icons: ^1.0.2
   desktop_window: ^0.4.0
-  dio: ^5.4.0
-  flutter:
-    sdk: flutter
+  open_file: ^3.3.2
+  excel: ^4.0.2
+#  path_provider:
+  conditional_builder_null_safety: ^0.0.6
   flutter_bloc: ^8.1.3
   flutter_screenutil: ^5.9.0
   flutter_svg: ^2.0.9
@@ -47,6 +48,28 @@ dependencies:
   retrofit: ^4.0.3
   retrofit_generator: ^8.0.6
   window_manager: ^0.3.7
+  google_fonts: ^6.1.0
+  jwt_decoder: ^2.0.1
+  shared_preferences: ^2.2.2
+  print_bluetooth_thermal: ^1.1.0
+  quick_blue: any
+  dropdown_button2:
+  dropdown_search: ^5.0.6
+  bluetooth_print: ^4.3.0
+  flutter_scan_bluetooth: ^2.1.4
+  pdf: ^3.10.8
+  image: ^4.1.7
+  printing: ^5.12.0
+  esc_pos_utils_plus: ^2.0.3
+  flutter_esc_pos_utils: ^1.0.1
+  number_pagination: ^1.0.5
+  intl: ^0.19.0
+  file_picker:
+  dio: ^5.4.0
+  flutter:
+    sdk: flutter
+
+
 
 dev_dependencies:
   flutter_lints: ^2.0.0
@@ -76,10 +99,13 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
+  fonts:
+     - family: din
+       fonts:
+         - asset: assets/fonts/din.ttf
+     - family: BlakaInk
+       fonts:
+         - asset: assets/fonts/BlakaInk.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

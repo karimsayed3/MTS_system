@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:system/core/theming/colors.dart';
 
 class DefaultTextFormField extends StatelessWidget {
   DefaultTextFormField({
@@ -12,13 +14,17 @@ class DefaultTextFormField extends StatelessWidget {
     this.hintText,
     this.obscureText = false,
     this.suffixIcon,
+    this.inputFormatters,
+    this.enabled,
   });
 
   final TextEditingController controller;
   final Color color;
 
   dynamic onSave;
-  dynamic onChange;
+  Function(String)? onChange;
+
+  List<TextInputFormatter>? inputFormatters;
 
   dynamic validator;
 
@@ -30,14 +36,19 @@ class DefaultTextFormField extends StatelessWidget {
   dynamic textInputType;
 
   bool obscureText;
+  bool? enabled;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       obscureText: obscureText,
       controller: controller,
+      inputFormatters:inputFormatters ?? [],
       decoration: InputDecoration(
         border: OutlineInputBorder(
+          borderSide: const BorderSide(
+            color: ColorsManager.lightGray,
+          ),
           borderRadius: BorderRadius.circular(8),
         ),
         focusedBorder: OutlineInputBorder(
@@ -46,20 +57,17 @@ class DefaultTextFormField extends StatelessWidget {
             color: Color(0xFF52734D),
           ),
         ),
-        // disabledBorder: OutlineInputBorder(
-        //
-        // ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8.0),
           borderSide: const BorderSide(
-            color: Color(0xffEDEEF1),
-            width: 2.0,
+            color: ColorsManager.lightGray,
           ),
         ),
         fillColor: color,
         filled: true,
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
+        enabled: enabled??true,
         hintText: hintText,
       ),
       onSaved: onSave,

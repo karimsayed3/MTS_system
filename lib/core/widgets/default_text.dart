@@ -34,7 +34,7 @@ class DefaultText extends StatelessWidget {
       style: TextStyle(
         overflow: TextOverflow.ellipsis,
         fontSize: fontSize ?? dimension.reduce15,
-        fontFamily: fontFamily ?? 'Almarai',
+        fontFamily: fontFamily ?? 'din',
         fontWeight: fontWeight,
         color: color,
         letterSpacing: letterSpacing ?? 0,
