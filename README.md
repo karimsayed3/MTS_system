@@ -61,6 +61,7 @@ The User Management System is a comprehensive application designed to manage use
     </td>
   </tr>
 </table>
+
 ## Installation & Setup
 
 To get started with the User Management System, follow the steps below:
