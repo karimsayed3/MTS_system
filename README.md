@@ -46,9 +46,21 @@ The User Management System is a comprehensive application designed to manage use
   - Keep users informed with real-time updates and notifications about their subscriptions and payments.
 - **Cross-platform Support:** 
   - Consistent and seamless user experience across desktop and mobile platforms.
-![Mobile Application Screenshot 1](images/1.png)
-![Mobile Application Screenshot 2](images/2.png)
-![Mobile Application Screenshot 3](images/3.png)
+## Mobile Application
+
+<table>
+  <tr>
+    <td>
+      <img src="images/1.png" alt="Mobile Application Screenshot 1" width="200"/>
+    </td>
+    <td>
+      <img src="images/2.png" alt="Mobile Application Screenshot 2" width="200"/>
+    </td>
+    <td>
+      <img src="images/3.png" alt="Mobile Application Screenshot 3" width="200"/>
+    </td>
+  </tr>
+</table>
 ## Installation & Setup
 
 To get started with the User Management System, follow the steps below:
@@ -57,24 +69,3 @@ To get started with the User Management System, follow the steps below:
    ```bash
    git clone https://github.com/your-username/user-management-system.git
    cd user-management-system
-
-2. **Install Dependencies:**
-   ```bash
-   flutter pub get
-
-3. **Run the Application:**
-   **For Desktop:**
-        ```bash
-        flutter run -d windows
-    **For Desktop:**
-            ```bash
-            flutter run -d android
-## Contributing
-We welcome contributions from the community. If you'd like to contribute, please fork the repository and create a pull request with your changes.
-
-## License
-This project is licensed under the MIT License. See the LICENSE file for more details.
-
-    
-
-
