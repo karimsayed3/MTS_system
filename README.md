@@ -1,16 +1,20 @@
-# system
+Project Title: User Management System
 
-A new Flutter project.
+Project Description:
 
-## Getting Started
+The User Management System is a versatile application designed for both desktop and mobile platforms, developed using Flutter. This project aims to streamline the management of user data, accommodating three types of users: Admin, Collector, and Distributor. Each user role has distinct functionalities and access levels to ensure efficient data handling and operations.
 
-This project is a starting point for a Flutter application.
+Admin: Has full control over the application, including user management, data oversight, and system settings.
+Collector: Responsible for gathering and inputting data into the system.
+Distributor: Manages the distribution of data and resources as per the system's requirements.
+Platforms:
 
-A few resources to get you started if this is your first Flutter project:
+Desktop Application: Built using Flutter for a seamless user experience across various desktop environments.
+Mobile Application: Developed using Flutter to provide a responsive and intuitive interface on both Android and iOS devices.
+Skills & Technologies:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+API: Integrates various external services and data sources.
+Retrofit: Utilized for efficient and scalable API interactions.
+Freezed: Implements immutable data classes and unions for robust state management.
+Bloc: Manages the state of the application, ensuring a reactive and predictable data flow.
+This project leverages the power of Flutter to deliver a unified and comprehensive user management experience across multiple platforms, ensuring efficiency, security, and ease of use.
