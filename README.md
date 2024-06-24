@@ -46,7 +46,6 @@ The User Management System is a comprehensive application designed to manage use
   - Keep users informed with real-time updates and notifications about their subscriptions and payments.
 - **Cross-platform Support:** 
   - Consistent and seamless user experience across desktop and mobile platforms.
-
 ## Mobile Application
 
 <table>
@@ -62,7 +61,6 @@ The User Management System is a comprehensive application designed to manage use
     </td>
   </tr>
 </table>
-
 
 ## Installation & Setup
 
