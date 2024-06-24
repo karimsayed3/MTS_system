@@ -47,6 +47,23 @@ The User Management System is a comprehensive application designed to manage use
 - **Cross-platform Support:** 
   - Consistent and seamless user experience across desktop and mobile platforms.
 
+## Mobile Application
+
+<table>
+  <tr>
+    <td>
+      <img src="images/1.png" alt="Mobile Application Screenshot 1" width="200"/>
+    </td>
+    <td>
+      <img src="images/2.png" alt="Mobile Application Screenshot 2" width="200"/>
+    </td>
+    <td>
+      <img src="images/3.png" alt="Mobile Application Screenshot 3" width="200"/>
+    </td>
+  </tr>
+</table>
+
+
 ## Installation & Setup
 
 To get started with the User Management System, follow the steps below:
