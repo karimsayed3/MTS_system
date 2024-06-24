@@ -55,20 +55,3 @@ To get started with the User Management System, follow the steps below:
    ```bash
    git clone https://github.com/your-username/user-management-system.git
    cd user-management-system
-
-2. **Install Dependencies:**
-   ```bash
-   flutter pub get
-
-3. **Run the Application:**
-   **For Desktop:**
-        ```bash
-        flutter run -d windows
-    **For Desktop:**
-            ```bash
-            flutter run -d android
-## Contributing
-We welcome contributions from the community. If you'd like to contribute, please fork the repository and create a pull request with your changes.
-
-## License
-This project is licensed under the MIT License. See the LICENSE file for more details.
